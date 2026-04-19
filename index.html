@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PANI Hausverwaltung — Berlin</title>
+<meta name="description" content="PANI Hausverwaltung Berlin — WEG-Verwaltung, Miethausverwaltung, Sondereigentumsverwaltung. Wertsteigerung statt Werterhalt."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,0..100&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Premium Architectural Palette */
+  --ink:      #1A1A1A; /* Deep Charcoal */
+  --ink-soft: #333333;
+  --paper:    #F7F5F0; /* Soft Alabaster */
+  --paper-w:  #FFFFFF;
+  --paper-d:  #EBE6DD;
+  --stone:    #2C2C2C;
+  --steel:    #242424;
+  --butter:   #F0EBE1;
+  --cream:    #FAF9F6;
+  --coal:     #121212;
+  
+  /* Brand Accents */
+  --accent:   #800020; /* Deep Burgundy / Bordeaux */
+  --brass:    #B08D57; /* Brass / Messing für metallische Details */
+  --sand:     #D4C4A9;
+  --line:     rgba(26, 26, 26, 0.12);
+  --line-light: rgba(255, 255, 255, 0.15);
+  
+  --serif:    'Fraunces', Georgia, serif;
+  --sans:     'IBM Plex Sans', Helvetica, Arial, sans-serif;
+  --mono:     'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --max:      1240px;
+  --pad:      clamp(28px, 5vw, 72px);
+}
+
+html { scroll-behavior: smooth; background: var(--paper); }
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background: var(--paper);
+}
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  margin: 0;
+}
+h3 { font-size: 22px; letter-spacing: -0.01em; line-height: 1.3; font-weight: 400; }
+
+p { margin: 0 0 1.2em 0; }
+
+/* ═════════ NAVBAR ═════════ */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(247, 245, 240, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px var(--pad);
+  border-bottom: 1px solid var(--line);
+}
+.logo { display: flex; align-items: center; gap: 14px; color: var(--ink); transition: color .3s; }
+.logo:hover { color: var(--accent); }
+.logo svg { width: 36px; height: 36px; }
+.logo-text {
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 4px;
+  transition: color .3s ease;
+}
+.nav-links a.active,
+.nav-links a:hover { color: var(--accent); }
+.nav-links a svg {
+  width: 20px; height: 20px;
+  stroke: currentColor; fill: none; stroke-width: 1.2;
+}
+
+/* ═════════ SECTIONS ═════════ */
+.section {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: clamp(90px, 12vh, 160px) var(--pad);
+  position: relative;
+  overflow: hidden;
+}
+.section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  gap: clamp(48px, 8vw, 120px);
+}
+.section-inner.reverse .section-text { order: 2; }
+.section-text { max-width: 520px; justify-self: start; }
+
+h1 { font-size: clamp(52px, 7vw, 86px); line-height: 1; }
+h2 { font-size: clamp(40px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
+
+.section p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  max-width: 44ch;
+  color: rgba(26, 26, 26, 0.75);
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+}
+.kicker::before {
+  content: "";
+  width: 32px; height: 1px;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* CTA */
+.cta-link {
+  display: inline-flex; align-items: center; gap: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 16px;
+  transition: gap .4s cubic-bezier(.2,.7,.2,1);
+  color: var(--ink);
+}
+.cta-link:hover { gap: 24px; color: var(--accent); }
+.cta-link .arrow-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line);
+  display: grid; place-items: center;
+  transition: all .4s cubic-bezier(.2,.7,.2,1);
+}
+.cta-link:hover .arrow-circle { border-color: var(--accent); background: var(--accent); }
+.cta-link:hover .arrow-circle svg { stroke: #fff; transform: translateX(2px); }
+.cta-link .arrow-circle svg { 
+  width: 14px; height: 14px; stroke: var(--ink); fill: none; stroke-width: 1.2; 
+  transition: stroke .3s, transform .4s; 
+}
+.section-wert .cta-link { color: #fff; }
+.section-wert .cta-link .arrow-circle { border-color: var(--line-light); }
+.section-wert .cta-link .arrow-circle svg { stroke: #fff; }
+.section-wert .cta-link:hover .arrow-circle { background: #fff; border-color: #fff; }
+.section-wert .cta-link:hover .arrow-circle svg { stroke: var(--ink); }
+
+.cta-group { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+
+.section-num {
+  position: absolute;
+  top: clamp(36px, 5vh, 56px);
+  right: var(--pad);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+
+/* ═════════ S1: HERO ═════════ */
+.section-hero {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--butter) 100%);
+  min-height: calc(100vh - 81px);
+  padding-bottom: 0;
+  align-items: end;
+}
+.section-hero .section-inner {
+  grid-template-columns: 1fr 1.15fr;
+  align-items: end;
+  gap: 40px;
+  padding-bottom: clamp(40px, 8vh, 100px);
+}
+.section-hero h1 { color: var(--ink); font-weight: 300; }
+.section-hero h1 .fixed { display: block; }
+.section-hero h1 .rotator {
+  display: block; position: relative; color: var(--accent);
+  font-weight: 300; font-style: italic; height: 1.1em; overflow: hidden;
+}
+.rotator-track { position: relative; display: block; height: 100%; }
+.rotator-word {
+  position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0;
+  transform: translateY(100%);
+  transition: transform .9s cubic-bezier(.7,.05,.2,.95), opacity .45s ease;
+  display: inline-flex; align-items: baseline; gap: 0.3em;
+}
+.rotator-word.is-in {
+  opacity: 1; transform: translateY(0);
+  transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .45s ease .1s;
+}
+.rotator-word.is-out {
+  opacity: 0; transform: translateY(-100%);
+  transition: transform .9s cubic-bezier(.7,.05,.2,.95), opacity .35s ease;
+}
+.rotator-word .mit {
+  font-style: normal; font-weight: 300; font-size: 0.5em; letter-spacing: 0.05em;
+  color: rgba(26,26,26,0.5); align-self: center; position: relative; top: -0.1em;
+}
+
+.rotator-ticks { margin-top: 24px; display: flex; gap: 8px; }
+.rotator-tick {
+  width: 40px; height: 1px; background: rgba(26,26,26,0.15);
+  position: relative; overflow: hidden; border: 0; padding: 0; cursor: pointer;
+}
+.rotator-tick::after {
+  content: ""; position: absolute; inset: 0; background: var(--accent);
+  transform-origin: left center; transform: scaleX(0);
+}
+.rotator-tick.active::after { transform: scaleX(1); transition: transform 3.2s linear; }
+
+.hero-meta {
+  margin-top: 48px; display: flex; gap: 56px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(26,26,26,0.6);
+}
+.hero-meta .m-label { display: block; opacity: 0.6; margin-bottom: 6px; font-size: 9px; }
+.hero-meta .m-val { color: var(--ink); font-weight: 500; letter-spacing: 0.15em; font-size: 11px; }
+
+.hero-illus { position: relative; width: 100%; max-width: 580px; margin-left: auto; align-self: end; }
+.hero-illus svg { width: 100%; height: auto; display: block; }
+
+.scroll-cue {
+  position: absolute; left: 50%; bottom: 32px; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ink-soft); opacity: 0.6; transition: opacity .3s;
+}
+.scroll-cue:hover { opacity: 1; color: var(--accent); }
+.scroll-cue .dot {
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line);
+  background: transparent; display: grid; place-items: center;
+  transition: border-color .3s;
+}
+.scroll-cue:hover .dot { border-color: var(--accent); }
+.scroll-cue .dot svg { width: 14px; height: 14px; stroke-width: 1.2; }
+
+/* ═════════ SECTIONS CSS ═════════ */
+.section-leistungen { background: var(--paper-w); }
+.svc-chips { margin-top: 40px; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.svc-chip {
+  padding: 24px 0; border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 20px;
+  cursor: default; transition: padding-left .3s ease;
+}
+.svc-chip:hover { padding-left: 12px; }
+.svc-chip .no { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--accent); }
+.svc-chip .t { font-family: var(--serif); font-weight: 300; font-size: 20px; color: var(--ink); }
+.svc-chip .d { font-size: 14px; color: rgba(26,26,26,0.6); line-height: 1.5; max-width: 38ch; margin-top: 4px; }
+.svc-chip .arrow {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line);
+  display: grid; place-items: center; transition: all .3s;
+}
+.svc-chip:hover .arrow { background: var(--accent); border-color: var(--accent); }
+.svc-chip:hover .arrow svg { stroke: #fff; transform: translateX(2px); }
+.svc-chip .arrow svg { width: 12px; height: 12px; stroke: var(--ink); fill: none; stroke-width: 1.2; transition: all .3s; }
+
+.section-wert { background: var(--steel); color: #fff; }
+.section-wert h2 { color: #fff; }
+.section-wert p { color: rgba(255,255,255,0.7); }
+.section-wert .kicker { color: var(--sand); }
+.section-wert .section-num { color: rgba(255,255,255,0.3); }
+
+.section-wissenschaft { background: var(--butter); color: var(--ink); }
+.section-wissenschaft h2 { color: var(--ink); }
+.method-list { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 40px; }
+.method-item .m-no {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+  color: var(--accent); margin-bottom: 8px;
+  border-bottom: 1px solid var(--line); padding-bottom: 8px;
+}
+.method-item .m-t { font-family: var(--serif); font-size: 18px; font-weight: 300; color: var(--ink); margin-bottom: 6px; }
+.method-item .m-d { font-size: 14px; color: rgba(26,26,26,0.7); line-height: 1.6; margin: 0; }
+
+.section-ueberblick { background: var(--paper-w); }
+.stat-row {
+  margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.stat { padding: 24px 20px 24px 0; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; padding-right: 0; }
+.stat .s-n { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--ink); line-height: 1; }
+.stat .s-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-top: 10px; }
+
+.illus-wrap { position: relative; width: 100%; max-width: 520px; justify-self: end; }
+.illus-wrap svg { width: 100%; height: auto; }
+.illus-caption {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+  margin-top: 24px; opacity: 0.5; display: flex; gap: 16px; align-items: center; color: var(--ink);
+}
+.illus-caption::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+.section-wert .illus-caption { color: #fff; opacity: 0.6; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.d2 { transition-delay: .15s; }
+.reveal.d3 { transition-delay: .3s; }
+
+/* ═════════ FOOTER ═════════ */
+footer { background: var(--coal); color: rgba(255,255,255,0.6); padding: 100px var(--pad) 40px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 56px;
+  padding-bottom: 64px; border-bottom: 1px solid var(--line-light);
+}
+.footer-logo { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+.footer-logo svg { stroke: #fff; width: 40px; height: 40px; }
+.footer-logo .logo-text { color: #fff; font-size: 24px; letter-spacing: 0.2em; }
+.footer-cta { font-family: var(--serif); font-weight: 300; font-size: 32px; line-height: 1.2; color: #fff; max-width: 12ch; margin-bottom: 32px; }
+footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 24px; }
+.footer-col p { line-height: 2; font-size: 14px; margin: 0; }
+.footer-col a { color: rgba(255,255,255,0.6); transition: color .3s; }
+.footer-col a:hover { color: var(--sand); }
+.footer-bottom {
+  padding-top: 32px; display: flex; gap: 32px; align-items: center;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--mono);
+}
+.footer-bottom a { color: rgba(255,255,255,0.5); transition: color .3s; }
+.footer-bottom a:hover { color: #fff; }
+.footer-bottom .copy { margin-left: auto; opacity: 0.4; letter-spacing: 0.1em; text-transform: none; font-family: var(--sans); }
+
+/* ───── responsive ───── */
+@media (max-width: 960px) {
+  .section { padding: 100px var(--pad); min-height: auto; }
+  .section-inner { grid-template-columns: 1fr; gap: 64px; }
+  .section-inner.reverse .section-text { order: 0; }
+  h1 { font-size: 48px; }
+  h2 { font-size: 36px; }
+  .illus-wrap { max-width: 400px; margin: 0 auto; justify-self: center; }
+  .hero-illus { max-width: 420px; }
+  .nav-links { gap: 16px; }
+  .nav-links a .lbl { display: none; }
+  .section-hero { align-items: center; }
+  .section-hero .section-inner { grid-template-columns: 1fr; padding-bottom: 80px; }
+  .hero-meta { flex-wrap: wrap; gap: 32px 48px; }
+  .method-list { grid-template-columns: 1fr; gap: 24px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .stat { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .stat:last-child { border-bottom: 0; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .footer-bottom { flex-wrap: wrap; }
+  .footer-bottom .copy { flex: 1 0 100%; margin-left: 0; }
+  .section-num { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR (DE) ══ -->
+<nav class="navbar" aria-label="Hauptnavigation">
+  <a href="#top" class="logo" aria-label="PANI Hausverwaltung">
+    <svg viewBox="0 0 60 60" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+        <rect x="14" y="14" width="8" height="32" />
+        <rect x="26" y="14" width="8" height="32" />
+        <rect x="38" y="14" width="8" height="32" />
+        <line x1="10" y1="10" x2="50" y2="10" />
+        <line x1="10" y1="50" x2="50" y2="50" />
+      </g>
+    </svg>
+    <span class="logo-text">PANI</span>
+  </a>
+
+  <ul class="nav-links">
+    <li>
+      <a href="#werterhalt" class="active">
+        <svg viewBox="0 0 24 24"><path d="M3 10 L12 3 L21 10 V20 H3 Z"/><path d="M9 20 V13 H15 V20"/></svg>
+        <span class="lbl">Eigentümer</span>
+      </a>
+    </li>
+    <li>
+      <a href="#leistungen">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20 C4 16 8 13 12 13 C16 13 20 16 20 20"/></svg>
+        <span class="lbl">Mieter</span>
+      </a>
+    </li>
+    <li>
+      <a href="#kontakt">
+        <svg viewBox="0 0 24 24"><path d="M5 4 H9 L11 9 L9 11 C10 14 11 15 13 16 L15 14 L20 16 V20 C14 21 4 13 5 4 Z"/></svg>
+        <span class="lbl">Kontakt</span>
+      </a>
+    </li>
+    <li>
+      <!-- LINK ZUR ENGLISCHEN SEITE -->
+      <a href="en.html">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><line x1="4" y1="12" x2="20" y2="12"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4 Z"/></svg>
+        <span class="lbl">EN</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ══ S1: HERO ══ -->
+<section class="section section-hero" id="top">
+  <span class="section-num">I / V · Berlin</span>
+  <div class="section-inner">
+    <div class="reveal">
+      <h1>
+        <span class="fixed">Hausverwaltung</span>
+        <span class="rotator" aria-live="polite">
+          <span class="rotator-track" id="rotator-track"></span>
+        </span>
+      </h1>
+      <div class="rotator-ticks" id="rotator-ticks"></div>
+      <div class="hero-meta">
+        <div>
+          <span class="m-label">Gegründet</span>
+          <span class="m-val">Berlin</span>
+        </div>
+        <div>
+          <span class="m-label">Kompetenz</span>
+          <span class="m-val">WEG · Miethaus</span>
+        </div>
+        <div>
+          <span class="m-label">Sprachen</span>
+          <span class="m-val">DE · EN</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO ILLUS -->
+    <div class="hero-illus reveal d2" aria-hidden="true">
+      <svg viewBox="0 -30 560 650" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYEnd meet">
+        <defs>
+          <pattern id="hero-hatch" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,0.06)" stroke-width="0.5"/>
+          </pattern>
+          <g id="pani-win">
+            <rect x="-16" y="-32" width="32" height="64" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-16" y="-10" width="32" height="4" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-2" y="-6" width="4" height="38" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-22" y="32" width="44" height="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
+            <path d="M -24 -36 L 0 -48 L 24 -36 Z" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+          </g>
+          <g id="pani-win-top">
+            <rect x="-16" y="-28" width="32" height="56" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-16" y="-6" width="32" height="4" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-2" y="-2" width="4" height="30" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-22" y="28" width="44" height="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-20" y="-32" width="40" height="4" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+          </g>
+          <g id="shop-win">
+            <rect x="-22" y="-46" width="44" height="96" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-22" y="-10" width="44" height="6" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+            <rect x="-2" y="-4" width="4" height="54" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+          </g>
+        </defs>
+
+        <g stroke="rgba(26,26,26,0.25)" stroke-width="0.5" fill="none" font-family="var(--mono)" font-size="9" letter-spacing="1.5">
+          <line x1="14" y1="40" x2="14" y2="590"/>
+          <g stroke-width="0.5">
+            <line x1="10" y1="40"  x2="18" y2="40"/>
+            <line x1="10" y1="160" x2="18" y2="160"/>
+            <line x1="10" y1="290" x2="18" y2="290"/>
+            <line x1="10" y1="445" x2="18" y2="445"/>
+            <line x1="10" y1="590" x2="18" y2="590"/>
+          </g>
+          <text x="24" y="44" fill="rgba(26,26,26,0.4)">+ 18,4</text>
+          <text x="24" y="164" fill="rgba(26,26,26,0.4)">+ 13,8</text>
+          <text x="24" y="294" fill="rgba(26,26,26,0.4)">+ 9,20</text>
+          <text x="24" y="449" fill="rgba(26,26,26,0.4)">+ 4,60</text>
+          <text x="24" y="594" fill="rgba(26,26,26,0.4)">± 0,00</text>
+        </g>
+
+        <g transform="translate(110,30)">
+          <polygon points="0,0 30,-30 390,-30 420,0" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+          <path d="M 150 0 L 210 -40 L 270 0 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
+          <circle cx="210" cy="-16" r="8" fill="none" stroke="var(--ink)" stroke-width="1"/>
+
+          <rect x="0" y="0" width="420" height="560" fill="transparent" stroke="var(--ink)" stroke-width="1"/>
+          
+          <g stroke="var(--ink)" stroke-width="0.5" opacity="0.15">
+            <line x1="0" y1="430" x2="420" y2="430"/> <line x1="0" y1="445" x2="420" y2="445"/>
+            <line x1="0" y1="460" x2="420" y2="460"/> <line x1="0" y1="475" x2="420" y2="475"/>
+            <line x1="0" y1="490" x2="420" y2="490"/> <line x1="0" y1="505" x2="420" y2="505"/>
+            <line x1="0" y1="520" x2="420" y2="520"/> <line x1="0" y1="535" x2="420" y2="535"/>
+          </g>
+
+          <rect x="-4" y="0" width="428" height="6" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
+          <rect x="-2" y="145" width="424" height="2" fill="var(--ink)" opacity="0.1"/>
+          <rect x="-2" y="275" width="424" height="2" fill="var(--ink)" opacity="0.1"/>
+          <rect x="-4" y="414" width="428" height="4" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
+          <rect x="0" y="550" width="420" height="10" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+
+          <g transform="translate(0, 90)">
+            <use href="#pani-win-top" x="65"/><use href="#pani-win-top" x="160"/>
+            <use href="#pani-win-top" x="260"/><use href="#pani-win-top" x="355"/>
+          </g>
+          <g transform="translate(0, 220)">
+            <use href="#pani-win" x="65"/><use href="#pani-win" x="160"/>
+            <use href="#pani-win" x="260"/><use href="#pani-win" x="355"/>
+          </g>
+          <g transform="translate(0, 350)">
+            <use href="#pani-win" x="65"/><use href="#pani-win" x="160"/>
+            <use href="#pani-win" x="260"/><use href="#pani-win" x="355"/>
+          </g>
+          <g transform="translate(0, 500)">
+            <use href="#shop-win" x="65"/><use href="#shop-win" x="135"/>
+            <g transform="translate(210, 0)">
+              <path d="M -36 50 L -36 -30 A 36 36 0 0 1 36 -30 L 36 50 Z" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
+              <rect x="-28" y="-10" width="28" height="60" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+              <rect x="0" y="-10" width="28" height="60" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+              <circle cx="-6" cy="20" r="1.5" fill="var(--brass)"/>
+              <circle cx="6" cy="20" r="1.5" fill="var(--brass)"/>
+              
+              <path d="M -36 -14 A 36 36 0 0 1 36 -14" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+              <line x1="-14" y1="-14" x2="-14" y2="-28" stroke="var(--ink)" stroke-width="0.75"/>
+              <line x1="0" y1="-14" x2="0" y2="-36" stroke="var(--ink)" stroke-width="0.75"/>
+              <line x1="14" y1="-14" x2="14" y2="-28" stroke="var(--ink)" stroke-width="0.75"/>
+            </g>
+            <use href="#shop-win" x="285"/><use href="#shop-win" x="355"/>
+          </g>
+          
+          <rect x="-30" y="560" width="480" height="1" fill="var(--ink)" opacity="0.3"/>
+        </g>
+        <g font-family="var(--mono)" font-size="9" fill="rgba(26,26,26,0.4)" letter-spacing="1.5">
+          <line x1="110" y1="610" x2="530" y2="610" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
+          <text x="110" y="604">⎯ 24,60 m ⎯</text>
+          <text x="470" y="604" text-anchor="end">BERLIN ALTBAU</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#leistungen">
+    <span class="dot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 5 V19 M6 13 L12 19 L18 13"/></svg>
+    </span>
+    <span>Scroll</span>
+  </a>
+</section>
+
+<!-- ══ S2: LEISTUNGEN ══ -->
+<section class="section section-leistungen" id="leistungen">
+  <span class="section-num">II / V · Leistungen</span>
+  <div class="section-inner">
+    
+    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="var(--ink)" stroke-width="0.5" opacity="0.1" fill="none">
+          <rect x="40" y="40" width="420" height="420"/>
+          <line x1="40" y1="120" x2="460" y2="120"/>
+          <line x1="40" y1="280" x2="460" y2="280"/>
+          <line x1="180" y1="40" x2="180" y2="460"/>
+          <line x1="320" y1="120" x2="320" y2="460"/>
+          <circle cx="180" cy="280" r="40"/>
+          <path d="M 320 280 A 60 60 0 0 1 380 220 L 320 220 Z"/>
+        </g>
+
+        <g transform="translate(150, 160) rotate(15)">
+          <path d="M 0 0 L 160 0" stroke="var(--ink)" stroke-width="6" fill="none"/>
+          <path d="M 160 0 L 160 20 L 145 20 L 145 5 L 130 5 L 130 25 L 115 25 L 115 0" fill="var(--brass)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="-25" cy="0" r="25" fill="var(--paper)" stroke="var(--ink)" stroke-width="4"/>
+          <circle cx="-25" cy="0" r="10" fill="none" stroke="var(--ink)" stroke-width="2"/>
+          <path d="M -50 0 A 25 25 0 0 1 0 0 A 25 25 0 0 1 -50 0" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+        </g>
+
+        <g transform="translate(220, 240) rotate(-5)">
+          <rect x="0" y="0" width="140" height="180" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
+          <line x1="20" y1="20" x2="80" y2="20" stroke="var(--ink)" stroke-width="1.5"/>
+          <line x1="20" y1="36" x2="100" y2="36" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="20" y1="46" x2="120" y2="46" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="20" y1="56" x2="110" y2="56" stroke="var(--ink)" stroke-width="0.5"/>
+          <circle cx="110" cy="150" r="12" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+          <path d="M 104 150 L 108 155 L 116 145" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+        </g>
+        <g transform="translate(240, 260) rotate(8)">
+          <rect x="0" y="0" width="140" height="180" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+          <rect x="10" y="10" width="120" height="160" fill="none" stroke="var(--ink)" stroke-width="0.5" stroke-dasharray="2 2"/>
+        </g>
+      </svg>
+      <div class="illus-caption">Organisation & Eigentum</div>
+    </div>
+
+    <div class="section-text reveal d2">
+      <span class="kicker">Leistungen</span>
+      <h2>Hausverwaltung,<br/>im Detail.</h2>
+      <p>
+        Wir sind Experten in den Bereichen WEG-Verwaltung, Miethausverwaltung und Sondereigentumsverwaltung. Von der korrekten Buchhaltung bis zur baulichen Restaurierung.
+      </p>
+
+      <div class="svc-chips">
+        <div class="svc-chip">
+          <span class="no">01</span>
+          <div>
+            <div class="t">WEG-Verwaltung</div>
+            <div class="d">Strukturierte Eigentümerversammlungen, Beschlussfassung, Instandhaltung.</div>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        </div>
+        <div class="svc-chip">
+          <span class="no">02</span>
+          <div>
+            <div class="t">Miethausverwaltung</div>
+            <div class="d">Vollbetreuung, rechtssichere Verträge, Abrechnung, Technik.</div>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        </div>
+        <div class="svc-chip">
+          <span class="no">03</span>
+          <div>
+            <div class="t">Sondereigentum</div>
+            <div class="d">Einzelne Wohnungen für Kapitalanleger und auswärtige Eigentümer.</div>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        </div>
+      </div>
+
+      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
+        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        <span>Angebot anfordern</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S3: WERTSTEIGERUNG ══ -->
+<section class="section section-wert" id="werterhalt">
+  <span class="section-num">III / V · Philosophie</span>
+  <div class="section-inner">
+    <div class="section-text reveal">
+      <span class="kicker">Philosophie</span>
+      <h2>Wertsteigerung<br/>statt Werterhalt.</h2>
+      <p>
+        Eine Immobilie ist mehr als Stein. Mit unserem Ansatz verfolgen wir das Ziel, Ihr Objekt nicht nur instand zu halten, sondern seinen Wert strukturell und wirtschaftlich zu optimieren.
+      </p>
+      <p>
+        Hinterlassen Sie Ihre Kontaktdaten, damit wir Sie zu einer unverbindlichen Ersteinschätzung anrufen können.
+      </p>
+      <div class="cta-group">
+        <a href="tel:+4930000000" class="cta-link">
+          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+          <span>Telefon · (030) 00 00 00 00</span>
+        </a>
+        <a href="#kontakt" class="cta-link">
+          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+          <span>Unterlagen anfordern</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="illus-wrap reveal d2" aria-hidden="true">
+      <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(250, 240)">
+          <g stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none">
+            <path d="M 0 60 L 120 0 L 0 -60 L -120 0 Z"/>
+            <path d="M 0 90 L 150 15 L 0 -60 L -150 15 Z"/>
+            <path d="M 0 120 L 180 30 L 0 -60 L -180 30 Z"/>
+          </g>
+          
+          <g stroke="rgba(255,255,255,0.6)" stroke-width="1" stroke-linejoin="round">
+            <path d="M -60 30 L 0 60 L 0 -60 L -60 -90 Z" fill="rgba(255,255,255,0.02)"/>
+            <path d="M 0 60 L 60 30 L 60 -90 L 0 -60 Z" fill="rgba(255,255,255,0.06)"/>
+            <path d="M 0 -60 L 60 -90 L 0 -120 L -60 -90 Z" fill="rgba(255,255,255,0.1)"/>
+            
+            <path d="M -60 0 L 0 30 L 60 0" fill="none" stroke="rgba(255,255,255,0.3)" stroke-dasharray="2 4"/>
+            <path d="M -60 -30 L 0 0 L 60 -30" fill="none" stroke="rgba(255,255,255,0.3)" stroke-dasharray="2 4"/>
+            <path d="M -60 -60 L 0 -30 L 60 -60" fill="none" stroke="rgba(255,255,255,0.3)" stroke-dasharray="2 4"/>
+          </g>
+
+          <g transform="translate(0, -60)">
+            <polyline points="-120,40 -60,60 0,0 60,-30 120,-110" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+            <circle cx="-120" cy="40" r="3" fill="var(--accent)"/>
+            <circle cx="-60" cy="60" r="3" fill="var(--accent)"/>
+            <circle cx="0" cy="0" r="3" fill="var(--accent)"/>
+            <circle cx="60" cy="-30" r="3" fill="var(--accent)"/>
+            <circle cx="120" cy="-110" r="4" fill="var(--accent)"/>
+            <path d="M 110 -110 L 120 -110 L 120 -100" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+          </g>
+        </g>
+      </svg>
+      <div class="illus-caption">Strukturelle Wertsteigerung</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S4: WISSENSCHAFT ══ -->
+<section class="section section-wissenschaft">
+  <span class="section-num">IV / V · Methode</span>
+  <div class="section-inner reverse">
+    <div class="section-text reveal">
+      <span class="kicker">Methode</span>
+      <h2>Wissenschaft<br/>als Fundament.</h2>
+      <p>
+        Jede Immobilie hat ihre individuellen Anforderungen. Diese analysieren wir mit Hilfe präziser Methoden, architektonischem Fachwissen und solider Datenbasis.
+      </p>
+      <p>
+        Daraus entsteht ein belastbarer Plan, um Ihre Immobilie baulich wie wirtschaftlich für die Zukunft aufzustellen.
+      </p>
+
+      <div class="method-list">
+        <div class="method-item">
+          <div class="m-no">— 01</div>
+          <div class="m-t">Analyse</div>
+          <div class="m-d">Kaufmännische Bestandsaufnahme und Prüfung der Bausubstanz.</div>
+        </div>
+        <div class="method-item">
+          <div class="m-no">— 02</div>
+          <div class="m-t">Hypothese</div>
+          <div class="m-d">Identifikation der Hebel, die den Wert der Immobilie nachhaltig sichern.</div>
+        </div>
+        <div class="method-item">
+          <div class="m-no">— 03</div>
+          <div class="m-t">Planung</div>
+          <div class="m-d">Renditeerwartung, Investitionssummen und klare Zeitachsen.</div>
+        </div>
+        <div class="method-item">
+          <div class="m-no">— 04</div>
+          <div class="m-t">Umsetzung</div>
+          <div class="m-d">Professionelle Steuerung der Maßnahmen mit laufendem Controlling.</div>
+        </div>
+      </div>
+
+      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
+        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        <span>Informationen anfordern</span>
+      </a>
+    </div>
+
+    <div class="illus-wrap reveal d2" aria-hidden="true">
+      <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="420" height="360" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5"/>
+        <g stroke="var(--ink)" stroke-width="0.5" opacity="0.15">
+          <line x1="60" y1="40" x2="60" y2="400"/>
+          <line x1="40" y1="60" x2="460" y2="60"/>
+          <line x1="80" y1="100" x2="380" y2="100"/>
+          <line x1="80" y1="180" x2="200" y2="180"/>
+          <line x1="200" y1="100" x2="200" y2="300"/>
+          <line x1="380" y1="100" x2="380" y2="300"/>
+          <line x1="80" y1="300" x2="380" y2="300"/>
+          <path d="M 200 180 A 60 60 0 0 0 260 240"/>
+        </g>
+        
+        <g transform="translate(280, 180) rotate(-25)">
+          <line x1="0" y1="0" x2="-40" y2="120" stroke="var(--brass)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="40" y2="120" stroke="var(--brass)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="0" cy="0" r="6" fill="var(--paper-w)" stroke="var(--brass)" stroke-width="1.5"/>
+          <circle cx="0" cy="-12" r="4" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+          <line x1="-20" y1="60" x2="20" y2="60" stroke="var(--brass)" stroke-width="1"/>
+          <line x1="-40" y1="120" x2="-42" y2="135" stroke="var(--ink)" stroke-width="1"/>
+          <line x1="40" y1="120" x2="42" y2="135" stroke="var(--accent)" stroke-width="1.5"/>
+          <path d="M -80 135 A 120 120 0 0 0 42 135" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 4"/>
+        </g>
+        
+        <g transform="translate(100, 320) rotate(10)">
+          <rect x="0" y="0" width="200" height="24" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+          <line x1="10" y1="0" x2="10" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="30" y1="0" x2="30" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="50" y1="0" x2="50" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="70" y1="0" x2="70" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="90" y1="0" x2="90" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="110" y1="0" x2="110" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="130" y1="0" x2="130" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="150" y1="0" x2="150" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
+          <line x1="170" y1="0" x2="170" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
+        </g>
+      </svg>
+      <div class="illus-caption">Präzision & Planung</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S5: ÜBERBLICK ══ -->
+<section class="section section-ueberblick">
+  <span class="section-num">V / V · Software</span>
+  <div class="section-inner">
+    
+    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
+      <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="380" height="300" fill="var(--paper)" stroke="var(--line)" stroke-width="1" rx="4"/>
+        
+        <rect x="40" y="40" width="100" height="300" fill="rgba(26,26,26,0.02)" stroke-right="var(--line)" rx="4"/>
+        <line x1="140" y1="40" x2="140" y2="340" stroke="var(--line)" stroke-width="1"/>
+        <g fill="var(--ink)" opacity="0.3">
+          <rect x="56" y="60" width="68" height="6" rx="2"/>
+          <rect x="56" y="80" width="48" height="4" rx="2"/>
+          <rect x="56" y="96" width="58" height="4" rx="2"/>
+          <rect x="56" y="112" width="40" height="4" rx="2"/>
+        </g>
+
+        <g transform="translate(160, 60)">
+          <rect x="0" y="0" width="240" height="140" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
+          <text x="16" y="24" font-family="var(--mono)" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">PORTFOLIO RENDITE</text>
+          <text x="16" y="44" font-family="var(--serif)" font-size="16" fill="var(--ink)">€ 124.500</text>
+          
+          <line x1="16" y1="70" x2="224" y2="70" stroke="var(--line)" stroke-width="0.5"/>
+          <line x1="16" y1="95" x2="224" y2="95" stroke="var(--line)" stroke-width="0.5"/>
+          <line x1="16" y1="120" x2="224" y2="120" stroke="var(--line)" stroke-width="0.5"/>
+          
+          <polyline points="16,110 46,90 76,100 106,70 136,80 166,50 196,60 224,30" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="224" cy="30" r="3" fill="var(--accent)"/>
+        </g>
+
+        <g transform="translate(160, 220)">
+          <rect x="0" y="0" width="112" height="100" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
+          <text x="16" y="24" font-family="var(--mono)" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">LEERSTAND</text>
+          <text x="16" y="48" font-family="var(--serif)" font-size="20" fill="var(--ink)">1,2 %</text>
+          <line x1="16" y1="70" x2="96" y2="70" stroke="var(--line)" stroke-width="2"/>
+          <line x1="16" y1="70" x2="36" y2="70" stroke="var(--accent)" stroke-width="2"/>
+        </g>
+
+        <g transform="translate(288, 220)">
+          <rect x="0" y="0" width="112" height="100" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
+          <text x="16" y="24" font-family="var(--mono)" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">RÜCKLAGEN</text>
+          <text x="16" y="48" font-family="var(--serif)" font-size="20" fill="var(--ink)">€ 82k</text>
+          <g transform="translate(80, 70)">
+            <circle cx="0" cy="0" r="14" fill="none" stroke="var(--line)" stroke-width="3"/>
+            <circle cx="0" cy="0" r="14" fill="none" stroke="var(--ink)" stroke-width="3" stroke-dasharray="60 100" transform="rotate(-90)"/>
+          </g>
+        </g>
+      </svg>
+      <div class="illus-caption">Digitale Transparenz</div>
+    </div>
+
+    <div class="section-text reveal d2">
+      <span class="kicker">Transparenz</span>
+      <h2>Alles im<br/>Überblick.</h2>
+      <p>
+        Durch unser cloudbasiertes Mandanten-Dashboard haben Sie jederzeit und in Echtzeit Ihr Portfolio unter Kontrolle. Rendite, Rücklagen, Verträge und offene Posten übersichtlich aufbereitet.
+      </p>
+      <p>
+        Alle relevanten Dokumente liegen revisionssicher im digitalen Archiv bereit – für Sie und Ihren Steuerberater.
+      </p>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="s-n">24/7</div>
+          <div class="s-l">Dokumentenzugriff</div>
+        </div>
+        <div class="stat">
+          <div class="s-n">100%</div>
+          <div class="s-l">Digitalisierte Prozesse</div>
+        </div>
+        <div class="stat">
+          <div class="s-n">&lt; 24h</div>
+          <div class="s-l">Reaktionszeit</div>
+        </div>
+      </div>
+
+      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
+        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        <span>Software ansehen</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer id="kontakt">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <svg viewBox="0 0 60 60" fill="none">
+            <g stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+              <rect x="14" y="14" width="8" height="32" />
+              <rect x="26" y="14" width="8" height="32" />
+              <rect x="38" y="14" width="8" height="32" />
+              <line x1="10" y1="10" x2="50" y2="10" />
+              <line x1="10" y1="50" x2="50" y2="50" />
+            </g>
+          </svg>
+          <span class="logo-text">PANI</span>
+        </div>
+        <p class="footer-cta">Wir kümmern uns um Ihr Eigentum.</p>
+        <a href="mailto:info@pani-pm.de" class="cta-link" style="color:#fff; margin-top:0;">
+          <span class="arrow-circle" style="border-color: rgba(255,255,255,0.2);"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.2"><path d="M8 4 L16 12 L8 20"/></svg></span>
+          <span>E-Mail senden</span>
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <p>Telefon: <a href="tel:+4930000000">(030) 00 00 00 00</a></p>
+        <p>Telefax: (030) 00 00 00 01</p>
+        <p>E-Mail: <a href="mailto:info@pani-pm.de">info@pani-pm.de</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Adresse</h4>
+        <p>PANI Hausverwaltung</p>
+        <p>Musterstraße 18</p>
+        <p>10115 Berlin</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <p><a href="#werterhalt">Philosophie</a></p>
+        <p><a href="#leistungen">Leistungen</a></p>
+        <p><a href="#kontakt">Kontakt</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <span class="copy">© PANI Hausverwaltung · Berlin</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Headline rotator */
+  const ROTATOR_WORDS = [
+    { mit: false, word: 'in Berlin' },
+    { mit: true,  word: 'Expertise' },
+    { mit: true,  word: 'Präzision' },
+    { mit: true,  word: 'Weitsicht' },
+    { mit: true,  word: 'Substanz' },
+    { mit: true,  word: 'Sorgfalt' },
+  ];
+  const ROTATE_MS = 3200;
+  const track = document.getElementById('rotator-track');
+  const ticksEl = document.getElementById('rotator-ticks');
+
+  if (track && ticksEl) {
+    ROTATOR_WORDS.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.className = 'rotator-tick';
+      b.setAttribute('aria-label', 'Wort ' + (i+1));
+      b.addEventListener('click', () => goTo(i, true));
+      ticksEl.appendChild(b);
+    });
+    const ticks = [...ticksEl.children];
+
+    const words = ROTATOR_WORDS.map(({ mit, word }) => {
+      const el = document.createElement('span');
+      el.className = 'rotator-word';
+      el.innerHTML = (mit ? '<span class="mit">mit</span>' : '') + word;
+      track.appendChild(el);
+      return el;
+    });
+
+    let idx = 0, timer = null;
+    const setActive = (i) => {
+      words.forEach((w, k) => {
+        w.classList.remove('is-in', 'is-out');
+        if (k === i) w.classList.add('is-in');
+        else if (k === (i - 1 + words.length) % words.length) w.classList.add('is-out');
+      });
+      ticks.forEach((t, k) => t.classList.toggle('active', k === i));
+    };
+    const goTo = (i, restart) => {
+      idx = (i + words.length) % words.length;
+      setActive(idx);
+      if (restart) { clearInterval(timer); start(); }
+    };
+    const start = () => {
+      timer = setInterval(() => { idx = (idx + 1) % words.length; setActive(idx); }, ROTATE_MS);
+    };
+    setActive(0);
+    start();
+  }
+</script>
+
+</body>
+</html>
