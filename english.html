@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PANI Property Management — Berlin</title>
+<meta name="description" content="PANI Property Management Berlin — condominium, rental, and sole-ownership management. Growing value, not just preserving it."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,0..100&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<template id="__bundler_thumbnail" data-bg-color="#E8EEF0">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#E8EEF0"/>
+    <g stroke="#141414" stroke-width="6" stroke-linecap="round" fill="none">
+      <!-- Building silhouette -->
+      <path d="M 420 540 L 420 320 L 600 220 L 780 320 L 780 540 Z"/>
+      <path d="M 420 540 L 780 540"/>
+      <!-- Windows -->
+      <rect x="470" y="370" width="40" height="60"/>
+      <rect x="580" y="340" width="40" height="60"/>
+      <rect x="690" y="370" width="40" height="60"/>
+      <!-- Trendline going up -->
+      <path d="M 380 620 L 500 580 L 620 540 L 740 470 L 860 400" stroke-width="5"/>
+      <circle cx="860" cy="400" r="10" fill="#C76A4A" stroke="none"/>
+    </g>
+    <text x="600" y="710" font-family="Georgia, serif" font-size="64" font-style="italic" fill="#141414" text-anchor="middle" font-weight="300">pani</text>
+  </svg>
+</template>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:      #141414;
+  --ink-soft: #2B2B2B;
+  --paper:    #EEE8DC;
+  --paper-w:  #E6DCC6;
+  --paper-d:  #DED2B9;
+  --stone:    #1A1A1A;
+  --steel:    #2B2B2B;
+  --sage:     #3A3A3A;
+  --butter:   #E6DCC6;
+  --cream:    #EEE8DC;
+  --sky:      #EEE8DC;
+  --sky-deep: #E6DCC6;
+  --coal:     #141414;
+  --accent:   #7A1E1E;
+  --sand:     #B8944A;
+  --clay:     #7A1E1E;
+  --line:     rgba(20, 20, 20, 0.14);
+  --serif:    'Fraunces', Georgia, serif;
+  --sans:     'IBM Plex Sans', Helvetica, Arial, sans-serif;
+  --mono:     'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --max:      1240px;
+  --pad:      clamp(28px, 5vw, 72px);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+}
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  letter-spacing: -0.022em;
+  line-height: 1.02;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  margin: 0;
+}
+h3 { font-size: 22px; letter-spacing: -0.01em; line-height: 1.25; font-weight: 400; }
+
+p { margin: 0 0 1em 0; }
+
+/* ═════════ NAVBAR ═════════ */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px var(--pad);
+  border-bottom: 1px solid var(--line);
+}
+.logo { display: flex; align-items: center; gap: 14px; color: var(--ink); }
+.logo svg { width: 40px; height: 40px; }
+.logo-text {
+  font-family: var(--serif);
+  font-size: 24px;
+  letter-spacing: 0.24em;
+  font-weight: 400;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 4px 6px;
+  transition: color .2s;
+}
+.nav-links a.active,
+.nav-links a:hover { color: var(--accent); }
+.nav-links a svg {
+  width: 22px; height: 22px;
+  stroke: currentColor; fill: none; stroke-width: 1.25;
+}
+
+/* ═════════ SECTIONS ═════════ */
+.section {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: clamp(80px, 10vh, 140px) var(--pad);
+  position: relative;
+  overflow: hidden;
+}
+.section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  gap: clamp(48px, 8vw, 120px);
+}
+.section-inner.reverse .section-text { order: 2; }
+.section-text { max-width: 520px; justify-self: start; }
+
+h1 { font-size: clamp(52px, 7vw, 92px); line-height: 1; }
+h2 { font-size: clamp(40px, 5.2vw, 62px); line-height: 1.04; margin-bottom: 28px; }
+
+.section p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 44ch;
+  color: rgba(20, 20, 20, 0.78);
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+}
+.kicker::before {
+  content: "";
+  width: 24px; height: 1px;
+  background: currentColor;
+  display: inline-block;
+}
+
+/* CTA */
+.cta-link {
+  display: inline-flex; align-items: center; gap: 16px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  transition: gap .3s ease;
+}
+.cta-link:hover { gap: 22px; }
+.cta-link .arrow-circle {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid currentColor;
+  display: grid; place-items: center;
+  transition: background .2s, color .2s;
+}
+.cta-link:hover .arrow-circle { background: currentColor; }
+.cta-link:hover .arrow-circle svg { stroke: #fff; }
+.cta-link .arrow-circle svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 1.4; transition: stroke .2s; }
+.section-wert .cta-link:hover .arrow-circle svg,
+.section-wissenschaft .cta-link:hover .arrow-circle svg { stroke: var(--ink); }
+
+.cta-group { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+
+/* section numeric tag at top edge */
+.section-num {
+  position: absolute;
+  top: clamp(36px, 5vh, 56px);
+  right: var(--pad);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  opacity: 0.55;
+}
+
+/* ═════════ S1: HERO ═════════ */
+.section-hero {
+  background: linear-gradient(180deg, #D4E5E7 0%, var(--sky) 70%, var(--sky-deep) 100%);
+  min-height: calc(100vh - 81px);
+  padding-bottom: 0;
+  align-items: end;
+}
+.section-hero .section-inner {
+  grid-template-columns: 1.1fr 1fr;
+  align-items: end;
+  gap: 40px;
+  padding-bottom: clamp(40px, 8vh, 100px);
+}
+.section-hero h1 {
+  color: #fff;
+  font-weight: 300;
+  font-size: clamp(58px, 8vw, 104px);
+  line-height: 1;
+}
+.section-hero h1 .fixed {
+  display: block;
+  color: #fff;
+  font-weight: 300;
+}
+.section-hero h1 .rotator {
+  display: block;
+  position: relative;
+  color: rgba(255,255,255,0.92);
+  font-weight: 300;
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  height: 1.05em;
+  overflow: hidden;
+}
+.rotator-track {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.rotator-word {
+  position: absolute;
+  left: 0; top: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform .9s cubic-bezier(.7,.05,.2,.95), opacity .45s ease;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+}
+.rotator-word.is-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .45s ease .1s;
+}
+.rotator-word.is-out {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform .9s cubic-bezier(.7,.05,.2,.95), opacity .35s ease;
+}
+.rotator-word .mit {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.55em;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.7);
+  align-self: center;
+  position: relative;
+  top: -0.05em;
+}
+/* progress ticks */
+.rotator-ticks {
+  margin-top: 22px;
+  display: flex;
+  gap: 6px;
+}
+.rotator-tick {
+  width: 34px; height: 2px;
+  background: rgba(255,255,255,0.28);
+  position: relative;
+  overflow: hidden;
+  border: 0; padding: 0; cursor: pointer;
+}
+.rotator-tick::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: #fff;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.rotator-tick.active::after {
+  transform: scaleX(1);
+  transition: transform 3.2s linear;
+}
+.hero-meta {
+  margin-top: 40px;
+  display: flex;
+  gap: 48px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20,20,20,0.7);
+}
+.hero-meta .m-label { display: block; opacity: 0.6; margin-bottom: 4px; font-size: 9.5px; }
+.hero-meta .m-val { color: var(--ink); font-weight: 500; letter-spacing: 0.14em; font-size: 11px; }
+
+.hero-illus { position: relative; width: 100%; max-width: 520px; margin-left: auto; }
+.hero-illus svg { width: 100%; height: auto; }
+
+/* scroll cue */
+.scroll-cue {
+  position: absolute;
+  left: 50%; bottom: 24px; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ink-soft); opacity: 0.75;
+}
+.scroll-cue .dot {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #fff;
+  display: grid; place-items: center;
+  box-shadow: 0 14px 30px -12px rgba(20,20,20,0.35);
+}
+.scroll-cue .dot svg { width: 14px; height: 14px; }
+
+/* ═════════ S2: WERTSTEIGERUNG ═════════ */
+.section-wert { background: var(--steel); color: #fff; }
+.section-wert h2, .section-wert h1 { color: #fff; }
+.section-wert p { color: rgba(255,255,255,0.78); }
+.section-wert .kicker { color: rgba(255,255,255,0.72); }
+.section-wert .cta-link { color: #fff; }
+.section-wert .section-num { color: rgba(255,255,255,0.55); }
+
+/* ═════════ S3: LEISTUNGEN ═════════ */
+.section-leistungen { background: var(--cream); }
+.section-leistungen h2 { color: var(--ink); }
+
+/* service chips */
+.svc-chips {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.svc-chip {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  cursor: default;
+}
+.svc-chip .no {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  color: var(--accent);
+}
+.svc-chip .t { font-family: var(--serif); font-weight: 400; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
+.svc-chip .d { font-size: 13px; color: rgba(20,20,20,0.68); line-height: 1.5; max-width: 32ch; margin-top: 2px; }
+.svc-chip .arrow {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid var(--line);
+  display: grid; place-items: center;
+  transition: border-color .2s, background .2s;
+}
+.svc-chip:hover .arrow { background: var(--ink); border-color: var(--ink); }
+.svc-chip:hover .arrow svg { stroke: #fff; }
+.svc-chip .arrow svg { width: 10px; height: 10px; stroke: var(--ink); fill: none; stroke-width: 1.5; transition: stroke .2s; }
+
+/* ═════════ S4: WISSENSCHAFT ═════════ */
+.section-wissenschaft { background: var(--sage); color: #fff; }
+.section-wissenschaft h2 { color: #fff; }
+.section-wissenschaft p { color: rgba(255,255,255,0.82); }
+.section-wissenschaft .kicker { color: rgba(255,255,255,0.78); }
+.section-wissenschaft .cta-link { color: #fff; }
+.section-wissenschaft .section-num { color: rgba(255,255,255,0.55); }
+
+.method-list {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 32px;
+}
+.method-item .m-no {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.7); margin-bottom: 6px;
+}
+.method-item .m-t { font-family: var(--serif); font-size: 17px; font-weight: 400; color: #fff; margin-bottom: 4px; }
+.method-item .m-d { font-size: 13px; color: rgba(255,255,255,0.74); line-height: 1.55; margin: 0; max-width: 26ch; }
+
+/* ═════════ S5: ÜBERBLICK ═════════ */
+.section-ueberblick { background: var(--butter); }
+.section-ueberblick h2 { color: var(--ink); }
+
+.stat-row {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stat {
+  padding: 20px 18px 20px 0;
+  border-right: 1px solid var(--line);
+}
+.stat:last-child { border-right: 0; padding-right: 0; }
+.stat .s-n { font-family: var(--serif); font-size: 34px; font-weight: 300; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+.stat .s-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(20,20,20,0.64); margin-top: 8px; }
+
+/* illustration frame */
+.illus-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  justify-self: end;
+}
+.illus-wrap svg { width: 100%; height: auto; }
+.illus-caption {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  margin-top: 18px;
+  opacity: 0.55;
+  display: flex; gap: 12px; align-items: center;
+}
+.illus-caption::before {
+  content: ""; width: 20px; height: 1px; background: currentColor;
+}
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.d2 { transition-delay: .12s; }
+.reveal.d3 { transition-delay: .22s; }
+
+/* ═════════ FOOTER ═════════ */
+footer {
+  background: var(--coal);
+  color: #bfbfbf;
+  padding: 80px var(--pad) 28px;
+}
+.footer-inner { max-width: var(--max); margin: 0 auto; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.footer-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+.footer-logo .logo-text { color: #fff; font-size: 22px; letter-spacing: 0.24em; }
+.footer-cta {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: -0.01em;
+  max-width: 12ch;
+  margin-bottom: 24px;
+}
+footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 18px; }
+.footer-col p { line-height: 1.9; font-size: 14px; margin: 0; color: #bfbfbf; }
+.footer-col a { color: #bfbfbf; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+.footer-col a:hover { color: #fff; border-bottom-color: var(--sand); }
+.footer-bottom {
+  padding-top: 24px;
+  display: flex; gap: 28px; align-items: center;
+  font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-family: var(--mono);
+}
+.footer-bottom a { color: #bfbfbf; font-weight: 500; }
+.footer-bottom a:hover { color: #fff; }
+.footer-bottom .copy { margin-left: auto; opacity: 0.5; letter-spacing: 0.08em; text-transform: none; font-family: var(--sans); }
+
+/* Tweaks */
+#tw-toggle {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--ink); color: #fff; border: 0;
+  z-index: 200; cursor: pointer;
+  box-shadow: 0 14px 32px -10px rgba(0,0,0,.45);
+  display: none;
+}
+#tw-toggle.on { display: grid; place-items: center; }
+#tw-toggle svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.4; }
+#tw-panel {
+  position: fixed; bottom: 84px; right: 24px; width: 280px;
+  background: #fff; border: 1px solid rgba(20,20,20,0.18);
+  padding: 22px 24px; z-index: 200;
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,.3);
+  display: none;
+}
+#tw-panel.open { display: block; }
+#tw-panel h6 { font-family: var(--serif); font-weight: 400; font-size: 17px; color: var(--ink); display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+#tw-panel h6 button { background: none; border: 0; color: #999; font-size: 20px; cursor: pointer; line-height: 1; }
+#tw-panel label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; display: block; margin: 18px 0 10px; }
+#tw-panel .swatches { display: flex; gap: 10px; }
+#tw-panel .sw { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0; }
+#tw-panel .sw.active { border-color: var(--ink); }
+
+/* ───── responsive ───── */
+@media (max-width: 960px) {
+  .section { padding: 80px var(--pad); min-height: auto; }
+  .section-inner { grid-template-columns: 1fr; gap: 56px; }
+  .section-inner.reverse .section-text { order: 0; }
+  h1 { font-size: 56px; }
+  h2 { font-size: 40px; }
+  .illus-wrap { max-width: 320px; margin: 0 auto; justify-self: center; }
+  .hero-illus { max-width: 340px; }
+  .nav-links { gap: 10px; }
+  .nav-links a { padding: 4px; }
+  .nav-links a .lbl { display: none; }
+  .section-hero { align-items: center; }
+  .section-hero .section-inner { grid-template-columns: 1fr; padding-bottom: 80px; }
+  .hero-meta { flex-wrap: wrap; gap: 24px 40px; }
+  .method-list { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: 1fr; }
+  .stat { border-right: 0; border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .stat:last-child { border-bottom: 0; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-bottom { flex-wrap: wrap; }
+  .footer-bottom .copy { flex: 1 0 100%; margin-left: 0; }
+  .section-num { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" aria-label="Main navigation">
+  <a href="#top" class="logo" aria-label="PANI Property Management">
+    <svg viewBox="0 0 60 60" fill="none" aria-hidden="true">
+      <g stroke="#141414" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="30" cy="30" r="6.5"/>
+        <line x1="30" y1="6"  x2="30" y2="14"/>
+        <line x1="30" y1="46" x2="30" y2="54"/>
+        <line x1="6"  y1="30" x2="14" y2="30"/>
+        <line x1="46" y1="30" x2="54" y2="30"/>
+        <line x1="12" y1="12" x2="18" y2="18"/>
+        <line x1="42" y1="42" x2="48" y2="48"/>
+        <line x1="48" y1="12" x2="42" y2="18"/>
+        <line x1="18" y1="42" x2="12" y2="48"/>
+        <line x1="20" y1="8"  x2="23" y2="16"/>
+        <line x1="37" y1="44" x2="40" y2="52"/>
+        <line x1="8"  y1="20" x2="16" y2="23"/>
+        <line x1="44" y1="37" x2="52" y2="40"/>
+        <line x1="8"  y1="40" x2="16" y2="37"/>
+        <line x1="44" y1="23" x2="52" y2="20"/>
+        <line x1="20" y1="52" x2="23" y2="44"/>
+        <line x1="37" y1="16" x2="40" y2="8"/>
+      </g>
+    </svg>
+    <span class="logo-text">PANI</span>
+  </a>
+
+  <ul class="nav-links">
+    <li>
+      <a href="#werterhalt" class="active">
+        <svg viewBox="0 0 24 24"><path d="M3 10 L12 3 L21 10 V20 H3 Z"/><path d="M9 20 V13 H15 V20"/></svg>
+        <span class="lbl">Owners</span>
+      </a>
+    </li>
+    <li>
+      <a href="#leistungen">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20 C4 16 8 13 12 13 C16 13 20 16 20 20"/></svg>
+        <span class="lbl">Tenants</span>
+      </a>
+    </li>
+    <li>
+      <a href="#kontakt">
+        <svg viewBox="0 0 24 24"><path d="M5 4 H9 L11 9 L9 11 C10 14 11 15 13 16 L15 14 L20 16 V20 C14 21 4 13 5 4 Z"/></svg>
+        <span class="lbl">Contact</span>
+      </a>
+    </li>
+    <li>
+      <a href="PANI Hausverwaltung.html" class="active">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><line x1="4" y1="12" x2="20" y2="12"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4 Z"/></svg>
+        <span class="lbl">DE</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ══ S1: HERO ══ -->
+<section class="section section-hero" id="top">
+  <span class="section-num">I / V · Berlin</span>
+  <div class="section-inner">
+    <div class="reveal">
+      <h1>
+        <span class="fixed">Property&nbsp;Management</span>
+        <span class="rotator" aria-live="polite">
+          <span class="rotator-track" id="rotator-track"></span>
+        </span>
+      </h1>
+      <div class="rotator-ticks" id="rotator-ticks"></div>
+      <div class="hero-meta">
+        <div>
+          <span class="m-label">Based in</span>
+          <span class="m-val">Berlin</span>
+        </div>
+        <div>
+          <span class="m-label">Practice</span>
+          <span class="m-val">Condo · Rental · Sole</span>
+        </div>
+        <div>
+          <span class="m-label">Language</span>
+          <span class="m-val">EN · DE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-illus reveal d2" aria-hidden="true">
+      <svg viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- background skyline -->
+        <g fill="#D4C6AA" opacity="0.85">
+          <rect x="0"   y="180" width="60"  height="160"/>
+          <rect x="60"  y="150" width="80"  height="190"/>
+          <rect x="140" y="190" width="50"  height="150"/>
+          <polygon points="190,200 212,170 234,200 234,340 190,340"/>
+          <rect x="234" y="160" width="76"  height="180"/>
+          <rect x="310" y="200" width="56"  height="140"/>
+          <rect x="366" y="170" width="64"  height="170"/>
+          <rect x="430" y="190" width="90"  height="150"/>
+        </g>
+        <g fill="#C6B593" opacity="0.9">
+          <rect x="0"   y="260" width="100" height="80"/>
+          <rect x="100" y="240" width="90"  height="100"/>
+          <rect x="190" y="268" width="110" height="72"/>
+          <rect x="300" y="244" width="120" height="96"/>
+          <rect x="420" y="260" width="100" height="80"/>
+        </g>
+        <!-- building detail windows -->
+        <g fill="#6B8C91" opacity="0.5">
+          <rect x="72" y="262" width="6" height="12"/>
+          <rect x="86" y="262" width="6" height="12"/>
+          <rect x="100" y="262" width="6" height="12"/>
+          <rect x="72" y="284" width="6" height="12"/>
+          <rect x="86" y="284" width="6" height="12"/>
+          <rect x="100" y="284" width="6" height="12"/>
+          <rect x="252" y="186" width="6" height="10"/>
+          <rect x="266" y="186" width="6" height="10"/>
+          <rect x="280" y="186" width="6" height="10"/>
+          <rect x="252" y="206" width="6" height="10"/>
+          <rect x="266" y="206" width="6" height="10"/>
+          <rect x="280" y="206" width="6" height="10"/>
+        </g>
+
+        <!-- balustrade -->
+        <rect x="0" y="340" width="520" height="5" fill="#333333"/>
+        <rect x="0" y="345" width="520" height="110" fill="#4A4A4A"/>
+        <rect x="0" y="455" width="520" height="3" fill="#1F1F1F"/>
+
+        <!-- balustrade posts -->
+        <g fill="#333333" opacity="0.45">
+          <rect x="16"  y="355" width="4" height="90"/>
+          <rect x="56"  y="355" width="4" height="90"/>
+          <rect x="96"  y="355" width="4" height="90"/>
+          <rect x="136" y="355" width="4" height="90"/>
+          <rect x="420" y="355" width="4" height="90"/>
+          <rect x="460" y="355" width="4" height="90"/>
+          <rect x="500" y="355" width="4" height="90"/>
+        </g>
+
+        <!-- Woman -->
+        <g transform="translate(220,140)">
+          <path d="M 22 14 Q 12 14 10 32 Q 8 52 16 64 L 34 64 Q 42 52 40 32 Q 38 14 28 14 Z" fill="#1A1A1A"/>
+          <path d="M 16 28 Q 16 52 26 54 Q 36 52 36 28 Q 36 18 26 18 Q 16 18 16 28 Z" fill="#E8D4B5"/>
+          <path d="M 16 26 Q 22 14 28 16 Q 36 20 36 28 L 36 22 Q 28 18 20 22 Z" fill="#1A1A1A"/>
+          <rect x="22" y="52" width="8" height="7" fill="#EDD0B0"/>
+          <path d="M 6 62 Q 4 82 10 104 L 44 104 Q 50 82 46 62 Q 38 58 26 58 Q 14 58 6 62 Z" fill="#1A1A1A"/>
+          <polygon points="24,60 26,78 28,60" fill="#F4EFE6"/>
+          <path d="M 44 68 Q 56 78 54 100 L 46 102 Q 44 88 40 74 Z" fill="#1A1A1A"/>
+          <rect x="48" y="100" width="11" height="9" rx="1.5" fill="#E8D4B5"/>
+          <rect x="50" y="97" width="7" height="6" rx="1" fill="#EEE8DC"/>
+          <path d="M 10 104 L 44 104 L 50 156 L 4 156 Z" fill="#1A1A1A"/>
+          <rect x="14" y="156" width="8" height="40" fill="#E8D4B5"/>
+          <rect x="32" y="156" width="8" height="40" fill="#E8D4B5"/>
+          <path d="M 12 196 L 24 196 L 24 202 L 12 202 Z" fill="#1A1A1A"/>
+          <path d="M 30 196 L 42 196 L 42 202 L 30 202 Z" fill="#1A1A1A"/>
+        </g>
+
+        <!-- Man -->
+        <g transform="translate(300,132)">
+          <path d="M 18 28 Q 18 52 28 54 Q 38 52 38 28 Q 38 14 28 14 Q 18 14 18 28 Z" fill="#E8D4B5"/>
+          <path d="M 18 22 Q 20 10 30 10 Q 40 10 40 24 L 40 20 Q 30 14 20 22 Z" fill="#1A1A1A"/>
+          <rect x="24" y="52" width="8" height="6" fill="#EDD0B0"/>
+          <path d="M 6 62 Q 4 90 10 112 L 46 112 Q 52 90 50 62 Q 40 58 28 58 Q 16 58 6 62 Z" fill="#2B2B2B"/>
+          <polygon points="24,60 28,82 32,60" fill="#F4EFE6"/>
+          <polygon points="26,66 30,66 30,92 28,96 26,92" fill="#C6B593"/>
+          <path d="M 6 70 Q -10 94 -4 124 L 5 122 Q 5 100 14 80 Z" fill="#2B2B2B"/>
+          <circle cx="-6" cy="124" r="5" fill="#E8D4B5"/>
+          <rect x="14" y="112" width="14" height="84" fill="#1F1F1F"/>
+          <rect x="30" y="112" width="14" height="84" fill="#1F1F1F"/>
+          <path d="M 12 196 L 28 196 L 28 202 L 12 202 Z" fill="#0E0E0E"/>
+          <path d="M 30 196 L 46 196 L 46 202 L 30 202 Z" fill="#0E0E0E"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#werterhalt">
+    <span class="dot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5"><path d="M12 5 V19 M6 13 L12 19 L18 13"/></svg>
+    </span>
+    <span>Scroll</span>
+  </a>
+</section>
+
+<!-- ══ S2: WERTSTEIGERUNG ══ -->
+<section class="section section-wert" id="werterhalt">
+  <span class="section-num">II / V · Philosophy</span>
+  <div class="section-inner">
+    <div class="section-text reveal">
+      <span class="kicker">Philosophy</span>
+      <h2>Growing value,<br/>not just preserving it.</h2>
+      <p>
+        Our approach is not to merely maintain your property, but to optimise its value — supported by scientific and technical methods.
+      </p>
+      <p>
+        Request our materials and leave your contact details, and we will call you back without pressure.
+      </p>
+      <div class="cta-group">
+        <a href="tel:+4930000000" class="cta-link">
+          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+          <span>Phone · (030) 00 00 00 00</span>
+        </a>
+        <a href="#kontakt" class="cta-link">
+          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+          <span>Request materials</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="illus-wrap reveal d2" aria-hidden="true">
+      <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+        <!-- cornice -->
+        <rect x="0" y="20" width="500" height="3" fill="rgba(255,255,255,0.22)"/>
+        <!-- Window 1 -->
+        <g transform="translate(60,44)">
+          <path d="M 20 30 L 100 30 L 112 10 L 8 10 Z" fill="#333333"/>
+          <rect x="12" y="30" width="96" height="6" fill="#1F1F1F"/>
+          <rect x="4" y="36" width="112" height="270" fill="#1F1F1F"/>
+          <rect x="16" y="48" width="88" height="246" fill="#7A7A46"/>
+          <rect x="16" y="48" width="44" height="123" fill="#6B6B3E" opacity="0.6"/>
+          <line x1="60" y1="48" x2="60" y2="294" stroke="#1F1F1F" stroke-width="2"/>
+          <line x1="16" y1="170" x2="104" y2="170" stroke="#1F1F1F" stroke-width="1.2"/>
+          <line x1="16" y1="50" x2="104" y2="50" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+          <rect x="-4" y="306" width="124" height="12" fill="#0E0E0E"/>
+          <rect x="0" y="318" width="116" height="8" fill="#1F1F1F"/>
+        </g>
+        <!-- Window 2 (lit) -->
+        <g transform="translate(280,44)">
+          <path d="M 20 30 L 100 30 L 112 10 L 8 10 Z" fill="#333333"/>
+          <rect x="12" y="30" width="96" height="6" fill="#1F1F1F"/>
+          <rect x="4" y="36" width="112" height="270" fill="#1F1F1F"/>
+          <rect x="16" y="48" width="88" height="246" fill="#D4B878"/>
+          <rect x="16" y="48" width="44" height="246" fill="#C4A560" opacity="0.5"/>
+          <line x1="60" y1="48" x2="60" y2="294" stroke="#1F1F1F" stroke-width="2"/>
+          <line x1="16" y1="170" x2="104" y2="170" stroke="#1F1F1F" stroke-width="1.2"/>
+          <g fill="#1F1F1F">
+            <ellipse cx="38" cy="200" rx="7" ry="8"/>
+            <path d="M 30 208 Q 30 228 38 228 Q 46 228 46 208 Z"/>
+            <path d="M 30 228 L 30 276 L 46 276 L 46 228 Z"/>
+            <path d="M 42 210 L 56 190 L 58 192 L 48 214 Z"/>
+            <rect x="54" y="184" width="6" height="8" rx="1"/>
+            <ellipse cx="78" cy="204" rx="7" ry="8"/>
+            <path d="M 70 212 Q 70 232 78 232 Q 86 232 86 212 Z"/>
+            <path d="M 70 232 L 70 276 L 86 276 L 86 232 Z"/>
+            <path d="M 72 216 L 62 196 L 64 194 L 74 218 Z"/>
+          </g>
+          <rect x="-4" y="306" width="124" height="12" fill="#0E0E0E"/>
+          <rect x="0" y="318" width="116" height="8" fill="#1F1F1F"/>
+        </g>
+
+        <!-- plant between windows (standing on the base) -->
+        <g transform="translate(220,288)">
+          <rect x="14" y="40" width="28" height="34" rx="1" fill="#0E0E0E"/>
+          <rect x="14" y="38" width="28" height="4" fill="#333333"/>
+          <path d="M 28 40 Q 8 18 12 -4 Q 22 18 28 40 Z" fill="#7A7A46"/>
+          <path d="M 28 40 Q 48 18 44 -6 Q 36 18 28 40 Z" fill="#7A7A46"/>
+          <path d="M 28 40 Q 30 18 34 4" stroke="#0E0E0E" fill="none" stroke-width="1"/>
+          <path d="M 28 40 Q 24 20 18 10" stroke="#0E0E0E" fill="none" stroke-width="1"/>
+        </g>
+
+        <!-- floor shadow -->
+        <ellipse cx="250" cy="374" rx="200" ry="6" fill="rgba(0,0,0,0.18)"/>
+      </svg>
+      <div class="illus-caption" style="color:rgba(255,255,255,0.7);">Facade study · Berlin Mitte</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S3: LEISTUNGEN ══ -->
+<section class="section section-leistungen" id="leistungen">
+  <span class="section-num">III / V · Services</span>
+  <div class="section-inner">
+    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <!-- faint architectural grid -->
+        <g stroke="rgba(20,20,20,0.12)" stroke-width="1" fill="none">
+          <rect x="40" y="40" width="420" height="420"/>
+          <line x1="250" y1="40" x2="250" y2="460"/>
+          <line x1="40" y1="250" x2="460" y2="250"/>
+          <rect x="120" y="120" width="260" height="260"/>
+        </g>
+        <g stroke="rgba(20,20,20,0.08)" fill="none">
+          <circle cx="250" cy="250" r="140"/>
+          <circle cx="250" cy="250" r="80"/>
+        </g>
+
+        <!-- rope from ceiling -->
+        <line x1="250" y1="0" x2="250" y2="290" stroke="#141414" stroke-width="1.2"/>
+
+        <!-- platform -->
+        <rect x="130" y="290" width="240" height="10" fill="#333333"/>
+        <rect x="128" y="300" width="244" height="5" fill="#141414"/>
+        <line x1="145" y1="290" x2="145" y2="220" stroke="#141414" stroke-width="1"/>
+        <line x1="355" y1="290" x2="355" y2="220" stroke="#141414" stroke-width="1"/>
+        <line x1="145" y1="220" x2="250" y2="290" stroke="#141414" stroke-width="1"/>
+        <line x1="355" y1="220" x2="250" y2="290" stroke="#141414" stroke-width="1"/>
+
+        <!-- bucket (on platform, to the right of the figure) -->
+        <g>
+          <path d="M 316 268 L 354 268 L 350 290 L 320 290 Z" fill="#EEE8DC" stroke="#141414" stroke-width="1"/>
+          <ellipse cx="335" cy="268" rx="19" ry="3" fill="#D8CDB5"/>
+          <path d="M 318 270 Q 335 255 352 270" stroke="#141414" fill="none" stroke-width="1"/>
+          <path d="M 324 280 L 346 280" stroke="rgba(20,20,20,0.3)"/>
+        </g>
+
+        <!-- window cleaner figure -->
+        <g>
+          <!-- back leg (standing on platform) -->
+          <path d="M 214 246 L 210 286 L 226 286 L 230 246 Z" fill="#4A4A4A"/>
+          <rect x="206" y="285" width="28" height="8" rx="1" fill="#141414"/>
+          <!-- front leg (stride, foot touches platform) -->
+          <path d="M 232 246 L 268 262 L 264 286 L 240 270 Z" fill="#4A4A4A"/>
+          <rect x="258" y="285" width="24" height="8" rx="2" fill="#141414"/>
+
+          <!-- torso -->
+          <path d="M 200 188 Q 196 224 208 246 L 246 246 Q 252 224 244 188 Q 224 180 200 188 Z" fill="#7A1E1E"/>
+          <!-- apron -->
+          <path d="M 210 202 L 236 202 L 240 244 L 208 244 Z" fill="#5A5A34"/>
+          <line x1="210" y1="204" x2="236" y2="204" stroke="rgba(0,0,0,0.15)"/>
+
+          <!-- forward arm with squeegee -->
+          <path d="M 244 194 Q 272 180 290 156 L 282 148 Q 260 168 236 184 Z" fill="#7A1E1E"/>
+          <rect x="282" y="146" width="14" height="8" rx="2" fill="#B8944A"/>
+          <line x1="289" y1="148" x2="318" y2="110" stroke="#141414" stroke-width="1.4"/>
+          <rect x="314" y="104" width="30" height="7" fill="#4A4A4A" transform="rotate(-30 329 108)"/>
+          <rect x="313" y="110" width="32" height="2" fill="#141414" transform="rotate(-30 329 111)"/>
+
+          <!-- back arm holds rope -->
+          <path d="M 200 200 Q 176 214 170 244 L 180 246 Q 186 220 208 208 Z" fill="#7A1E1E"/>
+          <rect x="168" y="242" width="14" height="10" rx="2" fill="#B8944A"/>
+
+          <!-- head + cap -->
+          <ellipse cx="222" cy="170" rx="12" ry="14" fill="#E8D4B5"/>
+          <path d="M 210 166 Q 210 150 222 148 Q 236 148 236 166 Q 236 172 230 172 L 214 172 Q 210 172 210 166 Z" fill="#C6B593"/>
+          <rect x="208" y="170" width="30" height="3" rx="1" fill="#4A4A4A"/>
+          <path d="M 216 178 Q 222 186 228 178 Q 228 182 222 184 Q 216 182 216 178 Z" fill="#D4C6AA"/>
+          <!-- nose -->
+          <path d="M 218 172 Q 217 176 220 178" stroke="rgba(0,0,0,0.3)" fill="none" stroke-width="0.5"/>
+
+          <!-- streak on glass (motion) -->
+          <path d="M 310 130 Q 340 128 360 110" stroke="rgba(47,125,122,0.3)" stroke-width="2" fill="none"/>
+          <path d="M 322 142 Q 348 138 368 124" stroke="rgba(47,125,122,0.18)" stroke-width="2" fill="none"/>
+        </g>
+
+        <!-- annotation -->
+        <g font-family="IBM Plex Mono" font-size="9" fill="#141414" opacity="0.55">
+          <line x1="370" y1="190" x2="410" y2="190" stroke="#141414" stroke-width="0.7" opacity="0.4"/>
+          <text x="370" y="204" letter-spacing="1.5">↑ 12 m</text>
+          <text x="370" y="218" letter-spacing="1" opacity="0.7">MAINTENANCE</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="section-text reveal d2">
+      <span class="kicker">Services</span>
+      <h2>Property management,<br/>in detail.</h2>
+      <p>
+        We are specialists in condominium, rental and sole-ownership management — from day-to-day administration to restoration. Together with you, we build an individual plan.
+      </p>
+
+      <div class="svc-chips">
+        <div class="svc-chip">
+          <span class="no">01</span>
+          <div>
+            <div class="t">Condominium</div>
+            <div class="d">Owners' associations, resolutions, and general meetings.</div>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        </div>
+        <div class="svc-chip">
+          <span class="no">02</span>
+          <div>
+            <div class="t">Rental buildings</div>
+            <div class="d">Full care — tenant changes, statements, technical oversight.</div>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        </div>
+        <div class="svc-chip">
+          <span class="no">03</span>
+          <div>
+            <div class="t">Sole ownership</div>
+            <div class="d">Individual apartments for investors and non-resident owners.</div>
+          </div>
+          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        </div>
+      </div>
+
+      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
+        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        <span>Request a proposal</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S4: WISSENSCHAFT ══ -->
+<section class="section section-wissenschaft">
+  <span class="section-num">IV / V · Method</span>
+  <div class="section-inner reverse">
+    <div class="section-text reveal">
+      <span class="kicker">Method</span>
+      <h2>Science<br/>as a foundation.</h2>
+      <p>
+        Every building has its own needs and speaks its own language. We read that language using modern methods and our in-house software.
+      </p>
+      <p>
+        From this — together with you — we build a plan to optimise the value of your property and position it for the future.
+      </p>
+
+      <div class="method-list">
+        <div class="method-item">
+          <div class="m-no">— 01</div>
+          <div class="m-t">Analysis</div>
+          <div class="m-d">Inventory, financials, building substance.</div>
+        </div>
+        <div class="method-item">
+          <div class="m-no">— 02</div>
+          <div class="m-t">Hypothesis</div>
+          <div class="m-d">Which levers actually raise value?</div>
+        </div>
+        <div class="method-item">
+          <div class="m-no">— 03</div>
+          <div class="m-t">Plan</div>
+          <div class="m-d">Timeline, investments, expected return.</div>
+        </div>
+        <div class="method-item">
+          <div class="m-no">— 04</div>
+          <div class="m-t">Measurement</div>
+          <div class="m-d">Ongoing reporting, adjustment, iteration.</div>
+        </div>
+      </div>
+
+      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
+        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        <span>Request information</span>
+      </a>
+    </div>
+
+    <div class="illus-wrap reveal d2" aria-hidden="true">
+      <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg">
+        <!-- soft floor -->
+        <ellipse cx="250" cy="410" rx="200" ry="10" fill="rgba(0,0,0,0.15)"/>
+
+        <!-- back wall, framed artwork -->
+        <rect x="320" y="60" width="140" height="100" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.35)"/>
+        <g stroke="rgba(255,255,255,0.45)" stroke-width="1" fill="none">
+          <rect x="340" y="80" width="45" height="60"/>
+          <rect x="395" y="80" width="45" height="60"/>
+          <line x1="340" y1="100" x2="440" y2="100"/>
+          <line x1="340" y1="120" x2="440" y2="120"/>
+        </g>
+
+        <!-- desk -->
+        <rect x="70" y="290" width="360" height="10" fill="#333333"/>
+        <rect x="82" y="300" width="10" height="96" fill="#1F1F1F"/>
+        <rect x="408" y="300" width="10" height="96" fill="#1F1F1F"/>
+
+        <!-- blueprint on desk -->
+        <rect x="108" y="268" width="176" height="24" fill="#EEE8DC" stroke="#141414" stroke-width="1"/>
+        <g stroke="#4A4A4A" stroke-width="0.6">
+          <line x1="118" y1="278" x2="274" y2="278"/>
+          <line x1="118" y1="284" x2="274" y2="284"/>
+          <line x1="134" y1="272" x2="134" y2="290"/>
+          <line x1="162" y1="272" x2="162" y2="290"/>
+          <line x1="210" y1="272" x2="210" y2="290"/>
+          <line x1="250" y1="272" x2="250" y2="290"/>
+        </g>
+
+        <!-- monitor -->
+        <rect x="296" y="198" width="124" height="82" fill="#0E0E0E"/>
+        <rect x="302" y="204" width="112" height="70" fill="#E6DCC6"/>
+        <!-- screen chart -->
+        <line x1="308" y1="258" x2="414" y2="258" stroke="#4A4A4A" stroke-width="0.6" opacity="0.5"/>
+        <line x1="308" y1="240" x2="414" y2="240" stroke="#4A4A4A" stroke-width="0.4" opacity="0.3"/>
+        <line x1="308" y1="224" x2="414" y2="224" stroke="#4A4A4A" stroke-width="0.4" opacity="0.3"/>
+        <polyline points="308,256 322,250 336,252 350,238 366,226 382,232 396,216 412,208"
+                  stroke="#7A1E1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <g fill="#7A1E1E">
+          <circle cx="322" cy="250" r="2"/>
+          <circle cx="350" cy="238" r="2"/>
+          <circle cx="382" cy="232" r="2"/>
+          <circle cx="412" cy="208" r="2"/>
+        </g>
+        <rect x="350" y="280" width="24" height="4" fill="#0E0E0E"/>
+        <rect x="340" y="284" width="44" height="5" fill="#1F1F1F"/>
+
+        <!-- desk items -->
+        <circle cx="240" cy="278" r="8" fill="#B8944A"/>
+        <circle cx="240" cy="278" r="4" fill="#141414"/>
+
+        <!-- figure (analyst) — standing behind desk, shoes on floor -->
+        <g transform="translate(0,58)">
+          <!-- torso (green sweater) -->
+          <path d="M 170 198 Q 166 232 174 264 L 216 264 Q 224 232 220 198 Q 208 190 196 190 Q 184 190 170 198 Z" fill="#7A1E1E"/>
+          <!-- collar -->
+          <polygon points="188,196 196,214 204,196" fill="#EEE8DC"/>
+          <!-- arm resting on desk -->
+          <path d="M 216 226 Q 244 210 268 228 L 264 236 Q 244 224 208 246 Z" fill="#7A1E1E"/>
+          <circle cx="266" cy="232" r="5" fill="#E8D4B5"/>
+          <!-- second arm -->
+          <path d="M 170 220 Q 154 228 148 248 L 158 252 Q 162 234 180 232 Z" fill="#7A1E1E"/>
+          <circle cx="152" cy="250" r="5" fill="#E8D4B5"/>
+
+          <!-- head -->
+          <ellipse cx="196" cy="176" rx="12" ry="14" fill="#E8D4B5"/>
+          <!-- hair -->
+          <path d="M 184 172 Q 186 156 198 154 Q 210 156 208 174 Q 208 166 196 162 Q 186 166 184 174 Z" fill="#1A1A1A"/>
+          <!-- glasses -->
+          <circle cx="192" cy="178" r="3" fill="none" stroke="#141414" stroke-width="0.7"/>
+          <circle cx="202" cy="178" r="3" fill="none" stroke="#141414" stroke-width="0.7"/>
+          <line x1="195" y1="178" x2="199" y2="178" stroke="#141414" stroke-width="0.7"/>
+          <!-- neck -->
+          <rect x="192" y="188" width="8" height="6" fill="#EDD0B0"/>
+          <!-- trousers: hidden behind desk, extend to floor -->
+          <rect x="172" y="260" width="16" height="82" fill="#0E0E0E"/>
+          <rect x="192" y="260" width="16" height="82" fill="#0E0E0E"/>
+          <ellipse cx="180" cy="344" rx="12" ry="4" fill="#0F1A1F"/>
+          <ellipse cx="200" cy="344" rx="12" ry="4" fill="#0F1A1F"/>
+        </g>
+
+        <!-- desk top overlay: re-paint so torso sits behind desk -->
+        <rect x="70" y="290" width="360" height="10" fill="#333333"/>
+        <!-- hands + blueprint re-paint on top of desk -->
+        <rect x="108" y="268" width="176" height="24" fill="#EEE8DC" stroke="#141414" stroke-width="1"/>
+        <g stroke="#4A4A4A" stroke-width="0.6">
+          <line x1="118" y1="278" x2="274" y2="278"/>
+          <line x1="118" y1="284" x2="274" y2="284"/>
+          <line x1="134" y1="272" x2="134" y2="290"/>
+          <line x1="162" y1="272" x2="162" y2="290"/>
+          <line x1="210" y1="272" x2="210" y2="290"/>
+          <line x1="250" y1="272" x2="250" y2="290"/>
+        </g>
+        <circle cx="266" cy="290" r="5" fill="#E8D4B5"/>
+        <circle cx="152" cy="308" r="5" fill="#E8D4B5"/>
+
+        <!-- pendant light -->
+        <line x1="380" y1="0" x2="380" y2="62" stroke="#141414" stroke-width="0.8"/>
+        <!-- canopy at ceiling -->
+        <rect x="374" y="0" width="12" height="4" fill="#141414"/>
+        <!-- shade: narrow top at cord, wide opening at bottom -->
+        <path d="M 372 62 L 388 62 L 398 88 L 362 88 Z" fill="#141414"/>
+        <!-- bulb glow under shade -->
+        <ellipse cx="380" cy="92" rx="14" ry="6" fill="#E6DCC6" opacity="0.55"/>
+        <circle cx="380" cy="90" r="3" fill="#E6DCC6"/>
+
+        <!-- annotation -->
+        <g font-family="IBM Plex Mono" font-size="9" fill="#E6DCC6" opacity="0.9">
+          <line x1="50" y1="132" x2="78" y2="132" stroke="#E6DCC6" stroke-width="0.8"/>
+          <text x="50" y="146">+ 23 %</text>
+          <text x="50" y="158" font-size="7.5" opacity="0.8" letter-spacing="1">ASSET VALUE</text>
+        </g>
+      </svg>
+      <div class="illus-caption" style="color:rgba(255,255,255,0.7);">Methodology · Berlin</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ S5: ÜBERBLICK ══ -->
+<section class="section section-ueberblick">
+  <span class="section-num">V / V · Software</span>
+  <div class="section-inner">
+    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
+      <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg">
+        <!-- window shadow -->
+        <rect x="28" y="42" width="454" height="352" fill="rgba(20,20,20,0.08)"/>
+        <!-- window -->
+        <rect x="24" y="38" width="454" height="352" fill="#fff" stroke="#141414" stroke-width="1"/>
+        <!-- chrome -->
+        <rect x="24" y="38" width="454" height="28" fill="#EEE8DC" stroke="#141414" stroke-width="1"/>
+        <circle cx="42" cy="52" r="4" fill="#B8944A"/>
+        <circle cx="56" cy="52" r="4" fill="#E6DCC6"/>
+        <circle cx="70" cy="52" r="4" fill="#DED2B9"/>
+        <text x="240" y="56" font-family="IBM Plex Mono" font-size="9" fill="#141414" opacity="0.45" letter-spacing="1.4">pani · dashboard</text>
+
+        <!-- sidebar -->
+        <rect x="24" y="66" width="110" height="324" fill="#141414"/>
+        <g font-family="IBM Plex Sans" font-size="8.5" fill="#E6DCC6" font-weight="500" letter-spacing="1.3">
+          <text x="40" y="96">ASSETS</text>
+          <text x="40" y="122">STATEMENTS</text>
+          <text x="40" y="148">TENANTS</text>
+          <text x="40" y="174">CONTRACTS</text>
+          <text x="40" y="200">RECEIPTS</text>
+          <text x="40" y="226">REPORTS</text>
+        </g>
+        <rect x="32" y="86" width="94" height="18" fill="rgba(200,222,226,0.14)"/>
+        <circle cx="38" cy="94" r="1.6" fill="#B8944A"/>
+
+        <!-- user chip bottom of sidebar -->
+        <circle cx="44" cy="370" r="8" fill="#B8944A"/>
+        <rect x="56" y="364" width="60" height="4" fill="rgba(200,222,226,0.5)"/>
+        <rect x="56" y="372" width="44" height="3" fill="rgba(200,222,226,0.3)"/>
+
+        <!-- main header row -->
+        <text x="150" y="98" font-family="IBM Plex Mono" font-size="9" fill="#141414" opacity="0.55" letter-spacing="1.6">BALANCE</text>
+        <rect x="220" y="78" width="42" height="14" fill="#6B6B3E" opacity="0.2"/>
+        <text x="225" y="88" font-family="IBM Plex Mono" font-size="8" fill="#7A1E1E" font-weight="500" letter-spacing="0.6">+ 6.4 %</text>
+        <text x="150" y="132" font-family="Fraunces" font-size="34" font-weight="300" fill="#141414" letter-spacing="-1.2">€ 84,320</text>
+
+        <!-- big chart card -->
+        <rect x="150" y="148" width="314" height="92" fill="#EEE8DC" stroke="#141414" stroke-width="0.5"/>
+        <g stroke="#D8CDB5" stroke-width="0.4">
+          <line x1="150" y1="172" x2="464" y2="172"/>
+          <line x1="150" y1="194" x2="464" y2="194"/>
+          <line x1="150" y1="216" x2="464" y2="216"/>
+        </g>
+        <polyline points="160,222 184,216 208,210 232,196 252,190 276,178 300,180 326,168 350,160 378,148 406,142 440,132"
+                  stroke="#7A1E1E" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <polyline points="160,230 184,226 208,222 232,214 252,212 276,204 300,208 326,200 350,196 378,188 406,184 440,176"
+                  stroke="#7A1E1E" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-dasharray="2 2"/>
+        <g fill="#7A1E1E">
+          <circle cx="184" cy="216" r="2"/>
+          <circle cx="232" cy="196" r="2"/>
+          <circle cx="300" cy="180" r="2"/>
+          <circle cx="378" cy="148" r="2"/>
+          <circle cx="440" cy="132" r="2.4"/>
+        </g>
+        <!-- legend -->
+        <g font-family="IBM Plex Mono" font-size="7.5" fill="#141414" opacity="0.7">
+          <rect x="158" y="154" width="8" height="2" fill="#7A1E1E"/>
+          <text x="170" y="158" letter-spacing="1">ACTUAL</text>
+          <rect x="214" y="154" width="8" height="2" fill="#7A1E1E"/>
+          <text x="226" y="158" letter-spacing="1">PLAN</text>
+        </g>
+
+        <!-- two cards -->
+        <rect x="150" y="248" width="152" height="130" fill="#EEE8DC" stroke="#141414" stroke-width="0.5"/>
+        <rect x="312" y="248" width="152" height="130" fill="#EEE8DC" stroke="#141414" stroke-width="0.5"/>
+        <text x="160" y="266" font-family="IBM Plex Mono" font-size="8" fill="#141414" opacity="0.6" letter-spacing="1.4">VACANCY</text>
+        <text x="322" y="266" font-family="IBM Plex Mono" font-size="8" fill="#141414" opacity="0.6" letter-spacing="1.4">RESERVES</text>
+        <text x="160" y="304" font-family="Fraunces" font-size="30" font-weight="300" fill="#141414" letter-spacing="-1">2.4 %</text>
+        <text x="322" y="304" font-family="Fraunces" font-size="30" font-weight="300" fill="#141414" letter-spacing="-1">€ 42 k</text>
+        <!-- gauge (leerstand) -->
+        <line x1="160" y1="326" x2="290" y2="326" stroke="#D8CDB5" stroke-width="4"/>
+        <line x1="160" y1="326" x2="172" y2="326" stroke="#7A1E1E" stroke-width="4"/>
+        <text x="160" y="348" font-family="IBM Plex Mono" font-size="7.5" fill="#141414" opacity="0.55" letter-spacing="1">TARGET · 4.0 %</text>
+        <!-- donut (rücklage) -->
+        <g transform="translate(420,316)">
+          <circle r="22" fill="none" stroke="#D8CDB5" stroke-width="6"/>
+          <circle r="22" fill="none" stroke="#141414" stroke-width="6" stroke-dasharray="104 138" transform="rotate(-90)"/>
+          <text y="4" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#141414" font-weight="500">72%</text>
+        </g>
+        <text x="322" y="348" font-family="IBM Plex Mono" font-size="7.5" fill="#141414" opacity="0.55" letter-spacing="1">TARGET · 58 k</text>
+      </svg>
+      <div class="illus-caption" style="color: rgba(20,20,20,0.55);">Software · Live reporting</div>
+    </div>
+
+    <div class="section-text reveal d2">
+      <span class="kicker">Transparency</span>
+      <h2>Everything,<br/>at a glance.</h2>
+      <p>
+        With our in-house software, your numbers are at hand at any time and in real time — clear and easy to read.
+      </p>
+      <p>
+        A question that isn't answered yet? We build it into the software, quickly and without fuss.
+      </p>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="s-n">24/7</div>
+          <div class="s-l">Access</div>
+        </div>
+        <div class="stat">
+          <div class="s-n">12</div>
+          <div class="s-l">Live metrics</div>
+        </div>
+        <div class="stat">
+          <div class="s-n">&lt; 48 h</div>
+          <div class="s-l">Response time</div>
+        </div>
+      </div>
+
+      <a href="#" class="cta-link" style="margin-top: 36px;">
+        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        <span>View software</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer id="kontakt">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <svg width="38" height="38" viewBox="0 0 60 60" fill="none">
+            <g stroke="#e6e6e6" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="30" cy="30" r="6.5"/>
+              <line x1="30" y1="6"  x2="30" y2="14"/><line x1="30" y1="46" x2="30" y2="54"/>
+              <line x1="6"  y1="30" x2="14" y2="30"/><line x1="46" y1="30" x2="54" y2="30"/>
+              <line x1="12" y1="12" x2="18" y2="18"/><line x1="42" y1="42" x2="48" y2="48"/>
+              <line x1="48" y1="12" x2="42" y2="18"/><line x1="18" y1="42" x2="12" y2="48"/>
+              <line x1="20" y1="8"  x2="23" y2="16"/><line x1="37" y1="44" x2="40" y2="52"/>
+              <line x1="8"  y1="20" x2="16" y2="23"/><line x1="44" y1="37" x2="52" y2="40"/>
+              <line x1="8"  y1="40" x2="16" y2="37"/><line x1="44" y1="23" x2="52" y2="20"/>
+              <line x1="20" y1="52" x2="23" y2="44"/><line x1="37" y1="16" x2="40" y2="8"/>
+            </g>
+          </svg>
+          <span class="logo-text">PANI</span>
+        </div>
+        <p class="footer-cta">One call is enough.</p>
+        <a href="mailto:info@pani-pm.de" class="cta-link" style="color:#fff; margin-top:0;">
+          <span class="arrow-circle"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M8 4 L16 12 L8 20"/></svg></span>
+          <span>Materials</span>
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Phone: <a href="tel:+4930000000">(030) 00 00 00 00</a></p>
+        <p>Fax: (030) 00 00 00 01</p>
+        <p>E-mail: <a href="mailto:info@pani-pm.de">info@pani-pm.de</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p>PANI Property Management</p>
+        <p>Berlin</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <p><a href="#werterhalt">Philosophy</a></p>
+        <p><a href="#leistungen">Services</a></p>
+        <p><a href="#kontakt">Contact</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <a href="impressum.html">Imprint</a>
+      <a href="datenschutz.html">Privacy</a>
+      <span class="copy">© PANI Property Management · Berlin</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ TWEAKS ══ -->
+<button id="tw-toggle" aria-label="Open tweaks">
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3 V6 M12 18 V21 M3 12 H6 M18 12 H21 M5 5 L7 7 M17 17 L19 19 M5 19 L7 17 M17 7 L19 5"/></svg>
+</button>
+
+<div id="tw-panel">
+  <h6>Tweaks <button id="tw-close" aria-label="Close">×</button></h6>
+  <label>Accent</label>
+  <div class="swatches" id="accent-sw">
+    <button class="sw active" data-accent="#7A1E1E" style="background:#7A1E1E"></button>
+    <button class="sw" data-accent="#7A1E1E" style="background:#7A1E1E"></button>
+    <button class="sw" data-accent="#6B6B3E" style="background:#6B6B3E"></button>
+    <button class="sw" data-accent="#B8944A" style="background:#B8944A"></button>
+    <button class="sw" data-accent="#141414" style="background:#141414"></button>
+  </div>
+  <label>Hero colour</label>
+  <div class="swatches" id="hero-sw">
+    <button class="sw active" data-hero="#E6DCC6" style="background:#E6DCC6"></button>
+    <button class="sw" data-hero="#DCE7D4" style="background:#DCE7D4"></button>
+    <button class="sw" data-hero="#EEE8DC" style="background:#EEE8DC"></button>
+    <button class="sw" data-hero="#E8D5C4" style="background:#E8D5C4"></button>
+  </div>
+</div>
+
+<script>
+  /* Reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Headline rotator */
+  const ROTATOR_WORDS = [
+    { mit: false, word: 'in Berlin' },
+    { mit: true,  word: 'thought' },
+    { mit: true,  word: 'time' },
+    { mit: true,  word: 'interest' },
+    { mit: true,  word: 'substance' },
+    { mit: true,  word: 'care' },
+  ];
+  const ROTATE_MS = 3200;
+  const track = document.getElementById('rotator-track');
+  const ticksEl = document.getElementById('rotator-ticks');
+
+  if (track && ticksEl) {
+    // build ticks
+    ROTATOR_WORDS.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.className = 'rotator-tick';
+      b.setAttribute('aria-label', 'Wort ' + (i+1));
+      b.addEventListener('click', () => goTo(i, true));
+      ticksEl.appendChild(b);
+    });
+    const ticks = [...ticksEl.children];
+
+    // build word elements
+    const words = ROTATOR_WORDS.map(({ mit, word }) => {
+      const el = document.createElement('span');
+      el.className = 'rotator-word';
+          el.innerHTML = (mit ? '<span class="mit">with</span>' : '') + word;
+      track.appendChild(el);
+      return el;
+    });
+
+    let idx = 0, timer = null;
+    const setActive = (i) => {
+      words.forEach((w, k) => {
+        w.classList.remove('is-in', 'is-out');
+        if (k === i) w.classList.add('is-in');
+        else if (k === (i - 1 + words.length) % words.length) w.classList.add('is-out');
+      });
+      ticks.forEach((t, k) => t.classList.toggle('active', k === i));
+    };
+    const goTo = (i, restart) => {
+      idx = (i + words.length) % words.length;
+      setActive(idx);
+      if (restart) { clearInterval(timer); start(); }
+    };
+    const start = () => {
+      timer = setInterval(() => { idx = (idx + 1) % words.length; setActive(idx); }, ROTATE_MS);
+    };
+    setActive(0);
+    start();
+  }
+
+  /* Active nav on scroll */
+  const sections = document.querySelectorAll('section.section');
+  const nav = document.querySelector('.nav-links a.active');
+
+  /* Edit-mode protocol */
+  const toggle = document.getElementById('tw-toggle');
+  const panel  = document.getElementById('tw-panel');
+  const close  = document.getElementById('tw-close');
+
+  window.addEventListener('message', (e) => {
+    if (!e.data || !e.data.type) return;
+    if (e.data.type === '__activate_edit_mode')   { toggle.classList.add('on'); }
+    if (e.data.type === '__deactivate_edit_mode') { toggle.classList.remove('on'); panel.classList.remove('open'); }
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+  toggle.addEventListener('click', () => panel.classList.toggle('open'));
+  close .addEventListener('click', () => panel.classList.remove('open'));
+
+  document.getElementById('accent-sw').addEventListener('click', (e) => {
+    const b = e.target.closest('.sw'); if (!b) return;
+    document.querySelectorAll('#accent-sw .sw').forEach(s => s.classList.remove('active'));
+    b.classList.add('active');
+    document.documentElement.style.setProperty('--accent', b.dataset.accent);
+  });
+  document.getElementById('hero-sw').addEventListener('click', (e) => {
+    const b = e.target.closest('.sw'); if (!b) return;
+    document.querySelectorAll('#hero-sw .sw').forEach(s => s.classList.remove('active'));
+    b.classList.add('active');
+    document.documentElement.style.setProperty('--sky', b.dataset.hero);
+  });
+</script>
+
+</body>
+</html>
