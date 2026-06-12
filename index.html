@@ -3,39 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>PANI Hausverwaltung — Berlin</title>
-<meta name="description" content="PANI Hausverwaltung Berlin — WEG-Verwaltung, Miethausverwaltung, Sondereigentumsverwaltung. Wertsteigerung statt Werterhalt."/>
+<title>PANI Hausverwaltung — Berlin · Eigentümerperspektive, Investoren-DNA</title>
+<meta name="description" content="PANI Hausverwaltung Berlin — für Investoren, Bestandshalter, Zinshaus-Eigentümer und Sondervermögen. Generationenlange Verwaltungserfahrung, analytische Präzision aus dem Investmentbanking, klares Reporting."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,0..100&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Premium Architectural Palette */
-  --ink:      #1A1A1A; /* Deep Charcoal */
+  --ink:      #181818;
   --ink-soft: #333333;
-  --paper:    #F7F5F0; /* Soft Alabaster */
+  --paper:    #F6F5F2;
   --paper-w:  #FFFFFF;
-  --paper-d:  #EBE6DD;
-  --stone:    #2C2C2C;
-  --steel:    #242424;
-  --butter:   #F0EBE1;
-  --cream:    #FAF9F6;
-  --coal:     #121212;
-  
-  /* Brand Accents */
-  --accent:   #800020; /* Deep Burgundy / Bordeaux */
-  --brass:    #B08D57; /* Brass / Messing für metallische Details */
+  --paper-d:  #E9E7E1;
+  --steel:    #222222;
+  --butter:   #EFEDE7;
+  --coal:     #111111;
+
+  --accent:   #800020;
+  --brass:    #B08D57;
   --sand:     #D4C4A9;
+  --leaf:     #3E6B4F;
+  --glow:     #E2A94E;
   --line:     rgba(26, 26, 26, 0.12);
   --line-light: rgba(255, 255, 255, 0.15);
-  
+
   --serif:    'Fraunces', Georgia, serif;
   --sans:     'IBM Plex Sans', Helvetica, Arial, sans-serif;
   --mono:     'IBM Plex Mono', ui-monospace, Menlo, monospace;
   --max:      1240px;
   --pad:      clamp(28px, 5vw, 72px);
+  --ease:     cubic-bezier(.2,.7,.2,1);
 }
 
 html { scroll-behavior: smooth; background: var(--paper); }
@@ -50,56 +49,70 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
+::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 h1, h2, h3 {
   font-family: var(--serif);
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.05;
-  font-variation-settings: "opsz" 144, "SOFT" 0;
+  font-variation-settings: "opsz" 144;
   margin: 0;
 }
 h3 { font-size: 22px; letter-spacing: -0.01em; line-height: 1.3; font-weight: 400; }
-
 p { margin: 0 0 1.2em 0; }
+
+/* ═════════ SCROLL PROGRESS ═════════ */
+.progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 100%;
+  z-index: 200; pointer-events: none;
+}
+.progress span {
+  display: block; height: 100%; width: 100%;
+  background: var(--accent);
+  transform-origin: left center; transform: scaleX(0);
+}
 
 /* ═════════ NAVBAR ═════════ */
 .navbar {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(247, 245, 240, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(247, 245, 240, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px var(--pad);
   border-bottom: 1px solid var(--line);
+  transition: padding .4s var(--ease), box-shadow .4s ease;
 }
+.navbar.scrolled { padding: 11px var(--pad); box-shadow: 0 8px 32px rgba(26,26,26,0.07); }
 .logo { display: flex; align-items: center; gap: 14px; color: var(--ink); transition: color .3s; }
 .logo:hover { color: var(--accent); }
-.logo svg { width: 36px; height: 36px; }
-.logo-text {
-  font-family: var(--serif);
-  font-size: 22px;
-  letter-spacing: 0.18em;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-.nav-links { display: flex; gap: 32px; list-style: none; }
+.logo svg { width: 34px; height: 34px; transition: transform .5s var(--ease); }
+.logo:hover svg { transform: translateY(-2px); }
+.logo-text { font-family: var(--serif); font-size: 22px; letter-spacing: 0.18em; font-weight: 400; text-transform: uppercase; }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
+  position: relative;
   color: var(--ink-soft);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  padding: 4px;
-  transition: color .3s ease;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 6px 2px; transition: color .3s ease;
 }
-.nav-links a.active,
-.nav-links a:hover { color: var(--accent); }
-.nav-links a svg {
-  width: 20px; height: 20px;
-  stroke: currentColor; fill: none; stroke-width: 1.2;
+.nav-links a:not(.nav-cta)::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+  background: var(--accent);
+  transform: scaleX(0); transform-origin: right center;
+  transition: transform .4s var(--ease);
 }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left center; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+.nav-cta {
+  border: 1px solid var(--ink);
+  padding: 10px 20px !important;
+  border-radius: 999px;
+  transition: all .3s ease;
+}
+.nav-cta:hover { background: var(--accent); border-color: var(--accent); color: #fff !important; }
 
 /* ═════════ SECTIONS ═════════ */
 .section {
@@ -119,140 +132,176 @@ p { margin: 0 0 1.2em 0; }
   gap: clamp(48px, 8vw, 120px);
 }
 .section-inner.reverse .section-text { order: 2; }
-.section-text { max-width: 520px; justify-self: start; }
+.section-text { max-width: 540px; justify-self: start; }
 
-h1 { font-size: clamp(52px, 7vw, 86px); line-height: 1; }
-h2 { font-size: clamp(40px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
+h1 { font-size: clamp(48px, 7vw, 86px); line-height: 1; }
+h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
 
 .section p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 24px;
-  max-width: 44ch;
-  color: rgba(26, 26, 26, 0.75);
+  font-size: 16px; line-height: 1.8; margin-bottom: 24px;
+  max-width: 46ch; color: rgba(26, 26, 26, 0.75);
 }
 
 .kicker {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--accent);
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+  margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; color: var(--accent);
 }
-.kicker::before {
-  content: "";
-  width: 32px; height: 1px;
-  background: currentColor;
-  display: inline-block;
-}
+.kicker::before { content: ""; width: 32px; height: 1px; background: currentColor; display: inline-block; }
+.kicker.leaf { color: var(--leaf); }
 
-/* CTA */
 .cta-link {
   display: inline-flex; align-items: center; gap: 16px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-top: 16px;
-  transition: gap .4s cubic-bezier(.2,.7,.2,1);
-  color: var(--ink);
+  font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  margin-top: 16px; transition: gap .4s var(--ease), color .3s; color: var(--ink);
 }
 .cta-link:hover { gap: 24px; color: var(--accent); }
 .cta-link .arrow-circle {
   width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid var(--line);
   display: grid; place-items: center;
-  transition: all .4s cubic-bezier(.2,.7,.2,1);
+  transition: all .4s var(--ease);
+  flex: 0 0 auto;
 }
-.cta-link:hover .arrow-circle { border-color: var(--accent); background: var(--accent); }
+.cta-link:hover .arrow-circle { border-color: var(--accent); background: var(--accent); transform: scale(1.06); }
 .cta-link:hover .arrow-circle svg { stroke: #fff; transform: translateX(2px); }
-.cta-link .arrow-circle svg { 
-  width: 14px; height: 14px; stroke: var(--ink); fill: none; stroke-width: 1.2; 
-  transition: stroke .3s, transform .4s; 
+.cta-link .arrow-circle svg {
+  width: 14px; height: 14px; stroke: var(--ink); fill: none; stroke-width: 1.2;
+  transition: stroke .3s, transform .4s;
 }
-.section-wert .cta-link { color: #fff; }
-.section-wert .cta-link .arrow-circle { border-color: var(--line-light); }
-.section-wert .cta-link .arrow-circle svg { stroke: #fff; }
-.section-wert .cta-link:hover .arrow-circle { background: #fff; border-color: #fff; }
-.section-wert .cta-link:hover .arrow-circle svg { stroke: var(--ink); }
-
+.on-dark .cta-link { color: #fff; }
+.on-dark .cta-link .arrow-circle { border-color: var(--line-light); }
+.on-dark .cta-link .arrow-circle svg { stroke: #fff; }
+.on-dark .cta-link:hover .arrow-circle { background: #fff; border-color: #fff; }
+.on-dark .cta-link:hover .arrow-circle svg { stroke: var(--ink); }
 .cta-group { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
 
 .section-num {
-  position: absolute;
-  top: clamp(36px, 5vh, 56px);
-  right: var(--pad);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.25em;
-  opacity: 0.4;
-  text-transform: uppercase;
+  position: absolute; top: clamp(36px, 5vh, 56px); right: var(--pad);
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em;
+  opacity: 0.4; text-transform: uppercase;
 }
 
-/* ═════════ S1: HERO ═════════ */
+/* ═════════ BUTTONS ═════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 16px 28px; border-radius: 999px; border: 1px solid var(--ink);
+  transition: transform .35s var(--ease), background .35s, border-color .35s, color .35s, box-shadow .35s;
+  cursor: pointer; will-change: transform;
+}
+.btn.solid { background: var(--ink); color: #fff; }
+.btn.solid:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(128,0,32,0.22); }
+.btn.ghost:hover { background: var(--ink); color: #fff; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(26,26,26,0.15); }
+
+/* ═════════ HERO ═════════ */
 .section-hero {
-  background: linear-gradient(180deg, var(--paper) 0%, var(--butter) 100%);
-  min-height: calc(100vh - 81px);
+  background: var(--paper);
+  min-height: calc(100vh - 79px);
   padding-bottom: 0;
   align-items: end;
 }
 .section-hero .section-inner {
-  grid-template-columns: 1fr 1.15fr;
-  align-items: end;
-  gap: 40px;
-  padding-bottom: clamp(40px, 8vh, 100px);
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center; gap: clamp(40px, 6vw, 90px);
+  padding-bottom: clamp(48px, 9vh, 110px);
 }
-.section-hero h1 { color: var(--ink); font-weight: 300; }
-.section-hero h1 .fixed { display: block; }
-.section-hero h1 .rotator {
-  display: block; position: relative; color: var(--accent);
-  font-weight: 300; font-style: italic; height: 1.1em; overflow: hidden;
-}
-.rotator-track { position: relative; display: block; height: 100%; }
-.rotator-word {
-  position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0;
-  transform: translateY(100%);
-  transition: transform .9s cubic-bezier(.7,.05,.2,.95), opacity .45s ease;
-  display: inline-flex; align-items: baseline; gap: 0.3em;
-}
-.rotator-word.is-in {
-  opacity: 1; transform: translateY(0);
-  transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .45s ease .1s;
-}
-.rotator-word.is-out {
-  opacity: 0; transform: translateY(-100%);
-  transition: transform .9s cubic-bezier(.7,.05,.2,.95), opacity .35s ease;
-}
-.rotator-word .mit {
-  font-style: normal; font-weight: 300; font-size: 0.5em; letter-spacing: 0.05em;
-  color: rgba(26,26,26,0.5); align-self: center; position: relative; top: -0.1em;
-}
+.section-hero h1 { letter-spacing: -0.025em; }
+.section-hero h1 em { font-style: italic; color: var(--accent); }
 
-.rotator-ticks { margin-top: 24px; display: flex; gap: 8px; }
-.rotator-tick {
-  width: 40px; height: 1px; background: rgba(26,26,26,0.15);
-  position: relative; overflow: hidden; border: 0; padding: 0; cursor: pointer;
+/* Foto-Karte mit Vermessungs-Overlay */
+.hero-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--paper-d);
+  overflow: hidden;
+  margin: 0;
 }
-.rotator-tick::after {
-  content: ""; position: absolute; inset: 0; background: var(--accent);
-  transform-origin: left center; transform: scaleX(0);
+.hero-photo::after {
+  content: ""; position: absolute; inset: 14px;
+  border: 1px solid rgba(255,255,255,0.55);
+  pointer-events: none;
 }
-.rotator-tick.active::after { transform: scaleX(1); transition: transform 3.2s linear; }
+.hero-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.78) contrast(1.03) brightness(0.97);
+  transform: scale(1.02);
+  transition: transform 1.2s var(--ease);
+}
+.hero-illus:hover .hero-photo img { transform: scale(1.06); }
+.photo-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.photo-fallback { display: none; padding: 10% 8%; }
+.hero-photo.img-failed img, .hero-photo.img-failed .photo-overlay, .hero-photo.img-failed::after { display: none; }
+.hero-photo.img-failed { aspect-ratio: auto; background: transparent; }
+.hero-photo.img-failed .photo-fallback { display: block; }
 
+/* Foto-Band */
+.photo-band { position: relative; height: clamp(260px, 42vh, 420px); overflow: hidden; background: var(--steel); }
+.photo-band img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.7) contrast(1.02) brightness(0.8);
+}
+.photo-band .pb-text {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px; text-align: center;
+  color: #fff; padding: 0 var(--pad);
+  background: linear-gradient(180deg, rgba(17,17,17,0.25), rgba(17,17,17,0.45));
+}
+.photo-band .pb-text h3 { font-size: clamp(24px, 3.4vw, 38px); font-weight: 300; color: #fff; max-width: 24ch; }
+.photo-band .pb-text .kicker { color: rgba(255,255,255,0.75); margin-bottom: 0; }
+.photo-band.img-failed { display: none; }
+
+/* Zitat / Persönlich geführt */
+.quote-band { background: var(--paper-w); padding: clamp(80px, 11vh, 140px) var(--pad); }
+.quote-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+.quote-inner blockquote {
+  font-family: var(--serif); font-weight: 300; font-style: italic;
+  font-size: clamp(24px, 3.2vw, 36px); line-height: 1.4; color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.quote-inner .q-mark {
+  font-family: var(--serif); font-size: 64px; line-height: 0.5; color: var(--accent);
+  display: block; margin-bottom: 28px;
+}
+.quote-inner figcaption {
+  margin-top: 32px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(26,26,26,0.5);
+}
+.quote-inner figcaption strong { display: block; color: var(--ink); font-weight: 500; margin-bottom: 4px; }
+
+.hero-sub { margin-top: 28px; font-size: 16px; line-height: 1.8; color: rgba(26,26,26,0.7); max-width: 42ch; }
+.hero-ctas { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
 .hero-meta {
-  margin-top: 48px; display: flex; gap: 56px;
+  margin-top: 44px; display: flex; gap: 48px;
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
   color: rgba(26,26,26,0.6);
 }
 .hero-meta .m-label { display: block; opacity: 0.6; margin-bottom: 6px; font-size: 9px; }
 .hero-meta .m-val { color: var(--ink); font-weight: 500; letter-spacing: 0.15em; font-size: 11px; }
 
-.hero-illus { position: relative; width: 100%; max-width: 580px; margin-left: auto; align-self: end; }
+.hero-illus {
+  position: relative; width: 100%; max-width: 580px; margin-left: auto; align-self: end;
+  will-change: transform;
+}
 .hero-illus svg { width: 100%; height: auto; display: block; }
+
+/* Fassade zeichnet sich beim Laden */
+.sketch { stroke-dasharray: 1; stroke-dashoffset: 1; }
+body.loaded .sketch { animation: drawIn 2.4s var(--ease) forwards; }
+body.loaded .sketch.s2 { animation-delay: .4s; }
+body.loaded .sketch.s3 { animation-delay: .8s; }
+@keyframes drawIn { to { stroke-dashoffset: 0; } }
+
+/* Warm leuchtende Fenster */
+.win-glow { opacity: 0; }
+body.loaded .win-glow { animation: winOn 1.2s ease forwards, winFlicker 7s ease-in-out infinite; }
+body.loaded .win-glow.g1 { animation-delay: 1.2s, 2.4s; }
+body.loaded .win-glow.g2 { animation-delay: 1.7s, 2.9s; }
+body.loaded .win-glow.g3 { animation-delay: 2.1s, 3.3s; }
+body.loaded .win-glow.g4 { animation-delay: 2.5s, 3.7s; }
+body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
+@keyframes winOn { from { opacity: 0; } to { opacity: .32; } }
+@keyframes winFlicker { 0%,100% { opacity: .32; } 50% { opacity: .18; } }
 
 .scroll-cue {
   position: absolute; left: 50%; bottom: 32px; transform: translateX(-50%);
@@ -263,24 +312,30 @@ h2 { font-size: clamp(40px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
 .scroll-cue:hover { opacity: 1; color: var(--accent); }
 .scroll-cue .dot {
   width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line);
-  background: transparent; display: grid; place-items: center;
-  transition: border-color .3s;
+  display: grid; place-items: center; transition: border-color .3s;
 }
-.scroll-cue:hover .dot { border-color: var(--accent); }
 .scroll-cue .dot svg { width: 14px; height: 14px; stroke-width: 1.2; }
+.scroll-cue:hover .dot { border-color: var(--accent); }
 
-/* ═════════ SECTIONS CSS ═════════ */
+/* ═════════ LEISTUNGEN ═════════ */
 .section-leistungen { background: var(--paper-w); }
 .svc-chips { margin-top: 40px; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .svc-chip {
   padding: 24px 0; border-bottom: 1px solid var(--line);
   display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 20px;
-  cursor: default; transition: padding-left .3s ease;
+  cursor: default; position: relative;
+  transition: padding-left .35s var(--ease);
 }
-.svc-chip:hover { padding-left: 12px; }
+.svc-chip::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 2px; height: 100%;
+  background: var(--accent); transform: scaleY(0); transform-origin: top center;
+  transition: transform .35s var(--ease);
+}
+.svc-chip:hover { padding-left: 16px; }
+.svc-chip:hover::before { transform: scaleY(1); }
 .svc-chip .no { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--accent); }
 .svc-chip .t { font-family: var(--serif); font-weight: 300; font-size: 20px; color: var(--ink); }
-.svc-chip .d { font-size: 14px; color: rgba(26,26,26,0.6); line-height: 1.5; max-width: 38ch; margin-top: 4px; }
+.svc-chip .d { font-size: 14px; color: rgba(26,26,26,0.6); line-height: 1.5; max-width: 40ch; margin-top: 4px; }
 .svc-chip .arrow {
   width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line);
   display: grid; place-items: center; transition: all .3s;
@@ -289,15 +344,106 @@ h2 { font-size: clamp(40px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
 .svc-chip:hover .arrow svg { stroke: #fff; transform: translateX(2px); }
 .svc-chip .arrow svg { width: 12px; height: 12px; stroke: var(--ink); fill: none; stroke-width: 1.2; transition: all .3s; }
 
+/* ═════════ INVEST ═════════ */
 .section-wert { background: var(--steel); color: #fff; }
 .section-wert h2 { color: #fff; }
 .section-wert p { color: rgba(255,255,255,0.7); }
 .section-wert .kicker { color: var(--sand); }
 .section-wert .section-num { color: rgba(255,255,255,0.3); }
+.invest-points { margin-top: 36px; display: grid; gap: 0; border-top: 1px solid var(--line-light); }
+.invest-point {
+  display: grid; grid-template-columns: 28px 1fr; gap: 18px; align-items: start;
+  padding: 18px 0; border-bottom: 1px solid var(--line-light);
+  transition: padding-left .35s var(--ease);
+}
+.invest-point:hover { padding-left: 10px; }
+.invest-point .ip-icon { width: 22px; height: 22px; stroke: var(--sand); fill: none; stroke-width: 1.2; margin-top: 3px; }
+.invest-point .ip-t { font-family: var(--serif); font-size: 17px; font-weight: 300; color: #fff; }
+.invest-point .ip-d { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.6; margin: 2px 0 0; }
+.illus-caption {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+  margin-top: 24px; opacity: 0.5; display: flex; gap: 16px; align-items: center; color: var(--ink);
+}
+.illus-caption::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+.section-wert .illus-caption { color: #fff; opacity: 0.6; }
+.illus-wrap { position: relative; width: 100%; max-width: 520px; justify-self: end; }
+.illus-wrap svg { width: 100%; height: auto; }
 
-.section-wissenschaft { background: var(--butter); color: var(--ink); }
-.section-wissenschaft h2 { color: var(--ink); }
-.method-list { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 40px; }
+/* Linien zeichnen sich beim Erscheinen */
+.draw-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.reveal.in .draw-line { animation: drawIn 1.8s var(--ease) .3s forwards; }
+.reveal.in .draw-line.dl2 { animation-delay: .7s; }
+.fade-dot { opacity: 0; transition: opacity .5s ease; }
+.reveal.in .fade-dot { opacity: 1; }
+.reveal.in .fade-dot.fd1 { transition-delay: .6s; }
+.reveal.in .fade-dot.fd2 { transition-delay: .85s; }
+.reveal.in .fade-dot.fd3 { transition-delay: 1.1s; }
+.reveal.in .fade-dot.fd4 { transition-delay: 1.35s; }
+.reveal.in .fade-dot.fd5 { transition-delay: 1.6s; }
+
+/* ═════════ SANIERUNG ═════════ */
+.section-sanierung { background: var(--paper); }
+.section-sanierung .section-inner { grid-template-columns: 1fr; gap: 56px; }
+.sanierung-head { max-width: 640px; }
+.energy-card {
+  background: var(--paper-w); border: 1px solid var(--line);
+  padding: clamp(28px, 4vw, 56px);
+  max-width: var(--max); width: 100%;
+  box-shadow: 0 24px 80px rgba(26,26,26,0.06);
+}
+.energy-top {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
+  margin-bottom: 36px; flex-wrap: wrap;
+}
+.energy-top .e-title { font-family: var(--serif); font-weight: 300; font-size: 26px; }
+.energy-top .e-hint { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26,26,26,0.45); }
+
+.energy-scale { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+.energy-class { position: relative; border: 0; cursor: pointer; padding: 0; background: transparent; font-family: inherit; }
+.energy-class .bar {
+  height: 54px; display: grid; place-items: center;
+  font-family: var(--mono); font-size: 13px; font-weight: 500; color: #fff;
+  transition: transform .35s var(--ease), opacity .3s, box-shadow .35s;
+  opacity: 0.35;
+  transform-origin: bottom center;
+}
+.energy-card.reveal.in:not(.ready) .energy-class .bar { animation: barUp .55s var(--ease) both; animation-delay: var(--d, 0s); }
+@keyframes barUp { from { transform: scaleY(0); } }
+.energy-class:hover .bar { opacity: 0.75; transform: translateY(-3px); }
+.energy-class.is-ist .bar, .energy-class.is-ziel .bar { opacity: 1; }
+.energy-class.is-ziel .bar { transform: translateY(-6px); box-shadow: 0 12px 26px rgba(26,26,26,0.2); }
+.energy-class .tag {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  white-space: nowrap; padding: 3px 8px;
+}
+.energy-class .tag.ist { top: -28px; background: var(--ink); color: #fff; }
+.energy-class .tag.ziel { bottom: -30px; background: var(--accent); color: #fff; }
+.energy-scale-wrap { padding: 34px 0 40px; }
+
+.energy-results { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.energy-result { padding: 24px 20px 8px 0; border-right: 1px solid var(--line); }
+.energy-result:last-child { border-right: 0; }
+.energy-result .r-n {
+  font-family: var(--serif); font-size: clamp(30px, 3.4vw, 42px); font-weight: 300; line-height: 1;
+  color: var(--ink); font-variant-numeric: tabular-nums;
+  transition: color .3s;
+}
+.energy-result.pulse .r-n { color: var(--accent); }
+.energy-result .r-n .unit { font-size: 0.45em; letter-spacing: 0.05em; color: rgba(26,26,26,0.5); margin-left: 4px; }
+.energy-result .r-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-top: 10px; }
+.energy-foot {
+  margin-top: 28px; font-size: 12px; color: rgba(26,26,26,0.5); line-height: 1.7;
+  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center;
+}
+.energy-foot span { max-width: 64ch; }
+.energy-foot .cta-link { margin-top: 0; }
+
+/* ═════════ METHODE ═════════ */
+.section-wissenschaft { background: var(--butter); }
+.method-list { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 40px; counter-reset: m; }
+.method-item { transition: transform .35s var(--ease); }
+.method-item:hover { transform: translateY(-3px); }
 .method-item .m-no {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
   color: var(--accent); margin-bottom: 8px;
@@ -306,7 +452,32 @@ h2 { font-size: clamp(40px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
 .method-item .m-t { font-family: var(--serif); font-size: 18px; font-weight: 300; color: var(--ink); margin-bottom: 6px; }
 .method-item .m-d { font-size: 14px; color: rgba(26,26,26,0.7); line-height: 1.6; margin: 0; }
 
-.section-ueberblick { background: var(--paper-w); }
+/* ═════════ MIETER ═════════ */
+.section-mieter { background: var(--paper-w); }
+.mieter-points { margin-top: 36px; border-top: 1px solid var(--line); }
+.mieter-point {
+  display: grid; grid-template-columns: 28px 1fr; gap: 18px; align-items: start;
+  padding: 18px 0; border-bottom: 1px solid var(--line);
+  transition: padding-left .35s var(--ease);
+}
+.mieter-point:hover { padding-left: 10px; }
+.mieter-point > svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.2; margin-top: 3px; }
+.mieter-point .mp-t { font-family: var(--serif); font-size: 17px; font-weight: 300; }
+.mieter-point .mp-d { font-size: 13.5px; color: rgba(26,26,26,0.6); line-height: 1.6; margin: 2px 0 0; }
+
+.phone-wrap { position: relative; width: 100%; max-width: 360px; justify-self: center; perspective: 1200px; }
+.phone-tilt {
+  transition: transform .5s var(--ease);
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 40px 60px rgba(26,26,26,0.18));
+  will-change: transform;
+}
+.phone-wrap svg { width: 100%; height: auto; }
+.notif-dot { animation: notifPulse 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes notifPulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: .55; } }
+
+/* ═════════ ÜBERBLICK ═════════ */
+.section-ueberblick { background: var(--butter); }
 .stat-row {
   margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
@@ -316,19 +487,20 @@ h2 { font-size: clamp(40px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
 .stat .s-n { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--ink); line-height: 1; }
 .stat .s-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-top: 10px; }
 
-.illus-wrap { position: relative; width: 100%; max-width: 520px; justify-self: end; }
-.illus-wrap svg { width: 100%; height: auto; }
-.illus-caption {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
-  margin-top: 24px; opacity: 0.5; display: flex; gap: 16px; align-items: center; color: var(--ink);
+/* ═════════ KONTAKT-BAND ═════════ */
+.contact-band {
+  background: var(--accent);
+  color: #fff;
+  padding: clamp(72px, 10vh, 120px) var(--pad);
+  text-align: center;
 }
-.illus-caption::before { content: ""; width: 24px; height: 1px; background: currentColor; }
-.section-wert .illus-caption { color: #fff; opacity: 0.6; }
-
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
-.reveal.in { opacity: 1; transform: translateY(0); }
-.reveal.d2 { transition-delay: .15s; }
-.reveal.d3 { transition-delay: .3s; }
+.contact-band h2 { color: #fff; margin-bottom: 20px; }
+.contact-band p { color: rgba(255,255,255,0.8); max-width: 52ch; margin: 0 auto 36px; font-size: 16px; line-height: 1.8; }
+.contact-band .btn { border-color: #fff; color: #fff; }
+.contact-band .btn.solid { background: #fff; color: var(--accent); }
+.contact-band .btn.solid:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+.contact-band .btn.ghost:hover { background: #fff; color: var(--accent); }
+.contact-band .hero-ctas { justify-content: center; margin-top: 0; }
 
 /* ═════════ FOOTER ═════════ */
 footer { background: var(--coal); color: rgba(255,255,255,0.6); padding: 100px var(--pad) 40px; }
@@ -340,7 +512,7 @@ footer { background: var(--coal); color: rgba(255,255,255,0.6); padding: 100px v
 .footer-logo { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
 .footer-logo svg { stroke: #fff; width: 40px; height: 40px; }
 .footer-logo .logo-text { color: #fff; font-size: 24px; letter-spacing: 0.2em; }
-.footer-cta { font-family: var(--serif); font-weight: 300; font-size: 32px; line-height: 1.2; color: #fff; max-width: 12ch; margin-bottom: 32px; }
+.footer-cta { font-family: var(--serif); font-weight: 300; font-size: 32px; line-height: 1.2; color: #fff; max-width: 14ch; margin-bottom: 32px; }
 footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 24px; }
 .footer-col p { line-height: 2; font-size: 14px; margin: 0; }
 .footer-col a { color: rgba(255,255,255,0.6); transition: color .3s; }
@@ -353,35 +525,141 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
 .footer-bottom a:hover { color: #fff; }
 .footer-bottom .copy { margin-left: auto; opacity: 0.4; letter-spacing: 0.1em; text-transform: none; font-family: var(--sans); }
 
-/* ───── responsive ───── */
+/* ═════════ MOTION ═════════ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s var(--ease); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.d2 { transition-delay: .15s; }
+.reveal.d3 { transition-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .win-glow { opacity: .28 !important; }
+  .sketch, .draw-line { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .fade-dot { opacity: 1; }
+}
+
+
+.photo-credit {
+  position: absolute; right: 10px; bottom: 8px; margin: 0; z-index: 3;
+}
+.photo-credit a {
+  font-family: var(--mono); font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.75); background: rgba(18,18,18,0.45);
+  padding: 4px 8px; backdrop-filter: blur(2px);
+}
+.photo-credit a:hover { color: #fff; }
+.hero-photo.img-failed .photo-credit { display: none; }
+
+/* ═════════ ZIELGRUPPEN ═════════ */
+.section-roles { background: var(--paper-w); }
+.role-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.role-tab {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 12px 20px; border: 1px solid var(--line); border-radius: 999px;
+  background: transparent; color: var(--ink-soft); cursor: pointer;
+  transition: all .3s var(--ease);
+}
+.role-tab:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-1px); }
+.role-tab.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.role-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.role-panel {
+  border: 1px solid var(--line); background: var(--paper);
+  padding: clamp(28px, 4vw, 48px);
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 4vw, 56px);
+  transition: opacity .28s ease, transform .28s var(--ease);
+}
+.role-panel.switching { opacity: 0; transform: translateY(10px); }
+.role-panel h3 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 300; line-height: 1.15; margin-bottom: 14px; }
+.role-panel .role-sub { font-size: 15px; line-height: 1.75; color: rgba(26,26,26,0.7); margin-bottom: 22px; max-width: 44ch; }
+.role-usps { list-style: none; display: grid; gap: 14px; align-content: start; }
+.role-usps li {
+  display: grid; grid-template-columns: 16px 1fr; gap: 14px;
+  font-size: 14.5px; line-height: 1.65; color: rgba(26,26,26,0.75);
+}
+.role-usps li::before {
+  content: ""; width: 8px; height: 8px; margin-top: 7px;
+  border: 1px solid var(--accent); transform: rotate(45deg);
+}
+.role-panel .cta-link { margin-top: 22px; }
+
+.role-alt { margin-top: 14px; font-size: 12.5px; }
+.role-alt a { color: rgba(26,26,26,0.55); border-bottom: 1px solid var(--line); transition: color .3s; }
+.role-alt a:hover { color: var(--accent); }
+
+/* ═════════ GRÜNDER ═════════ */
+.section-team { background: var(--butter); }
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; }
+.founder-card {
+  position: relative; background: var(--paper-w); border: 1px solid var(--ink);
+  padding: 40px 36px 34px;
+  transition: transform .35s var(--ease), box-shadow .35s ease;
+}
+.founder-card::before {
+  content: ""; position: absolute; inset: 7px; border: 1px solid var(--line);
+  pointer-events: none;
+}
+.founder-card:hover { transform: translateY(-5px); box-shadow: 0 26px 56px rgba(26,26,26,0.12); }
+.f-mono {
+  font-family: var(--serif); font-weight: 300; font-size: 58px; line-height: 1;
+  color: var(--accent); font-style: italic;
+}
+.f-name { font-family: var(--serif); font-weight: 300; font-size: 26px; margin-top: 20px; }
+.f-role {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(26,26,26,0.5); margin-top: 8px;
+}
+.f-bio { font-size: 14px; line-height: 1.75; color: rgba(26,26,26,0.72); margin: 18px 0 0; }
+.f-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.f-tag {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 7px 12px; border: 1px solid var(--line); color: rgba(26,26,26,0.6);
+}
+.team-joint { max-width: 900px; }
+.team-joint p { font-size: 16px; line-height: 1.8; color: rgba(26,26,26,0.75); max-width: 62ch; }
+.gen-line { width: 100%; max-width: 900px; height: auto; margin-top: 18px; }
+
+/* ═════════ RESPONSIVE ═════════ */
 @media (max-width: 960px) {
   .section { padding: 100px var(--pad); min-height: auto; }
   .section-inner { grid-template-columns: 1fr; gap: 64px; }
   .section-inner.reverse .section-text { order: 0; }
-  h1 { font-size: 48px; }
-  h2 { font-size: 36px; }
+  h1 { font-size: 44px; }
+  h2 { font-size: 34px; }
   .illus-wrap { max-width: 400px; margin: 0 auto; justify-self: center; }
-  .hero-illus { max-width: 420px; }
-  .nav-links { gap: 16px; }
-  .nav-links a .lbl { display: none; }
+  .hero-illus { max-width: 420px; margin: 0 auto; }
   .section-hero { align-items: center; }
   .section-hero .section-inner { grid-template-columns: 1fr; padding-bottom: 80px; }
-  .hero-meta { flex-wrap: wrap; gap: 32px 48px; }
+  .hero-meta { flex-wrap: wrap; gap: 28px 40px; }
+  .nav-links { gap: 14px; }
+  .nav-links li.hide-m { display: none; }
   .method-list { grid-template-columns: 1fr; gap: 24px; }
-  .stat-row { grid-template-columns: 1fr; }
-  .stat { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
-  .stat:last-child { border-bottom: 0; }
+  .stat-row, .energy-results { grid-template-columns: 1fr; }
+  .stat, .energy-result { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .stat:last-child, .energy-result:last-child { border-bottom: 0; }
+  .energy-scale { gap: 4px; }
+  .role-panel { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .energy-class .bar { height: 44px; font-size: 11px; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; }
   .footer-bottom { flex-wrap: wrap; }
   .footer-bottom .copy { flex: 1 0 100%; margin-left: 0; }
   .section-num { display: none; }
+  .scroll-cue { display: none; }
+}
+@media (max-width: 540px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .energy-class .tag.ist { display: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- ══ NAVBAR (DE) ══ -->
-<nav class="navbar" aria-label="Hauptnavigation">
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" id="navbar" aria-label="Hauptnavigation">
   <a href="#top" class="logo" aria-label="PANI Hausverwaltung">
     <svg viewBox="0 0 60 60" fill="none" aria-hidden="true">
       <g stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
@@ -396,65 +674,90 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
   </a>
 
   <ul class="nav-links">
-    <li>
-      <a href="#werterhalt" class="active">
-        <svg viewBox="0 0 24 24"><path d="M3 10 L12 3 L21 10 V20 H3 Z"/><path d="M9 20 V13 H15 V20"/></svg>
-        <span class="lbl">Eigentümer</span>
-      </a>
-    </li>
-    <li>
-      <a href="#leistungen">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20 C4 16 8 13 12 13 C16 13 20 16 20 20"/></svg>
-        <span class="lbl">Mieter</span>
-      </a>
-    </li>
-    <li>
-      <a href="#kontakt">
-        <svg viewBox="0 0 24 24"><path d="M5 4 H9 L11 9 L9 11 C10 14 11 15 13 16 L15 14 L20 16 V20 C14 21 4 13 5 4 Z"/></svg>
-        <span class="lbl">Kontakt</span>
-      </a>
-    </li>
-    <li>
-      <!-- LINK ZUR ENGLISCHEN SEITE -->
-      <a href="en.html">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><line x1="4" y1="12" x2="20" y2="12"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4 Z"/></svg>
-        <span class="lbl">EN</span>
-      </a>
-    </li>
+    <li class="hide-m"><a href="#zielgruppen" data-spy="zielgruppen">Für wen</a></li>
+    <li class="hide-m"><a href="#leistungen" data-spy="leistungen">Mandate</a></li>
+    <li class="hide-m"><a href="#sanierung" data-spy="sanierung">Sanierung</a></li>
+    <li class="hide-m"><a href="#gruender" data-spy="gruender">Gründer</a></li>
+    <li class="hide-m"><a href="#mieter" data-spy="mieter">Mieter</a></li>
+    <li class="hide-m"><a href="en.html">EN</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
   </ul>
 </nav>
 
-<!-- ══ S1: HERO ══ -->
+<!-- ══ I: HERO ══ -->
 <section class="section section-hero" id="top">
-  <span class="section-num">I / V · Berlin</span>
+  <span class="section-num">I / VIII · Berlin</span>
   <div class="section-inner">
     <div class="reveal">
+      <span class="kicker">Hausverwaltung · Berlin</span>
       <h1>
-        <span class="fixed">Hausverwaltung</span>
-        <span class="rotator" aria-live="polite">
-          <span class="rotator-track" id="rotator-track"></span>
-        </span>
+        Werte verwalten.<br/><em>Werte schaffen.</em>
       </h1>
-      <div class="rotator-ticks" id="rotator-ticks"></div>
+
+      <p class="hero-sub">
+        Wir verbinden generationenlange Erfahrung in der Verwaltung Berliner Häuser mit
+        der analytischen Disziplin des Investmentbankings: klares Reporting, strategische
+        Planung, akribische Umsetzung — und Entscheidungen mit Eigentümergefühl.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#zielgruppen" class="btn solid">Für Eigentümer &amp; Investoren</a>
+        <a href="#mieter" class="btn ghost">Für Mieter</a>
+      </div>
+
       <div class="hero-meta">
-        <div>
-          <span class="m-label">Gegründet</span>
-          <span class="m-val">Berlin</span>
-        </div>
-        <div>
-          <span class="m-label">Kompetenz</span>
-          <span class="m-val">WEG · Miethaus</span>
-        </div>
-        <div>
-          <span class="m-label">Sprachen</span>
-          <span class="m-val">DE · EN</span>
-        </div>
+        <div><span class="m-label">Standort</span><span class="m-val">Berlin</span></div>
+        <div><span class="m-label">Erfahrung</span><span class="m-val">Häuser seit Generationen</span></div>
+        <div><span class="m-label">Hintergrund</span><span class="m-val">Finance · Immobilien</span></div>
       </div>
     </div>
 
-    <!-- HERO ILLUS -->
-    <div class="hero-illus reveal d2" aria-hidden="true">
-      <svg viewBox="0 -30 560 650" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYEnd meet">
+    <!-- HERO: Echtes Objektfoto mit Vermessungs-Overlay.
+         FOTO AUSTAUSCHEN: src durch ein Foto eines eigenen verwalteten Objekts ersetzen.
+         Fällt das Bild aus, erscheint automatisch die technische Zeichnung. -->
+    <div class="hero-illus reveal d2" id="hero-illus">
+      <figure class="hero-photo" id="hero-photo">
+        <!-- FOTO-AUSWAHL · Berliner Gründerzeit, Wikimedia Commons (CC BY-SA — Quelle/Urheber siehe Datei-Seite, Credit unten rechts im Bild):
+             Aktiv:  Kastanienallee 10  → https://commons.wikimedia.org/wiki/File:Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG
+             Alt. 1: Kastanienallee 3   → https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Berlin_Prenzlauer_Berg_Kastanienallee_3_%2809065062%29.JPG/1280px-Berlin_Prenzlauer_Berg_Kastanienallee_3_%2809065062%29.JPG
+             Alt. 2: Kastanienallee 26  → https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Berlin_Prenzlauer_Berg_Kastanienallee_26_%2809065080%29.JPG/1280px-Berlin_Prenzlauer_Berg_Kastanienallee_26_%2809065080%29.JPG
+             Vor Livegang: idealerweise durch Foto eines eigenen Objekts ersetzen. -->
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG/1280px-Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG"
+          alt="Berliner Gründerzeit-Mietshaus mit Stuckfassade, Kastanienallee, Prenzlauer Berg"
+          loading="eager"
+          onerror="document.getElementById('hero-photo').classList.add('img-failed')"/>
+
+        <!-- Vermessungs-Overlay -->
+        <svg class="photo-overlay" viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true">
+          <g stroke="rgba(255,255,255,0.8)" stroke-width="0.6" fill="none">
+            <line x1="26" y1="40" x2="26" y2="460"/>
+            <line x1="22" y1="40" x2="30" y2="40"/>
+            <line x1="22" y1="145" x2="30" y2="145"/>
+            <line x1="22" y1="250" x2="30" y2="250"/>
+            <line x1="22" y1="355" x2="30" y2="355"/>
+            <line x1="22" y1="460" x2="30" y2="460"/>
+            <line x1="46" y1="476" x2="374" y2="476"/>
+            <line x1="46" y1="472" x2="46" y2="480"/>
+            <line x1="374" y1="472" x2="374" y2="480"/>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" fill="rgba(255,255,255,0.85)">
+            <text x="36" y="44">+ 18,4</text>
+            <text x="36" y="149">+ 13,8</text>
+            <text x="36" y="254">+ 9,20</text>
+            <text x="36" y="359">+ 4,60</text>
+            <text x="36" y="464">± 0,00</text>
+            <text x="374" y="468" text-anchor="end">GRÜNDERZEIT · PRENZLAUER BERG</text>
+          </g>
+        </svg>
+
+        <figcaption class="photo-credit">
+          <a href="https://commons.wikimedia.org/wiki/File:Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG" target="_blank" rel="noopener">Foto: Wikimedia Commons · CC BY-SA 4.0</a>
+        </figcaption>
+
+        <!-- Fallback: technische Zeichnung -->
+        <div class="photo-fallback">
+      <svg viewBox="0 -50 560 670" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYEnd meet">
         <defs>
           <pattern id="hero-hatch" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,0.06)" stroke-width="0.5"/>
@@ -465,6 +768,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
             <rect x="-2" y="-6" width="4" height="38" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
             <rect x="-22" y="32" width="44" height="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
             <path d="M -24 -36 L 0 -48 L 24 -36 Z" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+            <path d="M -10 -40 Q 0 -45 10 -40" fill="none" stroke="var(--ink)" stroke-width="0.5" opacity="0.5"/>
           </g>
           <g id="pani-win-top">
             <rect x="-16" y="-28" width="32" height="56" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
@@ -478,17 +782,28 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
             <rect x="-22" y="-10" width="44" height="6" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
             <rect x="-2" y="-4" width="4" height="54" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
           </g>
+          <g id="balkon">
+            <line x1="-26" y1="36" x2="26" y2="36" stroke="var(--ink)" stroke-width="1.2"/>
+            <line x1="-26" y1="14" x2="26" y2="14" stroke="var(--ink)" stroke-width="0.75"/>
+            <line x1="-26" y1="14" x2="-26" y2="36" stroke="var(--ink)" stroke-width="0.75"/>
+            <line x1="26" y1="14" x2="26" y2="36" stroke="var(--ink)" stroke-width="0.75"/>
+            <line x1="-19" y1="14" x2="-19" y2="36" stroke="var(--ink)" stroke-width="0.5"/>
+            <line x1="-12" y1="14" x2="-12" y2="36" stroke="var(--ink)" stroke-width="0.5"/>
+            <line x1="-5"  y1="14" x2="-5"  y2="36" stroke="var(--ink)" stroke-width="0.5"/>
+            <line x1="2"   y1="14" x2="2"   y2="36" stroke="var(--ink)" stroke-width="0.5"/>
+            <line x1="9"   y1="14" x2="9"   y2="36" stroke="var(--ink)" stroke-width="0.5"/>
+            <line x1="16"  y1="14" x2="16"  y2="36" stroke="var(--ink)" stroke-width="0.5"/>
+          </g>
         </defs>
 
-        <g stroke="rgba(26,26,26,0.25)" stroke-width="0.5" fill="none" font-family="var(--mono)" font-size="9" letter-spacing="1.5">
+        <!-- Maßstab links -->
+        <g stroke="rgba(26,26,26,0.25)" stroke-width="0.5" fill="none" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5">
           <line x1="14" y1="40" x2="14" y2="590"/>
-          <g stroke-width="0.5">
-            <line x1="10" y1="40"  x2="18" y2="40"/>
-            <line x1="10" y1="160" x2="18" y2="160"/>
-            <line x1="10" y1="290" x2="18" y2="290"/>
-            <line x1="10" y1="445" x2="18" y2="445"/>
-            <line x1="10" y1="590" x2="18" y2="590"/>
-          </g>
+          <line x1="10" y1="40"  x2="18" y2="40"/>
+          <line x1="10" y1="160" x2="18" y2="160"/>
+          <line x1="10" y1="290" x2="18" y2="290"/>
+          <line x1="10" y1="445" x2="18" y2="445"/>
+          <line x1="10" y1="590" x2="18" y2="590"/>
           <text x="24" y="44" fill="rgba(26,26,26,0.4)">+ 18,4</text>
           <text x="24" y="164" fill="rgba(26,26,26,0.4)">+ 13,8</text>
           <text x="24" y="294" fill="rgba(26,26,26,0.4)">+ 9,20</text>
@@ -497,12 +812,27 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
         </g>
 
         <g transform="translate(110,30)">
+          <!-- Dach & Gesims -->
           <polygon points="0,0 30,-30 390,-30 420,0" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+          <g stroke="var(--ink)" stroke-width="0.5" opacity="0.35">
+            <line x1="60" y1="-6" x2="74" y2="-24"/>
+            <line x1="120" y1="-6" x2="134" y2="-24"/>
+            <line x1="300" y1="-6" x2="314" y2="-24"/>
+            <line x1="350" y1="-6" x2="364" y2="-24"/>
+          </g>
           <path d="M 150 0 L 210 -40 L 270 0 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
           <circle cx="210" cy="-16" r="8" fill="none" stroke="var(--ink)" stroke-width="1"/>
+          <path d="M 204 -16 H 216 M 210 -22 V -10" stroke="var(--ink)" stroke-width="0.5"/>
+          <!-- Schornsteine -->
+          <rect x="48" y="-44" width="16" height="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
+          <rect x="46" y="-47" width="20" height="3" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
+          <rect x="352" y="-44" width="16" height="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
+          <rect x="350" y="-47" width="20" height="3" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
 
-          <rect x="0" y="0" width="420" height="560" fill="transparent" stroke="var(--ink)" stroke-width="1"/>
-          
+          <!-- Fassade (zeichnet sich beim Laden) -->
+          <rect x="0" y="0" width="420" height="560" fill="transparent" stroke="var(--ink)" stroke-width="1" pathLength="1" class="sketch"/>
+
+          <!-- Erdgeschoss-Rustika -->
           <g stroke="var(--ink)" stroke-width="0.5" opacity="0.15">
             <line x1="0" y1="430" x2="420" y2="430"/> <line x1="0" y1="445" x2="420" y2="445"/>
             <line x1="0" y1="460" x2="420" y2="460"/> <line x1="0" y1="475" x2="420" y2="475"/>
@@ -510,49 +840,73 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
             <line x1="0" y1="520" x2="420" y2="520"/> <line x1="0" y1="535" x2="420" y2="535"/>
           </g>
 
+          <!-- Gesimsbänder + Stuck-Ornamentband -->
           <rect x="-4" y="0" width="428" height="6" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
           <rect x="-2" y="145" width="424" height="2" fill="var(--ink)" opacity="0.1"/>
+          <g opacity="0.25" stroke="var(--ink)" stroke-width="0.5" fill="none">
+            <path d="M 8 152 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0"/>
+          </g>
           <rect x="-2" y="275" width="424" height="2" fill="var(--ink)" opacity="0.1"/>
           <rect x="-4" y="414" width="428" height="4" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
           <rect x="0" y="550" width="420" height="10" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
 
+          <!-- Fensterreihen mit warmem Licht -->
           <g transform="translate(0, 90)">
+            <rect class="win-glow g1" x="49"  y="-28" width="32" height="56" fill="var(--glow)"/>
+            <rect class="win-glow g4" x="244" y="-28" width="32" height="56" fill="var(--glow)"/>
             <use href="#pani-win-top" x="65"/><use href="#pani-win-top" x="160"/>
             <use href="#pani-win-top" x="260"/><use href="#pani-win-top" x="355"/>
           </g>
           <g transform="translate(0, 220)">
+            <rect class="win-glow g2" x="144" y="-32" width="32" height="64" fill="var(--glow)"/>
             <use href="#pani-win" x="65"/><use href="#pani-win" x="160"/>
             <use href="#pani-win" x="260"/><use href="#pani-win" x="355"/>
+            <use href="#balkon" x="65"/><use href="#balkon" x="355"/>
           </g>
           <g transform="translate(0, 350)">
+            <rect class="win-glow g3" x="339" y="-32" width="32" height="64" fill="var(--glow)"/>
+            <rect class="win-glow g5" x="49"  y="-32" width="32" height="64" fill="var(--glow)"/>
             <use href="#pani-win" x="65"/><use href="#pani-win" x="160"/>
             <use href="#pani-win" x="260"/><use href="#pani-win" x="355"/>
+            <use href="#balkon" x="160"/><use href="#balkon" x="260"/>
           </g>
           <g transform="translate(0, 500)">
             <use href="#shop-win" x="65"/><use href="#shop-win" x="135"/>
             <g transform="translate(210, 0)">
-              <path d="M -36 50 L -36 -30 A 36 36 0 0 1 36 -30 L 36 50 Z" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
+              <path d="M -36 50 L -36 -30 A 36 36 0 0 1 36 -30 L 36 50 Z" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75" pathLength="1" class="sketch s2"/>
               <rect x="-28" y="-10" width="28" height="60" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
               <rect x="0" y="-10" width="28" height="60" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
               <circle cx="-6" cy="20" r="1.5" fill="var(--brass)"/>
               <circle cx="6" cy="20" r="1.5" fill="var(--brass)"/>
-              
               <path d="M -36 -14 A 36 36 0 0 1 36 -14" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
               <line x1="-14" y1="-14" x2="-14" y2="-28" stroke="var(--ink)" stroke-width="0.75"/>
               <line x1="0" y1="-14" x2="0" y2="-36" stroke="var(--ink)" stroke-width="0.75"/>
               <line x1="14" y1="-14" x2="14" y2="-28" stroke="var(--ink)" stroke-width="0.75"/>
+              <text x="0" y="-40" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="2" fill="rgba(26,26,26,0.45)">№ 18</text>
             </g>
             <use href="#shop-win" x="285"/><use href="#shop-win" x="355"/>
           </g>
-          
+
           <rect x="-30" y="560" width="480" height="1" fill="var(--ink)" opacity="0.3"/>
+          <!-- Bordstein & Baum-Andeutung -->
+          <g stroke="var(--ink)" stroke-width="0.5" opacity="0.25" fill="none">
+            <line x1="-30" y1="572" x2="450" y2="572"/>
+            <circle cx="-8" cy="545" r="2"/>
+          </g>
         </g>
-        <g font-family="var(--mono)" font-size="9" fill="rgba(26,26,26,0.4)" letter-spacing="1.5">
-          <line x1="110" y1="610" x2="530" y2="610" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
-          <text x="110" y="604">⎯ 24,60 m ⎯</text>
-          <text x="470" y="604" text-anchor="end">BERLIN ALTBAU</text>
+
+        <!-- Maßkette unten -->
+        <g font-family="IBM Plex Mono, monospace" font-size="9" fill="rgba(26,26,26,0.4)" letter-spacing="1.5">
+          <line x1="110" y1="612" x2="530" y2="612" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
+          <line x1="110" y1="608" x2="110" y2="616" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
+          <line x1="530" y1="608" x2="530" y2="616" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
+          <text x="116" y="606">⎯ 24,60 m ⎯</text>
+          <text x="524" y="606" text-anchor="end">BERLIN ALTBAU</text>
         </g>
       </svg>
+        </div>
+      </figure>
+      <div class="illus-caption">Berliner Bestand · Beispielobjekt</div>
     </div>
   </div>
 
@@ -564,53 +918,287 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
   </a>
 </section>
 
-<!-- ══ S2: LEISTUNGEN ══ -->
-<section class="section section-leistungen" id="leistungen">
-  <span class="section-num">II / V · Leistungen</span>
+<!-- ══ II: FÜR WEN ══ -->
+<section class="section section-roles" id="zielgruppen">
+  <span class="section-num">II / VIII · Für wen</span>
+  <div class="section-inner" style="grid-template-columns: 1fr; gap: 40px;">
+    <div class="sanierung-head reveal">
+      <span class="kicker">Für wen wir arbeiten</span>
+      <h2>Verwaltung, abgestimmt auf<br/>Ihre Eigentümerstruktur.</h2>
+      <p>
+        Investoren, Bestandshalter, Zinshaus-Eigentümer, Sondervermögen oder eine
+        anstehende Nachfolge — jede Eigentümerrolle stellt andere Anforderungen an
+        Reporting, Prozesse und Steuerung. Wählen Sie Ihre Rolle:
+      </p>
+    </div>
+
+    <div class="reveal d2">
+      <div class="role-tabs" id="role-tabs" role="tablist" aria-label="Eigentümerrollen"></div>
+      <div class="role-panel" id="role-panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ III: PRINZIPIEN ══ -->
+<section class="section section-wert on-dark" id="prinzipien">
+  <span class="section-num">III / VIII · Prinzipien</span>
   <div class="section-inner">
-    
-    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
-      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="var(--ink)" stroke-width="0.5" opacity="0.1" fill="none">
-          <rect x="40" y="40" width="420" height="420"/>
-          <line x1="40" y1="120" x2="460" y2="120"/>
-          <line x1="40" y1="280" x2="460" y2="280"/>
-          <line x1="180" y1="40" x2="180" y2="460"/>
-          <line x1="320" y1="120" x2="320" y2="460"/>
-          <circle cx="180" cy="280" r="40"/>
-          <path d="M 320 280 A 60 60 0 0 1 380 220 L 320 220 Z"/>
+    <div class="section-text reveal">
+      <span class="kicker">Prinzipien</span>
+      <h2>Gedacht wie ein Eigentümer. Gesteuert wie ein Investor.</h2>
+      <p>
+        Wir verwalten nicht aus Verwalterroutine, sondern aus Eigentümerperspektive:
+        Kosten werden hinterfragt statt durchgereicht, Maßnahmen nach Sinn, Timing und
+        Wirtschaftlichkeit entschieden — mit der Disziplin, die wir aus dem
+        Investmentbanking mitbringen.
+      </p>
+
+      <div class="invest-points">
+        <div class="invest-point">
+          <svg class="ip-icon" viewBox="0 0 24 24"><path d="M6 3 H15 L19 7 V21 H6 Z"/><path d="M15 3 V7 H19"/><line x1="9" y1="12" x2="16" y2="12"/><line x1="9" y1="16" x2="14" y2="16"/></svg>
+          <div>
+            <div class="ip-t">Klares Reporting</div>
+            <div class="ip-d">Zahlen, Vorgänge und Prioritäten sauber strukturiert — als Grundlage für fundierte Entscheidungen, nicht als Pflichtanhang.</div>
+          </div>
+        </div>
+        <div class="invest-point">
+          <svg class="ip-icon" viewBox="0 0 24 24"><path d="M3 11 L12 4 L21 11"/><path d="M6 10 V20 H18 V10"/><path d="M10 20 V14 H14 V20"/></svg>
+          <div>
+            <div class="ip-t">Eigentümer-Mindset</div>
+            <div class="ip-d">Wir prüfen jede Ausgabe so, als ginge es um das eigene Haus. Nichts wird reflexhaft beauftragt — Kostendisziplin ist Haltung.</div>
+          </div>
+        </div>
+        <div class="invest-point">
+          <svg class="ip-icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,14 21,5"/><polyline points="15,5 21,5 21,11"/></svg>
+          <div>
+            <div class="ip-t">Strategische Planung</div>
+            <div class="ip-d">Hausverwaltung als laufende Steuerung eines Vermögenswerts: Prioritäten, Maßnahmen, Werterhalt, Entwicklung.</div>
+          </div>
+        </div>
+        <div class="invest-point">
+          <svg class="ip-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><line x1="15.5" y1="15.5" x2="20" y2="20"/><line x1="11" y1="8.5" x2="11" y2="11.5"/><line x1="11" y1="13.2" x2="11" y2="13.6"/></svg>
+          <div>
+            <div class="ip-t">Akribische Umsetzung</div>
+            <div class="ip-d">Saubere Prozesse, genaue Nachverfolgung, hohe Sorgfalt im Detail — bei uns Standard, kein Zusatz.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-group">
+        <a href="#kontakt" class="cta-link">
+          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+          <span>Mandat anfragen</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="illus-wrap reveal d2" aria-hidden="true">
+      <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="wert-hatch" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+          </pattern>
+          <g id="wert-win">
+            <rect x="-11" y="-16" width="22" height="32" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
+            <line x1="0" y1="-16" x2="0" y2="16" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/>
+            <line x1="-11" y1="-4" x2="11" y2="-4" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/>
+            <rect x="-14" y="16" width="28" height="2.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.6"/>
+          </g>
+        </defs>
+
+        <!-- Raster -->
+        <g stroke="rgba(255,255,255,0.07)" stroke-width="0.5" fill="none">
+          <line x1="30" y1="350" x2="470" y2="350"/>
+          <line x1="30" y1="280" x2="470" y2="280"/>
+          <line x1="30" y1="210" x2="470" y2="210"/>
+          <line x1="30" y1="140" x2="470" y2="140"/>
+          <line x1="30" y1="70"  x2="470" y2="70"/>
         </g>
 
-        <g transform="translate(150, 160) rotate(15)">
-          <path d="M 0 0 L 160 0" stroke="var(--ink)" stroke-width="6" fill="none"/>
-          <path d="M 160 0 L 160 20 L 145 20 L 145 5 L 130 5 L 130 25 L 115 25 L 115 0" fill="var(--brass)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
-          <circle cx="-25" cy="0" r="25" fill="var(--paper)" stroke="var(--ink)" stroke-width="4"/>
-          <circle cx="-25" cy="0" r="10" fill="none" stroke="var(--ink)" stroke-width="2"/>
-          <path d="M -50 0 A 25 25 0 0 1 0 0 A 25 25 0 0 1 -50 0" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+        <!-- Altbau in weißer Linienzeichnung -->
+        <g transform="translate(96, 0)">
+          <polygon points="-6,96 12,68 196,68 214,96" fill="url(#wert-hatch)" stroke="rgba(255,255,255,0.65)" stroke-width="0.8"/>
+          <path d="M 76 96 L 104 60 L 132 96 Z" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
+          <circle cx="104" cy="82" r="6" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
+          <rect x="22" y="44" width="14" height="16" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.7"/>
+
+          <rect x="0" y="96" width="208" height="254" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+          <rect x="-5" y="96" width="218" height="5" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
+          <line x1="0" y1="178" x2="208" y2="178" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <line x1="0" y1="262" x2="208" y2="262" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+
+          <use href="#wert-win" x="42"  y="140"/><use href="#wert-win" x="104" y="140"/><use href="#wert-win" x="166" y="140"/>
+          <use href="#wert-win" x="42"  y="222"/><use href="#wert-win" x="104" y="222"/><use href="#wert-win" x="166" y="222"/>
+          <use href="#wert-win" x="42"  y="306"/><use href="#wert-win" x="166" y="306"/>
+
+          <!-- Tür -->
+          <path d="M 84 350 L 84 312 A 20 20 0 0 1 124 312 L 124 350 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/>
+          <line x1="104" y1="316" x2="104" y2="350" stroke="rgba(255,255,255,0.45)" stroke-width="0.6"/>
+          <circle cx="99" cy="334" r="1.4" fill="var(--sand)"/>
+          <circle cx="109" cy="334" r="1.4" fill="var(--sand)"/>
+
+          <!-- sanierte Etage markiert -->
+          <rect x="24" y="118" width="160" height="44" fill="none" stroke="var(--sand)" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.7"/>
+          <text x="192" y="116" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" fill="var(--sand)" opacity="0.8">SANIERT</text>
         </g>
 
-        <g transform="translate(220, 240) rotate(-5)">
-          <rect x="0" y="0" width="140" height="180" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
-          <line x1="20" y1="20" x2="80" y2="20" stroke="var(--ink)" stroke-width="1.5"/>
-          <line x1="20" y1="36" x2="100" y2="36" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="20" y1="46" x2="120" y2="46" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="20" y1="56" x2="110" y2="56" stroke="var(--ink)" stroke-width="0.5"/>
-          <circle cx="110" cy="150" r="12" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-          <path d="M 104 150 L 108 155 L 116 145" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
-        </g>
-        <g transform="translate(240, 260) rotate(8)">
-          <rect x="0" y="0" width="140" height="180" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
-          <rect x="10" y="10" width="120" height="160" fill="none" stroke="var(--ink)" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <!-- Boden -->
+        <line x1="40" y1="350" x2="460" y2="350" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+
+        <!-- Wertkurve, zeichnet sich beim Erscheinen -->
+        <g>
+          <polyline points="60,330 140,310 220,250 300,210 380,150 440,92" fill="none" stroke="var(--accent)" stroke-width="2.5" pathLength="1" class="draw-line"/>
+          <circle cx="60"  cy="330" r="3" fill="var(--accent)" class="fade-dot fd1"/>
+          <circle cx="140" cy="310" r="3" fill="var(--accent)" class="fade-dot fd2"/>
+          <circle cx="220" cy="250" r="3" fill="var(--accent)" class="fade-dot fd3"/>
+          <circle cx="300" cy="210" r="3" fill="var(--accent)" class="fade-dot fd4"/>
+          <circle cx="380" cy="150" r="3" fill="var(--accent)" class="fade-dot fd5"/>
+          <circle cx="440" cy="92"  r="4" fill="var(--accent)" class="fade-dot fd5"/>
+          <path d="M 428 88 L 442 88 L 442 102" fill="none" stroke="var(--accent)" stroke-width="2" class="fade-dot fd5"/>
+          <text x="448" y="80" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.55)" class="fade-dot fd5">WERT</text>
         </g>
       </svg>
-      <div class="illus-caption">Organisation & Eigentum</div>
+      <div class="illus-caption">Strukturelle Wertsteigerung</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ II: LEISTUNGEN ══ -->
+<section class="section section-leistungen" id="leistungen">
+  <span class="section-num">IV / VIII · Mandate</span>
+  <div class="section-inner">
+    <!-- Illustration: Berliner Altbau-Häuserzeile — ein Haus je Leistung -->
+    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="row-hatch" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,0.07)" stroke-width="0.5"/>
+          </pattern>
+          <!-- Fenster mit Kreuzsprosse und Sims -->
+          <g id="row-win">
+            <rect x="-10" y="-15" width="20" height="30" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.7"/>
+            <line x1="0" y1="-15" x2="0" y2="15" stroke="var(--ink)" stroke-width="0.5"/>
+            <line x1="-10" y1="-3" x2="10" y2="-3" stroke="var(--ink)" stroke-width="0.5"/>
+            <rect x="-13" y="15" width="26" height="2.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.6"/>
+          </g>
+          <!-- Fenster mit Segmentgiebel -->
+          <g id="row-win-g">
+            <use href="#row-win"/>
+            <path d="M -13 -18 Q 0 -25 13 -18" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
+          </g>
+        </defs>
+
+        <!-- Hintergrund-Konstruktionslinien -->
+        <g stroke="var(--ink)" stroke-width="0.5" opacity="0.08" fill="none">
+          <line x1="20" y1="120" x2="480" y2="120"/>
+          <line x1="20" y1="86" x2="480" y2="86"/>
+          <circle cx="430" cy="80" r="34"/>
+        </g>
+
+        <!-- ── Haus 1 · WEG (links) ── -->
+        <g transform="translate(48, 0)">
+          <polygon points="-4,166 8,146 118,146 130,166" fill="url(#row-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+          <rect x="42" y="128" width="13" height="12" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
+          <rect x="0" y="166" width="126" height="254" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
+          <rect x="-4" y="166" width="134" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
+          <rect x="-2" y="252" width="130" height="2" fill="var(--ink)" opacity="0.1"/>
+          <rect x="-2" y="330" width="130" height="2" fill="var(--ink)" opacity="0.1"/>
+          <use href="#row-win-g" x="34" y="212"/><use href="#row-win-g" x="92" y="212"/>
+          <use href="#row-win" x="34" y="292"/><use href="#row-win" x="92" y="292"/>
+          <use href="#row-win" x="34" y="372"/><use href="#row-win" x="92" y="372"/>
+        </g>
+
+        <!-- ── Haus 2 · Miethaus (Mitte, höher) ── -->
+        <g transform="translate(174, 0)">
+          <polygon points="-4,128 10,104 130,104 144,128" fill="url(#row-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+          <path d="M 48 128 L 70 96 L 92 128 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
+          <circle cx="70" cy="115" r="5" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
+          <rect x="0" y="128" width="140" height="292" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
+          <rect x="-4" y="128" width="148" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
+          <rect x="-2" y="206" width="144" height="2" fill="var(--ink)" opacity="0.1"/>
+          <!-- Ornamentband -->
+          <path d="M 6 213 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0" fill="none" stroke="var(--ink)" stroke-width="0.5" opacity="0.3"/>
+          <rect x="-2" y="288" width="144" height="2" fill="var(--ink)" opacity="0.1"/>
+          <use href="#row-win-g" x="28" y="168"/><use href="#row-win-g" x="70" y="168"/><use href="#row-win-g" x="112" y="168"/>
+          <use href="#row-win" x="28" y="248"/><use href="#row-win" x="70" y="248"/><use href="#row-win" x="112" y="248"/>
+          <use href="#row-win" x="28" y="326"/><use href="#row-win" x="112" y="326"/>
+          <!-- Balkon Mitte -->
+          <use href="#row-win" x="70" y="326"/>
+          <g transform="translate(70, 326)">
+            <line x1="-17" y1="20" x2="17" y2="20" stroke="var(--ink)" stroke-width="1"/>
+            <line x1="-17" y1="6" x2="-17" y2="20" stroke="var(--ink)" stroke-width="0.6"/>
+            <line x1="17" y1="6" x2="17" y2="20" stroke="var(--ink)" stroke-width="0.6"/>
+            <line x1="-17" y1="6" x2="17" y2="6" stroke="var(--ink)" stroke-width="0.6"/>
+            <line x1="-11" y1="6" x2="-11" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
+            <line x1="-5" y1="6" x2="-5" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
+            <line x1="1" y1="6" x2="1" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
+            <line x1="7" y1="6" x2="7" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
+            <line x1="13" y1="6" x2="13" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
+          </g>
+          <!-- Haustür mit Rundbogen -->
+          <g transform="translate(70, 0)">
+            <path d="M -22 420 L -22 374 A 22 22 0 0 1 22 374 L 22 420 Z" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.8"/>
+            <rect x="-16" y="382" width="15" height="38" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
+            <rect x="1" y="382" width="15" height="38" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
+            <circle cx="-4" cy="402" r="1.3" fill="var(--brass)"/>
+            <circle cx="4" cy="402" r="1.3" fill="var(--brass)"/>
+            <line x1="-9" y1="374" x2="-9" y2="364" stroke="var(--ink)" stroke-width="0.6"/>
+            <line x1="0" y1="374" x2="0" y2="360" stroke="var(--ink)" stroke-width="0.6"/>
+            <line x1="9" y1="374" x2="9" y2="364" stroke="var(--ink)" stroke-width="0.6"/>
+          </g>
+        </g>
+
+        <!-- ── Haus 3 · SEV (rechts) ── -->
+        <g transform="translate(318, 0)">
+          <polygon points="-4,186 8,168 122,168 134,186" fill="url(#row-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
+          <rect x="0" y="186" width="130" height="234" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
+          <rect x="-4" y="186" width="138" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
+          <rect x="-2" y="264" width="134" height="2" fill="var(--ink)" opacity="0.1"/>
+          <rect x="-2" y="342" width="134" height="2" fill="var(--ink)" opacity="0.1"/>
+          <use href="#row-win-g" x="36" y="226"/><use href="#row-win-g" x="94" y="226"/>
+          <use href="#row-win" x="36" y="304"/><use href="#row-win" x="94" y="304"/>
+          <use href="#row-win" x="36" y="382"/><use href="#row-win" x="94" y="382"/>
+          <!-- markierte Einzelwohnung (Sondereigentum) -->
+          <rect x="76" y="286" width="36" height="36" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
+        </g>
+
+        <!-- Boden & Bordstein -->
+        <line x1="24" y1="420" x2="476" y2="420" stroke="var(--ink)" stroke-width="1" opacity="0.5"/>
+        <line x1="24" y1="430" x2="476" y2="430" stroke="var(--ink)" stroke-width="0.5" opacity="0.2"/>
+
+        <!-- Leistungs-Labels mit Hinweislinien -->
+        <g font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(26,26,26,0.55)">
+          <g stroke="rgba(26,26,26,0.3)" stroke-width="0.5">
+            <line x1="111" y1="138" x2="111" y2="68"/>
+            <line x1="244" y1="96" x2="244" y2="46"/>
+            <line x1="411" y1="160" x2="411" y2="98"/>
+          </g>
+          <circle cx="111" cy="138" r="1.5" fill="var(--accent)" stroke="none"/>
+          <circle cx="244" cy="96" r="1.5" fill="var(--accent)" stroke="none"/>
+          <circle cx="411" cy="160" r="1.5" fill="var(--accent)" stroke="none"/>
+          <text x="111" y="60" text-anchor="middle">01 · WEG</text>
+          <text x="244" y="38" text-anchor="middle">02 · MIETHAUS</text>
+          <text x="411" y="90" text-anchor="middle">03 · SEV</text>
+        </g>
+
+        <!-- Maßkette -->
+        <g stroke="rgba(26,26,26,0.25)" stroke-width="0.5" font-family="IBM Plex Mono, monospace" font-size="8" fill="rgba(26,26,26,0.4)">
+          <line x1="44" y1="448" x2="452" y2="448"/>
+          <line x1="44" y1="444" x2="44" y2="452"/>
+          <line x1="452" y1="444" x2="452" y2="452"/>
+          <text x="222" y="464" letter-spacing="1.5">HÄUSERZEILE · BERLIN</text>
+        </g>
+      </svg>
+      <div class="illus-caption">Drei Häuser, drei Mandate</div>
     </div>
 
     <div class="section-text reveal d2">
-      <span class="kicker">Leistungen</span>
+      <span class="kicker">Mandate</span>
       <h2>Hausverwaltung,<br/>im Detail.</h2>
       <p>
-        Wir sind Experten in den Bereichen WEG-Verwaltung, Miethausverwaltung und Sondereigentumsverwaltung. Von der korrekten Buchhaltung bis zur baulichen Restaurierung.
+        Wir betreuen Miethäuser, Wohnungseigentümergemeinschaften und Sondereigentum —
+        mit derselben Sorgfalt im operativen Detail und demselben Blick auf Substanz,
+        Kosten und Wirtschaftlichkeit, mit dem wir eigene Häuser führen würden.
       </p>
 
       <div class="svc-chips">
@@ -618,7 +1206,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
           <span class="no">01</span>
           <div>
             <div class="t">WEG-Verwaltung</div>
-            <div class="d">Strukturierte Eigentümerversammlungen, Beschlussfassung, Instandhaltung.</div>
+            <div class="d">Strukturierte Eigentümerversammlungen, Beschlussumsetzung, Instandhaltungsplanung und transparente Rücklagen.</div>
           </div>
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
         </div>
@@ -626,7 +1214,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
           <span class="no">02</span>
           <div>
             <div class="t">Miethausverwaltung</div>
-            <div class="d">Vollbetreuung, rechtssichere Verträge, Abrechnung, Technik.</div>
+            <div class="d">Vollbetreuung mit rechtssicheren Verträgen, Abrechnung, Technik — und einem festen Ansprechpartner für Ihre Mieter.</div>
           </div>
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
         </div>
@@ -634,7 +1222,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
           <span class="no">03</span>
           <div>
             <div class="t">Sondereigentum</div>
-            <div class="d">Einzelne Wohnungen für Kapitalanleger und auswärtige Eigentümer.</div>
+            <div class="d">Einzelne Wohnungen für Kapitalanleger und auswärtige Eigentümer — inklusive Reporting und digitalem Dokumentenzugriff.</div>
           </div>
           <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
         </div>
@@ -648,162 +1236,79 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
   </div>
 </section>
 
-<!-- ══ S3: WERTSTEIGERUNG ══ -->
-<section class="section section-wert" id="werterhalt">
-  <span class="section-num">III / V · Philosophie</span>
+<!-- ══ IV: ENERGETISCHE SANIERUNG ══ -->
+<section class="section section-sanierung" id="sanierung">
+  <span class="section-num">V / VIII · Sanierung</span>
   <div class="section-inner">
-    <div class="section-text reveal">
-      <span class="kicker">Philosophie</span>
-      <h2>Wertsteigerung<br/>statt Werterhalt.</h2>
+    <div class="sanierung-head reveal">
+      <span class="kicker leaf">Energetische Sanierung</span>
+      <h2>Vom Energiefresser<br/>zum Zukunftsobjekt.</h2>
       <p>
-        Eine Immobilie ist mehr als Stein. Mit unserem Ansatz verfolgen wir das Ziel, Ihr Objekt nicht nur instand zu halten, sondern seinen Wert strukturell und wirtschaftlich zu optimieren.
+        Wir betreuen energetische Sanierungen von der Bestandsaufnahme über Förderung
+        und Ausschreibung bis zur Abnahme. Jede Klasse, die Ihr Gebäude besser wird,
+        senkt Betriebskosten, CO₂-Ausstoß — und stärkt den Wert Ihrer Immobilie.
       </p>
-      <p>
-        Hinterlassen Sie Ihre Kontaktdaten, damit wir Sie zu einer unverbindlichen Ersteinschätzung anrufen können.
-      </p>
-      <div class="cta-group">
-        <a href="tel:+4930000000" class="cta-link">
-          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-          <span>Telefon · (030) 00 00 00 00</span>
-        </a>
+    </div>
+
+    <div class="energy-card reveal d2" id="energy-card">
+      <div class="energy-top">
+        <span class="e-title">Was eine Sanierung bewegt</span>
+        <span class="e-hint">Zielklasse antippen</span>
+      </div>
+
+      <div class="energy-scale-wrap">
+        <div class="energy-scale" id="energy-scale" role="group" aria-label="Energieklassen von H bis A"></div>
+      </div>
+
+      <div class="energy-results">
+        <div class="energy-result" id="res-1">
+          <div class="r-n"><span id="r-bedarf">87</span><span class="unit">kWh/m²a</span></div>
+          <div class="r-l">Energiebedarf Zielklasse</div>
+        </div>
+        <div class="energy-result" id="res-2">
+          <div class="r-n"><span id="r-einsparung">−52</span><span class="unit">%</span></div>
+          <div class="r-l">Energie & CO₂ gegenüber Bestand</div>
+        </div>
+        <div class="energy-result" id="res-3">
+          <div class="r-n">≈ <span id="r-kosten">1.210</span><span class="unit">€/Jahr</span></div>
+          <div class="r-l">Heizkosten-Ersparnis je 100 m²</div>
+        </div>
+      </div>
+
+      <div class="energy-foot">
+        <span>Beispielwerte auf Basis typischer Bedarfskennwerte (Bestand: Klasse F, unsanierter Altbau). Keine Energieberatung — die rechnen wir gern konkret für Ihr Objekt.</span>
         <a href="#kontakt" class="cta-link">
           <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-          <span>Unterlagen anfordern</span>
+          <span>Sanierungspotenzial prüfen</span>
         </a>
       </div>
     </div>
-
-    <div class="illus-wrap reveal d2" aria-hidden="true">
-      <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(250, 240)">
-          <g stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none">
-            <path d="M 0 60 L 120 0 L 0 -60 L -120 0 Z"/>
-            <path d="M 0 90 L 150 15 L 0 -60 L -150 15 Z"/>
-            <path d="M 0 120 L 180 30 L 0 -60 L -180 30 Z"/>
-          </g>
-          
-          <g stroke="rgba(255,255,255,0.6)" stroke-width="1" stroke-linejoin="round">
-            <path d="M -60 30 L 0 60 L 0 -60 L -60 -90 Z" fill="rgba(255,255,255,0.02)"/>
-            <path d="M 0 60 L 60 30 L 60 -90 L 0 -60 Z" fill="rgba(255,255,255,0.06)"/>
-            <path d="M 0 -60 L 60 -90 L 0 -120 L -60 -90 Z" fill="rgba(255,255,255,0.1)"/>
-            
-            <path d="M -60 0 L 0 30 L 60 0" fill="none" stroke="rgba(255,255,255,0.3)" stroke-dasharray="2 4"/>
-            <path d="M -60 -30 L 0 0 L 60 -30" fill="none" stroke="rgba(255,255,255,0.3)" stroke-dasharray="2 4"/>
-            <path d="M -60 -60 L 0 -30 L 60 -60" fill="none" stroke="rgba(255,255,255,0.3)" stroke-dasharray="2 4"/>
-          </g>
-
-          <g transform="translate(0, -60)">
-            <polyline points="-120,40 -60,60 0,0 60,-30 120,-110" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
-            <circle cx="-120" cy="40" r="3" fill="var(--accent)"/>
-            <circle cx="-60" cy="60" r="3" fill="var(--accent)"/>
-            <circle cx="0" cy="0" r="3" fill="var(--accent)"/>
-            <circle cx="60" cy="-30" r="3" fill="var(--accent)"/>
-            <circle cx="120" cy="-110" r="4" fill="var(--accent)"/>
-            <path d="M 110 -110 L 120 -110 L 120 -100" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
-          </g>
-        </g>
-      </svg>
-      <div class="illus-caption">Strukturelle Wertsteigerung</div>
-    </div>
   </div>
 </section>
 
-<!-- ══ S4: WISSENSCHAFT ══ -->
-<section class="section section-wissenschaft">
-  <span class="section-num">IV / V · Methode</span>
-  <div class="section-inner reverse">
-    <div class="section-text reveal">
-      <span class="kicker">Methode</span>
-      <h2>Wissenschaft<br/>als Fundament.</h2>
-      <p>
-        Jede Immobilie hat ihre individuellen Anforderungen. Diese analysieren wir mit Hilfe präziser Methoden, architektonischem Fachwissen und solider Datenbasis.
-      </p>
-      <p>
-        Daraus entsteht ein belastbarer Plan, um Ihre Immobilie baulich wie wirtschaftlich für die Zukunft aufzustellen.
-      </p>
-
-      <div class="method-list">
-        <div class="method-item">
-          <div class="m-no">— 01</div>
-          <div class="m-t">Analyse</div>
-          <div class="m-d">Kaufmännische Bestandsaufnahme und Prüfung der Bausubstanz.</div>
-        </div>
-        <div class="method-item">
-          <div class="m-no">— 02</div>
-          <div class="m-t">Hypothese</div>
-          <div class="m-d">Identifikation der Hebel, die den Wert der Immobilie nachhaltig sichern.</div>
-        </div>
-        <div class="method-item">
-          <div class="m-no">— 03</div>
-          <div class="m-t">Planung</div>
-          <div class="m-d">Renditeerwartung, Investitionssummen und klare Zeitachsen.</div>
-        </div>
-        <div class="method-item">
-          <div class="m-no">— 04</div>
-          <div class="m-t">Umsetzung</div>
-          <div class="m-d">Professionelle Steuerung der Maßnahmen mit laufendem Controlling.</div>
-        </div>
-      </div>
-
-      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
-        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        <span>Informationen anfordern</span>
-      </a>
-    </div>
-
-    <div class="illus-wrap reveal d2" aria-hidden="true">
-      <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg">
-        <rect x="40" y="40" width="420" height="360" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5"/>
-        <g stroke="var(--ink)" stroke-width="0.5" opacity="0.15">
-          <line x1="60" y1="40" x2="60" y2="400"/>
-          <line x1="40" y1="60" x2="460" y2="60"/>
-          <line x1="80" y1="100" x2="380" y2="100"/>
-          <line x1="80" y1="180" x2="200" y2="180"/>
-          <line x1="200" y1="100" x2="200" y2="300"/>
-          <line x1="380" y1="100" x2="380" y2="300"/>
-          <line x1="80" y1="300" x2="380" y2="300"/>
-          <path d="M 200 180 A 60 60 0 0 0 260 240"/>
-        </g>
-        
-        <g transform="translate(280, 180) rotate(-25)">
-          <line x1="0" y1="0" x2="-40" y2="120" stroke="var(--brass)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="0" y1="0" x2="40" y2="120" stroke="var(--brass)" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="0" cy="0" r="6" fill="var(--paper-w)" stroke="var(--brass)" stroke-width="1.5"/>
-          <circle cx="0" cy="-12" r="4" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
-          <line x1="-20" y1="60" x2="20" y2="60" stroke="var(--brass)" stroke-width="1"/>
-          <line x1="-40" y1="120" x2="-42" y2="135" stroke="var(--ink)" stroke-width="1"/>
-          <line x1="40" y1="120" x2="42" y2="135" stroke="var(--accent)" stroke-width="1.5"/>
-          <path d="M -80 135 A 120 120 0 0 0 42 135" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 4"/>
-        </g>
-        
-        <g transform="translate(100, 320) rotate(10)">
-          <rect x="0" y="0" width="200" height="24" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
-          <line x1="10" y1="0" x2="10" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="30" y1="0" x2="30" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="50" y1="0" x2="50" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="70" y1="0" x2="70" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="90" y1="0" x2="90" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="110" y1="0" x2="110" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="130" y1="0" x2="130" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="150" y1="0" x2="150" y2="10" stroke="var(--ink)" stroke-width="0.5"/>
-          <line x1="170" y1="0" x2="170" y2="6" stroke="var(--ink)" stroke-width="0.5"/>
-        </g>
-      </svg>
-      <div class="illus-caption">Präzision & Planung</div>
-    </div>
+<!-- ══ FOTO-BAND ══
+     FOTO AUSTAUSCHEN: idealerweise ein Straßenzug aus dem eigenen Bestand. -->
+<div class="photo-band" id="photo-band">
+  <img
+    src="https://images.unsplash.com/photo-1623345805780-8f01f714e65f?q=80&w=1800&auto=format&fit=crop"
+    alt="Berliner Straßenzug mit Altbauten"
+    loading="lazy"
+    onerror="document.getElementById('photo-band').classList.add('img-failed')"/>
+  <div class="pb-text">
+    <span class="kicker">Berlin</span>
+    <h3>Wir kennen den Berliner Bestand. Haus für Haus, Kiez für Kiez.</h3>
   </div>
-</section>
+</div>
 
-<!-- ══ S5: ÜBERBLICK ══ -->
-<section class="section section-ueberblick">
-  <span class="section-num">V / V · Software</span>
+<!-- ══ VI: REPORTING ══ -->
+<section class="section section-ueberblick" id="reporting">
+  <span class="section-num">VI / VIII · Reporting</span>
   <div class="section-inner">
-    
     <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
       <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg">
+        <rect x="44" y="48" width="380" height="300" rx="4" fill="rgba(26,26,26,0.06)"/>
         <rect x="40" y="40" width="380" height="300" fill="var(--paper)" stroke="var(--line)" stroke-width="1" rx="4"/>
-        
-        <rect x="40" y="40" width="100" height="300" fill="rgba(26,26,26,0.02)" stroke-right="var(--line)" rx="4"/>
+        <rect x="40" y="40" width="100" height="300" fill="rgba(26,26,26,0.02)" rx="4"/>
         <line x1="140" y1="40" x2="140" y2="340" stroke="var(--line)" stroke-width="1"/>
         <g fill="var(--ink)" opacity="0.3">
           <rect x="56" y="60" width="68" height="6" rx="2"/>
@@ -811,32 +1316,33 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
           <rect x="56" y="96" width="58" height="4" rx="2"/>
           <rect x="56" y="112" width="40" height="4" rx="2"/>
         </g>
+        <circle cx="62" cy="322" r="8" fill="none" stroke="var(--ink)" stroke-width="0.75" opacity="0.4"/>
+        <rect x="78" y="318" width="40" height="4" rx="2" fill="var(--ink)" opacity="0.2"/>
 
         <g transform="translate(160, 60)">
           <rect x="0" y="0" width="240" height="140" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
-          <text x="16" y="24" font-family="var(--mono)" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">PORTFOLIO RENDITE</text>
-          <text x="16" y="44" font-family="var(--serif)" font-size="16" fill="var(--ink)">€ 124.500</text>
-          
+          <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">PORTFOLIO RENDITE</text>
+          <text x="16" y="44" font-family="Fraunces, Georgia, serif" font-size="16" fill="var(--ink)">€ 124.500</text>
+          <text x="224" y="24" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--leaf)" letter-spacing="1">+4,2 %</text>
           <line x1="16" y1="70" x2="224" y2="70" stroke="var(--line)" stroke-width="0.5"/>
           <line x1="16" y1="95" x2="224" y2="95" stroke="var(--line)" stroke-width="0.5"/>
           <line x1="16" y1="120" x2="224" y2="120" stroke="var(--line)" stroke-width="0.5"/>
-          
-          <polyline points="16,110 46,90 76,100 106,70 136,80 166,50 196,60 224,30" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
-          <circle cx="224" cy="30" r="3" fill="var(--accent)"/>
+          <polyline points="16,110 46,90 76,100 106,70 136,80 166,50 196,60 224,30" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round" pathLength="1" class="draw-line"/>
+          <circle cx="224" cy="30" r="3" fill="var(--accent)" class="fade-dot fd5"/>
         </g>
 
         <g transform="translate(160, 220)">
           <rect x="0" y="0" width="112" height="100" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
-          <text x="16" y="24" font-family="var(--mono)" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">LEERSTAND</text>
-          <text x="16" y="48" font-family="var(--serif)" font-size="20" fill="var(--ink)">1,2 %</text>
+          <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">LEERSTAND</text>
+          <text x="16" y="48" font-family="Fraunces, Georgia, serif" font-size="20" fill="var(--ink)">1,2 %</text>
           <line x1="16" y1="70" x2="96" y2="70" stroke="var(--line)" stroke-width="2"/>
-          <line x1="16" y1="70" x2="36" y2="70" stroke="var(--accent)" stroke-width="2"/>
+          <line x1="16" y1="70" x2="36" y2="70" stroke="var(--accent)" stroke-width="2" pathLength="1" class="draw-line dl2"/>
         </g>
 
         <g transform="translate(288, 220)">
           <rect x="0" y="0" width="112" height="100" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
-          <text x="16" y="24" font-family="var(--mono)" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">RÜCKLAGEN</text>
-          <text x="16" y="48" font-family="var(--serif)" font-size="20" fill="var(--ink)">€ 82k</text>
+          <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">RÜCKLAGEN</text>
+          <text x="16" y="48" font-family="Fraunces, Georgia, serif" font-size="20" fill="var(--ink)">€ 82k</text>
           <g transform="translate(80, 70)">
             <circle cx="0" cy="0" r="14" fill="none" stroke="var(--line)" stroke-width="3"/>
             <circle cx="0" cy="0" r="14" fill="none" stroke="var(--ink)" stroke-width="3" stroke-dasharray="60 100" transform="rotate(-90)"/>
@@ -847,23 +1353,26 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
     </div>
 
     <div class="section-text reveal d2">
-      <span class="kicker">Transparenz</span>
-      <h2>Alles im<br/>Überblick.</h2>
+      <span class="kicker">Reporting</span>
+      <h2>Reporting, das<br/>Entscheidungen trägt.</h2>
       <p>
-        Durch unser cloudbasiertes Mandanten-Dashboard haben Sie jederzeit und in Echtzeit Ihr Portfolio unter Kontrolle. Rendite, Rücklagen, Verträge und offene Posten übersichtlich aufbereitet.
+        Jedes Objekt erhält einen strukturierten Eigentümerreport: Vorgänge, Maßnahmen,
+        Kosten und Kennzahlen — nachvollziehbar aufbereitet statt lose gesammelt. Dazu
+        unser Mandanten-Dashboard mit Echtzeit-Blick auf Portfolio, Rücklagen und offene Posten.
       </p>
       <p>
-        Alle relevanten Dokumente liegen revisionssicher im digitalen Archiv bereit – für Sie und Ihren Steuerberater.
+        Alle Dokumente liegen revisionssicher im digitalen Archiv — für Sie, Ihre
+        Gesellschafter und Ihren Steuerberater.
       </p>
 
       <div class="stat-row">
         <div class="stat">
-          <div class="s-n">24/7</div>
-          <div class="s-l">Dokumentenzugriff</div>
+          <div class="s-n">1×/Monat</div>
+          <div class="s-l">Eigentümerreport je Objekt</div>
         </div>
         <div class="stat">
-          <div class="s-n">100%</div>
-          <div class="s-l">Digitalisierte Prozesse</div>
+          <div class="s-n">24/7</div>
+          <div class="s-l">Dokumentenzugriff</div>
         </div>
         <div class="stat">
           <div class="s-n">&lt; 24h</div>
@@ -873,14 +1382,248 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
 
       <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
         <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        <span>Software ansehen</span>
+        <span>Beispielreport anfordern</span>
       </a>
     </div>
   </div>
 </section>
 
+<!-- ══ VII: GRÜNDER ══ -->
+<section class="section section-team" id="gruender">
+  <span class="section-num">VII / VIII · Gründer</span>
+  <div class="section-inner" style="grid-template-columns: 1fr; gap: 44px;">
+    <div class="sanierung-head reveal">
+      <span class="kicker">Gründer</span>
+      <h2>Zwei Welten.<br/>Ein Anspruch.</h2>
+      <p>
+        PANI führen wir als Gründer persönlich: mit Häusern, die unsere Familien seit
+        Generationen in Verantwortung haben — und mit der analytischen Disziplin aus
+        dem Investmentbanking. Diese Kombination prägt jede Entscheidung.
+      </p>
+    </div>
+
+    <div class="team-grid reveal d2">
+      <article class="founder-card">
+        <div class="f-mono" aria-hidden="true">NP</div>
+        <h3 class="f-name">Niclas Paprocki</h3>
+        <div class="f-role">Gründer · Finance &amp; Strategie</div>
+        <p class="f-bio">
+          Bringt finanzwirtschaftliche Analyse, strategisches Denken und einen klaren
+          Blick auf Immobilien als Asset-Klasse ein. Geprägt durch Erfahrung im
+          Investmentbanking steht er für strukturiertes Reporting, präzise
+          Entscheidungsgrundlagen und disziplinierte, eigentümerorientierte Steuerung.
+        </p>
+        <div class="f-tags">
+          <span class="f-tag">Reporting</span>
+          <span class="f-tag">Strategie</span>
+          <span class="f-tag">Wirtschaftliche Steuerung</span>
+        </div>
+      </article>
+
+      <article class="founder-card">
+        <div class="f-mono" aria-hidden="true">PH</div>
+        <h3 class="f-name">Paul Harm</h3>
+        <div class="f-role">Gründer · Objekt &amp; Umsetzung</div>
+        <p class="f-bio">
+          Bringt operative Nähe zum Objekt, hohe Umsetzungsstärke und ein tiefes
+          Verständnis für die praktische Verwaltung von Immobilien ein. Seine Arbeit
+          ist geprägt von Sorgfalt, Verlässlichkeit und dem Anspruch, Häuser so zu
+          betreuen, wie ein verantwortungsvoller Eigentümer es selbst tun würde.
+        </p>
+        <div class="f-tags">
+          <span class="f-tag">Objektbetreuung</span>
+          <span class="f-tag">Prozessqualität</span>
+          <span class="f-tag">Umsetzung</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="team-joint reveal d3">
+      <p>
+        Gemeinsam stehen wir für eine Hausverwaltung, die klar reportet, akribisch
+        arbeitet, wirtschaftlich diszipliniert entscheidet — und Häuser mit dem
+        Verantwortungsgefühl führt, das nur über Generationen entsteht.
+      </p>
+      <svg class="gen-line" viewBox="0 0 900 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="20" y1="48" x2="880" y2="48" stroke="var(--ink)" stroke-width="1" opacity="0.35" pathLength="1" class="draw-line"/>
+        <g stroke="var(--ink)" stroke-width="1" opacity="0.5">
+          <line x1="60"  y1="40" x2="60"  y2="56"/>
+          <line x1="320" y1="40" x2="320" y2="56"/>
+          <line x1="580" y1="40" x2="580" y2="56"/>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="2" fill="rgba(26,26,26,0.5)">
+          <text x="60"  y="28" text-anchor="middle">GENERATION I</text>
+          <text x="320" y="28" text-anchor="middle">GENERATION II</text>
+          <text x="580" y="28" text-anchor="middle">GENERATION III</text>
+          <text x="828" y="28" text-anchor="middle" fill="var(--accent)">HEUTE · PANI</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" fill="rgba(26,26,26,0.35)">
+          <text x="60"  y="76" text-anchor="middle">HÄUSER IN FAMILIENVERANTWORTUNG</text>
+          <text x="828" y="76" text-anchor="middle">+ INVESTMENTBANKING-DISZIPLIN</text>
+        </g>
+        <g transform="translate(828, 48)" class="fade-dot fd5">
+          <path d="M -12 8 L -12 -4 L 0 -13 L 12 -4 L 12 8 Z" fill="var(--paper-w)" stroke="var(--accent)" stroke-width="1.4"/>
+          <rect x="-3.5" y="-1" width="7" height="9" fill="none" stroke="var(--accent)" stroke-width="1"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VI: MIETER ══ -->
+<section class="section section-mieter" id="mieter">
+  <span class="section-num">VIII / VIII · Mieter</span>
+  <div class="section-inner">
+    <div class="phone-wrap reveal" id="phone-wrap" aria-hidden="true">
+      <div class="phone-tilt" id="phone-tilt">
+      <svg viewBox="0 0 340 660" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="screen-clip"><rect x="22" y="22" width="296" height="616" rx="32"/></clipPath>
+          <linearGradient id="screen-sheen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="rgba(255,255,255,0.5)"/>
+            <stop offset="0.25" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="10" width="320" height="640" rx="42" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+        <rect x="22" y="22" width="296" height="616" rx="32" fill="var(--paper-w)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="130" y="34" width="80" height="14" rx="7" fill="var(--ink)" opacity="0.85"/>
+        <!-- Seitentasten -->
+        <rect x="6.5" y="150" width="3" height="44" rx="1.5" fill="var(--ink)" opacity="0.5"/>
+        <rect x="6.5" y="208" width="3" height="44" rx="1.5" fill="var(--ink)" opacity="0.5"/>
+        <rect x="330.5" y="170" width="3" height="60" rx="1.5" fill="var(--ink)" opacity="0.5"/>
+
+        <g clip-path="url(#screen-clip)">
+        <!-- Statuszeile -->
+        <text x="46" y="48" font-family="IBM Plex Mono, monospace" font-size="9" lengthAdjust="spacingAndGlyphs" textLength="27" fill="rgba(26,26,26,0.55)">09:41</text>
+        <g stroke="rgba(26,26,26,0.55)" stroke-width="1" fill="none">
+          <path d="M 272 44 v-5 M 276 44 v-8 M 280 44 v-11"/>
+          <rect x="288" y="36" width="14" height="8" rx="2"/>
+          <rect x="290" y="38" width="8" height="4" fill="rgba(26,26,26,0.55)" stroke="none"/>
+        </g>
+
+        <!-- App header -->
+        <text x="46" y="92" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2" lengthAdjust="spacingAndGlyphs" textLength="148" fill="rgba(26,26,26,0.45)">PANI · MEINE WOHNUNG</text>
+        <text x="46" y="120" font-family="Fraunces, Georgia, serif" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="200" fill="var(--ink)">Guten Tag, Frau Yilmaz</text>
+
+        <!-- Meldung Card -->
+        <g transform="translate(46, 150)">
+          <rect x="0" y="4" width="248" height="92" rx="10" fill="rgba(128,0,32,0.18)"/>
+          <rect x="0" y="0" width="248" height="92" rx="10" fill="var(--accent)"/>
+          <text x="18" y="32" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600" lengthAdjust="spacingAndGlyphs" textLength="102" fill="#fff">Anliegen melden</text>
+          <text x="18" y="52" font-family="IBM Plex Sans, sans-serif" font-size="10.5" lengthAdjust="spacingAndGlyphs" textLength="123" fill="rgba(255,255,255,0.75)">Heizung, Wasser, Strom —</text>
+          <text x="18" y="66" font-family="IBM Plex Sans, sans-serif" font-size="10.5" lengthAdjust="spacingAndGlyphs" textLength="121" fill="rgba(255,255,255,0.75)">mit Foto, in zwei Minuten.</text>
+          <circle cx="216" cy="46" r="16" fill="rgba(255,255,255,0.15)"/>
+          <path d="M 210 46 H 222 M 216 40 V 52" stroke="#fff" stroke-width="1.5"/>
+        </g>
+
+        <!-- Ticket status -->
+        <text x="46" y="282" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2" lengthAdjust="spacingAndGlyphs" textLength="111" fill="rgba(26,26,26,0.45)">MEINE MELDUNGEN</text>
+        <g transform="translate(46, 296)">
+          <rect x="0" y="0" width="248" height="64" rx="10" fill="var(--paper)" stroke="var(--line)"/>
+          <circle cx="22" cy="32" r="5" fill="var(--brass)" class="notif-dot"/>
+          <text x="40" y="28" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="500" lengthAdjust="spacingAndGlyphs" textLength="155" fill="var(--ink)">Heizung Bad wird nicht warm</text>
+          <text x="40" y="46" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" lengthAdjust="spacingAndGlyphs" textLength="180" fill="rgba(26,26,26,0.5)">IN BEARBEITUNG · DO 9–12 UHR</text>
+        </g>
+        <g transform="translate(46, 368)">
+          <rect x="0" y="0" width="248" height="64" rx="10" fill="var(--paper)" stroke="var(--line)"/>
+          <circle cx="22" cy="32" r="5" fill="var(--leaf)"/>
+          <path d="M 19.5 32 L 21.5 34.5 L 25 29.5" stroke="#fff" stroke-width="1.2" fill="none"/>
+          <text x="40" y="28" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="500" lengthAdjust="spacingAndGlyphs" textLength="92" fill="var(--ink)">Kellerlicht defekt</text>
+          <text x="40" y="46" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" lengthAdjust="spacingAndGlyphs" textLength="116" fill="rgba(26,26,26,0.5)">ERLEDIGT · 12. MAI</text>
+        </g>
+
+        <!-- Documents -->
+        <text x="46" y="470" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2" lengthAdjust="spacingAndGlyphs" textLength="67" fill="rgba(26,26,26,0.45)">DOKUMENTE</text>
+        <g transform="translate(46, 484)">
+          <rect x="0" y="0" width="248" height="52" rx="10" fill="var(--paper)" stroke="var(--line)"/>
+          <rect x="14" y="14" width="18" height="24" rx="2" fill="none" stroke="var(--ink)" stroke-width="1"/>
+          <line x1="18" y1="22" x2="28" y2="22" stroke="var(--ink)" stroke-width="0.75"/>
+          <line x1="18" y1="27" x2="28" y2="27" stroke="var(--ink)" stroke-width="0.75"/>
+          <text x="44" y="24" font-family="IBM Plex Sans, sans-serif" font-size="11" font-weight="500" lengthAdjust="spacingAndGlyphs" textLength="156" fill="var(--ink)">Nebenkostenabrechnung 2025</text>
+          <text x="44" y="40" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" lengthAdjust="spacingAndGlyphs" textLength="58" fill="var(--accent)">NEU · PDF</text>
+          <path d="M 226 19 v 10 m -4 -4 l 4 4 l 4 -4 M 218 34 h 16" stroke="rgba(26,26,26,0.4)" stroke-width="1" fill="none"/>
+        </g>
+
+        <!-- Tab bar -->
+        <g transform="translate(46, 572)">
+          <line x1="0" y1="-12" x2="248" y2="-12" stroke="var(--line)"/>
+          <text x="0" y="12" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" lengthAdjust="spacingAndGlyphs" textLength="32" fill="var(--accent)">START</text>
+          <rect x="0" y="18" width="30" height="1.5" fill="var(--accent)"/>
+          <text x="68" y="12" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" lengthAdjust="spacingAndGlyphs" textLength="57" fill="rgba(26,26,26,0.4)">MELDUNGEN</text>
+          <text x="160" y="12" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" lengthAdjust="spacingAndGlyphs" textLength="57" fill="rgba(26,26,26,0.4)">DOKUMENTE</text>
+        </g>
+
+        <rect x="22" y="22" width="296" height="616" rx="32" fill="url(#screen-sheen)" opacity="0.35" pointer-events="none"/>
+        </g>
+      </svg>
+      </div>
+      <div class="illus-caption" style="justify-content:center;">Die PANI App für Mieter</div>
+    </div>
+
+    <div class="section-text reveal d2">
+      <span class="kicker">Für Mieter</span>
+      <h2>Persönlich.<br/>Und immer erreichbar.</h2>
+      <p>
+        Gute Verwaltung merkt man im Alltag: wenn jemand abnimmt, wenn der Handwerker
+        kommt, wenn die Abrechnung verständlich ist. Bei uns haben Mieter einen festen
+        Ansprechpartner — und eine App, die Wege verkürzt statt sie zu ersetzen.
+      </p>
+
+      <div class="mieter-points">
+        <div class="mieter-point">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20 C4 16 8 13 12 13 C16 13 20 16 20 20"/></svg>
+          <div>
+            <div class="mp-t">Fester Ansprechpartner</div>
+            <div class="mp-d">Kein Callcenter, keine Warteschleife — Sie kennen den Menschen, der Ihr Haus betreut.</div>
+          </div>
+        </div>
+        <div class="mieter-point">
+          <svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+          <div>
+            <div class="mp-t">Anliegen digital melden</div>
+            <div class="mp-d">Schaden fotografieren, absenden, Status verfolgen — vom Eingang bis zur Erledigung.</div>
+          </div>
+        </div>
+        <div class="mieter-point">
+          <svg viewBox="0 0 24 24"><path d="M6 3 H15 L19 7 V21 H6 Z"/><path d="M15 3 V7 H19"/></svg>
+          <div>
+            <div class="mp-t">Dokumente jederzeit abrufbar</div>
+            <div class="mp-d">Nebenkostenabrechnung, Schreiben und Vertragsunterlagen — sicher und ohne Nachfragen.</div>
+          </div>
+        </div>
+        <div class="mieter-point">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15.5 14"/></svg>
+          <div>
+            <div class="mp-t">Antwort in unter 24 Stunden</div>
+            <div class="mp-d">Jede Meldung wird priorisiert — Notfälle sofort, alles andere verbindlich terminiert.</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
+        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+        <span>Anliegen melden</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KONTAKT-BAND ══ -->
+<div class="contact-band" id="kontakt">
+  <span class="kicker" style="color: rgba(255,255,255,0.7);">Kontakt</span>
+  <h2>Sprechen wir über<br/>Ihre Immobilie.</h2>
+  <p>
+    Hinterlassen Sie uns Ihre Kontaktdaten oder rufen Sie direkt an — wir melden uns
+    innerhalb eines Werktags mit einer unverbindlichen Ersteinschätzung.
+  </p>
+  <div class="hero-ctas">
+    <a href="mailto:info@pani-pm.de" class="btn solid">E-Mail senden</a>
+    <a href="tel:+4930000000" class="btn ghost">(030) 00 00 00 00</a>
+  </div>
+</div>
+
 <!-- ══ FOOTER ══ -->
-<footer id="kontakt">
+<footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
@@ -897,10 +1640,12 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
           <span class="logo-text">PANI</span>
         </div>
         <p class="footer-cta">Wir kümmern uns um Ihr Eigentum.</p>
-        <a href="mailto:info@pani-pm.de" class="cta-link" style="color:#fff; margin-top:0;">
-          <span class="arrow-circle" style="border-color: rgba(255,255,255,0.2);"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.2"><path d="M8 4 L16 12 L8 20"/></svg></span>
-          <span>E-Mail senden</span>
-        </a>
+        <div class="on-dark">
+          <a href="mailto:info@pani-pm.de" class="cta-link" style="margin-top:0;">
+            <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
+            <span>E-Mail senden</span>
+          </a>
+        </div>
       </div>
 
       <div class="footer-col">
@@ -919,78 +1664,320 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
 
       <div class="footer-col">
         <h4>Navigation</h4>
-        <p><a href="#werterhalt">Philosophie</a></p>
-        <p><a href="#leistungen">Leistungen</a></p>
-        <p><a href="#kontakt">Kontakt</a></p>
+        <p><a href="investoren.html">Für Investoren</a></p>
+        <p><a href="bestandshalter.html">Für Bestandshalter</a></p>
+        <p><a href="zinshaus.html">Für Zinshaus-Eigentümer</a></p>
+        <p><a href="sondervermoegen.html">Für Sondervermögen</a></p>
+        <p><a href="nachfolge.html">Nachfolge &amp; Übergänge</a></p>
+        <p><a href="#mieter">Für Mieter</a></p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
       <span class="copy">© PANI Hausverwaltung · Berlin</span>
     </div>
   </div>
 </footer>
 
 <script>
-  /* Reveal on scroll */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+(function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Headline rotator */
-  const ROTATOR_WORDS = [
-    { mit: false, word: 'in Berlin' },
-    { mit: true,  word: 'Expertise' },
-    { mit: true,  word: 'Präzision' },
-    { mit: true,  word: 'Weitsicht' },
-    { mit: true,  word: 'Substanz' },
-    { mit: true,  word: 'Sorgfalt' },
-  ];
-  const ROTATE_MS = 3200;
-  const track = document.getElementById('rotator-track');
-  const ticksEl = document.getElementById('rotator-ticks');
+  /* ── Laden: Fassade zeichnen + Fenster anschalten ── */
+  window.addEventListener('load', function () { document.body.classList.add('loaded'); });
+  setTimeout(function () { document.body.classList.add('loaded'); }, 1200); /* Fallback */
 
-  if (track && ticksEl) {
-    ROTATOR_WORDS.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.className = 'rotator-tick';
-      b.setAttribute('aria-label', 'Wort ' + (i+1));
-      b.addEventListener('click', () => goTo(i, true));
-      ticksEl.appendChild(b);
+  /* ── Scroll-Fortschritt + Navbar ── */
+  var progressBar = document.getElementById('progress-bar');
+  var navbar = document.getElementById('navbar');
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? h.scrollTop / max : 0;
+      progressBar.style.transform = 'scaleX(' + p + ')';
+      navbar.classList.toggle('scrolled', h.scrollTop > 12);
+      ticking = false;
     });
-    const ticks = [...ticksEl.children];
-
-    const words = ROTATOR_WORDS.map(({ mit, word }) => {
-      const el = document.createElement('span');
-      el.className = 'rotator-word';
-      el.innerHTML = (mit ? '<span class="mit">mit</span>' : '') + word;
-      track.appendChild(el);
-      return el;
-    });
-
-    let idx = 0, timer = null;
-    const setActive = (i) => {
-      words.forEach((w, k) => {
-        w.classList.remove('is-in', 'is-out');
-        if (k === i) w.classList.add('is-in');
-        else if (k === (i - 1 + words.length) % words.length) w.classList.add('is-out');
-      });
-      ticks.forEach((t, k) => t.classList.toggle('active', k === i));
-    };
-    const goTo = (i, restart) => {
-      idx = (i + words.length) % words.length;
-      setActive(idx);
-      if (restart) { clearInterval(timer); start(); }
-    };
-    const start = () => {
-      timer = setInterval(() => { idx = (idx + 1) % words.length; setActive(idx); }, ROTATE_MS);
-    };
-    setActive(0);
-    start();
   }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ── Reveal on scroll ── */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  /* ── Scrollspy ── */
+  var spyLinks = document.querySelectorAll('.nav-links a[data-spy]');
+  var spyMap = {};
+  spyLinks.forEach(function (a) { spyMap[a.getAttribute('data-spy')] = a; });
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var link = spyMap[e.target.id];
+      if (!link) return;
+      if (e.isIntersecting) {
+        spyLinks.forEach(function (a) { a.classList.remove('active'); });
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  ['zielgruppen', 'leistungen', 'sanierung', 'gruender', 'mieter'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) spy.observe(el);
+  });
+
+  /* ── Hero-Parallax (Maus, nur Desktop) ── */
+  var heroIllus = document.getElementById('hero-illus');
+  var hero = document.querySelector('.section-hero');
+  if (hero && heroIllus && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    var raf = null;
+    hero.addEventListener('mousemove', function (e) {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        var r = hero.getBoundingClientRect();
+        var dx = (e.clientX - r.left) / r.width - 0.5;
+        var dy = (e.clientY - r.top) / r.height - 0.5;
+        heroIllus.style.transform = 'translate3d(' + (dx * -10) + 'px,' + (dy * -8) + 'px,0)';
+        raf = null;
+      });
+    });
+    hero.addEventListener('mouseleave', function () {
+      heroIllus.style.transition = 'transform .8s cubic-bezier(.2,.7,.2,1)';
+      heroIllus.style.transform = 'translate3d(0,0,0)';
+      setTimeout(function () { heroIllus.style.transition = ''; }, 800);
+    });
+  }
+
+  /* ── Phone 3D-Tilt ── */
+  var phoneWrap = document.getElementById('phone-wrap');
+  var phoneTilt = document.getElementById('phone-tilt');
+  if (phoneWrap && phoneTilt && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    var pRaf = null;
+    phoneWrap.addEventListener('mousemove', function (e) {
+      if (pRaf) return;
+      pRaf = requestAnimationFrame(function () {
+        var r = phoneWrap.getBoundingClientRect();
+        var dx = (e.clientX - r.left) / r.width - 0.5;
+        var dy = (e.clientY - r.top) / r.height - 0.5;
+        phoneTilt.style.transform = 'rotateY(' + (dx * 10) + 'deg) rotateX(' + (dy * -8) + 'deg)';
+      pRaf = null;
+      });
+    });
+    phoneWrap.addEventListener('mouseleave', function () {
+      phoneTilt.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+
+  /* ── Energie-Rechner ── */
+  var CLASSES = [
+    { k: 'H', kwh: 275, color: '#8E2F23' },
+    { k: 'G', kwh: 225, color: '#A2452A' },
+    { k: 'F', kwh: 180, color: '#B05E2F' },
+    { k: 'E', kwh: 145, color: '#B58137' },
+    { k: 'D', kwh: 115, color: '#A8923F' },
+    { k: 'C', kwh: 87,  color: '#7C8C45' },
+    { k: 'B', kwh: 62,  color: '#587C4A' },
+    { k: 'A', kwh: 40,  color: '#3E6B4F' }
+  ];
+  var IST_INDEX = 2;        /* Klasse F — typischer unsanierter Altbau */
+  var PRICE_PER_KWH = 0.13; /* € je kWh Wärme, Beispielwert */
+  var AREA = 100;           /* m² Referenzfläche */
+
+  var scaleEl = document.getElementById('energy-scale');
+  var card = document.getElementById('energy-card');
+  var rBedarf = document.getElementById('r-bedarf');
+  var rEinsparung = document.getElementById('r-einsparung');
+  var rKosten = document.getElementById('r-kosten');
+  var zielIndex = 5; /* Start: Klasse C */
+  var current = { bedarf: 0, pct: 0, kosten: 0 };
+
+  function fmt(n) { return n.toLocaleString('de-DE'); }
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function tween(from, to, dur, step) {
+    if (reduceMotion) { step(to); return; }
+    var t0 = performance.now();
+    function frame(now) {
+      var t = Math.min(1, (now - t0) / dur);
+      step(from + (to - from) * easeOut(t));
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function pulse(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add('pulse');
+    setTimeout(function () { el.classList.remove('pulse'); }, 450);
+  }
+
+  function targets() {
+    var ist = CLASSES[IST_INDEX], ziel = CLASSES[zielIndex];
+    var diff = Math.max(0, ist.kwh - ziel.kwh);
+    return {
+      bedarf: ziel.kwh,
+      pct: Math.round((diff / ist.kwh) * 100),
+      kosten: Math.round(diff * AREA * PRICE_PER_KWH / 10) * 10
+    };
+  }
+
+  function renderResults(animate) {
+    var t = targets();
+    if (animate) {
+      tween(current.bedarf, t.bedarf, 600, function (v) { rBedarf.textContent = Math.round(v); });
+      tween(current.pct, t.pct, 600, function (v) {
+        var r = Math.round(v);
+        rEinsparung.textContent = (r > 0 ? '−' : '') + r;
+      });
+      tween(current.kosten, t.kosten, 600, function (v) { rKosten.textContent = fmt(Math.round(v / 10) * 10); });
+      pulse('res-1'); pulse('res-2'); pulse('res-3');
+    } else {
+      rBedarf.textContent = t.bedarf;
+      rEinsparung.textContent = (t.pct > 0 ? '−' : '') + t.pct;
+      rKosten.textContent = fmt(t.kosten);
+    }
+    current = t;
+  }
+
+  function renderScale() {
+    scaleEl.innerHTML = '';
+    CLASSES.forEach(function (c, i) {
+      var btn = document.createElement('button');
+      btn.className = 'energy-class'
+        + (i === IST_INDEX ? ' is-ist' : '')
+        + (i === zielIndex ? ' is-ziel' : '');
+      btn.setAttribute('aria-label', 'Zielklasse ' + c.k + ' wählen');
+      btn.setAttribute('aria-pressed', i === zielIndex ? 'true' : 'false');
+      btn.innerHTML =
+        (i === IST_INDEX ? '<span class="tag ist">Bestand</span>' : '') +
+        '<span class="bar" style="background:' + c.color + ';--d:' + (i * 0.07) + 's">' + c.k + '</span>' +
+        (i === zielIndex ? '<span class="tag ziel">Ziel</span>' : '');
+      btn.addEventListener('click', function () {
+        if (i === IST_INDEX || i === zielIndex) return;
+        zielIndex = i;
+        renderScale();
+        renderResults(true);
+      });
+      scaleEl.appendChild(btn);
+    });
+  }
+
+  /* ── Zielgruppen-Tabs ── */
+  var ROLES = [
+    { id: 'investoren', url: 'investoren.html', tab: 'Investoren',
+      h: 'Hausverwaltung für Investoren',
+      sub: 'Für Eigentümer, die nicht nur verwalten lassen, sondern ihre Immobilien professionell steuern wollen — transparente Steuerung statt operativer Reibung.',
+      usps: ['Investorenportal mit Zugriff auf alle relevanten Informationen',
+             'Klare Reports zu Objektstatus, Maßnahmen und Entwicklung',
+             'Verwaltung mit Blick auf Rendite, Werterhalt und Exit-Fähigkeit',
+             'Strukturierte Prozesse für wachsende Portfolios'] },
+    { id: 'bestandshalter', url: 'bestandshalter.html', tab: 'Bestandshalter',
+      h: 'Hausverwaltung für Bestandshalter',
+      sub: 'Für Eigentümer, die Immobilien langfristig halten und professionell entwickeln wollen — Stabilität, laufende Optimierung, planbare Entwicklung.',
+      usps: ['Langfristige Betreuung statt kurzfristiger Einzelfallverwaltung',
+             'Stabile Bewirtschaftung und nachhaltiger Werterhalt',
+             'Vorausschauende Instandhaltungs- und Maßnahmenplanung',
+             'Transparente Steuerung auch über mehrere Objekte'] },
+    { id: 'zinshaus', url: 'zinshaus.html', tab: 'Zinshaus',
+      h: 'Hausverwaltung für Zinshäuser',
+      sub: 'Für Eigentümer klassischer Wohn- und Mischobjekte, die Substanz sichern und Ertrag entwickeln wollen.',
+      usps: ['Kenntnis typischer Anforderungen Berliner Zinshäuser',
+             'Balance aus Mieterbelangen, Substanzerhalt und Wirtschaftlichkeit',
+             'Begleitung von Sanierungs-, Entwicklungs- und Optimierungsschritten',
+             'Verlässliche operative Umsetzung im Alltag'] },
+    { id: 'sondervermoegen', url: 'sondervermoegen.html', tab: 'Sondervermögen',
+      h: 'Hausverwaltung für Sondervermögen',
+      sub: 'Für Eigentümerstrukturen mit professionellen Anforderungen an Transparenz, Prozesse und Reporting — Verwaltung auf institutionellem Anspruchsniveau.',
+      usps: ['Saubere Reporting- und Dokumentationsstrukturen',
+             'Klare Schnittstellen für Asset Management und Eigentümervertretung',
+             'Hohe Prozesssicherheit im laufenden Betrieb',
+             'Professionelle Steuerung von Dienstleistern und Maßnahmen'] },
+    { id: 'nachfolge', url: 'nachfolge.html', tab: 'Nachfolge & Übergänge',
+      h: 'Hausverwaltung bei Nachfolge und Neuordnung',
+      sub: 'Wenn sich Eigentümerstrukturen verändern, braucht es eine Verwaltung, die Stabilität sichert und Übergänge professionell begleitet.',
+      usps: ['Sicherheit und Kontinuität in Übergangsphasen',
+             'Strukturierte Übernahme bestehender Verwaltungsprozesse',
+             'Klare Dokumentation und Transparenz für neue Verantwortliche',
+             'Begleitung familiärer oder unternehmerischer Nachfolge'] }
+  ];
+
+  var roleTabs = document.getElementById('role-tabs');
+  var rolePanel = document.getElementById('role-panel');
+  if (roleTabs && rolePanel) {
+    var activeRole = 0;
+    var tabEls = ROLES.map(function (r, i) {
+      var b = document.createElement('button');
+      b.className = 'role-tab';
+      b.id = 'role-tab-' + r.id;
+      b.setAttribute('role', 'tab');
+      b.textContent = r.tab;
+      b.addEventListener('click', function () { selectRole(i); });
+      roleTabs.appendChild(b);
+      return b;
+    });
+
+    function panelHTML(r) {
+      var lis = r.usps.map(function (u) { return '<li>' + u + '</li>'; }).join('');
+      return '<div>' +
+        '<h3>' + r.h + '</h3>' +
+        '<p class="role-sub">' + r.sub + '</p>' +
+        '<a href="' + r.url + '" class="cta-link">' +
+          '<span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>' +
+          '<span>Zur Detailseite</span>' +
+        '</a>' +
+        '<p class="role-alt"><a href="#kontakt">Oder direkt unverbindlich anfragen</a></p>' +
+      '</div>' +
+      '<ul class="role-usps">' + lis + '</ul>';
+    }
+
+    function renderRole() {
+      rolePanel.innerHTML = panelHTML(ROLES[activeRole]);
+      tabEls.forEach(function (t, k) {
+        t.classList.toggle('active', k === activeRole);
+        t.setAttribute('aria-selected', k === activeRole ? 'true' : 'false');
+      });
+      rolePanel.setAttribute('aria-labelledby', 'role-tab-' + ROLES[activeRole].id);
+    }
+
+    function selectRole(i) {
+      if (i === activeRole) return;
+      activeRole = i;
+      if (reduceMotion) { renderRole(); return; }
+      rolePanel.classList.add('switching');
+      setTimeout(function () {
+        renderRole();
+        rolePanel.classList.remove('switching');
+      }, 200);
+    }
+
+    renderRole();
+  }
+
+  if (scaleEl) {
+    renderScale();
+    renderResults(false);
+    /* Nach der ersten Einblend-Animation Stagger-Delays abschalten */
+    var readyCheck = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          setTimeout(function () { card.classList.add('ready'); }, 1200);
+          readyCheck.unobserve(card);
+        }
+      });
+    }, { threshold: 0.2 });
+    readyCheck.observe(card);
+  }
+})();
 </script>
 
 </body>
