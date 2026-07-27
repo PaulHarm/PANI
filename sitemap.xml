@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.pani-hv.de/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.pani-hv.de/weg.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.pani-hv.de/miethaus.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.pani-hv.de/sondereigentum.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.pani-hv.de/investoren.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.pani-hv.de/bestandshalter.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.pani-hv.de/zinshaus.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
