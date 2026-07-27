@@ -526,6 +526,23 @@ body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
 .contact-band .btn.solid:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
 .contact-band .btn.ghost:hover { background: #fff; color: var(--accent); }
 .contact-band .hero-ctas { justify-content: center; margin-top: 0; }
+.contact-form { max-width: 600px; margin: 0 auto 8px; text-align: left; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cf-field { display: block; margin-bottom: 16px; }
+.cf-field > span { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 8px; }
+.cf-field > span em { font-style: normal; text-transform: none; letter-spacing: .04em; opacity: .65; }
+.contact-form input, .contact-form textarea { width: 100%; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); border-radius: 10px; padding: 13px 15px; color: #fff; font-family: var(--sans); font-size: 15px; transition: border-color .25s, background .25s; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,.38); }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #fff; background: rgba(255,255,255,.1); }
+.contact-form textarea { resize: vertical; min-height: 108px; }
+.cf-consent { display: grid; grid-template-columns: 18px 1fr; gap: 12px; align-items: start; margin: 6px 0 22px; font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.72); }
+.cf-consent input { margin-top: 2px; width: 18px; height: 18px; accent-color: var(--accent); }
+.cf-consent a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.4); }
+.cf-consent a:hover { border-color: #fff; }
+.cf-submit { border: none; cursor: pointer; font-family: var(--sans); }
+.cf-note { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cf-alt { margin-top: 30px; font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+@media (max-width: 600px){ .cf-row { grid-template-columns: 1fr; } }
 
 /* ═════════ FOOTER ═════════ */
 footer { background: var(--coal); color: rgba(255,255,255,0.6); padding: 100px var(--pad) 40px; }
@@ -1641,9 +1658,46 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
   <span class="kicker" style="color: rgba(255,255,255,0.7);">Kontakt</span>
   <h2>Sprechen wir über<br/>Ihre Immobilie.</h2>
   <p>
-    Hinterlassen Sie uns Ihre Kontaktdaten oder rufen Sie direkt an. Wir melden uns
-    innerhalb eines Werktags mit einer unverbindlichen Ersteinschätzung.
+    Hinterlassen Sie uns Ihre Kontaktdaten - wir melden uns innerhalb eines Werktags
+    mit einer unverbindlichen Ersteinschätzung. Oder rufen Sie direkt an.
   </p>
+
+  <!-- ══ KONTAKTFORMULAR ══
+       WICHTIG vor dem Live-Gang: Formspree-Formular-ID eintragen!
+       1. Kostenloses Konto auf https://formspree.io anlegen
+       2. Neues Formular erstellen -> Ziel-E-Mail = eure Adresse
+       3. Die Endpoint-URL (https://formspree.io/f/XXXXXXX) unten im action= einsetzen
+       Solange "DEINE_FORMSPREE_ID" drinsteht, wird noch nichts versendet. -->
+  <form class="contact-form" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST">
+    <input type="hidden" name="_subject" value="Neue Anfrage über pani-hv.de">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;">
+    <div class="cf-row">
+      <label class="cf-field">
+        <span>Name</span>
+        <input type="text" name="name" required autocomplete="name" placeholder="Ihr Name">
+      </label>
+      <label class="cf-field">
+        <span>E-Mail</span>
+        <input type="email" name="email" required autocomplete="email" placeholder="ihre@email.de">
+      </label>
+    </div>
+    <label class="cf-field">
+      <span>Telefon <em>(optional)</em></span>
+      <input type="tel" name="telefon" autocomplete="tel" placeholder="Für einen Rückruf">
+    </label>
+    <label class="cf-field">
+      <span>Ihr Anliegen</span>
+      <textarea name="nachricht" rows="4" required placeholder="Objekt, Anliegen, Fragen ..."></textarea>
+    </label>
+    <label class="cf-consent">
+      <input type="checkbox" name="datenschutz-einwilligung" required>
+      <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Einwilligung kann ich jederzeit widerrufen. *</span>
+    </label>
+    <button type="submit" class="btn solid cf-submit">Anfrage senden</button>
+    <p class="cf-note">* Pflichtfelder. Ihre Daten nutzen wir ausschließlich zur Bearbeitung Ihrer Anfrage. Näheres in der Datenschutzerklärung.</p>
+  </form>
+
+  <p class="cf-alt">Oder direkt:</p>
   <div class="hero-ctas">
     <a href="mailto:info@pani-pm.de" class="btn solid">E-Mail senden</a>
     <a href="tel:+4930000000" class="btn ghost">(030) 00 00 00 00</a>

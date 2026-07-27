@@ -46,7 +46,7 @@ Aktuell **Platzhalter** in `datenschutz.html`:
 
 ## 5. Weitere Punkte  — 🟡/🟢
 - [ ] 🟡 **E-Mail-Domain klären**: Impressum nutzt `info@pani-pm.de`, Website läuft auf `pani-hv.de` — muss zusammenpassen und erreichbar sein.
-- [ ] 🟢 **Kontaktformular** (falls später eingebaut): Datenschutzhinweis + Datensparsamkeit, ggf. Einwilligungs-Checkbox.
+- [ ] 🟡 **Kontaktformular** (eingebaut auf der Startseite): nutzt **Formspree (USA)**. Einwilligungs-Checkbox + Spam-Schutz (Honeypot) sind vorhanden, Datenschutz-Abschnitt 3 ergänzt. **Vor Livegang:** (1) echte **Formspree-Formular-ID** in `index.html` eintragen (Platzhalter `DEINE_FORMSPREE_ID`), (2) **AV-Vertrag** mit Formspree + **Drittland-Transfer (SCC)** klären — oder EU-Dienst wählen.
 - [ ] 🟢 **Barrierefreiheit (BFSG, seit 28.06.2025)**: greift für bestimmte B2C-Dienste im E-Commerce.
       Reine Marketing-Seite evtl. ausgenommen (v. a. Kleinstunternehmen), **sobald Verbraucher-Portal/Online-Abschluss → prüfen lassen**.
       Best Practice ohnehin: Alt-Texte, Kontraste, Tastaturbedienbarkeit.
