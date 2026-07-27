@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Seite nicht gefunden (404) - PANI Hausverwaltung Berlin</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#800020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --ink:#1A1A1A; --paper:#F7F5F0; --paper-w:#FFF; --butter:#F0EBE1; --coal:#121212;
+  --accent:#800020; --line:rgba(26,26,26,.12);
+  --serif:'Fraunces',Georgia,serif; --sans:'IBM Plex Sans',Helvetica,Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; --pad:clamp(28px,5vw,72px);
+}
+html { background:var(--paper); }
+body { font-family:var(--sans); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased;
+  min-height:100vh; display:flex; flex-direction:column; }
+a { color:inherit; text-decoration:none; }
+svg { display:block; }
+::selection { background:var(--accent); color:#fff; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.navbar { display:flex; align-items:center; justify-content:space-between; padding:16px var(--pad); border-bottom:1px solid var(--line); }
+.logo { display:flex; align-items:center; gap:12px; }
+.logo svg { width:30px; height:30px; }
+.logo-text { font-family:var(--serif); font-size:20px; letter-spacing:.18em; text-transform:uppercase; }
+.nav-links { display:flex; gap:22px; list-style:none; align-items:center; }
+.nav-links a { font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:#333; transition:color .3s; }
+.nav-links a:hover { color:var(--accent); }
+.err { flex:1; display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:clamp(60px,12vh,140px) var(--pad); background:linear-gradient(180deg,var(--paper),var(--butter)); }
+.err-inner { max-width:560px; }
+.err .code { font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--accent);
+  display:inline-flex; align-items:center; gap:12px; margin-bottom:26px; }
+.err .code::before { content:""; width:32px; height:1px; background:currentColor; }
+.err h1 { font-family:var(--serif); font-weight:300; letter-spacing:-.02em; line-height:1.08;
+  font-size:clamp(40px,6vw,68px); margin-bottom:20px; }
+.err p { font-size:16px; line-height:1.8; color:rgba(26,26,26,.7); max-width:44ch; margin:0 auto 34px; }
+.err .en { display:block; font-size:13px; color:rgba(26,26,26,.45); margin-top:8px; }
+.ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; padding:15px 26px; border-radius:999px; border:1px solid var(--ink); transition:all .3s; }
+.btn.solid { background:var(--accent); border-color:var(--accent); color:#fff; }
+.btn.solid:hover { background:var(--ink); border-color:var(--ink); transform:translateY(-2px); }
+.btn.ghost:hover { background:var(--ink); border-color:var(--ink); color:#fff; transform:translateY(-2px); }
+footer { background:var(--coal); color:rgba(255,255,255,.55); padding:32px var(--pad);
+  font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  display:flex; flex-wrap:wrap; gap:18px 32px; align-items:center; }
+footer a:hover { color:#fff; }
+footer .copy { margin-left:auto; font-family:var(--sans); text-transform:none; letter-spacing:.1em; opacity:.5; }
+@media (max-width:600px){ .nav-links .hide-m { display:none; } }
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Hauptnavigation">
+  <a href="/" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
+  <ul class="nav-links">
+    <li class="hide-m"><a href="/#zielgruppen">Für wen wir arbeiten</a></li>
+    <li><a href="/#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<main class="err">
+  <div class="err-inner">
+    <span class="code">Fehler 404</span>
+    <h1>Seite nicht gefunden.</h1>
+    <p>Diese Seite existiert nicht (mehr) oder wurde verschoben. Kehren Sie zur Startseite zurück oder sprechen Sie uns direkt an.
+      <span class="en">This page could not be found.</span>
+    </p>
+    <div class="ctas">
+      <a class="btn solid" href="/">Zur Startseite</a>
+      <a class="btn ghost" href="/#kontakt">Kontakt aufnehmen</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/">Startseite</a>
+  <a href="/impressum.html">Impressum</a>
+  <a href="/datenschutz.html">Datenschutz</a>
+  <span class="copy">© PANI Hausverwaltung · Berlin</span>
+</footer>
+</body>
+</html>
