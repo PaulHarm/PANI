@@ -30,9 +30,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#800020">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -872,13 +870,11 @@ h1, h2, h3,
          Fällt das Bild aus, erscheint automatisch die technische Zeichnung. -->
     <div class="hero-illus reveal d2" id="hero-illus">
       <figure class="hero-photo" id="hero-photo">
-        <!-- FOTO-AUSWAHL · Wikimedia Commons (CC BY-SA, Credit unten rechts im Bild):
-             Aktiv:  Riehmers Hofgarten, Portal Yorckstrasse (JoachimKohlerBremen, CC BY-SA 4.0)
-             Alt. 1: https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Blick_aus_der_Yorckstra%C3%9Fe_in_Riehmers_Hofgarten.jpg/1280px-Blick_aus_der_Yorckstra%C3%9Fe_in_Riehmers_Hofgarten.jpg
-             Alt. 2: https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG/1280px-Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG
-             Vor Livegang: Bild lokal hosten, idealerweise eigenes Objektfoto. -->
+        <!-- FOTO: Riehmers Hofgarten, Portal Yorckstrasse (JoachimKohlerBremen, CC BY-SA 4.0).
+             Hosted locally (assets/riehmers-hofgarten.jpg), attribution remains required (see figcaption below).
+             Before go-live, ideally replace with own property photo. -->
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Riehmers_Hofgarten%2C_Eingang_Yorckstra%C3%9Fe.jpg/1280px-Riehmers_Hofgarten%2C_Eingang_Yorckstra%C3%9Fe.jpg"
+          src="assets/riehmers-hofgarten.jpg"
           alt="Riehmers Hofgarten, Gründerzeit portal on Yorckstraße, Berlin-Kreuzberg"
           loading="eager"
           onerror="document.getElementById('hero-photo').classList.add('img-failed')"/>

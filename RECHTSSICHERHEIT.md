@@ -32,9 +32,9 @@ Aktuell **Platzhalter** in `datenschutz.html`:
 - [ ] Ggf. **eingebundene Dienste** aufführen (siehe Punkt 3)
 
 ## 3. Technischer Datenschutz (DSGVO)  — 🔴/🟡
-- [ ] 🔴 **Google Fonts lokal einbinden** statt von `fonts.googleapis.com`/`fonts.gstatic.com` (14 Dateien betroffen).
-      Externe Einbindung überträgt Besucher-**IP an Google (USA)** → in DE abgemahnt (LG München I, 20.01.2022). Lokal = Problem gelöst.
-- [ ] 🔴 **Externe Bilder lokal einbinden** (Unsplash + 3× Wikimedia) — sonst IP-Übertragung an Dritte.
+- [x] ✅ **Google Fonts lokal eingebunden** (2026-07-28): `assets/fonts/` (6 woff2-Dateien, nur Latin-Subset) + `fonts.css`, alle 23 HTML-Dateien umgestellt. Keine Verbindung mehr zu `fonts.googleapis.com`/`fonts.gstatic.com`.
+- [x] ✅ **Hero-Bild lokal eingebunden** (2026-07-28): `assets/riehmers-hofgarten.jpg` statt Wikimedia-Hotlink (in `index.html` + `en.html`). CC-BY-SA-Attribution bleibt bestehen (figcaption). Datenschutzerklärung (DE+EN) entsprechend aktualisiert.
+      ⚠️ Sanierungs-Bild (Unsplash) noch offen — siehe Punkt 4/PLATZHALTER.md.
 - [ ] 🟡 **HTTPS erzwingen**: In GitHub → Settings → Pages → „Enforce HTTPS" aktivieren (GitHub Pages liefert Zertifikat mit).
 - [ ] 🟡 **Hosting GitHub Pages (USA)**: IP-Logging + US-Datentransfer. Kein klassischer AV-Vertrag verfügbar.
       Erwägen: **EU-Hosting** für maximale Rechtssicherheit — mind. in Datenschutzerklärung transparent machen.
