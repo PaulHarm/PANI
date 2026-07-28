@@ -32,8 +32,8 @@ Der Kontakt-/Footer-Block ist auf jeder Seite gleich. Vorkommen u. a.:
 
 ## C. Bilder / echte Identität  🖼️  („echte Identität klar mit Bildern")
 - [ ] **Gründerfotos:** aktuell nur Initialen „**NP**" (Niclas) und „**PH**" (Paul) → echte Porträtfotos
-- [ ] **Hero-Gebäudebild:** Fremdfoto von Wikimedia „Riehmers Hofgarten" (CC BY-SA, © JoachimKohlerBremen) → **eigenes** Objektfoto
-- [ ] **Sanierungs-Bild:** Unsplash-Stockfoto (`images.unsplash.com/...`) → **eigenes** Foto
+- [x] **Hero-Gebäudebild:** Wikimedia „Riehmers Hofgarten" (CC BY-SA, © JoachimKohlerBremen) ist jetzt lokal gehostet (`assets/riehmers-hofgarten.jpg`, 2026-07-28) — Attribution bleibt Pflicht. Für Livegang idealerweise trotzdem **eigenes** Objektfoto.
+- [ ] **Sanierungs-Bild:** Unsplash-Stockfoto (`images.unsplash.com/...`) → **eigenes** Foto (noch offen)
 - [ ] gilt jeweils auch in `en.html`
 
 ## D. Beispiel-/Demo-Werte  📊  (bewusst illustrativ — später prüfen)
