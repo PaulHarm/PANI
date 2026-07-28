@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Seite nicht gefunden (404) - PANI Hausverwaltung Berlin</title>
+<title>Seite nicht gefunden (404) · PANI Hausverwaltung Berlin</title>
 <meta name="robots" content="noindex"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -15,7 +15,7 @@
 <style>
 * { box-sizing:border-box; margin:0; padding:0; }
 :root {
-  --ink:#1A1A1A; --paper:#F7F5F0; --paper-w:#FFF; --butter:#F0EBE1; --coal:#121212;
+  --ink:#181818; --paper:#F6F5F2; --paper-w:#FFF; --butter:#EFEDE7; --coal:#111111;
   --accent:#800020; --line:rgba(26,26,26,.12);
   --serif:'Fraunces',Georgia,serif; --sans:'IBM Plex Sans',Helvetica,Arial,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; --pad:clamp(28px,5vw,72px);
@@ -56,6 +56,10 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:32px var(-
 footer a:hover { color:#fff; }
 footer .copy { margin-left:auto; font-family:var(--sans); text-transform:none; letter-spacing:.1em; opacity:.5; }
 @media (max-width:600px){ .nav-links .hide-m { display:none; } }
+/* ── Schmalbild-Fix: unter 405px sauber umbrechen statt kappen; ab 405px unverändert ── */
+@media (max-width:404px){
+  .err h1, .err p { overflow-wrap:break-word; -webkit-hyphens:auto; hyphens:auto; }
+}
 </style>
 </head>
 <body>
@@ -63,6 +67,7 @@ footer .copy { margin-left:auto; font-family:var(--sans); text-transform:none; l
   <a href="/" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
   <ul class="nav-links">
     <li class="hide-m"><a href="/#zielgruppen">Für wen wir arbeiten</a></li>
+    <li><a href="/en.html">EN</a></li>
     <li><a href="/#kontakt">Kontakt</a></li>
   </ul>
 </nav>
@@ -72,7 +77,7 @@ footer .copy { margin-left:auto; font-family:var(--sans); text-transform:none; l
     <span class="code">Fehler 404</span>
     <h1>Seite nicht gefunden.</h1>
     <p>Diese Seite existiert nicht (mehr) oder wurde verschoben. Kehren Sie zur Startseite zurück oder sprechen Sie uns direkt an.
-      <span class="en">This page could not be found.</span>
+      <span class="en" lang="en">This page could not be found. <a href="/en.html" style="color:var(--accent);border-bottom:1px solid currentColor;">Continue to the English homepage</a>.</span>
     </p>
     <div class="ctas">
       <a class="btn solid" href="/">Zur Startseite</a>
