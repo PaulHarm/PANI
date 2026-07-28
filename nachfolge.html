@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hausverwaltung bei Nachfolge und Neuordnung - PANI Berlin</title>
+<title>Hausverwaltung bei Nachfolge und Neuordnung · PANI Berlin</title>
 <meta name="description" content="PANI Hausverwaltung Berlin: Hausverwaltung bei Nachfolge und Neuordnung. Bestände geordnet in die nächste Phase."/>
+<link rel="canonical" href="https://www.pani-hv.de/nachfolge.html"/>
+<link rel="alternate" hreflang="de" href="https://www.pani-hv.de/nachfolge.html"/>
+<link rel="alternate" hreflang="en" href="https://www.pani-hv.de/en-succession.html"/>
+<link rel="alternate" hreflang="x-default" href="https://www.pani-hv.de/nachfolge.html"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -12,12 +16,12 @@
 <meta name="theme-color" content="#800020">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --ink:#1A1A1A; --ink-soft:#333; --paper:#F7F5F0; --paper-w:#FFF; --steel:#242424;
-  --butter:#F0EBE1; --coal:#121212; --accent:#800020; --brass:#B08D57; --sand:#D4C4A9;
+  --ink:#181818; --ink-soft:#333; --paper:#F6F5F2; --paper-w:#FFF; --steel:#222222;
+  --butter:#EFEDE7; --coal:#111111; --accent:#800020; --brass:#B08D57; --sand:#D4C4A9;
   --line:rgba(26,26,26,.12); --line-light:rgba(255,255,255,.15);
   --serif:'Fraunces',Georgia,serif; --sans:'IBM Plex Sans',Helvetica,Arial,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; --max:1100px; --pad:clamp(28px,5vw,72px);
@@ -29,16 +33,19 @@ a { color:inherit; text-decoration:none; }
 img,svg { display:block; max-width:100%; }
 ::selection { background:var(--accent); color:#fff; }
 :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-h1,h2,h3 { font-family:var(--serif); font-weight:300; letter-spacing:-.02em; line-height:1.08; }
+h1,h2,h3 { font-family:var(--serif); font-weight:300; letter-spacing:-.02em; line-height:1.05; font-variation-settings:"opsz" 144; }
 .navbar { position:sticky; top:0; z-index:100; background:rgba(247,245,240,.9); backdrop-filter:blur(14px);
-  display:flex; align-items:center; justify-content:space-between; padding:16px var(--pad); border-bottom:1px solid var(--line); }
+  display:flex; align-items:center; justify-content:space-between; padding:20px var(--pad); border-bottom:1px solid var(--line); }
 .logo { display:flex; align-items:center; gap:12px; }
-.logo svg { width:30px; height:30px; }
-.logo-text { font-family:var(--serif); font-size:20px; letter-spacing:.18em; text-transform:uppercase; }
-.nav-links { display:flex; gap:22px; list-style:none; align-items:center; }
-.nav-links a { font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); transition:color .3s; }
+.logo svg { width:34px; height:34px; }
+.logo-text { font-family:var(--serif); font-size:22px; letter-spacing:.18em; text-transform:uppercase; }
+.nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+.nav-links a { position:relative; font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); padding:6px 2px; transition:color .3s; }
+.nav-links a:not(.nav-cta)::after { content:""; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:var(--accent); transform:scaleX(0); transform-origin:right center; transition:transform .4s var(--ease); }
+.nav-links a:hover::after { transform:scaleX(1); transform-origin:left center; }
 .nav-links a:hover { color:var(--accent); }
-.nav-cta { border:1px solid var(--ink); padding:9px 18px; border-radius:999px; transition:all .3s; }
+.nav-cta { border:1px solid var(--ink); padding:10px 20px; border-radius:999px; transition:all .3s; }
 .nav-cta:hover { background:var(--accent); border-color:var(--accent); color:#fff; }
 .hero { background:linear-gradient(180deg,var(--paper),var(--butter)); padding:clamp(64px,9vh,110px) var(--pad) clamp(48px,7vh,80px); }
 .hero-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr; gap:clamp(36px,6vw,80px); align-items:center; }
@@ -64,18 +71,28 @@ h1,h2,h3 { font-family:var(--serif); font-weight:300; letter-spacing:-.02em; lin
 .scope { columns:2; column-gap:48px; list-style:none; }
 .scope li { break-inside:avoid; padding:10px 0; border-bottom:1px solid var(--line); font-size:14.5px; color:rgba(26,26,26,.75);
   display:flex; gap:12px; }
-.scope li::before { content:"-"; color:var(--brass); }
+.scope li::before { content:"–"; color:var(--brass); }
 .note { margin-top:34px; font-size:14px; color:rgba(26,26,26,.6); }
 .note a { color:var(--accent); border-bottom:1px solid currentColor; }
 .band { background:var(--accent); color:#fff; text-align:center; padding:clamp(56px,8vh,90px) var(--pad); }
 .band h2 { color:#fff; font-size:clamp(28px,3.4vw,40px); margin-bottom:14px; }
 .band p { color:rgba(255,255,255,.85); max-width:52ch; margin:0 auto 28px; line-height:1.8; }
 .btn { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:.18em;
-  text-transform:uppercase; padding:15px 26px; border-radius:999px; border:1px solid #fff; color:#fff; transition:all .3s; margin:0 7px; }
+  text-transform:uppercase; padding:16px 28px; border-radius:999px; border:1px solid #fff; color:#fff; transition:all .3s; }
+.band-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 .btn.solid { background:#fff; color:var(--accent); }
 .btn.solid:hover { background:var(--ink); border-color:var(--ink); color:#fff; transform:translateY(-2px); }
 .btn.ghost:hover { background:#fff; color:var(--accent); transform:translateY(-2px); }
 footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(--pad); }
+.foot-brand { max-width:var(--max); margin:0 auto 26px; padding-bottom:22px;
+  border-bottom:1px solid rgba(255,255,255,.12); display:flex; align-items:center;
+  justify-content:space-between; gap:18px; }
+.foot-logo { display:flex; align-items:center; gap:10px; color:#fff; }
+.foot-logo svg { width:22px; height:22px; }
+.foot-logo span { font-family:var(--serif); font-size:16px; letter-spacing:.18em; text-transform:uppercase; }
+.foot-mail { font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.55); transition:color .3s; }
+.foot-mail:hover { color:#fff; }
 .foot-inner { max-width:var(--max); margin:0 auto; display:flex; flex-wrap:wrap; gap:18px 32px; align-items:center;
   font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
 .foot-inner a:hover { color:#fff; }
@@ -83,13 +100,60 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(-
 .reveal { opacity:0; transform:translateY(22px); transition:opacity .9s ease, transform .9s var(--ease); }
 .reveal.in { opacity:1; transform:translateY(0); }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} .reveal{opacity:1;transform:none} }
+/* ── Marken-Absatz ── */
+.founders-note { max-width:62ch; font-size:16px; line-height:1.8; color:rgba(26,26,26,.75); margin:0; }
+/* ── Burger / Mobile Menu ── */
+.nav-burger-li { display:none; }
+.mobile-menu { display:none; }
+body.menu-open { overflow:hidden; }
+@media (max-width:920px){
+  .nav-burger-li { display:flex; }
+  .nav-burger { display:inline-flex; flex-direction:column; justify-content:center; align-items:center;
+    gap:5px; width:40px; height:40px; padding:0; margin:0; background:none; border:0; cursor:pointer; }
+  .nav-burger span { display:block; width:22px; height:1px; background:var(--ink);
+    transition:transform .3s var(--ease), opacity .3s ease; }
+  .nav-burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .nav-burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+  .mobile-menu { display:block; position:absolute; top:100%; left:0; right:0;
+    background:var(--paper); border-bottom:1px solid var(--line);
+    box-shadow:0 24px 48px rgba(26,26,26,.1); max-height:calc(100vh - 60px); overflow-y:auto; }
+  .mobile-menu[hidden]{ display:none; }
+  .mobile-menu ul { list-style:none; margin:0; padding:6px var(--pad) 18px; }
+  .mobile-menu li + li { border-top:1px solid var(--line); }
+  .mobile-menu a { display:block; padding:16px 2px; font-size:11px; font-weight:500;
+    letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); transition:color .3s; }
+  .mobile-menu a:hover { color:var(--accent); }
+  .mobile-menu .mm-lang a { font-family:var(--mono); color:rgba(26,26,26,.55); }
+}
+/* ── Schwester-Navigation ── */
+.sister-nav { background:var(--paper-w); border-bottom:1px solid var(--line); padding:0 var(--pad); }
+.sister-inner { max-width:var(--max); margin:0 auto; display:flex; align-items:center; gap:22px;
+  padding:13px 0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.sister-label { font-family:var(--mono); font-size:9px; letter-spacing:.25em; text-transform:uppercase;
+  color:rgba(26,26,26,.45); flex:0 0 auto; padding-right:22px; border-right:1px solid var(--line); }
+.sister-inner a, .sister-inner .active { font-family:var(--mono); font-size:9px; letter-spacing:.2em;
+  text-transform:uppercase; white-space:nowrap; flex:0 0 auto; }
+.sister-inner a { color:var(--ink-soft); transition:color .3s; }
+.sister-inner a:hover { color:var(--accent); }
+.sister-inner .active { color:var(--accent); }
 @media (max-width:920px){
   .hero-inner { grid-template-columns:1fr; }
-  .hero-illus { display:none; }
+  .hero-illus { max-width:220px; margin:28px auto 0; justify-self:center; }
   .usps { grid-template-columns:1fr; }
   .steps { grid-template-columns:1fr; gap:22px; }
   .scope { columns:1; }
   .nav-links { gap:14px; } .nav-links .hide-m { display:none; }
+}
+/* ── Schmalbild-Fix: unter 405px sauber umbrechen statt kappen; ab 405px unverändert ── */
+.hero-inner > *, .usps > li, .steps > .step { min-width:0; }
+@media (max-width:404px){
+  h1, h2, p, .usps li, .scope li, .step .t, .step .d { overflow-wrap:break-word; -webkit-hyphens:auto; hyphens:auto; }
+}
+@media (max-width:380px){
+  .hero h1 { font-size:30px; }
+  .section h2 { font-size:23px; }
+  .band h2 { font-size:25px; }
 }
 </style>
 </head>
@@ -100,7 +164,20 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(-
     <li class="hide-m"><a href="index.html#zielgruppen">Alle Eigentümerrollen</a></li>
     <li><a href="en-succession.html">EN</a></li>
     <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    <li class="nav-burger-li">
+      <button class="nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </li>
   </ul>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="index.html#zielgruppen">Alle Eigentümerrollen</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+      <li class="mm-lang"><a href="en-succession.html">EN · English version</a></li>
+    </ul>
+  </div>
 </nav>
 
 <header class="hero">
@@ -109,34 +186,55 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(-
       <div class="crumbs"><a href="index.html">PANI</a> · <a href="index.html#zielgruppen">Für wen wir arbeiten</a> · Nachfolge</div>
       <span class="kicker">Hausverwaltung bei Nachfolge und Neuordnung</span>
       <h1>Bestände geordnet in die nächste Phase.</h1>
-      <p class="sub">Wenn sich Eigentümerstrukturen verändern - durch Erbschaft, familiäre Nachfolge oder Neuordnung - braucht es eine Verwaltung, die Stabilität sichert und Übergänge professionell begleitet.</p>
+      <p class="sub">Wenn sich Eigentümerstrukturen verändern — durch Erbschaft, familiäre Nachfolge oder Neuordnung — braucht es eine Verwaltung, die Stabilität sichert und Übergänge professionell begleitet.</p>
     </div>
     <div class="hero-illus reveal in"><svg viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <defs><pattern id="hsub" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-    <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,.07)" stroke-width=".5"/></pattern></defs>
-  <polygon points="36,76 52,50 248,50 264,76" fill="url(#hsub)" stroke="var(--ink)" stroke-width=".8"/>
-  <path d="M 122 76 L 150 42 L 178 76 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width=".7"/>
-  <circle cx="150" cy="62" r="6" fill="none" stroke="var(--ink)" stroke-width=".7"/>
-  <rect x="40" y="76" width="220" height="244" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
-  <rect x="36" y="76" width="228" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width=".7"/>
-  <rect x="38" y="156" width="224" height="2" fill="var(--ink)" opacity=".1"/>
-  <rect x="38" y="236" width="224" height="2" fill="var(--ink)" opacity=".1"/>
-  <g stroke="var(--ink)" stroke-width=".7">
-    <g transform="translate(85,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(150,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(215,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(85,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(215,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(150,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
+  <g transform="translate(25,0)" stroke="var(--ink)" stroke-linecap="square">
+    <polygon points="0,170 50,122 100,170" fill="var(--paper)" stroke-width="1"/>
+    <rect x="0" y="170" width="100" height="150" fill="var(--paper-w)" stroke-width="1"/>
+    <circle cx="50" cy="152" r="5" fill="none" stroke-width=".7"/>
+    <g stroke-width=".7">
+      <rect x="17" y="192" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="25" y1="192" x2="25" y2="216" stroke-width=".5"/>
+      <rect x="67" y="192" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="75" y1="192" x2="75" y2="216" stroke-width=".5"/>
+      <rect x="17" y="246" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="25" y1="246" x2="25" y2="270" stroke-width=".5"/>
+      <rect x="67" y="246" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="75" y1="246" x2="75" y2="270" stroke-width=".5"/>
+    </g>
+    <rect x="40" y="286" width="20" height="34" fill="rgba(26,26,26,.03)" stroke-width=".8"/>
+    <circle cx="56" cy="304" r="1.4" fill="var(--brass)" stroke="none"/>
   </g>
-  <path d="M 128 320 L 128 286 A 22 22 0 0 1 172 286 L 172 320 Z" fill="rgba(26,26,26,.03)" stroke="var(--ink)" stroke-width=".8"/>
-  <line x1="150" y1="290" x2="150" y2="320" stroke="var(--ink)" stroke-width=".6"/>
-  <circle cx="145" cy="306" r="1.4" fill="var(--brass)"/><circle cx="155" cy="306" r="1.4" fill="var(--brass)"/>
+  <g transform="translate(175,0)" opacity=".45" stroke="var(--ink)" stroke-linecap="square">
+    <polygon points="0,170 50,122 100,170" fill="var(--paper)" stroke-width="1"/>
+    <rect x="0" y="170" width="100" height="150" fill="var(--paper-w)" stroke-width="1"/>
+    <circle cx="50" cy="152" r="5" fill="none" stroke-width=".7"/>
+    <g stroke-width=".7">
+      <rect x="17" y="192" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="25" y1="192" x2="25" y2="216" stroke-width=".5"/>
+      <rect x="67" y="192" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="75" y1="192" x2="75" y2="216" stroke-width=".5"/>
+      <rect x="17" y="246" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="25" y1="246" x2="25" y2="270" stroke-width=".5"/>
+      <rect x="67" y="246" width="16" height="24" fill="rgba(26,26,26,.03)"/><line x1="75" y1="246" x2="75" y2="270" stroke-width=".5"/>
+    </g>
+    <rect x="40" y="286" width="20" height="34" fill="rgba(26,26,26,.03)" stroke-width=".8"/>
+    <circle cx="56" cy="304" r="1.4" fill="var(--brass)" stroke="none"/>
+  </g>
+  <g stroke="var(--accent)" stroke-width="1.1" fill="none" stroke-linecap="square">
+    <line x1="130" y1="180" x2="163" y2="180" stroke-dasharray="4 3"/>
+    <path d="M 158 175 L 165 180 L 158 185"/>
+  </g>
   <line x1="20" y1="320" x2="280" y2="320" stroke="var(--ink)" opacity=".4"/>
-  <rect x="120" y="244" width="60" height="36" fill="none" stroke="var(--accent)" stroke-width="1.1" stroke-dasharray="4 3"/>
 </svg></div>
   </div>
 </header>
+
+<nav class="sister-nav" aria-label="Weitere Eigentümerrollen">
+  <div class="sister-inner">
+    <span class="sister-label">Für wen</span>
+    <a href="weg.html">WEG</a>
+    <a href="investoren.html">Investoren</a>
+    <a href="bestandshalter.html">Bestandshalter</a>
+    <a href="zinshaus.html">Zinshaus</a>
+    <a href="sondervermoegen.html">Sondervermögen</a>
+    <span class="active" aria-current="page">Nachfolge</span>
+  </div>
+</nav>
 
 <section class="section alt">
   <div class="section-inner reveal">
@@ -157,7 +255,7 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(-
     <div class="steps">
       <div class="step"><div class="no">01</div><div class="t">Geordnete Übernahme</div><div class="d">Bestandsaufnahme aller Objekte, Verträge, Konten und laufenden Vorgänge.</div></div>
       <div class="step"><div class="no">02</div><div class="t">Transparenz schaffen</div><div class="d">Akten, Zahlen und Zuständigkeiten werden für neue Verantwortliche nachvollziehbar aufbereitet.</div></div>
-      <div class="step"><div class="no">03</div><div class="t">Neuaufstellung</div><div class="d">Gemeinsame Strategie für den Bestand - von Halten über Entwickeln bis Strukturieren.</div></div>
+      <div class="step"><div class="no">03</div><div class="t">Neuaufstellung</div><div class="d">Gemeinsame Strategie für den Bestand — von Halten über Entwickeln bis Strukturieren.</div></div>
     </div>
   </div>
 </section>
@@ -166,26 +264,39 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(-
   <div class="section-inner reveal">
     <h2>Im Mandat enthalten</h2>
     <ul class="scope">
+      <li>Aufbereitung für Erben und neue Gesellschafter</li>
       <li>Mietvertrags- und Mietermanagement</li>
       <li>Nebenkostenabrechnung je Einheit</li>
       <li>Instandhaltungs- und Maßnahmensteuerung</li>
       <li>Handwerker- und Dienstleistersteuerung</li>
       <li>Wirtschaftsplan und Budgetkontrolle</li>
       <li>Eigentümerreport und Dokumentenarchiv</li>
-      <li>Aufbereitung für Erben und neue Gesellschafter</li>
     </ul>
-    <p class="note">Jedes Mandat erhält strukturiertes Reporting und Dokumentenzugriff - Details unter <a href="index.html#reporting">Reporting</a>.</p>
+    <p class="note">Jedes Mandat erhält strukturiertes Reporting und Dokumentenzugriff — Details unter <a href="index.html#reporting">Reporting</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner reveal">
+    <span class="kicker">Zwei Welten. Ein Anspruch.</span>
+    <p class="founders-note">Wir wissen aus eigener Familiengeschichte, was es heißt, wenn Häuser von einer Generation an die nächste übergehen — und führen Ihren Bestand mit derselben Ruhe und Sorgfalt durch den Übergang. Dazu kommt analytische Disziplin aus dem Investmentbanking: Übergänge werden geordnet, dokumentiert und nachvollziehbar.</p>
   </div>
 </section>
 
 <div class="band">
-  <h2>Sprechen wir über Ihr Mandat.</h2>
-  <p>Hinterlassen Sie uns Ihre Eckdaten - wir melden uns innerhalb eines Werktags mit einer unverbindlichen Ersteinschätzung.</p>
-  <a class="btn solid" href="mailto:info@pani-pm.de">E-Mail senden</a>
-  <a class="btn ghost" href="tel:+4930000000">(030) 00 00 00 00</a>
+  <h2>Sprechen wir über Ihren Übergang.</h2>
+  <p>Hinterlassen Sie uns Ihre Eckdaten — wir melden uns innerhalb eines Werktags mit einer unverbindlichen Ersteinschätzung.</p>
+  <div class="band-ctas">
+    <a class="btn solid" href="mailto:info@pani-pm.de">E-Mail senden</a>
+    <a class="btn ghost" href="tel:+4930000000">(030) 00 00 00 00</a>
+  </div>
 </div>
 
 <footer>
+  <div class="foot-brand">
+    <a href="index.html" class="foot-logo" aria-label="PANI Startseite"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span>PANI</span></a>
+    <a class="foot-mail" href="mailto:info@pani-pm.de">info@pani-pm.de</a>
+  </div>
   <div class="foot-inner">
     <a href="index.html">Startseite</a>
     <a href="impressum.html">Impressum</a>
@@ -197,6 +308,42 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(-
 <script>
 (function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})();
+</script>
+<script>
+(function () {
+  var burger = document.getElementById('nav-burger');
+  var menu = document.getElementById('mobile-menu');
+  if (!burger || !menu) return;
+
+  function setOpen(open) {
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    if (open) { menu.removeAttribute('hidden'); } else { menu.setAttribute('hidden', ''); }
+    document.body.classList.toggle('menu-open', open);
+  }
+
+  burger.addEventListener('click', function () {
+    setOpen(burger.getAttribute('aria-expanded') !== 'true');
+  });
+
+  /* Schließen bei Linkklick (Anker scrollt danach normal) */
+  menu.addEventListener('click', function (e) {
+    var a = e.target; while (a && a !== menu && a.tagName !== 'A') a = a.parentNode;
+    if (a && a.tagName === 'A') setOpen(false);
+  });
+
+  /* Schließen mit Escape, Fokus zurück auf den Button */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
+      setOpen(false); burger.focus();
+    }
+  });
+
+  /* Beim Wechsel auf Desktop-Breite aufräumen (Scroll-Lock lösen) */
+  var mq = window.matchMedia('(min-width: 921px)');
+  function onMq(e) { if (e.matches) setOpen(false); }
+  if (mq.addEventListener) { mq.addEventListener('change', onMq); } else { mq.addListener(onMq); }
+})();
 </script>
 </body>
 </html>

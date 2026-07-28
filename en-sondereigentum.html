@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>WEG-Verwaltung für Eigentümergemeinschaften · PANI Berlin</title>
-<meta name="description" content="PANI Hausverwaltung Berlin: WEG-Verwaltung für Wohnungseigentümergemeinschaften. Strukturierte Versammlungen, rechtssichere Beschlüsse, transparente Abrechnung."/>
-<link rel="canonical" href="https://www.pani-hv.de/weg.html"/>
-<link rel="alternate" hreflang="de" href="https://www.pani-hv.de/weg.html"/>
-<link rel="alternate" hreflang="en" href="https://www.pani-hv.de/en-weg.html"/>
-<link rel="alternate" hreflang="x-default" href="https://www.pani-hv.de/weg.html"/>
+<title>Individual Unit Management (SEV) in Berlin · PANI Berlin</title>
+<meta name="description" content="PANI property management Berlin: management of individually owned condominium units (SEV). For capital investors and remote owners - including reporting and digital document access."/>
+<link rel="canonical" href="https://www.pani-hv.de/en-sondereigentum.html"/>
+<link rel="alternate" hreflang="de" href="https://www.pani-hv.de/sondereigentum.html"/>
+<link rel="alternate" hreflang="en" href="https://www.pani-hv.de/en-sondereigentum.html"/>
+<link rel="alternate" hreflang="x-default" href="https://www.pani-hv.de/sondereigentum.html"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -100,6 +100,17 @@ footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(-
 .reveal { opacity:0; transform:translateY(22px); transition:opacity .9s ease, transform .9s var(--ease); }
 .reveal.in { opacity:1; transform:translateY(0); }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} .reveal{opacity:1;transform:none} }
+/* ── Schwester-Navigation ── */
+.sister-nav { background:var(--paper-w); border-bottom:1px solid var(--line); padding:0 var(--pad); }
+.sister-inner { max-width:var(--max); margin:0 auto; display:flex; align-items:center; gap:22px;
+  padding:13px 0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.sister-label { font-family:var(--mono); font-size:9px; letter-spacing:.25em; text-transform:uppercase;
+  color:rgba(26,26,26,.45); flex:0 0 auto; padding-right:22px; border-right:1px solid var(--line); }
+.sister-inner a, .sister-inner .active { font-family:var(--mono); font-size:9px; letter-spacing:.2em;
+  text-transform:uppercase; white-space:nowrap; flex:0 0 auto; }
+.sister-inner a { color:var(--ink-soft); transition:color .3s; }
+.sister-inner a:hover { color:var(--accent); }
+.sister-inner .active { color:var(--accent); }
 /* ── Marken-Absatz ── */
 .founders-note { max-width:62ch; font-size:16px; line-height:1.8; color:rgba(26,26,26,.75); margin:0; }
 /* ── Burger / Mobile Menu ── */
@@ -126,17 +137,6 @@ body.menu-open { overflow:hidden; }
   .mobile-menu a:hover { color:var(--accent); }
   .mobile-menu .mm-lang a { font-family:var(--mono); color:rgba(26,26,26,.55); }
 }
-/* ── Schwester-Navigation ── */
-.sister-nav { background:var(--paper-w); border-bottom:1px solid var(--line); padding:0 var(--pad); }
-.sister-inner { max-width:var(--max); margin:0 auto; display:flex; align-items:center; gap:22px;
-  padding:13px 0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
-.sister-label { font-family:var(--mono); font-size:9px; letter-spacing:.25em; text-transform:uppercase;
-  color:rgba(26,26,26,.45); flex:0 0 auto; padding-right:22px; border-right:1px solid var(--line); }
-.sister-inner a, .sister-inner .active { font-family:var(--mono); font-size:9px; letter-spacing:.2em;
-  text-transform:uppercase; white-space:nowrap; flex:0 0 auto; }
-.sister-inner a { color:var(--ink-soft); transition:color .3s; }
-.sister-inner a:hover { color:var(--accent); }
-.sister-inner .active { color:var(--accent); }
 @media (max-width:920px){
   .hero-inner { grid-template-columns:1fr; }
   .hero-illus { max-width:220px; margin:28px auto 0; justify-self:center; }
@@ -145,10 +145,13 @@ body.menu-open { overflow:hidden; }
   .scope { columns:1; }
   .nav-links { gap:14px; } .nav-links .hide-m { display:none; }
 }
-/* ── Schmalbild-Fix: unter 405px sauber umbrechen statt kappen; ab 405px unverändert ── */
-.hero-inner > *, .usps > li, .steps > .step { min-width:0; }
+/* ── Schmalbild-Fix (unter 405px): Grid-Items schrumpfen lassen, Wörter sauber umbrechen ── */
+.hero-inner > *, .usps > li, .steps > * { min-width:0; }
+.hero h1, .section h2, .band h2, .step .t, .hero .sub, .step .d,
+.usps li, .scope li, .note, .band p { overflow-wrap:break-word; }
 @media (max-width:404px){
-  h1, h2, p, .usps li, .scope li, .step .t, .step .d { overflow-wrap:break-word; -webkit-hyphens:auto; hyphens:auto; }
+  .hero h1, .section h2, .band h2, .step .t, .hero .sub, .step .d,
+  .usps li, .scope li, .note, .band p { -webkit-hyphens:auto; hyphens:auto; }
 }
 @media (max-width:380px){
   .hero h1 { font-size:30px; }
@@ -158,24 +161,24 @@ body.menu-open { overflow:hidden; }
 </style>
 </head>
 <body>
-<nav class="navbar" aria-label="Hauptnavigation">
-  <a href="index.html" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
+<nav class="navbar" aria-label="Main navigation">
+  <a href="en.html" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
   <ul class="nav-links">
-    <li class="hide-m"><a href="index.html#zielgruppen">Alle Eigentümerrollen</a></li>
-    <li><a href="en-weg.html">EN</a></li>
-    <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    <li class="hide-m"><a href="en.html#leistungen">All mandates</a></li>
+    <li><a href="sondereigentum.html">DE</a></li>
+    <li><a href="en.html#kontakt" class="nav-cta">Contact</a></li>
     <li class="nav-burger-li">
-      <button class="nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+      <button class="nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </li>
   </ul>
   <div class="mobile-menu" id="mobile-menu" hidden>
     <ul>
-      <li><a href="index.html">Startseite</a></li>
-      <li><a href="index.html#zielgruppen">Alle Eigentümerrollen</a></li>
-      <li><a href="index.html#kontakt">Kontakt</a></li>
-      <li class="mm-lang"><a href="en-weg.html">EN · English version</a></li>
+      <li><a href="en.html">Home</a></li>
+      <li><a href="en.html#leistungen">All mandates</a></li>
+      <li><a href="en.html#kontakt">Contact</a></li>
+      <li class="mm-lang"><a href="sondereigentum.html">DE · Deutsche Version</a></li>
     </ul>
   </div>
 </nav>
@@ -183,129 +186,112 @@ body.menu-open { overflow:hidden; }
 <header class="hero">
   <div class="hero-inner">
     <div class="reveal in">
-      <div class="crumbs"><a href="index.html">PANI</a> · <a href="index.html#zielgruppen">Für wen wir arbeiten</a> · WEG</div>
-      <span class="kicker">WEG-Verwaltung</span>
-      <h1>Eigentümergemeinschaften, strukturiert geführt.</h1>
-      <p class="sub">Für Wohnungseigentümergemeinschaften, die eine strukturierte, transparente und rechtssichere Verwaltung erwarten: klare Beschlüsse, saubere Abrechnung und eine verlässliche Umsetzung im Alltag — damit Ihre Gemeinschaft handlungsfähig bleibt und der Wert Ihres Objekts erhalten wird.</p>
+      <div class="crumbs"><a href="en.html">PANI</a> · <a href="en.html#leistungen">Mandates</a> · Individual units</div>
+      <span class="kicker">Individual unit management (SEV)</span>
+      <h1>Single apartments, reliably managed.</h1>
+      <p class="sub">For capital investors and remote owners of individual condominium units: we take over the management of your unit (Sondereigentumsverwaltung, SEV) — including tenant management, reporting and digital document access, in coordination with the WEG management of the building.</p>
     </div>
     <div class="hero-illus reveal in"><svg viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs><pattern id="hsub" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
     <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,.07)" stroke-width=".5"/></pattern></defs>
-  <rect x="40" y="70" width="220" height="250" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
-  <rect x="36" y="62" width="228" height="8" fill="url(#hsub)" stroke="var(--ink)" stroke-width=".8"/>
-  <line x1="40" y1="78" x2="260" y2="78" stroke="var(--ink)" stroke-width=".5" opacity=".6"/>
-  <rect x="41" y="162" width="218" height="2" fill="var(--ink)" opacity=".1"/>
-  <rect x="41" y="246" width="218" height="2" fill="var(--ink)" opacity=".1"/>
-  <g stroke="var(--ink)" stroke-width=".5" stroke-linecap="square">
-    <line x1="113" y1="70" x2="113" y2="320"/>
-    <line x1="187" y1="70" x2="187" y2="320"/>
-  </g>
+  <polygon points="36,76 52,50 248,50 264,76" fill="url(#hsub)" stroke="var(--ink)" stroke-width=".8"/>
+  <path d="M 122 76 L 150 42 L 178 76 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width=".7"/>
+  <circle cx="150" cy="62" r="6" fill="none" stroke="var(--ink)" stroke-width=".7"/>
+  <rect x="40" y="76" width="220" height="244" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
+  <rect x="36" y="76" width="228" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width=".7"/>
+  <rect x="38" y="156" width="224" height="2" fill="var(--ink)" opacity=".1"/>
+  <rect x="38" y="236" width="224" height="2" fill="var(--ink)" opacity=".1"/>
   <g stroke="var(--ink)" stroke-width=".7" stroke-linecap="square">
-    <g transform="translate(76,122)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(76,202)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(224,122)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(224,202)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
+    <g transform="translate(85,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(128,0,32,.06)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
+    <g transform="translate(150,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
+    <g transform="translate(215,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
+    <g transform="translate(85,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
+    <g transform="translate(215,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
+    <g transform="translate(150,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
   </g>
-  <g stroke="var(--ink)" stroke-linecap="square">
-    <rect x="140" y="96" width="20" height="158" fill="rgba(26,26,26,.03)" stroke-width=".7"/>
-    <line x1="140" y1="128" x2="160" y2="128" stroke-width=".5"/>
-    <line x1="140" y1="160" x2="160" y2="160" stroke-width=".5"/>
-    <line x1="140" y1="192" x2="160" y2="192" stroke-width=".5"/>
-    <line x1="140" y1="224" x2="160" y2="224" stroke-width=".5"/>
-  </g>
-  <g stroke="var(--ink)" stroke-linecap="square">
-    <line x1="131" y1="272" x2="169" y2="272" stroke-width=".5"/>
-    <rect x="135" y="276" width="30" height="44" fill="rgba(26,26,26,.03)" stroke-width=".8"/>
-    <line x1="150" y1="276" x2="150" y2="320" stroke-width=".6"/>
-  </g>
-  <circle cx="127" cy="286" r="1.4" fill="var(--brass)"/>
-  <circle cx="127" cy="294" r="1.4" fill="var(--brass)"/>
-  <circle cx="127" cy="302" r="1.4" fill="var(--brass)"/>
+  <path d="M 128 320 L 128 286 A 22 22 0 0 1 172 286 L 172 320 Z" fill="rgba(26,26,26,.03)" stroke="var(--ink)" stroke-width=".8"/>
+  <line x1="150" y1="290" x2="150" y2="320" stroke="var(--ink)" stroke-width=".6"/>
+  <circle cx="145" cy="306" r="1.4" fill="var(--brass)"/><circle cx="155" cy="306" r="1.4" fill="var(--brass)"/>
   <line x1="20" y1="320" x2="280" y2="320" stroke="var(--ink)" opacity=".4"/>
-  <rect x="122" y="88" width="56" height="232" fill="none" stroke="var(--accent)" stroke-width="1.1" stroke-dasharray="4 3"/>
+  <rect x="69" y="97" width="32" height="42" fill="none" stroke="var(--accent)" stroke-width="1.1" stroke-dasharray="4 3"/>
 </svg></div>
   </div>
 </header>
 
-<nav class="sister-nav" aria-label="Weitere Eigentümerrollen">
+<nav class="sister-nav" aria-label="Other mandates">
   <div class="sister-inner">
-    <span class="sister-label">Für wen</span>
-    <span class="active" aria-current="page">WEG</span>
-    <a href="investoren.html">Investoren</a>
-    <a href="bestandshalter.html">Bestandshalter</a>
-    <a href="zinshaus.html">Zinshaus</a>
-    <a href="sondervermoegen.html">Sondervermögen</a>
-    <a href="nachfolge.html">Nachfolge</a>
+    <span class="sister-label">Mandates</span>
+    <a href="en-miethaus.html">Rental buildings</a>
+    <a href="en-weg.html">WEG</a>
+    <span class="active" aria-current="page">Individual units</span>
   </div>
 </nav>
 
 <section class="section alt">
   <div class="section-inner reveal">
-    <h2>Was Sie von uns erwarten können</h2>
+    <h2>What you can expect from us</h2>
     <ul class="usps">
-      <li>Strukturierte Eigentümerversammlungen und konsequente Beschlussumsetzung</li>
-      <li>Transparente Hausgeldabrechnung und nachvollziehbare Rücklagenführung</li>
-      <li>Vorausschauende Instandhaltungsplanung für den Werterhalt</li>
-      <li>Rechtssichere Verwaltung nach aktuellem WEG-Recht</li>
-      <li>Fester Ansprechpartner für Beirat und Eigentümer</li>
-      <li>Digitaler Zugriff auf Beschlüsse, Abrechnungen und Dokumente</li>
+      <li>Management of individually owned condominium units (SEV)</li>
+      <li>Ideal for capital investors and remote owners</li>
+      <li>Tenant management and service-charge statement for the unit</li>
+      <li>Reporting on rental income, costs and works</li>
+      <li>Digital access to all documents of your apartment</li>
+      <li>Coordination with the WEG management of the building</li>
     </ul>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner reveal">
-    <h2>So starten wir zusammen</h2>
+    <h2>How we start together</h2>
     <div class="steps">
-      <div class="step"><div class="no">01</div><div class="t">Bestandsaufnahme</div><div class="d">Gemeinschaft, Beschlusslage, Verträge, Rücklagen und offene Themen im Überblick.</div></div>
-      <div class="step"><div class="no">02</div><div class="t">Geordnete Übernahme</div><div class="d">Saubere Übergabe der Verwaltung, Wirtschaftsplan und klare, dokumentierte Prozesse.</div></div>
-      <div class="step"><div class="no">03</div><div class="t">Verwaltung & Reporting</div><div class="d">Laufende Betreuung mit transparentem Reporting und verlässlicher Umsetzung.</div></div>
+      <div class="step"><div class="no">01</div><div class="t">Taking stock</div><div class="d">Unit, lease, service charges and open issues at a glance.</div></div>
+      <div class="step"><div class="no">02</div><div class="t">Orderly takeover</div><div class="d">Clean handover, clear processes and a fixed contact.</div></div>
+      <div class="step"><div class="no">03</div><div class="t">Care & reporting</div><div class="d">Ongoing management of your unit with transparent reporting.</div></div>
     </div>
   </div>
 </section>
 
 <section class="section alt">
   <div class="section-inner reveal">
-    <h2>Im Mandat enthalten</h2>
+    <h2>Included in the mandate</h2>
     <ul class="scope">
-      <li>Vorbereitung und Durchführung der Eigentümerversammlung</li>
-      <li>Umsetzung und Dokumentation der Beschlüsse (Beschluss-Sammlung)</li>
-      <li>Wirtschaftsplan und Hausgeldabrechnung</li>
-      <li>Verwaltung und Planung der Instandhaltungsrücklage</li>
-      <li>Instandhaltungs- und Maßnahmensteuerung</li>
-      <li>Handwerker- und Dienstleistersteuerung</li>
-      <li>Betreuung von Beirat und Eigentümern</li>
-      <li>Eigentümerreport und digitales Dokumentenarchiv</li>
+      <li>Lease and tenant management for the unit</li>
+      <li>Service-charge statement for the apartment</li>
+      <li>Coordination of repairs within the unit</li>
+      <li>Interface to the WEG / building management</li>
+      <li>Reporting on income, costs and works</li>
+      <li>Digital document archive for your unit</li>
     </ul>
-    <p class="note">Jedes Mandat erhält strukturiertes Reporting und Dokumentenzugriff — Details unter <a href="index.html#reporting">Reporting</a>.</p>
+    <p class="note">Every mandate includes structured reporting and document access — see <a href="en.html#reporting">Reporting</a>.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner reveal">
-    <span class="kicker">Zwei Welten. Ein Anspruch.</span>
-    <p class="founders-note">PANI führen zwei Gründer persönlich: analytische Disziplin, geprägt durch Erfahrung im Investmentbanking — und Verwaltungshandwerk aus einer Familie, die seit Generationen Häuser führt. Ihre Gemeinschaft profitiert von beidem: saubere Zahlen und Beschlüsse — und eine Umsetzung mit Sorgfalt im Detail.</p>
+    <span class="kicker">Two worlds. One standard.</span>
+    <p class="founders-note">PANI is run personally by its two founders: analytical discipline shaped by investment-banking experience — and the craft of property management from a family that has run buildings for generations. A single apartment gets both as well: clear figures for your decisions — and care in the detail on site.</p>
   </div>
 </section>
 
 <div class="band">
-  <h2>Sprechen wir über Ihre Gemeinschaft.</h2>
-  <p>Hinterlassen Sie uns Ihre Eckdaten — wir melden uns innerhalb eines Werktags mit einer unverbindlichen Ersteinschätzung.</p>
+  <h2>Let's talk about your apartment.</h2>
+  <p>Leave us your key details — we will get back to you within one business day with a non-binding first assessment.</p>
   <div class="band-ctas">
-    <a class="btn solid" href="mailto:info@pani-pm.de">E-Mail senden</a>
+    <a class="btn solid" href="mailto:info@pani-pm.de">Send email</a>
     <a class="btn ghost" href="tel:+4930000000">(030) 00 00 00 00</a>
   </div>
 </div>
 
 <footer>
   <div class="foot-brand">
-    <a href="index.html" class="foot-logo" aria-label="PANI Startseite"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span>PANI</span></a>
+    <a href="en.html" class="foot-logo" aria-label="PANI home"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span>PANI</span></a>
     <a class="foot-mail" href="mailto:info@pani-pm.de">info@pani-pm.de</a>
   </div>
   <div class="foot-inner">
-    <a href="index.html">Startseite</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+    <a href="en.html">Home</a>
+    <a href="en-imprint.html">Imprint</a>
+    <a href="en-privacy.html">Privacy</a>
     <span class="copy">© PANI Hausverwaltung · Berlin</span>
   </div>
 </footer>
@@ -322,7 +308,7 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})()
 
   function setOpen(open) {
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     if (open) { menu.removeAttribute('hidden'); } else { menu.setAttribute('hidden', ''); }
     document.body.classList.toggle('menu-open', open);
   }
@@ -331,20 +317,20 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})()
     setOpen(burger.getAttribute('aria-expanded') !== 'true');
   });
 
-  /* Schließen bei Linkklick (Anker scrollt danach normal) */
+  /* Close on link click (anchor then scrolls normally) */
   menu.addEventListener('click', function (e) {
     var a = e.target; while (a && a !== menu && a.tagName !== 'A') a = a.parentNode;
     if (a && a.tagName === 'A') setOpen(false);
   });
 
-  /* Schließen mit Escape, Fokus zurück auf den Button */
+  /* Close with Escape, return focus to the button */
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
       setOpen(false); burger.focus();
     }
   });
 
-  /* Beim Wechsel auf Desktop-Breite aufräumen (Scroll-Lock lösen) */
+  /* Clean up when switching to desktop width (release scroll lock) */
   var mq = window.matchMedia('(min-width: 921px)');
   function onMq(e) { if (e.matches) setOpen(false); }
   if (mq.addEventListener) { mq.addEventListener('change', onMq); } else { mq.addListener(onMq); }
