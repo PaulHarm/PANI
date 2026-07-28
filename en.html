@@ -699,6 +699,34 @@ body.menu-open { overflow: hidden; }
 .section-sanierung .sanierung-head .kicker { grid-column: 1 / -1; }
 .section-sanierung .sanierung-head p { max-width: 52ch; margin-bottom: 0; }
 
+/* ═════════ SWITCH STEPS · FOUNDERS LINE · SAMPLE UPDATE ═════════ */
+.cta-note { margin-top: 14px; font-size: 13px; color: rgba(26,26,26,0.55); }
+.cta-note a { text-decoration: underline; text-underline-offset: 3px; color: inherit; }
+.cta-note a:hover { color: var(--accent); }
+
+.report-note { margin-top: 28px; max-width: 46ch; border: 1px solid var(--line); background: var(--paper-w); padding: 18px 20px; }
+.report-note .rn-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.45); display: block; margin-bottom: 10px; }
+.report-note p { font-size: 14px; line-height: 1.7; color: rgba(26,26,26,0.75); margin: 0; max-width: none; }
+
+.switch-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 40px; }
+.switch-steps { max-width: 760px; margin: 20px auto 40px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: left; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); }
+.sw-step { min-width: 0; padding: 22px 20px 24px; border-right: 1px solid rgba(255,255,255,0.14); }
+.sw-step:last-child { border-right: 0; }
+.sw-step .sw-no { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); display: block; }
+.sw-step .sw-t { font-family: var(--serif); font-weight: 300; font-size: 19px; margin: 10px 0 8px; color: #fff; }
+.sw-step .sw-d { font-size: 13.5px; line-height: 1.65; color: rgba(255,255,255,0.65); margin: 0; max-width: none; }
+
+.founders-line { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 auto 26px; max-width: 600px; }
+.fl-monos { display: flex; flex-shrink: 0; }
+.fl-mono { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); }
+.fl-mono + .fl-mono { margin-left: -1px; }
+.founders-line p { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.65); margin: 0; text-align: left; max-width: none; }
+@media (max-width: 960px) {
+  .switch-steps { grid-template-columns: 1fr; }
+  .sw-step { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.14); }
+  .sw-step:last-child { border-bottom: 0; }
+}
+
 /* ═════════ RESPONSIVE ═════════ */
 @media (max-width: 960px) {
   .section { padding: 100px var(--pad); min-height: auto; }
@@ -856,9 +884,10 @@ h1, h2, h3,
       </p>
 
       <div class="hero-ctas">
-        <a href="#zielgruppen" class="btn solid">For owners &amp; investors</a>
-        <a href="#mieter" class="btn ghost">For tenants</a>
+        <a href="#kontakt" class="btn solid">Request an intro call</a>
+        <a href="#zielgruppen" class="btn ghost">For owners &amp; investors</a>
       </div>
+      <p class="cta-note">Are you a tenant? <a href="#mieter">Tenant services</a></p>
 
       <div class="hero-meta">
         <div><span class="m-label">Location</span><span class="m-val">Berlin</span></div>
@@ -1523,6 +1552,14 @@ h1, h2, h3,
         shareholders and your tax adviser.
       </p>
 
+      <div class="report-note reveal d3">
+        <span class="rn-label">From an owner update · Sample</span>
+        <p>
+          &ldquo;Front-building gutter: quote reviewed and commissioned, work scheduled
+          for Thursday 9 am. You will find the report and invoice in the data room afterwards.&rdquo;
+        </p>
+      </div>
+
       <div class="stat-row">
         <div class="stat">
           <div class="s-n">1×/month</div>
@@ -1774,6 +1811,30 @@ h1, h2, h3,
     Leave us your details — we will get back to you within one business day
     with a non-binding first assessment. Or call us directly.
   </p>
+
+  <p class="switch-label">Already have a managing agent? Switching is simple</p>
+  <div class="switch-steps">
+    <div class="sw-step">
+      <span class="sw-no">01</span>
+      <h3 class="sw-t">Intro call</h3>
+      <p class="sw-d">You describe your property and situation — we give you an honest assessment of whether and how we can help.</p>
+    </div>
+    <div class="sw-step">
+      <span class="sw-no">02</span>
+      <h3 class="sw-t">Handover</h3>
+      <p class="sw-d">We coordinate notice periods, documents and the takeover with your current managing agent — no work on your side.</p>
+    </div>
+    <div class="sw-step">
+      <span class="sw-no">03</span>
+      <h3 class="sw-t">Start</h3>
+      <p class="sw-d">Your property runs with PANI: a permanent contact at founder level and structured reporting from the first month.</p>
+    </div>
+  </div>
+
+  <div class="founders-line">
+    <div class="fl-monos"><span class="fl-mono">NP</span><span class="fl-mono">PH</span></div>
+    <p>Your inquiry is read personally by the founders — Niclas Paprocki and Paul Harm.</p>
+  </div>
 
   <form class="contact-form" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST">
     <input type="hidden" name="_subject" value="New enquiry via pani-hv.de/en">
