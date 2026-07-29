@@ -739,53 +739,36 @@ body.menu-open { overflow: hidden; }
 }
 .kpi-rotator {
   justify-self: end; align-self: center;
-  width: 100%; max-width: 420px;
-  border: 1px solid var(--line);
-  background: var(--tint);
-  padding: 24px 28px 26px;
+  width: 100%; max-width: 480px;
 }
-.kr-head {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 12px; margin-bottom: 18px;
-}
-.kr-label {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em;
-  text-transform: uppercase; color: var(--accent);
-}
-.kr-count {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
-  color: rgba(34,30,26,0.45); font-variant-numeric: tabular-nums;
-}
-.kr-stage { display: grid; }
+.kr-stage { display: grid; overflow: hidden; }
 .kr-slide {
   grid-area: 1 / 1;               /* alle Slides stapeln; Stage = hoechster Slide, kein Springen */
   min-width: 0;
-  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
-  opacity: 0; transform: translateY(10px);
-  transition: opacity .5s ease, transform .5s var(--ease);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  opacity: 0; transform: translateX(56px);   /* wartet rechts, wandert nach links durch */
+  transition: opacity .55s ease, transform .65s var(--ease);
   pointer-events: none;
 }
+.kr-slide.is-leaving { opacity: 0; transform: translateX(-56px); }
 .kr-slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
 .kr-n {
   font-family: var(--serif); font-weight: 300;
-  font-size: clamp(34px, 3.2vw, 44px); line-height: 1;
+  font-size: clamp(52px, 5vw, 76px); line-height: 1;
   color: var(--ink); font-variant-numeric: tabular-nums;
 }
 .kr-l {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.15em;
   text-transform: uppercase; color: rgba(34,30,26,0.62); line-height: 1.7;
 }
-.kr-cert { gap: 8px; }
-.kr-seal { height: 64px; width: auto; }
+.kr-cert { gap: 10px; }
+.kr-seal { height: 92px; width: auto; }
 
 /* Statik bei reduzierter Bewegung: kompakte 2×2-Liste, keine Auto-Rotation.
    Klasse .kr-static setzt das JS bei prefers-reduced-motion (und entfernt aria-hidden). */
-.kr-static .kr-head { margin-bottom: 16px; }
-.kr-static .kr-count { display: none; }
 .kr-static .kr-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
 .kr-static .kr-slide { grid-area: auto; opacity: 1; transform: none; pointer-events: auto; }
-.kr-static .kr-n { font-size: 26px; }
+.kr-static .kr-n { font-size: 28px; }
 .kr-static .kr-seal { height: 48px; }
 @media (prefers-reduced-motion: reduce) {
   .kr-slide:first-child { opacity: 1; transform: none; } /* No-JS-Fallback: nur der erste Slide sichtbar, nichts blinkt; mit JS greift .kr-static (2×2-Statik) */
@@ -794,11 +777,11 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 960px) {
   /* Mobil: Rotator kompakt nach dem Intro-Text, vor den Tabs (DOM-Reihenfolge) */
   .roles-head { grid-template-columns: 1fr; row-gap: 32px; }
-  .kpi-rotator { justify-self: start; max-width: 460px; padding: 20px 22px 22px; }
+  .kpi-rotator { justify-self: start; max-width: 460px; }
 }
 @media (max-width: 480px) {
   .kpi-rotator { max-width: none; }
-  .kr-n { font-size: 30px; }
+  .kr-n { font-size: 40px; }
   .kr-static .kr-stage { grid-template-columns: 1fr 1fr; gap: 14px 14px; }
   .kr-static .kr-n { font-size: 22px; }
   .kr-l { font-size: 9px; letter-spacing: 0.12em; }
@@ -1305,10 +1288,6 @@ h1, h2, h3,
       </div>
 
       <aside class="kpi-rotator" id="kpi-rotator" aria-label="PANI at a glance">
-        <div class="kr-head">
-          <span class="kr-label">PANI at a glance</span>
-          <span class="kr-count" id="kr-count" aria-hidden="true">01 / 04</span>
-        </div>
         <div class="kr-stage">
           <div class="kr-slide is-active">
             <span class="kr-n">4</span>
@@ -2540,7 +2519,6 @@ h1, h2, h3,
   var rot = document.getElementById('kpi-rotator');
   if (!rot) return;
   var slides = rot.querySelectorAll('.kr-slide');
-  var count = document.getElementById('kr-count');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Reduzierte Bewegung: statische 2×2-Liste, alle KPIs sichtbar, keine Rotation */
@@ -2553,15 +2531,14 @@ h1, h2, h3,
   var idx = 0, timer = null, inView = false, paused = false;
   var INTERVAL = 4000;
 
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
-
   function show(n) {
     slides.forEach(function (s, k) {
+      var wasActive = s.classList.contains('is-active');
+      s.classList.toggle('is-leaving', wasActive && k !== n);
       s.classList.toggle('is-active', k === n);
       if (k === n) { s.removeAttribute('aria-hidden'); }
       else { s.setAttribute('aria-hidden', 'true'); }
     });
-    if (count) count.textContent = pad(n + 1) + ' / ' + pad(slides.length);
     idx = n;
   }
 
