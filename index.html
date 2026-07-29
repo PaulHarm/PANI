@@ -503,7 +503,6 @@ body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
 .contact-band .btn.solid { background: #fff; color: var(--accent); }
 .contact-band .btn.solid:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
 .contact-band .btn.ghost:hover { background: #fff; color: var(--accent); }
-.contact-band .hero-ctas { justify-content: center; margin-top: 0; }
 .contact-form { max-width: 600px; margin: 0 auto 8px; text-align: left; }
 .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .cf-field { display: block; margin-bottom: 16px; }
@@ -519,7 +518,6 @@ body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
 .cf-consent a:hover { border-color: #fff; }
 .cf-submit { border: none; cursor: pointer; font-family: var(--sans); }
 .cf-note { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-.cf-alt { margin-top: 30px; font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5); }
 @media (max-width: 600px){ .cf-row { grid-template-columns: 1fr; } }
 
 /* ═════════ FOOTER ═════════ */
@@ -730,51 +728,78 @@ body.menu-open { overflow: hidden; }
   .sw-step:last-child { border-bottom: 0; }
 }
 
-/* ═════════ KPI-BAND ═════════ */
-.kpi-band {
-  background: var(--paper-w);
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  padding: clamp(28px, 4vh, 44px) var(--pad);
+/* ═════════ KPI-ROTATOR (in #zielgruppen) ═════════ */
+.roles-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  column-gap: clamp(40px, 6vw, 90px);
+  align-items: center;
 }
-.kpi-inner {
-  max-width: var(--max); margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+.kpi-rotator {
+  justify-self: end; align-self: center;
+  width: 100%; max-width: 420px;
+  border: 1px solid var(--line);
+  background: var(--tint);
+  padding: 24px 28px 26px;
 }
-.kpi {
+.kr-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px; margin-bottom: 18px;
+}
+.kr-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--accent);
+}
+.kr-count {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+  color: rgba(34,30,26,0.45); font-variant-numeric: tabular-nums;
+}
+.kr-stage { display: grid; }
+.kr-slide {
+  grid-area: 1 / 1;               /* alle Slides stapeln; Stage = hoechster Slide, kein Springen */
   min-width: 0;
   display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
-  padding: 4px 24px 4px 0;
-  border-right: 1px solid var(--line);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s var(--ease);
+  pointer-events: none;
 }
-.kpi + .kpi { padding-left: 24px; }
-.kpi:last-child { border-right: 0; padding-right: 0; }
-.kpi-n {
+.kr-slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
+.kr-n {
   font-family: var(--serif); font-weight: 300;
-  font-size: clamp(26px, 2.6vw, 34px); line-height: 1.1; color: var(--ink);
-  font-variant-numeric: tabular-nums;
+  font-size: clamp(34px, 3.2vw, 44px); line-height: 1;
+  color: var(--ink); font-variant-numeric: tabular-nums;
 }
-.kpi-l {
+.kr-l {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
-  text-transform: uppercase; color: rgba(26,26,26,0.62); line-height: 1.7;
+  text-transform: uppercase; color: rgba(34,30,26,0.62); line-height: 1.7;
 }
-.kpi-cert { gap: 8px; }
-.kpi-seal { height: 64px; width: auto; }
+.kr-cert { gap: 8px; }
+.kr-seal { height: 64px; width: auto; }
+
+/* Statik bei reduzierter Bewegung: kompakte 2×2-Liste, keine Auto-Rotation.
+   Klasse .kr-static setzt das JS bei prefers-reduced-motion (und entfernt aria-hidden). */
+.kr-static .kr-head { margin-bottom: 16px; }
+.kr-static .kr-count { display: none; }
+.kr-static .kr-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
+.kr-static .kr-slide { grid-area: auto; opacity: 1; transform: none; pointer-events: auto; }
+.kr-static .kr-n { font-size: 26px; }
+.kr-static .kr-seal { height: 48px; }
+@media (prefers-reduced-motion: reduce) {
+  .kr-slide:first-child { opacity: 1; transform: none; } /* No-JS-Fallback: nur der erste Slide sichtbar, nichts blinkt; mit JS greift .kr-static (2×2-Statik) */
+}
 
 @media (max-width: 960px) {
-  /* 2×2 */
-  .kpi-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .kpi, .kpi + .kpi { padding: 16px 18px 16px 0; border-right: 0; }
-  .kpi:nth-child(odd)  { border-right: 1px solid var(--line); }
-  .kpi:nth-child(even) { padding-left: 18px; padding-right: 0; }
-  .kpi:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  /* Mobil: Rotator kompakt nach dem Intro-Text, vor den Tabs (DOM-Reihenfolge) */
+  .roles-head { grid-template-columns: 1fr; row-gap: 32px; }
+  .kpi-rotator { justify-self: start; max-width: 460px; padding: 20px 22px 22px; }
 }
 @media (max-width: 480px) {
-  /* 2×2 kompakt (Entscheidung: kein 1-spaltiger Fall) */
-  .kpi-n { font-size: 22px; }
-  .kpi-l { font-size: 9px; letter-spacing: 0.12em; }
-  .kpi-seal { height: 52px; }
-  .kpi, .kpi + .kpi { padding: 14px 12px 14px 0; }
-  .kpi:nth-child(even) { padding-left: 12px; padding-right: 0; }
+  .kpi-rotator { max-width: none; }
+  .kr-n { font-size: 30px; }
+  .kr-static .kr-stage { grid-template-columns: 1fr 1fr; gap: 14px 14px; }
+  .kr-static .kr-n { font-size: 22px; }
+  .kr-l { font-size: 9px; letter-spacing: 0.12em; }
 }
 
 /* ═════════ OVERLAY-PILL (Mieter) ═════════ */
@@ -808,22 +833,58 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
 .contact-band { text-align: left; padding: clamp(56px, 7vh, 84px) var(--pad); }
 .contact-grid {
   max-width: var(--max); margin: 0 auto;
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 620px);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px);
   gap: clamp(36px, 5vw, 84px); align-items: start;
 }
 .contact-band h2 { margin-bottom: 16px; font-size: clamp(32px, 3.4vw, 44px); }
-.contact-band .contact-intro { margin: 0 0 26px; max-width: 46ch; }
+.contact-band .contact-intro { margin: 0 0 30px; max-width: 46ch; }
+
+/* Wechsel-Steps: schlanke nummerierte Leiste mit verbindender Linie */
 .contact-band .switch-label { margin-top: 0; }
-.contact-band .switch-steps { max-width: none; margin: 14px 0 26px; grid-template-columns: 1fr; }
-.contact-band .sw-step {
-  display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 14px;
-  padding: 13px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.14);
+.contact-band .switch-steps {
+  max-width: none; margin: 18px 0 28px;
+  grid-template-columns: 1fr; border-top: 0; border-bottom: 0;
 }
-.contact-band .sw-step:last-child { border-bottom: 0; }
-.contact-band .sw-step .sw-no { padding-top: 5px; }
-.contact-band .sw-step .sw-t { font-size: 17px; margin: 0 0 2px; }
+.contact-band .sw-step {
+  position: relative;
+  display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 16px;
+  padding: 0 0 22px; border-right: 0; border-bottom: 0;
+}
+.contact-band .sw-step:last-child { padding-bottom: 0; }
+.contact-band .sw-step::before {
+  content: ""; position: absolute; left: 15px; top: 30px; bottom: 0;
+  width: 1px; background: rgba(255,255,255,0.22);
+}
+.contact-band .sw-step:last-child::before { display: none; }
+.contact-band .sw-step .sw-no {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  display: grid; place-items: center;
+  padding: 0; letter-spacing: 0.08em; color: rgba(255,255,255,0.75);
+  background: var(--accent); position: relative; z-index: 1;
+}
+.contact-band .sw-step .sw-t { font-size: 17px; margin: 4px 0 2px; }
 .contact-band .sw-step .sw-d { grid-column: 2; font-size: 13px; line-height: 1.55; }
-.contact-band .founders-line { margin: 0; max-width: none; justify-content: flex-start; }
+
+/* Gruenderzeile als Vertrauensanker */
+.contact-band .founders-line {
+  margin: 0; max-width: none; justify-content: flex-start;
+  border-top: 1px solid rgba(255,255,255,0.16); padding-top: 22px;
+}
+
+/* Formular als ruhige Karte */
+.contact-band .contact-form-col {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.6vw, 32px) clamp(18px, 2.4vw, 26px);
+}
+.contact-band .cf-title {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; gap: 14px;
+  margin: 0 0 18px; max-width: none;
+}
+.cf-title::after { content: ""; height: 1px; flex: 1; background: rgba(255,255,255,0.16); }
 .contact-band .contact-form { max-width: none; margin: 0; }
 .contact-band .cf-field { margin-bottom: 12px; }
 .contact-band .cf-field > span { margin-bottom: 6px; }
@@ -832,14 +893,28 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
 .contact-band .contact-form textarea { min-height: 88px; }
 .contact-band .cf-consent { margin: 2px 0 16px; font-size: 12px; line-height: 1.55; }
 .contact-band .cf-note { font-size: 11px; margin: 12px 0 0; max-width: none; }
-.contact-band .cf-alt { margin-top: 22px; }
-.contact-band .hero-ctas { justify-content: flex-start; margin-top: 12px; }
+
+/* „Oder direkt:" — dezente Textlinks statt Buttons */
+.contact-band .cf-direct {
+  margin: 18px 0 0; font-size: 13px; line-height: 1.7;
+  color: rgba(255,255,255,0.6); max-width: none;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
+}
+.cf-direct a {
+  color: #fff; white-space: nowrap;
+  display: inline-block; padding-block: 9px; /* Touch-Ziel ≥ 40px: 13px × 1.7 ≈ 22px + 2×9px */
+  text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.4);
+  transition: text-decoration-color .3s ease;
+}
+.cf-direct a:hover { text-decoration-color: #fff; }
+.cf-direct .cf-sep { color: rgba(255,255,255,0.35); }
 
 @media (max-width: 960px) {
-  /* einspaltig, gestraffte Abstände */
+  /* einspaltig, gestraffte Abstaende */
   .contact-grid { grid-template-columns: 1fr; gap: 34px; }
   .contact-band { padding: clamp(48px, 7vh, 72px) var(--pad); }
-  .contact-band .switch-steps { margin-bottom: 20px; }
+  .contact-band .switch-steps { margin-bottom: 22px; }
 }
 
 /* ═════════ RESPONSIVE ═════════ */
@@ -894,7 +969,8 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
 .cf-consent > *,
 .footer-top > *,
 .contact-grid > *,
-.kpi-inner > *,
+.roles-head > *,
+.kr-slide > *,
 .section-sanierung .sanierung-head > * { min-width: 0; }
 
 @media (max-width: 404px) {
@@ -909,7 +985,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   .role-usps li,
   .energy-top .e-title,
   .cf-consent,
-  .kpi-l {
+  .kr-l {
     -webkit-hyphens: auto;
     hyphens: auto;
     overflow-wrap: break-word;
@@ -1210,43 +1286,48 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   </a>
 </section>
 
-<!-- ══ KPI-BAND ══ -->
-<section class="kpi-band" aria-label="PANI in Zahlen">
-  <div class="kpi-inner reveal">
-    <div class="kpi">
-      <span class="kpi-n">4</span>
-      <span class="kpi-l">Generationen Hausverwaltung</span>
-    </div>
-    <div class="kpi kpi-cert">
-      <!-- IHK-Siegel §26a WEG — nur verwenden, solange die Zertifizierung tatsächlich vorliegt (Angabe Inhaber, 2026-07-29). Quelle Siegel-Grafik: IHK-Standardsiegel. -->
-      <img class="kpi-seal" src="assets/ihk-26a-weg-siegel.png"
-           alt="IHK-Siegel: Zertifizierter Verwalter nach § 26a WEG"
-           width="130" height="64" loading="lazy" decoding="async"/>
-      <span class="kpi-l">Zertifiziert nach § 26a WEG</span>
-    </div>
-    <div class="kpi">
-      <span class="kpi-n">&gt; 1 Mrd. €</span>
-      <span class="kpi-l">AUM Asset-Management-Mandate — Erfahrung der Gründer aus früheren Stationen</span>
-    </div>
-    <div class="kpi">
-      <span class="kpi-n">&lt; 24 h</span>
-      <span class="kpi-l">Reaktionszeit</span>
-    </div>
-  </div>
-</section>
-
 <!-- ══ II: FÜR WEN ══ -->
 <section class="section section-roles" id="zielgruppen">
   <span class="section-num">II / VIII · Für wen</span>
   <div class="section-inner" style="grid-template-columns: 1fr; gap: 40px;">
-    <div class="sanierung-head reveal">
-      <span class="kicker">Für wen wir arbeiten</span>
-      <h2>Verwaltung, abgestimmt auf<br/>Ihre Eigentümerstruktur.</h2>
-      <p>
-        Wohnungseigentümergemeinschaften, Investoren, Bestandshalter, Zinshaus-Eigentümer,
-        Sondervermögen oder eine anstehende Nachfolge: Jede Eigentümerstruktur stellt andere
-        Anforderungen an Reporting, Prozesse und Steuerung. Wählen Sie Ihre Rolle:
-      </p>
+    <div class="roles-head reveal">
+      <div class="sanierung-head">
+        <span class="kicker">Für wen wir arbeiten</span>
+        <h2>Verwaltung, abgestimmt auf<br/>Ihre Eigentümerstruktur.</h2>
+        <p>
+          Wohnungseigentümergemeinschaften, Investoren, Bestandshalter, Zinshaus-Eigentümer,
+          Sondervermögen oder eine anstehende Nachfolge: Jede Eigentümerstruktur stellt andere
+          Anforderungen an Reporting, Prozesse und Steuerung. Wählen Sie Ihre Rolle:
+        </p>
+      </div>
+
+      <aside class="kpi-rotator" id="kpi-rotator" aria-label="PANI in Zahlen">
+        <div class="kr-head">
+          <span class="kr-label">PANI in Zahlen</span>
+          <span class="kr-count" id="kr-count" aria-hidden="true">01 / 04</span>
+        </div>
+        <div class="kr-stage">
+          <div class="kr-slide is-active">
+            <span class="kr-n">4</span>
+            <span class="kr-l">Generationen Hausverwaltung</span>
+          </div>
+          <div class="kr-slide kr-cert" aria-hidden="true">
+            <!-- IHK-Siegel §26a WEG — nur verwenden, solange die Zertifizierung tatsächlich vorliegt (Angabe Inhaber, 2026-07-29). Quelle Siegel-Grafik: IHK-Standardsiegel. -->
+            <img class="kr-seal" src="assets/ihk-26a-weg-siegel.png"
+                 alt="IHK-Siegel: Zertifizierter Verwalter nach § 26a WEG"
+                 width="130" height="64" loading="lazy" decoding="async"/>
+            <span class="kr-l">Zertifiziert nach § 26a WEG</span>
+          </div>
+          <div class="kr-slide" aria-hidden="true">
+            <span class="kr-n">&gt; 1 Mrd. €</span>
+            <span class="kr-l">AUM Asset-Management-Mandate — Erfahrung der Gründer aus früheren Stationen</span>
+          </div>
+          <div class="kr-slide" aria-hidden="true">
+            <span class="kr-n">&lt; 24 h</span>
+            <span class="kr-l">Reaktionszeit</span>
+          </div>
+        </div>
+      </aside>
     </div>
 
     <div class="reveal d2">
@@ -1975,6 +2056,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
     </div>
 
     <div class="contact-form-col">
+      <p class="cf-title">Unverbindliche Ersteinschätzung</p>
       <!-- ══ KONTAKTFORMULAR ══
            WICHTIG vor dem Live-Gang: Formspree-Formular-ID eintragen!
            1. Kostenloses Konto auf https://formspree.io anlegen
@@ -2012,11 +2094,11 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
         <p class="cf-note">* Pflichtfelder. Ihre Daten nutzen wir ausschließlich zur Bearbeitung Ihrer Anfrage. Näheres in der Datenschutzerklärung.</p>
       </form>
 
-      <p class="cf-alt">Oder direkt:</p>
-      <div class="hero-ctas">
-        <a href="mailto:info@pani-pm.de" class="btn solid">E-Mail senden</a>
-        <a href="tel:+4930000000" class="btn ghost">(030) 00 00 00 00</a>
-      </div>
+      <p class="cf-direct">Oder direkt:
+        <a href="mailto:info@pani-pm.de">info@pani-pm.de</a>
+        <span class="cf-sep" aria-hidden="true">·</span>
+        <a href="tel:+4930000000">(030) 00 00 00 00</a>
+      </p>
     </div>
   </div>
 </div>
@@ -2455,6 +2537,61 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
     requestAnimationFrame(function () { update(); ticking = false; });
   }, { passive: true });
   update();
+})();
+</script>
+
+<script>
+(function () {
+  var rot = document.getElementById('kpi-rotator');
+  if (!rot) return;
+  var slides = rot.querySelectorAll('.kr-slide');
+  var count = document.getElementById('kr-count');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reduzierte Bewegung: statische 2×2-Liste, alle KPIs sichtbar, keine Rotation */
+  if (reduceMotion || slides.length < 2) {
+    rot.classList.add('kr-static');
+    slides.forEach(function (s) { s.removeAttribute('aria-hidden'); s.classList.add('is-active'); });
+    return;
+  }
+
+  var idx = 0, timer = null, inView = false, paused = false;
+  var INTERVAL = 4000;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  function show(n) {
+    slides.forEach(function (s, k) {
+      s.classList.toggle('is-active', k === n);
+      if (k === n) { s.removeAttribute('aria-hidden'); }
+      else { s.setAttribute('aria-hidden', 'true'); }
+    });
+    if (count) count.textContent = pad(n + 1) + ' / ' + pad(slides.length);
+    idx = n;
+  }
+
+  function tick() { show((idx + 1) % slides.length); }
+
+  function sync() {
+    var run = inView && !paused && !document.hidden;
+    if (run && !timer) { timer = setInterval(tick, INTERVAL); }
+    else if (!run && timer) { clearInterval(timer); timer = null; }
+  }
+
+  /* Nur rotieren, wenn das Modul im Viewport ist */
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { inView = e.isIntersecting; });
+    sync();
+  }, { threshold: 0.35 }).observe(rot);
+
+  /* Pause bei Hover und Fokus im Modul */
+  rot.addEventListener('mouseenter', function () { paused = true; sync(); });
+  rot.addEventListener('mouseleave', function () { paused = false; sync(); });
+  rot.addEventListener('focusin',  function () { paused = true; sync(); });
+  rot.addEventListener('focusout', function () { paused = false; sync(); });
+  document.addEventListener('visibilitychange', sync);
+
+  show(0);
 })();
 </script>
 
