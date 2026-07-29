@@ -29,7 +29,7 @@
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#800020">
+<meta name="theme-color" content="#7F332A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
@@ -37,22 +37,25 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink:      #181818;
-  --ink-soft: #333333;
-  --paper:    #F6F5F2;
+  --ink:      #221E1A;
+  --ink-soft: #3E3931;
+  --paper:    #F7F3EB;
   --paper-w:  #FFFFFF;
-  --paper-d:  #E9E7E1;
-  --steel:    #222222;
-  --butter:   #EFEDE7;
-  --coal:     #111111;
+  --paper-d:  #EAE3D6;
+  --steel:    #26221C;
+  --butter:   #F1E9DC;
+  --coal:     #171310;
 
-  --accent:   #800020;
+  --accent:   #7F332A;
   --brass:    #B08D57;
   --sand:     #D4C4A9;
   --leaf:     #3E6B4F;
   --glow:     #E2A94E;
-  --line:     rgba(26, 26, 26, 0.12);
+  --line:     rgba(34, 30, 26, 0.14);
   --line-light: rgba(255, 255, 255, 0.15);
+  --tint:     #F3EDE2;               /* warme Hover-/Chip-Fläche (zwischen paper und butter) */
+  --t-fast:   .3s var(--ease);       /* Standard-Transition kurz  */
+  --t-med:    .45s var(--ease);      /* Standard-Transition mittel */
 
   --serif:    'Fraunces', Georgia, serif;
   --sans:     'IBM Plex Sans', Helvetica, Arial, sans-serif;
@@ -74,7 +77,7 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--sand); color: var(--ink); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 h1, h2, h3 {
@@ -102,7 +105,7 @@ p { margin: 0 0 1.2em 0; }
 /* ═════════ NAVBAR ═════════ */
 .navbar {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(247, 245, 240, 0.88);
+  background: rgba(247, 243, 235, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   display: flex; align-items: center; justify-content: space-between;
@@ -211,12 +214,13 @@ h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
   display: inline-flex; align-items: center; gap: 10px;
   font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
   padding: 16px 28px; border-radius: 999px; border: 1px solid var(--ink);
-  transition: transform .35s var(--ease), background .35s, border-color .35s, color .35s, box-shadow .35s;
+  transition: transform var(--t-fast), background var(--t-fast), border-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast);
   cursor: pointer; will-change: transform;
 }
 .btn.solid { background: var(--ink); color: #fff; }
 .btn.solid:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(128,0,32,0.22); }
 .btn.ghost:hover { background: var(--ink); color: #fff; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(26,26,26,0.15); }
+.btn:active { transform: translateY(0); }
 
 /* ═════════ HERO ═════════ */
 .section-hero {
@@ -277,13 +281,6 @@ h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
 
 .hero-sub { margin-top: 28px; font-size: 16px; line-height: 1.8; color: rgba(26,26,26,0.7); max-width: 42ch; }
 .hero-ctas { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
-.hero-meta {
-  margin-top: 44px; display: flex; gap: 48px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(26,26,26,0.6);
-}
-.hero-meta .m-label { display: block; opacity: 0.6; margin-bottom: 6px; font-size: 9px; }
-.hero-meta .m-val { color: var(--ink); font-weight: 500; letter-spacing: 0.15em; font-size: 11px; }
 
 .hero-illus {
   position: relative; width: 100%; max-width: 580px; margin-left: auto; align-self: end;
@@ -402,7 +399,7 @@ body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
   margin-bottom: 36px; flex-wrap: wrap;
 }
 .energy-top .e-title { font-family: var(--serif); font-weight: 300; font-size: 26px; }
-.energy-top .e-hint { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26,26,26,0.45); }
+.energy-top .e-hint { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26,26,26,0.62); }
 
 .energy-scale { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
 .energy-class { position: relative; border: 0; cursor: pointer; padding: 0; background: transparent; font-family: inherit; }
@@ -437,9 +434,9 @@ body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
 }
 .energy-result.pulse .r-n { color: var(--accent); }
 .energy-result .r-n .unit { font-size: 0.45em; letter-spacing: 0.05em; color: rgba(26,26,26,0.5); margin-left: 4px; }
-.energy-result .r-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-top: 10px; }
+.energy-result .r-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.62); margin-top: 10px; }
 .energy-foot {
-  margin-top: 28px; font-size: 12px; color: rgba(26,26,26,0.5); line-height: 1.7;
+  margin-top: 28px; font-size: 12px; color: rgba(26,26,26,0.62); line-height: 1.7;
   display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center;
 }
 .energy-foot span { max-width: 64ch; }
@@ -491,7 +488,7 @@ body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
 .stat { padding: 24px 20px 24px 0; border-right: 1px solid var(--line); }
 .stat:last-child { border-right: 0; padding-right: 0; }
 .stat .s-n { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--ink); line-height: 1; }
-.stat .s-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-top: 10px; }
+.stat .s-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.62); margin-top: 10px; }
 
 /* ═════════ KONTAKT-BAND ═════════ */
 .contact-band {
@@ -549,10 +546,21 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
 .footer-bottom .copy { margin-left: auto; opacity: 0.4; letter-spacing: 0.1em; text-transform: none; font-family: var(--sans); }
 
 /* ═════════ MOTION ═════════ */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s var(--ease); }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s var(--ease); }
 .reveal.in { opacity: 1; transform: translateY(0); }
-.reveal.d2 { transition-delay: .15s; }
-.reveal.d3 { transition-delay: .3s; }
+.reveal.d2 { transition-delay: .12s; }
+.reveal.d3 { transition-delay: .24s; }
+
+/* Kinder-Stagger: Chips und Punktlisten erscheinen sequenziell */
+.reveal .svc-chip, .reveal .invest-point, .reveal .mieter-point {
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .5s ease, transform .5s var(--ease), padding-left .35s var(--ease);
+}
+.reveal.in .svc-chip, .reveal.in .invest-point, .reveal.in .mieter-point { opacity: 1; transform: none; }
+.reveal.in .svc-chip:nth-child(2), .reveal.in .invest-point:nth-child(2), .reveal.in .mieter-point:nth-child(2) { transition-delay: .08s, .08s, 0s; }
+.reveal.in .svc-chip:nth-child(3), .reveal.in .invest-point:nth-child(3), .reveal.in .mieter-point:nth-child(3) { transition-delay: .16s, .16s, 0s; }
+.reveal.in .svc-chip:nth-child(4), .reveal.in .invest-point:nth-child(4), .reveal.in .mieter-point:nth-child(4) { transition-delay: .24s, .24s, 0s; }
+.reveal.in .svc-chip:nth-child(5), .reveal.in .invest-point:nth-child(5), .reveal.in .mieter-point:nth-child(5) { transition-delay: .32s, .32s, 0s; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -561,6 +569,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
   .win-glow { opacity: .28 !important; }
   .sketch, .draw-line { stroke-dasharray: none; stroke-dashoffset: 0; }
   .fade-dot { opacity: 1; }
+  .reveal .svc-chip, .reveal .invest-point, .reveal .mieter-point { opacity: 1; transform: none; }
 }
 
 
@@ -584,7 +593,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
   background: transparent; color: var(--ink-soft); cursor: pointer;
   transition: all .3s var(--ease);
 }
-.role-tab:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-1px); }
+.role-tab:hover { border-color: var(--ink); color: var(--ink); background: var(--tint); transform: translateY(-1px); }
 .role-tab.active { background: var(--ink); border-color: var(--ink); color: #fff; }
 .role-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .role-panel {
@@ -608,7 +617,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
 .role-panel .cta-link { margin-top: 22px; }
 
 .role-alt { margin-top: 14px; font-size: 12.5px; }
-.role-alt a { color: rgba(26,26,26,0.55); border-bottom: 1px solid var(--line); transition: color .3s; }
+.role-alt a { color: rgba(26,26,26,0.65); border-bottom: 1px solid var(--line); transition: color .3s; }
 .role-alt a:hover { color: var(--accent); }
 
 /* ═════════ GRÜNDER ═════════ */
@@ -637,7 +646,7 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
 .f-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .f-tag {
   font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 7px 12px; border: 1px solid var(--line); color: rgba(26,26,26,0.6);
+  padding: 7px 12px; border: 1px solid var(--line); background: var(--tint); color: rgba(26,26,26,0.6);
 }
 .team-joint { max-width: 900px; }
 .team-joint p { font-size: 16px; line-height: 1.8; color: rgba(26,26,26,0.75); max-width: 62ch; }
@@ -678,7 +687,7 @@ body.menu-open { overflow: hidden; }
     color: var(--ink-soft); transition: color .3s;
   }
   .mobile-menu a:hover { color: var(--accent); }
-  .mobile-menu .mm-lang a { font-family: var(--mono); color: rgba(26,26,26,0.55); }
+  .mobile-menu .mm-lang a { font-family: var(--mono); color: rgba(26,26,26,0.65); }
 }
 
 /* Reporting: Stat-Zeile nutzt die volle Spaltenbreite; Absätze bleiben über max-width 46ch begrenzt */
@@ -698,10 +707,6 @@ body.menu-open { overflow: hidden; }
 .section-sanierung .sanierung-head p { max-width: 52ch; margin-bottom: 0; }
 
 /* ═════════ WECHSEL-STEPS · GRÜNDER-ZEILE · BEISPIEL-UPDATE ═════════ */
-.cta-note { margin-top: 14px; font-size: 13px; color: rgba(26,26,26,0.55); }
-.cta-note a { text-decoration: underline; text-underline-offset: 3px; color: inherit; }
-.cta-note a:hover { color: var(--accent); }
-
 .report-note { margin-top: 28px; max-width: 46ch; border: 1px solid var(--line); background: var(--paper-w); padding: 18px 20px; }
 .report-note .rn-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.45); display: block; margin-bottom: 10px; }
 .report-note p { font-size: 14px; line-height: 1.7; color: rgba(26,26,26,0.75); margin: 0; max-width: none; }
@@ -725,6 +730,118 @@ body.menu-open { overflow: hidden; }
   .sw-step:last-child { border-bottom: 0; }
 }
 
+/* ═════════ KPI-BAND ═════════ */
+.kpi-band {
+  background: var(--paper-w);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: clamp(28px, 4vh, 44px) var(--pad);
+}
+.kpi-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.kpi {
+  min-width: 0;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+  padding: 4px 24px 4px 0;
+  border-right: 1px solid var(--line);
+}
+.kpi + .kpi { padding-left: 24px; }
+.kpi:last-child { border-right: 0; padding-right: 0; }
+.kpi-n {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(26px, 2.6vw, 34px); line-height: 1.1; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.kpi-l {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(26,26,26,0.62); line-height: 1.7;
+}
+.kpi-cert { gap: 8px; }
+.kpi-seal { height: 64px; width: auto; }
+
+@media (max-width: 960px) {
+  /* 2×2 */
+  .kpi-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi, .kpi + .kpi { padding: 16px 18px 16px 0; border-right: 0; }
+  .kpi:nth-child(odd)  { border-right: 1px solid var(--line); }
+  .kpi:nth-child(even) { padding-left: 18px; padding-right: 0; }
+  .kpi:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  /* 2×2 kompakt (Entscheidung: kein 1-spaltiger Fall) */
+  .kpi-n { font-size: 22px; }
+  .kpi-l { font-size: 9px; letter-spacing: 0.12em; }
+  .kpi-seal { height: 52px; }
+  .kpi, .kpi + .kpi { padding: 14px 12px 14px 0; }
+  .kpi:nth-child(even) { padding-left: 12px; padding-right: 0; }
+}
+
+/* ═════════ OVERLAY-PILL (Mieter) ═════════ */
+.tenant-pill {
+  position: fixed; left: 18px; bottom: 18px; z-index: 90; /* unter Navbar/Mobile-Menü (100) */
+  display: inline-flex; align-items: center;
+  max-width: calc(100vw - 36px); white-space: nowrap;
+  background: var(--paper-w); color: var(--ink-soft);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 11px 18px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  box-shadow: 0 10px 28px rgba(26,26,26,0.10);
+  opacity: 0; transform: translateY(14px); pointer-events: none;
+  transition: opacity var(--t-fast), transform var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.tenant-pill.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.tenant-pill:hover { color: var(--accent); border-color: var(--accent); }
+.tenant-pill .tp-arrow { color: var(--accent); padding: 0 2px; }
+.tenant-pill .tp-short { display: none; }
+body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über dem Mobile-Menü */
+@media (max-width: 480px) {
+  .tenant-pill { left: 14px; bottom: 14px; padding: 10px 14px; min-height: 40px; } /* Touch-Ziel ≥ 40px (Padding = Spec 2.3) */
+  .tenant-pill .tp-long { display: none; }
+  .tenant-pill .tp-short { display: inline; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tenant-pill { transform: none; } /* nur Opacity-Umschalten, keine Bewegung */
+}
+
+/* ═════════ KONTAKT KOMPAKT ═════════ */
+.contact-band { text-align: left; padding: clamp(56px, 7vh, 84px) var(--pad); }
+.contact-grid {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 620px);
+  gap: clamp(36px, 5vw, 84px); align-items: start;
+}
+.contact-band h2 { margin-bottom: 16px; font-size: clamp(32px, 3.4vw, 44px); }
+.contact-band .contact-intro { margin: 0 0 26px; max-width: 46ch; }
+.contact-band .switch-label { margin-top: 0; }
+.contact-band .switch-steps { max-width: none; margin: 14px 0 26px; grid-template-columns: 1fr; }
+.contact-band .sw-step {
+  display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 14px;
+  padding: 13px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.contact-band .sw-step:last-child { border-bottom: 0; }
+.contact-band .sw-step .sw-no { padding-top: 5px; }
+.contact-band .sw-step .sw-t { font-size: 17px; margin: 0 0 2px; }
+.contact-band .sw-step .sw-d { grid-column: 2; font-size: 13px; line-height: 1.55; }
+.contact-band .founders-line { margin: 0; max-width: none; justify-content: flex-start; }
+.contact-band .contact-form { max-width: none; margin: 0; }
+.contact-band .cf-field { margin-bottom: 12px; }
+.contact-band .cf-field > span { margin-bottom: 6px; }
+.contact-band .contact-form input,
+.contact-band .contact-form textarea { padding: 10px 13px; font-size: 14px; border-radius: 8px; }
+.contact-band .contact-form textarea { min-height: 88px; }
+.contact-band .cf-consent { margin: 2px 0 16px; font-size: 12px; line-height: 1.55; }
+.contact-band .cf-note { font-size: 11px; margin: 12px 0 0; max-width: none; }
+.contact-band .cf-alt { margin-top: 22px; }
+.contact-band .hero-ctas { justify-content: flex-start; margin-top: 12px; }
+
+@media (max-width: 960px) {
+  /* einspaltig, gestraffte Abstände */
+  .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+  .contact-band { padding: clamp(48px, 7vh, 72px) var(--pad); }
+  .contact-band .switch-steps { margin-bottom: 20px; }
+}
+
 /* ═════════ RESPONSIVE ═════════ */
 @media (max-width: 960px) {
   .section { padding: 100px var(--pad); min-height: auto; }
@@ -736,7 +853,6 @@ body.menu-open { overflow: hidden; }
   .hero-illus { max-width: 420px; margin: 0 auto; }
   .section-hero { align-items: center; }
   .section-hero .section-inner { grid-template-columns: 1fr; padding-bottom: 80px; }
-  .hero-meta { flex-wrap: wrap; gap: 28px 40px; }
   .nav-links { gap: 14px; }
   .nav-links li.hide-m { display: none; }
   .method-list { grid-template-columns: 1fr; gap: 24px; }
@@ -777,6 +893,8 @@ body.menu-open { overflow: hidden; }
 .cf-row > *,
 .cf-consent > *,
 .footer-top > *,
+.contact-grid > *,
+.kpi-inner > *,
 .section-sanierung .sanierung-head > * { min-width: 0; }
 
 @media (max-width: 404px) {
@@ -790,7 +908,8 @@ body.menu-open { overflow: hidden; }
   .method-item .m-t, .method-item .m-d,
   .role-usps li,
   .energy-top .e-title,
-  .cf-consent {
+  .cf-consent,
+  .kpi-l {
     -webkit-hyphens: auto;
     hyphens: auto;
     overflow-wrap: break-word;
@@ -882,13 +1001,6 @@ body.menu-open { overflow: hidden; }
       <div class="hero-ctas">
         <a href="#kontakt" class="btn solid">Erstgespräch anfragen</a>
         <a href="#zielgruppen" class="btn ghost">Für Eigentümer &amp; Investoren</a>
-      </div>
-      <p class="cta-note">Sie sind Mieter? <a href="#mieter">Zum Mieterservice</a></p>
-
-      <div class="hero-meta">
-        <div><span class="m-label">Standort</span><span class="m-val">Berlin</span></div>
-        <div><span class="m-label">Fokus</span><span class="m-val">Berliner Bestand</span></div>
-        <div><span class="m-label">Hintergrund</span><span class="m-val">Finance · Generationen</span></div>
       </div>
     </div>
 
@@ -1096,6 +1208,31 @@ body.menu-open { overflow: hidden; }
     </span>
     <span>Scroll</span>
   </a>
+</section>
+
+<!-- ══ KPI-BAND ══ -->
+<section class="kpi-band" aria-label="PANI in Zahlen">
+  <div class="kpi-inner reveal">
+    <div class="kpi">
+      <span class="kpi-n">4</span>
+      <span class="kpi-l">Generationen Hausverwaltung</span>
+    </div>
+    <div class="kpi kpi-cert">
+      <!-- IHK-Siegel §26a WEG — nur verwenden, solange die Zertifizierung tatsächlich vorliegt (Angabe Inhaber, 2026-07-29). Quelle Siegel-Grafik: IHK-Standardsiegel. -->
+      <img class="kpi-seal" src="assets/ihk-26a-weg-siegel.png"
+           alt="IHK-Siegel: Zertifizierter Verwalter nach § 26a WEG"
+           width="130" height="64" loading="lazy" decoding="async"/>
+      <span class="kpi-l">Zertifiziert nach § 26a WEG</span>
+    </div>
+    <div class="kpi">
+      <span class="kpi-n">&gt; 1 Mrd. €</span>
+      <span class="kpi-l">AUM Asset-Management-Mandate — Erfahrung der Gründer aus früheren Stationen</span>
+    </div>
+    <div class="kpi">
+      <span class="kpi-n">&lt; 24 h</span>
+      <span class="kpi-l">Reaktionszeit</span>
+    </div>
+  </div>
 </section>
 
 <!-- ══ II: FÜR WEN ══ -->
@@ -1803,76 +1940,84 @@ body.menu-open { overflow: hidden; }
 
 <!-- ══ KONTAKT-BAND ══ -->
 <div class="contact-band" id="kontakt">
-  <span class="kicker" style="color: rgba(255,255,255,0.7);">Kontakt</span>
-  <h2>Sprechen wir über<br/>Ihre Immobilie.</h2>
-  <p>
-    Hinterlassen Sie uns Ihre Kontaktdaten — wir melden uns innerhalb eines Werktags
-    mit einer unverbindlichen Ersteinschätzung. Oder rufen Sie direkt an.
-  </p>
+  <div class="contact-grid">
+    <div class="contact-copy">
+      <span class="kicker" style="color: rgba(255,255,255,0.7);">Kontakt</span>
+      <h2>Sprechen wir über<br/>Ihre Immobilie.</h2>
+      <p class="contact-intro">
+        Hinterlassen Sie uns Ihre Kontaktdaten — wir melden uns innerhalb eines Werktags
+        mit einer unverbindlichen Ersteinschätzung. Oder rufen Sie direkt an.
+      </p>
 
-  <p class="switch-label">Sie haben bereits eine Verwaltung? So einfach ist der Wechsel</p>
-  <div class="switch-steps">
-    <div class="sw-step">
-      <span class="sw-no">01</span>
-      <h3 class="sw-t">Erstgespräch</h3>
-      <p class="sw-d">Sie schildern Objekt und Situation — wir geben eine ehrliche Einschätzung, ob und wie wir helfen können.</p>
-    </div>
-    <div class="sw-step">
-      <span class="sw-no">02</span>
-      <h3 class="sw-t">Übergabe</h3>
-      <p class="sw-d">Wir koordinieren Kündigungsfristen, Unterlagen und Übernahme mit Ihrer bisherigen Verwaltung — Sie haben damit keine Arbeit.</p>
-    </div>
-    <div class="sw-step">
-      <span class="sw-no">03</span>
-      <h3 class="sw-t">Start</h3>
-      <p class="sw-d">Ihr Objekt läuft bei PANI: fester Ansprechpartner auf Gründerebene und strukturiertes Reporting vom ersten Monat an.</p>
-    </div>
-  </div>
+      <p class="switch-label">Sie haben bereits eine Verwaltung? So einfach ist der Wechsel</p>
+      <div class="switch-steps">
+        <div class="sw-step">
+          <span class="sw-no">01</span>
+          <h3 class="sw-t">Erstgespräch</h3>
+          <p class="sw-d">Sie schildern Objekt und Situation — wir geben eine ehrliche Einschätzung, ob und wie wir helfen können.</p>
+        </div>
+        <div class="sw-step">
+          <span class="sw-no">02</span>
+          <h3 class="sw-t">Übergabe</h3>
+          <p class="sw-d">Wir koordinieren Kündigungsfristen, Unterlagen und Übernahme mit Ihrer bisherigen Verwaltung — Sie haben damit keine Arbeit.</p>
+        </div>
+        <div class="sw-step">
+          <span class="sw-no">03</span>
+          <h3 class="sw-t">Start</h3>
+          <p class="sw-d">Ihr Objekt läuft bei PANI: fester Ansprechpartner auf Gründerebene und strukturiertes Reporting vom ersten Monat an.</p>
+        </div>
+      </div>
 
-  <div class="founders-line">
-    <div class="fl-monos"><span class="fl-mono">NP</span><span class="fl-mono">PH</span></div>
-    <p>Ihre Anfrage lesen die Gründer persönlich — Niclas Paprocki und Paul Harm.</p>
-  </div>
-
-  <!-- ══ KONTAKTFORMULAR ══
-       WICHTIG vor dem Live-Gang: Formspree-Formular-ID eintragen!
-       1. Kostenloses Konto auf https://formspree.io anlegen
-       2. Neues Formular erstellen -> Ziel-E-Mail = eure Adresse
-       3. Die Endpoint-URL (https://formspree.io/f/XXXXXXX) unten im action= einsetzen
-       Solange "DEINE_FORMSPREE_ID" drinsteht, wird noch nichts versendet. -->
-  <form class="contact-form" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST">
-    <input type="hidden" name="_subject" value="Neue Anfrage über pani-hv.de">
-    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;">
-    <div class="cf-row">
-      <label class="cf-field">
-        <span>Name</span>
-        <input type="text" name="name" required autocomplete="name" placeholder="Ihr Name">
-      </label>
-      <label class="cf-field">
-        <span>E-Mail</span>
-        <input type="email" name="email" required autocomplete="email" placeholder="ihre@email.de">
-      </label>
+      <div class="founders-line">
+        <div class="fl-monos"><span class="fl-mono">NP</span><span class="fl-mono">PH</span></div>
+        <p>Ihre Anfrage lesen die Gründer persönlich — Niclas Paprocki und Paul Harm.</p>
+      </div>
     </div>
-    <label class="cf-field">
-      <span>Telefon <em>(optional)</em></span>
-      <input type="tel" name="telefon" autocomplete="tel" placeholder="Für einen Rückruf">
-    </label>
-    <label class="cf-field">
-      <span>Ihr Anliegen</span>
-      <textarea name="nachricht" rows="4" required placeholder="Objekt, Anliegen, Fragen ..."></textarea>
-    </label>
-    <label class="cf-consent">
-      <input type="checkbox" name="datenschutz-einwilligung" required>
-      <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Einwilligung kann ich jederzeit widerrufen. *</span>
-    </label>
-    <button type="submit" class="btn solid cf-submit">Anfrage senden</button>
-    <p class="cf-note">* Pflichtfelder. Ihre Daten nutzen wir ausschließlich zur Bearbeitung Ihrer Anfrage. Näheres in der Datenschutzerklärung.</p>
-  </form>
 
-  <p class="cf-alt">Oder direkt:</p>
-  <div class="hero-ctas">
-    <a href="mailto:info@pani-pm.de" class="btn solid">E-Mail senden</a>
-    <a href="tel:+4930000000" class="btn ghost">(030) 00 00 00 00</a>
+    <div class="contact-form-col">
+      <!-- ══ KONTAKTFORMULAR ══
+           WICHTIG vor dem Live-Gang: Formspree-Formular-ID eintragen!
+           1. Kostenloses Konto auf https://formspree.io anlegen
+           2. Neues Formular erstellen -> Ziel-E-Mail = eure Adresse
+           3. Die Endpoint-URL (https://formspree.io/f/XXXXXXX) unten im action= einsetzen
+           Solange "DEINE_FORMSPREE_ID" drinsteht, wird noch nichts versendet. -->
+      <form class="contact-form" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST">
+        <input type="hidden" name="_subject" value="Neue Anfrage über pani-hv.de">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;">
+        <div class="cf-row">
+          <label class="cf-field">
+            <span>Name</span>
+            <input type="text" name="name" required autocomplete="name" placeholder="Ihr Name">
+          </label>
+          <label class="cf-field">
+            <span>E-Mail</span>
+            <input type="email" name="email" required autocomplete="email" placeholder="ihre@email.de">
+          </label>
+        </div>
+        <div class="cf-row">
+          <label class="cf-field">
+            <span>Telefon <em>(optional)</em></span>
+            <input type="tel" name="telefon" autocomplete="tel" placeholder="Für einen Rückruf">
+          </label>
+          <label class="cf-field">
+            <span>Ihr Anliegen</span>
+            <textarea name="nachricht" rows="3" required placeholder="Objekt, Anliegen, Fragen ..."></textarea>
+          </label>
+        </div>
+        <label class="cf-consent">
+          <input type="checkbox" name="datenschutz-einwilligung" required>
+          <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Einwilligung kann ich jederzeit widerrufen. *</span>
+        </label>
+        <button type="submit" class="btn solid cf-submit">Anfrage senden</button>
+        <p class="cf-note">* Pflichtfelder. Ihre Daten nutzen wir ausschließlich zur Bearbeitung Ihrer Anfrage. Näheres in der Datenschutzerklärung.</p>
+      </form>
+
+      <p class="cf-alt">Oder direkt:</p>
+      <div class="hero-ctas">
+        <a href="mailto:info@pani-pm.de" class="btn solid">E-Mail senden</a>
+        <a href="tel:+4930000000" class="btn ghost">(030) 00 00 00 00</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1934,6 +2079,12 @@ body.menu-open { overflow: hidden; }
     </div>
   </div>
 </footer>
+
+<!-- Overlay-Pill: Mieter-Schnellzugriff (Theo-Stil) -->
+<a class="tenant-pill" id="tenant-pill" href="#mieter">
+  <span class="tp-long">Sie sind Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Zum Mieterservice</span>
+  <span class="tp-short">Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Service</span>
+</a>
 
 <script>
 (function () {
@@ -2275,6 +2426,35 @@ body.menu-open { overflow: hidden; }
   var mq = window.matchMedia('(min-width: 961px)');
   function onMq(e) { if (e.matches) setOpen(false); }
   if (mq.addEventListener) { mq.addEventListener('change', onMq); } else { mq.addListener(onMq); }
+})();
+</script>
+
+<script>
+(function () {
+  var pill = document.getElementById('tenant-pill');
+  if (!pill) return;
+  /* Ausblende-Zone: Kontakt-Band (index/en: #kontakt) bzw. CTA-Band der Unterseiten (.band).
+     So verdeckt die Pill nie den Formular-Submit bzw. die Band-Buttons. */
+  var hideZone = document.getElementById('kontakt') || document.querySelector('.band');
+  var inHideZone = false;
+  var THRESHOLD = 420; /* px Scroll bis zum Einblenden */
+
+  function update() {
+    pill.classList.toggle('is-visible', window.scrollY > THRESHOLD && !inHideZone);
+  }
+  if (hideZone && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { inHideZone = e.isIntersecting; });
+      update();
+    }, { threshold: 0 }).observe(hideZone);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { update(); ticking = false; });
+  }, { passive: true });
+  update();
 })();
 </script>
 
