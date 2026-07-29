@@ -738,14 +738,15 @@ body.menu-open { overflow: hidden; }
   align-items: center;
 }
 .kpi-rotator {
-  justify-self: end; align-self: center;
+  justify-self: center; align-self: center;
   width: 100%; max-width: 480px;
 }
 .kr-stage { display: grid; overflow: hidden; }
 .kr-slide {
   grid-area: 1 / 1;               /* alle Slides stapeln; Stage = hoechster Slide, kein Springen */
   min-width: 0;
-  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  text-align: center;
   opacity: 0; transform: translateX(56px);   /* wartet rechts, wandert nach links durch */
   transition: opacity .55s ease, transform .65s var(--ease);
   pointer-events: none;
@@ -777,7 +778,7 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 960px) {
   /* Mobil: Rotator kompakt nach dem Intro-Text, vor den Tabs (DOM-Reihenfolge) */
   .roles-head { grid-template-columns: 1fr; row-gap: 32px; }
-  .kpi-rotator { justify-self: start; max-width: 460px; }
+  .kpi-rotator { justify-self: center; max-width: 460px; }
 }
 @media (max-width: 480px) {
   .kpi-rotator { max-width: none; }
