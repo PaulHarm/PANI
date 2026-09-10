@@ -245,11 +245,6 @@ h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
   overflow: hidden;
   margin: 0;
 }
-.hero-photo::after {
-  content: ""; position: absolute; inset: 14px;
-  border: 1px solid rgba(255,255,255,0.55);
-  pointer-events: none;
-}
 .hero-photo img {
   width: 100%; height: 100%; object-fit: cover;
   filter: saturate(0.78) contrast(1.03) brightness(0.97);
@@ -259,7 +254,7 @@ h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
 .hero-illus:hover .hero-photo img { transform: scale(1.06); }
 .photo-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .photo-fallback { display: none; padding: 10% 8%; }
-.hero-photo.img-failed img, .hero-photo.img-failed .photo-overlay, .hero-photo.img-failed::after { display: none; }
+.hero-photo.img-failed img { display: none; }
 .hero-photo.img-failed { aspect-ratio: auto; background: transparent; }
 .hero-photo.img-failed .photo-fallback { display: block; }
 
@@ -648,6 +643,20 @@ footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25
   font-family: var(--serif); font-weight: 300; font-size: 58px; line-height: 1;
   color: var(--accent); font-style: italic;
 }
+.f-photo-frame {
+  position: relative; width: 128px; height: 160px; overflow: hidden;
+  border: 1px solid var(--ink); margin-bottom: 6px;
+}
+.f-photo-frame::after {
+  content: ""; position: absolute; inset: 8px; z-index: 1;
+  border: 1px solid rgba(255,255,255,0.55); pointer-events: none;
+}
+.f-photo {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: saturate(0.85) contrast(1.02) brightness(0.99);
+  transform: scale(1.02); transition: transform 1.2s var(--ease);
+}
+.founder-card:hover .f-photo { transform: scale(1.07); }
 .f-name { font-family: var(--serif); font-weight: 300; font-size: 26px; margin-top: 20px; }
 .f-role {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
@@ -1085,43 +1094,13 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
          Fällt das Bild aus, erscheint automatisch die technische Zeichnung. -->
     <div class="hero-illus reveal d2" id="hero-illus">
       <figure class="hero-photo" id="hero-photo">
-        <!-- FOTO-AUSWAHL · Wikimedia Commons (CC BY-SA, Credit unten rechts im Bild):
-             Aktiv:  Riehmers Hofgarten, Portal Yorckstrasse (JoachimKohlerBremen, CC BY-SA 4.0)
-             Alt. 1: https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Blick_aus_der_Yorckstra%C3%9Fe_in_Riehmers_Hofgarten.jpg/1280px-Blick_aus_der_Yorckstra%C3%9Fe_in_Riehmers_Hofgarten.jpg
-             Alt. 2: https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG/1280px-Berlin-Prenzlauer_Berg_Kastanienallee_10_Mietshaus.JPG
-             Vor Livegang: Bild lokal hosten, idealerweise eigenes Objektfoto. -->
+        <!-- FOTO: eigenes Foto, Breitscheidplatz mit Kaiser-Wilhelm-Gedächtniskirche
+             und den Hochhäusern am Breitscheidplatz, Berlin-Charlottenburg. -->
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Riehmers_Hofgarten%2C_Eingang_Yorckstra%C3%9Fe.jpg/1280px-Riehmers_Hofgarten%2C_Eingang_Yorckstra%C3%9Fe.jpg"
-          alt="Riehmers Hofgarten, Gründerzeit-Portal an der Yorckstraße, Berlin-Kreuzberg"
+          src="assets/berlin-cityscape.jpg"
+          alt="Kaiser-Wilhelm-Gedächtniskirche und Hochhäuser am Breitscheidplatz, Berlin-Charlottenburg"
           loading="eager"
           onerror="document.getElementById('hero-photo').classList.add('img-failed')"/>
-
-        <!-- Vermessungs-Overlay -->
-        <svg class="photo-overlay" viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true">
-          <g stroke="rgba(255,255,255,0.8)" stroke-width="0.6" fill="none">
-            <line x1="26" y1="40" x2="26" y2="460"/>
-            <line x1="22" y1="40" x2="30" y2="40"/>
-            <line x1="22" y1="145" x2="30" y2="145"/>
-            <line x1="22" y1="250" x2="30" y2="250"/>
-            <line x1="22" y1="355" x2="30" y2="355"/>
-            <line x1="22" y1="460" x2="30" y2="460"/>
-            <line x1="46" y1="476" x2="374" y2="476"/>
-            <line x1="46" y1="472" x2="46" y2="480"/>
-            <line x1="374" y1="472" x2="374" y2="480"/>
-          </g>
-          <g font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" fill="rgba(255,255,255,0.85)">
-            <text x="36" y="44">+ 18,4</text>
-            <text x="36" y="149">+ 13,8</text>
-            <text x="36" y="254">+ 9,20</text>
-            <text x="36" y="359">+ 4,60</text>
-            <text x="36" y="464">± 0,00</text>
-            <text x="374" y="468" text-anchor="end">GRÜNDERZEIT · RIEHMERS HOFGARTEN</text>
-          </g>
-        </svg>
-
-        <figcaption class="photo-credit">
-          <a href="https://commons.wikimedia.org/wiki/File:Riehmers_Hofgarten,_Eingang_Yorckstra%C3%9Fe.jpg" target="_blank" rel="noopener">Foto: JoachimKohlerBremen · CC BY-SA 4.0</a>
-        </figcaption>
 
         <!-- Fallback: technische Zeichnung -->
         <div class="photo-fallback">
@@ -1667,8 +1646,8 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
       <span class="kicker leaf">Energetische Sanierung</span>
       <h2>Vom Kostentreiber<br/>zum Zukunftsobjekt.</h2>
       <p>
-        Eine energetische Sanierung ist bei uns kein Muss, sondern ein Angebot, das für eine
-        nachhaltige Bewirtschaftung Ihrer Immobilie eine wichtige Rolle spielt. Wenn sie
+        Eine energetische Sanierung verstehen wir als Angebot für eine nachhaltige
+        Bewirtschaftung Ihrer Immobilie, nicht als Verpflichtung. Wenn sie
         für Ihr Objekt sinnvoll ist, begleiten wir sie von der Bestandsaufnahme über
         Förderung und Ausschreibung bis zur Abnahme. Weil wir Immobilien langfristig denken,
         zeigen wir Potenziale offen auf, die Entscheidung treffen Sie. Jede Effizienzklasse,
@@ -1859,7 +1838,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
       </article>
 
       <article class="founder-card">
-        <div class="f-mono" aria-hidden="true">PH</div>
+        <div class="f-photo-frame"><img class="f-photo" src="assets/paul-harm.jpg" alt="Paul Harm"/></div>
         <h3 class="f-name">Paul Harm</h3>
         <div class="f-role">Gründer · Finance &amp; Strategie</div>
         <p class="f-bio">
@@ -2148,7 +2127,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
           </svg>
           <span class="logo-text">PANI</span>
         </div>
-        <p class="footer-cta">Ihr Haus. Geführt wie ein Vermögen.</p>
+        <p class="footer-cta">Ihre Immobilie in besten Händen.</p>
         <div class="on-dark">
           <a href="mailto:info@pani-pm.de" class="cta-link" style="margin-top:0;">
             <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
@@ -2166,8 +2145,8 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
       <div class="footer-col">
         <h4>Adresse</h4>
         <p>PANI Hausverwaltung</p>
-        <p>Musterstraße 18</p>
-        <p>10115 Berlin</p>
+        <p>Westfälische Straße 62</p>
+        <p>10709 Berlin</p>
       </div>
 
       <div class="footer-col">
