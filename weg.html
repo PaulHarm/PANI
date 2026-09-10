@@ -67,7 +67,7 @@ h1,h2,h3 { font-family:var(--serif); font-weight:300; letter-spacing:-.02em; lin
 .usps { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:18px 40px; }
 .usps li { display:grid; grid-template-columns:16px 1fr; gap:14px; font-size:15px; line-height:1.7; color:rgba(26,26,26,.78); }
 .usps li::before { content:""; width:8px; height:8px; margin-top:8px; border:1px solid var(--accent); transform:rotate(45deg); }
-.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+.steps { display:grid; grid-template-columns:repeat(2,1fr); gap:28px 40px; }
 .step .no { font-family:var(--mono); font-size:10px; letter-spacing:.2em; color:var(--accent); border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:10px; }
 .step .t { font-family:var(--serif); font-size:19px; margin-bottom:6px; }
 .step .d { font-size:14px; color:rgba(26,26,26,.68); line-height:1.65; }
@@ -251,7 +251,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
 <header class="hero">
   <div class="hero-inner">
     <div class="reveal in">
-      <div class="crumbs"><a href="index.html">PANI</a> · <a href="index.html#zielgruppen">Für wen wir arbeiten</a> · WEG</div>
+      <div class="crumbs"><a href="index.html">PANI</a> · <a href="index.html#zielgruppen">Eigentümerstruktur</a> · WEG</div>
       <span class="kicker">WEG-Verwaltung</span>
       <h1>Eigentümergemeinschaften, strukturiert geführt.</h1>
       <p class="sub">Für Wohnungseigentümergemeinschaften, die eine strukturierte, transparente und rechtssichere Verwaltung erwarten: klare Beschlüsse, saubere Abrechnung und eine verlässliche Umsetzung im Alltag — damit Ihre Gemeinschaft handlungsfähig bleibt und der Wert Ihres Objekts erhalten wird.</p>
@@ -297,12 +297,11 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
 
 <nav class="sister-nav" aria-label="Weitere Eigentümerrollen">
   <div class="sister-inner">
-    <span class="sister-label">Für wen</span>
+    <span class="sister-label">Eigentümerstruktur</span>
     <span class="active" aria-current="page">WEG</span>
     <a href="investoren.html">Investoren</a>
     <a href="bestandshalter.html">Bestandshalter</a>
     <a href="zinshaus.html">Zinshaus</a>
-    <a href="sondervermoegen.html">Sondervermögen</a>
     <a href="nachfolge.html">Nachfolge</a>
   </div>
 </nav>
@@ -326,8 +325,9 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
     <h2>So starten wir zusammen</h2>
     <div class="steps">
       <div class="step"><div class="no">01</div><div class="t">Bestandsaufnahme</div><div class="d">Gemeinschaft, Beschlusslage, Verträge, Rücklagen und offene Themen im Überblick.</div></div>
-      <div class="step"><div class="no">02</div><div class="t">Geordnete Übernahme</div><div class="d">Saubere Übergabe der Verwaltung, Wirtschaftsplan und klare, dokumentierte Prozesse.</div></div>
-      <div class="step"><div class="no">03</div><div class="t">Verwaltung & Reporting</div><div class="d">Laufende Betreuung mit transparentem Reporting und verlässlicher Umsetzung.</div></div>
+      <div class="step"><div class="no">02</div><div class="t">Beschluss und Kündigung</div><div class="d">Für den Wechsel braucht es nur den Beschluss der Eigentümer. Eine bestehende Verwaltung kann laut § 26 Abs. 3 WEG jederzeit abberufen werden, der laufende Vertrag endet dann spätestens sechs Monate später.</div></div>
+      <div class="step"><div class="no">03</div><div class="t">Geordnete Übernahme</div><div class="d">Saubere Übergabe der Verwaltung, Wirtschaftsplan und klare, dokumentierte Prozesse.</div></div>
+      <div class="step"><div class="no">04</div><div class="t">Verwaltung & Reporting</div><div class="d">Laufende Betreuung mit transparentem Reporting und verlässlicher Umsetzung.</div></div>
     </div>
   </div>
 </section>
