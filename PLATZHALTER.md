@@ -12,7 +12,7 @@ Der Kontakt-/Footer-Block ist auf jeder Seite gleich. Vorkommen u. a.:
 `index.html`, `en.html` und alle Unterseiten (`investoren`, `bestandshalter`, `zinshaus`,
 `nachfolge`, `sondervermoegen`, `en-*`).
 
-- [ ] **Adresse:** `Musterstraße 18, 10115 Berlin` → echte Anschrift
+- [x] **Adresse:** `Westfälische Straße 62, 10709 Berlin` eingetragen (2026-09-10, Footer `index.html` + `en.html`). Noch offen: dieselbe Adresse ins Impressum (`impressum.html`/`en-imprint.html`) und in die Datenschutzerklärung übernehmen, sobald auch Rechtsform/Vertretung bekannt sind.
 - [ ] **Telefon:** `(030) 00 00 00 00` (Link `tel:+4930000000`) → echte Nummer
 - [ ] **Telefax:** `(030) 00 00 00 01` → echte Nummer (oder entfernen)
 - [ ] **E-Mail:** `info@pani-pm.de` → echte Adresse
@@ -31,8 +31,9 @@ Der Kontakt-/Footer-Block ist auf jeder Seite gleich. Vorkommen u. a.:
 - [ ] `[Hosting-Anbieter eintragen]`
 
 ## C. Bilder / echte Identität  🖼️  („echte Identität klar mit Bildern")
-- [ ] **Gründerfotos:** aktuell nur Initialen „**NP**" (Niclas) und „**PH**" (Paul) → echte Porträtfotos
-- [ ] **Hero-Gebäudebild:** Fremdfoto von Wikimedia „Riehmers Hofgarten" (CC BY-SA, © JoachimKohlerBremen) → **eigenes** Objektfoto
+- [x] **Paul Harm:** echtes Porträtfoto eingebaut (`assets/paul-harm.jpg`, 2026-09-10)
+- [ ] **Niclas Paprocki:** noch Initiale „**NP**" → echtes Porträtfoto
+- [x] **Hero-Gebäudebild:** ersetzt durch eigenes Foto (`assets/berlin-cityscape.jpg`, Breitscheidplatz/City West, 2026-09-10) — kein Fremdfoto mehr, keine Attribution nötig. Gilt für `index.html` + `en.html`.
 - [ ] **Sanierungs-Bild:** Unsplash-Stockfoto (`images.unsplash.com/...`) → **eigenes** Foto
 - [ ] gilt jeweils auch in `en.html`
 
