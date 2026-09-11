@@ -21,8 +21,11 @@
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#19382d" />
+
     <link rel="stylesheet" href="assets/site.css" />
+    <link rel="stylesheet" href="assets/pages.css" />
     <script src="assets/site.js" defer></script>
+    <script src="assets/experience.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Zum Inhalt</a>
@@ -36,8 +39,8 @@
         <nav class="desktop-nav" aria-label="Hauptnavigation">
           <a href="index.html#leistungen">Leistungen</a
           ><a href="index.html#gruender">Über uns</a
-          ><a href="index.html#reporting">Arbeitsweise</a
-          ><a href="mieter.html">Mieterservice</a>
+          ><a href="reporting.html">Arbeitsweise</a
+          ><a href="index.html#kontakt">Kontakt</a>
         </nav>
         <div class="header-actions">
           <a
@@ -46,14 +49,14 @@
             lang="en"
             aria-label="English version"
             >EN</a
-          ><a class="button" href="index.html#kontakt"
-            >Kontakt
-            <svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg#arrow-up-right" /></svg></a
+          ><a class="button tenant-button" href="mieterportal.html"
+            ><svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#users" /></svg
+            ><span>Mieterportal</span></a
           ><button
             class="menu-toggle"
             type="button"
-            data-menu-toggle
+            data-menu-toggle=""
             aria-controls="mobile-nav"
             aria-expanded="false"
             aria-label="Menü öffnen"
@@ -68,13 +71,13 @@
       <nav
         class="mobile-nav"
         id="mobile-nav"
-        data-mobile-menu
+        data-mobile-menu=""
         aria-label="Mobile Navigation"
         hidden
       >
         <a href="index.html#leistungen">Leistungen</a
         ><a href="index.html#gruender">Über uns</a
-        ><a href="index.html#reporting">Arbeitsweise</a
+        ><a href="reporting.html">Arbeitsweise</a
         ><a href="mieter.html">Mieterservice</a
         ><a href="index.html#kontakt">Kontakt</a>
       </nav>
@@ -224,27 +227,12 @@
             ><a href="mieter.html">Mieterservice</a
             ><a href="impressum.html">Impressum</a
             ><a href="datenschutz.html">Datenschutz</a>
+            <a href="reporting.html">Reporting</a
+            ><a href="mieterportal.html">Mieterportal</a>
           </nav>
         </div>
         <div class="footer-bottom">
-          <span>© PANI Hausverwaltung · Berlin</span
-          ><span class="footer-credit"
-            >Stadtansicht:
-            <a
-              href="https://commons.wikimedia.org/wiki/File:Oderberger_Stra%C3%9Fe_1941.jpg"
-              target="_blank"
-              rel="noopener"
-              >Franz Richter</a
-            >
-            ·
-            <a
-              href="https://creativecommons.org/licenses/by-sa/3.0/"
-              target="_blank"
-              rel="noopener"
-              >CC BY-SA 3.0</a
-            >
-            · Ausschnitt, WebP-Konvertierung</span
-          >
+          <span>© PANI Hausverwaltung · Berlin</span>
         </div>
       </div>
     </footer>
