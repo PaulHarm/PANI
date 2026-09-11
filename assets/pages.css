@@ -193,13 +193,12 @@
   white-space: nowrap;
 }
 .certification-note {
-  grid-column: 1 / -1;
   display: flex;
   align-items: center;
   gap: 18px;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
-  margin-top: 0;
+  border-top: 1px solid #ffffff26;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 .certification-note img {
   width: 130px;
@@ -209,11 +208,11 @@
 .certification-note figcaption {
   min-width: 0;
   font-size: 12px;
-  color: var(--muted);
+  color: #bed0c3;
 }
 .certification-note strong {
   display: block;
-  color: var(--ink);
+  color: white;
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 5px;
