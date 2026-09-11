@@ -14,9 +14,6 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#7F332A">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -227,12 +224,13 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   .band h2 { font-size:25px; }
 }
 </style>
+<link rel="stylesheet" href="assets/legacy.css">
 </head>
 <body>
 <nav class="navbar" aria-label="Main navigation">
   <a href="en.html" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
   <ul class="nav-links">
-    <li class="hide-m"><a href="en.html#zielgruppen">All owner profiles</a></li>
+    <li class="hide-m"><a href="en.html#zielgruppen">Services</a></li>
     <li><a href="weg.html">DE</a></li>
     <li><a href="en.html#kontakt" class="nav-cta">Contact</a></li>
     <li class="nav-burger-li">
@@ -244,7 +242,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   <div class="mobile-menu" id="mobile-menu" hidden>
     <ul>
       <li><a href="en.html">Home</a></li>
-      <li><a href="en.html#zielgruppen">All owner profiles</a></li>
+      <li><a href="en.html#zielgruppen">Services</a></li>
       <li><a href="en.html#kontakt">Contact</a></li>
       <li class="mm-lang"><a href="weg.html">DE · Deutsche Version</a></li>
     </ul>
@@ -386,15 +384,14 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   <h2>Let's talk about your association.</h2>
   <p>Leave us your key details — we will get back to you within one business day with a non-binding first assessment.</p>
   <div class="band-ctas">
-    <a class="btn solid" href="mailto:info@pani-pm.de">Send email</a>
-    <a class="btn ghost" href="tel:+4930000000">(030) 00 00 00 00</a>
+    <a class="btn solid" href="mailto:info@pani-hv.de">Send email</a>
   </div>
 </div>
 
 <footer>
   <div class="foot-brand">
     <a href="en.html" class="foot-logo" aria-label="PANI home"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span>PANI</span></a>
-    <a class="foot-mail" href="mailto:info@pani-pm.de">info@pani-pm.de</a>
+    <a class="foot-mail" href="mailto:info@pani-hv.de">info@pani-hv.de</a>
   </div>
   <div class="foot-inner">
     <a href="en.html">Home</a>
@@ -405,7 +402,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
 </footer>
 
 <!-- Overlay pill: tenant quick access -->
-<a class="tenant-pill" id="tenant-pill" href="en.html#mieter">
+<a class="tenant-pill" id="tenant-pill" href="en-tenants.html">
   <span class="tp-long">Are you a tenant? <span class="tp-arrow" aria-hidden="true">→</span> Tenant services</span>
   <span class="tp-short">Tenant? <span class="tp-arrow" aria-hidden="true">→</span> Service</span>
 </a>
