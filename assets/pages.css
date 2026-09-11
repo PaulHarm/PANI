@@ -192,6 +192,47 @@
 .tenant-button {
   white-space: nowrap;
 }
+html {
+  scroll-padding-bottom: 90px;
+}
+body {
+  padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+}
+.tenant-dock {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 60;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  padding: 10px 0 calc(10px + env(safe-area-inset-bottom, 0px));
+}
+.tenant-dock-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+.tenant-dock-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+.tenant-dock .tenant-button {
+  min-height: 50px;
+  padding: 10px 18px;
+  font-size: 14px;
+}
+@media (max-width: 374px) {
+  .tenant-dock-inner {
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .tenant-dock-label {
+    font-size: 12px;
+  }
+  .tenant-dock .tenant-button {
+    padding-inline: 12px;
+  }
+}
 .certification-note {
   display: flex;
   align-items: center;

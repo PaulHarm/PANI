@@ -12,9 +12,9 @@ Stand: Website-Überarbeitung vom 11. September 2026.
 - Eigentümerbericht deutlich als Muster gekennzeichnet. Sanierungsrechner, wechselnde Kennzahlen und App-Mockup von den Startseiten entfernt.
 - Bilder, Icons und Schriftdateien werden lokal ausgeliefert. Quellen und Lizenzen bleiben dokumentiert.
 - Pauls vorhandenes Porträt eingebunden.
-- Vorhandenes IHK-Siegel dezent ganz unten im Footer der deutschen und englischen Startseite eingebunden. Der Inhaber hat am 11. September 2026 bestätigt, dass die Zertifizierung nach § 26a WEG auf Niclas lautet. Sie wird nicht Paul oder dem gesamten Unternehmen zugeschrieben.
+- Vorhandenes IHK-Siegel dezent ganz unten im Footer der deutschen und englischen Startseite eingebunden, auf Wunsch ohne Personenname. Neutraler Hinweis „IHK-Zertifizierung nach § 26a WEG“; die bestätigte Zertifizierung lautet auf Niclas, nicht auf beide Gründer.
 - Sanierung als kompaktes, animiertes Rechenbeispiel ergänzt. Annahmen und Grenzen sind sichtbar.
-- Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet; der dauerhafte Link sitzt in der Kopfzeile.
+- Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet; der dauerhafte Link sitzt in einer festen Leiste am unteren Bildschirmrand auf allen Seiten.
 - Alle Leistungsseiten und die Navigation im neuen Design vereinheitlicht.
 
 ## Noch vom Inhaber zu ergänzen
