@@ -17,7 +17,10 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `index.html` und `en.html`: Startseiten; bestehende Abschnittsanker bleiben erreichbar.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
 - `assets/site.css` und `assets/site.js`: gemeinsame Gestaltung und Interaktionen der neuen Seiten.
-- `assets/legacy.css`: gemeinsame Schriftdateien und gestalterische Angleichung der bestehenden Unterseiten.
+- `assets/pages.css`: gemeinsames Layout der Unterseiten, Sanierungsbeispiel und dauerhafter Mieterportal-Link.
+- `reporting.html` und `en-reporting.html`: Eigentümer-Update und animierte Reporting-Illustration, ausschließlich Beispieldaten.
+- `mieterportal.html` und `en-portal.html`: ausdrücklich gekennzeichnete Portal-Platzhalter mit der bisherigen Handy-Illustration. Kein Login und keine Datenerfassung.
+- `assets/energy-model.js` und `assets/experience.js`: transparentes Sanierungs-Rechenbeispiel und Animationen mit Unterstützung für reduzierte Bewegung.
 - `assets/architecture.svg`: vereinfachte Architekturillustrationen aus dem bestehenden Motivsystem.
 - `assets/icons.svg`: ausgewählte Lucide-Icons und die bestehende PANI-Bildmarke; Lizenz in `assets/Lucide-LICENSE.txt`.
 - `assets/fonts/`: lokal bereitgestellte Fraunces- und IBM-Plex-Schriften mit Lizenzdateien.
@@ -33,10 +36,16 @@ Ein direkter Formularversand benötigt später einen bestätigten Empfangsdienst
 Die Kontaktlogik lässt sich ohne zusätzliche Pakete mit Node.js testen:
 
 ```sh
-node --test tests/contact.test.cjs
+node --test tests/*.test.cjs
 ```
 
 Zusätzlich vor Veröffentlichung: Seiten auf Desktop und Mobil prüfen, Sprachwechsel und Kontaktentwürfe ausprobieren. Offene Unternehmensangaben stehen in `PLATZHALTER.md`.
+
+## Sanierungsbeispiel
+
+Das Modell verwendet frei gewählte Kennwerte innerhalb der [offiziellen Effizienzklassengrenzen in Anlage 10](https://www.gesetze-im-internet.de/geg/anlage_10.html), keine typischen oder garantierten Sanierungsergebnisse. Ausgangspunkt: F mit 180 kWh/(m²a), 100 m² Gebäudenutzfläche (nicht Wohnfläche), angenommene 0,13 €/kWh. Kosten werden auf zehn Euro gerundet. C ergibt 87 kWh/(m²a), rund 52 Prozent und 1.210 Euro rechnerische Ersparnis. H und G sind keine auswählbaren Sanierungsziele; F stellt den unveränderten Bestand dar. A+ ist enthalten.
+
+Keine Energieberatung, Wirtschaftlichkeitsrechnung oder Einspargarantie. Investitionen, Förderungen, Nutzungsverhalten und Wetter fehlen im Modell. Eine proportionale CO₂-Abnahme setzt denselben Energieträger und Emissionsfaktor voraus. Deshalb wird die Prozentanzeige nur als Energie-Einsparung bezeichnet. Fachlicher Hintergrund: [Verbraucherzentrale zum Energieausweis](https://www.verbraucherzentrale.de/wissen/energie/energetische-sanierung/energieausweis-was-sagt-dieser-steckbrief-fuer-wohngebaeude-aus-24074).
 
 ## Bilder
 
