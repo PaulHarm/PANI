@@ -1,0 +1,154 @@
+@font-face {
+  font-family: Fraunces;
+  src: url("fonts/fraunces-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: Plex;
+  src: url("fonts/plex-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+:root {
+  --paper: #fff;
+  --paper-w: #fff;
+  --paper-d: #f3f5f2;
+  --butter: #eef2ed;
+  --ink: #202d28;
+  --ink-soft: #435448;
+  --accent: #254b3e;
+  --coal: #19382d;
+  --steel: #19382d;
+  --line: #dce2dc;
+  --sans: Plex, Arial, sans-serif;
+  --mono: ui-monospace, Menlo, monospace;
+  --tint: #eef2ed;
+}
+body {
+  font-family: var(--sans);
+}
+h1,
+h2,
+h3,
+.logo-text,
+.nav-links a,
+.btn,
+.kicker,
+.crumbs,
+.tenant-pill {
+  letter-spacing: 0;
+}
+.navbar {
+  background: rgba(255, 255, 255, 0.97);
+}
+.nav-links a {
+  font-size: 13px;
+  text-transform: none;
+}
+.nav-cta,
+.btn,
+.role-tab {
+  border-radius: 3px;
+}
+.nav-cta {
+  background: var(--accent);
+  color: white !important;
+}
+.hero {
+  padding-top: 64px;
+  padding-bottom: 52px;
+}
+.hero h1 {
+  font-size: 48px;
+}
+.hero .sub {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.section {
+  padding-block: 52px;
+}
+.section h2 {
+  font-size: 32px;
+}
+.reveal,
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.tenant-pill {
+  border-radius: 3px;
+  font-size: 12px;
+}
+.impression-figure:hover .impression-media img {
+  transform: none;
+}
+.kicker,
+.crumbs {
+  font-size: 12px;
+}
+.role-tabs a {
+  letter-spacing: 0;
+}
+.hero-illus {
+  opacity: 0.85;
+}
+.band {
+  background: var(--accent);
+}
+.band h2,
+.band p {
+  color: white;
+}
+.band .btn.solid {
+  background: white;
+  color: var(--accent);
+  border-color: white;
+}
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 34px;
+  }
+  .hero h1 {
+    font-size: 34px;
+    overflow-wrap: anywhere;
+  }
+  .hero-inner {
+    gap: 24px;
+  }
+  .hero .sub {
+    font-size: 15px;
+  }
+  .section {
+    padding-block: 36px;
+  }
+  .section h2 {
+    font-size: 27px;
+  }
+  .hero-illus {
+    max-width: 180px;
+    margin-top: 20px;
+  }
+  .nav-links a {
+    font-size: 12px;
+  }
+  .tenant-pill {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

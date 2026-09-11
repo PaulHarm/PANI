@@ -1,2597 +1,579 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>PANI Hausverwaltung Berlin · Professionell · Analytisch · Transparent</title>
-<meta name="description" content="PANI Hausverwaltung Berlin, professionelle Verwaltung für Investoren, Bestandshalter, Zinshaus-Eigentümer und Sondereigentum, mit analytischer Präzision, klarem Reporting und digitaler Transparenz."/>
-<link rel="canonical" href="https://www.pani-hv.de/"/>
-<link rel="alternate" hreflang="de" href="https://www.pani-hv.de/"/>
-<link rel="alternate" hreflang="en" href="https://www.pani-hv.de/en.html"/>
-<link rel="alternate" hreflang="x-default" href="https://www.pani-hv.de/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:site_name" content="PANI Hausverwaltung"/>
-<meta property="og:locale" content="de_DE"/>
-<meta property="og:locale:alternate" content="en_US"/>
-<meta property="og:title" content="PANI Hausverwaltung Berlin · Professionell · Analytisch · Transparent"/>
-<meta property="og:description" content="Professionelle Verwaltung Berliner Immobilien, von WEG über Miethäuser bis Sondereigentum, mit klarem Reporting, digitaler Transparenz und verlässlicher Umsetzung."/>
-<meta property="og:url" content="https://www.pani-hv.de/"/>
-<meta property="og:image" content="https://www.pani-hv.de/assets/berlin-altbau.jpg"/>
-<meta property="og:image:alt" content="Historische Berliner Altbau-Fassade"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="PANI Hausverwaltung Berlin · Professionell · Analytisch · Transparent"/>
-<meta name="twitter:description" content="Professionelle Verwaltung Berliner Immobilien, klar, transparent und verlässlich."/>
-<meta name="twitter:image" content="https://www.pani-hv.de/assets/berlin-altbau.jpg"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RealEstateAgent","name":"PANI Hausverwaltung","url":"https://www.pani-hv.de/","image":"https://www.pani-hv.de/assets/berlin-altbau.jpg","description":"Professionelle Hausverwaltung in Berlin, mit WEG-Verwaltung, Miethausverwaltung und Sondereigentum, klarem Reporting und digitaler Transparenz.","areaServed":{"@type":"City","name":"Berlin"},"knowsLanguage":["de","en"]}
-</script>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#7F332A">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --ink:      #221E1A;
-  --ink-soft: #3E3931;
-  --paper:    #F7F3EB;
-  --paper-w:  #FFFFFF;
-  --paper-d:  #EAE3D6;
-  --steel:    #26221C;
-  --butter:   #F1E9DC;
-  --coal:     #171310;
-
-  --accent:   #7F332A;
-  --brass:    #B08D57;
-  --sand:     #D4C4A9;
-  --leaf:     #3E6B4F;
-  --glow:     #E2A94E;
-  --line:     rgba(34, 30, 26, 0.14);
-  --line-light: rgba(255, 255, 255, 0.15);
-  --tint:     #F3EDE2;               /* warme Hover-/Chip-Fläche (zwischen paper und butter) */
-  --t-fast:   .3s var(--ease);       /* Standard-Transition kurz  */
-  --t-med:    .45s var(--ease);      /* Standard-Transition mittel */
-
-  --serif:    'Fraunces', Georgia, serif;
-  --sans:     'IBM Plex Sans', Helvetica, Arial, sans-serif;
-  --mono:     'IBM Plex Mono', ui-monospace, Menlo, monospace;
-  --max:      1240px;
-  --pad:      clamp(28px, 5vw, 72px);
-  --ease:     cubic-bezier(.2,.7,.2,1);
-}
-
-html { scroll-behavior: smooth; background: var(--paper); }
-body {
-  font-family: var(--sans);
-  font-size: 15px;
-  color: var(--ink);
-  line-height: 1.65;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  background: var(--paper);
-}
-a { color: inherit; text-decoration: none; }
-img, svg { display: block; max-width: 100%; }
-::selection { background: var(--sand); color: var(--ink); }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-
-h1, h2, h3 {
-  font-family: var(--serif);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  font-variation-settings: "opsz" 144;
-  margin: 0;
-}
-h3 { font-size: 22px; letter-spacing: -0.01em; line-height: 1.3; font-weight: 400; }
-p { margin: 0 0 1.2em 0; }
-
-/* ═════════ SCROLL PROGRESS ═════════ */
-.progress {
-  position: fixed; top: 0; left: 0; height: 2px; width: 100%;
-  z-index: 200; pointer-events: none;
-}
-.progress span {
-  display: block; height: 100%; width: 100%;
-  background: var(--accent);
-  transform-origin: left center; transform: scaleX(0);
-}
-
-/* ═════════ NAVBAR ═════════ */
-.navbar {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(247, 243, 235, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px var(--pad);
-  border-bottom: 1px solid var(--line);
-  transition: padding .4s var(--ease), box-shadow .4s ease;
-}
-.navbar.scrolled { padding: 11px var(--pad); box-shadow: 0 8px 32px rgba(26,26,26,0.07); }
-.logo { display: flex; align-items: center; gap: 14px; color: var(--ink); transition: color .3s; }
-.logo:hover { color: var(--accent); }
-.logo svg { width: 34px; height: 34px; transition: transform .5s var(--ease); }
-.logo:hover svg { transform: translateY(-2px); }
-.logo-text { font-family: var(--serif); font-size: 22px; letter-spacing: 0.18em; font-weight: 400; text-transform: uppercase; }
-.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-.nav-links a {
-  position: relative;
-  color: var(--ink-soft);
-  font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-  padding: 6px 2px; transition: color .3s ease;
-}
-.nav-links a:not(.nav-cta)::after {
-  content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
-  background: var(--accent);
-  transform: scaleX(0); transform-origin: right center;
-  transition: transform .4s var(--ease);
-}
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left center; }
-.nav-links a:hover, .nav-links a.active { color: var(--accent); }
-.nav-cta {
-  border: 1px solid var(--ink);
-  padding: 10px 20px !important;
-  border-radius: 999px;
-  transition: all .3s ease;
-}
-.nav-cta:hover { background: var(--accent); border-color: var(--accent); color: #fff !important; }
-
-/* ═════════ SECTIONS ═════════ */
-.section {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding: clamp(90px, 12vh, 160px) var(--pad);
-  position: relative;
-  overflow: hidden;
-}
-.section-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
-  gap: clamp(48px, 8vw, 120px);
-}
-.section-inner.reverse .section-text { order: 2; }
-.section-text { max-width: 540px; justify-self: start; }
-
-h1 { font-size: clamp(48px, 7vw, 86px); line-height: 1; }
-h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; margin-bottom: 32px; }
-
-.section p {
-  font-size: 16px; line-height: 1.8; margin-bottom: 24px;
-  max-width: 46ch; color: rgba(26, 26, 26, 0.75);
-}
-
-.kicker {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-  margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; color: var(--accent);
-}
-.kicker::before { content: ""; width: 32px; height: 1px; background: currentColor; display: inline-block; }
-.kicker.leaf { color: var(--leaf); }
-
-.cta-link {
-  display: inline-flex; align-items: center; gap: 16px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-  margin-top: 16px; transition: gap .4s var(--ease), color .3s; color: var(--ink);
-}
-.cta-link:hover { gap: 24px; color: var(--accent); }
-.cta-link .arrow-circle {
-  width: 44px; height: 44px; border-radius: 50%;
-  border: 1px solid var(--line);
-  display: grid; place-items: center;
-  transition: all .4s var(--ease);
-  flex: 0 0 auto;
-}
-.cta-link:hover .arrow-circle { border-color: var(--accent); background: var(--accent); transform: scale(1.06); }
-.cta-link:hover .arrow-circle svg { stroke: #fff; transform: translateX(2px); }
-.cta-link .arrow-circle svg {
-  width: 14px; height: 14px; stroke: var(--ink); fill: none; stroke-width: 1.2;
-  transition: stroke .3s, transform .4s;
-}
-.on-dark .cta-link { color: #fff; }
-.on-dark .cta-link .arrow-circle { border-color: var(--line-light); }
-.on-dark .cta-link .arrow-circle svg { stroke: #fff; }
-.on-dark .cta-link:hover .arrow-circle { background: #fff; border-color: #fff; }
-.on-dark .cta-link:hover .arrow-circle svg { stroke: var(--ink); }
-.cta-group { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
-
-.section-num {
-  position: absolute; top: clamp(36px, 5vh, 56px); right: var(--pad);
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em;
-  opacity: 0.4; text-transform: uppercase;
-}
-
-/* ═════════ BUTTONS ═════════ */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
-  padding: 16px 28px; border-radius: 999px; border: 1px solid var(--ink);
-  transition: transform var(--t-fast), background var(--t-fast), border-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast);
-  cursor: pointer; will-change: transform;
-}
-.btn.solid { background: var(--ink); color: #fff; }
-.btn.solid:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(128,0,32,0.22); }
-.btn.ghost:hover { background: var(--ink); color: #fff; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(26,26,26,0.15); }
-.btn:active { transform: translateY(0); }
-
-/* ═════════ HERO ═════════ */
-.section-hero {
-  background: var(--paper);
-  min-height: calc(100vh - 79px);
-  padding-bottom: 0;
-  align-items: end;
-}
-.section-hero .section-inner {
-  grid-template-columns: 1.05fr 1fr;
-  align-items: center; gap: clamp(40px, 6vw, 90px);
-  padding-bottom: clamp(48px, 9vh, 110px);
-}
-.section-hero h1 { letter-spacing: -0.025em; }
-.section-hero h1 em { font-style: italic; color: var(--accent); }
-
-/* Foto-Karte mit Vermessungs-Overlay */
-.hero-photo {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  background: var(--paper-d);
-  overflow: hidden;
-  margin: 0;
-}
-.hero-photo img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: saturate(0.78) contrast(1.03) brightness(0.97);
-  transform: scale(1.02);
-  transition: transform 1.2s var(--ease);
-}
-.hero-illus:hover .hero-photo img { transform: scale(1.06); }
-.photo-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.photo-fallback { display: none; padding: 10% 8%; }
-.hero-photo.img-failed img { display: none; }
-.hero-photo.img-failed { aspect-ratio: auto; background: transparent; }
-.hero-photo.img-failed .photo-fallback { display: block; }
-
-/* Foto-Band */
-.photo-band { position: relative; height: clamp(260px, 42vh, 420px); overflow: hidden; background: var(--steel); }
-.photo-band img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: saturate(0.7) contrast(1.02) brightness(0.8);
-}
-.photo-band .pb-text {
-  position: absolute; inset: 0; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 14px; text-align: center;
-  color: #fff; padding: 0 var(--pad);
-  background: linear-gradient(180deg, rgba(17,17,17,0.25), rgba(17,17,17,0.45));
-}
-.photo-band .pb-text h3 { font-size: clamp(24px, 3.4vw, 38px); font-weight: 300; color: #fff; max-width: 24ch; }
-.photo-band .pb-text .kicker { color: rgba(255,255,255,0.75); margin-bottom: 0; }
-.photo-band.img-failed { display: none; }
-
-.hero-sub { margin-top: 28px; font-size: 16px; line-height: 1.8; color: rgba(26,26,26,0.7); max-width: 42ch; }
-.hero-ctas { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
-
-.hero-illus {
-  position: relative; width: 100%; max-width: 580px; margin-left: auto; align-self: end;
-  will-change: transform;
-}
-.hero-illus svg { width: 100%; height: auto; display: block; }
-
-/* Fassade zeichnet sich beim Laden */
-.sketch { stroke-dasharray: 1; stroke-dashoffset: 1; }
-body.loaded .sketch { animation: drawIn 2.4s var(--ease) forwards; }
-body.loaded .sketch.s2 { animation-delay: .4s; }
-body.loaded .sketch.s3 { animation-delay: .8s; }
-@keyframes drawIn { to { stroke-dashoffset: 0; } }
-
-/* Warm leuchtende Fenster */
-.win-glow { opacity: 0; }
-body.loaded .win-glow { animation: winOn 1.2s ease forwards, winFlicker 7s ease-in-out infinite; }
-body.loaded .win-glow.g1 { animation-delay: 1.2s, 2.4s; }
-body.loaded .win-glow.g2 { animation-delay: 1.7s, 2.9s; }
-body.loaded .win-glow.g3 { animation-delay: 2.1s, 3.3s; }
-body.loaded .win-glow.g4 { animation-delay: 2.5s, 3.7s; }
-body.loaded .win-glow.g5 { animation-delay: 2.9s, 4.1s; }
-@keyframes winOn { from { opacity: 0; } to { opacity: .32; } }
-@keyframes winFlicker { 0%,100% { opacity: .32; } 50% { opacity: .18; } }
-
-.scroll-cue {
-  position: absolute; left: 50%; bottom: 32px; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-  font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--ink-soft); opacity: 0.6; transition: opacity .3s;
-}
-.scroll-cue:hover { opacity: 1; color: var(--accent); }
-.scroll-cue .dot {
-  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line);
-  display: grid; place-items: center; transition: border-color .3s;
-}
-.scroll-cue .dot svg { width: 14px; height: 14px; stroke-width: 1.2; }
-.scroll-cue:hover .dot { border-color: var(--accent); }
-
-/* ═════════ LEISTUNGEN ═════════ */
-.section-leistungen { background: var(--paper-w); }
-.svc-chips { margin-top: 40px; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
-.svc-chip {
-  padding: 24px 0; border-bottom: 1px solid var(--line);
-  display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 20px;
-  cursor: default; position: relative;
-  transition: padding-left .35s var(--ease);
-}
-.svc-chip::before {
-  content: ""; position: absolute; left: 0; top: 0; width: 2px; height: 100%;
-  background: var(--accent); transform: scaleY(0); transform-origin: top center;
-  transition: transform .35s var(--ease);
-}
-.svc-chip:hover { padding-left: 16px; }
-.svc-chip:hover::before { transform: scaleY(1); }
-.svc-chip .no { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--accent); }
-.svc-chip .t { font-family: var(--serif); font-weight: 300; font-size: 20px; color: var(--ink); }
-.svc-chip .d { font-size: 15px; color: rgba(26,26,26,0.68); line-height: 1.55; max-width: 40ch; margin-top: 4px; }
-.svc-chip .arrow {
-  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line);
-  display: grid; place-items: center; transition: all .3s;
-}
-.svc-chip:hover .arrow { background: var(--accent); border-color: var(--accent); }
-.svc-chip:hover .arrow svg { stroke: #fff; transform: translateX(2px); }
-.svc-chip .arrow svg { width: 12px; height: 12px; stroke: var(--ink); fill: none; stroke-width: 1.2; transition: all .3s; }
-
-.leist-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26,26,26,0.5); margin-top: 40px; display: block; }
-.leist-scope { margin-top: 18px; border-top: 1px solid var(--line); }
-.leist-item {
-  display: grid; grid-template-columns: 28px 1fr; gap: 18px; align-items: start;
-  padding: 18px 0; border-bottom: 1px solid var(--line);
-  transition: padding-left .35s var(--ease);
-}
-.leist-item:hover { padding-left: 10px; }
-.leist-item > svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.2; margin-top: 3px; }
-.leist-item .li-t { font-family: var(--serif); font-size: 17px; font-weight: 300; }
-.leist-item .li-d { font-size: 15px; color: rgba(26,26,26,0.68); line-height: 1.6; margin: 2px 0 0; }
-.price-note { font-size: 14px; line-height: 1.7; color: rgba(26,26,26,0.62); max-width: 46ch; margin-top: 24px; }
-
-/* ═════════ INVEST ═════════ */
-.section-wert { background: var(--steel); color: #fff; }
-.section-wert h2 { color: #fff; }
-.section-wert p { color: rgba(255,255,255,0.7); }
-.section-wert .kicker { color: var(--sand); }
-.section-wert .section-num { color: rgba(255,255,255,0.3); }
-.invest-points { margin-top: 36px; display: grid; gap: 0; border-top: 1px solid var(--line-light); }
-.invest-point {
-  display: grid; grid-template-columns: 28px 1fr; gap: 18px; align-items: start;
-  padding: 18px 0; border-bottom: 1px solid var(--line-light);
-  transition: padding-left .35s var(--ease);
-}
-.invest-point:hover { padding-left: 10px; }
-.invest-point .ip-icon { width: 22px; height: 22px; stroke: var(--sand); fill: none; stroke-width: 1.2; margin-top: 3px; }
-.invest-point .ip-t { font-family: var(--serif); font-size: 17px; font-weight: 300; color: #fff; }
-.invest-point .ip-d { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 2px 0 0; }
-.illus-caption {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
-  margin-top: 24px; opacity: 0.5; display: flex; gap: 16px; align-items: center; color: var(--ink);
-}
-.illus-caption::before { content: ""; width: 24px; height: 1px; background: currentColor; }
-.section-wert .illus-caption { color: #fff; opacity: 0.6; }
-.illus-wrap { position: relative; width: 100%; max-width: 520px; justify-self: end; }
-.illus-wrap svg { width: 100%; height: auto; }
-
-/* Linien zeichnen sich beim Erscheinen */
-.draw-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.reveal.in .draw-line { animation: drawIn 1.8s var(--ease) .3s forwards; }
-.reveal.in .draw-line.dl2 { animation-delay: .7s; }
-.fade-dot { opacity: 0; transition: opacity .5s ease; }
-.reveal.in .fade-dot { opacity: 1; }
-.reveal.in .fade-dot.fd1 { transition-delay: .6s; }
-.reveal.in .fade-dot.fd2 { transition-delay: .85s; }
-.reveal.in .fade-dot.fd3 { transition-delay: 1.1s; }
-.reveal.in .fade-dot.fd4 { transition-delay: 1.35s; }
-.reveal.in .fade-dot.fd5 { transition-delay: 1.6s; }
-
-/* ═════════ SANIERUNG ═════════ */
-.section-sanierung { background: var(--paper); }
-.section-sanierung .section-inner { grid-template-columns: 1fr; gap: 56px; }
-.sanierung-head { max-width: 640px; }
-.energy-card {
-  background: var(--paper-w); border: 1px solid var(--line);
-  padding: clamp(28px, 4vw, 56px);
-  max-width: var(--max); width: 100%;
-  box-shadow: 0 24px 80px rgba(26,26,26,0.06);
-}
-.energy-top {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
-  margin-bottom: 36px; flex-wrap: wrap;
-}
-.energy-top .e-title { font-family: var(--serif); font-weight: 300; font-size: 26px; }
-.energy-top .e-hint { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(26,26,26,0.62); }
-
-.energy-scale { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
-.energy-class { position: relative; border: 0; cursor: pointer; padding: 0; background: transparent; font-family: inherit; }
-.energy-class .bar {
-  height: 54px; display: grid; place-items: center;
-  font-family: var(--mono); font-size: 13px; font-weight: 500; color: #fff;
-  transition: transform .35s var(--ease), opacity .3s, box-shadow .35s;
-  opacity: 0.35;
-  transform-origin: bottom center;
-}
-.energy-card.reveal.in:not(.ready) .energy-class .bar { animation: barUp .55s var(--ease) both; animation-delay: var(--d, 0s); }
-@keyframes barUp { from { transform: scaleY(0); } }
-.energy-class:hover .bar { opacity: 0.75; transform: translateY(-3px); }
-.energy-class.is-ist .bar, .energy-class.is-ziel .bar { opacity: 1; }
-.energy-class.is-ziel .bar { transform: translateY(-6px); box-shadow: 0 12px 26px rgba(26,26,26,0.2); }
-.energy-class .tag {
-  position: absolute; left: 50%; transform: translateX(-50%);
-  font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
-  white-space: nowrap; padding: 3px 8px;
-}
-.energy-class .tag.ist { top: -28px; background: var(--ink); color: #fff; }
-.energy-class .tag.ziel { bottom: -30px; background: var(--accent); color: #fff; }
-.energy-scale-wrap { padding: 34px 0 40px; }
-
-.energy-results { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-.energy-result { padding: 24px 20px 8px 0; border-right: 1px solid var(--line); }
-.energy-result:last-child { border-right: 0; }
-.energy-result .r-n {
-  font-family: var(--serif); font-size: clamp(30px, 3.4vw, 42px); font-weight: 300; line-height: 1;
-  color: var(--ink); font-variant-numeric: tabular-nums;
-  transition: color .3s;
-}
-.energy-result.pulse .r-n { color: var(--accent); }
-.energy-result .r-n .unit { font-size: 0.45em; letter-spacing: 0.05em; color: rgba(26,26,26,0.5); margin-left: 4px; }
-.energy-result .r-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.62); margin-top: 10px; }
-.energy-foot {
-  margin-top: 28px; font-size: 12px; color: rgba(26,26,26,0.62); line-height: 1.7;
-  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center;
-}
-.energy-foot span { max-width: 64ch; }
-.energy-foot .cta-link { margin-top: 0; }
-
-/* ═════════ METHODE ═════════ */
-.section-wissenschaft { background: var(--butter); }
-.method-list { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 40px; counter-reset: m; }
-.method-item { transition: transform .35s var(--ease); }
-.method-item:hover { transform: translateY(-3px); }
-.method-item .m-no {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
-  color: var(--accent); margin-bottom: 8px;
-  border-bottom: 1px solid var(--line); padding-bottom: 8px;
-}
-.method-item .m-t { font-family: var(--serif); font-size: 18px; font-weight: 300; color: var(--ink); margin-bottom: 6px; }
-.method-item .m-d { font-size: 15px; color: rgba(26,26,26,0.75); line-height: 1.6; margin: 0; }
-
-/* ═════════ MIETER ═════════ */
-.section-mieter { background: var(--paper-w); }
-.mieter-points { margin-top: 36px; border-top: 1px solid var(--line); }
-.mieter-point {
-  display: grid; grid-template-columns: 28px 1fr; gap: 18px; align-items: start;
-  padding: 18px 0; border-bottom: 1px solid var(--line);
-  transition: padding-left .35s var(--ease);
-}
-.mieter-point:hover { padding-left: 10px; }
-.mieter-point > svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.2; margin-top: 3px; }
-.mieter-point .mp-t { font-family: var(--serif); font-size: 17px; font-weight: 300; }
-.mieter-point .mp-d { font-size: 15px; color: rgba(26,26,26,0.68); line-height: 1.6; margin: 2px 0 0; }
-
-.phone-wrap { position: relative; width: 100%; max-width: 360px; justify-self: center; perspective: 1200px; }
-.phone-tilt {
-  transition: transform .5s var(--ease);
-  transform-style: preserve-3d;
-  filter: drop-shadow(0 40px 60px rgba(26,26,26,0.18));
-  will-change: transform;
-}
-.phone-wrap svg { width: 100%; height: auto; }
-.notif-dot { animation: notifPulse 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-@keyframes notifPulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: .55; } }
-
-/* ═════════ ÜBERBLICK ═════════ */
-.section-ueberblick { background: var(--butter); }
-.stat-row {
-  margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-}
-.stat { padding: 24px 20px 24px 0; border-right: 1px solid var(--line); }
-.stat:last-child { border-right: 0; padding-right: 0; }
-.stat .s-n { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--ink); line-height: 1; }
-.stat .s-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.62); margin-top: 10px; }
-
-/* ═════════ KONTAKT-BAND ═════════ */
-.contact-band {
-  background: var(--accent);
-  color: #fff;
-  padding: clamp(72px, 10vh, 120px) var(--pad);
-  text-align: center;
-}
-.contact-band h2 { color: #fff; margin-bottom: 20px; }
-.contact-band p { color: rgba(255,255,255,0.8); max-width: 52ch; margin: 0 auto 36px; font-size: 16px; line-height: 1.8; }
-.contact-band .btn { border-color: #fff; color: #fff; }
-.contact-band .btn.solid { background: #fff; color: var(--accent); }
-.contact-band .btn.solid:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
-.contact-band .btn.ghost:hover { background: #fff; color: var(--accent); }
-.contact-form { max-width: 600px; margin: 0 auto 8px; text-align: left; }
-.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.cf-field { display: block; margin-bottom: 16px; }
-.cf-field > span { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 8px; }
-.cf-field > span em { font-style: normal; text-transform: none; letter-spacing: .04em; opacity: .65; }
-.contact-form input, .contact-form textarea { width: 100%; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); border-radius: 10px; padding: 13px 15px; color: #fff; font-family: var(--sans); font-size: 15px; transition: border-color .25s, background .25s; }
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,.38); }
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #fff; background: rgba(255,255,255,.1); }
-.contact-form textarea { resize: vertical; min-height: 108px; }
-.cf-consent { display: grid; grid-template-columns: 18px 1fr; gap: 12px; align-items: start; margin: 6px 0 22px; font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.72); }
-.cf-consent input { margin-top: 2px; width: 18px; height: 18px; accent-color: var(--accent); }
-.cf-consent a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.4); }
-.cf-consent a:hover { border-color: #fff; }
-.cf-submit { border: none; cursor: pointer; font-family: var(--sans); }
-.cf-note { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-@media (max-width: 600px){ .cf-row { grid-template-columns: 1fr; } }
-
-/* ═════════ FOOTER ═════════ */
-footer { background: var(--coal); color: rgba(255,255,255,0.6); padding: 100px var(--pad) 40px; }
-.footer-inner { max-width: var(--max); margin: 0 auto; }
-.footer-top {
-  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 56px;
-  padding-bottom: 64px; border-bottom: 1px solid var(--line-light);
-}
-.footer-logo { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
-.footer-logo svg { stroke: #fff; width: 40px; height: 40px; }
-.footer-logo .logo-text { color: #fff; font-size: 24px; letter-spacing: 0.2em; }
-.footer-cta { font-family: var(--serif); font-weight: 300; font-size: 32px; line-height: 1.2; color: #fff; max-width: 14ch; margin-bottom: 32px; }
-footer h4 { color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 24px; }
-.footer-col p { line-height: 2; font-size: 14px; margin: 0; }
-.footer-col a { color: rgba(255,255,255,0.6); transition: color .3s; }
-.footer-col a:hover { color: var(--sand); }
-.footer-bottom {
-  padding-top: 32px; display: flex; gap: 32px; align-items: center;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--mono);
-}
-.footer-bottom a { color: rgba(255,255,255,0.5); transition: color .3s; }
-.footer-bottom a:hover { color: #fff; }
-.footer-bottom .copy { margin-left: auto; opacity: 0.4; letter-spacing: 0.1em; text-transform: none; font-family: var(--sans); }
-
-/* ═════════ MOTION ═════════ */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s var(--ease); }
-.reveal.in { opacity: 1; transform: translateY(0); }
-.reveal.d2 { transition-delay: .12s; }
-.reveal.d3 { transition-delay: .24s; }
-
-/* Kinder-Stagger: Chips und Punktlisten erscheinen sequenziell */
-.reveal .svc-chip, .reveal .invest-point, .reveal .mieter-point, .reveal .leist-item {
-  opacity: 0; transform: translateY(12px);
-  transition: opacity .5s ease, transform .5s var(--ease), padding-left .35s var(--ease);
-}
-.reveal.in .svc-chip, .reveal.in .invest-point, .reveal.in .mieter-point, .reveal.in .leist-item { opacity: 1; transform: none; }
-.reveal.in .svc-chip:nth-child(2), .reveal.in .invest-point:nth-child(2), .reveal.in .mieter-point:nth-child(2), .reveal.in .leist-item:nth-child(2) { transition-delay: .08s, .08s, 0s; }
-.reveal.in .svc-chip:nth-child(3), .reveal.in .invest-point:nth-child(3), .reveal.in .mieter-point:nth-child(3), .reveal.in .leist-item:nth-child(3) { transition-delay: .16s, .16s, 0s; }
-.reveal.in .svc-chip:nth-child(4), .reveal.in .invest-point:nth-child(4), .reveal.in .mieter-point:nth-child(4), .reveal.in .leist-item:nth-child(4) { transition-delay: .24s, .24s, 0s; }
-.reveal.in .svc-chip:nth-child(5), .reveal.in .invest-point:nth-child(5), .reveal.in .mieter-point:nth-child(5), .reveal.in .leist-item:nth-child(5) { transition-delay: .32s, .32s, 0s; }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
-  .win-glow { opacity: .28 !important; }
-  .sketch, .draw-line { stroke-dasharray: none; stroke-dashoffset: 0; }
-  .fade-dot { opacity: 1; }
-  .reveal .svc-chip, .reveal .invest-point, .reveal .mieter-point, .reveal .leist-item { opacity: 1; transform: none; }
-}
-
-
-.photo-credit {
-  position: absolute; right: 10px; bottom: 8px; margin: 0; z-index: 3;
-}
-.photo-credit a {
-  font-family: var(--mono); font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: rgba(255,255,255,0.75); background: rgba(18,18,18,0.45);
-  padding: 4px 8px; backdrop-filter: blur(2px);
-}
-.photo-credit a:hover { color: #fff; }
-.hero-photo.img-failed .photo-credit { display: none; }
-
-/* ═════════ ZIELGRUPPEN ═════════ */
-.section-roles { background: var(--paper-w); min-height: auto; }
-.role-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
-.role-tab {
-  font-family: var(--mono); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 15px 26px; border: 1px solid var(--line); border-radius: 999px;
-  background: transparent; color: var(--ink-soft); cursor: pointer;
-  transition: all .3s var(--ease);
-}
-.role-tab:hover { border-color: var(--ink); color: var(--ink); background: var(--tint); transform: translateY(-1px); }
-.role-tab.active { background: var(--ink); border-color: var(--ink); color: #fff; }
-.role-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.role-panel {
-  border: 1px solid var(--line); background: var(--paper);
-  padding: clamp(28px, 4vw, 48px);
-  display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 4vw, 56px);
-  transition: opacity .28s ease, transform .28s var(--ease);
-}
-.role-panel.switching { opacity: 0; transform: translateY(10px); }
-.role-panel h3 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 300; line-height: 1.15; margin-bottom: 14px; }
-.role-panel .role-sub { font-size: 15px; line-height: 1.75; color: rgba(26,26,26,0.7); margin-bottom: 22px; max-width: 44ch; }
-.role-usps { list-style: none; display: grid; gap: 14px; align-content: start; }
-.role-usps li {
-  display: grid; grid-template-columns: 16px 1fr; gap: 14px;
-  font-size: 14.5px; line-height: 1.65; color: rgba(26,26,26,0.75);
-}
-.role-usps li::before {
-  content: ""; width: 8px; height: 8px; margin-top: 7px;
-  border: 1px solid var(--accent); transform: rotate(45deg);
-}
-.role-panel .cta-link { margin-top: 22px; }
-
-.role-alt { margin-top: 14px; font-size: 12.5px; }
-.role-alt a { color: rgba(26,26,26,0.65); border-bottom: 1px solid var(--line); transition: color .3s; }
-.role-alt a:hover { color: var(--accent); }
-
-/* ═════════ GRÜNDER ═════════ */
-.section-team { background: var(--butter); }
-.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; }
-.founder-card {
-  position: relative; background: var(--paper-w); border: 1px solid var(--ink);
-  padding: 40px 36px 34px;
-  transition: transform .35s var(--ease), box-shadow .35s ease;
-}
-.founder-card::before {
-  content: ""; position: absolute; inset: 7px; border: 1px solid var(--line);
-  pointer-events: none;
-}
-.founder-card:hover { transform: translateY(-5px); box-shadow: 0 26px 56px rgba(26,26,26,0.12); }
-.f-mono {
-  font-family: var(--serif); font-weight: 300; font-size: 58px; line-height: 1;
-  color: var(--accent); font-style: italic;
-}
-.f-photo-frame {
-  position: relative; width: 128px; height: 160px; overflow: hidden;
-  border: 1px solid var(--ink); margin-bottom: 6px;
-}
-.f-photo-frame::after {
-  content: ""; position: absolute; inset: 8px; z-index: 1;
-  border: 1px solid rgba(255,255,255,0.55); pointer-events: none;
-}
-.f-photo {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  filter: saturate(0.85) contrast(1.02) brightness(0.99);
-  transform: scale(1.02); transition: transform 1.2s var(--ease);
-}
-.founder-card:hover .f-photo { transform: scale(1.07); }
-.f-name { font-family: var(--serif); font-weight: 300; font-size: 26px; margin-top: 20px; }
-.f-role {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(26,26,26,0.5); margin-top: 8px;
-}
-.f-bio { font-size: 14px; line-height: 1.75; color: rgba(26,26,26,0.72); margin: 18px 0 0; }
-.f-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.f-tag {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 7px 12px; border: 1px solid var(--line); background: var(--tint); color: rgba(26,26,26,0.6);
-}
-.team-joint { max-width: 900px; margin-top: 6px; }
-.team-joint p {
-  font-family: var(--serif); font-weight: 300; letter-spacing: -0.01em;
-  font-size: clamp(19px, 2.2vw, 24px); line-height: 1.5; color: var(--ink); max-width: 62ch;
-}
-.gen-line { width: 100%; max-width: 900px; height: auto; margin-top: 18px; }
-
-/* ═════════ BURGER / MOBILE MENU ═════════ */
-.nav-burger-li { display: none; }
-.mobile-menu { display: none; }
-body.menu-open { overflow: hidden; }
-
-@media (max-width: 960px) {
-  .nav-burger-li { display: flex; }
-  .nav-burger {
-    display: inline-flex; flex-direction: column; justify-content: center; align-items: center;
-    gap: 5px; width: 40px; height: 40px; padding: 0; margin: 0;
-    background: none; border: 0; cursor: pointer;
-  }
-  .nav-burger span {
-    display: block; width: 22px; height: 1px; background: var(--ink);
-    transition: transform .3s var(--ease), opacity .3s ease;
-  }
-  .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-  .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-  .mobile-menu {
-    display: block; position: absolute; top: 100%; left: 0; right: 0;
-    background: var(--paper); border-bottom: 1px solid var(--line);
-    box-shadow: 0 24px 48px rgba(26,26,26,0.10);
-    max-height: calc(100vh - 60px); overflow-y: auto;
-  }
-  .mobile-menu[hidden] { display: none; }
-  .mobile-menu ul { list-style: none; margin: 0; padding: 6px var(--pad) 18px; }
-  .mobile-menu li + li { border-top: 1px solid var(--line); }
-  .mobile-menu a {
-    display: block; padding: 16px 2px;
-    font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--ink-soft); transition: color .3s;
-  }
-  .mobile-menu a:hover { color: var(--accent); }
-  .mobile-menu .mm-lang a { font-family: var(--mono); color: rgba(26,26,26,0.65); }
-}
-
-/* Reporting: Stat-Zeile nutzt die volle Spaltenbreite; Absätze bleiben über max-width 46ch begrenzt */
-.section-ueberblick .section-text { max-width: none; }
-
-/* Gründer: Zeitachse spannt die volle Sektionsbreite; Absatz bleibt über max-width 62ch begrenzt */
-.team-joint { max-width: none; }
-.gen-line { max-width: none; }
-
-/* Sanierung: Kopf zweispaltig auf breiten Screens */
-.section-sanierung .sanierung-head {
-  max-width: none;
-  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  column-gap: clamp(40px, 6vw, 90px); align-items: end;
-}
-.section-sanierung .sanierung-head .kicker { grid-column: 1 / -1; }
-.section-sanierung .sanierung-head p { max-width: 52ch; margin-bottom: 0; }
-
-/* ═════════ WECHSEL-STEPS · GRÜNDER-ZEILE · BEISPIEL-UPDATE ═════════ */
-.report-note { margin-top: 28px; max-width: 46ch; border: 1px solid var(--line); background: var(--paper-w); padding: 18px 20px; }
-.report-note .rn-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,26,0.45); display: block; margin-bottom: 10px; }
-.report-note p { font-size: 14px; line-height: 1.7; color: rgba(26,26,26,0.75); margin: 0; max-width: none; }
-
-.switch-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 40px; }
-.switch-steps { max-width: 760px; margin: 20px auto 40px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: left; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); }
-.sw-step { min-width: 0; padding: 22px 20px 24px; border-right: 1px solid rgba(255,255,255,0.14); }
-.sw-step:last-child { border-right: 0; }
-.sw-step .sw-no { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); display: block; }
-.sw-step .sw-t { font-family: var(--serif); font-weight: 300; font-size: 19px; margin: 10px 0 8px; color: #fff; }
-.sw-step .sw-d { font-size: 13.5px; line-height: 1.65; color: rgba(255,255,255,0.65); margin: 0; max-width: none; }
-
-.founders-line { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 auto 26px; max-width: 600px; }
-.fl-monos { display: flex; flex-shrink: 0; }
-.fl-mono { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); }
-.fl-mono + .fl-mono { margin-left: -1px; }
-.founders-line p { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.65); margin: 0; text-align: left; max-width: none; }
-@media (max-width: 960px) {
-  .switch-steps { grid-template-columns: 1fr; }
-  .sw-step { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.14); }
-  .sw-step:last-child { border-bottom: 0; }
-}
-
-/* ═════════ KPI-ROTATOR (in #zielgruppen) ═════════ */
-.roles-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  column-gap: clamp(40px, 6vw, 90px);
-  align-items: center;
-}
-.kpi-rotator {
-  justify-self: center; align-self: center;
-  width: 100%; max-width: 480px;
-}
-.kr-stage { display: grid; overflow: hidden; }
-.kr-slide {
-  grid-area: 1 / 1;               /* alle Slides stapeln; Stage = hoechster Slide, kein Springen */
-  min-width: 0;
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-  text-align: center;
-  opacity: 0; transform: translateX(56px);   /* wartet rechts, wandert nach links durch */
-  transition: opacity .55s ease, transform .65s var(--ease);
-  pointer-events: none;
-}
-.kr-slide.is-leaving { opacity: 0; transform: translateX(-56px); }
-.kr-slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
-.kr-n {
-  font-family: var(--serif); font-weight: 300;
-  font-size: clamp(52px, 5vw, 76px); line-height: 1;
-  color: var(--ink); font-variant-numeric: tabular-nums;
-}
-.kr-l {
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.15em;
-  text-transform: uppercase; color: rgba(34,30,26,0.62); line-height: 1.7;
-}
-.kr-cert { gap: 10px; }
-.kr-seal { height: 92px; width: auto; }
-
-/* Statik bei reduzierter Bewegung: kompakte 2×2-Liste, keine Auto-Rotation.
-   Klasse .kr-static setzt das JS bei prefers-reduced-motion (und entfernt aria-hidden). */
-.kr-static .kr-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
-.kr-static .kr-slide { grid-area: auto; opacity: 1; transform: none; pointer-events: auto; }
-.kr-static .kr-n { font-size: 28px; }
-.kr-static .kr-seal { height: 48px; }
-@media (prefers-reduced-motion: reduce) {
-  .kr-slide:first-child { opacity: 1; transform: none; } /* No-JS-Fallback: nur der erste Slide sichtbar, nichts blinkt; mit JS greift .kr-static (2×2-Statik) */
-}
-
-@media (max-width: 960px) {
-  /* Mobil: Rotator kompakt nach dem Intro-Text, vor den Tabs (DOM-Reihenfolge) */
-  .roles-head { grid-template-columns: 1fr; row-gap: 32px; }
-  .kpi-rotator { justify-self: center; max-width: 460px; }
-}
-@media (max-width: 480px) {
-  .kpi-rotator { max-width: none; }
-  .kr-n { font-size: 40px; }
-  .kr-static .kr-stage { grid-template-columns: 1fr 1fr; gap: 14px 14px; }
-  .kr-static .kr-n { font-size: 22px; }
-  .kr-l { font-size: 9px; letter-spacing: 0.12em; }
-}
-
-/* ═════════ OVERLAY-PILL (Mieter) ═════════ */
-.tenant-pill {
-  position: fixed; left: 18px; bottom: 18px; z-index: 90; /* unter Navbar/Mobile-Menü (100) */
-  display: inline-flex; align-items: center;
-  max-width: calc(100vw - 36px); white-space: nowrap;
-  background: var(--paper-w); color: var(--ink-soft);
-  border: 1px solid var(--line); border-radius: 999px;
-  padding: 11px 18px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-  box-shadow: 0 10px 28px rgba(26,26,26,0.10);
-  opacity: 0; transform: translateY(14px); pointer-events: none;
-  transition: opacity var(--t-fast), transform var(--t-fast), color var(--t-fast), border-color var(--t-fast);
-}
-.tenant-pill.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.tenant-pill:hover { color: var(--accent); border-color: var(--accent); }
-.tenant-pill .tp-arrow { color: var(--accent); padding: 0 2px; }
-.tenant-pill .tp-short { display: none; }
-body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über dem Mobile-Menü */
-@media (max-width: 480px) {
-  .tenant-pill { left: 14px; bottom: 14px; padding: 10px 14px; min-height: 40px; } /* Touch-Ziel ≥ 40px (Padding = Spec 2.3) */
-  .tenant-pill .tp-long { display: none; }
-  .tenant-pill .tp-short { display: inline; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .tenant-pill { transform: none; } /* nur Opacity-Umschalten, keine Bewegung */
-}
-
-/* ═════════ KONTAKT KOMPAKT ═════════ */
-.contact-band { text-align: left; padding: clamp(56px, 7vh, 84px) var(--pad); }
-.contact-grid {
-  max-width: var(--max); margin: 0 auto;
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px);
-  gap: clamp(36px, 5vw, 84px); align-items: start;
-}
-.contact-band h2 { margin-bottom: 16px; font-size: clamp(32px, 3.4vw, 44px); }
-.contact-band .contact-intro { margin: 0 0 30px; max-width: 46ch; }
-
-/* Wechsel-Steps: schlanke nummerierte Leiste mit verbindender Linie */
-.contact-band .switch-label { margin-top: 0; }
-.contact-band .switch-steps {
-  max-width: none; margin: 18px 0 28px;
-  grid-template-columns: 1fr; border-top: 0; border-bottom: 0;
-}
-.contact-band .sw-step {
-  position: relative;
-  display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 16px;
-  padding: 0 0 22px; border-right: 0; border-bottom: 0;
-}
-.contact-band .sw-step:last-child { padding-bottom: 0; }
-.contact-band .sw-step::before {
-  content: ""; position: absolute; left: 15px; top: 30px; bottom: 0;
-  width: 1px; background: rgba(255,255,255,0.22);
-}
-.contact-band .sw-step:last-child::before { display: none; }
-.contact-band .sw-step .sw-no {
-  width: 30px; height: 30px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.4);
-  display: grid; place-items: center;
-  padding: 0; letter-spacing: 0.08em; color: rgba(255,255,255,0.75);
-  background: var(--accent); position: relative; z-index: 1;
-}
-.contact-band .sw-step .sw-t { font-size: 17px; margin: 4px 0 2px; }
-.contact-band .sw-step .sw-d { grid-column: 2; font-size: 13px; line-height: 1.55; }
-
-/* Gruenderzeile als Vertrauensanker */
-.contact-band .founders-line {
-  margin: 0; max-width: none; justify-content: flex-start;
-  border-top: 1px solid rgba(255,255,255,0.16); padding-top: 22px;
-}
-
-/* Formular als ruhige Karte */
-.contact-band .contact-form-col {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.18);
-  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 2.6vw, 32px) clamp(18px, 2.4vw, 26px);
-}
-.contact-band .cf-title {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(255,255,255,0.6);
-  display: flex; align-items: center; gap: 14px;
-  margin: 0 0 18px; max-width: none;
-}
-.cf-title::after { content: ""; height: 1px; flex: 1; background: rgba(255,255,255,0.16); }
-.contact-band .contact-form { max-width: none; margin: 0; }
-.contact-band .cf-field { margin-bottom: 12px; }
-.contact-band .cf-field > span { margin-bottom: 6px; }
-.contact-band .contact-form input,
-.contact-band .contact-form textarea { padding: 10px 13px; font-size: 14px; border-radius: 8px; }
-.contact-band .contact-form textarea { min-height: 88px; }
-.contact-band .cf-consent { margin: 2px 0 16px; font-size: 12px; line-height: 1.55; }
-.contact-band .cf-note { font-size: 11px; margin: 12px 0 0; max-width: none; }
-
-/* „Oder direkt:" — dezente Textlinks statt Buttons */
-.contact-band .cf-direct {
-  margin: 18px 0 0; font-size: 13px; line-height: 1.7;
-  color: rgba(255,255,255,0.6); max-width: none;
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
-}
-.cf-direct a {
-  color: #fff; white-space: nowrap;
-  display: inline-block; padding-block: 9px; /* Touch-Ziel ≥ 40px: 13px × 1.7 ≈ 22px + 2×9px */
-  text-decoration: underline; text-decoration-thickness: 1px;
-  text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.4);
-  transition: text-decoration-color .3s ease;
-}
-.cf-direct a:hover { text-decoration-color: #fff; }
-.cf-direct .cf-sep { color: rgba(255,255,255,0.35); }
-
-@media (max-width: 960px) {
-  /* einspaltig, gestraffte Abstaende */
-  .contact-grid { grid-template-columns: 1fr; gap: 34px; }
-  .contact-band { padding: clamp(48px, 7vh, 72px) var(--pad); }
-  .contact-band .switch-steps { margin-bottom: 22px; }
-}
-
-/* ═════════ RESPONSIVE ═════════ */
-@media (max-width: 960px) {
-  .section { padding: 100px var(--pad); min-height: auto; }
-  .section-inner { grid-template-columns: 1fr; gap: 64px; }
-  .section-inner.reverse .section-text { order: 0; }
-  h1 { font-size: 44px; }
-  h2 { font-size: 34px; }
-  .illus-wrap { max-width: 400px; margin: 0 auto; justify-self: center; }
-  .hero-illus { max-width: 420px; margin: 0 auto; }
-  .section-hero { align-items: center; }
-  .section-hero .section-inner { grid-template-columns: 1fr; padding-bottom: 80px; }
-  .nav-links { gap: 14px; }
-  .nav-links li.hide-m { display: none; }
-  .method-list { grid-template-columns: 1fr; gap: 24px; }
-  .stat-row, .energy-results { grid-template-columns: 1fr; }
-  .stat, .energy-result { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
-  .stat:last-child, .energy-result:last-child { border-bottom: 0; }
-  .energy-scale { gap: 4px; }
-  .role-panel { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
-  .energy-class .bar { height: 44px; font-size: 11px; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; }
-  .footer-bottom { flex-wrap: wrap; }
-  .footer-bottom .copy { flex: 1 0 100%; margin-left: 0; }
-  .section-num { display: none; }
-  .scroll-cue { display: none; }
-  .section-sanierung .sanierung-head { display: block; }
-}
-@media (max-width: 540px) {
-  .footer-top { grid-template-columns: 1fr; }
-  .energy-class .tag.ist { display: none; }
-}
-
-/* ═════════ SCHMALBILD-FIX (~320–404px) ═════════ */
-/* Grid-Items dürfen unter ihre min-content-Breite schrumpfen — lange Komposita
-   spreizen sonst die Spalte auf und der Überhang wird durch overflow gekappt. */
-.section-inner > *,
-.role-panel > *,
-.role-usps > li,
-.svc-chip > *,
-.invest-points > *,
-.invest-point > *,
-.mieter-point > *,
-.method-list > *,
-.team-grid > *,
-.energy-scale > *,
-.energy-results > *,
-.stat-row > *,
-.cf-row > *,
-.cf-consent > *,
-.footer-top > *,
-.contact-grid > *,
-.roles-head > *,
-.kr-slide > *,
-.section-sanierung .sanierung-head > * { min-width: 0; }
-
-@media (max-width: 404px) {
-  /* Silbentrennung nur im Schmalbereich (greift über lang="de");
-     ab 405px bleibt das Rendering unverändert.
-     Mono-/Kicker-/Nav-Labels bleiben bewusst ungetrennt. */
-  h1, h2, h3, p, blockquote,
-  .svc-chip .t, .svc-chip .d,
-  .invest-point .ip-t, .invest-point .ip-d,
-  .mieter-point .mp-t, .mieter-point .mp-d,
-  .method-item .m-t, .method-item .m-d,
-  .role-usps li,
-  .energy-top .e-title,
-  .cf-consent,
-  .kr-l {
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    overflow-wrap: break-word;
-  }
-}
-
-@media (max-width: 380px) {
-  /* Display-Größen reduzieren, damit bei 320px nichts mehr abgeschnitten wird. */
-  h1 { font-size: 36px; }
-  h2 { font-size: 28px; }
-  .role-panel h3 { font-size: 21px; }
-  .photo-band .pb-text h3 { font-size: 21px; }
-  .quote-inner blockquote { font-size: 20px; }
-  .energy-top .e-title { font-size: 22px; }
-  .f-mono { font-size: 46px; }
-  .f-name { font-size: 22px; }
-  .footer-cta { font-size: 26px; }
-  .stat .s-n { font-size: 32px; }
-  .svc-chip { grid-template-columns: 28px 1fr auto; gap: 14px; }
-}
-</style>
-</head>
-<body>
-
-<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
-
-<!-- ══ NAVBAR ══ -->
-<nav class="navbar" id="navbar" aria-label="Hauptnavigation">
-  <a href="#top" class="logo" aria-label="PANI Hausverwaltung">
-    <svg viewBox="0 0 60 60" fill="none" aria-hidden="true">
-      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
-        <rect x="14" y="14" width="8" height="32" />
-        <rect x="26" y="14" width="8" height="32" />
-        <rect x="38" y="14" width="8" height="32" />
-        <line x1="10" y1="10" x2="50" y2="10" />
-        <line x1="10" y1="50" x2="50" y2="50" />
-      </g>
-    </svg>
-    <span class="logo-text">PANI</span>
-  </a>
-
-  <ul class="nav-links">
-    <li class="hide-m"><a href="#zielgruppen" data-spy="zielgruppen">Eigentümerstruktur</a></li>
-    <li class="hide-m"><a href="#leistungen" data-spy="leistungen">Mandate</a></li>
-    <li class="hide-m"><a href="#sanierung" data-spy="sanierung">Sanierung</a></li>
-    <li class="hide-m"><a href="#reporting" data-spy="reporting">Reporting</a></li>
-    <li class="hide-m"><a href="#gruender" data-spy="gruender">Gründer</a></li>
-    <li class="hide-m"><a href="#mieter" data-spy="mieter">Mieter</a></li>
-    <li class="hide-m"><a href="en.html">EN</a></li>
-    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
-    <li class="nav-burger-li">
-      <button class="nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-    </li>
-  </ul>
-
-  <div class="mobile-menu" id="mobile-menu" hidden>
-    <ul>
-      <li><a href="#zielgruppen">Eigentümerstruktur</a></li>
-      <li><a href="#leistungen">Mandate</a></li>
-      <li><a href="#sanierung">Sanierung</a></li>
-      <li><a href="#reporting">Reporting</a></li>
-      <li><a href="#gruender">Gründer</a></li>
-      <li><a href="#mieter">Mieter</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-      <li class="mm-lang"><a href="en.html">EN · English version</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ══ I: HERO ══ -->
-<section class="section section-hero" id="top">
-  <span class="section-num">I / VIII · Berlin</span>
-  <div class="section-inner">
-    <div class="reveal">
-      <span class="kicker">Hausverwaltung · Berlin</span>
-      <h1>
-        Werte verwalten.<br/><em>Werte schaffen.</em>
-      </h1>
-
-      <p class="hero-sub">
-        Professionelle Verwaltung Berliner Immobilien, mit klarem Reporting,
-        strategischer Planung und akribischer Umsetzung. Geführt von zwei Gründern,
-        die analytische Finanzdisziplin mit einem Verwaltungshandwerk verbinden,
-        das in ihrer Familie seit Generationen weitergegeben wird.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="#kontakt" class="btn solid">Erstgespräch anfragen</a>
-        <a href="#zielgruppen" class="btn ghost">Für Eigentümer &amp; Investoren</a>
-      </div>
-    </div>
-
-    <!-- HERO: Echtes Objektfoto mit Vermessungs-Overlay.
-         FOTO AUSTAUSCHEN: src durch ein Foto eines eigenen verwalteten Objekts ersetzen.
-         Fällt das Bild aus, erscheint automatisch die technische Zeichnung. -->
-    <div class="hero-illus reveal d2" id="hero-illus">
-      <figure class="hero-photo" id="hero-photo">
-        <!-- FOTO: eigenes Foto, Breitscheidplatz mit Kaiser-Wilhelm-Gedächtniskirche
-             und den Hochhäusern am Breitscheidplatz, Berlin-Charlottenburg. -->
-        <img
-          src="assets/berlin-cityscape.jpg"
-          alt="Kaiser-Wilhelm-Gedächtniskirche und Hochhäuser am Breitscheidplatz, Berlin-Charlottenburg"
-          loading="eager"
-          onerror="document.getElementById('hero-photo').classList.add('img-failed')"/>
-
-        <!-- Fallback: technische Zeichnung -->
-        <div class="photo-fallback">
-      <svg viewBox="0 -50 560 670" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYEnd meet">
-        <defs>
-          <pattern id="hero-hatch" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,0.06)" stroke-width="0.5"/>
-          </pattern>
-          <g id="pani-win">
-            <rect x="-16" y="-32" width="32" height="64" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-16" y="-10" width="32" height="4" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-2" y="-6" width="4" height="38" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-22" y="32" width="44" height="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
-            <path d="M -24 -36 L 0 -48 L 24 -36 Z" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
-            <path d="M -10 -40 Q 0 -45 10 -40" fill="none" stroke="var(--ink)" stroke-width="0.5" opacity="0.5"/>
-          </g>
-          <g id="pani-win-top">
-            <rect x="-16" y="-28" width="32" height="56" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-16" y="-6" width="32" height="4" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-2" y="-2" width="4" height="30" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-22" y="28" width="44" height="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-20" y="-32" width="40" height="4" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-          </g>
-          <g id="shop-win">
-            <rect x="-22" y="-46" width="44" height="96" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-22" y="-10" width="44" height="6" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-            <rect x="-2" y="-4" width="4" height="54" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-          </g>
-          <g id="balkon">
-            <line x1="-26" y1="36" x2="26" y2="36" stroke="var(--ink)" stroke-width="1.2"/>
-            <line x1="-26" y1="14" x2="26" y2="14" stroke="var(--ink)" stroke-width="0.75"/>
-            <line x1="-26" y1="14" x2="-26" y2="36" stroke="var(--ink)" stroke-width="0.75"/>
-            <line x1="26" y1="14" x2="26" y2="36" stroke="var(--ink)" stroke-width="0.75"/>
-            <line x1="-19" y1="14" x2="-19" y2="36" stroke="var(--ink)" stroke-width="0.5"/>
-            <line x1="-12" y1="14" x2="-12" y2="36" stroke="var(--ink)" stroke-width="0.5"/>
-            <line x1="-5"  y1="14" x2="-5"  y2="36" stroke="var(--ink)" stroke-width="0.5"/>
-            <line x1="2"   y1="14" x2="2"   y2="36" stroke="var(--ink)" stroke-width="0.5"/>
-            <line x1="9"   y1="14" x2="9"   y2="36" stroke="var(--ink)" stroke-width="0.5"/>
-            <line x1="16"  y1="14" x2="16"  y2="36" stroke="var(--ink)" stroke-width="0.5"/>
-          </g>
-        </defs>
-
-        <!-- Maßstab links -->
-        <g stroke="rgba(26,26,26,0.25)" stroke-width="0.5" fill="none" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5">
-          <line x1="14" y1="40" x2="14" y2="590"/>
-          <line x1="10" y1="40"  x2="18" y2="40"/>
-          <line x1="10" y1="160" x2="18" y2="160"/>
-          <line x1="10" y1="290" x2="18" y2="290"/>
-          <line x1="10" y1="445" x2="18" y2="445"/>
-          <line x1="10" y1="590" x2="18" y2="590"/>
-          <text x="24" y="44" fill="rgba(26,26,26,0.4)">+ 18,4</text>
-          <text x="24" y="164" fill="rgba(26,26,26,0.4)">+ 13,8</text>
-          <text x="24" y="294" fill="rgba(26,26,26,0.4)">+ 9,20</text>
-          <text x="24" y="449" fill="rgba(26,26,26,0.4)">+ 4,60</text>
-          <text x="24" y="594" fill="rgba(26,26,26,0.4)">± 0,00</text>
-        </g>
-
-        <g transform="translate(110,30)">
-          <!-- Dach & Gesims -->
-          <polygon points="0,0 30,-30 390,-30 420,0" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
-          <g stroke="var(--ink)" stroke-width="0.5" opacity="0.35">
-            <line x1="60" y1="-6" x2="74" y2="-24"/>
-            <line x1="120" y1="-6" x2="134" y2="-24"/>
-            <line x1="300" y1="-6" x2="314" y2="-24"/>
-            <line x1="350" y1="-6" x2="364" y2="-24"/>
-          </g>
-          <path d="M 150 0 L 210 -40 L 270 0 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
-          <circle cx="210" cy="-16" r="8" fill="none" stroke="var(--ink)" stroke-width="1"/>
-          <path d="M 204 -16 H 216 M 210 -22 V -10" stroke="var(--ink)" stroke-width="0.5"/>
-          <!-- Schornsteine -->
-          <rect x="48" y="-44" width="16" height="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
-          <rect x="46" y="-47" width="20" height="3" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-          <rect x="352" y="-44" width="16" height="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
-          <rect x="350" y="-47" width="20" height="3" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-
-          <!-- Fassade (zeichnet sich beim Laden) -->
-          <rect x="0" y="0" width="420" height="560" fill="transparent" stroke="var(--ink)" stroke-width="1" pathLength="1" class="sketch"/>
-
-          <!-- Erdgeschoss-Rustika -->
-          <g stroke="var(--ink)" stroke-width="0.5" opacity="0.15">
-            <line x1="0" y1="430" x2="420" y2="430"/> <line x1="0" y1="445" x2="420" y2="445"/>
-            <line x1="0" y1="460" x2="420" y2="460"/> <line x1="0" y1="475" x2="420" y2="475"/>
-            <line x1="0" y1="490" x2="420" y2="490"/> <line x1="0" y1="505" x2="420" y2="505"/>
-            <line x1="0" y1="520" x2="420" y2="520"/> <line x1="0" y1="535" x2="420" y2="535"/>
-          </g>
-
-          <!-- Gesimsbänder + Stuck-Ornamentband -->
-          <rect x="-4" y="0" width="428" height="6" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
-          <rect x="-2" y="145" width="424" height="2" fill="var(--ink)" opacity="0.1"/>
-          <g opacity="0.25" stroke="var(--ink)" stroke-width="0.5" fill="none">
-            <path d="M 8 152 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0 q 6 -5 12 0 q 6 5 12 0"/>
-          </g>
-          <rect x="-2" y="275" width="424" height="2" fill="var(--ink)" opacity="0.1"/>
-          <rect x="-4" y="414" width="428" height="4" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.75"/>
-          <rect x="0" y="550" width="420" height="10" fill="url(#hero-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
-
-          <!-- Fensterreihen mit warmem Licht -->
-          <g transform="translate(0, 90)">
-            <rect class="win-glow g1" x="49"  y="-28" width="32" height="56" fill="var(--glow)"/>
-            <rect class="win-glow g4" x="244" y="-28" width="32" height="56" fill="var(--glow)"/>
-            <use href="#pani-win-top" x="65"/><use href="#pani-win-top" x="160"/>
-            <use href="#pani-win-top" x="260"/><use href="#pani-win-top" x="355"/>
-          </g>
-          <g transform="translate(0, 220)">
-            <rect class="win-glow g2" x="144" y="-32" width="32" height="64" fill="var(--glow)"/>
-            <use href="#pani-win" x="65"/><use href="#pani-win" x="160"/>
-            <use href="#pani-win" x="260"/><use href="#pani-win" x="355"/>
-            <use href="#balkon" x="65"/><use href="#balkon" x="355"/>
-          </g>
-          <g transform="translate(0, 350)">
-            <rect class="win-glow g3" x="339" y="-32" width="32" height="64" fill="var(--glow)"/>
-            <rect class="win-glow g5" x="49"  y="-32" width="32" height="64" fill="var(--glow)"/>
-            <use href="#pani-win" x="65"/><use href="#pani-win" x="160"/>
-            <use href="#pani-win" x="260"/><use href="#pani-win" x="355"/>
-            <use href="#balkon" x="160"/><use href="#balkon" x="260"/>
-          </g>
-          <g transform="translate(0, 500)">
-            <use href="#shop-win" x="65"/><use href="#shop-win" x="135"/>
-            <g transform="translate(210, 0)">
-              <path d="M -36 50 L -36 -30 A 36 36 0 0 1 36 -30 L 36 50 Z" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.75" pathLength="1" class="sketch s2"/>
-              <rect x="-28" y="-10" width="28" height="60" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-              <rect x="0" y="-10" width="28" height="60" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-              <circle cx="-6" cy="20" r="1.5" fill="var(--brass)"/>
-              <circle cx="6" cy="20" r="1.5" fill="var(--brass)"/>
-              <path d="M -36 -14 A 36 36 0 0 1 36 -14" fill="none" stroke="var(--ink)" stroke-width="0.75"/>
-              <line x1="-14" y1="-14" x2="-14" y2="-28" stroke="var(--ink)" stroke-width="0.75"/>
-              <line x1="0" y1="-14" x2="0" y2="-36" stroke="var(--ink)" stroke-width="0.75"/>
-              <line x1="14" y1="-14" x2="14" y2="-28" stroke="var(--ink)" stroke-width="0.75"/>
-              <text x="0" y="-40" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="2" fill="rgba(26,26,26,0.45)">№ 18</text>
-            </g>
-            <use href="#shop-win" x="285"/><use href="#shop-win" x="355"/>
-          </g>
-
-          <rect x="-30" y="560" width="480" height="1" fill="var(--ink)" opacity="0.3"/>
-          <!-- Bordstein & Baum-Andeutung -->
-          <g stroke="var(--ink)" stroke-width="0.5" opacity="0.25" fill="none">
-            <line x1="-30" y1="572" x2="450" y2="572"/>
-            <circle cx="-8" cy="545" r="2"/>
-          </g>
-        </g>
-
-        <!-- Maßkette unten -->
-        <g font-family="IBM Plex Mono, monospace" font-size="9" fill="rgba(26,26,26,0.4)" letter-spacing="1.5">
-          <line x1="110" y1="612" x2="530" y2="612" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
-          <line x1="110" y1="608" x2="110" y2="616" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
-          <line x1="530" y1="608" x2="530" y2="616" stroke="rgba(26,26,26,0.2)" stroke-width="0.5"/>
-          <text x="116" y="606">⎯ 24,60 m ⎯</text>
-          <text x="524" y="606" text-anchor="end">BERLIN ALTBAU</text>
-        </g>
-      </svg>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PANI Hausverwaltung Berlin | Persönlich geführt</title>
+    <meta
+      name="description"
+      content="Persönlich geführte Hausverwaltung in Berlin für WEGs, Miethäuser und einzelne Wohnungen. Klare Abrechnungen, feste Ansprechpartner und vorausschauende Instandhaltung."
+    />
+    <link rel="canonical" href="https://www.pani-hv.de/" />
+    <link rel="alternate" hreflang="de" href="https://www.pani-hv.de/" />
+    <link rel="alternate" hreflang="en" href="https://www.pani-hv.de/en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.pani-hv.de/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PANI Hausverwaltung" />
+    <meta
+      property="og:title"
+      content="PANI Hausverwaltung Berlin | Persönlich geführt"
+    />
+    <meta
+      property="og:description"
+      content="Für WEGs, Miethäuser und einzelne Wohnungen. Persönlich geführt. Klar im Überblick."
+    />
+    <meta property="og:url" content="https://www.pani-hv.de/" />
+    <meta property="og:locale" content="de_DE" />
+    <meta
+      property="og:image"
+      content="https://www.pani-hv.de/assets/bestandshalter-strassenzug-oderberger.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Wohnhäuser in der Oderberger Straße, Berlin"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#19382d" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="preload"
+      href="assets/fonts/fraunces-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "PANI Hausverwaltung",
+        "url": "https://www.pani-hv.de/",
+        "email": "info@pani-hv.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Westfälische Straße 62",
+          "postalCode": "10709",
+          "addressLocality": "Berlin",
+          "addressCountry": "DE"
+        },
+        "areaServed": { "@type": "City", "name": "Berlin" },
+        "knowsLanguage": ["de", "en"]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="PANI Startseite"
+          ><svg class="brand-mark" aria-hidden="true">
+            <use href="assets/icons.svg#pani" /></svg
+          ><span class="brand-name">PANI</span></a
+        >
+        <nav class="desktop-nav" aria-label="Hauptnavigation">
+          <a href="#leistungen">Leistungen</a><a href="#gruender">Über uns</a
+          ><a href="#reporting">Arbeitsweise</a
+          ><a href="mieter.html">Mieterservice</a>
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language"
+            href="en.html"
+            lang="en"
+            aria-label="English version"
+            >EN</a
+          ><a class="button" href="#kontakt"
+            >Kontakt
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#arrow-up-right" /></svg></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            data-menu-toggle
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Menü öffnen"
+            title="Menü öffnen"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#menu" />
+            </svg>
+          </button>
         </div>
-      </figure>
-      <div class="illus-caption">Berliner Bestand · Beispielobjekt</div>
-    </div>
-  </div>
-
-  <a class="scroll-cue" href="#leistungen">
-    <span class="dot">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 5 V19 M6 13 L12 19 L18 13"/></svg>
-    </span>
-    <span>Scroll</span>
-  </a>
-</section>
-
-<!-- ══ II: FÜR WEN ══ -->
-<section class="section section-roles" id="zielgruppen">
-  <span class="section-num">II / VIII · Eigentümerstruktur</span>
-  <div class="section-inner" style="grid-template-columns: 1fr; gap: 40px;">
-    <div class="roles-head reveal">
-      <div class="sanierung-head">
-        <span class="kicker">Eigentümerstruktur</span>
-        <h2>Verwaltung, abgestimmt auf<br/>Ihre Eigentümerstruktur.</h2>
-        <p>
-          Ob Wohnungseigentümergemeinschaft, Investor, Bestandshalter, Zinshaus-Eigentümer
-          oder eine anstehende Nachfolge, jede Eigentümerstruktur stellt andere
-          Anforderungen an Reporting, Prozesse und Steuerung. Wählen Sie Ihre Rolle
-        </p>
       </div>
-
-      <aside class="kpi-rotator" id="kpi-rotator" aria-label="PANI in Zahlen">
-        <div class="kr-stage">
-          <div class="kr-slide kr-cert is-active">
-            <!-- IHK-Siegel §26a WEG — nur verwenden, solange die Zertifizierung tatsächlich vorliegt (Angabe Inhaber, 2026-07-29). Quelle Siegel-Grafik: IHK-Standardsiegel. -->
-            <img class="kr-seal" src="assets/ihk-26a-weg-siegel.png"
-                 alt="IHK-Siegel: Zertifizierter Verwalter nach § 26a WEG"
-                 width="130" height="64" loading="lazy" decoding="async"/>
-            <span class="kr-l">Zertifiziert nach § 26a WEG</span>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        data-mobile-menu
+        aria-label="Mobile Navigation"
+        hidden
+      >
+        <a href="#leistungen">Leistungen</a><a href="#gruender">Über uns</a
+        ><a href="#reporting">Arbeitsweise</a
+        ><a href="mieter.html">Mieterservice</a><a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <picture
+          ><source srcset="assets/berlin-wohnen.webp" type="image/webp" />
+          <img
+            class="hero-photo"
+            src="assets/bestandshalter-strassenzug-oderberger.jpg"
+            width="1280"
+            height="678"
+            fetchpriority="high"
+            alt="Wohnhäuser der Oderberger Straße in Berlin-Prenzlauer Berg"
+        /></picture>
+        <div class="wrap hero-content">
+          <span class="eyebrow">Persönlich geführt. Klar im Überblick.</span>
+          <h1 id="hero-title">PANI Hausverwaltung<br />Berlin.</h1>
+          <p>
+            Wir betreuen WEGs, Miethäuser und einzelne Wohnungen. Mit festen
+            Ansprechpartnern, verständlichen Abrechnungen und vorausschauender
+            Instandhaltung.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#kontakt"
+              >Erstgespräch anfragen
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#arrow-up-right" /></svg></a
+            ><a class="text-link" href="#leistungen"
+              >Leistungen ansehen
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#arrow-down" /></svg
+            ></a>
           </div>
-          <div class="kr-slide" aria-hidden="true">
-            <span class="kr-n">&gt; 1 Mrd. €</span>
-            <span class="kr-l">AUM Asset-Management-Mandate aus früheren Stationen der Gründer</span>
+        </div>
+        <span class="hero-caption">Berlin-Prenzlauer Berg · Stadtansicht</span>
+      </section>
+      <div class="proof-bar">
+        <div class="wrap proof-inner">
+          <span
+            ><svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#users" /></svg
+            >Direkter Kontakt zu den Gründern</span
+          ><span
+            ><svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#map-pin" /></svg
+            >In Berlin zu Hause</span
+          ><span
+            ><svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#file-check" /></svg
+            >Nachvollziehbare Abrechnungen</span
+          >
+        </div>
+      </div>
+      <section class="section" id="leistungen" aria-labelledby="services-title">
+        <span class="anchor-alias" id="zielgruppen"></span>
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Unsere Leistungen</span>
+              <h2 id="services-title">
+                Die passende Verwaltung<br />für Ihr Eigentum.
+              </h2>
+            </div>
+            <p>
+              Vom einzelnen Apartment bis zum ganzen Haus. Wir kümmern uns um
+              den Alltag und behalten das Ganze im Blick.
+            </p>
           </div>
-          <div class="kr-slide" aria-hidden="true">
-            <span class="kr-n">&lt; 24 h</span>
-            <span class="kr-l">Reaktionszeit</span>
+          <div class="service-grid">
+            <article class="service">
+              <div class="service-topline">01 / Gemeinschaften</div>
+              <div class="service-visual">
+                <svg aria-hidden="true" viewBox="0 0 220 130">
+                  <use href="assets/architecture.svg#weg" />
+                </svg>
+              </div>
+              <h3>WEG-Verwaltung</h3>
+              <p>
+                Klare Beschlüsse, saubere Abrechnungen und eine Verwaltung, die
+                sich um die Umsetzung kümmert.
+              </p>
+              <a class="text-link" href="weg.html"
+                >Für Ihre Gemeinschaft
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#arrow-up-right" /></svg
+              ></a>
+              <p class="service-scope">Eigentümer · Verwaltungsbeiräte</p>
+            </article>
+            <article class="service">
+              <div class="service-topline">02 / Ganze Häuser</div>
+              <div class="service-visual">
+                <svg aria-hidden="true" viewBox="0 0 220 130">
+                  <use href="assets/architecture.svg#miethaus" />
+                </svg>
+              </div>
+              <h3>Miethausverwaltung</h3>
+              <p>
+                Vermietung, Finanzen und Instandhaltung aus einer Hand. Damit
+                Ihr Haus gut betreut ist und wirtschaftlich läuft.
+              </p>
+              <a class="text-link" href="miethaus.html"
+                >Für Ihr Miethaus
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#arrow-up-right" /></svg
+              ></a>
+              <p class="service-scope">Zinshaus-Eigentümer · Bestandshalter</p>
+            </article>
+            <article class="service">
+              <div class="service-topline">03 / Einzelne Wohnungen</div>
+              <div class="service-visual">
+                <svg aria-hidden="true" viewBox="0 0 220 130">
+                  <use href="assets/architecture.svg#wohnung" />
+                </svg>
+              </div>
+              <h3>Sondereigentum</h3>
+              <p>
+                Wir übernehmen die Betreuung Ihrer vermieteten Wohnung. Mit
+                einem festen Kontakt für Sie und Ihre Mieter.
+              </p>
+              <a class="text-link" href="sondereigentum.html"
+                >Für Ihre Wohnung
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#arrow-up-right" /></svg
+              ></a>
+              <p class="service-scope">Wohnungseigentümer · Kapitalanleger</p>
+            </article>
           </div>
+          <p class="section-note">
+            Besondere Anforderungen? Mehr zu
+            <a href="investoren.html">Investoren</a>,
+            <a href="bestandshalter.html">Portfolios</a> und
+            <a href="nachfolge.html">Nachfolge &amp; Übergängen</a>.
+          </p>
+        </div>
+      </section>
+      <section
+        class="section team-section"
+        id="gruender"
+        aria-labelledby="team-title"
+      >
+        <span class="anchor-alias" id="prinzipien"></span>
+        <div class="wrap team-grid">
+          <div class="team-intro">
+            <span class="eyebrow">Persönlich verantwortlich</span>
+            <h2 id="team-title">Ihre Ansprechpartner.<br />Die Gründer.</h2>
+            <p>
+              Bei PANI hat Verantwortung einen Namen. Niclas Paprocki und Paul
+              Harm verbinden Erfahrung in der Hausverwaltung mit einem klaren
+              Blick auf die Wirtschaftlichkeit Ihrer Immobilie.
+            </p>
+            <a class="text-link" href="#kontakt"
+              >Lernen wir uns kennen
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#arrow-up-right" /></svg
+            ></a>
+          </div>
+          <div class="founders">
+            <article class="founder">
+              <div class="founder-initials" aria-hidden="true">NP</div>
+              <div>
+                <h3>Niclas Paprocki</h3>
+                <p class="founder-role">Objektbetreuung &amp; Umsetzung</p>
+                <p>
+                  Erfahrung aus der Hausverwaltung seiner Familie und dem
+                  Studium der Immobilienwirtschaft. Nah am Objekt, verbindlich
+                  in der Abstimmung und sorgfältig im Detail.
+                </p>
+              </div>
+            </article>
+            <article class="founder">
+              <img
+                class="founder-photo"
+                src="assets/paul-harm.jpg"
+                width="80"
+                height="94"
+                loading="lazy"
+                alt="Paul Harm"
+              />
+              <div>
+                <h3>Paul Harm</h3>
+                <p class="founder-role">Finanzen &amp; Strategie</p>
+                <p>
+                  Finanzwirtschaftliche Analyse und Erfahrung im
+                  Investmentbanking. Für verständliche Zahlen, fundierte
+                  Entscheidungen und einen bewussten Umgang mit Kosten.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="reporting" aria-labelledby="work-title">
+        <div class="wrap work-grid">
+          <div class="work-copy">
+            <span class="eyebrow">So arbeiten wir</span>
+            <h2 id="work-title">Sie wissen,<br />was Ihr Haus bewegt.</h2>
+            <p>
+              Eine gute Verwaltung macht Entscheidungen leichter. Sie sehen,
+              welche Themen offen sind, was erledigt ist und was als Nächstes
+              ansteht.
+            </p>
+            <ul class="work-points">
+              <li>
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#check" /></svg
+                >Vorgänge mit Status und nächstem Schritt
+              </li>
+              <li>
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#check" /></svg
+                >Nachvollziehbare Kosten und Abrechnungen
+              </li>
+              <li>
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#check" /></svg
+                >Instandhaltung mit Blick auf den Werterhalt
+              </li>
+            </ul>
+            <p class="renovation-note" id="sanierung">
+              Auch wenn eine Sanierung ansteht: Wir koordinieren die nächsten
+              Schritte, von der Bestandsaufnahme bis zur Umsetzung.
+            </p>
+          </div>
+          <figure class="report-wrap">
+            <div class="report">
+              <div class="report-head">
+                <strong>PANI</strong
+                ><span class="sample">Muster · keine Objektdaten</span>
+              </div>
+              <h3 class="report-title">Ihr Eigentümer-Update</h3>
+              <p class="report-subtitle">
+                Objektbetreuung · Themen im Überblick
+              </p>
+              <ul class="report-list">
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/icons.svg#circle-check" />
+                  </svg>
+                  <div>
+                    <strong>Heizungswartung</strong>
+                    <p>Durchgeführt. Protokoll liegt vor.</p>
+                  </div>
+                  <span class="status">Erledigt</span>
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/icons.svg#calendar-days" />
+                  </svg>
+                  <div>
+                    <strong>Reparatur der Dachrinne</strong>
+                    <p>Angebot geprüft. Termin abgestimmt.</p>
+                  </div>
+                  <span class="status">Beauftragt</span>
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/icons.svg#clipboard-list" />
+                  </svg>
+                  <div>
+                    <strong>Instandhaltungsplanung</strong>
+                    <p>Maßnahmen zur Entscheidung vorbereitet.</p>
+                  </div>
+                  <span class="status status-pending">Zur Abstimmung</span>
+                </li>
+              </ul>
+              <div class="report-foot">
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#message-square" /></svg
+                >Ein Ansprechpartner. Alle Themen im Blick.
+              </div>
+            </div>
+            <figcaption class="report-caption">
+              So kann ein Update aussehen. Inhalt und Umfang stimmen wir mit
+              Ihnen ab.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section
+        class="steps-section"
+        id="wechsel"
+        aria-labelledby="switch-title"
+      >
+        <div class="wrap steps-grid">
+          <div class="steps-intro">
+            <span class="eyebrow">Der Weg zu PANI</span>
+            <h2 id="switch-title">
+              Ein guter Wechsel<br />beginnt mit Klarheit.
+            </h2>
+          </div>
+          <div class="step">
+            <span class="step-number">01</span>
+            <h3>Kennenlernen</h3>
+            <p>
+              Wir besprechen Ihr Objekt, Ihre Situation und den passenden
+              Leistungsumfang.
+            </p>
+          </div>
+          <div class="step">
+            <span class="step-number">02</span>
+            <h3>Übernehmen</h3>
+            <p>
+              Wir stimmen Termine, Unterlagen und offene Vorgänge mit Ihnen und
+              der bisherigen Verwaltung ab.
+            </p>
+          </div>
+          <div class="step">
+            <span class="step-number">03</span>
+            <h3>Betreuen</h3>
+            <p>
+              Feste Ansprechpartner, geordnete Abläufe und ein klarer Blick auf
+              die nächsten Aufgaben.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="kontakt" aria-labelledby="contact-title">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <span class="eyebrow">Lernen wir Ihr Objekt kennen</span>
+            <h2 id="contact-title">Sprechen wir über<br />Ihre Immobilie.</h2>
+            <p>
+              Sie suchen eine Verwaltung oder möchten wechseln? Erzählen Sie uns
+              kurz, worum es geht. Ihre Anfrage lesen die Gründer persönlich.
+            </p>
+            <div class="contact-details">
+              <a href="mailto:info@pani-hv.de"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#mail" /></svg
+                >info@pani-hv.de</a
+              >
+              <address>Westfälische Straße 62<br />10709 Berlin</address>
+            </div>
+          </div>
+          <form class="contact-form" data-email-form="owner" hidden>
+            <h3 class="form-heading">Ihr erster Kontakt</h3>
+            <p class="form-explanation">
+              Bereiten Sie Ihre Anfrage vor und senden Sie sie anschließend in
+              Ihrem E-Mail-Programm.
+            </p>
+            <div class="form-grid">
+              <label class="field"
+                >Ihr Name<input
+                  name="name"
+                  autocomplete="name"
+                  required
+                  maxlength="100"
+                  placeholder="Vor- und Nachname" /></label
+              ><label class="field"
+                >E-Mail<input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  maxlength="180"
+                  placeholder="name@beispiel.de" /></label
+              ><label class="field"
+                >Was dürfen wir betreuen?<select name="topic" required>
+                  <option value="">Bitte auswählen</option>
+                  <option>Eigentümergemeinschaft (WEG)</option>
+                  <option>Miethaus / Portfolio</option>
+                  <option>Einzelne Wohnung</option>
+                  <option>Sonstiges / noch offen</option>
+                </select></label
+              ><label class="field"
+                ><span>Telefon <span class="optional">(optional)</span></span
+                ><input
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  maxlength="40"
+                  placeholder="Für einen Rückruf" /></label
+              ><label class="field field-wide"
+                >Ihre Nachricht<textarea
+                  name="message"
+                  required
+                  maxlength="3000"
+                  placeholder="Wo liegt Ihre Immobilie? Wie viele Einheiten? Was ist Ihnen wichtig?"
+                ></textarea>
+              </label>
+            </div>
+            <div class="form-bottom">
+              <button class="button" type="submit">
+                E-Mail vorbereiten
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#arrow-up-right" />
+                </svg>
+              </button>
+            </div>
+            <p class="privacy-note">
+              Die Eingaben werden erst beim Versand in Ihrem E-Mail-Programm
+              übermittelt. Mehr zur Verarbeitung in der
+              <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </form>
+          <noscript
+            ><p>
+              Schreiben Sie uns an
+              <a href="mailto:info@pani-hv.de">info@pani-hv.de</a>. Bitte nennen
+              Sie Objekt, Anzahl der Einheiten und Ihr Anliegen.
+            </p></noscript
+          >
+        </div>
+      </section>
+      <aside class="tenant-strip" id="mieter">
+        <div class="wrap tenant-inner">
+          <p>
+            <strong>Sie wohnen in einem betreuten Haus?</strong>Hier geht es um
+            Ihr Anliegen als Mieter.
+          </p>
+          <a class="text-link" href="mieter.html"
+            >Zum Mieterservice
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#arrow-up-right" /></svg
+          ></a>
         </div>
       </aside>
-    </div>
-
-    <div class="reveal d2">
-      <div class="role-tabs" id="role-tabs" role="tablist" aria-label="Eigentümerrollen"></div>
-      <div class="role-panel" id="role-panel" role="tabpanel" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ III: PRINZIPIEN ══ -->
-<section class="section section-wert on-dark" id="prinzipien">
-  <span class="section-num">III / VIII · Prinzipien</span>
-  <div class="section-inner">
-    <div class="section-text reveal">
-      <span class="kicker">Prinzipien</span>
-      <h2>Gedacht wie ein Eigentümer. Gesteuert wie ein Investor.</h2>
-      <p>
-        Wir verwalten nicht nach Routine, sondern nach Wirkung. Kosten werden
-        hinterfragt statt durchgereicht, Maßnahmen nach Sinn, Timing und
-        Wirtschaftlichkeit entschieden, mit der analytischen Disziplin, mit der
-        man ein Vermögen steuert.
-      </p>
-
-      <div class="invest-points">
-        <div class="invest-point">
-          <svg class="ip-icon" viewBox="0 0 24 24"><path d="M6 3 H15 L19 7 V21 H6 Z"/><path d="M15 3 V7 H19"/><line x1="9" y1="12" x2="16" y2="12"/><line x1="9" y1="16" x2="14" y2="16"/></svg>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
           <div>
-            <div class="ip-t">Klares Reporting</div>
-            <div class="ip-d">Zahlen, Vorgänge und Prioritäten sauber strukturiert, als Grundlage für fundierte Entscheidungen statt als Pflichtanhang.</div>
+            <a class="brand" href="#top"
+              ><svg class="brand-mark" aria-hidden="true">
+                <use href="assets/icons.svg#pani" /></svg
+              ><span class="brand-name">PANI</span></a
+            >
+            <p>Persönlich geführt. In Berlin zu Hause.</p>
           </div>
+          <nav class="footer-links" aria-label="Weitere Informationen">
+            <a href="weg.html">WEG</a><a href="miethaus.html">Miethaus</a
+            ><a href="sondereigentum.html">Sondereigentum</a
+            ><a href="mieter.html">Mieterservice</a
+            ><a href="impressum.html">Impressum</a
+            ><a href="datenschutz.html">Datenschutz</a>
+          </nav>
         </div>
-        <div class="invest-point">
-          <svg class="ip-icon" viewBox="0 0 24 24"><path d="M3 11 L12 4 L21 11"/><path d="M6 10 V20 H18 V10"/><path d="M10 20 V14 H14 V20"/></svg>
-          <div>
-            <div class="ip-t">Eigentümer-Mindset</div>
-            <div class="ip-d">Wir prüfen jede Ausgabe sorgfältig, immer im Interesse der Eigentümer. Beauftragt wird nur, was wirklich sinnvoll ist, nicht aus Gewohnheit. Auf einen bewussten Umgang mit Kosten legen wir großen Wert.</div>
-          </div>
-        </div>
-        <div class="invest-point">
-          <svg class="ip-icon" viewBox="0 0 24 24"><polyline points="3,17 9,11 13,14 21,5"/><polyline points="15,5 21,5 21,11"/></svg>
-          <div>
-            <div class="ip-t">Strategische Planung</div>
-            <div class="ip-d">Hausverwaltung als laufende Steuerung eines Vermögenswerts, mit klaren Prioritäten, gezielten Maßnahmen und Blick auf Werterhalt und Entwicklung.</div>
-          </div>
-        </div>
-        <div class="invest-point">
-          <svg class="ip-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><line x1="15.5" y1="15.5" x2="20" y2="20"/><line x1="11" y1="8.5" x2="11" y2="11.5"/><line x1="11" y1="13.2" x2="11" y2="13.6"/></svg>
-          <div>
-            <div class="ip-t">Akribische Umsetzung</div>
-            <div class="ip-d">Saubere Prozesse, genaue Nachverfolgung und Sorgfalt im Detail, wie man es lernt, wenn Verwaltungshandwerk seit Generationen in der Familie weitergegeben wird.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cta-group">
-        <a href="#kontakt" class="cta-link">
-          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-          <span>Mandat anfragen</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="illus-wrap reveal d2" aria-hidden="true">
-      <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="wert-hatch" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-          </pattern>
-          <g id="wert-win">
-            <rect x="-11" y="-16" width="22" height="32" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
-            <line x1="0" y1="-16" x2="0" y2="16" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/>
-            <line x1="-11" y1="-4" x2="11" y2="-4" stroke="rgba(255,255,255,0.45)" stroke-width="0.5"/>
-            <rect x="-14" y="16" width="28" height="2.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.6"/>
-          </g>
-        </defs>
-
-        <!-- Raster -->
-        <g stroke="rgba(255,255,255,0.07)" stroke-width="0.5" fill="none">
-          <line x1="30" y1="350" x2="470" y2="350"/>
-          <line x1="30" y1="280" x2="470" y2="280"/>
-          <line x1="30" y1="210" x2="470" y2="210"/>
-          <line x1="30" y1="140" x2="470" y2="140"/>
-          <line x1="30" y1="70"  x2="470" y2="70"/>
-        </g>
-
-        <!-- Altbau in weißer Linienzeichnung -->
-        <g transform="translate(96, 0)">
-          <polygon points="-6,96 12,68 196,68 214,96" fill="url(#wert-hatch)" stroke="rgba(255,255,255,0.65)" stroke-width="0.8"/>
-          <path d="M 76 96 L 104 60 L 132 96 Z" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
-          <circle cx="104" cy="82" r="6" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
-          <rect x="22" y="44" width="14" height="16" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.7"/>
-
-          <rect x="0" y="96" width="208" height="254" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
-          <rect x="-5" y="96" width="218" height="5" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.7"/>
-          <line x1="0" y1="178" x2="208" y2="178" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
-          <line x1="0" y1="262" x2="208" y2="262" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
-
-          <use href="#wert-win" x="42"  y="140"/><use href="#wert-win" x="104" y="140"/><use href="#wert-win" x="166" y="140"/>
-          <use href="#wert-win" x="42"  y="222"/><use href="#wert-win" x="104" y="222"/><use href="#wert-win" x="166" y="222"/>
-          <use href="#wert-win" x="42"  y="306"/><use href="#wert-win" x="166" y="306"/>
-
-          <!-- Tür -->
-          <path d="M 84 350 L 84 312 A 20 20 0 0 1 124 312 L 124 350 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.6)" stroke-width="0.8"/>
-          <line x1="104" y1="316" x2="104" y2="350" stroke="rgba(255,255,255,0.45)" stroke-width="0.6"/>
-          <circle cx="99" cy="334" r="1.4" fill="var(--sand)"/>
-          <circle cx="109" cy="334" r="1.4" fill="var(--sand)"/>
-
-          <!-- sanierte Etage markiert -->
-          <rect x="24" y="118" width="160" height="44" fill="none" stroke="var(--sand)" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.7"/>
-          <text x="192" y="116" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" fill="var(--sand)" opacity="0.8">SANIERT</text>
-        </g>
-
-        <!-- Boden -->
-        <line x1="40" y1="350" x2="460" y2="350" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-
-        <!-- Wertkurve, zeichnet sich beim Erscheinen -->
-        <g>
-          <polyline points="60,330 140,310 220,250 300,210 380,150 440,92" fill="none" stroke="var(--accent)" stroke-width="2.5" pathLength="1" class="draw-line"/>
-          <circle cx="60"  cy="330" r="3" fill="var(--accent)" class="fade-dot fd1"/>
-          <circle cx="140" cy="310" r="3" fill="var(--accent)" class="fade-dot fd2"/>
-          <circle cx="220" cy="250" r="3" fill="var(--accent)" class="fade-dot fd3"/>
-          <circle cx="300" cy="210" r="3" fill="var(--accent)" class="fade-dot fd4"/>
-          <circle cx="380" cy="150" r="3" fill="var(--accent)" class="fade-dot fd5"/>
-          <circle cx="440" cy="92"  r="4" fill="var(--accent)" class="fade-dot fd5"/>
-          <path d="M 428 88 L 442 88 L 442 102" fill="none" stroke="var(--accent)" stroke-width="2" class="fade-dot fd5"/>
-          <text x="448" y="80" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(255,255,255,0.55)" class="fade-dot fd5">WERT</text>
-        </g>
-      </svg>
-      <div class="illus-caption">Strukturelle Wertsteigerung</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ II: LEISTUNGEN ══ -->
-<section class="section section-leistungen" id="leistungen">
-  <span class="section-num">IV / VIII · Mandate</span>
-  <div class="section-inner">
-    <!-- Illustration: Berliner Altbau-Häuserzeile - ein Haus je Leistung -->
-    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
-      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="row-hatch" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,0.07)" stroke-width="0.5"/>
-          </pattern>
-          <!-- Fenster mit Kreuzsprosse und Sims -->
-          <g id="row-win">
-            <rect x="-10" y="-15" width="20" height="30" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.7"/>
-            <line x1="0" y1="-15" x2="0" y2="15" stroke="var(--ink)" stroke-width="0.5"/>
-            <line x1="-10" y1="-3" x2="10" y2="-3" stroke="var(--ink)" stroke-width="0.5"/>
-            <rect x="-13" y="15" width="26" height="2.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.6"/>
-          </g>
-          <!-- Fenster mit Segmentgiebel -->
-          <g id="row-win-g">
-            <use href="#row-win"/>
-            <path d="M -13 -18 Q 0 -25 13 -18" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
-          </g>
-        </defs>
-
-        <!-- Hintergrund-Konstruktionslinien -->
-        <g stroke="var(--ink)" stroke-width="0.5" opacity="0.08" fill="none">
-          <line x1="20" y1="120" x2="480" y2="120"/>
-          <line x1="20" y1="86" x2="480" y2="86"/>
-          <circle cx="430" cy="80" r="34"/>
-        </g>
-
-        <!-- ── Haus 1 · WEG (links) ── -->
-        <g transform="translate(48, 0)">
-          <polygon points="-4,166 8,146 118,146 130,166" fill="url(#row-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
-          <rect x="42" y="128" width="13" height="12" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
-          <rect x="0" y="166" width="126" height="254" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
-          <rect x="-4" y="166" width="134" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
-          <rect x="-2" y="252" width="130" height="2" fill="var(--ink)" opacity="0.1"/>
-          <rect x="-2" y="330" width="130" height="2" fill="var(--ink)" opacity="0.1"/>
-          <use href="#row-win-g" x="34" y="212"/><use href="#row-win-g" x="92" y="212"/>
-          <use href="#row-win" x="34" y="292"/><use href="#row-win" x="92" y="292"/>
-          <use href="#row-win" x="34" y="372"/><use href="#row-win" x="92" y="372"/>
-        </g>
-
-        <!-- ── Haus 2 · Miethaus (Mitte, höher) ── -->
-        <g transform="translate(174, 0)">
-          <polygon points="-4,128 10,104 130,104 144,128" fill="url(#row-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
-          <path d="M 48 128 L 70 96 L 92 128 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
-          <circle cx="70" cy="115" r="5" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
-          <rect x="0" y="128" width="140" height="292" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
-          <rect x="-4" y="128" width="148" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
-          <rect x="-2" y="206" width="144" height="2" fill="var(--ink)" opacity="0.1"/>
-          <!-- Ornamentband -->
-          <path d="M 6 213 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0 q 5 4 10 0 q 5 -4 10 0" fill="none" stroke="var(--ink)" stroke-width="0.5" opacity="0.3"/>
-          <rect x="-2" y="288" width="144" height="2" fill="var(--ink)" opacity="0.1"/>
-          <use href="#row-win-g" x="28" y="168"/><use href="#row-win-g" x="70" y="168"/><use href="#row-win-g" x="112" y="168"/>
-          <use href="#row-win" x="28" y="248"/><use href="#row-win" x="70" y="248"/><use href="#row-win" x="112" y="248"/>
-          <use href="#row-win" x="28" y="326"/><use href="#row-win" x="112" y="326"/>
-          <!-- Balkon Mitte -->
-          <use href="#row-win" x="70" y="326"/>
-          <g transform="translate(70, 326)">
-            <line x1="-17" y1="20" x2="17" y2="20" stroke="var(--ink)" stroke-width="1"/>
-            <line x1="-17" y1="6" x2="-17" y2="20" stroke="var(--ink)" stroke-width="0.6"/>
-            <line x1="17" y1="6" x2="17" y2="20" stroke="var(--ink)" stroke-width="0.6"/>
-            <line x1="-17" y1="6" x2="17" y2="6" stroke="var(--ink)" stroke-width="0.6"/>
-            <line x1="-11" y1="6" x2="-11" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
-            <line x1="-5" y1="6" x2="-5" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
-            <line x1="1" y1="6" x2="1" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
-            <line x1="7" y1="6" x2="7" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
-            <line x1="13" y1="6" x2="13" y2="20" stroke="var(--ink)" stroke-width="0.4"/>
-          </g>
-          <!-- Haustür mit Rundbogen -->
-          <g transform="translate(70, 0)">
-            <path d="M -22 420 L -22 374 A 22 22 0 0 1 22 374 L 22 420 Z" fill="rgba(26,26,26,0.03)" stroke="var(--ink)" stroke-width="0.8"/>
-            <rect x="-16" y="382" width="15" height="38" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
-            <rect x="1" y="382" width="15" height="38" fill="none" stroke="var(--ink)" stroke-width="0.7"/>
-            <circle cx="-4" cy="402" r="1.3" fill="var(--brass)"/>
-            <circle cx="4" cy="402" r="1.3" fill="var(--brass)"/>
-            <line x1="-9" y1="374" x2="-9" y2="364" stroke="var(--ink)" stroke-width="0.6"/>
-            <line x1="0" y1="374" x2="0" y2="360" stroke="var(--ink)" stroke-width="0.6"/>
-            <line x1="9" y1="374" x2="9" y2="364" stroke="var(--ink)" stroke-width="0.6"/>
-          </g>
-        </g>
-
-        <!-- ── Haus 3 · SEV (rechts) ── -->
-        <g transform="translate(318, 0)">
-          <polygon points="-4,186 8,168 122,168 134,186" fill="url(#row-hatch)" stroke="var(--ink)" stroke-width="0.75"/>
-          <rect x="0" y="186" width="130" height="234" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
-          <rect x="-4" y="186" width="138" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.7"/>
-          <rect x="-2" y="264" width="134" height="2" fill="var(--ink)" opacity="0.1"/>
-          <rect x="-2" y="342" width="134" height="2" fill="var(--ink)" opacity="0.1"/>
-          <use href="#row-win-g" x="36" y="226"/><use href="#row-win-g" x="94" y="226"/>
-          <use href="#row-win" x="36" y="304"/><use href="#row-win" x="94" y="304"/>
-          <use href="#row-win" x="36" y="382"/><use href="#row-win" x="94" y="382"/>
-          <!-- markierte Einzelwohnung (Sondereigentum) -->
-          <rect x="76" y="286" width="36" height="36" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
-        </g>
-
-        <!-- Boden & Bordstein -->
-        <line x1="24" y1="420" x2="476" y2="420" stroke="var(--ink)" stroke-width="1" opacity="0.5"/>
-        <line x1="24" y1="430" x2="476" y2="430" stroke="var(--ink)" stroke-width="0.5" opacity="0.2"/>
-
-        <!-- Leistungs-Labels mit Hinweislinien -->
-        <g font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(26,26,26,0.55)">
-          <g stroke="rgba(26,26,26,0.3)" stroke-width="0.5">
-            <line x1="111" y1="138" x2="111" y2="68"/>
-            <line x1="244" y1="96" x2="244" y2="46"/>
-            <line x1="411" y1="160" x2="411" y2="98"/>
-          </g>
-          <circle cx="111" cy="138" r="1.5" fill="var(--accent)" stroke="none"/>
-          <circle cx="244" cy="96" r="1.5" fill="var(--accent)" stroke="none"/>
-          <circle cx="411" cy="160" r="1.5" fill="var(--accent)" stroke="none"/>
-          <text x="111" y="60" text-anchor="middle">01 · WEG</text>
-          <text x="244" y="38" text-anchor="middle">02 · MIETHAUS</text>
-          <text x="411" y="90" text-anchor="middle">03 · SEV</text>
-        </g>
-
-        <!-- Maßkette -->
-        <g stroke="rgba(26,26,26,0.25)" stroke-width="0.5" font-family="IBM Plex Mono, monospace" font-size="8" fill="rgba(26,26,26,0.4)">
-          <line x1="44" y1="448" x2="452" y2="448"/>
-          <line x1="44" y1="444" x2="44" y2="452"/>
-          <line x1="452" y1="444" x2="452" y2="452"/>
-          <text x="222" y="464" letter-spacing="1.5">HÄUSERZEILE · BERLIN</text>
-        </g>
-      </svg>
-      <div class="illus-caption">Drei Häuser, drei Mandate</div>
-    </div>
-
-    <div class="section-text reveal d2">
-      <span class="kicker">Mandate</span>
-      <h2>Hausverwaltung,<br/>im Detail.</h2>
-      <p>
-        Wir betreuen Miethäuser, Wohnungseigentümergemeinschaften und Sondereigentum. Mit hoher Sorgfalt im operativen Detail und einem klaren Blick auf Substanz,
-        Kosten und Wirtschaftlichkeit, so gewissenhaft, wie es Eigentum verdient.
-      </p>
-
-      <div class="svc-chips">
-        <a class="svc-chip" href="weg.html">
-          <span class="no">01</span>
-          <div>
-            <div class="t">WEG-Verwaltung</div>
-            <div class="d">Strukturierte Eigentümerversammlungen, Beschlussumsetzung, Instandhaltungsplanung und transparente Rücklagen.</div>
-          </div>
-          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        </a>
-        <a class="svc-chip" href="miethaus.html">
-          <span class="no">02</span>
-          <div>
-            <div class="t">Miethausverwaltung</div>
-            <div class="d">Vollbetreuung mit rechtssicheren Verträgen, Abrechnung, Technik. Dazu ein fester Ansprechpartner für Ihre Mieter.</div>
-          </div>
-          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        </a>
-        <a class="svc-chip" href="sondereigentum.html">
-          <span class="no">03</span>
-          <div>
-            <div class="t">Sondereigentum (SEV)</div>
-            <div class="d">Sondereigentumsverwaltung für Kapitalanleger und institutionelle Eigentümerstrukturen, mit revisionssicherer Dokumentation, klaren Schnittstellen und digitalem Reporting.</div>
-          </div>
-          <span class="arrow"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        </a>
-      </div>
-
-      <span class="leist-label">Leistungsumfang</span>
-      <div class="leist-scope">
-        <div class="leist-item">
-          <svg viewBox="0 0 24 24"><path d="M6 3 H15 L19 7 V21 H6 Z"/><path d="M15 3 V7 H19"/></svg>
-          <div>
-            <div class="li-t">Vermietung &amp; Verträge</div>
-            <div class="li-d">Wir sichern Ihre Einnahmen, mit professionell abgewickelter Neuvermietung sowie sauber dokumentierten Wohnungsübergaben und Zwischenablesungen.</div>
-          </div>
-        </div>
-        <div class="leist-item">
-          <svg viewBox="0 0 24 24"><path d="M3 11 L12 4 L21 11"/><path d="M6 10 V20 H18 V10"/><path d="M10 20 V14 H14 V20"/></svg>
-          <div>
-            <div class="li-t">Technik &amp; Objektbetreuung</div>
-            <div class="li-d">Wir halten Ihr Objekt instand, mit zuverlässig gesteuerten Wartungs- und Hausmeisterverträgen, koordinierten Reparaturen, regelmäßigen Begehungen und organisierten saisonalen Aufgaben wie dem Winterdienst.</div>
-          </div>
-        </div>
-        <div class="leist-item">
-          <svg viewBox="0 0 24 24"><path d="M6 3 H15 L19 7 V21 H6 Z"/><path d="M15 3 V7 H19"/><line x1="9" y1="12" x2="16" y2="12"/><line x1="9" y1="16" x2="14" y2="16"/></svg>
-          <div>
-            <div class="li-t">Finanzen &amp; Abrechnung</div>
-            <div class="li-d">Wir haben Ihre Finanzen im Griff, mit sauber geprüften Betriebskosten, klaren Abrechnungen und dem vollen Überblick über alle Zahlungen. Rückstände bearbeiten wir strukturiert.</div>
-          </div>
-        </div>
-        <div class="leist-item">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15.5 14"/></svg>
-          <div>
-            <div class="li-t">Kommunikation &amp; Service</div>
-            <div class="li-d">Wir übernehmen die Korrespondenz mit Mietern, Behörden und Versicherungen, mit allen Vorgängen zentral dokumentiert und einer Notfallhotline rund um die Uhr, wenn es darauf ankommt.</div>
-          </div>
+        <div class="footer-bottom">
+          <span>© PANI Hausverwaltung · Berlin</span
+          ><span class="footer-credit"
+            >Stadtansicht:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Oderberger_Stra%C3%9Fe_1941.jpg"
+              target="_blank"
+              rel="noopener"
+              >Franz Richter</a
+            >
+            ·
+            <a
+              href="https://creativecommons.org/licenses/by-sa/3.0/"
+              target="_blank"
+              rel="noopener"
+              >CC BY-SA 3.0</a
+            >
+            · Ausschnitt, WebP-Konvertierung</span
+          >
         </div>
       </div>
-
-      <p class="price-note">Die Kosten hängen von Art, Größe und Anforderungen Ihrer Immobilie ab. Für jede Liegenschaft erstellen wir ein individuelles Angebot, unverbindlich, nachvollziehbar und ohne versteckte Posten. Uns ist wichtig, dass Sie genau wissen, wofür Sie bezahlen und welchen Mehrwert Sie dafür erhalten.</p>
-
-      <a href="#kontakt" class="cta-link" style="margin-top: 24px;">
-        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        <span>Angebot anfordern</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ IV: ENERGETISCHE SANIERUNG ══ -->
-<section class="section section-sanierung" id="sanierung">
-  <span class="section-num">V / VIII · Sanierung</span>
-  <div class="section-inner">
-    <div class="sanierung-head reveal">
-      <span class="kicker leaf">Energetische Sanierung</span>
-      <h2>Vom Kostentreiber<br/>zum Zukunftsobjekt.</h2>
-      <p>
-        Eine energetische Sanierung verstehen wir als Angebot für eine nachhaltige
-        Bewirtschaftung Ihrer Immobilie, nicht als Verpflichtung. Wenn sie
-        für Ihr Objekt sinnvoll ist, begleiten wir sie von der Bestandsaufnahme über
-        Förderung und Ausschreibung bis zur Abnahme. Weil wir Immobilien langfristig denken,
-        zeigen wir Potenziale offen auf, die Entscheidung treffen Sie. Jede Effizienzklasse,
-        die Ihr Gebäude besser wird, senkt Betriebskosten und CO₂-Ausstoß und stärkt den
-        Wert Ihrer Immobilie.
-      </p>
-    </div>
-
-    <div class="energy-card reveal d2" id="energy-card">
-      <div class="energy-top">
-        <span class="e-title">Was eine Sanierung bewegt</span>
-        <span class="e-hint">Zielklasse wählen</span>
-      </div>
-
-      <div class="energy-scale-wrap">
-        <div class="energy-scale" id="energy-scale" role="group" aria-label="Energieklassen von H bis A"></div>
-      </div>
-
-      <div class="energy-results">
-        <div class="energy-result" id="res-1">
-          <div class="r-n"><span id="r-bedarf">87</span><span class="unit">kWh/m²a</span></div>
-          <div class="r-l">Energiebedarf Zielklasse</div>
-        </div>
-        <div class="energy-result" id="res-2">
-          <div class="r-n"><span id="r-einsparung">−52</span><span class="unit">%</span></div>
-          <div class="r-l">Energie & CO₂ gegenüber Bestand</div>
-        </div>
-        <div class="energy-result" id="res-3">
-          <div class="r-n">≈ <span id="r-kosten">1.210</span><span class="unit">€/Jahr</span></div>
-          <div class="r-l">Heizkosten-Ersparnis je 100 m²</div>
-        </div>
-      </div>
-
-      <div class="energy-foot">
-        <span>Beispielwerte auf Basis typischer Bedarfskennwerte (unsanierter Altbau, Effizienzklasse F). Keine Energieberatung, die konkrete Rechnung machen wir gern für Ihr Objekt.</span>
-        <a href="#kontakt" class="cta-link">
-          <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-          <span>Sanierungspotenzial prüfen</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FOTO-BAND ══
-     Bild: CC0 / gemeinfrei (Wikimedia Commons, Fasanenstraße 1B Berlin-Charlottenburg), lokal gehostet.
-     FOTO AUSTAUSCHEN: idealerweise ein Straßenzug aus dem eigenen Bestand. -->
-<div class="photo-band" id="photo-band">
-  <img
-    src="assets/berlin-altbau.jpg"
-    alt="Historische Berliner Altbau-Fassade aus der Gründerzeit"
-    loading="lazy"
-    onerror="document.getElementById('photo-band').classList.add('img-failed')"/>
-  <div class="pb-text">
-    <span class="kicker">Berlin</span>
-    <h3>Wir kennen den Berliner Bestand. Haus für Haus, Kiez für Kiez.</h3>
-  </div>
-</div>
-
-<!-- ══ VI: REPORTING ══ -->
-<section class="section section-ueberblick" id="reporting">
-  <span class="section-num">VI / VIII · Reporting</span>
-  <div class="section-inner">
-    <div class="illus-wrap reveal" style="justify-self: start;" aria-hidden="true">
-      <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg">
-        <rect x="44" y="48" width="380" height="300" rx="4" fill="rgba(26,26,26,0.06)"/>
-        <rect x="40" y="40" width="380" height="300" fill="var(--paper)" stroke="var(--line)" stroke-width="1" rx="4"/>
-        <rect x="40" y="40" width="100" height="300" fill="rgba(26,26,26,0.02)" rx="4"/>
-        <line x1="140" y1="40" x2="140" y2="340" stroke="var(--line)" stroke-width="1"/>
-        <g fill="var(--ink)" opacity="0.3">
-          <rect x="56" y="60" width="68" height="6" rx="2"/>
-          <rect x="56" y="80" width="48" height="4" rx="2"/>
-          <rect x="56" y="96" width="58" height="4" rx="2"/>
-          <rect x="56" y="112" width="40" height="4" rx="2"/>
-        </g>
-        <circle cx="62" cy="322" r="8" fill="none" stroke="var(--ink)" stroke-width="0.75" opacity="0.4"/>
-        <rect x="78" y="318" width="40" height="4" rx="2" fill="var(--ink)" opacity="0.2"/>
-
-        <g transform="translate(160, 60)">
-          <rect x="0" y="0" width="240" height="140" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
-          <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">PORTFOLIO RENDITE</text>
-          <text x="16" y="44" font-family="Fraunces, Georgia, serif" font-size="16" fill="var(--ink)">€ 124.500</text>
-          <text x="224" y="24" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--leaf)" letter-spacing="1">+4,2 %</text>
-          <line x1="16" y1="70" x2="224" y2="70" stroke="var(--line)" stroke-width="0.5"/>
-          <line x1="16" y1="95" x2="224" y2="95" stroke="var(--line)" stroke-width="0.5"/>
-          <line x1="16" y1="120" x2="224" y2="120" stroke="var(--line)" stroke-width="0.5"/>
-          <polyline points="16,110 46,90 76,100 106,70 136,80 166,50 196,60 224,30" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round" pathLength="1" class="draw-line"/>
-          <circle cx="224" cy="30" r="3" fill="var(--accent)" class="fade-dot fd5"/>
-        </g>
-
-        <g transform="translate(160, 220)">
-          <rect x="0" y="0" width="112" height="100" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
-          <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">LEERSTAND</text>
-          <text x="16" y="48" font-family="Fraunces, Georgia, serif" font-size="20" fill="var(--ink)">1,2 %</text>
-          <line x1="16" y1="70" x2="96" y2="70" stroke="var(--line)" stroke-width="2"/>
-          <line x1="16" y1="70" x2="36" y2="70" stroke="var(--accent)" stroke-width="2" pathLength="1" class="draw-line dl2"/>
-        </g>
-
-        <g transform="translate(288, 220)">
-          <rect x="0" y="0" width="112" height="100" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="0.5" rx="2"/>
-          <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--ink)" opacity="0.5" letter-spacing="1">RÜCKLAGEN</text>
-          <text x="16" y="48" font-family="Fraunces, Georgia, serif" font-size="20" fill="var(--ink)">€ 82k</text>
-          <g transform="translate(80, 70)">
-            <circle cx="0" cy="0" r="14" fill="none" stroke="var(--line)" stroke-width="3"/>
-            <circle cx="0" cy="0" r="14" fill="none" stroke="var(--ink)" stroke-width="3" stroke-dasharray="60 100" transform="rotate(-90)"/>
-          </g>
-        </g>
-      </svg>
-      <div class="illus-caption">Digitale Transparenz</div>
-    </div>
-
-    <div class="section-text reveal d2">
-      <span class="kicker">Reporting</span>
-      <h2>Reporting, das<br/>Entscheidungen trägt.</h2>
-      <p>
-        Jedes Objekt erhält einen strukturierten Eigentümerreport mit Vorgängen, Maßnahmen,
-        Kosten und Kennzahlen, nachvollziehbar aufbereitet statt lose gesammelt. Dazu
-        unser Mandanten-Dashboard mit Echtzeit-Blick auf Portfolio, Rücklagen und offene Posten.
-      </p>
-      <p>
-        Alle Dokumente liegen revisionssicher im digitalen Archiv, zugänglich für Sie, Ihre
-        Gesellschafter und Ihren Steuerberater.
-      </p>
-
-      <div class="report-note reveal d3">
-        <span class="rn-label">Aus einem Eigentümer-Update · Beispiel</span>
-        <p>
-          „Dachrinne Vorderhaus: Angebot geprüft und beauftragt, Termin Donnerstag
-          9 Uhr. Protokoll und Rechnung finden Sie danach im Datenraum.“
-        </p>
-      </div>
-
-      <div class="stat-row">
-        <div class="stat">
-          <div class="s-n">1×/Monat</div>
-          <div class="s-l">Eigentümerreport je Objekt</div>
-        </div>
-        <div class="stat">
-          <div class="s-n">24/7</div>
-          <div class="s-l">Dokumentenzugriff</div>
-        </div>
-        <div class="stat">
-          <div class="s-n">&lt; 24h</div>
-          <div class="s-l">Reaktionszeit</div>
-        </div>
-      </div>
-
-      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
-        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        <span>Beispielreport anfordern</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ VII: GRÜNDER ══ -->
-<section class="section section-team" id="gruender">
-  <span class="section-num">VII / VIII · Gründer</span>
-  <div class="section-inner" style="grid-template-columns: 1fr; gap: 44px;">
-    <div class="sanierung-head reveal">
-      <span class="kicker">Gründer</span>
-      <h2>Zwei Welten.<br/>Ein Anspruch.</h2>
-      <p>
-        PANI führen wir als Gründer persönlich, mit der Verbindung aus analytischer
-        Finanzdisziplin, geprägt durch Erfahrung im Investmentbanking, und operativer
-        Umsetzungsstärke aus einer Familie, die seit Generationen in der
-        Hausverwaltung tätig ist. Diese Kombination prägt jede Entscheidung.
-      </p>
-    </div>
-
-    <div class="team-grid reveal d2">
-      <article class="founder-card">
-        <div class="f-mono" aria-hidden="true">NP</div>
-        <h3 class="f-name">Niclas Paprocki</h3>
-        <div class="f-role">Gründer · Objekt &amp; Umsetzung</div>
-        <p class="f-bio">
-          Hat neben seinem Studium der Immobilienwirtschaft bereits viele Jahre in
-          der Hausverwaltung der Familie mitgearbeitet und dabei ein Gespür für die
-          operative Nähe zum Objekt entwickelt. Diese Erfahrung prägt seine Arbeit
-          bis heute, mit hoher Umsetzungsstärke und dem Anspruch, jedes Haus mit
-          größtmöglicher Sorgfalt und Verlässlichkeit zu betreuen.
-        </p>
-        <div class="f-tags">
-          <span class="f-tag">Objektbetreuung</span>
-          <span class="f-tag">Prozessqualität</span>
-          <span class="f-tag">Umsetzung</span>
-        </div>
-      </article>
-
-      <article class="founder-card">
-        <div class="f-photo-frame"><img class="f-photo" src="assets/paul-harm.jpg" alt="Paul Harm"/></div>
-        <h3 class="f-name">Paul Harm</h3>
-        <div class="f-role">Gründer · Finance &amp; Strategie</div>
-        <p class="f-bio">
-          Bringt finanzwirtschaftliche Analyse, strategisches Denken und einen klaren
-          Blick auf Immobilien als Asset-Klasse ein. Geprägt durch Erfahrung im
-          Investmentbanking steht er für strukturiertes Reporting, präzise
-          Entscheidungsgrundlagen und disziplinierte, eigentümerorientierte Steuerung.
-        </p>
-        <div class="f-tags">
-          <span class="f-tag">Reporting</span>
-          <span class="f-tag">Strategie</span>
-          <span class="f-tag">Wirtschaftliche Steuerung</span>
-        </div>
-      </article>
-    </div>
-
-    <div class="team-joint reveal d3">
-      <p>
-        Gemeinsam stehen wir für eine Hausverwaltung, die klar reportet, akribisch
-        arbeitet, wirtschaftlich diszipliniert entscheidet und jedes Haus so führt,
-        dass Eigentümer sich um nichts kümmern müssen, aber jederzeit alles
-        nachvollziehen können.
-      </p>
-      <svg class="gen-line" viewBox="0 0 900 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <line x1="20" y1="48" x2="880" y2="48" stroke="var(--ink)" stroke-width="1" opacity="0.35" pathLength="1" class="draw-line"/>
-        <g stroke="var(--ink)" stroke-width="1" opacity="0.5">
-          <line x1="60"  y1="40" x2="60"  y2="56"/>
-          <line x1="320" y1="40" x2="320" y2="56"/>
-          <line x1="580" y1="40" x2="580" y2="56"/>
-        </g>
-        <g font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="2" fill="rgba(26,26,26,0.5)">
-          <text x="60"  y="28" text-anchor="middle">ANALYSE</text>
-          <text x="320" y="28" text-anchor="middle">STEUERUNG</text>
-          <text x="580" y="28" text-anchor="middle">WERTERHALT</text>
-          <text x="828" y="28" text-anchor="middle" fill="var(--accent)">HEUTE · PANI</text>
-        </g>
-        <g font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" fill="rgba(26,26,26,0.35)">
-          <text x="60"  y="76" text-anchor="middle">PROFESSIONELLE VERWALTUNG MIT SYSTEM</text>
-          <text x="828" y="76" text-anchor="middle">+ ANALYTISCHE FINANZDISZIPLIN</text>
-        </g>
-        <g transform="translate(828, 48)" class="fade-dot fd5">
-          <path d="M -12 8 L -12 -4 L 0 -13 L 12 -4 L 12 8 Z" fill="var(--paper-w)" stroke="var(--accent)" stroke-width="1.4"/>
-          <rect x="-3.5" y="-1" width="7" height="9" fill="none" stroke="var(--accent)" stroke-width="1"/>
-        </g>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ══ VI: MIETER ══ -->
-<section class="section section-mieter" id="mieter">
-  <span class="section-num">VIII / VIII · Mieter</span>
-  <div class="section-inner">
-    <div class="phone-wrap reveal" id="phone-wrap" aria-hidden="true">
-      <div class="phone-tilt" id="phone-tilt">
-      <svg viewBox="0 0 340 660" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <clipPath id="screen-clip"><rect x="22" y="22" width="296" height="616" rx="32"/></clipPath>
-          <linearGradient id="screen-sheen" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="rgba(255,255,255,0.5)"/>
-            <stop offset="0.25" stop-color="rgba(255,255,255,0)"/>
-          </linearGradient>
-        </defs>
-        <rect x="10" y="10" width="320" height="640" rx="42" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
-        <rect x="22" y="22" width="296" height="616" rx="32" fill="var(--paper-w)" stroke="var(--line)" stroke-width="1"/>
-        <rect x="130" y="34" width="80" height="14" rx="7" fill="var(--ink)" opacity="0.85"/>
-        <!-- Seitentasten -->
-        <rect x="6.5" y="150" width="3" height="44" rx="1.5" fill="var(--ink)" opacity="0.5"/>
-        <rect x="6.5" y="208" width="3" height="44" rx="1.5" fill="var(--ink)" opacity="0.5"/>
-        <rect x="330.5" y="170" width="3" height="60" rx="1.5" fill="var(--ink)" opacity="0.5"/>
-
-        <g clip-path="url(#screen-clip)">
-        <!-- Statuszeile -->
-        <text x="46" y="48" font-family="IBM Plex Mono, monospace" font-size="9" lengthAdjust="spacingAndGlyphs" textLength="27" fill="rgba(26,26,26,0.55)">09:41</text>
-        <g stroke="rgba(26,26,26,0.55)" stroke-width="1" fill="none">
-          <path d="M 272 44 v-5 M 276 44 v-8 M 280 44 v-11"/>
-          <rect x="288" y="36" width="14" height="8" rx="2"/>
-          <rect x="290" y="38" width="8" height="4" fill="rgba(26,26,26,0.55)" stroke="none"/>
-        </g>
-
-        <!-- App header -->
-        <text x="46" y="92" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2" lengthAdjust="spacingAndGlyphs" textLength="148" fill="rgba(26,26,26,0.45)">PANI · MEINE WOHNUNG</text>
-        <text x="46" y="120" font-family="Fraunces, Georgia, serif" font-size="20" lengthAdjust="spacingAndGlyphs" textLength="200" fill="var(--ink)">Guten Tag, Frau Yilmaz</text>
-
-        <!-- Meldung Card -->
-        <g transform="translate(46, 150)">
-          <rect x="0" y="4" width="248" height="92" rx="10" fill="rgba(128,0,32,0.18)"/>
-          <rect x="0" y="0" width="248" height="92" rx="10" fill="var(--accent)"/>
-          <text x="18" y="32" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600" lengthAdjust="spacingAndGlyphs" textLength="102" fill="#fff">Anliegen melden</text>
-          <text x="18" y="52" font-family="IBM Plex Sans, sans-serif" font-size="10.5" lengthAdjust="spacingAndGlyphs" textLength="112" fill="rgba(255,255,255,0.75)">Heizung, Wasser, Strom</text>
-          <text x="18" y="66" font-family="IBM Plex Sans, sans-serif" font-size="10.5" lengthAdjust="spacingAndGlyphs" textLength="121" fill="rgba(255,255,255,0.75)">mit Foto, in zwei Minuten.</text>
-          <circle cx="216" cy="46" r="16" fill="rgba(255,255,255,0.15)"/>
-          <path d="M 210 46 H 222 M 216 40 V 52" stroke="#fff" stroke-width="1.5"/>
-        </g>
-
-        <!-- Ticket status -->
-        <text x="46" y="282" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2" lengthAdjust="spacingAndGlyphs" textLength="111" fill="rgba(26,26,26,0.45)">MEINE MELDUNGEN</text>
-        <g transform="translate(46, 296)">
-          <rect x="0" y="0" width="248" height="64" rx="10" fill="var(--paper)" stroke="var(--line)"/>
-          <circle cx="22" cy="32" r="5" fill="var(--brass)" class="notif-dot"/>
-          <text x="40" y="28" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="500" lengthAdjust="spacingAndGlyphs" textLength="155" fill="var(--ink)">Heizung Bad wird nicht warm</text>
-          <text x="40" y="46" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" lengthAdjust="spacingAndGlyphs" textLength="180" fill="rgba(26,26,26,0.5)">IN BEARBEITUNG · DO 9–12 UHR</text>
-        </g>
-        <g transform="translate(46, 368)">
-          <rect x="0" y="0" width="248" height="64" rx="10" fill="var(--paper)" stroke="var(--line)"/>
-          <circle cx="22" cy="32" r="5" fill="var(--leaf)"/>
-          <path d="M 19.5 32 L 21.5 34.5 L 25 29.5" stroke="#fff" stroke-width="1.2" fill="none"/>
-          <text x="40" y="28" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="500" lengthAdjust="spacingAndGlyphs" textLength="92" fill="var(--ink)">Kellerlicht defekt</text>
-          <text x="40" y="46" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" lengthAdjust="spacingAndGlyphs" textLength="116" fill="rgba(26,26,26,0.5)">ERLEDIGT · 12. MAI</text>
-        </g>
-
-        <!-- Documents -->
-        <text x="46" y="470" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2" lengthAdjust="spacingAndGlyphs" textLength="67" fill="rgba(26,26,26,0.45)">DOKUMENTE</text>
-        <g transform="translate(46, 484)">
-          <rect x="0" y="0" width="248" height="52" rx="10" fill="var(--paper)" stroke="var(--line)"/>
-          <rect x="14" y="14" width="18" height="24" rx="2" fill="none" stroke="var(--ink)" stroke-width="1"/>
-          <line x1="18" y1="22" x2="28" y2="22" stroke="var(--ink)" stroke-width="0.75"/>
-          <line x1="18" y1="27" x2="28" y2="27" stroke="var(--ink)" stroke-width="0.75"/>
-          <text x="44" y="24" font-family="IBM Plex Sans, sans-serif" font-size="11" font-weight="500" lengthAdjust="spacingAndGlyphs" textLength="156" fill="var(--ink)">Nebenkostenabrechnung 2025</text>
-          <text x="44" y="40" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" lengthAdjust="spacingAndGlyphs" textLength="58" fill="var(--accent)">NEU · PDF</text>
-          <path d="M 226 19 v 10 m -4 -4 l 4 4 l 4 -4 M 218 34 h 16" stroke="rgba(26,26,26,0.4)" stroke-width="1" fill="none"/>
-        </g>
-
-        <!-- Tab bar -->
-        <g transform="translate(46, 572)">
-          <line x1="0" y1="-12" x2="248" y2="-12" stroke="var(--line)"/>
-          <text x="0" y="12" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" lengthAdjust="spacingAndGlyphs" textLength="32" fill="var(--accent)">START</text>
-          <rect x="0" y="18" width="30" height="1.5" fill="var(--accent)"/>
-          <text x="68" y="12" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" lengthAdjust="spacingAndGlyphs" textLength="57" fill="rgba(26,26,26,0.4)">MELDUNGEN</text>
-          <text x="160" y="12" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.5" lengthAdjust="spacingAndGlyphs" textLength="57" fill="rgba(26,26,26,0.4)">DOKUMENTE</text>
-        </g>
-
-        <rect x="22" y="22" width="296" height="616" rx="32" fill="url(#screen-sheen)" opacity="0.35" pointer-events="none"/>
-        </g>
-      </svg>
-      </div>
-      <div class="illus-caption" style="justify-content:center;">Die PANI App für Mieter</div>
-    </div>
-
-    <div class="section-text reveal d2">
-      <span class="kicker">Für Mieter</span>
-      <h2>Persönlich.<br/>Und immer erreichbar.</h2>
-      <p>
-        Gute Verwaltung merkt man im Alltag, wenn jemand abnimmt, wenn der Handwerker
-        kommt, wenn die Abrechnung verständlich ist. Bei uns haben Mieter einen festen
-        Ansprechpartner und eine App, die Wege verkürzt statt sie zu ersetzen.
-      </p>
-
-      <div class="mieter-points">
-        <div class="mieter-point">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20 C4 16 8 13 12 13 C16 13 20 16 20 20"/></svg>
-          <div>
-            <div class="mp-t">Fester Ansprechpartner</div>
-            <div class="mp-d">Statt Callcenter und Warteschleife kennen Sie den Menschen, der Ihr Haus betreut.</div>
-          </div>
-        </div>
-        <div class="mieter-point">
-          <svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
-          <div>
-            <div class="mp-t">Anliegen digital melden</div>
-            <div class="mp-d">Schaden fotografieren, absenden, Status verfolgen, vom Eingang bis zur Erledigung.</div>
-          </div>
-        </div>
-        <div class="mieter-point">
-          <svg viewBox="0 0 24 24"><path d="M6 3 H15 L19 7 V21 H6 Z"/><path d="M15 3 V7 H19"/></svg>
-          <div>
-            <div class="mp-t">Dokumente jederzeit abrufbar</div>
-            <div class="mp-d">Nebenkostenabrechnung, Schreiben und Vertragsunterlagen, sicher und ohne Nachfragen.</div>
-          </div>
-        </div>
-        <div class="mieter-point">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15.5 14"/></svg>
-          <div>
-            <div class="mp-t">Antwort in unter 24 Stunden</div>
-            <div class="mp-d">Jede Meldung wird priorisiert, Notfälle sofort, alles andere verbindlich terminiert.</div>
-          </div>
-        </div>
-      </div>
-
-      <a href="#kontakt" class="cta-link" style="margin-top: 36px;">
-        <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-        <span>Anliegen melden</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ KONTAKT-BAND ══ -->
-<div class="contact-band" id="kontakt">
-  <div class="contact-grid">
-    <div class="contact-copy">
-      <span class="kicker" style="color: rgba(255,255,255,0.7);">Kontakt</span>
-      <h2>Sprechen wir über<br/>Ihre Immobilie.</h2>
-      <p class="contact-intro">
-        Hinterlassen Sie uns Ihre Kontaktdaten, wir melden uns innerhalb eines Werktags
-        mit einer unverbindlichen Ersteinschätzung. Oder rufen Sie direkt an.
-      </p>
-
-      <p class="switch-label">Sie haben bereits eine Verwaltung? So einfach ist der Wechsel</p>
-      <div class="switch-steps">
-        <div class="sw-step">
-          <span class="sw-no">01</span>
-          <h3 class="sw-t">Erstgespräch</h3>
-          <p class="sw-d">Sie schildern Objekt und Situation, und wir geben eine ehrliche Einschätzung, ob und wie wir helfen können.</p>
-        </div>
-        <div class="sw-step">
-          <span class="sw-no">02</span>
-          <h3 class="sw-t">Übergabe</h3>
-          <p class="sw-d">Wir koordinieren Kündigungsfristen, Unterlagen und Übernahme mit Ihrer bisherigen Verwaltung, sodass Sie damit keine Arbeit haben.</p>
-        </div>
-        <div class="sw-step">
-          <span class="sw-no">03</span>
-          <h3 class="sw-t">Start</h3>
-          <p class="sw-d">Ihr Objekt läuft bei PANI, mit festem Ansprechpartner auf Gründerebene und strukturiertem Reporting vom ersten Monat an.</p>
-        </div>
-      </div>
-
-      <div class="founders-line">
-        <div class="fl-monos"><span class="fl-mono">NP</span><span class="fl-mono">PH</span></div>
-        <p>Ihre Anfrage lesen die Gründer persönlich, Niclas Paprocki und Paul Harm.</p>
-      </div>
-    </div>
-
-    <div class="contact-form-col">
-      <p class="cf-title">Unverbindliche Ersteinschätzung</p>
-      <!-- ══ KONTAKTFORMULAR ══
-           WICHTIG vor dem Live-Gang: Formspree-Formular-ID eintragen!
-           1. Kostenloses Konto auf https://formspree.io anlegen
-           2. Neues Formular erstellen -> Ziel-E-Mail = eure Adresse
-           3. Die Endpoint-URL (https://formspree.io/f/XXXXXXX) unten im action= einsetzen
-           Solange "DEINE_FORMSPREE_ID" drinsteht, wird noch nichts versendet. -->
-      <form class="contact-form" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST">
-        <input type="hidden" name="_subject" value="Neue Anfrage über pani-hv.de">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;">
-        <div class="cf-row">
-          <label class="cf-field">
-            <span>Name</span>
-            <input type="text" name="name" required autocomplete="name" placeholder="Ihr Name">
-          </label>
-          <label class="cf-field">
-            <span>E-Mail</span>
-            <input type="email" name="email" required autocomplete="email" placeholder="ihre@email.de">
-          </label>
-        </div>
-        <div class="cf-row">
-          <label class="cf-field">
-            <span>Telefon <em>(optional)</em></span>
-            <input type="tel" name="telefon" autocomplete="tel" placeholder="Für einen Rückruf">
-          </label>
-          <label class="cf-field">
-            <span>Ihr Anliegen</span>
-            <textarea name="nachricht" rows="3" required placeholder="Objekt, Anliegen, Fragen ..."></textarea>
-          </label>
-        </div>
-        <label class="cf-consent">
-          <input type="checkbox" name="datenschutz-einwilligung" required>
-          <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Einwilligung kann ich jederzeit widerrufen. *</span>
-        </label>
-        <button type="submit" class="btn solid cf-submit">Anfrage senden</button>
-        <p class="cf-note">* Pflichtfelder. Ihre Daten nutzen wir ausschließlich zur Bearbeitung Ihrer Anfrage. Näheres in der Datenschutzerklärung.</p>
-      </form>
-
-      <p class="cf-direct">Oder direkt an uns schreiben
-        <a href="mailto:info@pani-pm.de">info@pani-pm.de</a>
-        <span class="cf-sep" aria-hidden="true">·</span>
-        <a href="tel:+4930000000">(030) 00 00 00 00</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          <svg viewBox="0 0 60 60" fill="none">
-            <g stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
-              <rect x="14" y="14" width="8" height="32" />
-              <rect x="26" y="14" width="8" height="32" />
-              <rect x="38" y="14" width="8" height="32" />
-              <line x1="10" y1="10" x2="50" y2="10" />
-              <line x1="10" y1="50" x2="50" y2="50" />
-            </g>
-          </svg>
-          <span class="logo-text">PANI</span>
-        </div>
-        <p class="footer-cta">Ihre Immobilie in besten Händen.</p>
-        <div class="on-dark">
-          <a href="mailto:info@pani-pm.de" class="cta-link" style="margin-top:0;">
-            <span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>
-            <span>E-Mail senden</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Kontakt</h4>
-        <p>Telefon <a href="tel:+4930000000">(030) 00 00 00 00</a></p>
-        <p>E-Mail <a href="mailto:info@pani-pm.de">info@pani-pm.de</a></p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Adresse</h4>
-        <p>PANI Hausverwaltung</p>
-        <p>Westfälische Straße 62</p>
-        <p>10709 Berlin</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <p><a href="weg.html">Für Eigentümergemeinschaften (WEG)</a></p>
-        <p><a href="investoren.html">Für Investoren</a></p>
-        <p><a href="bestandshalter.html">Für Bestandshalter</a></p>
-        <p><a href="zinshaus.html">Für Zinshaus-Eigentümer</a></p>
-        <p><a href="sondereigentum.html">Sondereigentum (SEV)</a></p>
-        <p><a href="nachfolge.html">Nachfolge &amp; Übergänge</a></p>
-        <p><a href="#mieter">Für Mieter</a></p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <span class="copy">© PANI Hausverwaltung · Berlin</span>
-    </div>
-  </div>
-</footer>
-
-<!-- Overlay-Pill: Mieter-Schnellzugriff (Theo-Stil) -->
-<a class="tenant-pill" id="tenant-pill" href="#mieter">
-  <span class="tp-long">Sie sind Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Zum Mieterservice</span>
-  <span class="tp-short">Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Service</span>
-</a>
-
-<script>
-(function () {
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ── Laden: Fassade zeichnen + Fenster anschalten ── */
-  window.addEventListener('load', function () { document.body.classList.add('loaded'); });
-  setTimeout(function () { document.body.classList.add('loaded'); }, 1200); /* Fallback */
-
-  /* ── Scroll-Fortschritt + Navbar ── */
-  var progressBar = document.getElementById('progress-bar');
-  var navbar = document.getElementById('navbar');
-  var ticking = false;
-  function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () {
-      var h = document.documentElement;
-      var max = h.scrollHeight - h.clientHeight;
-      var p = max > 0 ? h.scrollTop / max : 0;
-      progressBar.style.transform = 'scaleX(' + p + ')';
-      navbar.classList.toggle('scrolled', h.scrollTop > 12);
-      ticking = false;
-    });
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* ── Reveal on scroll ── */
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-
-  /* ── Scrollspy ── */
-  var spyLinks = document.querySelectorAll('.nav-links a[data-spy]');
-  var spyMap = {};
-  spyLinks.forEach(function (a) { spyMap[a.getAttribute('data-spy')] = a; });
-  var spy = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      var link = spyMap[e.target.id];
-      if (!link) return;
-      if (e.isIntersecting) {
-        spyLinks.forEach(function (a) { a.classList.remove('active'); });
-        link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  ['zielgruppen', 'leistungen', 'sanierung', 'reporting', 'gruender', 'mieter'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (el) spy.observe(el);
-  });
-
-  /* ── Hero-Parallax (Maus, nur Desktop) ── */
-  var heroIllus = document.getElementById('hero-illus');
-  var hero = document.querySelector('.section-hero');
-  if (hero && heroIllus && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-    var raf = null;
-    hero.addEventListener('mousemove', function (e) {
-      if (raf) return;
-      raf = requestAnimationFrame(function () {
-        var r = hero.getBoundingClientRect();
-        var dx = (e.clientX - r.left) / r.width - 0.5;
-        var dy = (e.clientY - r.top) / r.height - 0.5;
-        heroIllus.style.transform = 'translate3d(' + (dx * -10) + 'px,' + (dy * -8) + 'px,0)';
-        raf = null;
-      });
-    });
-    hero.addEventListener('mouseleave', function () {
-      heroIllus.style.transition = 'transform .8s cubic-bezier(.2,.7,.2,1)';
-      heroIllus.style.transform = 'translate3d(0,0,0)';
-      setTimeout(function () { heroIllus.style.transition = ''; }, 800);
-    });
-  }
-
-  /* ── Phone 3D-Tilt ── */
-  var phoneWrap = document.getElementById('phone-wrap');
-  var phoneTilt = document.getElementById('phone-tilt');
-  if (phoneWrap && phoneTilt && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-    var pRaf = null;
-    phoneWrap.addEventListener('mousemove', function (e) {
-      if (pRaf) return;
-      pRaf = requestAnimationFrame(function () {
-        var r = phoneWrap.getBoundingClientRect();
-        var dx = (e.clientX - r.left) / r.width - 0.5;
-        var dy = (e.clientY - r.top) / r.height - 0.5;
-        phoneTilt.style.transform = 'rotateY(' + (dx * 10) + 'deg) rotateX(' + (dy * -8) + 'deg)';
-      pRaf = null;
-      });
-    });
-    phoneWrap.addEventListener('mouseleave', function () {
-      phoneTilt.style.transform = 'rotateY(0deg) rotateX(0deg)';
-    });
-  }
-
-  /* ── Energie-Rechner ── */
-  var CLASSES = [
-    { k: 'H', kwh: 275, color: '#8E2F23' },
-    { k: 'G', kwh: 225, color: '#A2452A' },
-    { k: 'F', kwh: 180, color: '#B05E2F' },
-    { k: 'E', kwh: 145, color: '#B58137' },
-    { k: 'D', kwh: 115, color: '#A8923F' },
-    { k: 'C', kwh: 87,  color: '#7C8C45' },
-    { k: 'B', kwh: 62,  color: '#587C4A' },
-    { k: 'A', kwh: 40,  color: '#3E6B4F' }
-  ];
-  var IST_INDEX = 2;        /* Klasse F - typischer unsanierter Altbau */
-  var PRICE_PER_KWH = 0.13; /* € je kWh Wärme, Beispielwert */
-  var AREA = 100;           /* m² Referenzfläche */
-
-  var scaleEl = document.getElementById('energy-scale');
-  var card = document.getElementById('energy-card');
-  var rBedarf = document.getElementById('r-bedarf');
-  var rEinsparung = document.getElementById('r-einsparung');
-  var rKosten = document.getElementById('r-kosten');
-  var zielIndex = 5; /* Start: Klasse C */
-  var current = { bedarf: 0, pct: 0, kosten: 0 };
-
-  function fmt(n) { return n.toLocaleString('de-DE'); }
-  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-
-  function tween(from, to, dur, step) {
-    if (reduceMotion) { step(to); return; }
-    var t0 = performance.now();
-    function frame(now) {
-      var t = Math.min(1, (now - t0) / dur);
-      step(from + (to - from) * easeOut(t));
-      if (t < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-
-  function pulse(id) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    el.classList.add('pulse');
-    setTimeout(function () { el.classList.remove('pulse'); }, 450);
-  }
-
-  function targets() {
-    var ist = CLASSES[IST_INDEX], ziel = CLASSES[zielIndex];
-    var diff = Math.max(0, ist.kwh - ziel.kwh);
-    return {
-      bedarf: ziel.kwh,
-      pct: Math.round((diff / ist.kwh) * 100),
-      kosten: Math.round(diff * AREA * PRICE_PER_KWH / 10) * 10
-    };
-  }
-
-  function renderResults(animate) {
-    var t = targets();
-    if (animate) {
-      tween(current.bedarf, t.bedarf, 600, function (v) { rBedarf.textContent = Math.round(v); });
-      tween(current.pct, t.pct, 600, function (v) {
-        var r = Math.round(v);
-        rEinsparung.textContent = (r > 0 ? '−' : '') + r;
-      });
-      tween(current.kosten, t.kosten, 600, function (v) { rKosten.textContent = fmt(Math.round(v / 10) * 10); });
-      pulse('res-1'); pulse('res-2'); pulse('res-3');
-    } else {
-      rBedarf.textContent = t.bedarf;
-      rEinsparung.textContent = (t.pct > 0 ? '−' : '') + t.pct;
-      rKosten.textContent = fmt(t.kosten);
-    }
-    current = t;
-  }
-
-  function renderScale() {
-    scaleEl.innerHTML = '';
-    CLASSES.forEach(function (c, i) {
-      var btn = document.createElement('button');
-      btn.className = 'energy-class'
-        + (i === IST_INDEX ? ' is-ist' : '')
-        + (i === zielIndex ? ' is-ziel' : '');
-      btn.setAttribute('aria-label', 'Zielklasse ' + c.k + ' wählen');
-      btn.setAttribute('aria-pressed', i === zielIndex ? 'true' : 'false');
-      btn.innerHTML =
-        (i === IST_INDEX ? '<span class="tag ist">Bestand</span>' : '') +
-        '<span class="bar" style="background:' + c.color + ';--d:' + (i * 0.07) + 's">' + c.k + '</span>' +
-        (i === zielIndex ? '<span class="tag ziel">Ziel</span>' : '');
-      btn.addEventListener('click', function () {
-        if (i === IST_INDEX || i === zielIndex) return;
-        zielIndex = i;
-        renderScale();
-        renderResults(true);
-      });
-      scaleEl.appendChild(btn);
-    });
-  }
-
-  /* ── Zielgruppen-Tabs ── */
-  var ROLES = [
-    { id: 'weg', url: 'weg.html', tab: 'WEG',
-      h: 'WEG-Verwaltung für Eigentümergemeinschaften',
-      sub: 'Für Wohnungseigentümergemeinschaften, die eine strukturierte, transparente und rechtssichere Verwaltung erwarten, mit klaren Beschlüssen, sauberer Abrechnung und verlässlicher Umsetzung.',
-      usps: ['Strukturierte Eigentümerversammlungen und konsequente Beschlussumsetzung',
-             'Transparente Hausgeldabrechnung und nachvollziehbare Rücklagenführung',
-             'Vorausschauende Instandhaltungsplanung für den Werterhalt',
-             'Rechtssichere Verwaltung nach aktuellem WEG-Recht'] },
-    { id: 'investoren', url: 'investoren.html', tab: 'Investoren',
-      h: 'Hausverwaltung für Investoren',
-      sub: 'Für Eigentümer, die nicht nur verwalten lassen, sondern ihre Immobilien professionell steuern wollen, mit transparenter Steuerung statt operativer Reibung.',
-      usps: ['Investorenportal mit Zugriff auf alle relevanten Informationen',
-             'Klare Reports zu Objektstatus, Maßnahmen und Entwicklung',
-             'Verwaltung mit Blick auf Rendite, Werterhalt und Exit-Fähigkeit',
-             'Strukturierte Prozesse für wachsende Portfolios'] },
-    { id: 'bestandshalter', url: 'bestandshalter.html', tab: 'Bestandshalter',
-      h: 'Hausverwaltung für Bestandshalter',
-      sub: 'Für Eigentümer, die Immobilien langfristig halten und professionell entwickeln wollen, mit Stabilität, laufender Optimierung und planbarer Entwicklung.',
-      usps: ['Langfristige Betreuung statt kurzfristiger Einzelfallverwaltung',
-             'Stabile Bewirtschaftung und nachhaltiger Werterhalt',
-             'Vorausschauende Instandhaltungs- und Maßnahmenplanung',
-             'Transparente Steuerung auch über mehrere Objekte'] },
-    { id: 'zinshaus', url: 'zinshaus.html', tab: 'Zinshaus',
-      h: 'Hausverwaltung für Zinshäuser',
-      sub: 'Für Eigentümer klassischer Wohn- und Mischobjekte, die Substanz sichern und Ertrag entwickeln wollen.',
-      usps: ['Kenntnis typischer Anforderungen Berliner Zinshäuser',
-             'Balance aus Mieterbelangen, Substanzerhalt und Wirtschaftlichkeit',
-             'Begleitung von Sanierungs-, Entwicklungs- und Optimierungsschritten',
-             'Verlässliche operative Umsetzung im Alltag'] },
-    { id: 'nachfolge', url: 'nachfolge.html', tab: 'Nachfolge & Übergänge',
-      h: 'Hausverwaltung bei Nachfolge und Neuordnung',
-      sub: 'Wenn sich Eigentümerstrukturen verändern, braucht es eine Verwaltung, die Stabilität sichert und Übergänge professionell begleitet.',
-      usps: ['Sicherheit und Kontinuität in Übergangsphasen',
-             'Strukturierte Übernahme bestehender Verwaltungsprozesse',
-             'Klare Dokumentation und Transparenz für neue Verantwortliche',
-             'Begleitung familiärer oder unternehmerischer Nachfolge'] }
-  ];
-
-  var roleTabs = document.getElementById('role-tabs');
-  var rolePanel = document.getElementById('role-panel');
-  if (roleTabs && rolePanel) {
-    var activeRole = 0;
-    var tabEls = ROLES.map(function (r, i) {
-      var b = document.createElement('button');
-      b.className = 'role-tab';
-      b.id = 'role-tab-' + r.id;
-      b.setAttribute('role', 'tab');
-      b.textContent = r.tab;
-      b.addEventListener('click', function () { selectRole(i); });
-      roleTabs.appendChild(b);
-      return b;
-    });
-
-    function panelHTML(r) {
-      var lis = r.usps.map(function (u) { return '<li>' + u + '</li>'; }).join('');
-      return '<div>' +
-        '<h3>' + r.h + '</h3>' +
-        '<p class="role-sub">' + r.sub + '</p>' +
-        '<a href="' + r.url + '" class="cta-link">' +
-          '<span class="arrow-circle"><svg viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20"/></svg></span>' +
-          '<span>Zur Detailseite</span>' +
-        '</a>' +
-        '<p class="role-alt"><a href="#kontakt">Oder direkt unverbindlich anfragen</a></p>' +
-      '</div>' +
-      '<ul class="role-usps">' + lis + '</ul>';
-    }
-
-    function renderRole() {
-      rolePanel.innerHTML = panelHTML(ROLES[activeRole]);
-      tabEls.forEach(function (t, k) {
-        t.classList.toggle('active', k === activeRole);
-        t.setAttribute('aria-selected', k === activeRole ? 'true' : 'false');
-      });
-      rolePanel.setAttribute('aria-labelledby', 'role-tab-' + ROLES[activeRole].id);
-    }
-
-    function selectRole(i) {
-      if (i === activeRole) return;
-      activeRole = i;
-      if (reduceMotion) { renderRole(); return; }
-      rolePanel.classList.add('switching');
-      setTimeout(function () {
-        renderRole();
-        rolePanel.classList.remove('switching');
-      }, 200);
-    }
-
-    renderRole();
-  }
-
-  if (scaleEl) {
-    renderScale();
-    renderResults(false);
-    /* Nach der ersten Einblend-Animation Stagger-Delays abschalten */
-    var readyCheck = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          setTimeout(function () { card.classList.add('ready'); }, 1200);
-          readyCheck.unobserve(card);
-        }
-      });
-    }, { threshold: 0.2 });
-    readyCheck.observe(card);
-  }
-})();
-</script>
-
-<script>
-(function () {
-  var burger = document.getElementById('nav-burger');
-  var menu = document.getElementById('mobile-menu');
-  if (!burger || !menu) return;
-
-  function setOpen(open) {
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-    if (open) { menu.removeAttribute('hidden'); } else { menu.setAttribute('hidden', ''); }
-    document.body.classList.toggle('menu-open', open);
-  }
-
-  burger.addEventListener('click', function () {
-    setOpen(burger.getAttribute('aria-expanded') !== 'true');
-  });
-
-  /* Schließen bei Linkklick (Anker scrollt danach normal) */
-  menu.addEventListener('click', function (e) {
-    var a = e.target; while (a && a !== menu && a.tagName !== 'A') a = a.parentNode;
-    if (a && a.tagName === 'A') setOpen(false);
-  });
-
-  /* Schließen mit Escape, Fokus zurück auf den Button */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
-      setOpen(false); burger.focus();
-    }
-  });
-
-  /* Beim Wechsel auf Desktop-Breite aufräumen (Scroll-Lock lösen) */
-  var mq = window.matchMedia('(min-width: 961px)');
-  function onMq(e) { if (e.matches) setOpen(false); }
-  if (mq.addEventListener) { mq.addEventListener('change', onMq); } else { mq.addListener(onMq); }
-})();
-</script>
-
-<script>
-(function () {
-  var pill = document.getElementById('tenant-pill');
-  if (!pill) return;
-  /* Ausblende-Zone: Kontakt-Band (index/en: #kontakt) bzw. CTA-Band der Unterseiten (.band).
-     So verdeckt die Pill nie den Formular-Submit bzw. die Band-Buttons. */
-  var hideZone = document.getElementById('kontakt') || document.querySelector('.band');
-  var inHideZone = false;
-  var THRESHOLD = 420; /* px Scroll bis zum Einblenden */
-
-  function update() {
-    pill.classList.toggle('is-visible', window.scrollY > THRESHOLD && !inHideZone);
-  }
-  if (hideZone && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { inHideZone = e.isIntersecting; });
-      update();
-    }, { threshold: 0 }).observe(hideZone);
-  }
-  var ticking = false;
-  window.addEventListener('scroll', function () {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () { update(); ticking = false; });
-  }, { passive: true });
-  update();
-})();
-</script>
-
-<script>
-(function () {
-  var rot = document.getElementById('kpi-rotator');
-  if (!rot) return;
-  var slides = rot.querySelectorAll('.kr-slide');
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* Reduzierte Bewegung: statische 2×2-Liste, alle KPIs sichtbar, keine Rotation */
-  if (reduceMotion || slides.length < 2) {
-    rot.classList.add('kr-static');
-    slides.forEach(function (s) { s.removeAttribute('aria-hidden'); s.classList.add('is-active'); });
-    return;
-  }
-
-  var idx = 0, timer = null, inView = false, paused = false;
-  var INTERVAL = 4000;
-
-  function show(n) {
-    slides.forEach(function (s, k) {
-      var wasActive = s.classList.contains('is-active');
-      s.classList.toggle('is-leaving', wasActive && k !== n);
-      s.classList.toggle('is-active', k === n);
-      if (k === n) { s.removeAttribute('aria-hidden'); }
-      else { s.setAttribute('aria-hidden', 'true'); }
-    });
-    idx = n;
-  }
-
-  function tick() { show((idx + 1) % slides.length); }
-
-  function sync() {
-    var run = inView && !paused && !document.hidden;
-    if (run && !timer) { timer = setInterval(tick, INTERVAL); }
-    else if (!run && timer) { clearInterval(timer); timer = null; }
-  }
-
-  /* Nur rotieren, wenn das Modul im Viewport ist */
-  new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { inView = e.isIntersecting; });
-    sync();
-  }, { threshold: 0.35 }).observe(rot);
-
-  /* Pause bei Hover und Fokus im Modul */
-  rot.addEventListener('mouseenter', function () { paused = true; sync(); });
-  rot.addEventListener('mouseleave', function () { paused = false; sync(); });
-  rot.addEventListener('focusin',  function () { paused = true; sync(); });
-  rot.addEventListener('focusout', function () { paused = false; sync(); });
-  document.addEventListener('visibilitychange', sync);
-
-  show(0);
-})();
-</script>
-
-</body>
+    </footer>
+  </body>
 </html>

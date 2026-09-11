@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tenant services | PANI Property Management Berlin</title>
+    <meta
+      name="description"
+      content="Contact PANI about repairs, documents or your tenancy. Get in touch at info@pani-hv.de."
+    />
+    <link rel="canonical" href="https://www.pani-hv.de/en-tenants.html" />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href="https://www.pani-hv.de/mieter.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.pani-hv.de/en-tenants.html"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#19382d" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="en.html#top" aria-label="PANI home"
+          ><svg class="brand-mark" aria-hidden="true">
+            <use href="assets/icons.svg#pani" /></svg
+          ><span class="brand-name">PANI</span></a
+        >
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="en.html#leistungen">Services</a
+          ><a href="en.html#gruender">About us</a
+          ><a href="en.html#reporting">How we work</a
+          ><a href="en-tenants.html">Tenant services</a>
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language"
+            href="mieter.html"
+            lang="de"
+            aria-label="Deutsche Version"
+            >DE</a
+          ><a class="button" href="en.html#kontakt"
+            >Contact
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#arrow-up-right" /></svg></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            data-menu-toggle
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Open menu"
+            title="Open menu"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#menu" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        data-mobile-menu
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="en.html#leistungen">Services</a
+        ><a href="en.html#gruender">About us</a
+        ><a href="en.html#reporting">How we work</a
+        ><a href="en-tenants.html">Tenant services</a
+        ><a href="en.html#kontakt">Contact</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="tenant-hero">
+        <div class="wrap">
+          <span class="eyebrow">PANI tenant services</span>
+          <h1>How can we<br />help you?</h1>
+          <p>
+            A repair, a missing document or a question about your apartment?
+            Include your property address so we can direct your enquiry to the
+            right person.
+          </p>
+        </div>
+      </section>
+      <section class="tenant-main">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <h2>Your direct contact.</h2>
+            <div class="contact-details">
+              <a href="mailto:info@pani-hv.de?subject=Tenant%20enquiry"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#mail" /></svg
+                >info@pani-hv.de</a
+              >
+            </div>
+            <div class="tenant-guidance">
+              <div>
+                <h3>Report a repair</h3>
+                <p>
+                  Tell us where and what the problem is, and include a callback
+                  number. You can attach photos in your email app.
+                </p>
+              </div>
+              <div>
+                <h3>Request documents</h3>
+                <p>
+                  Tell us which statement or document you need and the period it
+                  covers.
+                </p>
+              </div>
+              <div>
+                <h3>Urgent issues</h3>
+                <p>
+                  For urgent issues, please use the emergency contacts provided
+                  for your building. Email is not an emergency channel.
+                </p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" data-email-form="tenant" hidden>
+            <h3 class="form-heading">Your enquiry</h3>
+            <p class="form-explanation">
+              Prepare your message here, then send it from your email app.
+            </p>
+            <div class="form-grid">
+              <label class="field"
+                >Your name<input
+                  name="name"
+                  required
+                  autocomplete="name"
+                  maxlength="100"
+                  placeholder="First and last name" /></label
+              ><label class="field"
+                >Email<input
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  maxlength="180"
+                  placeholder="name@example.com"
+              /></label>
+              <label class="field field-wide"
+                >Property address and apartment<input
+                  name="address"
+                  required
+                  maxlength="200"
+                  placeholder="Street, building number, floor / apartment number"
+              /></label>
+              <label class="field"
+                >What is your enquiry about?<select name="topic" required>
+                  <option value="">Please select</option>
+                  <option>Repair / damage</option>
+                  <option>Statement / documents</option>
+                  <option>Tenancy question</option>
+                  <option>Other</option>
+                </select></label
+              ><label class="field"
+                ><span>Phone <span class="optional">(optional)</span></span
+                ><input
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  maxlength="40"
+                  placeholder="For a callback"
+              /></label>
+              <label class="field field-wide"
+                >Your message<textarea
+                  name="message"
+                  required
+                  maxlength="3000"
+                  placeholder="Please describe your enquiry in as much detail as possible."
+                ></textarea>
+              </label>
+            </div>
+            <div class="form-bottom">
+              <button class="button" type="submit">
+                Prepare email
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#arrow-up-right" />
+                </svg>
+              </button>
+            </div>
+            <p class="privacy-note">
+              Your details are only transmitted when you send the email from
+              your email app. Read more in our
+              <a href="en-privacy.html">privacy notice</a>.
+            </p>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </form>
+          <noscript
+            ><p>
+              Email your property address and enquiry to
+              <a href="mailto:info@pani-hv.de">info@pani-hv.de</a>.
+            </p></noscript
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="en.html#top"
+              ><svg class="brand-mark" aria-hidden="true">
+                <use href="assets/icons.svg#pani" /></svg
+              ><span class="brand-name">PANI</span></a
+            >
+            <p>Personally led. At home in Berlin.</p>
+          </div>
+          <nav class="footer-links" aria-label="Further information">
+            <a href="en-weg.html">WEG</a
+            ><a href="en-miethaus.html">Rental buildings</a
+            ><a href="en-sondereigentum.html">Individual apartments</a
+            ><a href="en-tenants.html">Tenant services</a
+            ><a href="en-imprint.html">Legal notice</a
+            ><a href="en-privacy.html">Privacy</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© PANI Hausverwaltung · Berlin</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
