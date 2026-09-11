@@ -14,9 +14,6 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#7F332A">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -224,12 +221,13 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   .band h2 { font-size:25px; }
 }
 </style>
+<link rel="stylesheet" href="assets/legacy.css">
 </head>
 <body>
 <nav class="navbar" aria-label="Hauptnavigation">
   <a href="index.html" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
   <ul class="nav-links">
-    <li class="hide-m"><a href="index.html#zielgruppen">Alle Eigentümerrollen</a></li>
+    <li class="hide-m"><a href="index.html#zielgruppen">Leistungen</a></li>
     <li><a href="en-portfolio-holders.html">EN</a></li>
     <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
     <li class="nav-burger-li">
@@ -241,7 +239,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   <div class="mobile-menu" id="mobile-menu" hidden>
     <ul>
       <li><a href="index.html">Startseite</a></li>
-      <li><a href="index.html#zielgruppen">Alle Eigentümerrollen</a></li>
+      <li><a href="index.html#zielgruppen">Leistungen</a></li>
       <li><a href="index.html#kontakt">Kontakt</a></li>
       <li class="mm-lang"><a href="en-portfolio-holders.html">EN · English version</a></li>
     </ul>
@@ -384,15 +382,14 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
   <h2>Sprechen wir über Ihren Bestand.</h2>
   <p>Hinterlassen Sie uns Ihre Eckdaten — wir melden uns innerhalb eines Werktags mit einer unverbindlichen Ersteinschätzung.</p>
   <div class="band-ctas">
-    <a class="btn solid" href="mailto:info@pani-pm.de">E-Mail senden</a>
-    <a class="btn ghost" href="tel:+4930000000">(030) 00 00 00 00</a>
+    <a class="btn solid" href="mailto:info@pani-hv.de">E-Mail senden</a>
   </div>
 </div>
 
 <footer>
   <div class="foot-brand">
     <a href="index.html" class="foot-logo" aria-label="PANI Startseite"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span>PANI</span></a>
-    <a class="foot-mail" href="mailto:info@pani-pm.de">info@pani-pm.de</a>
+    <a class="foot-mail" href="mailto:info@pani-hv.de">info@pani-hv.de</a>
   </div>
   <div class="foot-inner">
     <a href="index.html">Startseite</a>
@@ -403,7 +400,7 @@ body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über d
 </footer>
 
 <!-- Overlay-Pill: Mieter-Schnellzugriff (Theo-Stil) -->
-<a class="tenant-pill" id="tenant-pill" href="index.html#mieter">
+<a class="tenant-pill" id="tenant-pill" href="mieter.html">
   <span class="tp-long">Sie sind Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Zum Mieterservice</span>
   <span class="tp-short">Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Service</span>
 </a>

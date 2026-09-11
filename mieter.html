@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mieterservice | PANI Hausverwaltung Berlin</title>
+    <meta
+      name="description"
+      content="Ihr Anliegen an die PANI Hausverwaltung: Reparaturen, Unterlagen und Fragen zu Ihrer Wohnung. Kontaktieren Sie uns unter info@pani-hv.de."
+    />
+    <link rel="canonical" href="https://www.pani-hv.de/mieter.html" />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href="https://www.pani-hv.de/mieter.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.pani-hv.de/en-tenants.html"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#19382d" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="index.html#top" aria-label="PANI Startseite"
+          ><svg class="brand-mark" aria-hidden="true">
+            <use href="assets/icons.svg#pani" /></svg
+          ><span class="brand-name">PANI</span></a
+        >
+        <nav class="desktop-nav" aria-label="Hauptnavigation">
+          <a href="index.html#leistungen">Leistungen</a
+          ><a href="index.html#gruender">Über uns</a
+          ><a href="index.html#reporting">Arbeitsweise</a
+          ><a href="mieter.html">Mieterservice</a>
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language"
+            href="en-tenants.html"
+            lang="en"
+            aria-label="English version"
+            >EN</a
+          ><a class="button" href="index.html#kontakt"
+            >Kontakt
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#arrow-up-right" /></svg></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            data-menu-toggle
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Menü öffnen"
+            title="Menü öffnen"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#menu" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        data-mobile-menu
+        aria-label="Mobile Navigation"
+        hidden
+      >
+        <a href="index.html#leistungen">Leistungen</a
+        ><a href="index.html#gruender">Über uns</a
+        ><a href="index.html#reporting">Arbeitsweise</a
+        ><a href="mieter.html">Mieterservice</a
+        ><a href="index.html#kontakt">Kontakt</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="tenant-hero">
+        <div class="wrap">
+          <span class="eyebrow">PANI Mieterservice</span>
+          <h1>Was können wir<br />für Sie tun?</h1>
+          <p>
+            Eine Reparatur, ein fehlendes Dokument oder eine Frage zu Ihrer
+            Wohnung? Schreiben Sie uns mit Ihrer Objektadresse, damit wir Ihr
+            Anliegen zuordnen können.
+          </p>
+        </div>
+      </section>
+      <section class="tenant-main">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <h2>Ihr direkter Kontakt.</h2>
+            <div class="contact-details">
+              <a href="mailto:info@pani-hv.de?subject=Mieteranliegen"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#mail" /></svg
+                >info@pani-hv.de</a
+              >
+            </div>
+            <div class="tenant-guidance">
+              <div>
+                <h3>Reparatur melden</h3>
+                <p>
+                  Nennen Sie Ort und Art des Problems sowie eine Rückrufnummer.
+                  Fotos können Sie anschließend in Ihrem E-Mail-Programm
+                  ergänzen.
+                </p>
+              </div>
+              <div>
+                <h3>Unterlagen anfragen</h3>
+                <p>
+                  Welche Abrechnung oder welches Schreiben benötigen Sie? Geben
+                  Sie bitte auch den betreffenden Zeitraum an.
+                </p>
+              </div>
+              <div>
+                <h3>Dringende Störung</h3>
+                <p>
+                  Für dringende Störungen nutzen Sie bitte die für Ihr Haus
+                  mitgeteilten Notfallkontakte. E-Mail ist kein Notfallkanal.
+                </p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" data-email-form="tenant" hidden>
+            <h3 class="form-heading">Ihr Anliegen</h3>
+            <p class="form-explanation">
+              Bereiten Sie Ihre Nachricht vor. Den Versand übernehmen Sie
+              anschließend in Ihrem E-Mail-Programm.
+            </p>
+            <div class="form-grid">
+              <label class="field"
+                >Ihr Name<input
+                  name="name"
+                  required
+                  autocomplete="name"
+                  maxlength="100"
+                  placeholder="Vor- und Nachname" /></label
+              ><label class="field"
+                >E-Mail<input
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  maxlength="180"
+                  placeholder="name@beispiel.de"
+              /></label>
+              <label class="field field-wide"
+                >Objektadresse und Wohnung<input
+                  name="address"
+                  required
+                  maxlength="200"
+                  placeholder="Straße, Hausnummer, Etage / Wohnungsnummer"
+              /></label>
+              <label class="field"
+                >Worum geht es?<select name="topic" required>
+                  <option value="">Bitte auswählen</option>
+                  <option>Reparatur / Schaden</option>
+                  <option>Abrechnung / Unterlagen</option>
+                  <option>Frage zum Mietverhältnis</option>
+                  <option>Sonstiges</option>
+                </select></label
+              ><label class="field"
+                ><span>Telefon <span class="optional">(optional)</span></span
+                ><input
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  maxlength="40"
+                  placeholder="Für einen Rückruf"
+              /></label>
+              <label class="field field-wide"
+                >Ihre Nachricht<textarea
+                  name="message"
+                  required
+                  maxlength="3000"
+                  placeholder="Beschreiben Sie Ihr Anliegen möglichst konkret."
+                ></textarea>
+              </label>
+            </div>
+            <div class="form-bottom">
+              <button class="button" type="submit">
+                E-Mail vorbereiten
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg#arrow-up-right" />
+                </svg>
+              </button>
+            </div>
+            <p class="privacy-note">
+              Die Eingaben werden erst beim Versand in Ihrem E-Mail-Programm
+              übermittelt. Mehr zur Verarbeitung in der
+              <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </form>
+          <noscript
+            ><p>
+              Schreiben Sie mit Ihrer Objektadresse und Ihrem Anliegen an
+              <a href="mailto:info@pani-hv.de">info@pani-hv.de</a>.
+            </p></noscript
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="index.html#top"
+              ><svg class="brand-mark" aria-hidden="true">
+                <use href="assets/icons.svg#pani" /></svg
+              ><span class="brand-name">PANI</span></a
+            >
+            <p>Persönlich geführt. In Berlin zu Hause.</p>
+          </div>
+          <nav class="footer-links" aria-label="Weitere Informationen">
+            <a href="weg.html">WEG</a><a href="miethaus.html">Miethaus</a
+            ><a href="sondereigentum.html">Sondereigentum</a
+            ><a href="mieter.html">Mieterservice</a
+            ><a href="impressum.html">Impressum</a
+            ><a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© PANI Hausverwaltung · Berlin</span
+          ><span class="footer-credit"
+            >Stadtansicht:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Oderberger_Stra%C3%9Fe_1941.jpg"
+              target="_blank"
+              rel="noopener"
+              >Franz Richter</a
+            >
+            ·
+            <a
+              href="https://creativecommons.org/licenses/by-sa/3.0/"
+              target="_blank"
+              rel="noopener"
+              >CC BY-SA 3.0</a
+            >
+            · Ausschnitt, WebP-Konvertierung</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

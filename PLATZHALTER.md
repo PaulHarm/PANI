@@ -1,49 +1,36 @@
-# 📋 Platzhalter-Liste (intern)
+# Offene Angaben und Veröffentlichungsstand
 
-Diese Datei sammelt **alle Stellen mit Platzhaltern / Demo-Inhalten**, die vor dem echten Launch
-durch reale Daten, Texte oder Bilder ersetzt werden müssen. Bewusst bewahrt, damit nichts vergessen wird.
+Stand: Website-Überarbeitung vom 11. September 2026.
 
-> Zeilennummern sind ein Anhaltspunkt (verschieben sich beim Bearbeiten leicht). Stand: erste Erfassung.
+## Erledigt
 
----
+- Kontaktadresse vom Inhaber bestätigt: `info@pani-hv.de`, in allen HTML-Seiten aktualisiert.
+- Vorhandene Anschrift übernommen: Westfälische Straße 62, 10709 Berlin.
+- Platzhalter-Telefonnummern aus den sichtbaren Seiten entfernt.
+- Formspree-Platzhalter entfernt. Kontakt und Mieterservice bereiten transparent einen E-Mail-Entwurf vor; kein automatischer Versand.
+- Deutsche und englische Startseite gestrafft; drei Verwaltungsarten als Haupteinstieg.
+- Eigentümerbericht deutlich als Muster gekennzeichnet. Sanierungsrechner, wechselnde Kennzahlen und App-Mockup von den Startseiten entfernt.
+- Bilder, Icons und Schriftdateien werden lokal ausgeliefert. Quellen und Lizenzen bleiben dokumentiert.
+- Pauls vorhandenes Porträt eingebunden.
 
-## A. Kontaktdaten  ⚠️ auf ALLEN Seiten
-Der Kontakt-/Footer-Block ist auf jeder Seite gleich. Vorkommen u. a.:
-`index.html`, `en.html` und alle Unterseiten (`investoren`, `bestandshalter`, `zinshaus`,
-`nachfolge`, `sondervermoegen`, `en-*`).
+## Noch vom Inhaber zu ergänzen
 
-- [x] **Adresse:** `Westfälische Straße 62, 10709 Berlin` eingetragen (2026-09-10, Footer `index.html` + `en.html`). Noch offen: dieselbe Adresse ins Impressum (`impressum.html`/`en-imprint.html`) und in die Datenschutzerklärung übernehmen, sobald auch Rechtsform/Vertretung bekannt sind.
-- [ ] **Telefon:** `(030) 00 00 00 00` (Link `tel:+4930000000`) → echte Nummer
-- [ ] **Telefax:** `(030) 00 00 00 01` → echte Nummer (oder entfernen)
-- [ ] **E-Mail:** `info@pani-pm.de` → echte Adresse
-      ⚠️ **Domain-Widerspruch:** Website läuft auf **pani-hv.de** (CNAME), E-Mail nutzt **pani-pm.de** — klären, welche stimmt.
+- Rechtsform und tatsächliche Vertretungsangaben.
+- Zutreffende Register-, Steuer-, Erlaubnis- und Versicherungsangaben für Impressum und englische Fassung.
+- Endgültige Prüfung und Vervollständigung der Rechtstexte. Die verbleibenden Platzhalter sind ausdrücklich sichtbar.
+- Porträt von Niclas Paprocki; bis dahin bleibt sein Monogramm sichtbar. Kein Ersatzfoto wird als echtes Porträt ausgegeben.
+- Echte Telefonnummer und ggf. objektbezogene Notfallkontakte, sofern sie öffentlich angeboten werden sollen.
 
-## B. Rechtstexte  ⚠️ Pflicht vor Launch
-**`impressum.html`**
-- [ ] `[Rechtsform eintragen, z. B. GmbH]`
-- [ ] `[Straße Hausnummer]`, Vertretung/Funktion
-- [ ] `Registergericht: [Amtsgericht]`, `Registernummer: [HRB …]`, USt-IdNr.
-- [ ] `§ 34c GewO: [zuständiges Bezirksamt]`, Berufshaftpflicht `[Versicherer, Geltungsraum]`
-- [ ] Verantwortlich n. § 18 MStV: `[Name, Anschrift]`
+## Optionale nächste Schritte
 
-**`datenschutz.html`**
-- [ ] Verantwortlicher: `PANI Hausverwaltung [Rechtsform], [Anschrift]`
-- [ ] `[Hosting-Anbieter eintragen]`
+- Empfangsdienst für einen Versand direkt von der Website einrichten, falls die E-Mail-Entwurfsfunktion ersetzt werden soll.
+- Tatsächliche Portal-, Archiv- und Serviceangebote auf allen Detailseiten mit dem Betriebsmodell abgleichen.
+- Stadtansicht durch ein eigenes, für diese Nutzung freigegebenes Wohnimmobilienfoto ersetzen.
 
-## C. Bilder / echte Identität  🖼️  („echte Identität klar mit Bildern")
-- [x] **Paul Harm:** echtes Porträtfoto eingebaut (`assets/paul-harm.jpg`, 2026-09-10)
-- [ ] **Niclas Paprocki:** noch Initiale „**NP**" → echtes Porträtfoto
-- [x] **Hero-Gebäudebild:** ersetzt durch eigenes Foto (`assets/berlin-cityscape.jpg`, Breitscheidplatz/City West, 2026-09-10) — kein Fremdfoto mehr, keine Attribution nötig. Gilt für `index.html` + `en.html`.
-- [ ] **Sanierungs-Bild:** Unsplash-Stockfoto (`images.unsplash.com/...`) → **eigenes** Foto
-- [ ] gilt jeweils auch in `en.html`
+## Prüfung dieser Überarbeitung
 
-## D. Beispiel-/Demo-Werte  📊  (bewusst illustrativ — später prüfen)
-- [ ] **Energie-Rechner:** „Beispielwerte" (87 kWh/m²a, −52 %, ≈ 1.210 €/Jahr; `PRICE_PER_KWH = 0.13`)
-- [ ] **Reporting-Grafik:** Demo-Zahlen (Portfolio € 124.500 / +4,2 %, Leerstand 1,2 %, Rücklagen € 82k)
-- [ ] **Bildunterschriften:** „Berliner Bestand · Beispielobjekt", „Beispielreport anfordern"
-
----
-
-## Notizen / Entscheidungen
-- Investmentbanking-Bezug: **nur** im Gründer-/Über-uns-Teil (bei Niclas) — nicht in Hero/Prinzipien.
-- Kontaktdaten & Rechtstexte: **erstmal Platzhalter belassen**, später gesammelt ersetzen.
+- Kontaktlogik: sieben automatisierte Tests bestanden.
+- Interne Dateien und Abschnittsanker: 527 Referenzen auf 23 HTML-Seiten geprüft.
+- Browserprüfung nach vorübergehendem Nutzungslimit durchgeführt: Desktop 1280 Pixel, Smartphone 390 und 320 Pixel, deutsche und englische Sprachführung, Mieterservice, Menü/Escape, Pflichtfeldvalidierung und Bilddarstellung. Kein echter E-Mail-Versand ausgelöst.
+- Mobile Startseite bei 390 × 844 Pixeln: rund 6.575 Pixel statt zuvor 18.139 Pixel Gesamthöhe. Erste Kontaktfelder nach dem Sprung zu Kontakt sichtbar.
+- Die Überarbeitung wird zunächst als separater GitHub-Branch mit einem Entwurfs-Pull-Request bereitgestellt.
