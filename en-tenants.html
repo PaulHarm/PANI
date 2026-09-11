@@ -21,8 +21,11 @@
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#19382d" />
+
     <link rel="stylesheet" href="assets/site.css" />
+    <link rel="stylesheet" href="assets/pages.css" />
     <script src="assets/site.js" defer></script>
+    <script src="assets/experience.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -36,8 +39,8 @@
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="en.html#leistungen">Services</a
           ><a href="en.html#gruender">About us</a
-          ><a href="en.html#reporting">How we work</a
-          ><a href="en-tenants.html">Tenant services</a>
+          ><a href="en-reporting.html">How we work</a
+          ><a href="en.html#kontakt">Contact</a>
         </nav>
         <div class="header-actions">
           <a
@@ -46,14 +49,14 @@
             lang="de"
             aria-label="Deutsche Version"
             >DE</a
-          ><a class="button" href="en.html#kontakt"
-            >Contact
-            <svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg#arrow-up-right" /></svg></a
+          ><a class="button tenant-button" href="en-portal.html"
+            ><svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#users" /></svg
+            ><span>Tenant portal</span></a
           ><button
             class="menu-toggle"
             type="button"
-            data-menu-toggle
+            data-menu-toggle=""
             aria-controls="mobile-nav"
             aria-expanded="false"
             aria-label="Open menu"
@@ -68,13 +71,13 @@
       <nav
         class="mobile-nav"
         id="mobile-nav"
-        data-mobile-menu
+        data-mobile-menu=""
         aria-label="Mobile navigation"
         hidden
       >
         <a href="en.html#leistungen">Services</a
         ><a href="en.html#gruender">About us</a
-        ><a href="en.html#reporting">How we work</a
+        ><a href="en-reporting.html">How we work</a
         ><a href="en-tenants.html">Tenant services</a
         ><a href="en.html#kontakt">Contact</a>
       </nav>
@@ -223,6 +226,8 @@
             ><a href="en-tenants.html">Tenant services</a
             ><a href="en-imprint.html">Legal notice</a
             ><a href="en-privacy.html">Privacy</a>
+            <a href="en-reporting.html">Reporting</a
+            ><a href="en-portal.html">Tenant portal</a>
           </nav>
         </div>
         <div class="footer-bottom">

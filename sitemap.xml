@@ -22,4 +22,8 @@
   <url><loc>https://www.pani-hv.de/en-privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.pani-hv.de/mieter.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.pani-hv.de/en-tenants.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.pani-hv.de/reporting.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.pani-hv.de/en-reporting.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.pani-hv.de/mieterportal.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.pani-hv.de/en-portal.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>

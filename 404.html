@@ -1,94 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Seite nicht gefunden (404) · PANI Hausverwaltung Berlin</title>
-<meta name="robots" content="noindex"/>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#7F332A">
-<style>
-* { box-sizing:border-box; margin:0; padding:0; }
-:root {
-  --ink:#221E1A; --paper:#F7F3EB; --paper-w:#FFF; --butter:#F1E9DC; --coal:#171310;
-  --accent:#7F332A; --line:rgba(34,30,26,.14);
-  --serif:'Fraunces',Georgia,serif; --sans:'IBM Plex Sans',Helvetica,Arial,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; --pad:clamp(28px,5vw,72px);
-}
-html { background:var(--paper); }
-body { font-family:var(--sans); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased;
-  min-height:100vh; display:flex; flex-direction:column; }
-a { color:inherit; text-decoration:none; }
-svg { display:block; }
-::selection { background:#D4C4A9; color:var(--ink); }
-:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-.navbar { display:flex; align-items:center; justify-content:space-between; padding:16px var(--pad); border-bottom:1px solid var(--line); }
-.logo { display:flex; align-items:center; gap:12px; }
-.logo svg { width:30px; height:30px; }
-.logo-text { font-family:var(--serif); font-size:20px; letter-spacing:.18em; text-transform:uppercase; }
-.nav-links { display:flex; gap:22px; list-style:none; align-items:center; }
-.nav-links a { font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:#3E3931; transition:color .3s; }
-.nav-links a:hover { color:var(--accent); }
-.err { flex:1; display:flex; align-items:center; justify-content:center; text-align:center;
-  padding:clamp(60px,12vh,140px) var(--pad); background:linear-gradient(180deg,var(--paper),var(--butter)); }
-.err-inner { max-width:560px; }
-.err .code { font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--accent);
-  display:inline-flex; align-items:center; gap:12px; margin-bottom:26px; }
-.err .code::before { content:""; width:32px; height:1px; background:currentColor; }
-.err h1 { font-family:var(--serif); font-weight:300; letter-spacing:-.02em; line-height:1.08;
-  font-size:clamp(40px,6vw,68px); margin-bottom:20px; }
-.err p { font-size:16px; line-height:1.8; color:rgba(26,26,26,.7); max-width:44ch; margin:0 auto 34px; }
-.err .en { display:block; font-size:13px; color:rgba(26,26,26,.45); margin-top:8px; }
-.ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-.btn { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:.18em;
-  text-transform:uppercase; padding:15px 26px; border-radius:999px; border:1px solid var(--ink); transition:all .3s; }
-.btn.solid { background:var(--accent); border-color:var(--accent); color:#fff; }
-.btn.solid:hover { background:var(--ink); border-color:var(--ink); transform:translateY(-2px); }
-.btn.ghost:hover { background:var(--ink); border-color:var(--ink); color:#fff; transform:translateY(-2px); }
-footer { background:var(--coal); color:rgba(255,255,255,.55); padding:32px var(--pad);
-  font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
-  display:flex; flex-wrap:wrap; gap:18px 32px; align-items:center; }
-footer a:hover { color:#fff; }
-footer .copy { margin-left:auto; font-family:var(--sans); text-transform:none; letter-spacing:.1em; opacity:.5; }
-@media (max-width:600px){ .nav-links .hide-m { display:none; } }
-/* ── Schmalbild-Fix: unter 405px sauber umbrechen statt kappen; ab 405px unverändert ── */
-@media (max-width:404px){
-  .err h1, .err p { overflow-wrap:break-word; -webkit-hyphens:auto; hyphens:auto; }
-}
-</style>
-<link rel="stylesheet" href="/assets/legacy.css">
-</head>
-<body>
-<nav class="navbar" aria-label="Hauptnavigation">
-  <a href="/" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
-  <ul class="nav-links">
-    <li class="hide-m"><a href="/#zielgruppen">Eigentümerstruktur</a></li>
-    <li><a href="/en.html">EN</a></li>
-    <li><a href="/#kontakt">Kontakt</a></li>
-  </ul>
-</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seite nicht gefunden (404) · PANI Hausverwaltung Berlin</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#19382d" />
 
-<main class="err">
-  <div class="err-inner">
-    <span class="code">Fehler 404</span>
-    <h1>Seite nicht gefunden.</h1>
-    <p>Diese Seite existiert nicht (mehr) oder wurde verschoben. Kehren Sie zur Startseite zurück oder sprechen Sie uns direkt an.
-      <span class="en" lang="en">This page could not be found. <a href="/en.html" style="color:var(--accent);border-bottom:1px solid currentColor;">Continue to the English homepage</a>.</span>
-    </p>
-    <div class="ctas">
-      <a class="btn solid" href="/">Zur Startseite</a>
-      <a class="btn ghost" href="/#kontakt">Kontakt aufnehmen</a>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <a href="/">Startseite</a>
-  <a href="/impressum.html">Impressum</a>
-  <a href="/datenschutz.html">Datenschutz</a>
-  <span class="copy">© PANI Hausverwaltung · Berlin</span>
-</footer>
-</body>
+    <link rel="stylesheet" href="/assets/site.css" />
+    <link rel="stylesheet" href="/assets/pages.css" />
+    <script src="/assets/site.js" defer></script>
+    <script src="/assets/experience.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/index.html#top" aria-label="PANI Startseite"
+          ><svg class="brand-mark" aria-hidden="true">
+            <use href="/assets/icons.svg#pani" /></svg
+          ><span class="brand-name">PANI</span></a
+        >
+        <nav class="desktop-nav" aria-label="Hauptnavigation">
+          <a href="/index.html#leistungen">Leistungen</a
+          ><a href="/index.html#gruender">Über uns</a
+          ><a href="/reporting.html">Arbeitsweise</a
+          ><a href="/index.html#kontakt">Kontakt</a>
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language"
+            href="/en.html"
+            lang="en"
+            aria-label="English version"
+            >EN</a
+          ><a class="button tenant-button" href="/mieterportal.html"
+            ><svg class="icon" aria-hidden="true">
+              <use href="/assets/icons.svg#users" /></svg
+            ><span>Mieterportal</span></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            data-menu-toggle=""
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Menü öffnen"
+            title="Menü öffnen"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="/assets/icons.svg#menu" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        data-mobile-menu=""
+        aria-label="Mobile Navigation"
+        hidden
+      >
+        <a href="/index.html#leistungen">Leistungen</a
+        ><a href="/index.html#gruender">Über uns</a
+        ><a href="/reporting.html">Arbeitsweise</a
+        ><a href="/mieter.html">Mieterservice</a
+        ><a href="/index.html#kontakt">Kontakt</a>
+      </nav>
+    </header>
+    <main id="main" class="page-intro">
+      <div class="wrap">
+        <span class="eyebrow">Fehler 404</span>
+        <h1>Seite nicht gefunden.</h1>
+        <p>
+          Diese Seite existiert nicht (mehr) oder wurde verschoben. Kehren Sie
+          zur Startseite zurück oder sprechen Sie uns direkt an.
+          <span class="en" lang="en"
+            >This page could not be found.
+            <a
+              href="/en.html"
+              style="
+                color: var(--accent);
+                border-bottom: 1px solid currentColor;
+              "
+              >Continue to the English homepage</a
+            >.</span
+          >
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="/index.html">Zur Startseite</a>
+          <a class="button" href="/index.html#kontakt">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="/index.html#top"
+              ><svg class="brand-mark" aria-hidden="true">
+                <use href="/assets/icons.svg#pani" /></svg
+              ><span class="brand-name">PANI</span></a
+            >
+            <p>Persönlich geführt. In Berlin zu Hause.</p>
+          </div>
+          <nav class="footer-links" aria-label="Weitere Informationen">
+            <a href="/weg.html">WEG</a><a href="/miethaus.html">Miethaus</a
+            ><a href="/sondereigentum.html">Sondereigentum</a
+            ><a href="/mieter.html">Mieterservice</a
+            ><a href="/impressum.html">Impressum</a
+            ><a href="/datenschutz.html">Datenschutz</a>
+            <a href="/reporting.html">Reporting</a
+            ><a href="/mieterportal.html">Mieterportal</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© PANI Hausverwaltung · Berlin</span>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
