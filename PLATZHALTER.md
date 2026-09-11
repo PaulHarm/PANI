@@ -12,6 +12,10 @@ Stand: Website-Überarbeitung vom 11. September 2026.
 - Eigentümerbericht deutlich als Muster gekennzeichnet. Sanierungsrechner, wechselnde Kennzahlen und App-Mockup von den Startseiten entfernt.
 - Bilder, Icons und Schriftdateien werden lokal ausgeliefert. Quellen und Lizenzen bleiben dokumentiert.
 - Pauls vorhandenes Porträt eingebunden.
+- Vorhandenes IHK-Siegel dezent ganz unten im Footer der deutschen und englischen Startseite eingebunden. Der Inhaber hat am 11. September 2026 bestätigt, dass die Zertifizierung nach § 26a WEG auf Niclas lautet. Sie wird nicht Paul oder dem gesamten Unternehmen zugeschrieben.
+- Sanierung als kompaktes, animiertes Rechenbeispiel ergänzt. Annahmen und Grenzen sind sichtbar.
+- Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet; der dauerhafte Link sitzt in der Kopfzeile.
+- Alle Leistungsseiten und die Navigation im neuen Design vereinheitlicht.
 
 ## Noch vom Inhaber zu ergänzen
 
@@ -29,8 +33,8 @@ Stand: Website-Überarbeitung vom 11. September 2026.
 
 ## Prüfung dieser Überarbeitung
 
-- Kontaktlogik: sieben automatisierte Tests bestanden.
-- Interne Dateien und Abschnittsanker: 527 Referenzen auf 23 HTML-Seiten geprüft.
-- Browserprüfung nach vorübergehendem Nutzungslimit durchgeführt: Desktop 1280 Pixel, Smartphone 390 und 320 Pixel, deutsche und englische Sprachführung, Mieterservice, Menü/Escape, Pflichtfeldvalidierung und Bilddarstellung. Kein echter E-Mail-Versand ausgelöst.
-- Mobile Startseite bei 390 × 844 Pixeln: rund 6.575 Pixel statt zuvor 18.139 Pixel Gesamthöhe. Erste Kontaktfelder nach dem Sprung zu Kontakt sichtbar.
-- Die Überarbeitung wird zunächst als separater GitHub-Branch mit einem Entwurfs-Pull-Request bereitgestellt.
+- Kontaktlogik und Sanierungsbeispiel: 14 automatisierte Tests bestanden, einschließlich schneller Zielwechsel, ungültiger Werte und reduzierter Bewegung.
+- Interne Dateien und Abschnittsanker: sämtliche 27 HTML-Seiten geprüft.
+- Browserprüfung: Desktop 1280 und 1440 Pixel, Smartphone 390 und 320 Pixel. Alle 27 Seiten auf schmalen Displays kontrolliert; deutsche und englische Sprachführung, Mieterservice, Menü/Escape, Zielklassen per Klick und Tastatur sowie Bilddarstellung geprüft. Kein echter E-Mail-Versand ausgelöst.
+- Mobile Startseite bei 390 × 844 Pixeln einschließlich Sanierung und IHK-Siegel: rund 6.750 Pixel, gegenüber 6.575 Pixeln der ersten Überarbeitung und 18.139 Pixeln des alten Auftritts.
+- Die Erweiterung einschließlich der Footer-Platzierung des IHK-Siegels ist zur Veröffentlichung auf main freigegeben.

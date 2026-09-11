@@ -1,462 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sondereigentumsverwaltung (SEV) in Berlin · PANI Berlin</title>
-<meta name="description" content="PANI Hausverwaltung Berlin, Sondereigentumsverwaltung (SEV) für einzelne Eigentumswohnungen, für Kapitalanleger und auswärtige Eigentümer, inklusive Reporting und digitalem Dokumentenzugriff."/>
-<link rel="canonical" href="https://www.pani-hv.de/sondereigentum.html"/>
-<link rel="alternate" hreflang="de" href="https://www.pani-hv.de/sondereigentum.html"/>
-<link rel="alternate" hreflang="en" href="https://www.pani-hv.de/en-sondereigentum.html"/>
-<link rel="alternate" hreflang="x-default" href="https://www.pani-hv.de/sondereigentum.html"/>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#7F332A">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --ink:#221E1A; --ink-soft:#3E3931; --paper:#F7F3EB; --paper-w:#FFF; --steel:#26221C;
-  --butter:#F1E9DC; --coal:#171310; --accent:#7F332A; --brass:#B08D57; --sand:#D4C4A9;
-  --line:rgba(34,30,26,.14); --line-light:rgba(255,255,255,.15);
-  --serif:'Fraunces',Georgia,serif; --sans:'IBM Plex Sans',Helvetica,Arial,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; --max:1100px; --pad:clamp(28px,5vw,72px);
-  --ease:cubic-bezier(.2,.7,.2,1);
-  --tint:#F3EDE2; --t-fast:.3s var(--ease); --t-med:.45s var(--ease);
-}
-html { scroll-behavior:smooth; background:var(--paper); }
-body { font-family:var(--sans); font-size:15px; color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; }
-a { color:inherit; text-decoration:none; }
-img,svg { display:block; max-width:100%; }
-::selection { background:var(--sand); color:var(--ink); }
-:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-h1,h2,h3 { font-family:var(--serif); font-weight:300; letter-spacing:-.02em; line-height:1.05; font-variation-settings:"opsz" 144; }
-.navbar { position:sticky; top:0; z-index:100; background:rgba(247,243,235,.9); backdrop-filter:blur(14px);
-  display:flex; align-items:center; justify-content:space-between; padding:20px var(--pad); border-bottom:1px solid var(--line); }
-.logo { display:flex; align-items:center; gap:12px; color:var(--ink); transition:color var(--t-fast); }
-.logo:hover { color:var(--accent); }
-.logo svg { width:34px; height:34px; transition:transform var(--t-med); }
-.logo:hover svg { transform:translateY(-2px); }
-.logo-text { font-family:var(--serif); font-size:22px; letter-spacing:.18em; text-transform:uppercase; }
-.nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
-.nav-links a { position:relative; font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); padding:6px 2px; transition:color var(--t-fast); }
-.nav-links a:not(.nav-cta)::after { content:""; position:absolute; left:0; bottom:0; height:1px; width:100%;
-  background:var(--accent); transform:scaleX(0); transform-origin:right center; transition:transform var(--t-med); }
-.nav-links a:hover::after { transform:scaleX(1); transform-origin:left center; }
-.nav-links a:hover { color:var(--accent); }
-.nav-cta { border:1px solid var(--ink); padding:10px 20px; border-radius:999px; transition:all .3s; }
-.nav-cta:hover { background:var(--accent); border-color:var(--accent); color:#fff; }
-.hero { background:linear-gradient(180deg,var(--paper),var(--butter)); padding:clamp(64px,9vh,110px) var(--pad) clamp(48px,7vh,80px); }
-.hero-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr; gap:clamp(36px,6vw,80px); align-items:center; }
-.kicker { font-family:var(--mono); font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--accent);
-  display:inline-flex; align-items:center; gap:12px; margin-bottom:22px; }
-.kicker::before { content:""; width:32px; height:1px; background:currentColor; }
-.hero h1 { font-size:clamp(36px,5vw,58px); }
-.hero .sub { margin-top:22px; font-size:16.5px; line-height:1.8; color:rgba(26,26,26,.72); max-width:54ch; }
-.hero-illus { justify-self:end; width:100%; max-width:300px; }
-.crumbs { font-family:var(--mono); font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:rgba(26,26,26,.62); margin-bottom:18px; }
-.crumbs a:hover { color:var(--accent); }
-.section { padding:clamp(64px,9vh,110px) var(--pad); }
-.section.alt { background:var(--paper-w); }
-.section-inner { max-width:var(--max); margin:0 auto; }
-.section h2 { font-size:clamp(26px,3vw,36px); margin-bottom:26px; }
-.usps { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:18px 40px; }
-.usps li { display:grid; grid-template-columns:16px 1fr; gap:14px; font-size:15px; line-height:1.7; color:rgba(26,26,26,.78); }
-.usps li::before { content:""; width:8px; height:8px; margin-top:8px; border:1px solid var(--accent); transform:rotate(45deg); }
-.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-.step .no { font-family:var(--mono); font-size:10px; letter-spacing:.2em; color:var(--accent); border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:10px; }
-.step .t { font-family:var(--serif); font-size:19px; margin-bottom:6px; }
-.step .d { font-size:14px; color:rgba(26,26,26,.68); line-height:1.65; }
-.scope { columns:2; column-gap:48px; list-style:none; }
-.scope li { break-inside:avoid; padding:10px 0; border-bottom:1px solid var(--line); font-size:14.5px; color:rgba(26,26,26,.75);
-  display:flex; gap:12px; }
-.scope li::before { content:"–"; color:var(--brass); }
-.note { margin-top:34px; font-size:14px; color:rgba(26,26,26,.6); }
-.note a { color:var(--accent); border-bottom:1px solid currentColor; }
-.band { background:var(--accent); color:#fff; text-align:center; padding:clamp(56px,8vh,90px) var(--pad); }
-.band h2 { color:#fff; font-size:clamp(28px,3.4vw,40px); margin-bottom:14px; }
-.band p { color:rgba(255,255,255,.85); max-width:52ch; margin:0 auto 28px; line-height:1.8; }
-.btn { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:.18em;
-  text-transform:uppercase; padding:16px 28px; border-radius:999px; border:1px solid #fff; color:#fff; transition:transform var(--t-fast), background var(--t-fast), border-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast); }
-.band-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-.btn.solid { background:#fff; color:var(--accent); }
-.btn.solid:hover { background:var(--ink); border-color:var(--ink); color:#fff; transform:translateY(-2px); box-shadow:0 14px 30px rgba(23,19,16,.28); }
-.btn.ghost:hover { background:#fff; color:var(--accent); transform:translateY(-2px); box-shadow:0 14px 30px rgba(23,19,16,.22); }
-.btn:active { transform:translateY(0); }
-footer { background:var(--coal); color:rgba(255,255,255,.55); padding:48px var(--pad); }
-.foot-brand { max-width:var(--max); margin:0 auto 26px; padding-bottom:22px;
-  border-bottom:1px solid rgba(255,255,255,.12); display:flex; align-items:center;
-  justify-content:space-between; gap:18px; }
-.foot-logo { display:flex; align-items:center; gap:10px; color:#fff; }
-.foot-logo svg { width:22px; height:22px; }
-.foot-logo span { font-family:var(--serif); font-size:16px; letter-spacing:.18em; text-transform:uppercase; }
-.foot-mail { font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase;
-  color:rgba(255,255,255,.55); transition:color .3s; }
-.foot-mail:hover { color:#fff; }
-.foot-inner { max-width:var(--max); margin:0 auto; display:flex; flex-wrap:wrap; gap:18px 32px; align-items:center;
-  font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
-.foot-inner a:hover { color:#fff; }
-.foot-inner .copy { margin-left:auto; font-family:var(--sans); text-transform:none; letter-spacing:.1em; opacity:.5; }
-.reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease, transform .65s var(--ease); }
-.reveal.in { opacity:1; transform:translateY(0); }
-/* Kinder-Stagger: USPs und Steps erscheinen sequenziell */
-.reveal .usps li, .reveal .steps .step { opacity:0; transform:translateY(12px);
-  transition:opacity .5s ease, transform .5s var(--ease); }
-.reveal.in .usps li, .reveal.in .steps .step { opacity:1; transform:none; }
-.reveal.in .usps li:nth-child(2), .reveal.in .steps .step:nth-child(2) { transition-delay:.08s; }
-.reveal.in .usps li:nth-child(3), .reveal.in .steps .step:nth-child(3) { transition-delay:.16s; }
-.reveal.in .usps li:nth-child(4) { transition-delay:.24s; }
-.reveal.in .usps li:nth-child(5) { transition-delay:.32s; }
-.reveal.in .usps li:nth-child(6) { transition-delay:.4s; }
-/* Hero-Entrance beim Laden */
-@keyframes riseIn { from { opacity:0; transform:translateY(14px); } }
-.hero .reveal.in { animation: riseIn .65s var(--ease) backwards; }
-.hero .hero-illus.reveal.in { animation-delay: .12s; }
-@media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} .reveal{opacity:1;transform:none} .reveal .usps li,.reveal .steps .step{opacity:1;transform:none} }
-/* ── Schwester-Navigation ── */
-.sister-nav { background:var(--paper-w); border-bottom:1px solid var(--line); padding:0 var(--pad); }
-.sister-inner { max-width:var(--max); margin:0 auto; display:flex; align-items:center; gap:22px;
-  padding:13px 0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
-.sister-label { font-family:var(--mono); font-size:9px; letter-spacing:.25em; text-transform:uppercase;
-  color:rgba(26,26,26,.62); flex:0 0 auto; padding-right:22px; border-right:1px solid var(--line); }
-.sister-inner a, .sister-inner .active { font-family:var(--mono); font-size:9px; letter-spacing:.2em;
-  text-transform:uppercase; white-space:nowrap; flex:0 0 auto; position:relative; }
-.sister-inner a { color:var(--ink-soft); transition:color var(--t-fast); }
-.sister-inner a:hover { color:var(--accent); }
-.sister-inner a::after, .sister-inner .active::after { content:""; position:absolute; left:0; bottom:-4px;
-  height:1px; width:100%; background:var(--accent); transform:scaleX(0); transform-origin:right center;
-  transition:transform var(--t-med); }
-.sister-inner a:hover::after { transform:scaleX(1); transform-origin:left center; }
-.sister-inner .active { color:var(--accent); }
-.sister-inner .active::after { transform:scaleX(1); }
-/* ── Marken-Absatz ── */
-.founders-note { max-width:62ch; font-size:16px; line-height:1.8; color:rgba(26,26,26,.75); margin:0; }
-/* ── Impression (Foto-Band) ── */
-.section.impression { background:var(--tint); padding-top:clamp(56px,8vh,90px); padding-bottom:clamp(56px,8vh,90px); }
-.impression-figure { margin:0; min-width:0; }
-.impression-media { position:relative; overflow:hidden; height:clamp(300px,44vh,460px);
-  background:var(--butter); border:1px solid var(--line); }
-.impression-media::before { content:""; position:absolute; inset:0; z-index:1;
-  background:rgba(127,51,42,.05); pointer-events:none; }
-.impression-media::after { content:""; position:absolute; inset:14px; z-index:2;
-  border:1px solid rgba(255,255,255,.55); pointer-events:none; }
-.impression-media img { width:100%; height:100%; object-fit:cover;
-  filter:saturate(.78) contrast(1.03) brightness(.97);
-  transform:scale(1.02); transition:transform 1.2s var(--ease); }
-.impression-figure:hover .impression-media img { transform:scale(1.05); }
-.impression-caption { display:flex; justify-content:space-between; align-items:baseline;
-  gap:8px 24px; flex-wrap:wrap; margin-top:12px;
-  font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase;
-  color:rgba(26,26,26,.62); }
-.impression-caption a { color:inherit; transition:color var(--t-fast); }
-.impression-caption a:hover { color:var(--accent); }
-@media (max-width:404px){ .impression-caption { letter-spacing:.12em; } }
-/* ── Burger / Mobile Menu ── */
-.nav-burger-li { display:none; }
-.mobile-menu { display:none; }
-body.menu-open { overflow:hidden; }
-/* ═════════ OVERLAY-PILL (Mieter) ═════════ */
-.tenant-pill {
-  position: fixed; left: 18px; bottom: 18px; z-index: 90; /* unter Navbar/Mobile-Menü (100) */
-  display: inline-flex; align-items: center;
-  max-width: calc(100vw - 36px); white-space: nowrap;
-  background: var(--paper-w); color: var(--ink-soft);
-  border: 1px solid var(--line); border-radius: 999px;
-  padding: 11px 18px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-  box-shadow: 0 10px 28px rgba(26,26,26,0.10);
-  opacity: 0; transform: translateY(14px); pointer-events: none;
-  transition: opacity var(--t-fast), transform var(--t-fast), color var(--t-fast), border-color var(--t-fast);
-}
-.tenant-pill.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.tenant-pill:hover { color: var(--accent); border-color: var(--accent); }
-.tenant-pill .tp-arrow { color: var(--accent); padding: 0 2px; }
-.tenant-pill .tp-short { display: none; }
-body.menu-open .tenant-pill { opacity: 0; pointer-events: none; } /* nie über dem Mobile-Menü */
-@media (max-width: 480px) {
-  .tenant-pill { left: 14px; bottom: 14px; padding: 10px 14px; }
-  .tenant-pill .tp-long { display: none; }
-  .tenant-pill .tp-short { display: inline; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .tenant-pill { transform: none; } /* nur Opacity-Umschalten, keine Bewegung */
-}
-@media (max-width:920px){
-  .nav-burger-li { display:flex; }
-  .nav-burger { display:inline-flex; flex-direction:column; justify-content:center; align-items:center;
-    gap:5px; width:40px; height:40px; padding:0; margin:0; background:none; border:0; cursor:pointer; }
-  .nav-burger span { display:block; width:22px; height:1px; background:var(--ink);
-    transition:transform .3s var(--ease), opacity .3s ease; }
-  .nav-burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
-  .nav-burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
-  .nav-burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
-  .mobile-menu { display:block; position:absolute; top:100%; left:0; right:0;
-    background:var(--paper); border-bottom:1px solid var(--line);
-    box-shadow:0 24px 48px rgba(26,26,26,.1); max-height:calc(100vh - 60px); overflow-y:auto; }
-  .mobile-menu[hidden]{ display:none; }
-  .mobile-menu ul { list-style:none; margin:0; padding:6px var(--pad) 18px; }
-  .mobile-menu li + li { border-top:1px solid var(--line); }
-  .mobile-menu a { display:block; padding:16px 2px; font-size:11px; font-weight:500;
-    letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); transition:color .3s; }
-  .mobile-menu a:hover { color:var(--accent); }
-  .mobile-menu .mm-lang a { font-family:var(--mono); color:rgba(26,26,26,.65); }
-}
-@media (max-width:920px){
-  .hero-inner { grid-template-columns:1fr; }
-  .hero-illus { max-width:220px; margin:28px auto 0; justify-self:center; }
-  .usps { grid-template-columns:1fr; }
-  .steps { grid-template-columns:1fr; gap:22px; }
-  .scope { columns:1; }
-  .nav-links { gap:14px; } .nav-links .hide-m { display:none; }
-}
-/* ── Schmalbild-Fix: unter 405px sauber umbrechen statt kappen; ab 405px unverändert ── */
-.hero-inner > *, .usps > li, .steps > .step { min-width:0; }
-@media (max-width:404px){
-  h1, h2, p, .usps li, .scope li, .step .t, .step .d { overflow-wrap:break-word; -webkit-hyphens:auto; hyphens:auto; }
-}
-@media (max-width:380px){
-  .hero h1 { font-size:30px; }
-  .section h2 { font-size:23px; }
-  .band h2 { font-size:25px; }
-}
-</style>
-<link rel="stylesheet" href="assets/legacy.css">
-</head>
-<body>
-<nav class="navbar" aria-label="Hauptnavigation">
-  <a href="index.html" class="logo"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span class="logo-text">PANI</span></a>
-  <ul class="nav-links">
-    <li class="hide-m"><a href="index.html#leistungen">Leistungen</a></li>
-    <li><a href="en-sondereigentum.html">EN</a></li>
-    <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
-    <li class="nav-burger-li">
-      <button class="nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-    </li>
-  </ul>
-  <div class="mobile-menu" id="mobile-menu" hidden>
-    <ul>
-      <li><a href="index.html">Startseite</a></li>
-      <li><a href="index.html#leistungen">Leistungen</a></li>
-      <li><a href="index.html#kontakt">Kontakt</a></li>
-      <li class="mm-lang"><a href="en-sondereigentum.html">EN · English version</a></li>
-    </ul>
-  </div>
-</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sondereigentumsverwaltung (SEV) in Berlin · PANI Berlin</title>
+    <meta
+      name="description"
+      content="PANI Hausverwaltung Berlin, Sondereigentumsverwaltung (SEV) für einzelne Eigentumswohnungen, für Kapitalanleger und auswärtige Eigentümer, inklusive Reporting und digitalem Dokumentenzugriff."
+    />
+    <link rel="canonical" href="https://www.pani-hv.de/sondereigentum.html" />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href="https://www.pani-hv.de/sondereigentum.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.pani-hv.de/en-sondereigentum.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.pani-hv.de/sondereigentum.html"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#19382d" />
 
-<header class="hero">
-  <div class="hero-inner">
-    <div class="reveal in">
-      <div class="crumbs"><a href="index.html">PANI</a> · <a href="index.html#leistungen">Mandate</a> · Sondereigentum</div>
-      <span class="kicker">Sondereigentumsverwaltung (SEV)</span>
-      <h1>Einzelwohnungen, verlässlich betreut.</h1>
-      <p class="sub">Für Kapitalanleger, auswärtige Eigentümer und institutionelle Eigentümerstrukturen mit einzelnen Eigentumswohnungen. Wir übernehmen die Sondereigentumsverwaltung (SEV) Ihrer Einheit, mit Mietermanagement, revisionssicherem Reporting und digitalem Dokumentenzugriff, in Abstimmung mit der WEG-Verwaltung des Gesamtobjekts.</p>
-    </div>
-    <div class="hero-illus reveal in"><svg viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <defs><pattern id="hsub" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-    <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(26,26,26,.07)" stroke-width=".5"/></pattern></defs>
-  <polygon points="36,76 52,50 248,50 264,76" fill="url(#hsub)" stroke="var(--ink)" stroke-width=".8"/>
-  <path d="M 122 76 L 150 42 L 178 76 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width=".7"/>
-  <circle cx="150" cy="62" r="6" fill="none" stroke="var(--ink)" stroke-width=".7"/>
-  <rect x="40" y="76" width="220" height="244" fill="var(--paper-w)" stroke="var(--ink)" stroke-width="1"/>
-  <rect x="36" y="76" width="228" height="5" fill="var(--paper)" stroke="var(--ink)" stroke-width=".7"/>
-  <rect x="38" y="156" width="224" height="2" fill="var(--ink)" opacity=".1"/>
-  <rect x="38" y="236" width="224" height="2" fill="var(--ink)" opacity=".1"/>
-  <g stroke="var(--ink)" stroke-width=".7" stroke-linecap="square">
-    <g transform="translate(85,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(128,0,32,.06)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(150,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(215,118)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(85,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(215,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-    <g transform="translate(150,198)"><rect x="-11" y="-16" width="22" height="32" fill="rgba(26,26,26,.03)"/><line x1="0" y1="-16" x2="0" y2="16" stroke-width=".5"/><line x1="-11" y1="-4" x2="11" y2="-4" stroke-width=".5"/></g>
-  </g>
-  <path d="M 128 320 L 128 286 A 22 22 0 0 1 172 286 L 172 320 Z" fill="rgba(26,26,26,.03)" stroke="var(--ink)" stroke-width=".8"/>
-  <line x1="150" y1="290" x2="150" y2="320" stroke="var(--ink)" stroke-width=".6"/>
-  <circle cx="145" cy="306" r="1.4" fill="var(--brass)"/><circle cx="155" cy="306" r="1.4" fill="var(--brass)"/>
-  <line x1="20" y1="320" x2="280" y2="320" stroke="var(--ink)" opacity=".4"/>
-  <rect x="69" y="97" width="32" height="42" fill="none" stroke="var(--accent)" stroke-width="1.1" stroke-dasharray="4 3"/>
-</svg></div>
-  </div>
-</header>
-
-<nav class="sister-nav" aria-label="Weitere Mandate">
-  <div class="sister-inner">
-    <span class="sister-label">Mandate</span>
-    <a href="miethaus.html">Miethaus</a>
-    <a href="weg.html">WEG</a>
-    <span class="active" aria-current="page">Sondereigentum</span>
-  </div>
-</nav>
-
-<section class="section alt">
-  <div class="section-inner reveal">
-    <h2>Was Sie von uns erwarten können</h2>
-    <ul class="usps">
-      <li>Verwaltung einzelner Eigentumswohnungen (Sondereigentumsverwaltung, SEV)</li>
-      <li>Ideal für Kapitalanleger und auswärtige Eigentümer</li>
-      <li>Mietermanagement und Nebenkostenabrechnung der Einheit</li>
-      <li>Reporting zu Mieteinnahmen, Kosten und Maßnahmen</li>
-      <li>Digitaler Zugriff auf alle Dokumente Ihrer Wohnung</li>
-      <li>Abstimmung mit der WEG-Verwaltung des Gesamtobjekts</li>
-      <li>Revisionssichere Dokumentation und auditfähige Abläufe</li>
-      <li>Klare Schnittstellen für Asset Management und Eigentümervertretung bei mehreren Einheiten</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner reveal">
-    <h2>So starten wir zusammen</h2>
-    <div class="steps">
-      <div class="step"><div class="no">01</div><div class="t">Bestandsaufnahme</div><div class="d">Einheit, Mietvertrag, Hausgeld und offene Themen im Überblick.</div></div>
-      <div class="step"><div class="no">02</div><div class="t">Geordnete Übernahme</div><div class="d">Saubere Übergabe, klare Prozesse und ein fester Ansprechpartner.</div></div>
-      <div class="step"><div class="no">03</div><div class="t">Betreuung & Reporting</div><div class="d">Laufende Verwaltung Ihrer Einheit mit transparentem Reporting.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section alt">
-  <div class="section-inner reveal">
-    <h2>Im Mandat enthalten</h2>
-    <ul class="scope">
-      <li>Mietvertrags- und Mietermanagement der Einheit</li>
-      <li>Nebenkostenabrechnung der Wohnung</li>
-      <li>Koordination von Reparaturen im Sondereigentum</li>
-      <li>Schnittstelle zur WEG-/Hausverwaltung</li>
-      <li>Reporting zu Einnahmen, Kosten und Maßnahmen</li>
-      <li>Digitales Dokumentenarchiv Ihrer Einheit</li>
-    </ul>
-    <p class="note">Jedes Mandat erhält strukturiertes Reporting und Dokumentenzugriff, Details unter <a href="index.html#reporting">Reporting</a>.</p>
-  </div>
-</section>
-
-<section class="section impression">
-  <div class="section-inner reveal">
-    <figure class="impression-figure">
-      <!-- BILD: assets/sondereigentum-fluegeltuer-altbau.jpg
-           Urheber: Z thomas · Lizenz: CC BY-SA 3.0
-           Quelle: https://commons.wikimedia.org/wiki/File:T%C3%BCr_berliner_altbau_2018-04-23_-_1.jpg
-           Berliner Impression (Stimmungsbild, kein Referenzobjekt).
-           Vor Go-live idealerweise durch ein eigenes Objektfoto ersetzen
-           (gleiche Behandlung: Filter, Inset-Rahmen, Caption-Format beibehalten). -->
-      <div class="impression-media">
-        <img src="assets/sondereigentum-fluegeltuer-altbau.jpg"
-             alt="Zweiflügelige Jugendstil-Wohnungstür mit geschnitzten Ornamenten und ovalen Fenstern in einem Berliner Altbau"
-             width="960" height="1710"
-             loading="lazy" decoding="async"
-             style="object-position:center 35%"/>
+    <link rel="stylesheet" href="assets/site.css" />
+    <link rel="stylesheet" href="assets/pages.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/experience.js" defer></script>
+  </head>
+  <body class="detail-page">
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="index.html#top" aria-label="PANI Startseite"
+          ><svg class="brand-mark" aria-hidden="true">
+            <use href="assets/icons.svg#pani" /></svg
+          ><span class="brand-name">PANI</span></a
+        >
+        <nav class="desktop-nav" aria-label="Hauptnavigation">
+          <a href="index.html#leistungen">Leistungen</a
+          ><a href="index.html#gruender">Über uns</a
+          ><a href="reporting.html">Arbeitsweise</a
+          ><a href="index.html#kontakt">Kontakt</a>
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language"
+            href="en-sondereigentum.html"
+            lang="en"
+            aria-label="English version"
+            >EN</a
+          ><a class="button tenant-button" href="mieterportal.html"
+            ><svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#users" /></svg
+            ><span>Mieterportal</span></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            data-menu-toggle=""
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Menü öffnen"
+            title="Menü öffnen"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#menu" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <figcaption class="impression-caption">
-        <span>Jugendstil-Flügeltür in einem Berliner Altbau</span>
-        <a href="https://commons.wikimedia.org/wiki/File:T%C3%BCr_berliner_altbau_2018-04-23_-_1.jpg" target="_blank" rel="noopener">Foto: Z thomas, CC BY-SA 3.0</a>
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner reveal">
-    <span class="kicker">Zwei Welten. Ein Anspruch.</span>
-    <p class="founders-note">PANI führen zwei Gründer persönlich, mit analytischer Disziplin, geprägt durch Erfahrung im Investmentbanking, und Verwaltungshandwerk, das in der Familie seit Generationen weitergegeben wird. Auch eine einzelne Wohnung führen wir mit beidem, mit klaren Zahlen für Ihre Entscheidungen und Sorgfalt im Detail vor Ort.</p>
-  </div>
-</section>
-
-<div class="band">
-  <h2>Sprechen wir über Ihre Wohnung.</h2>
-  <p>Hinterlassen Sie uns Ihre Eckdaten, wir melden uns innerhalb eines Werktags mit einer unverbindlichen Ersteinschätzung.</p>
-  <div class="band-ctas">
-    <a class="btn solid" href="mailto:info@pani-hv.de">E-Mail senden</a>
-  </div>
-</div>
-
-<footer>
-  <div class="foot-brand">
-    <a href="index.html" class="foot-logo" aria-label="PANI Startseite"><svg viewBox="0 0 60 60" fill="none"><g stroke="currentColor" stroke-width="1.2" stroke-linecap="square"><rect x="14" y="14" width="8" height="32"/><rect x="26" y="14" width="8" height="32"/><rect x="38" y="14" width="8" height="32"/><line x1="10" y1="10" x2="50" y2="10"/><line x1="10" y1="50" x2="50" y2="50"/></g></svg><span>PANI</span></a>
-    <a class="foot-mail" href="mailto:info@pani-hv.de">info@pani-hv.de</a>
-  </div>
-  <div class="foot-inner">
-    <a href="index.html">Startseite</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
-    <span class="copy">© PANI Hausverwaltung · Berlin</span>
-  </div>
-</footer>
-
-<!-- Overlay-Pill: Mieter-Schnellzugriff (Theo-Stil) -->
-<a class="tenant-pill" id="tenant-pill" href="mieter.html">
-  <span class="tp-long">Sie sind Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Zum Mieterservice</span>
-  <span class="tp-short">Mieter? <span class="tp-arrow" aria-hidden="true">→</span> Service</span>
-</a>
-
-<script>
-(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})();
-</script>
-<script>
-(function () {
-  var burger = document.getElementById('nav-burger');
-  var menu = document.getElementById('mobile-menu');
-  if (!burger || !menu) return;
-
-  function setOpen(open) {
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-    if (open) { menu.removeAttribute('hidden'); } else { menu.setAttribute('hidden', ''); }
-    document.body.classList.toggle('menu-open', open);
-  }
-
-  burger.addEventListener('click', function () {
-    setOpen(burger.getAttribute('aria-expanded') !== 'true');
-  });
-
-  /* Schließen bei Linkklick (Anker scrollt danach normal) */
-  menu.addEventListener('click', function (e) {
-    var a = e.target; while (a && a !== menu && a.tagName !== 'A') a = a.parentNode;
-    if (a && a.tagName === 'A') setOpen(false);
-  });
-
-  /* Schließen mit Escape, Fokus zurück auf den Button */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
-      setOpen(false); burger.focus();
-    }
-  });
-
-  /* Beim Wechsel auf Desktop-Breite aufräumen (Scroll-Lock lösen) */
-  var mq = window.matchMedia('(min-width: 921px)');
-  function onMq(e) { if (e.matches) setOpen(false); }
-  if (mq.addEventListener) { mq.addEventListener('change', onMq); } else { mq.addListener(onMq); }
-})();
-</script>
-<script>
-(function () {
-  var pill = document.getElementById('tenant-pill');
-  if (!pill) return;
-  /* Ausblende-Zone: Kontakt-Band (index/en: #kontakt) bzw. CTA-Band der Unterseiten (.band).
-     So verdeckt die Pill nie den Formular-Submit bzw. die Band-Buttons. */
-  var hideZone = document.getElementById('kontakt') || document.querySelector('.band');
-  var inHideZone = false;
-  var THRESHOLD = 420; /* px Scroll bis zum Einblenden */
-
-  function update() {
-    pill.classList.toggle('is-visible', window.scrollY > THRESHOLD && !inHideZone);
-  }
-  if (hideZone && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { inHideZone = e.isIntersecting; });
-      update();
-    }, { threshold: 0 }).observe(hideZone);
-  }
-  var ticking = false;
-  window.addEventListener('scroll', function () {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () { update(); ticking = false; });
-  }, { passive: true });
-  update();
-})();
-</script>
-</body>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        data-mobile-menu=""
+        aria-label="Mobile Navigation"
+        hidden
+      >
+        <a href="index.html#leistungen">Leistungen</a
+        ><a href="index.html#gruender">Über uns</a
+        ><a href="reporting.html">Arbeitsweise</a
+        ><a href="mieter.html">Mieterservice</a
+        ><a href="index.html#kontakt">Kontakt</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero detail-hero" id="top" aria-labelledby="page-title">
+        <img
+          fetchpriority="high"
+          class="hero-photo"
+          src="assets/sondereigentum-fluegeltuer-altbau.jpg"
+          alt="Zweiflügelige Jugendstil-Wohnungstür mit geschnitzten Ornamenten und ovalen Fenstern in einem Berliner Altbau"
+          width="960"
+          height="1710"
+          decoding="async"
+          style="object-position: center 35%"
+        />
+        <div class="wrap hero-content">
+          <nav class="breadcrumbs" aria-label="Brotkrumennavigation">
+            <a href="index.html">PANI</a><span>/</span
+            ><a href="index.html#leistungen">Leistungen</a>
+          </nav>
+          <h1 id="page-title">Verwaltung Ihrer Eigentumswohnung.</h1>
+          <p>
+            Für Kapitalanleger, auswärtige Eigentümer und institutionelle
+            Eigentümerstrukturen mit einzelnen Eigentumswohnungen. Wir
+            übernehmen die Sondereigentumsverwaltung (SEV) Ihrer Einheit, mit
+            Mietermanagement, revisionssicherem Reporting und digitalem
+            Dokumentenzugriff, in Abstimmung mit der WEG-Verwaltung des
+            Gesamtobjekts.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light" href="index.html#kontakt"
+              >Erstgespräch anfragen<svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#arrow-up-right" /></svg
+            ></a>
+          </div>
+        </div>
+        <span class="hero-caption"
+          >Berliner Stadtansicht · kein Referenzobjekt</span
+        >
+      </section>
+      <nav class="detail-nav" aria-label="Weitere Mandate">
+        <div class="wrap">
+          <a href="miethaus.html">Miethaus</a>
+          <a href="weg.html">WEG</a>
+          <span class="active" aria-current="page">Sondereigentum</span>
+        </div>
+      </nav>
+      <section class="detail-section">
+        <div class="wrap">
+          <h2>Was Sie von uns erwarten können</h2>
+          <ul class="usps">
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span
+                >Verwaltung einzelner Eigentumswohnungen
+                (Sondereigentumsverwaltung, SEV)</span
+              >
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Ideal für Kapitalanleger und auswärtige Eigentümer</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span
+                >Mietermanagement und Nebenkostenabrechnung der Einheit</span
+              >
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Reporting zu Mieteinnahmen, Kosten und Maßnahmen</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Digitaler Zugriff auf alle Dokumente Ihrer Wohnung</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Abstimmung mit der WEG-Verwaltung des Gesamtobjekts</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span
+                >Revisionssichere Dokumentation und auditfähige Abläufe</span
+              >
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span
+                >Klare Schnittstellen für Asset Management und
+                Eigentümervertretung bei mehreren Einheiten</span
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="detail-section">
+        <div class="wrap">
+          <h2>So starten wir zusammen</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="no">01</div>
+              <div class="t">Bestandsaufnahme</div>
+              <div class="d">
+                Einheit, Mietvertrag, Hausgeld und offene Themen im Überblick.
+              </div>
+            </div>
+            <div class="step">
+              <div class="no">02</div>
+              <div class="t">Geordnete Übernahme</div>
+              <div class="d">
+                Saubere Übergabe, klare Prozesse und ein fester Ansprechpartner.
+              </div>
+            </div>
+            <div class="step">
+              <div class="no">03</div>
+              <div class="t">Betreuung &amp; Reporting</div>
+              <div class="d">
+                Laufende Verwaltung Ihrer Einheit mit transparentem Reporting.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="detail-section">
+        <div class="wrap">
+          <h2>Im Mandat enthalten</h2>
+          <ul class="scope">
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Mietvertrags- und Mietermanagement der Einheit</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Nebenkostenabrechnung der Wohnung</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Koordination von Reparaturen im Sondereigentum</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Schnittstelle zur WEG-/Hausverwaltung</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Reporting zu Einnahmen, Kosten und Maßnahmen</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Digitales Dokumentenarchiv Ihrer Einheit</span>
+            </li>
+          </ul>
+          <p class="note">
+            Jedes Mandat erhält strukturiertes Reporting und Dokumentenzugriff,
+            Details unter <a href="reporting.html">Reporting</a>.
+          </p>
+          <a class="text-link service-report-link" href="index.html#sanierung"
+            >Energetische Sanierung begleiten<svg
+              class="icon"
+              aria-hidden="true"
+            >
+              <use href="assets/icons.svg#arrow-up-right" /></svg
+          ></a>
+        </div>
+      </section>
+      <section class="detail-section">
+        <div class="wrap">
+          <span class="eyebrow">Zwei Welten. Ein Anspruch.</span>
+          <p class="founders-note">
+            PANI führen zwei Gründer persönlich, mit analytischer Disziplin,
+            geprägt durch Erfahrung im Investmentbanking, und
+            Verwaltungshandwerk, das in der Familie seit Generationen
+            weitergegeben wird. Auch eine einzelne Wohnung führen wir mit
+            beidem, mit klaren Zahlen für Ihre Entscheidungen und Sorgfalt im
+            Detail vor Ort.
+          </p>
+        </div>
+      </section>
+      <section class="detail-cta">
+        <div class="wrap">
+          <div>
+            <h2>Sprechen wir über Ihre Wohnung.</h2>
+            <p>
+              Erzählen Sie uns von Ihrem Objekt und Ihren nächsten Schritten.
+              Gemeinsam klären wir, welche Betreuung zu Ihnen passt.
+            </p>
+          </div>
+          <a class="button button-light" href="index.html#kontakt"
+            >Kontakt aufnehmen<svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#arrow-up-right" /></svg
+          ></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="index.html#top"
+              ><svg class="brand-mark" aria-hidden="true">
+                <use href="assets/icons.svg#pani" /></svg
+              ><span class="brand-name">PANI</span></a
+            >
+            <p>Persönlich geführt. In Berlin zu Hause.</p>
+          </div>
+          <nav class="footer-links" aria-label="Weitere Informationen">
+            <a href="weg.html">WEG</a><a href="miethaus.html">Miethaus</a
+            ><a href="sondereigentum.html">Sondereigentum</a
+            ><a href="mieter.html">Mieterservice</a
+            ><a href="impressum.html">Impressum</a
+            ><a href="datenschutz.html">Datenschutz</a>
+            <a href="reporting.html">Reporting</a
+            ><a href="mieterportal.html">Mieterportal</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© PANI Hausverwaltung · Berlin</span>
+          <span class="footer-credit"
+            >Stadtansicht:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:T%C3%BCr_berliner_altbau_2018-04-23_-_1.jpg"
+              target="_blank"
+              rel="noopener"
+              >Foto: Z thomas, CC BY-SA 3.0</a
+            ></span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
