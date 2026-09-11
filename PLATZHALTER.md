@@ -1,6 +1,6 @@
 # Offene Angaben und Veröffentlichungsstand
 
-Stand: Website-Überarbeitung vom 11. September 2026.
+Stand: Website-Überarbeitung vom 12. September 2026.
 
 ## Erledigt
 
@@ -13,9 +13,10 @@ Stand: Website-Überarbeitung vom 11. September 2026.
 - Bilder, Icons und Schriftdateien werden lokal ausgeliefert. Quellen und Lizenzen bleiben dokumentiert.
 - Pauls vorhandenes Porträt eingebunden.
 - Vorhandenes IHK-Siegel dezent ganz unten im Footer der deutschen und englischen Startseite eingebunden, auf Wunsch ohne Personenname. Neutraler Hinweis „IHK-Zertifizierung nach § 26a WEG“; die bestätigte Zertifizierung lautet auf Niclas, nicht auf beide Gründer.
-- Sanierung als kompaktes, animiertes Rechenbeispiel ergänzt. Annahmen und Grenzen sind sichtbar.
+- Energetische Sanierung auf eigene deutsche und englische Seiten verlagert. Der animierte Rechner samt Annahmen und Grenzen bleibt erhalten. Startseiten verlinken unter „Besondere Anforderungen“; Leistungsseiten verweisen direkt auf die neue Seite.
 - Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet; der dauerhafte Link sitzt in einer festen Leiste am unteren Bildschirmrand auf allen Seiten.
 - Alle Leistungsseiten und die Navigation im neuen Design vereinheitlicht.
+- Grüner Kontakt-Button in der Kopfzeile auf allen Seiten wiederhergestellt. Der Mieterportal-Zugang bleibt separat am unteren Bildschirmrand fixiert.
 
 ## Noch vom Inhaber zu ergänzen
 
@@ -34,7 +35,7 @@ Stand: Website-Überarbeitung vom 11. September 2026.
 ## Prüfung dieser Überarbeitung
 
 - Kontaktlogik und Sanierungsbeispiel: 14 automatisierte Tests bestanden, einschließlich schneller Zielwechsel, ungültiger Werte und reduzierter Bewegung.
-- Interne Dateien und Abschnittsanker: sämtliche 27 HTML-Seiten geprüft.
-- Browserprüfung: Desktop 1280 und 1440 Pixel, Smartphone 390 und 320 Pixel. Alle 27 Seiten auf schmalen Displays kontrolliert; deutsche und englische Sprachführung, Mieterservice, Menü/Escape, Zielklassen per Klick und Tastatur sowie Bilddarstellung geprüft. Kein echter E-Mail-Versand ausgelöst.
-- Mobile Startseite bei 390 × 844 Pixeln einschließlich Sanierung und IHK-Siegel: rund 6.750 Pixel, gegenüber 6.575 Pixeln der ersten Überarbeitung und 18.139 Pixeln des alten Auftritts.
-- Die Erweiterung einschließlich der Footer-Platzierung des IHK-Siegels ist zur Veröffentlichung auf main freigegeben.
+- Interne Dateien und Abschnittsanker: 1.374 Verweise auf sämtlichen 29 HTML-Seiten geprüft.
+- Aktuelle Browserprüfung: Desktop 1280 Pixel und Smartphone 320 Pixel. Alle 29 Seiten ohne horizontales Überlaufen; Kontakt-Button sichtbar und Portal-Ziel sprachlich korrekt. Fixierter Portal-Zugang vor und nach dem Scrollen und per Klick geprüft. Neue Sanierungsseiten inklusive Rechner, Tastatursteuerung, Sprachführung und Kontaktziel geprüft. Kein echter E-Mail-Versand ausgelöst.
+- Deutsche Startseite auf 459 Wörter einschließlich Navigation, Formularbeschriftungen und Footer reduziert; der Sanierungsabschnitt wird dort nicht mehr geladen.
+- Die Auslagerung der Sanierung und die angepasste Navigation sind zur Veröffentlichung auf main freigegeben.

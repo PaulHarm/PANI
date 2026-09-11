@@ -66,8 +66,6 @@
     <link rel="stylesheet" href="assets/site.css" />
     <link rel="stylesheet" href="assets/pages.css" />
     <script src="assets/site.js" defer></script>
-    <script src="assets/energy-model.js" defer></script>
-    <script src="assets/experience.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Zum Inhalt</a>
@@ -80,8 +78,7 @@
         >
         <nav class="desktop-nav" aria-label="Hauptnavigation">
           <a href="#leistungen">Leistungen</a><a href="#gruender">Über uns</a
-          ><a href="reporting.html">Arbeitsweise</a
-          ><a href="#kontakt">Kontakt</a>
+          ><a href="reporting.html">Arbeitsweise</a>
         </nav>
         <div class="header-actions">
           <a
@@ -90,6 +87,9 @@
             lang="en"
             aria-label="English version"
             >EN</a
+          ><a class="button contact-button" href="#kontakt"
+            >Kontakt<svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#arrow-up-right" /></svg></a
           ><button
             class="menu-toggle"
             type="button"
@@ -245,8 +245,9 @@
           <p class="section-note">
             Besondere Anforderungen? Mehr zu
             <a href="investoren.html">Investoren</a>,
-            <a href="bestandshalter.html">Portfolios</a> und
-            <a href="nachfolge.html">Nachfolge &amp; Übergängen</a>.
+            <a href="bestandshalter.html">Portfolios</a>,
+            <a href="nachfolge.html">Nachfolge &amp; Übergängen</a> und
+            <a id="sanierung" href="sanierung.html">energetischer Sanierung</a>.
           </p>
         </div>
       </section>
@@ -306,198 +307,7 @@
           </div>
         </div>
       </section>
-      <section
-        class="section renovation-section"
-        id="sanierung"
-        aria-labelledby="renovation-title"
-      >
-        <div class="wrap renovation-grid">
-          <div class="renovation-copy">
-            <span class="eyebrow">Energetische Sanierung</span>
-            <h2 id="renovation-title">Vom Kostentreiber zum Zukunftsobjekt.</h2>
-            <p>
-              Eine energetische Sanierung verstehen wir als Angebot für eine
-              nachhaltige Bewirtschaftung Ihrer Immobilie, nicht als
-              Verpflichtung. Wenn sie für Ihr Objekt sinnvoll ist, begleiten wir
-              sie von der Bestandsaufnahme über Förderung und Ausschreibung bis
-              zur Abnahme, gemeinsam mit qualifizierten Fachleuten.
-            </p>
-            <p>
-              Wir zeigen Potenziale offen auf, die Entscheidung treffen Sie.
-              Eine bessere Effizienz kann Betriebskosten und CO₂-Ausstoß senken
-              und den langfristigen Werterhalt unterstützen.
-            </p>
-            <a class="text-link" href="#kontakt"
-              >Sanierungspotenzial prüfen<svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#arrow-up-right" /></svg
-            ></a>
-          </div>
-          <div
-            class="energy-tool"
-            data-energy=""
-            data-target="C"
-            data-animate=""
-          >
-            <div class="energy-heading">
-              <h3>Was eine Sanierung bewegt</h3>
-              <span>Rechenbeispiel</span>
-            </div>
-            <fieldset disabled>
-              <legend>Zielklasse wählen</legend>
-              <div class="energy-scale">
-                <label
-                  class="energy-option"
-                  style="--class-color: #923e35; --delay: 0s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="H"
-                    aria-label="Zielklasse H"
-                    disabled
-                  /><span class="energy-bar">H</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #a65336; --delay: 0.055s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="G"
-                    aria-label="Zielklasse G"
-                    disabled
-                  /><span class="energy-bar">G</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #a45d2d; --delay: 0.11s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="F"
-                    aria-label="Zielklasse F"
-                  /><span class="energy-bar">F</span
-                  ><span class="baseline-label">Bestand</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #906c28; --delay: 0.165s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="E"
-                    aria-label="Zielklasse E"
-                  /><span class="energy-bar">E</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #827735; --delay: 0.22s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="D"
-                    aria-label="Zielklasse D"
-                  /><span class="energy-bar">D</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #667b3e; --delay: 0.275s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="C"
-                    aria-label="Zielklasse C"
-                    checked
-                  /><span class="energy-bar">C</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #477342; --delay: 0.33s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="B"
-                    aria-label="Zielklasse B"
-                  /><span class="energy-bar">B</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #306845; --delay: 0.385s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="A"
-                    aria-label="Zielklasse A"
-                  /><span class="energy-bar">A</span
-                  ><span class="target-label">Ziel</span></label
-                ><label
-                  class="energy-option"
-                  style="--class-color: #235b40; --delay: 0.44s"
-                  ><input
-                    type="radio"
-                    name="energy-target"
-                    value="A+"
-                    aria-label="Zielklasse A+"
-                  /><span class="energy-bar">A+</span
-                  ><span class="target-label">Ziel</span></label
-                >
-              </div>
-            </fieldset>
-            <div class="energy-results" aria-hidden="true">
-              <div class="energy-result">
-                <strong data-value="demand">87</strong
-                ><span class="energy-unit">kWh/m²a</span>
-                <p>Energiebedarf Zielklasse</p>
-              </div>
-              <div class="energy-result">
-                <strong><span data-value="percent">−52</span>%</strong
-                ><span class="energy-unit">gegenüber Bestand</span>
-                <p>Energie-Einsparung</p>
-              </div>
-              <div class="energy-result">
-                <strong>≈ <span data-value="euros">1.210</span></strong
-                ><span class="energy-unit">€/Jahr je 100 m²</span>
-                <p>Heizkosten-Ersparnis</p>
-              </div>
-            </div>
-            <p
-              class="sr-only"
-              data-energy-summary=""
-              role="status"
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              Ziel C: 87 Kilowattstunden je Quadratmeter und Jahr, 52 Prozent
-              weniger Energie, im Beispiel rund 1.210 Euro Ersparnis im Jahr.
-            </p>
-            <div class="energy-assumptions">
-              <p>
-                Beispiel: Bestand F, 180 kWh/m²a, 100 m² Gebäudenutzfläche,
-                angenommene 0,13 €/kWh. Keine Energieberatung oder
-                Einspargarantie.
-              </p>
-              <details>
-                <summary>Annahmen &amp; CO₂</summary>
-                <p>
-                  Die Kennwerte sind frei gewählte Rechenbeispiele innerhalb der
-                  jeweiligen Klassen, keine garantierten Sanierungsziele.
-                  Gebäudenutzfläche ist nicht gleich Wohnfläche. CO₂ sinkt nur
-                  bei gleichem Energieträger und Emissionsfaktor proportional
-                  zum Energiebedarf. Wetter, Nutzung, Technik, Investitionen und
-                  Förderung sind hier nicht berücksichtigt.
-                </p>
-                <p>
-                  <a
-                    href="https://www.gesetze-im-internet.de/geg/anlage_10.html"
-                    target="_blank"
-                    rel="noopener"
-                    >Klassengrenzen: Anlage 10</a
-                  >
-                </p>
-              </details>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <aside class="work-teaser" id="reporting">
         <div class="wrap">
           <p>Klare Zahlen. Nachvollziehbare Entscheidungen.</p>
