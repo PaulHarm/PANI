@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Energy renovation | PANI Berlin</title>
+    <meta
+      name="description"
+      content="Energy renovation support for existing buildings in Berlin. From assessment and funding to tendering and acceptance, with an interactive energy example."
+    />
+    <link rel="canonical" href="https://www.pani-hv.de/en-renovation.html" />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href="https://www.pani-hv.de/sanierung.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.pani-hv.de/en-renovation.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.pani-hv.de/sanierung.html"
+    />
+
+    <meta name="theme-color" content="#19382d" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="preload"
+      href="assets/fonts/fraunces-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="assets/site.css" />
+    <link rel="stylesheet" href="assets/pages.css" />
+    <script src="assets/site.js" defer></script>
+    <script defer src="assets/energy-model.js"></script>
+    <script src="assets/experience.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="en.html#top" aria-label="PANI home"
+          ><svg class="brand-mark" aria-hidden="true">
+            <use href="assets/icons.svg#pani" /></svg
+          ><span class="brand-name">PANI</span></a
+        >
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="en.html#leistungen">Services</a
+          ><a href="en.html#gruender">About us</a
+          ><a href="en-reporting.html">How we work</a>
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language"
+            href="sanierung.html"
+            lang="de"
+            aria-label="Deutsche Version"
+            >DE</a
+          ><a class="button contact-button" href="en.html#kontakt"
+            >Contact<svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#arrow-up-right" /></svg></a
+          ><button
+            class="menu-toggle"
+            type="button"
+            data-menu-toggle=""
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Open menu"
+            title="Open menu"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg#menu" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        data-mobile-menu=""
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="en.html#leistungen">Services</a
+        ><a href="en.html#gruender">About us</a
+        ><a href="en-reporting.html">How we work</a
+        ><a href="en-tenants.html">Tenant services</a
+        ><a href="en.html#kontakt">Contact</a>
+      </nav>
+    </header>
+    <main class="renovation-page" id="main">
+      <header class="page-intro" id="top">
+        <div class="wrap">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="en.html">Home</a><span aria-hidden="true">/</span
+            ><a href="en.html#leistungen">Services</a
+            ><span aria-hidden="true">/</span
+            ><span aria-current="page">Energy renovation</span>
+          </nav>
+          <h1>Energy renovation.</h1>
+        </div>
+      </header>
+      <section
+        class="section renovation-section"
+        id="sanierung"
+        aria-labelledby="renovation-title"
+      >
+        <div class="wrap renovation-grid">
+          <div class="renovation-copy">
+            <span class="eyebrow">Potential in existing buildings</span>
+            <h2 id="renovation-title">
+              From high running costs to a future-ready building.
+            </h2>
+            <p>
+              We see energy renovation as an opportunity for sustainable
+              property management, not an obligation. When it makes sense for
+              your building, we coordinate the process from the initial
+              assessment through funding and tendering to acceptance, together
+              with qualified specialists.
+            </p>
+            <p>
+              We identify opportunities openly; the decision remains yours.
+              Better efficiency can reduce running costs and CO₂ emissions and
+              support the long-term value of your property.
+            </p>
+            <a class="text-link" href="en.html#kontakt"
+              >Discuss renovation potential<svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#arrow-up-right" /></svg
+            ></a>
+          </div>
+          <div
+            class="energy-tool"
+            data-energy=""
+            data-target="C"
+            data-animate=""
+          >
+            <div class="energy-heading">
+              <h3>What renovation can change</h3>
+              <span>Illustrative example</span>
+            </div>
+            <fieldset disabled>
+              <legend>Choose a target class</legend>
+              <div class="energy-scale">
+                <label
+                  class="energy-option"
+                  style="--class-color: #923e35; --delay: 0s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="H"
+                    aria-label="Target class H"
+                    disabled
+                  /><span class="energy-bar">H</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #a65336; --delay: 0.055s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="G"
+                    aria-label="Target class G"
+                    disabled
+                  /><span class="energy-bar">G</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #a45d2d; --delay: 0.11s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="F"
+                    aria-label="Target class F"
+                  /><span class="energy-bar">F</span
+                  ><span class="baseline-label">Current</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #906c28; --delay: 0.165s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="E"
+                    aria-label="Target class E"
+                  /><span class="energy-bar">E</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #827735; --delay: 0.22s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="D"
+                    aria-label="Target class D"
+                  /><span class="energy-bar">D</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #667b3e; --delay: 0.275s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="C"
+                    aria-label="Target class C"
+                    checked
+                  /><span class="energy-bar">C</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #477342; --delay: 0.33s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="B"
+                    aria-label="Target class B"
+                  /><span class="energy-bar">B</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #306845; --delay: 0.385s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="A"
+                    aria-label="Target class A"
+                  /><span class="energy-bar">A</span
+                  ><span class="target-label">Target</span></label
+                ><label
+                  class="energy-option"
+                  style="--class-color: #235b40; --delay: 0.44s"
+                  ><input
+                    type="radio"
+                    name="energy-target"
+                    value="A+"
+                    aria-label="Target class A+"
+                  /><span class="energy-bar">A+</span
+                  ><span class="target-label">Target</span></label
+                >
+              </div>
+            </fieldset>
+            <div class="energy-results" aria-hidden="true">
+              <div class="energy-result">
+                <strong data-value="demand">87</strong
+                ><span class="energy-unit">kWh/m²a</span>
+                <p>Target energy demand</p>
+              </div>
+              <div class="energy-result">
+                <strong><span data-value="percent">−52</span>%</strong
+                ><span class="energy-unit">versus current</span>
+                <p>Energy reduction</p>
+              </div>
+              <div class="energy-result">
+                <strong>≈ <span data-value="euros">1,210</span></strong
+                ><span class="energy-unit">€/year per 100 m²</span>
+                <p>Heating cost savings</p>
+              </div>
+            </div>
+            <p
+              class="sr-only"
+              data-energy-summary=""
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              Target C: 87 kWh per square metre per year, 52% less energy,
+              approximately 1,210 euros saved per year in this example.
+            </p>
+            <div class="energy-assumptions">
+              <p>
+                Example: current class F, 180 kWh/m²/year, 100 m² building
+                reference area, assumed €0.13/kWh. Not energy advice or a
+                savings guarantee.
+              </p>
+              <details>
+                <summary>Assumptions &amp; CO₂</summary>
+                <p>
+                  The figures are illustrative values within each class, not
+                  guaranteed renovation outcomes. Building reference area
+                  differs from living area. CO₂ only falls in proportion to
+                  energy demand when the energy source and emissions factor
+                  remain unchanged. Weather, use, technology, investment and
+                  subsidies are not included.
+                </p>
+                <p>
+                  <a
+                    href="https://www.gesetze-im-internet.de/geg/anlage_10.html"
+                    target="_blank"
+                    rel="noopener"
+                    >Class thresholds: Annex 10</a
+                  >
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="en.html#top"
+              ><svg class="brand-mark" aria-hidden="true">
+                <use href="assets/icons.svg#pani" /></svg
+              ><span class="brand-name">PANI</span></a
+            >
+            <p>Personally led. At home in Berlin.</p>
+          </div>
+          <nav class="footer-links" aria-label="Further information">
+            <a href="en-weg.html">WEG</a
+            ><a href="en-miethaus.html">Rental buildings</a
+            ><a href="en-sondereigentum.html">Individual apartments</a
+            ><a href="en-tenants.html">Tenant services</a
+            ><a href="en-imprint.html">Legal notice</a
+            ><a href="en-privacy.html">Privacy</a>
+            <a href="en-reporting.html">Reporting</a
+            ><a href="en-portal.html">Tenant portal</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© PANI Hausverwaltung · Berlin</span>
+        </div>
+      </div>
+    </footer>
+    <nav aria-label="Tenant access" class="tenant-dock">
+      <div class="wrap tenant-dock-inner">
+        <span class="tenant-dock-label">Already a tenant?</span
+        ><a class="button tenant-button" href="en-portal.html"
+          ><svg class="icon" aria-hidden="true">
+            <use href="assets/icons.svg#users" /></svg
+          ><span>Tenant portal</span></a
+        >
+      </div>
+    </nav>
+  </body>
+</html>

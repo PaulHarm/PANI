@@ -10,6 +10,13 @@
   max-width: 690px;
   margin-top: 22px;
 }
+.renovation-page h1 {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.contact-button {
+  white-space: nowrap;
+}
 .breadcrumbs {
   display: flex;
   gap: 10px;

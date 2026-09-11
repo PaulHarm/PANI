@@ -20,12 +20,15 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `assets/pages.css`: gemeinsames Layout der Unterseiten, Sanierungsbeispiel und dauerhafter Mieterportal-Link.
 - `reporting.html` und `en-reporting.html`: Eigentümer-Update und animierte Reporting-Illustration, ausschließlich Beispieldaten.
 - `mieterportal.html` und `en-portal.html`: ausdrücklich gekennzeichnete Portal-Platzhalter mit der bisherigen Handy-Illustration. Kein Login und keine Datenerfassung.
+- `sanierung.html` und `en-renovation.html`: energetische Sanierung mit dem interaktiven Rechenbeispiel. Auf der Startseite unter „Besondere Anforderungen“ verlinkt; der alte Anker `#sanierung` führt dort zum Link.
 - `assets/energy-model.js` und `assets/experience.js`: transparentes Sanierungs-Rechenbeispiel und Animationen mit Unterstützung für reduzierte Bewegung.
 - `assets/architecture.svg`: vereinfachte Architekturillustrationen aus dem bestehenden Motivsystem.
 - `assets/icons.svg`: ausgewählte Lucide-Icons und die bestehende PANI-Bildmarke; Lizenz in `assets/Lucide-LICENSE.txt`.
 - `assets/fonts/`: lokal bereitgestellte Fraunces- und IBM-Plex-Schriften mit Lizenzdateien.
 
 ## Kontakt
+
+Alle Seiten haben einen grünen Kontakt-Button in der Kopfzeile und einen separaten, dauerhaft sichtbaren Mieterportal-Zugang am unteren Bildschirmrand. Der Portal-Link ist ohne JavaScript erreichbar und führt vorerst zum gekennzeichneten Platzhalter.
 
 Die bestätigte Adresse lautet `info@pani-hv.de`. Die Eingabefelder bereiten einen `mailto:`-Entwurf vor. Erst der Nutzer sendet die E-Mail in seinem E-Mail-Programm. Es gibt weder einen Formspree-Endpunkt noch einen automatischen Versand, eine Zustellbestätigung oder serverseitige Speicherung der Eingaben. Direkte E-Mail-Links funktionieren auch ohne JavaScript.
 
