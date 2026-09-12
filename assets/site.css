@@ -25,6 +25,7 @@
   --sans: Plex, Arial, sans-serif;
   --width: 1160px;
   --gutter: 48px;
+  --header-height: 86px;
 }
 * {
   box-sizing: border-box;
@@ -144,7 +145,7 @@ summary:focus-visible {
   transform: none;
 }
 .site-header {
-  height: 86px;
+  height: var(--header-height);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -262,6 +263,11 @@ summary:focus-visible {
   border-bottom: 1px solid var(--line);
   padding: 16px var(--gutter) 24px;
   box-shadow: 0 14px 18px #19382d0b;
+  max-height: calc(
+    100dvh - var(--header-height) - 72px - env(safe-area-inset-bottom, 0px)
+  );
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .mobile-nav a {
   display: block;
@@ -916,6 +922,9 @@ summary:focus-visible {
   }
 }
 @media (max-width: 800px) {
+  :root {
+    --header-height: 74px;
+  }
   .desktop-nav {
     display: none;
   }
@@ -925,8 +934,12 @@ summary:focus-visible {
   .menu-toggle {
     display: flex;
   }
-  .site-header {
-    height: 74px;
+  .hero:after {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 32, 24, 0.64),
+      rgba(14, 32, 24, 0.74)
+    );
   }
   .hero {
     min-height: 480px;
@@ -1042,6 +1055,7 @@ summary:focus-visible {
 @media (max-width: 560px) {
   :root {
     --gutter: 22px;
+    --header-height: 70px;
   }
   .brand-name {
     font-size: 27px;
@@ -1051,9 +1065,6 @@ summary:focus-visible {
   }
   .brand {
     gap: 8px;
-  }
-  .site-header {
-    height: 70px;
   }
   .header-inner {
     gap: 14px;

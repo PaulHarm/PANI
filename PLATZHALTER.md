@@ -17,6 +17,9 @@ Stand: Website-Überarbeitung vom 12. September 2026.
 - Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet; der dauerhafte Link sitzt in einer festen Leiste am unteren Bildschirmrand auf allen Seiten.
 - Alle Leistungsseiten und die Navigation im neuen Design vereinheitlicht.
 - Grüner Kontakt-Button in der Kopfzeile auf allen Seiten wiederhergestellt. Der Mieterportal-Zugang bleibt separat am unteren Bildschirmrand fixiert.
+- Mobiles Menü auch im Querformat vollständig erreichbar: eigene Scrollfläche oberhalb der festen Mieterleiste.
+- Lesbarkeit der Titelbilder auf mobilen Geräten verbessert, unnötige Worttrennungen auf Leistungsseiten entfernt und lange Überschriften der Rechtstexte abgesichert.
+- Footer der 404-Seite schließt auch bei wenig Inhalt sauber am unteren Bildschirmrand ab.
 
 ## Noch vom Inhaber zu ergänzen
 
@@ -36,6 +39,10 @@ Stand: Website-Überarbeitung vom 12. September 2026.
 
 - Kontaktlogik und Sanierungsbeispiel: 14 automatisierte Tests bestanden, einschließlich schneller Zielwechsel, ungültiger Werte und reduzierter Bewegung.
 - Interne Dateien und Abschnittsanker: 1.374 Verweise auf sämtlichen 29 HTML-Seiten geprüft.
-- Aktuelle Browserprüfung: Desktop 1280 Pixel und Smartphone 320 Pixel. Alle 29 Seiten ohne horizontales Überlaufen; Kontakt-Button sichtbar und Portal-Ziel sprachlich korrekt. Fixierter Portal-Zugang vor und nach dem Scrollen und per Klick geprüft. Neue Sanierungsseiten inklusive Rechner, Tastatursteuerung, Sprachführung und Kontaktziel geprüft. Kein echter E-Mail-Versand ausgelöst.
+- Sichtprüfung aller 29 deutschen und englischen Seiten auf Desktop und Smartphone. Zusätzliche Kontrolle der unteren Bereiche von Reporting, Portal, Sanierung, Kontakt und Gründer-Footer.
+- 145 Layoutprüfungen bei 320, 390, 768, 820 und 1280 Pixeln: keine horizontalen Seitenüberläufe oder abgeschnittenen Textspalten; Titelbilder geladen, Kontakt-Button vorhanden und Portal-Ziel sprachlich korrekt.
+- Footer sämtlicher 29 Seiten bei 390 Pixeln geprüft: kein verdeckter Abschluss durch die feste Mieterleiste. Portal-Link am unteren Seitenende erfolgreich angeklickt.
+- Mobiles Menü zusätzlich bei 740 × 360 Pixeln geprüft: scrollbar, Kontakt erreichbar, Schließen nach Auswahl und per Escape funktioniert.
+- Sanierungsrechner inklusive Zielwechsel und Endwerten sowie reduzierte Bewegung durch Funktionstests geprüft. Kein echter E-Mail-Versand ausgelöst.
 - Deutsche Startseite auf 459 Wörter einschließlich Navigation, Formularbeschriftungen und Footer reduziert; der Sanierungsabschnitt wird dort nicht mehr geladen.
-- Die Auslagerung der Sanierung und die angepasste Navigation sind zur Veröffentlichung auf main freigegeben.
+- Die Auslagerung der Sanierung, die angepasste Navigation und die anschließenden Layoutkorrekturen gehören zum freigegebenen Veröffentlichungsstand auf main.
