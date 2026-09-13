@@ -18,6 +18,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `leistungen.html` und `en-services.html`: Leistungsübersicht mit acht Angeboten, Architekturillustrationen und Links zu den Detailseiten. Hauptnavigation, mobiles Menü, Footer und Brotkrumennavigation führen zur Übersicht. Die Startseiten behalten drei kompakte Angebote und ergänzen „Alle Leistungen ansehen“.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
 - `assets/site.css` und `assets/site.js`: gemeinsame Gestaltung und Interaktionen der neuen Seiten.
+- Stylesheet-Links tragen eine Inhaltsversion (`?v=…`), damit Browser nach einer Veröffentlichung keine ältere Gestaltung weiterverwenden. Bei CSS-Änderungen diese Version in allen HTML-Seiten aktualisieren.
 - `assets/pages.css`: gemeinsames Layout der Unterseiten, Sanierungsbeispiel und dauerhafter Mieterportal-Link.
 - `reporting.html` und `en-reporting.html`: Eigentümer-Update und animierte Reporting-Illustration, ausschließlich Beispieldaten.
 - `mieterportal.html` und `en-portal.html`: ausdrücklich gekennzeichnete Portal-Platzhalter mit der bisherigen Handy-Illustration. Kein Login und keine Datenerfassung.
