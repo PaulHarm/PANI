@@ -1,6 +1,6 @@
 # Offene Angaben und Veröffentlichungsstand
 
-Stand: Website-Überarbeitung vom 12. September 2026.
+Stand: Website-Überarbeitung vom 13. September 2026.
 
 ## Erledigt
 
@@ -20,6 +20,8 @@ Stand: Website-Überarbeitung vom 12. September 2026.
 - Mobiles Menü auch im Querformat vollständig erreichbar: eigene Scrollfläche oberhalb der festen Mieterleiste.
 - Lesbarkeit der Titelbilder auf mobilen Geräten verbessert, unnötige Worttrennungen auf Leistungsseiten entfernt und lange Überschriften der Rechtstexte abgesichert.
 - Footer der 404-Seite schließt auch bei wenig Inhalt sauber am unteren Bildschirmrand ab.
+- Eigene deutsche und englische Leistungsübersicht mit acht Angeboten: drei Verwaltungsarten, vier besondere Anforderungen und Sanierungsbegleitung. Acht Illustrationen aus dem bestehenden Architektur-Motivsystem, kompakte Leistungslisten und direkte Detailseiten-Links.
+- „Leistungen“ führt auf allen 31 Seiten zur Übersicht, einschließlich mobilem Menü, Footer und Brotkrumennavigation. Startseiten bleiben kompakt und ergänzen „Alle Leistungen ansehen“. Sprachwechsel und Sitemap berücksichtigen beide neuen Seiten.
 
 ## Noch vom Inhaber zu ergänzen
 
@@ -38,11 +40,12 @@ Stand: Website-Überarbeitung vom 12. September 2026.
 ## Prüfung dieser Überarbeitung
 
 - Kontaktlogik und Sanierungsbeispiel: 14 automatisierte Tests bestanden, einschließlich schneller Zielwechsel, ungültiger Werte und reduzierter Bewegung.
-- Interne Dateien und Abschnittsanker: 1.374 Verweise auf sämtlichen 29 HTML-Seiten geprüft.
-- Sichtprüfung aller 29 deutschen und englischen Seiten auf Desktop und Smartphone. Zusätzliche Kontrolle der unteren Bereiche von Reporting, Portal, Sanierung, Kontakt und Gründer-Footer.
-- 145 Layoutprüfungen bei 320, 390, 768, 820 und 1280 Pixeln: keine horizontalen Seitenüberläufe oder abgeschnittenen Textspalten; Titelbilder geladen, Kontakt-Button vorhanden und Portal-Ziel sprachlich korrekt.
-- Footer sämtlicher 29 Seiten bei 390 Pixeln geprüft: kein verdeckter Abschluss durch die feste Mieterleiste. Portal-Link am unteren Seitenende erfolgreich angeklickt.
+- Interne Dateien und Abschnittsanker: 1.533 Verweise auf sämtlichen 31 HTML-Seiten geprüft.
+- Sichtprüfung der beiden neuen Leistungsübersichten auf Desktop, Tablet und Smartphone. Die 29 bestehenden Seiten wurden beim Layoutaudit am 12. September geprüft; deren Inhalte bleiben bis auf die ergänzte Navigation unverändert.
+- 155 Layoutprüfungen bei 320, 390, 768, 820 und 1280 Pixeln: keine horizontalen Seitenüberläufe oder abgeschnittenen Textspalten; Titelbilder geladen, Kontakt-Button vorhanden und Portal-Ziel sprachlich korrekt.
+- Alle 16 Leistungslinks in beiden Sprachen samt Rückweg über die Brotkrumennavigation im Browser durchgeklickt. Sprachwechsel, Startseiten-Verweis und Mieterportal-Ziel zusätzlich geprüft.
+- Footer der 29 bestehenden Seiten beim vorigen Audit bei 390 Pixeln geprüft: kein verdeckter Abschluss durch die feste Mieterleiste. Der feste Zugang bleibt unverändert.
 - Mobiles Menü zusätzlich bei 740 × 360 Pixeln geprüft: scrollbar, Kontakt erreichbar, Schließen nach Auswahl und per Escape funktioniert.
 - Sanierungsrechner inklusive Zielwechsel und Endwerten sowie reduzierte Bewegung durch Funktionstests geprüft. Kein echter E-Mail-Versand ausgelöst.
-- Deutsche Startseite auf 459 Wörter einschließlich Navigation, Formularbeschriftungen und Footer reduziert; der Sanierungsabschnitt wird dort nicht mehr geladen.
-- Die Auslagerung der Sanierung, die angepasste Navigation und die anschließenden Layoutkorrekturen gehören zum freigegebenen Veröffentlichungsstand auf main.
+- Deutsche Startseite mit 464 Wörtern einschließlich Navigation, Formularbeschriftungen und Footer weiterhin kompakt; der Sanierungsabschnitt wird dort nicht geladen.
+- Die Leistungsübersicht und die angepasste Navigation ergänzen den freigegebenen Veröffentlichungsstand auf main.
