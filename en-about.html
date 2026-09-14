@@ -36,8 +36,8 @@
       type="font/woff2"
       crossorigin=""
     />
-    <link rel="stylesheet" href="assets/site.css?v=fe3095e4d4c1" />
-    <link rel="stylesheet" href="assets/pages.css?v=0e0d0429a106" />
+    <link rel="stylesheet" href="assets/site.css?v=20260914d" />
+    <link rel="stylesheet" href="assets/pages.css?v=20260914d" />
     <script src="assets/site.js" defer></script>
 
     <meta
@@ -71,7 +71,7 @@
         <a class="brand" href="en.html#top" aria-label="PANI homepage"
           ><svg class="brand-mark" aria-hidden="true">
             <use href="assets/icons.svg#pani" /></svg
-          ><span class="brand-name">PANI</span></a
+          ><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a
         >
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="en-services.html">Services</a
@@ -113,7 +113,7 @@
         <a href="en-services.html">Services</a
         ><a aria-current="page" href="en-about.html">About us</a
         ><a href="en-reporting.html">Reporting</a
-        ><a href="en-tenants.html">Tenant service</a
+        ><a href="en-tenants.html">Tenant services</a
         ><a href="en.html#kontakt">Contact</a>
       </nav>
     </header>
@@ -136,54 +136,12 @@
         class="detail-section about-team"
         aria-labelledby="founders-title"
       >
-        <div class="wrap">
-          <h2 id="founders-title">Two founders. Clear responsibilities.</h2>
-          <div class="founders about-founders">
-            <article class="founder">
-              <div class="founder-initials" aria-hidden="true">NP</div>
-              <div>
-                <h3>Niclas Paprocki</h3>
-                <p class="founder-role">Property operations &amp; delivery</p>
-                <p>
-                  Experience gained in his family’s property management business
-                  and through real estate studies. Close to the property,
-                  dependable in coordination and attentive to detail.
-                </p>
-              </div>
-            </article>
-            <article class="founder">
-              <img
-                class="founder-photo"
-                src="assets/paul-harm.jpg"
-                width="500"
-                height="500"
-                alt="Paul Harm"
-              />
-              <div>
-                <h3>Paul Harm</h3>
-                <p class="founder-role">Finance &amp; strategy</p>
-                <p>
-                  Financial analysis and investment banking experience. Bringing
-                  clarity to the numbers, sound decision-making and a
-                  disciplined approach to costs.
-                </p>
-              </div>
-            </article>
+        <div class="wrap about-team-grid">
+          <div class="about-team-head">
+            <span class="eyebrow">The founders</span>
+            <h2 id="founders-title">Two founders. Clear responsibilities.</h2>
           </div>
-        </div>
-      </section>
-      <section class="detail-section" aria-labelledby="story-title">
-        <div class="wrap about-story">
-          <div>
-            <span class="eyebrow">Two perspectives, one property</span>
-            <h2 id="story-title">Understand the property. Inform decisions.</h2>
-          </div>
-          <div>
-            <p>
-              Niclas brings experience from his family’s property management
-              business and his studies in real estate. Paul adds a financial
-              perspective shaped by his experience in investment banking.
-            </p>
+          <div class="about-team-copy">
             <p>
               For you, these belong together: someone looks after the building
               and the people in it, while income, costs and upcoming works
@@ -204,6 +162,46 @@
                 ><span>under section 26a WEG</span>
               </figcaption>
             </figure>
+          </div>
+          <div class="founders about-founders">
+            <article class="founder">
+              <img
+                class="founder-photo founder-photo-np"
+                src="assets/niclas-paprocki.jpg"
+                width="600"
+                height="600"
+                decoding="async"
+                alt="Niclas Paprocki"
+              />
+              <div class="founder-body">
+                <h3>Niclas Paprocki</h3>
+                <p class="founder-role">Property operations &amp; delivery</p>
+                <p>
+                  Experience gained in his family’s property management business
+                  and through real estate studies. Close to the property,
+                  dependable in coordination and attentive to detail.
+                </p>
+              </div>
+            </article>
+            <article class="founder">
+              <img
+                class="founder-photo"
+                src="assets/paul-harm.jpg"
+                width="500"
+                height="500"
+                decoding="async"
+                alt="Paul Harm"
+              />
+              <div class="founder-body">
+                <h3>Paul Harm</h3>
+                <p class="founder-role">Finance &amp; strategy</p>
+                <p>
+                  Financial analysis and investment banking experience. Bringing
+                  clarity to the numbers, sound decision-making and a
+                  disciplined approach to costs.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -281,20 +279,20 @@
             <a class="brand" href="en.html#top"
               ><svg class="brand-mark" aria-hidden="true">
                 <use href="assets/icons.svg#pani" /></svg
-              ><span class="brand-name">PANI</span></a
+              ><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a
             >
             <p>Personally led. At home in Berlin.</p>
           </div>
-          <nav class="footer-links" aria-label="More information">
-            <a href="en-services.html" aria-current="page">All services</a
+          <nav class="footer-links" aria-label="Further information">
+            <a href="en-services.html">All services</a
             ><a href="en-weg.html">WEG</a
             ><a href="en-miethaus.html">Rental buildings</a
-            ><a href="en-sondereigentum.html">Apartments</a
-            ><a href="en-tenants.html">Tenant service</a
-            ><a href="en-imprint.html">Imprint</a
-            ><a href="en-privacy.html">Privacy</a
-            ><a href="en-reporting.html">Reporting</a>
-            <a href="en-about.html">About us</a>
+            ><a href="en-sondereigentum.html">Individual apartments</a
+            ><a href="en-reporting.html">Reporting</a
+            ><a href="en-about.html" aria-current="page">About us</a
+            ><a href="en-tenants.html">Tenant services</a
+            ><a href="en-imprint.html">Legal notice</a
+            ><a href="en-privacy.html">Privacy</a>
           </nav>
         </div>
         <div class="footer-bottom">
