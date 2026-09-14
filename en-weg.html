@@ -30,10 +30,34 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#19382d" />
 
-    <link rel="stylesheet" href="assets/site.css?v=375e59ece02f" />
-    <link rel="stylesheet" href="assets/pages.css?v=7dd08b37bf02" />
+    <link rel="stylesheet" href="assets/site.css?v=fe3095e4d4c1" />
+    <link rel="stylesheet" href="assets/pages.css?v=0e0d0429a106" />
     <script src="assets/site.js" defer></script>
     <script src="assets/experience.js" defer></script>
+
+    <meta
+      content="WEG Management for Homeowner Associations · PANI Berlin"
+      property="og:title"
+    />
+    <meta
+      content="PANI property management Berlin: condominium (WEG) management for homeowner associations. Structured meetings, legally sound resolutions, transparent accounting."
+      property="og:description"
+    />
+    <meta content="https://www.pani-hv.de/en-weg.html" property="og:url" />
+    <meta content="website" property="og:type" />
+    <meta content="PANI Hausverwaltung" property="og:site_name" />
+    <meta content="en_GB" property="og:locale" />
+    <meta
+      content="https://www.pani-hv.de/assets/social/weg-hauseingang-portal.jpg"
+      property="og:image"
+    />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta
+      content="Ornate entrance portal of an apartment building with a warmly lit leaded-glass fanlight, Bleibtreustrasse, Berlin-Charlottenburg"
+      property="og:image:alt"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -46,8 +70,8 @@
         >
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="en-services.html">Services</a
-          ><a href="en.html#gruender">About us</a
-          ><a href="en-reporting.html">How we work</a>
+          ><a href="en-about.html">About us</a
+          ><a href="en-reporting.html">Reporting</a>
         </nav>
         <div class="header-actions">
           <a
@@ -82,24 +106,33 @@
         hidden
       >
         <a href="en-services.html">Services</a
-        ><a href="en.html#gruender">About us</a
-        ><a href="en-reporting.html">How we work</a
+        ><a href="en-about.html">About us</a
+        ><a href="en-reporting.html">Reporting</a
         ><a href="en-tenants.html">Tenant services</a
         ><a href="en.html#kontakt">Contact</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero detail-hero" id="top" aria-labelledby="page-title">
-        <img
-          fetchpriority="high"
-          class="hero-photo"
-          src="assets/weg-hauseingang-portal.jpg"
-          alt="Ornate entrance portal of an apartment building with a warmly lit leaded-glass fanlight, Bleibtreustrasse, Berlin-Charlottenburg"
-          width="960"
-          height="1440"
-          decoding="async"
-          style="object-position: center 60%"
-        />
+        <picture
+          ><source
+            sizes="(max-width: 800px) max(100vw, 500px), 100vw"
+            srcset="
+              assets/weg-hauseingang-portal-480.webp 480w,
+              assets/weg-hauseingang-portal-800.webp 800w,
+              assets/weg-hauseingang-portal-960.webp 960w
+            "
+            type="image/webp" />
+          <img
+            fetchpriority="high"
+            class="hero-photo"
+            src="assets/weg-hauseingang-portal.jpg"
+            alt="Ornate entrance portal of an apartment building with a warmly lit leaded-glass fanlight, Bleibtreustrasse, Berlin-Charlottenburg"
+            width="960"
+            height="1440"
+            decoding="async"
+            style="object-position: center 60%"
+        /></picture>
         <div class="wrap hero-content">
           <nav class="breadcrumbs" aria-label="Breadcrumb">
             <a href="en.html">PANI</a><span>/</span
@@ -187,28 +220,28 @@
           <h2>How we start together</h2>
           <div class="steps">
             <div class="step">
-              <div class="no">01</div>
-              <div class="t">Assessment</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">01</div>
+              <h3 class="t">Assessment</h3>
+              <p class="d">
                 Association, resolutions, contracts, reserves and open issues at
                 a glance.
-              </div>
+              </p>
             </div>
             <div class="step">
-              <div class="no">02</div>
-              <div class="t">Orderly handover</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">02</div>
+              <h3 class="t">Orderly handover</h3>
+              <p class="d">
                 A clean transfer of the management records, the annual budget
                 (Wirtschaftsplan) and clearly documented processes.
-              </div>
+              </p>
             </div>
             <div class="step">
-              <div class="no">03</div>
-              <div class="t">Management &amp; reporting</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">03</div>
+              <h3 class="t">Management &amp; reporting</h3>
+              <p class="d">
                 Ongoing support with transparent reporting and reliable
                 execution.
-              </div>
+              </p>
             </div>
           </div>
         </div>
@@ -318,8 +351,8 @@
             ><a href="en-tenants.html">Tenant services</a
             ><a href="en-imprint.html">Legal notice</a
             ><a href="en-privacy.html">Privacy</a>
-            <a href="en-reporting.html">Reporting</a
-            ><a href="en-portal.html">Tenant portal</a>
+            <a href="en-reporting.html">Reporting</a>
+            <a href="en-about.html">About us</a>
           </nav>
         </div>
         <div class="footer-bottom">
@@ -339,10 +372,10 @@
     <nav aria-label="Tenant access" class="tenant-dock">
       <div class="wrap tenant-dock-inner">
         <span class="tenant-dock-label">Already a tenant?</span
-        ><a class="button tenant-button" href="en-portal.html"
+        ><a class="button tenant-button" href="en-tenants.html"
           ><svg class="icon" aria-hidden="true">
             <use href="assets/icons.svg#users" /></svg
-          ><span>Tenant portal</span></a
+          ><span>Tenant services</span></a
         >
       </div>
     </nav>

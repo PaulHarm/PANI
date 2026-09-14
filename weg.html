@@ -30,10 +30,34 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#19382d" />
 
-    <link rel="stylesheet" href="assets/site.css?v=375e59ece02f" />
-    <link rel="stylesheet" href="assets/pages.css?v=7dd08b37bf02" />
+    <link rel="stylesheet" href="assets/site.css?v=fe3095e4d4c1" />
+    <link rel="stylesheet" href="assets/pages.css?v=0e0d0429a106" />
     <script src="assets/site.js" defer></script>
     <script src="assets/experience.js" defer></script>
+
+    <meta
+      content="WEG-Verwaltung für Eigentümergemeinschaften · PANI Berlin"
+      property="og:title"
+    />
+    <meta
+      content="PANI Hausverwaltung Berlin: WEG-Verwaltung für Wohnungseigentümergemeinschaften. Strukturierte Versammlungen, rechtssichere Beschlüsse, transparente Abrechnung."
+      property="og:description"
+    />
+    <meta content="https://www.pani-hv.de/weg.html" property="og:url" />
+    <meta content="website" property="og:type" />
+    <meta content="PANI Hausverwaltung" property="og:site_name" />
+    <meta content="de_DE" property="og:locale" />
+    <meta
+      content="https://www.pani-hv.de/assets/social/weg-hauseingang-portal.jpg"
+      property="og:image"
+    />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta
+      content="Verziertes Eingangsportal eines Mehrparteienhauses mit warm leuchtendem Bleiglas-Oberlicht, Bleibtreustraße, Berlin-Charlottenburg"
+      property="og:image:alt"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#main">Zum Inhalt</a>
@@ -46,8 +70,8 @@
         >
         <nav class="desktop-nav" aria-label="Hauptnavigation">
           <a href="leistungen.html">Leistungen</a
-          ><a href="index.html#gruender">Über uns</a
-          ><a href="reporting.html">Arbeitsweise</a>
+          ><a href="ueber-uns.html">Über uns</a
+          ><a href="reporting.html">Reporting</a>
         </nav>
         <div class="header-actions">
           <a
@@ -82,24 +106,33 @@
         hidden
       >
         <a href="leistungen.html">Leistungen</a
-        ><a href="index.html#gruender">Über uns</a
-        ><a href="reporting.html">Arbeitsweise</a
+        ><a href="ueber-uns.html">Über uns</a
+        ><a href="reporting.html">Reporting</a
         ><a href="mieter.html">Mieterservice</a
         ><a href="index.html#kontakt">Kontakt</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero detail-hero" id="top" aria-labelledby="page-title">
-        <img
-          fetchpriority="high"
-          class="hero-photo"
-          src="assets/weg-hauseingang-portal.jpg"
-          alt="Verziertes Eingangsportal eines Mehrparteienhauses mit warm leuchtendem Bleiglas-Oberlicht, Bleibtreustraße, Berlin-Charlottenburg"
-          width="960"
-          height="1440"
-          decoding="async"
-          style="object-position: center 60%"
-        />
+        <picture
+          ><source
+            sizes="(max-width: 800px) max(100vw, 500px), 100vw"
+            srcset="
+              assets/weg-hauseingang-portal-480.webp 480w,
+              assets/weg-hauseingang-portal-800.webp 800w,
+              assets/weg-hauseingang-portal-960.webp 960w
+            "
+            type="image/webp" />
+          <img
+            fetchpriority="high"
+            class="hero-photo"
+            src="assets/weg-hauseingang-portal.jpg"
+            alt="Verziertes Eingangsportal eines Mehrparteienhauses mit warm leuchtendem Bleiglas-Oberlicht, Bleibtreustraße, Berlin-Charlottenburg"
+            width="960"
+            height="1440"
+            decoding="async"
+            style="object-position: center 60%"
+        /></picture>
         <div class="wrap hero-content">
           <nav class="breadcrumbs" aria-label="Brotkrumennavigation">
             <a href="index.html">PANI</a><span>/</span
@@ -184,38 +217,38 @@
           <h2>So starten wir zusammen</h2>
           <div class="steps">
             <div class="step">
-              <div class="no">01</div>
-              <div class="t">Bestandsaufnahme</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">01</div>
+              <h3 class="t">Bestandsaufnahme</h3>
+              <p class="d">
                 Gemeinschaft, Beschlusslage, Verträge, Rücklagen und offene
                 Themen im Überblick.
-              </div>
+              </p>
             </div>
             <div class="step">
-              <div class="no">02</div>
-              <div class="t">Beschluss und Kündigung</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">02</div>
+              <h3 class="t">Beschluss und Kündigung</h3>
+              <p class="d">
                 Für den Wechsel braucht es nur den Beschluss der Eigentümer.
                 Eine bestehende Verwaltung kann laut § 26 Abs. 3 WEG jederzeit
                 abberufen werden, der laufende Vertrag endet dann spätestens
                 sechs Monate später.
-              </div>
+              </p>
             </div>
             <div class="step">
-              <div class="no">03</div>
-              <div class="t">Geordnete Übernahme</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">03</div>
+              <h3 class="t">Geordnete Übernahme</h3>
+              <p class="d">
                 Saubere Übergabe der Verwaltung, Wirtschaftsplan und klare,
                 dokumentierte Prozesse.
-              </div>
+              </p>
             </div>
             <div class="step">
-              <div class="no">04</div>
-              <div class="t">Verwaltung &amp; Reporting</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">04</div>
+              <h3 class="t">Verwaltung &amp; Reporting</h3>
+              <p class="d">
                 Laufende Betreuung mit transparentem Reporting und verlässlicher
                 Umsetzung.
-              </div>
+              </p>
             </div>
           </div>
         </div>
@@ -329,8 +362,8 @@
             ><a href="mieter.html">Mieterservice</a
             ><a href="impressum.html">Impressum</a
             ><a href="datenschutz.html">Datenschutz</a>
-            <a href="reporting.html">Reporting</a
-            ><a href="mieterportal.html">Mieterportal</a>
+            <a href="reporting.html">Reporting</a>
+            <a href="ueber-uns.html">Über uns</a>
           </nav>
         </div>
         <div class="footer-bottom">
@@ -350,10 +383,10 @@
     <nav aria-label="Mieterzugang" class="tenant-dock">
       <div class="wrap tenant-dock-inner">
         <span class="tenant-dock-label">Sie sind Mieter?</span
-        ><a class="button tenant-button" href="mieterportal.html"
+        ><a class="button tenant-button" href="mieter.html"
           ><svg class="icon" aria-hidden="true">
             <use href="assets/icons.svg#users" /></svg
-          ><span>Mieterportal</span></a
+          ><span>Mieterservice</span></a
         >
       </div>
     </nav>

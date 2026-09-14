@@ -6,7 +6,7 @@
     <title>Hausverwaltung für Zinshäuser · PANI Berlin</title>
     <meta
       name="description"
-      content="PANI Hausverwaltung Berlin: Hausverwaltung für Zinshäuser. Substanz sichern, Ertrag entwickeln — mit analytischer Disziplin und dem Handwerk einer Verwalterfamilie."
+      content="Berliner Wohn- und Mischobjekte verbinden gewachsene Mietverhältnisse mit den Anforderungen ihrer Bausubstanz. Wir betreuen Ihr Zinshaus mit Blick auf beides: einen geordneten Alltag für die Mieter und eine vorausschauende Bewirtschaftung für Sie."
     />
     <link rel="canonical" href="https://www.pani-hv.de/zinshaus.html" />
     <link
@@ -30,10 +30,34 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#19382d" />
 
-    <link rel="stylesheet" href="assets/site.css?v=375e59ece02f" />
-    <link rel="stylesheet" href="assets/pages.css?v=7dd08b37bf02" />
+    <link rel="stylesheet" href="assets/site.css?v=fe3095e4d4c1" />
+    <link rel="stylesheet" href="assets/pages.css?v=0e0d0429a106" />
     <script src="assets/site.js" defer></script>
     <script src="assets/experience.js" defer></script>
+
+    <meta
+      content="Hausverwaltung für Zinshäuser · PANI Berlin"
+      property="og:title"
+    />
+    <meta
+      content="Berliner Wohn- und Mischobjekte verbinden gewachsene Mietverhältnisse mit den Anforderungen ihrer Bausubstanz. Wir betreuen Ihr Zinshaus mit Blick auf beides: einen geordneten Alltag für die Mieter und eine vorausschauende Bewirtschaftung für Sie."
+      property="og:description"
+    />
+    <meta content="https://www.pani-hv.de/zinshaus.html" property="og:url" />
+    <meta content="website" property="og:type" />
+    <meta content="PANI Hausverwaltung" property="og:site_name" />
+    <meta content="de_DE" property="og:locale" />
+    <meta
+      content="https://www.pani-hv.de/assets/social/zinshaus-gruenderzeit-fassade.jpg"
+      property="og:image"
+    />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta
+      content="Sonnenbeschienene Gründerzeitfassade mit Stuck, Erkern und Balkonen in der Inselstraße, Berlin-Mitte"
+      property="og:image:alt"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#main">Zum Inhalt</a>
@@ -46,8 +70,8 @@
         >
         <nav class="desktop-nav" aria-label="Hauptnavigation">
           <a href="leistungen.html">Leistungen</a
-          ><a href="index.html#gruender">Über uns</a
-          ><a href="reporting.html">Arbeitsweise</a>
+          ><a href="ueber-uns.html">Über uns</a
+          ><a href="reporting.html">Reporting</a>
         </nav>
         <div class="header-actions">
           <a
@@ -82,24 +106,33 @@
         hidden
       >
         <a href="leistungen.html">Leistungen</a
-        ><a href="index.html#gruender">Über uns</a
-        ><a href="reporting.html">Arbeitsweise</a
+        ><a href="ueber-uns.html">Über uns</a
+        ><a href="reporting.html">Reporting</a
         ><a href="mieter.html">Mieterservice</a
         ><a href="index.html#kontakt">Kontakt</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero detail-hero" id="top" aria-labelledby="page-title">
-        <img
-          fetchpriority="high"
-          class="hero-photo"
-          src="assets/zinshaus-gruenderzeit-fassade.jpg"
-          alt="Sonnenbeschienene Gründerzeitfassade mit Stuck, Erkern und Balkonen in der Inselstraße, Berlin-Mitte"
-          width="960"
-          height="1650"
-          decoding="async"
-          style="object-position: center 35%"
-        />
+        <picture
+          ><source
+            sizes="(max-width: 800px) max(100vw, 437px), 100vw"
+            srcset="
+              assets/zinshaus-gruenderzeit-fassade-480.webp 480w,
+              assets/zinshaus-gruenderzeit-fassade-800.webp 800w,
+              assets/zinshaus-gruenderzeit-fassade-960.webp 960w
+            "
+            type="image/webp" />
+          <img
+            fetchpriority="high"
+            class="hero-photo"
+            src="assets/zinshaus-gruenderzeit-fassade.jpg"
+            alt="Sonnenbeschienene Gründerzeitfassade mit Stuck, Erkern und Balkonen in der Inselstraße, Berlin-Mitte"
+            width="960"
+            height="1650"
+            decoding="async"
+            style="object-position: center 35%"
+        /></picture>
         <div class="wrap hero-content">
           <nav class="breadcrumbs" aria-label="Brotkrumennavigation">
             <a href="index.html">PANI</a><span>/</span
@@ -107,10 +140,10 @@
           </nav>
           <h1 id="page-title">Zinshausverwaltung in Berlin.</h1>
           <p>
-            Für Eigentümer klassischer Berliner Wohn- und Mischobjekte: Wir
-            kennen die Anforderungen von Altbausubstanz, gewachsener
-            Mieterstruktur und wirtschaftlicher Entwicklung — und bringen sie in
-            Balance.
+            Berliner Wohn- und Mischobjekte verbinden gewachsene
+            Mietverhältnisse mit den Anforderungen ihrer Bausubstanz. Wir
+            betreuen Ihr Zinshaus mit Blick auf beides: einen geordneten Alltag
+            für die Mieter und eine vorausschauende Bewirtschaftung für Sie.
           </p>
           <div class="hero-actions">
             <a class="button button-light" href="index.html#kontakt"
@@ -138,35 +171,26 @@
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Kenntnis typischer Anforderungen Berliner Zinshäuser</span>
+              ><span>Mietverhältnisse und Bausubstanz gemeinsam im Blick</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg#check" /></svg
+              ><span>Anstehende Instandhaltung verständlich priorisiert</span>
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
               ><span
-                >Balance aus Mieterbelangen, Substanzerhalt und
-                Wirtschaftlichkeit</span
+                >Abstimmung mit Handwerkern und Dienstleistern vor Ort</span
               >
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
               ><span
-                >Begleitung von Sanierungs-, Entwicklungs- und
-                Optimierungsschritten</span
-              >
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Verlässliche operative Umsetzung im Alltag</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span
-                >Strukturierte Betreuung auch bei gewachsenen
-                Objektstrukturen</span
+                >Wirtschaftlichkeit und langfristiger Erhalt
+                zusammengedacht</span
               >
             </li>
           </ul>
@@ -183,75 +207,74 @@
           <h2>So starten wir zusammen</h2>
           <div class="steps">
             <div class="step">
-              <div class="no">01</div>
-              <div class="t">Objekt- &amp; Mieterstruktur</div>
-              <div class="d">
-                Bestandsanalyse: Substanz, Verträge, Mietniveau und offene
-                Themen.
-              </div>
+              <div aria-hidden="true" class="no">01</div>
+              <h3 class="t">Haus kennenlernen</h3>
+              <p class="d">
+                Wir ordnen Gebäudezustand, Mietverträge und offene Anliegen.
+              </p>
             </div>
             <div class="step">
-              <div class="no">02</div>
-              <div class="t">Maßnahmenfahrplan</div>
-              <div class="d">
-                Sanierung und Entwicklung werden priorisiert — inklusive Blick
-                auf Förderkulisse.
-              </div>
+              <div aria-hidden="true" class="no">02</div>
+              <h3 class="t">Prioritäten setzen</h3>
+              <p class="d">
+                Wir stimmen anstehende Arbeiten und deren Reihenfolge mit Ihnen
+                ab.
+              </p>
             </div>
             <div class="step">
-              <div class="no">03</div>
-              <div class="t">Umsetzung &amp; Controlling</div>
-              <div class="d">
-                Professionelle Steuerung der Maßnahmen mit laufender Kosten- und
-                Terminkontrolle.
-              </div>
+              <div aria-hidden="true" class="no">03</div>
+              <h3 class="t">Umsetzung begleiten</h3>
+              <p class="d">
+                Wir koordinieren die Beteiligten und behalten Kosten sowie
+                Termine im Blick.
+              </p>
             </div>
           </div>
         </div>
       </section>
       <section class="detail-section">
         <div class="wrap">
-          <h2>Im Mandat enthalten</h2>
+          <h2>Schwerpunkte für Ihr Eigentum</h2>
+          <p class="scope-intro">
+            Diese Schwerpunkte bauen auf unserer
+            <a href="miethaus.html">Miethausverwaltung</a> auf. Den konkreten
+            Leistungsumfang stimmen wir mit Ihnen ab.
+          </p>
           <ul class="scope">
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Begleitung energetischer Sanierungen</span>
+              ><span
+                >Bestandsaufnahme zu Gebäudezustand, Verträgen und offenen
+                Themen</span
+              >
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Mietvertrags- und Mietermanagement</span>
+              ><span
+                >Koordination von Arbeiten an der bestehenden Bausubstanz</span
+              >
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Nebenkostenabrechnung je Einheit</span>
+              ><span
+                >Maßnahmenplanung mit Blick auf laufende Mietverhältnisse</span
+              >
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Instandhaltungs- und Maßnahmensteuerung</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Handwerker- und Dienstleistersteuerung</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Wirtschaftsplan und Budgetkontrolle</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Eigentümerreport und Dokumentenarchiv</span>
+              ><span
+                >Begleitung energetischer Sanierungen mit qualifizierten
+                Fachleuten</span
+              >
             </li>
           </ul>
           <p class="note">
-            Jedes Mandat erhält strukturiertes Reporting und Dokumentenzugriff —
-            Details unter <a href="reporting.html">Reporting</a>.
+            Wie wir Zahlen und Unterlagen aufbereiten, sehen Sie unter
+            <a href="reporting.html">Reporting</a>.
           </p>
           <a class="text-link service-report-link" href="sanierung.html"
             >Energetische Sanierung begleiten<svg
@@ -307,8 +330,8 @@
             ><a href="mieter.html">Mieterservice</a
             ><a href="impressum.html">Impressum</a
             ><a href="datenschutz.html">Datenschutz</a>
-            <a href="reporting.html">Reporting</a
-            ><a href="mieterportal.html">Mieterportal</a>
+            <a href="reporting.html">Reporting</a>
+            <a href="ueber-uns.html">Über uns</a>
           </nav>
         </div>
         <div class="footer-bottom">
@@ -328,10 +351,10 @@
     <nav aria-label="Mieterzugang" class="tenant-dock">
       <div class="wrap tenant-dock-inner">
         <span class="tenant-dock-label">Sie sind Mieter?</span
-        ><a class="button tenant-button" href="mieterportal.html"
+        ><a class="button tenant-button" href="mieter.html"
           ><svg class="icon" aria-hidden="true">
             <use href="assets/icons.svg#users" /></svg
-          ><span>Mieterportal</span></a
+          ><span>Mieterservice</span></a
         >
       </div>
     </nav>
