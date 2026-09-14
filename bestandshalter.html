@@ -6,7 +6,7 @@
     <title>Hausverwaltung für Bestandshalter · PANI Berlin</title>
     <meta
       name="description"
-      content="PANI Hausverwaltung Berlin: Hausverwaltung für Bestandshalter. Für Eigentümer, die langfristig denken — geführt wie eigenes Vermögen, gedacht in Generationen."
+      content="Sie halten Ihre Immobilien langfristig. Dafür braucht es eine Verwaltung, die den Alltag organisiert und kommende Aufgaben frühzeitig einordnet. Wir verbinden die laufende Bewirtschaftung mit mehrjähriger Instandhaltungsplanung und einem gemeinsamen Blick auf Ihren Bestand."
     />
     <link rel="canonical" href="https://www.pani-hv.de/bestandshalter.html" />
     <link
@@ -30,10 +30,37 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#19382d" />
 
-    <link rel="stylesheet" href="assets/site.css?v=375e59ece02f" />
-    <link rel="stylesheet" href="assets/pages.css?v=7dd08b37bf02" />
+    <link rel="stylesheet" href="assets/site.css?v=fe3095e4d4c1" />
+    <link rel="stylesheet" href="assets/pages.css?v=0e0d0429a106" />
     <script src="assets/site.js" defer></script>
     <script src="assets/experience.js" defer></script>
+
+    <meta
+      content="Hausverwaltung für Bestandshalter · PANI Berlin"
+      property="og:title"
+    />
+    <meta
+      content="Sie halten Ihre Immobilien langfristig. Dafür braucht es eine Verwaltung, die den Alltag organisiert und kommende Aufgaben frühzeitig einordnet. Wir verbinden die laufende Bewirtschaftung mit mehrjähriger Instandhaltungsplanung und einem gemeinsamen Blick auf Ihren Bestand."
+      property="og:description"
+    />
+    <meta
+      content="https://www.pani-hv.de/bestandshalter.html"
+      property="og:url"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="PANI Hausverwaltung" property="og:site_name" />
+    <meta content="de_DE" property="og:locale" />
+    <meta
+      content="https://www.pani-hv.de/assets/social/bestandshalter-strassenzug-oderberger.jpg"
+      property="og:image"
+    />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta
+      content="Blick über die Fassadenzeile der Altbauten in der Oderberger Straße in Berlin-Prenzlauer Berg, dahinter die Dachlandschaft des Viertels"
+      property="og:image:alt"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#main">Zum Inhalt</a>
@@ -46,8 +73,8 @@
         >
         <nav class="desktop-nav" aria-label="Hauptnavigation">
           <a href="leistungen.html">Leistungen</a
-          ><a href="index.html#gruender">Über uns</a
-          ><a href="reporting.html">Arbeitsweise</a>
+          ><a href="ueber-uns.html">Über uns</a
+          ><a href="reporting.html">Reporting</a>
         </nav>
         <div class="header-actions">
           <a
@@ -82,24 +109,33 @@
         hidden
       >
         <a href="leistungen.html">Leistungen</a
-        ><a href="index.html#gruender">Über uns</a
-        ><a href="reporting.html">Arbeitsweise</a
+        ><a href="ueber-uns.html">Über uns</a
+        ><a href="reporting.html">Reporting</a
         ><a href="mieter.html">Mieterservice</a
         ><a href="index.html#kontakt">Kontakt</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero detail-hero" id="top" aria-labelledby="page-title">
-        <img
-          fetchpriority="high"
-          class="hero-photo"
-          src="assets/bestandshalter-strassenzug-oderberger.jpg"
-          alt="Blick über die Fassadenzeile der Altbauten in der Oderberger Straße in Berlin-Prenzlauer Berg, dahinter die Dachlandschaft des Viertels"
-          width="1280"
-          height="678"
-          decoding="async"
-          style="object-position: center 80%"
-        />
+        <picture
+          ><source
+            sizes="(max-width: 800px) max(100vw, 1416px), 100vw"
+            srcset="
+              assets/bestandshalter-strassenzug-oderberger-480.webp   480w,
+              assets/bestandshalter-strassenzug-oderberger-800.webp   800w,
+              assets/bestandshalter-strassenzug-oderberger-1280.webp 1280w
+            "
+            type="image/webp" />
+          <img
+            fetchpriority="high"
+            class="hero-photo"
+            src="assets/bestandshalter-strassenzug-oderberger.jpg"
+            alt="Blick über die Fassadenzeile der Altbauten in der Oderberger Straße in Berlin-Prenzlauer Berg, dahinter die Dachlandschaft des Viertels"
+            width="1280"
+            height="678"
+            decoding="async"
+            style="object-position: center 80%"
+        /></picture>
         <div class="wrap hero-content">
           <nav class="breadcrumbs" aria-label="Brotkrumennavigation">
             <a href="index.html">PANI</a><span>/</span
@@ -107,9 +143,11 @@
           </nav>
           <h1 id="page-title">Verwaltung für Ihren Immobilienbestand.</h1>
           <p>
-            Wer Immobilien über Jahrzehnte hält, braucht keine
-            Einzelfallverwaltung, sondern Stabilität, vorausschauende Planung
-            und eine Verwaltung, die den Bestand wie eigenes Vermögen führt.
+            Sie halten Ihre Immobilien langfristig. Dafür braucht es eine
+            Verwaltung, die den Alltag organisiert und kommende Aufgaben
+            frühzeitig einordnet. Wir verbinden die laufende Bewirtschaftung mit
+            mehrjähriger Instandhaltungsplanung und einem gemeinsamen Blick auf
+            Ihren Bestand.
           </p>
           <div class="hero-actions">
             <a class="button button-light" href="index.html#kontakt"
@@ -137,32 +175,24 @@
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span
-                >Langfristige Betreuung statt kurzfristiger
-                Einzelfallverwaltung</span
-              >
+              ><span>Werterhalt als langfristige Aufgabe</span>
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Stabile Bewirtschaftung und nachhaltiger Werterhalt</span>
+              ><span>Anstehende Arbeiten frühzeitig einordnen</span>
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
               ><span
-                >Vorausschauende Instandhaltungs- und Maßnahmenplanung</span
+                >Kosten und Maßnahmen über mehrere Objekte überblicken</span
               >
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Transparente Steuerung auch über mehrere Objekte</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Verlässliche Prozesse für gewachsene Bestände</span>
+              ><span>Verlässliche Abläufe für Ihren gewachsenen Bestand</span>
             </li>
           </ul>
         </div>
@@ -172,75 +202,74 @@
           <h2>So starten wir zusammen</h2>
           <div class="steps">
             <div class="step">
-              <div class="no">01</div>
-              <div class="t">Übernahme &amp; Ordnung</div>
-              <div class="d">
-                Strukturierte Übernahme aller Unterlagen, Verträge und laufenden
-                Vorgänge.
-              </div>
+              <div aria-hidden="true" class="no">01</div>
+              <h3 class="t">Bestand ordnen</h3>
+              <p class="d">
+                Wir übernehmen Unterlagen, Verträge und laufende Vorgänge
+                strukturiert.
+              </p>
             </div>
             <div class="step">
-              <div class="no">02</div>
-              <div class="t">Instandhaltungsfahrplan</div>
-              <div class="d">
-                Substanz wird bewertet, Maßnahmen priorisiert und über Jahre
-                budgetiert.
-              </div>
+              <div aria-hidden="true" class="no">02</div>
+              <h3 class="t">Maßnahmen planen</h3>
+              <p class="d">
+                Wir ordnen den Handlungsbedarf und stimmen Prioritäten sowie
+                Budgets ab.
+              </p>
             </div>
             <div class="step">
-              <div class="no">03</div>
-              <div class="t">Jährliche Objektstrategie</div>
-              <div class="d">
-                Einmal jährlich Lage, Kosten und Entwicklung je Objekt — mit
-                klaren Empfehlungen.
-              </div>
+              <div aria-hidden="true" class="no">03</div>
+              <h3 class="t">Entwicklung begleiten</h3>
+              <p class="d">
+                Wir besprechen den Objektzustand und passen die Planung
+                gemeinsam an.
+              </p>
             </div>
           </div>
         </div>
       </section>
       <section class="detail-section">
         <div class="wrap">
-          <h2>Im Mandat enthalten</h2>
+          <h2>Schwerpunkte für Ihr Eigentum</h2>
+          <p class="scope-intro">
+            Diese Schwerpunkte bauen auf unserer
+            <a href="miethaus.html">Miethausverwaltung</a> auf. Den konkreten
+            Leistungsumfang stimmen wir mit Ihnen ab.
+          </p>
           <ul class="scope">
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Mehrjährige Instandhaltungsplanung</span>
+              ><span
+                >Mehrjährige Planung von Instandhaltung und größeren
+                Maßnahmen</span
+              >
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Mietvertrags- und Mietermanagement</span>
+              ><span
+                >Priorisierung anstehender Arbeiten nach Zustand und
+                Handlungsbedarf</span
+              >
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Nebenkostenabrechnung je Einheit</span>
+              ><span>Budgetplanung für die abgestimmten Maßnahmen</span>
             </li>
             <li>
               <svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg#check" /></svg
-              ><span>Instandhaltungs- und Maßnahmensteuerung</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Handwerker- und Dienstleistersteuerung</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Wirtschaftsplan und Budgetkontrolle</span>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg#check" /></svg
-              ><span>Eigentümerreport und Dokumentenarchiv</span>
+              ><span
+                >Regelmäßige Abstimmung zur Entwicklung der einzelnen
+                Objekte</span
+              >
             </li>
           </ul>
           <p class="note">
-            Jedes Mandat erhält strukturiertes Reporting und Dokumentenzugriff —
-            Details unter <a href="reporting.html">Reporting</a>.
+            Wie wir Zahlen und Unterlagen aufbereiten, sehen Sie unter
+            <a href="reporting.html">Reporting</a>.
           </p>
           <a class="text-link service-report-link" href="sanierung.html"
             >Energetische Sanierung begleiten<svg
@@ -298,8 +327,8 @@
             ><a href="mieter.html">Mieterservice</a
             ><a href="impressum.html">Impressum</a
             ><a href="datenschutz.html">Datenschutz</a>
-            <a href="reporting.html">Reporting</a
-            ><a href="mieterportal.html">Mieterportal</a>
+            <a href="reporting.html">Reporting</a>
+            <a href="ueber-uns.html">Über uns</a>
           </nav>
         </div>
         <div class="footer-bottom">
@@ -319,10 +348,10 @@
     <nav aria-label="Mieterzugang" class="tenant-dock">
       <div class="wrap tenant-dock-inner">
         <span class="tenant-dock-label">Sie sind Mieter?</span
-        ><a class="button tenant-button" href="mieterportal.html"
+        ><a class="button tenant-button" href="mieter.html"
           ><svg class="icon" aria-hidden="true">
             <use href="assets/icons.svg#users" /></svg
-          ><span>Mieterportal</span></a
+          ><span>Mieterservice</span></a
         >
       </div>
     </nav>

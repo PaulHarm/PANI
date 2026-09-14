@@ -46,7 +46,7 @@
     <path d="M110 5v10" stroke="#974f46" stroke-width="2" />
   </symbol>
   <symbol id="wohnung" viewBox="0 0 220 130">
-    <g opacity=".5"><use href="#house" /></g>
+    <g opacity=".75"><use href="#house" /></g>
     <rect
       x="94"
       y="60"
@@ -54,7 +54,7 @@
       height="29"
       fill="#d3e3d3"
       stroke="#254b3e"
-      stroke-width="1.5"
+      stroke-width="1.4"
     />
     <use href="#window" x="103" y="65" />
     <path

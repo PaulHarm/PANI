@@ -30,10 +30,37 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#19382d" />
 
-    <link rel="stylesheet" href="assets/site.css?v=375e59ece02f" />
-    <link rel="stylesheet" href="assets/pages.css?v=7dd08b37bf02" />
+    <link rel="stylesheet" href="assets/site.css?v=fe3095e4d4c1" />
+    <link rel="stylesheet" href="assets/pages.css?v=0e0d0429a106" />
     <script src="assets/site.js" defer></script>
     <script src="assets/experience.js" defer></script>
+
+    <meta
+      content="Sondereigentumsverwaltung (SEV) in Berlin · PANI Berlin"
+      property="og:title"
+    />
+    <meta
+      content="Sondereigentumsverwaltung in Berlin für private Vermieter und auswärtige Wohnungseigentümer: Mieterbetreuung, Abrechnungen, Reparaturen und Abstimmung mit der WEG-Verwaltung."
+      property="og:description"
+    />
+    <meta
+      content="https://www.pani-hv.de/sondereigentum.html"
+      property="og:url"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="PANI Hausverwaltung" property="og:site_name" />
+    <meta content="de_DE" property="og:locale" />
+    <meta
+      content="https://www.pani-hv.de/assets/social/sondereigentum-fluegeltuer-altbau.jpg"
+      property="og:image"
+    />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta
+      content="Zweiflügelige Jugendstil-Wohnungstür mit geschnitzten Ornamenten und ovalen Fenstern in einem Berliner Altbau"
+      property="og:image:alt"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
   </head>
   <body class="detail-page">
     <a class="skip-link" href="#main">Zum Inhalt</a>
@@ -46,8 +73,8 @@
         >
         <nav class="desktop-nav" aria-label="Hauptnavigation">
           <a href="leistungen.html">Leistungen</a
-          ><a href="index.html#gruender">Über uns</a
-          ><a href="reporting.html">Arbeitsweise</a>
+          ><a href="ueber-uns.html">Über uns</a
+          ><a href="reporting.html">Reporting</a>
         </nav>
         <div class="header-actions">
           <a
@@ -82,24 +109,33 @@
         hidden
       >
         <a href="leistungen.html">Leistungen</a
-        ><a href="index.html#gruender">Über uns</a
-        ><a href="reporting.html">Arbeitsweise</a
+        ><a href="ueber-uns.html">Über uns</a
+        ><a href="reporting.html">Reporting</a
         ><a href="mieter.html">Mieterservice</a
         ><a href="index.html#kontakt">Kontakt</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero detail-hero" id="top" aria-labelledby="page-title">
-        <img
-          fetchpriority="high"
-          class="hero-photo"
-          src="assets/sondereigentum-fluegeltuer-altbau.jpg"
-          alt="Zweiflügelige Jugendstil-Wohnungstür mit geschnitzten Ornamenten und ovalen Fenstern in einem Berliner Altbau"
-          width="960"
-          height="1710"
-          decoding="async"
-          style="object-position: center 35%"
-        />
+        <picture
+          ><source
+            sizes="(max-width: 800px) max(100vw, 422px), 100vw"
+            srcset="
+              assets/sondereigentum-fluegeltuer-altbau-480.webp 480w,
+              assets/sondereigentum-fluegeltuer-altbau-800.webp 800w,
+              assets/sondereigentum-fluegeltuer-altbau-960.webp 960w
+            "
+            type="image/webp" />
+          <img
+            fetchpriority="high"
+            class="hero-photo"
+            src="assets/sondereigentum-fluegeltuer-altbau.jpg"
+            alt="Zweiflügelige Jugendstil-Wohnungstür mit geschnitzten Ornamenten und ovalen Fenstern in einem Berliner Altbau"
+            width="960"
+            height="1710"
+            decoding="async"
+            style="object-position: center 35%"
+        /></picture>
         <div class="wrap hero-content">
           <nav class="breadcrumbs" aria-label="Brotkrumennavigation">
             <a href="index.html">PANI</a><span>/</span
@@ -192,26 +228,26 @@
           <h2>So starten wir zusammen</h2>
           <div class="steps">
             <div class="step">
-              <div class="no">01</div>
-              <div class="t">Bestandsaufnahme</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">01</div>
+              <h3 class="t">Bestandsaufnahme</h3>
+              <p class="d">
                 Einheit, Mietvertrag, Hausgeld und offene Themen im Überblick.
-              </div>
+              </p>
             </div>
             <div class="step">
-              <div class="no">02</div>
-              <div class="t">Geordnete Übernahme</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">02</div>
+              <h3 class="t">Geordnete Übernahme</h3>
+              <p class="d">
                 Saubere Übergabe, klare Prozesse und ein fester Ansprechpartner.
-              </div>
+              </p>
             </div>
             <div class="step">
-              <div class="no">03</div>
-              <div class="t">Betreuung im Alltag</div>
-              <div class="d">
+              <div aria-hidden="true" class="no">03</div>
+              <h3 class="t">Betreuung im Alltag</h3>
+              <p class="d">
                 Wir kümmern uns um die laufende Verwaltung und halten Sie über
                 Einnahmen, Kosten und offene Anliegen auf dem Laufenden.
-              </div>
+              </p>
             </div>
           </div>
         </div>
@@ -319,8 +355,8 @@
             ><a href="mieter.html">Mieterservice</a
             ><a href="impressum.html">Impressum</a
             ><a href="datenschutz.html">Datenschutz</a>
-            <a href="reporting.html">Reporting</a
-            ><a href="mieterportal.html">Mieterportal</a>
+            <a href="reporting.html">Reporting</a>
+            <a href="ueber-uns.html">Über uns</a>
           </nav>
         </div>
         <div class="footer-bottom">
@@ -340,10 +376,10 @@
     <nav aria-label="Mieterzugang" class="tenant-dock">
       <div class="wrap tenant-dock-inner">
         <span class="tenant-dock-label">Sie sind Mieter?</span
-        ><a class="button tenant-button" href="mieterportal.html"
+        ><a class="button tenant-button" href="mieter.html"
           ><svg class="icon" aria-hidden="true">
             <use href="assets/icons.svg#users" /></svg
-          ><span>Mieterportal</span></a
+          ><span>Mieterservice</span></a
         >
       </div>
     </nav>

@@ -1,6 +1,6 @@
 # Offene Angaben und Veröffentlichungsstand
 
-Stand: Website-Überarbeitung vom 13. September 2026.
+Stand: Website-Überarbeitung vom 14. September 2026.
 
 ## Erledigt
 
@@ -14,14 +14,18 @@ Stand: Website-Überarbeitung vom 13. September 2026.
 - Pauls vorhandenes Porträt eingebunden.
 - Vorhandenes IHK-Siegel dezent ganz unten im Footer der deutschen und englischen Startseite eingebunden, auf Wunsch ohne Personenname. Neutraler Hinweis „IHK-Zertifizierung nach § 26a WEG“; die bestätigte Zertifizierung lautet auf Niclas, nicht auf beide Gründer.
 - Energetische Sanierung auf eigene deutsche und englische Seiten verlagert. Der animierte Rechner samt Annahmen und Grenzen bleibt erhalten. Startseiten verlinken unter „Besondere Anforderungen“; Leistungsseiten verweisen direkt auf die neue Seite.
-- Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet; der dauerhafte Link sitzt in einer festen Leiste am unteren Bildschirmrand auf allen Seiten.
+- Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet und als Ausblick vom Mieterservice verlinkt.
 - Alle Leistungsseiten und die Navigation im neuen Design vereinheitlicht.
-- Grüner Kontakt-Button in der Kopfzeile auf allen Seiten wiederhergestellt. Der Mieterportal-Zugang bleibt separat am unteren Bildschirmrand fixiert.
+- Grüner Kontakt-Button in der Kopfzeile auf allen Seiten. Der feste Mieterbutton führt jetzt als „Mieterservice“ zum tatsächlichen Kontaktangebot. Auf den vier Service- und Portal-Seiten entfällt die redundante Leiste.
 - Mobiles Menü auch im Querformat vollständig erreichbar: eigene Scrollfläche oberhalb der festen Mieterleiste.
 - Lesbarkeit der Titelbilder auf mobilen Geräten verbessert, unnötige Worttrennungen auf Leistungsseiten entfernt und lange Überschriften der Rechtstexte abgesichert.
 - Footer der 404-Seite schließt auch bei wenig Inhalt sauber am unteren Bildschirmrand ab.
 - Eigene deutsche und englische Leistungsübersicht mit acht Angeboten: drei Verwaltungsarten, vier besondere Anforderungen und Sanierungsbegleitung. Acht Illustrationen aus dem bestehenden Architektur-Motivsystem, kompakte Leistungslisten und direkte Detailseiten-Links.
-- „Leistungen“ führt auf allen 31 Seiten zur Übersicht, einschließlich mobilem Menü, Footer und Brotkrumennavigation. Startseiten bleiben kompakt und ergänzen „Alle Leistungen ansehen“. Sprachwechsel und Sitemap berücksichtigen beide neuen Seiten.
+- „Leistungen“ führt auf allen 33 Seiten zur Übersicht, einschließlich mobilem Menü, Footer und Brotkrumennavigation. Startseiten bleiben kompakt und ergänzen „Alle Leistungen ansehen“.
+- Eigene Über-uns-Seite in beiden Sprachen, verlinkt aus Hauptnavigation, Gründerbereich und Footer. Bestehende Gründerangaben, Pauls Foto und neutraler IHK-Hinweis bleiben erhalten. Fünf Fragen erläutern den Einstieg und die Übernahme ohne feste Preis- oder Zeitversprechen.
+- Vier Spezialangebote in beiden Sprachen klarer unterschieden; Grundleistungen sind mit der Miethausverwaltung verknüpft. Keine neuen Zehnjahresplan-, Kennzahlen-, Versicherungs- oder Portalverfügbarkeitsversprechen ergänzt.
+- Sanierung, Reporting und Portal-Ausblick erhalten passende Kontaktabschlüsse. Die vier Sanierungsschritte bleiben erhalten; Schritttitel auf Detailseiten sind echte Zwischenüberschriften.
+- Sieben Titelbilder mit 21 WebP-Varianten; sieben Vorschaubilder für geteilte Links. Schriftrollen und Illustrationsgewichtung gezielt angeglichen, mobile Größen weiterhin differenziert.
 
 ## Noch vom Inhaber zu ergänzen
 
@@ -29,6 +33,7 @@ Stand: Website-Überarbeitung vom 13. September 2026.
 - Zutreffende Register-, Steuer-, Erlaubnis- und Versicherungsangaben für Impressum und englische Fassung.
 - Endgültige Prüfung und Vervollständigung der Rechtstexte. Die verbleibenden Platzhalter sind ausdrücklich sichtbar.
 - Porträt von Niclas Paprocki; bis dahin bleibt sein Monogramm sichtbar. Kein Ersatzfoto wird als echtes Porträt ausgegeben.
+- Bestätigte Bestandszahlen und Gründungsjahr, sofern diese auf der Über-uns-Seite erscheinen sollen. Unbestätigte Zahlen und Versicherungsangaben bleiben dort bewusst weg.
 - Echte Telefonnummer und ggf. objektbezogene Notfallkontakte, sofern sie öffentlich angeboten werden sollen.
 
 ## Optionale nächste Schritte
@@ -37,15 +42,13 @@ Stand: Website-Überarbeitung vom 13. September 2026.
 - Tatsächliche Portal-, Archiv- und Serviceangebote auf allen Detailseiten mit dem Betriebsmodell abgleichen.
 - Stadtansicht durch ein eigenes, für diese Nutzung freigegebenes Wohnimmobilienfoto ersetzen.
 
-## Prüfung dieser Überarbeitung
+## Prüfung am 14. September
 
 - Kontaktlogik und Sanierungsbeispiel: 14 automatisierte Tests bestanden, einschließlich schneller Zielwechsel, ungültiger Werte und reduzierter Bewegung.
-- Interne Dateien und Abschnittsanker: 1.533 Verweise auf sämtlichen 31 HTML-Seiten geprüft.
-- Sichtprüfung der beiden neuen Leistungsübersichten auf Desktop, Tablet und Smartphone. Die 29 bestehenden Seiten wurden beim Layoutaudit am 12. September geprüft; deren Inhalte bleiben bis auf die ergänzte Navigation unverändert.
-- 155 Layoutprüfungen bei 320, 390, 768, 820 und 1280 Pixeln: keine horizontalen Seitenüberläufe oder abgeschnittenen Textspalten; Titelbilder geladen, Kontakt-Button vorhanden und Portal-Ziel sprachlich korrekt.
-- Alle 16 Leistungslinks in beiden Sprachen samt Rückweg über die Brotkrumennavigation im Browser durchgeklickt. Sprachwechsel, Startseiten-Verweis und Mieterportal-Ziel zusätzlich geprüft.
-- Footer der 29 bestehenden Seiten beim vorigen Audit bei 390 Pixeln geprüft: kein verdeckter Abschluss durch die feste Mieterleiste. Der feste Zugang bleibt unverändert.
-- Mobiles Menü zusätzlich bei 740 × 360 Pixeln geprüft: scrollbar, Kontakt erreichbar, Schließen nach Auswahl und per Escape funktioniert.
-- Sanierungsrechner inklusive Zielwechsel und Endwerten sowie reduzierte Bewegung durch Funktionstests geprüft. Kein echter E-Mail-Versand ausgelöst.
-- Deutsche Startseite mit 464 Wörtern einschließlich Navigation, Formularbeschriftungen und Footer weiterhin kompakt; der Sanierungsabschnitt wird dort nicht geladen.
-- Die Leistungsübersicht und die angepasste Navigation ergänzen den freigegebenen Veröffentlichungsstand auf main.
+- Interne Dateien und Abschnittsanker: 1.631 Verweise auf sämtlichen 33 HTML-Seiten geprüft, einschließlich aller Bildvarianten.
+- 165 Browser-Layoutprüfungen bei 320, 390, 768, 1280 und 1600 Pixeln: keine horizontalen Seitenüberläufe, unbeabsichtigt abgeschnittenen Texte oder fehlenden Titelbilder.
+- Screenshot-Prüfung von Über-uns-Seite, mobilem FAQ, Leistungskarten, Investorenschwerpunkten und Portal-Ausblick. Kleine Startseitenüberschrift und Bildauswahl für hochformatige Ausschnitte nachgebessert.
+- Mieterservice-Link im gescrollten Zustand, Portal-Ausblick und Rückweg, mobiles Menü, Sprachwechsel und englisches FAQ per Tastatur durchgespielt.
+- Strukturprüfung von Navigation, Sitemap, Sprachzielen, Vorschaubildern und Stylesheet-Versionen. Formulare, Rechner-Markup und die Inhalte aller vier Rechtstextseiten stimmen unverändert mit dem vorherigen Stand überein.
+- Sanierungsrechner einschließlich Zielwechsel weiterhin funktionsfähig. Kein echter E-Mail-Versand ausgelöst.
+- Deutsche Startseite mit 467 Wörtern einschließlich Navigation, Formularbeschriftungen und Footer weiterhin kompakt; der Sanierungsabschnitt wird dort nicht geladen.

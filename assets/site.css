@@ -23,6 +23,14 @@
   --line: #dce2dc;
   --serif: Fraunces, Georgia, serif;
   --sans: Plex, Arial, sans-serif;
+  --text-label: 0.75rem;
+  --text-small: 0.875rem;
+  --text-secondary: 0.9375rem;
+  --text-body: 1rem;
+  --heading-small: 1.5rem;
+  --heading-card: 1.75rem;
+  --heading-section: 2.125rem;
+  --heading-page: 3rem;
   --width: 1160px;
   --gutter: 48px;
   --header-height: 86px;
@@ -36,7 +44,7 @@ html {
 }
 body {
   margin: 0;
-  font: 16px/1.6 var(--sans);
+  font: var(--text-body)/1.6 var(--sans);
   color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
@@ -120,7 +128,7 @@ summary:focus-visible {
 }
 .eyebrow {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-label);
   font-weight: 600;
   color: var(--green);
   margin-bottom: 18px;
@@ -339,7 +347,7 @@ summary:focus-visible {
   position: absolute;
   right: 24px;
   bottom: 18px;
-  font-size: 11px;
+  font-size: var(--text-label);
   color: #fff;
   background: #183729b8;
   padding: 4px 9px;
@@ -418,11 +426,11 @@ summary:focus-visible {
   margin-bottom: 15px;
 }
 .service h3 {
-  font-size: 27px;
+  font-size: var(--heading-card);
   margin-bottom: 12px;
 }
 .service p {
-  font-size: 15px;
+  font-size: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 18px;
 }
@@ -844,7 +852,7 @@ summary:focus-visible {
   padding: 70px 0 48px;
 }
 .tenant-hero h1 {
-  font-size: 52px;
+  font-size: var(--heading-page);
   max-width: 850px;
 }
 .tenant-hero p {
@@ -1136,7 +1144,7 @@ summary:focus-visible {
     font-size: 13px;
   }
   .hero-caption {
-    font-size: 10px;
+    font-size: var(--text-label);
     bottom: 10px;
     right: 12px;
   }
@@ -1399,7 +1407,7 @@ summary:focus-visible {
     width: 22px;
   }
   .hero h1 {
-    font-size: 37px;
+    font-size: 36px;
   }
   .hero .eyebrow {
     font-size: 11px;
