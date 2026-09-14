@@ -16,14 +16,15 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 
 - `index.html` und `en.html`: Startseiten; bestehende Abschnittsanker bleiben erreichbar.
 - `leistungen.html` und `en-services.html`: Leistungsübersicht mit acht Angeboten, Architekturillustrationen und Links zu den Detailseiten. Hauptnavigation, mobiles Menü, Footer und Brotkrumennavigation führen zur Übersicht. Die Startseiten behalten drei kompakte Angebote und ergänzen „Alle Leistungen ansehen“.
-- `ueber-uns.html` und `en-about.html`: Gründer, gemeinsame Arbeitsweise, neutraler Zertifizierungshinweis und fünf aufklappbare Fragen zum Verwaltungswechsel. Der kurze Gründerbereich der Startseite bleibt erhalten.
+- `ueber-uns.html` und `en-about.html`: Einleitung, Gründerblock mit großen Porträts und neutralem IHK-Hinweis, fünf aufklappbare Fragen zum Verwaltungswechsel und Kontaktabschluss. Der kurze Gründerbereich der Startseite bleibt erhalten.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
 - `assets/site.css` und `assets/site.js`: gemeinsame Gestaltung und Interaktionen der neuen Seiten.
 - Stylesheet-Links tragen eine Inhaltsversion (`?v=…`), damit Browser nach einer Veröffentlichung keine ältere Gestaltung weiterverwenden. Bei CSS-Änderungen diese Version in allen HTML-Seiten aktualisieren.
-- `assets/pages.css`: gemeinsames Layout der Unterseiten, Sanierungsbeispiel und dauerhafter Mieterservice-Link.
+- `assets/pages.css`: gemeinsames Layout der Unterseiten, Sanierungsbeispiel und dauerhafter Mieterservice-Zugang (mobil als Leiste am unteren Rand, ab 801 px als schwebende Pille rechts unten).
+- `assets/legacy.css`: Altbestand, wird von keiner Seite geladen.
 - `reporting.html` und `en-reporting.html`: Eigentümer-Update und animierte Reporting-Illustration, ausschließlich Beispieldaten.
 - `mieterportal.html` und `en-portal.html`: ausdrücklich gekennzeichneter Ausblick auf das geplante Portal mit der bisherigen Handy-Illustration. Vom Mieterservice aus erreichbar, ohne Login oder Datenerfassung.
-- `sanierung.html` und `en-renovation.html`: energetische Sanierung mit dem interaktiven Rechenbeispiel. Auf der Startseite unter „Besondere Anforderungen“ verlinkt; der alte Anker `#sanierung` führt dort zum Link.
+- `sanierung.html` und `en-renovation.html`: energetische Sanierung mit dem interaktiven Rechenbeispiel. Erreichbar über die Leistungsübersicht; der alte Startseiten-Anker `#sanierung` führt nur noch zur Leistungssektion.
 - `assets/energy-model.js` und `assets/experience.js`: transparentes Sanierungs-Rechenbeispiel und Animationen mit Unterstützung für reduzierte Bewegung.
 - `assets/architecture.svg`: vereinfachte Architekturillustrationen aus dem bestehenden Motivsystem.
 - `assets/icons.svg`: ausgewählte Lucide-Icons und die bestehende PANI-Bildmarke; Lizenz in `assets/Lucide-LICENSE.txt`.
@@ -31,7 +32,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 
 ## Kontakt
 
-Alle Seiten haben einen grünen Kontakt-Button in der Kopfzeile. Der dauerhaft sichtbare Mieterservice-Zugang am unteren Bildschirmrand führt direkt zu `mieter.html` beziehungsweise `en-tenants.html`. Auf den Service- und Portal-Seiten entfällt diese Leiste, damit kein redundanter Eigenverweis entsteht. Alle Links funktionieren ohne JavaScript.
+Alle Seiten haben einen grünen Kontakt-Button in der Kopfzeile. Der dauerhaft sichtbare Mieterservice-Zugang führt direkt zu `mieter.html` beziehungsweise `en-tenants.html`: mobil als feste Leiste am unteren Bildschirmrand, ab 801 px als schwebende Pille rechts unten, die zurücktritt, solange das Kontaktformular im Bild ist. Auf den Service- und Portal-Seiten entfällt dieser Zugang, damit kein redundanter Eigenverweis entsteht. Alle Links funktionieren ohne JavaScript.
 
 Die bestätigte Adresse lautet `info@pani-hv.de`. Die Eingabefelder bereiten einen `mailto:`-Entwurf vor. Erst der Nutzer sendet die E-Mail in seinem E-Mail-Programm. Es gibt weder einen Formspree-Endpunkt noch einen automatischen Versand, eine Zustellbestätigung oder serverseitige Speicherung der Eingaben. Direkte E-Mail-Links funktionieren auch ohne JavaScript.
 

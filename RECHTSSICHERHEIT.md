@@ -31,11 +31,10 @@ Aktuell **Platzhalter** in `datenschutz.html`:
 - [ ] **Betroffenenrechte** (Auskunft, Berichtigung, Löschung, Beschwerde bei Aufsichtsbehörde …)
 - [ ] Ggf. **eingebundene Dienste** aufführen (siehe Punkt 3)
 
-## 3. Technischer Datenschutz (DSGVO)  — 🔴/🟡
-- [ ] 🔴 **Google Fonts lokal einbinden** statt von `fonts.googleapis.com`/`fonts.gstatic.com` (14 Dateien betroffen).
-      Externe Einbindung überträgt Besucher-**IP an Google (USA)** → in DE abgemahnt (LG München I, 20.01.2022). Lokal = Problem gelöst.
-- [ ] 🔴 **Externe Bilder lokal einbinden** (Unsplash + 3× Wikimedia) — sonst IP-Übertragung an Dritte.
-- [ ] 🟡 **HTTPS erzwingen**: In GitHub → Settings → Pages → „Enforce HTTPS" aktivieren (GitHub Pages liefert Zertifikat mit).
+## 3. Technischer Datenschutz (DSGVO)  — 🟡
+- [x] **Schriften lokal eingebunden** (`assets/fonts/`, Fraunces und IBM Plex mit OFL-Lizenzdateien). Erledigt September 2026.
+- [x] **Bilder lokal eingebunden** (`assets/`, Quellen und Lizenzen auf den Unterseiten dokumentiert). Erledigt September 2026.
+- [ ] 🟡 **HTTPS erzwingen**: In GitHub → Settings → Pages → „Enforce HTTPS" aktivieren. Stand 14.09.2026 noch nicht aktiv, http:// liefert die Seite unverschlüsselt aus.
 - [ ] 🟡 **Hosting GitHub Pages (USA)**: IP-Logging + US-Datentransfer. Kein klassischer AV-Vertrag verfügbar.
       Erwägen: **EU-Hosting** für maximale Rechtssicherheit — mind. in Datenschutzerklärung transparent machen.
 
@@ -45,8 +44,8 @@ Aktuell **Platzhalter** in `datenschutz.html`:
 - [ ] **Schriftarten** (Fraunces, IBM Plex): Open Font License, kommerziell ok — beim Selbst-Hosten Lizenzdatei beilegen.
 
 ## 5. Weitere Punkte  — 🟡/🟢
-- [ ] 🟡 **E-Mail-Domain klären**: Impressum nutzt `info@pani-pm.de`, Website läuft auf `pani-hv.de` — muss zusammenpassen und erreichbar sein.
-- [ ] 🟡 **Kontaktformular** (eingebaut auf der Startseite): nutzt **Formspree (USA)**. Einwilligungs-Checkbox + Spam-Schutz (Honeypot) sind vorhanden, Datenschutz-Abschnitt 3 ergänzt. **Vor Livegang:** (1) echte **Formspree-Formular-ID** in `index.html` eintragen (Platzhalter `DEINE_FORMSPREE_ID`), (2) **AV-Vertrag** mit Formspree + **Drittland-Transfer (SCC)** klären — oder EU-Dienst wählen.
+- [x] **E-Mail-Domain**: einheitlich `info@pani-hv.de` auf allen Seiten. Erledigt September 2026.
+- [x] **Kontaktformular**: Formspree entfernt. Das Formular bereitet nur einen `mailto:`-Entwurf vor, kein Drittanbieter-Versand, keine serverseitige Speicherung. Falls später ein Versanddienst eingebaut wird: AV-Vertrag und Drittlandtransfer prüfen, Datenschutzerklärung anpassen.
 - [ ] 🟢 **Barrierefreiheit (BFSG, seit 28.06.2025)**: greift für bestimmte B2C-Dienste im E-Commerce.
       Reine Marketing-Seite evtl. ausgenommen (v. a. Kleinstunternehmen), **sobald Verbraucher-Portal/Online-Abschluss → prüfen lassen**.
       Best Practice ohnehin: Alt-Texte, Kontraste, Tastaturbedienbarkeit.
@@ -54,8 +53,8 @@ Aktuell **Platzhalter** in `datenschutz.html`:
 
 ---
 
-## Reihenfolge-Empfehlung vor dem Live-Gang
-1. 🔴 Impressum + Datenschutz mit **echten Daten** füllen (braucht Firmenangaben; idealerweise anwaltlich/DSB geprüft).
-2. 🔴 **Google Fonts + externe Bilder lokal** einbinden (technisch, kann Claude umsetzen).
-3. 🟡 „Enforce HTTPS" aktivieren, E-Mail-Domain klären, eigene Fotos.
-4. 🟢 BFSG-Relevanz prüfen, ggf. Kontaktformular datenschutzkonform.
+## Reihenfolge-Empfehlung (Stand 14.09.2026, Seite ist bereits live)
+1. 🔴 Impressum + Datenschutz mit **echten Daten** füllen (braucht Firmenangaben; idealerweise anwaltlich/DSB geprüft). Die Platzhalter sind aktuell öffentlich sichtbar.
+2. 🟡 „Enforce HTTPS" in den GitHub-Pages-Einstellungen aktivieren.
+3. 🟡 Wikimedia-Bilder (CC BY-SA) mittelfristig durch eigene, freigegebene Fotos ersetzen.
+4. 🟢 BFSG-Relevanz prüfen, sobald ein Mieterportal mit Login kommt.

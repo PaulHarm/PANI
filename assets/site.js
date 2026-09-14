@@ -43,6 +43,31 @@
       if (event.matches) setMenu(false);
     });
 
+  // Desktop: the floating tenant pill steps back while the contact form is
+  // in view, so it never sits on top of input fields.
+  const dock = document.querySelector(".tenant-dock");
+  const contactForm = document.querySelector("[data-email-form]");
+  if (
+    dock &&
+    contactForm &&
+    typeof IntersectionObserver !== "undefined" &&
+    !document.body.classList.contains("no-tenant-dock")
+  ) {
+    const pillMode = window.matchMedia("(min-width: 801px)");
+    let formVisible = false;
+    const applyDock = () => {
+      dock.classList.toggle("is-tucked", pillMode.matches && formVisible);
+    };
+    new IntersectionObserver(
+      (entries) => {
+        formVisible = entries.some((entry) => entry.isIntersecting);
+        applyDock();
+      },
+      { threshold: 0 },
+    ).observe(contactForm);
+    pillMode.addEventListener("change", applyDock);
+  }
+
   // Prepare a draft locally. No form data is sent to an unconfigured service.
   for (const form of document.querySelectorAll("[data-email-form]")) {
     form.hidden = false;
