@@ -14,9 +14,10 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 
 ## Aufbau
 
-- `index.html` und `en.html`: Startseiten; bestehende Abschnittsanker bleiben erreichbar.
-- `leistungen.html` und `en-services.html`: Leistungsübersicht mit acht Angeboten, Architekturillustrationen und Links zu den Detailseiten. Hauptnavigation, mobiles Menü, Footer und Brotkrumennavigation führen zur Übersicht. Die Startseiten behalten drei kompakte Angebote und ergänzen „Alle Leistungen ansehen“.
-- `ueber-uns.html` und `en-about.html`: Einleitung, Gründerblock mit großen Porträts und neutralem IHK-Hinweis, fünf aufklappbare Fragen zum Verwaltungswechsel und Kontaktabschluss. Der kurze Gründerbereich der Startseite bleibt erhalten.
+- `index.html` und `en.html`: reduzierte Startseiten mit interaktivem Haus, drei Verwaltungsformen, kurzem Wechselhinweis und aufklappbarer Kontaktanfrage. Bestehende Abschnittsanker bleiben erreichbar.
+- `assets/home.css`: ausschließlich für die beiden Startseiten. Native Radiofelder steuern über CSS `:has()` die Gebäudehervorhebung und den zugehörigen Kurztext auch ohne JavaScript. Mobil steht die Auswahl oberhalb des Hauses. Ohne `:has()` bleiben alle Leistungstexte und Links sichtbar.
+- `leistungen.html` und `en-services.html`: Leistungsübersicht mit acht Angeboten, Architekturillustrationen und Links zu den Detailseiten. Hauptnavigation, mobiles Menü, Footer und Brotkrumennavigation führen zur Übersicht.
+- `ueber-uns.html` und `en-about.html`: Einleitung, Gründerblock mit großen Porträts und neutralem IHK-Hinweis, fünf aufklappbare Fragen zum Verwaltungswechsel und Kontaktabschluss. Die Startseite verlinkt hierhin, statt diese Inhalte zu wiederholen.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
 - `assets/site.css` und `assets/site.js`: gemeinsame Gestaltung und Interaktionen der neuen Seiten.
 - Stylesheet-Links tragen eine Inhaltsversion (`?v=…`), damit Browser nach einer Veröffentlichung keine ältere Gestaltung weiterverwenden. Bei CSS-Änderungen diese Version in allen HTML-Seiten aktualisieren.
@@ -32,7 +33,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 
 ## Kontakt
 
-Alle Seiten haben einen grünen Kontakt-Button in der Kopfzeile. Der dauerhaft sichtbare Mieterservice-Zugang führt direkt zu `mieter.html` beziehungsweise `en-tenants.html`: mobil als feste Leiste am unteren Bildschirmrand, ab 801 px als schwebende Pille rechts unten, die zurücktritt, solange das Kontaktformular im Bild ist. Auf den Service- und Portal-Seiten entfällt dieser Zugang, damit kein redundanter Eigenverweis entsteht. Alle Links funktionieren ohne JavaScript.
+Alle Seiten haben einen grünen Kontakt-Button in der Kopfzeile. Der Mieterservice-Zugang führt direkt zu `mieter.html` beziehungsweise `en-tenants.html`: mobil als feste Leiste am unteren Bildschirmrand, ab 801 px als schwebende Pille rechts unten. Auf der Startseite bleibt er auch beim geöffneten Kontaktformular sichtbar; zusätzlicher Abstand hält die Formularaktionen frei. Auf den übrigen Seiten tritt die Pille zurück, solange ein Kontaktformular im Bild ist. Auf den Service- und Portal-Seiten entfällt dieser Zugang, damit kein redundanter Eigenverweis entsteht. Alle Links funktionieren ohne JavaScript.
 
 Die bestätigte Adresse lautet `info@pani-hv.de`. Die Eingabefelder bereiten einen `mailto:`-Entwurf vor. Erst der Nutzer sendet die E-Mail in seinem E-Mail-Programm. Es gibt weder einen Formspree-Endpunkt noch einen automatischen Versand, eine Zustellbestätigung oder serverseitige Speicherung der Eingaben. Direkte E-Mail-Links funktionieren auch ohne JavaScript.
 
@@ -48,6 +49,8 @@ node --test tests/*.test.cjs
 
 Zusätzlich vor Veröffentlichung: Seiten auf Desktop und Mobil prüfen, Sprachwechsel und Kontaktentwürfe ausprobieren. Offene Unternehmensangaben stehen in `PLATZHALTER.md`.
 
+Startseite: alle drei Verwaltungsformen per Klick und Pfeiltasten prüfen. WEG hebt Gemeinschaftseigentum hervor, Miethaus beleuchtet alle Fenster, Sondereigentum markiert eine Wohnung. Bildunterschrift, Leistungstext und Detail-Link müssen zur Auswahl passen. Bei 320, 390, 768, 1280 und 1600 Pixeln auf Überläufe, vollständige Hausdarstellung und unveränderte Höhe beim Wechsel achten. Kontaktbereich über die Kopfzeile erreichen, Anfrage aufklappen und Mieterservice auch nach dem Scrollen prüfen. Die Illustration respektiert die Systemeinstellung für reduzierte Bewegung.
+
 Für die Leistungsübersicht außerdem alle acht Detailziele je Sprache und den Rückweg über die Brotkrumennavigation prüfen. Die Übersicht und ihre Links funktionieren ohne JavaScript; nur das mobile Klappmenü wird durch `assets/site.js` erweitert.
 
 Für die Über-uns-Seiten zusätzlich Hauptnavigation, Sprachwechsel, Footer und die FAQ per Maus und Tastatur prüfen. Der Weg zum geplanten Portal führt vom festen Mieterservice-Link über „Was geplant ist“ zum gekennzeichneten Ausblick und von dort zurück zum Mieterservice.
@@ -60,7 +63,7 @@ Keine Energieberatung, Wirtschaftlichkeitsrechnung oder Einspargarantie. Investi
 
 ## Bilder
 
-Das neue Hauptbild ist eine Stadtansicht der Oderberger Straße, kein behauptetes Referenzobjekt. Quelle: [Franz Richter / Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Oderberger_Stra%C3%9Fe_1941.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vorhandener Ausschnitt als WebP konvertiert. Quellen und Lizenzen der weiteren Bilder bleiben auf den jeweiligen Unterseiten dokumentiert.
+Die Startseite zeigt eine eigens erstellte, schematische Hausillustration als Inline-SVG, kein behauptetes Referenzobjekt. Die bisherige Stadtansicht der Oderberger Straße bleibt als Social-Media-Vorschaubild erhalten. Quelle: [Franz Richter / Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Oderberger_Stra%C3%9Fe_1941.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vorhandener Ausschnitt. Quellen und Lizenzen der weiteren Bilder bleiben auf den jeweiligen Unterseiten dokumentiert. Das transparente Browser-Favicon verwendet das vorhandene Bärenmotiv mit zusätzlichem Innenabstand; App- und Touch-Icons bleiben unverändert.
 
 Sieben vorhandene Titelbilder besitzen je drei WebP-Varianten mit Breitenangabe im Dateinamen. Die originalen JPEGs bleiben als Fallback erhalten. `sizes` berücksichtigt die Vergrößerung durch `object-fit: cover` auf hohen mobilen Titelbereichen; eine Querformatquelle darf nicht allein nach der sichtbaren Bildschirmbreite ausgewählt werden. Die größten WebP-Varianten sind insgesamt rund 46 Prozent kleiner als die entsprechenden JPEGs. Bildqualität hat Vorrang vor einer starren Dateigrößengrenze.
 
