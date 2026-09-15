@@ -1,0 +1,325 @@
+/* Shared visual language for every page beneath the homepage. */
+body:not(.home-page) {
+  --width: 1240px;
+}
+
+body:not(.home-page) .site-header {
+  background: #fff;
+}
+
+body:not(.home-page) .brand-name,
+body:not(.home-page) .brand-sub {
+  letter-spacing: 0;
+}
+
+body:not(.home-page) .brand-name {
+  font-size: 30px;
+}
+
+body:not(.home-page) .brand-sub {
+  font-size: 8px;
+}
+
+body:not(.home-page) .site-footer {
+  background: #f7f8f5;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  padding-top: 40px;
+}
+
+body:not(.home-page) .site-footer .brand {
+  color: var(--green);
+}
+
+body:not(.home-page) .site-footer p,
+body:not(.home-page) .site-footer .footer-bottom,
+body:not(.home-page) .site-footer .certification-note figcaption {
+  color: var(--muted);
+}
+
+body:not(.home-page) .site-footer .certification-note strong {
+  color: var(--ink);
+}
+
+body:not(.home-page) .site-footer .footer-bottom {
+  border-color: var(--line);
+}
+
+body:not(.home-page) .site-footer .footer-links a:hover,
+body:not(.home-page) .site-footer .footer-bottom a:hover {
+  color: var(--green);
+}
+
+/* Service pages use the same quiet, property-led entry as the homepage. */
+.detail-page .detail-hero {
+  min-height: 0;
+  height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  align-items: stretch;
+  background: var(--wash);
+  color: var(--ink);
+}
+
+.detail-page .detail-hero picture {
+  grid-area: 1 / 2;
+  display: block;
+  min-height: 470px;
+  order: 2;
+}
+
+.detail-page .detail-hero .hero-photo {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  min-height: 470px;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.detail-page .detail-hero::after {
+  display: none;
+}
+
+.detail-page .detail-hero .hero-content {
+  grid-area: 1 / 1;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  align-self: center;
+  padding: 70px 48px 70px max(32px, calc((100vw - var(--width)) / 2));
+}
+
+.detail-page .detail-hero .breadcrumbs {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.detail-page .detail-hero .breadcrumbs a {
+  color: var(--green);
+}
+
+.detail-page .detail-hero .eyebrow {
+  color: var(--green);
+}
+
+.detail-page .detail-hero h1 {
+  color: var(--green-dark);
+  max-width: 680px;
+}
+
+.detail-page .detail-hero p {
+  color: var(--muted);
+  max-width: 600px;
+  margin-top: 22px;
+}
+
+.detail-page .detail-hero .hero-actions {
+  margin-top: 28px;
+}
+
+.detail-page .detail-hero .hero-caption {
+  right: 16px;
+  bottom: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--muted);
+}
+
+.detail-page .detail-nav {
+  background: #fff;
+}
+
+.detail-page .detail-section {
+  padding-block: 54px;
+}
+
+.detail-page .detail-section h2 {
+  margin-bottom: 24px;
+}
+
+.detail-page .detail-cta {
+  background: #eef3ed;
+  color: var(--ink);
+  border-block: 1px solid var(--line);
+}
+
+.detail-page .detail-cta p {
+  color: var(--muted);
+}
+
+.detail-page .detail-cta .button-light {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.detail-page .detail-cta .button-light:hover {
+  background: var(--green-dark);
+}
+
+/* Catalog and editorial pages share the same generous, left-aligned rhythm. */
+body:not(.detail-page) .page-intro,
+body:not(.detail-page) .tenant-hero {
+  padding-block: 44px 38px;
+  background: #fff;
+}
+
+body:not(.detail-page) .page-intro h1,
+body:not(.detail-page) .tenant-hero h1 {
+  color: var(--green-dark);
+}
+
+.services-page .catalog-section {
+  padding-block: 46px 54px;
+}
+
+.services-page .catalog-heading h2,
+.services-page .catalog-development h2 {
+  color: var(--green-dark);
+}
+
+.services-page .catalog-primary .catalog-art {
+  background: #f7f8f5;
+  border: 1px solid var(--line);
+}
+
+.services-page .catalog-special-section {
+  background: #f1f4ee;
+}
+
+.services-page .detail-cta,
+.services-page + .detail-cta {
+  background: #eef3ed;
+}
+
+.about-page .detail-section,
+.switch-page .detail-section {
+  padding-block: 54px;
+}
+
+.about-page .page-intro p,
+.switch-page .page-intro p {
+  max-width: 720px;
+}
+
+.about-page .about-facts,
+.switch-page .about-faq {
+  background: #f7f8f5;
+}
+
+.portal-page main > .section {
+  padding-block: 64px;
+}
+
+.portal-page .portal-label {
+  color: var(--green);
+  background: #eef3ed;
+  border-color: #d7e2d6;
+}
+
+.tenant-main {
+  padding-block: 54px;
+}
+
+.tenant-main .contact-copy,
+.tenant-main .contact-form {
+  min-width: 0;
+}
+
+.tenant-emergency {
+  margin-top: 28px;
+  padding: 18px 20px;
+  border-left: 3px solid var(--accent);
+  background: #f7f8f5;
+}
+
+.tenant-emergency strong,
+.tenant-emergency a {
+  color: var(--green-dark);
+}
+
+.tenant-emergency p {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.legal-copy {
+  padding-block: 42px 72px;
+}
+
+.legal-copy .legal-warning {
+  max-width: 800px;
+}
+
+@media (max-width: 800px) {
+  body:not(.home-page) .brand-name {
+    font-size: 24px;
+  }
+
+  body:not(.home-page) .brand-sub {
+    font-size: 6px;
+  }
+
+  .detail-page .detail-hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-page .detail-hero .hero-content {
+    order: 1;
+    padding: 38px var(--gutter) 34px;
+  }
+
+  .detail-page .detail-hero picture {
+    order: 2;
+    min-height: 250px;
+  }
+
+  .detail-page .detail-hero .hero-photo {
+    min-height: 250px;
+    max-height: 310px;
+  }
+
+  .detail-page .detail-hero .hero-caption {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .detail-page .detail-cta .wrap {
+    padding-block: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  body:not(.home-page) .site-footer {
+    padding-top: 34px;
+  }
+
+  .detail-page .detail-hero h1 {
+    font-size: 36px;
+  }
+
+  .detail-page .detail-section,
+  .about-page .detail-section,
+  .switch-page .detail-section {
+    padding-block: 42px;
+  }
+
+  .services-page .catalog-section {
+    padding-block: 36px 44px;
+  }
+
+  .tenant-main {
+    padding-block: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.home-page) *,
+  body:not(.home-page) *::before,
+  body:not(.home-page) *::after {
+    transition: none !important;
+  }
+}
