@@ -1133,7 +1133,7 @@ body {
 }
 .about-founders .founder-photo {
   display: block;
-  width: 100%;
+  width: min(100%, max(200px, 45vh * 0.75));
   height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
@@ -1284,7 +1284,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 90px;
-  align-items: stretch;
+  align-items: start;
 }
 .visit-copy h2 {
   max-width: 430px;
@@ -1392,11 +1392,18 @@ body {
   flex-direction: column;
   min-width: 0;
 }
+@media (min-width: 801px) {
+  .visit-map {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+  }
+}
 .map-placeholder,
 .map-frame {
-  flex: 1;
+  flex: none;
   width: 100%;
-  min-height: 460px;
+  height: min(460px, 60vh);
+  min-height: 280px;
   border: 1px solid var(--line);
   border-radius: 3px;
   background: #e3e9e2;
@@ -1474,7 +1481,7 @@ body {
   }
   .map-placeholder,
   .map-frame {
-    min-height: 360px;
+    height: min(380px, 55vh);
   }
 }
 @media (max-width: 560px) {
@@ -1491,7 +1498,8 @@ body {
   }
   .map-placeholder,
   .map-frame {
-    min-height: 320px;
+    height: min(320px, 45vh);
+    min-height: 240px;
   }
   .map-placeholder {
     padding: 20px;
