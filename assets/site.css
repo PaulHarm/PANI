@@ -1031,7 +1031,7 @@ summary:focus-visible {
 }
 @media (max-width: 560px) {
   :root {
-    --gutter: 22px;
+    --gutter: 24px;
     --header-height: 70px;
   }
   .brand-name {

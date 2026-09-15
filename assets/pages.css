@@ -1528,3 +1528,290 @@ body {
 .inline-link:hover {
   color: var(--accent);
 }
+
+/* ==========================================================
+   Bereich: wechsel-seiten (wechsel.html, en-switch.html)
+   Kontaktblock "Direkt zu Ihrem Wechsel" und mehr Freiraum mobil.
+   ========================================================== */
+.switch-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+}
+.detail-section .switch-contact-copy h2 {
+  margin-bottom: 0;
+}
+.switch-contact-copy > p {
+  margin-top: 20px;
+  max-width: 420px;
+  font-size: var(--text-secondary);
+}
+.switch-contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.switch-contact-item {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+.switch-contact-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.switch-contact .switch-contact-item > .icon {
+  width: 22px;
+  height: 22px;
+  margin-top: 0;
+  color: var(--green);
+}
+.switch-contact-item > div {
+  min-width: 0;
+}
+.switch-contact-item .visit-label {
+  margin-bottom: 4px;
+}
+.switch-contact-value {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--green);
+  white-space: nowrap;
+}
+.switch-contact-value:hover {
+  color: var(--accent);
+}
+.switch-contact-item address {
+  font-style: normal;
+  font-size: var(--text-secondary);
+  line-height: 1.6;
+  color: var(--ink);
+  margin-top: 6px;
+}
+.switch-contact-item .text-link {
+  margin-top: 8px;
+  color: var(--green);
+}
+.switch-contact .switch-contact-item .text-link .icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 0;
+}
+@media (max-width: 800px) {
+  .switch-contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+}
+@media (max-width: 560px) {
+  .switch-page .page-intro {
+    padding-block: 40px 52px;
+  }
+  .switch-page .detail-section {
+    padding-block: 60px;
+  }
+  .switch-page .detail-section h2 {
+    margin-bottom: 36px;
+  }
+  .switch-page .about-faq h2,
+  .switch-page .switch-contact-copy h2 {
+    margin-bottom: 0;
+  }
+  .switch-page .detail-section .steps {
+    gap: 36px;
+  }
+  .switch-page .about-faq {
+    gap: 32px;
+  }
+  .switch-page .about-faq summary {
+    padding: 20px 0;
+  }
+  .switch-contact-grid {
+    gap: 32px;
+  }
+  .switch-contact-item {
+    column-gap: 16px;
+    padding: 24px 0;
+  }
+  .switch-contact-value {
+    font-size: 22px;
+  }
+  .switch-page .detail-cta {
+    padding-block: 56px;
+  }
+}
+
+/* ==========================================================
+   Bereich: ueber-uns (ueber-uns.html, en-about.html)
+   Abschnitt "Wo und was wir verwalten" und Hinweis zum Wechsel.
+   ========================================================== */
+.about-page .detail-section.visit-section {
+  background: var(--white);
+}
+.about-facts-head {
+  max-width: 640px;
+}
+.detail-section .about-facts-head h2 {
+  margin-bottom: 0;
+}
+.about-facts-list {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 48px;
+}
+.about-fact {
+  min-width: 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.about-fact-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.about-page .about-fact-value {
+  margin-top: 14px;
+  font: 400 42px/1.08 var(--serif);
+  color: var(--green);
+  overflow-wrap: normal;
+}
+.about-fact-value + p {
+  margin-top: 16px;
+  max-width: 38ch;
+  font-size: var(--text-secondary);
+  line-height: 1.65;
+}
+.about-fact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 12px;
+}
+.about-fact-links .text-link {
+  color: var(--green);
+}
+.detail-section .about-fact-links .text-link .icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 0;
+}
+.about-switch {
+  position: relative;
+}
+.about-switch-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+}
+.detail-section .about-switch-grid h2 {
+  margin-bottom: 0;
+}
+.about-switch-copy p {
+  max-width: 56ch;
+  font-size: var(--text-secondary);
+  line-height: 1.7;
+}
+.about-switch-copy .text-link {
+  margin-top: 10px;
+  color: var(--green);
+}
+.about-switch-copy .text-link .icon {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 1050px) {
+  .about-facts-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .about-fact {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-areas:
+      "label copy"
+      "value copy"
+      "value links"
+      ". links";
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: 48px;
+    padding-block: 28px;
+  }
+  .about-fact:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  .about-fact-label {
+    grid-area: label;
+  }
+  .about-page .about-fact-value {
+    grid-area: value;
+    font-size: 38px;
+  }
+  .about-fact-value + p {
+    grid-area: copy;
+    margin-top: 0;
+  }
+  .about-fact-links {
+    grid-area: links;
+  }
+}
+@media (max-width: 800px) {
+  .about-switch-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 560px) {
+  .about-facts,
+  .about-switch {
+    padding-block: 60px;
+  }
+  .about-facts-list {
+    margin-top: 40px;
+  }
+  .about-fact {
+    display: block;
+    padding-block: 30px 34px;
+  }
+  .about-page .about-fact-value {
+    margin-top: 12px;
+    font-size: 40px;
+  }
+  .about-fact-value + p {
+    margin-top: 14px;
+  }
+  .about-fact-links {
+    margin-top: 14px;
+  }
+  .about-switch-grid {
+    gap: 22px;
+  }
+  .about-switch-copy .text-link {
+    margin-top: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .about-page .about-fact-value {
+    font-size: 34px;
+  }
+}
+/* Korrektur: Kennzahlenwerte im Dreispalten-Layout bis 1250 px einzeilig */
+@media (min-width: 1051px) and (max-width: 1250px) {
+  .about-page .about-fact-value {
+    font-size: 34px;
+  }
+}
