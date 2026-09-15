@@ -54,7 +54,7 @@ Startseite: alle drei Verwaltungsformen per Klick und Pfeiltasten prüfen. WEG h
 
 Für die Leistungsübersicht außerdem alle acht Detailziele je Sprache und den Rückweg über die Brotkrumennavigation prüfen. Die Übersicht und ihre Links funktionieren ohne JavaScript; nur das mobile Klappmenü wird durch `assets/site.js` erweitert.
 
-Für die Über-uns-Seiten zusätzlich Hauptnavigation, Sprachwechsel, Footer und die FAQ per Maus und Tastatur prüfen. Der Weg zum geplanten Portal führt vom festen Mieterservice-Link über „Was geplant ist“ zum gekennzeichneten Ausblick und von dort zurück zum Mieterservice.
+Für die Über-uns-Seiten zusätzlich Hauptnavigation, Sprachwechsel und Footer prüfen, für die Wechselseiten (wechsel.html, en-switch.html) die FAQ per Maus und Tastatur. Der Weg zum geplanten Portal führt vom festen Mieterservice-Link über „Was geplant ist“ zum gekennzeichneten Ausblick und von dort zurück zum Mieterservice.
 
 ## Sanierungsbeispiel
 

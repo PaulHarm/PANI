@@ -1,12 +1,12 @@
 # Offene Angaben und Veröffentlichungsstand
 
-Stand: Website-Überarbeitung vom 14. September 2026.
+Stand: Website-Überarbeitung vom 14. September 2026, ergänzt am 15. September 2026.
 
 ## Erledigt
 
 - Kontaktadresse vom Inhaber bestätigt: `info@pani-hv.de`, in allen HTML-Seiten aktualisiert.
 - Vorhandene Anschrift übernommen: Westfälische Straße 62, 10709 Berlin.
-- Platzhalter-Telefonnummern aus den sichtbaren Seiten entfernt.
+- Frühere Platzhalter-Telefonnummern entfernt; die derzeit sichtbaren Musternummern stehen unter „Noch vom Inhaber zu ergänzen“.
 - Formspree-Platzhalter entfernt. Kontakt und Mieterservice bereiten transparent einen E-Mail-Entwurf vor; kein automatischer Versand.
 - Deutsche und englische Startseite gestrafft; drei Verwaltungsarten als Haupteinstieg.
 - Eigentümerbericht deutlich als Muster gekennzeichnet. Sanierungsrechner, wechselnde Kennzahlen und App-Mockup von den Startseiten entfernt.
@@ -21,20 +21,23 @@ Stand: Website-Überarbeitung vom 14. September 2026.
 - Lesbarkeit der Titelbilder auf mobilen Geräten verbessert, unnötige Worttrennungen auf Leistungsseiten entfernt und lange Überschriften der Rechtstexte abgesichert.
 - Footer der 404-Seite schließt auch bei wenig Inhalt sauber am unteren Bildschirmrand ab.
 - Eigene deutsche und englische Leistungsübersicht mit acht Angeboten: drei Verwaltungsarten, vier besondere Anforderungen und Sanierungsbegleitung. Acht Illustrationen aus dem bestehenden Architektur-Motivsystem, kompakte Leistungslisten und direkte Detailseiten-Links.
-- „Leistungen“ führt auf allen 33 Seiten zur Übersicht, einschließlich mobilem Menü, Footer und Brotkrumennavigation. Startseiten bleiben kompakt und ergänzen „Alle Leistungen ansehen“.
-- Eigene Über-uns-Seite in beiden Sprachen, verlinkt aus Hauptnavigation, Gründerbereich und Footer. Bestehende Gründerangaben, Pauls Foto und neutraler IHK-Hinweis bleiben erhalten. Fünf Fragen erläutern den Einstieg und die Übernahme ohne feste Preis- oder Zeitversprechen.
+- „Leistungen“ führt auf allen 35 Seiten zur Übersicht, einschließlich mobilem Menü, Footer und Brotkrumennavigation. Startseiten bleiben kompakt und ergänzen „Alle Leistungen ansehen“.
+- Eigene Über-uns-Seite in beiden Sprachen, verlinkt aus Hauptnavigation, Gründerbereich und Footer. Bestehende Gründerangaben, Pauls Foto und neutraler IHK-Hinweis bleiben erhalten. Die fünf Fragen zu Einstieg und Übernahme (ohne feste Preis- oder Zeitversprechen) stehen seit dem 15. September 2026 auf der Wechselseite, siehe unten.
 - Vier Spezialangebote in beiden Sprachen klarer unterschieden; Grundleistungen sind mit der Miethausverwaltung verknüpft. Keine neuen Zehnjahresplan-, Kennzahlen-, Versicherungs- oder Portalverfügbarkeitsversprechen ergänzt.
 - Sanierung, Reporting und Portal-Ausblick erhalten passende Kontaktabschlüsse. Die vier Sanierungsschritte bleiben erhalten; Schritttitel auf Detailseiten sind echte Zwischenüberschriften.
 - Sieben Titelbilder mit 21 WebP-Varianten; sieben Vorschaubilder für geteilte Links. Schriftrollen und Illustrationsgewichtung gezielt angeglichen, mobile Größen weiterhin differenziert.
+- Neue Wechselseite in beiden Sprachen (wechsel.html, en-switch.html). Die Fragen zu Einstieg und Übernahme (FAQ) sind von der Über-uns-Seite dorthin verschoben. Verlinkt aus dem Wechsel-Abschnitt der Startseiten und im Footer aller Seiten („Ihr Wechsel“, „Switching to PANI“); in der Sitemap ergänzt.
+- Bestandsangaben „Häuser in ganz Berlin“ und „über 500 Einheiten“ vom Inhaber am 15.09.2026 bestätigt und auf der Über-uns-Seite eingebaut.
 
 ## Noch vom Inhaber zu ergänzen
 
 - **Musternummern:** Telefon `030 23125 100` und Notfallnummer `030 23125 199` im Abschnitt „Vor Ort“ der Über-uns-Seite (ueber-uns.html, en-about.html) sind Platzhalter und vor Veröffentlichung durch die echten Nummern zu ersetzen.
+- **Musternummer Wechsel:** Telefon `030 23125 150` unter „Ihr Wechsel zu PANI“ bzw. „Switching to PANI“ im Kontaktbereich der Startseiten (index.html, en.html) und auf der Wechselseite (wechsel.html, en-switch.html) ist ein Platzhalter und vor Veröffentlichung durch die echte Nummer zu ersetzen.
 - **Öffnungszeiten** im Abschnitt „Vor Ort“ (Mo bis Fr 09:00 bis 18:00 Uhr, Sa 10:00 bis 14:00 Uhr nach Absprache, So geschlossen) sind Musterzeiten und zu bestätigen.
 - Rechtsform und tatsächliche Vertretungsangaben.
 - Zutreffende Register-, Steuer-, Erlaubnis- und Versicherungsangaben für Impressum und englische Fassung.
 - Endgültige Prüfung und Vervollständigung der Rechtstexte. Die verbleibenden Platzhalter sind ausdrücklich sichtbar.
-- Bestätigte Bestandszahlen und Gründungsjahr, sofern diese auf der Über-uns-Seite erscheinen sollen. Unbestätigte Zahlen und Versicherungsangaben bleiben dort bewusst weg.
+- Gründungsjahr, sofern es auf der Über-uns-Seite erscheinen soll. Die Bestandsangaben sind inzwischen bestätigt (siehe oben); weitere, unbestätigte Zahlen und Versicherungsangaben bleiben bewusst weg.
 - Echte Telefonnummer und ggf. objektbezogene Notfallkontakte, sofern sie öffentlich angeboten werden sollen.
 
 ## Optionale nächste Schritte

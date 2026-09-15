@@ -32,4 +32,6 @@
   <url><loc>https://www.pani-hv.de/en-renovation.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.pani-hv.de/ueber-uns.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.pani-hv.de/en-about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.pani-hv.de/wechsel.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.pani-hv.de/en-switch.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

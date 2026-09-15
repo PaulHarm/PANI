@@ -299,10 +299,29 @@
   margin-top: 10px;
   font-size: 15px;
 }
-.home-contact-row > a {
+.home-contact-links {
   flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.home-contact-links a {
   color: var(--green);
   font-size: 18px;
+}
+.home-contact-links .home-contact-detail {
+  font-size: 15px;
+  line-height: 1.35;
+}
+.home-contact-detail > span {
+  display: flex;
+  flex-direction: column;
+}
+.home-contact-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
 }
 .home-enquiry {
   margin-top: 22px;
@@ -410,7 +429,7 @@
   }
   .property-controls h2 {
     order: 1;
-    margin: 22px 0 8px;
+    margin: 30px 0 4px;
   }
   .property-options {
     order: 2;
@@ -434,7 +453,7 @@
     display: none;
   }
   .home-intro {
-    padding-top: 30px;
+    padding-top: 40px;
   }
   .home-intro h1 {
     font-size: 38px;
@@ -444,14 +463,14 @@
   .home-intro p {
     font-size: 16px;
     max-width: 450px;
-    margin-top: 12px;
+    margin-top: 16px;
   }
   .home-properties {
-    padding: 0 0 30px;
+    padding: 0 0 48px;
   }
   .property-explorer {
     grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
+    gap: 20px;
   }
   .property-figure {
     width: min(100%, 540px);
@@ -465,7 +484,6 @@
     text-align: center;
     max-width: none;
     font-size: 28px;
-    margin-bottom: 0;
   }
   .property-choice {
     min-height: 54px;
@@ -484,15 +502,27 @@
     min-height: 112px;
     margin-top: 4px;
   }
+  .property-info .text-link {
+    margin-top: 10px;
+  }
+  .property-all {
+    padding-top: 14px;
+  }
   .home-switch .wrap,
   .home-contact-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
+    gap: 24px;
   }
   .home-switch,
   .home-contact {
-    padding-block: 30px;
+    padding-block: 48px;
+  }
+  .home-contact-links {
+    gap: 10px;
+  }
+  .home-enquiry {
+    margin-top: 36px;
   }
   .home-switch h2,
   .home-contact h2 {
@@ -503,7 +533,7 @@
     width: 100%;
   }
   .home-page .footer-top {
-    gap: 28px;
+    gap: 36px;
   }
 }
 @media (max-width: 374px) {
