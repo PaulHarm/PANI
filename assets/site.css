@@ -436,26 +436,6 @@ summary:focus-visible {
 .service .text-link {
   margin-top: auto;
 }
-.team-section {
-  background: var(--wash);
-}
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 90px;
-  align-items: start;
-}
-.team-intro h2 {
-  max-width: 460px;
-}
-.team-intro > p {
-  max-width: 420px;
-  margin-top: 24px;
-  font-size: 16px;
-}
-.team-intro .text-link {
-  margin-top: 20px;
-}
 .founders {
   display: grid;
   gap: 40px;
@@ -618,6 +598,7 @@ summary:focus-visible {
 .steps-section {
   position: relative;
   padding-block: 96px;
+  background: var(--wash);
 }
 .steps-grid {
   display: grid;
@@ -697,7 +678,8 @@ summary:focus-visible {
   margin-top: 14px;
 }
 .contact-section {
-  background: var(--wash);
+  background: var(--white);
+  border-top: 1px solid var(--line);
 }
 .contact-section .form-status {
   background: #fff;
@@ -918,7 +900,6 @@ summary:focus-visible {
   .hero h1 {
     font-size: 57px;
   }
-  .team-grid,
   .work-grid,
   .contact-grid {
     gap: 50px;
@@ -998,17 +979,11 @@ summary:focus-visible {
   .service-visual {
     padding-inline: 10px;
   }
-  .team-grid,
   .work-grid,
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 38px;
   }
-  .team-intro {
-    max-width: 590px;
-  }
-  .team-intro h2,
-  .team-intro > p,
   .work-copy h2,
   .work-copy > p,
   .contact-copy > p {
@@ -1168,13 +1143,9 @@ summary:focus-visible {
     font-size: 29px;
   }
   .section-heading h2 br,
-  .team-intro h2 br,
   .contact-copy h2 br,
   .steps-intro h2 br {
     display: none;
-  }
-  .team-intro h2 {
-    font-size: 30px;
   }
   .section-heading > p {
     max-width: 100%;
@@ -1228,12 +1199,6 @@ summary:focus-visible {
   }
   .service-topline {
     margin-bottom: 13px;
-  }
-  .team-intro > p {
-    font-size: 15px;
-  }
-  .team-intro .text-link {
-    margin-top: 14px;
   }
   .founders {
     grid-template-columns: 1fr;
@@ -1439,9 +1404,6 @@ summary:focus-visible {
   }
   .section-heading h2 {
     font-size: 27px;
-  }
-  .team-intro h2 {
-    font-size: 28px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
