@@ -290,6 +290,7 @@
 }
 .breadcrumbs {
   display: flex;
+  align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   font-size: 12px;
@@ -297,6 +298,9 @@
   margin-bottom: 28px;
 }
 .breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -335,8 +339,13 @@
   gap: 24px;
   flex-wrap: wrap;
   align-items: center;
-  padding-block: 20px;
+  padding-block: 10px;
   font-size: 14px;
+}
+.detail-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
 }
 .detail-nav [aria-current] {
   color: var(--green);
@@ -758,6 +767,7 @@ body {
   margin-top: 12px;
 }
 .energy-assumptions summary {
+  padding-block: 10px;
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -973,7 +983,7 @@ body {
     background: none;
   }
   .detail-nav .wrap {
-    gap: 14px 20px;
+    gap: 0 20px;
     font-size: 13px;
   }
   .detail-section h2,
@@ -1013,7 +1023,7 @@ body {
   }
   .energy-result .energy-unit,
   .energy-result p {
-    font-size: 11px;
+    font-size: 12px;
   }
   .energy-scale {
     gap: 4px;
@@ -1027,7 +1037,7 @@ body {
   }
   .energy-option .baseline-label,
   .energy-option .target-label {
-    font-size: 9px;
+    font-size: 10px;
   }
   .page-intro h1,
   .portal-copy h1 {
@@ -1316,7 +1326,7 @@ body {
 }
 .hours thead th {
   padding-top: 0;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1351,14 +1361,17 @@ body {
 }
 .visit-label {
   display: block;
-  margin-bottom: 6px;
-  font-size: 11px;
+  margin-bottom: 2px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
 .visit-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
   font-family: var(--serif);
   font-size: 22px;
   color: var(--green);
@@ -1504,4 +1517,14 @@ body {
   .map-placeholder {
     padding: 20px;
   }
+}
+.inline-link {
+  color: var(--green);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #b2beb5;
+}
+.inline-link:hover {
+  color: var(--accent);
 }
