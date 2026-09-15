@@ -71,6 +71,17 @@
   // Prepare a draft locally. No form data is sent to an unconfigured service.
   for (const form of document.querySelectorAll("[data-email-form]")) {
     form.hidden = false;
+    if (form.dataset.emailForm === "owner") {
+      const query = (window.location && window.location.search) || "";
+      const match = /(?:\?|&)type=([^&#]*)/.exec(query);
+      const context = match ? decodeURIComponent(match[1]) : "";
+      const optionIndex = { weg: 1, miethaus: 2, wohnung: 3 }[context];
+      const topic = form.querySelector('[name="topic"]');
+      if (topic && optionIndex && topic.options[optionIndex]) {
+        topic.selectedIndex = optionIndex;
+        form.closest("details")?.setAttribute("open", "");
+      }
+    }
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;

@@ -21,6 +21,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `assets/map.js`: Zwei-Klick-Karte im Abschnitt „Vor Ort“ der Über-uns-Seiten. Google Maps wird erst nach Klick auf „Karte laden“ angefragt und lässt sich wieder ausblenden; ohne JavaScript bleiben Adresse und die Links zu Google Maps.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
 - `assets/site.css` und `assets/site.js`: gemeinsame Gestaltung und Interaktionen der neuen Seiten.
+- `assets/refined-pages.css`: gemeinsame visuelle Verfeinerung der Unterseiten. Helle Split-Heroes, kompaktere Inhaltsrhythmen, einheitlicher Footer und responsive Detailseiten führen die Leistungs-, Zielgruppen-, Service- und Rechtsseiten näher an die reduzierte Startseite heran.
 - Stylesheet-Links tragen eine Inhaltsversion (`?v=…`), damit Browser nach einer Veröffentlichung keine ältere Gestaltung weiterverwenden. Bei CSS-Änderungen diese Version in allen HTML-Seiten aktualisieren.
 - `assets/pages.css`: gemeinsames Layout der Unterseiten, Sanierungsbeispiel und dauerhafter Mieterservice-Zugang (mobil als Leiste am unteren Rand, ab 801 px als schwebende Pille rechts unten).
 - `assets/legacy.css`: Altbestand, wird von keiner Seite geladen.
