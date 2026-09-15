@@ -37,8 +37,9 @@
       crossorigin=""
     />
     <link rel="stylesheet" href="assets/site.css?v=20260915a" />
-    <link rel="stylesheet" href="assets/pages.css?v=20260915a" />
+    <link rel="stylesheet" href="assets/pages.css?v=20260915c" />
     <script src="assets/site.js" defer></script>
+    <script src="assets/map.js?v=20260915c" defer></script>
 
     <meta
       content="About PANI | Personally Led Property Management Berlin"
@@ -253,6 +254,144 @@
                 responsibilities so these matters continue to be addressed.
               </p>
             </details>
+          </div>
+        </div>
+      </section>
+      <section
+        class="detail-section visit-section"
+        id="vor-ort"
+        aria-labelledby="visit-title"
+      >
+        <div class="wrap visit-grid">
+          <div class="visit-copy">
+            <span class="eyebrow">On site in Charlottenburg-Wilmersdorf</span>
+            <h2 id="visit-title">Meet us<br />in person.</h2>
+            <p>
+              We are happy to discuss your property in person at our office on
+              Westfälische Straße. Please arrange an appointment in advance.
+            </p>
+            <h3 class="visit-heading">Opening hours and phone availability</h3>
+            <table class="hours">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Monday to Friday</th>
+                  <td>09:00 to 18:00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Saturday</th>
+                  <td>10:00 to 14:00, by appointment only</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sunday</th>
+                  <td>closed</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="hours-note">
+              Our phone line is staffed during these hours. We are happy to arrange
+              office appointments with you.
+            </p>
+            <div class="visit-contacts">
+              <div class="visit-contact">
+                <span class="visit-label">Phone</span>
+                <a href="tel:+493023125100">030 23125 100</a>
+              </div>
+              <div class="visit-contact visit-emergency">
+                <span class="visit-label">Emergency number</span>
+                <a href="tel:+493023125199">030 23125 199</a>
+                <p>
+                  Outside opening hours for urgent damage to the property, such as
+                  burst pipes, heating failure or storm damage.
+                </p>
+              </div>
+              <div class="visit-contact">
+                <span class="visit-label">Address</span>
+                <address>
+                  PANI Hausverwaltung<br />Westfälische Straße 62<br />10709
+                  Berlin
+                </address>
+              </div>
+            </div>
+            <div class="visit-links">
+              <a
+                class="text-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Westf%C3%A4lische+Stra%C3%9Fe+62%2C+10709+Berlin"
+                target="_blank"
+                rel="noopener"
+                >View address on Google Maps<span class="sr-only"> (opens in a new window)</span
+                ><svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
+              ></a
+              ><a
+                class="text-link"
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=Westf%C3%A4lische+Stra%C3%9Fe+62%2C+10709+Berlin"
+                target="_blank"
+                rel="noopener"
+                >Plan your route<span class="sr-only"> (opens in a new window)</span
+                ><svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
+              ></a
+              >
+            </div>
+          </div>
+          <div
+            class="visit-map"
+            data-map
+            data-map-src="https://www.google.com/maps?q=Westf%C3%A4lische+Stra%C3%9Fe+62%2C+10709+Berlin&amp;z=16&amp;hl=en&amp;output=embed"
+            data-map-title="Map: Westfälische Straße 62, 10709 Berlin"
+          >
+            <div class="map-placeholder" data-map-placeholder>
+              <svg
+                class="map-sketch"
+                aria-hidden="true"
+                viewBox="0 0 400 300"
+                preserveAspectRatio="xMidYMid slice"
+              >
+                <g fill="none" stroke="currentColor" stroke-linecap="round">
+                  <path
+                    stroke-width="14"
+                    d="M-20 64 420 104M-20 214 420 246M118 -20 92 320M292 -20 314 320"
+                  />
+                  <path
+                    stroke-width="5"
+                    opacity=".7"
+                    d="M-20 146 420 168M204 -20 208 320M-20 20 150 -20M250 320 420 270"
+                  />
+                </g>
+              </svg>
+              <div class="map-card">
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons.svg?v=20260915a#map-pin" />
+                </svg>
+                <p class="map-address">
+                  <strong>Westfälische Straße 62</strong>10709 Berlin
+                </p>
+                <div data-map-consent hidden>
+                  <button class="button" type="button" data-map-load>
+                    Load map
+                  </button>
+                  <p class="map-note">
+                    Loading the map transfers data such as your IP address to Google.
+                    Read more in our
+                    <a href="en-privacy.html">privacy notice</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="text-link map-hide"
+              type="button"
+              data-map-hide
+              hidden
+            >
+              Hide map again
+            </button>
           </div>
         </div>
       </section>
