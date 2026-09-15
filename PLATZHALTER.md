@@ -29,6 +29,8 @@ Stand: Website-Überarbeitung vom 14. September 2026.
 
 ## Noch vom Inhaber zu ergänzen
 
+- **Musternummern:** Telefon `030 23125 100` und Notfallnummer `030 23125 199` im Abschnitt „Vor Ort“ der Über-uns-Seite (ueber-uns.html, en-about.html) sind Platzhalter und vor Veröffentlichung durch die echten Nummern zu ersetzen.
+- **Öffnungszeiten** im Abschnitt „Vor Ort“ (Mo bis Fr 09:00 bis 18:00 Uhr, Sa 10:00 bis 14:00 Uhr nach Absprache, So geschlossen) sind Musterzeiten und zu bestätigen.
 - Rechtsform und tatsächliche Vertretungsangaben.
 - Zutreffende Register-, Steuer-, Erlaubnis- und Versicherungsangaben für Impressum und englische Fassung.
 - Endgültige Prüfung und Vervollständigung der Rechtstexte. Die verbleibenden Platzhalter sind ausdrücklich sichtbar.

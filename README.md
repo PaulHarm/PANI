@@ -18,6 +18,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `assets/home.css`: ausschließlich für die beiden Startseiten. Native Radiofelder steuern über CSS `:has()` die Gebäudehervorhebung und den zugehörigen Kurztext auch ohne JavaScript. Mobil steht die Auswahl oberhalb des Hauses. Ohne `:has()` bleiben alle Leistungstexte und Links sichtbar.
 - `leistungen.html` und `en-services.html`: Leistungsübersicht mit acht Angeboten, Architekturillustrationen und Links zu den Detailseiten. Hauptnavigation, mobiles Menü, Footer und Brotkrumennavigation führen zur Übersicht.
 - `ueber-uns.html` und `en-about.html`: Einleitung, Gründerblock mit großen Porträts und neutralem IHK-Hinweis, fünf aufklappbare Fragen zum Verwaltungswechsel und Kontaktabschluss. Die Startseite verlinkt hierhin, statt diese Inhalte zu wiederholen.
+- `assets/map.js`: Zwei-Klick-Karte im Abschnitt „Vor Ort“ der Über-uns-Seiten. Google Maps wird erst nach Klick auf „Karte laden“ angefragt und lässt sich wieder ausblenden; ohne JavaScript bleiben Adresse und die Links zu Google Maps.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
 - `assets/site.css` und `assets/site.js`: gemeinsame Gestaltung und Interaktionen der neuen Seiten.
 - Stylesheet-Links tragen eine Inhaltsversion (`?v=…`), damit Browser nach einer Veröffentlichung keine ältere Gestaltung weiterverwenden. Bei CSS-Änderungen diese Version in allen HTML-Seiten aktualisieren.

@@ -1274,3 +1274,226 @@ body {
     max-width: none;
   }
 }
+.visit-section {
+  background: var(--white);
+}
+.detail-section.visit-section h2 {
+  margin-bottom: 0;
+}
+.visit-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 90px;
+  align-items: stretch;
+}
+.visit-copy h2 {
+  max-width: 430px;
+}
+.visit-copy > p {
+  margin-top: 20px;
+  max-width: 420px;
+}
+.visit-heading {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 40px 0 10px;
+}
+.hours {
+  width: 100%;
+  max-width: 460px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.hours th,
+.hours td {
+  text-align: left;
+  vertical-align: top;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+.hours thead th {
+  padding-top: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hours tbody th {
+  font-weight: 500;
+  color: var(--ink);
+  padding-right: 24px;
+  white-space: nowrap;
+}
+.hours td {
+  color: var(--muted);
+}
+.hours-note {
+  font-size: 13px;
+  margin-top: 12px;
+  max-width: 460px;
+}
+.visit-contacts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+  margin-top: 32px;
+  max-width: 460px;
+}
+.visit-contact {
+  min-width: 0;
+}
+.visit-contact:last-child {
+  grid-column: 1 / -1;
+}
+.visit-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.visit-contact a {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--green);
+  white-space: nowrap;
+}
+.visit-contact a:hover {
+  color: var(--accent);
+}
+.visit-emergency a {
+  color: var(--accent);
+}
+.visit-emergency p {
+  font-size: 12px;
+  line-height: 1.55;
+  margin-top: 6px;
+}
+.visit-contact address {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.visit-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28px;
+  margin-top: 18px;
+}
+.visit-map {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.map-placeholder,
+.map-frame {
+  flex: 1;
+  width: 100%;
+  min-height: 460px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #e3e9e2;
+}
+.map-placeholder {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+.map-frame {
+  display: block;
+}
+.map-sketch {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.map-card {
+  position: relative;
+  max-width: 340px;
+  padding: 26px 26px 22px;
+  background: var(--white);
+  border-radius: 3px;
+  box-shadow: 0 14px 34px #19382d17;
+}
+.map-card > .icon {
+  width: 24px;
+  height: 24px;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.map-address {
+  font-size: 14px;
+  color: var(--ink);
+}
+.map-address strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 400;
+}
+.map-card [data-map-consent] {
+  margin-top: 18px;
+}
+.map-note {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+.map-note a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.map-hide {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--ink);
+}
+@media (max-width: 1050px) {
+  .visit-grid {
+    gap: 50px;
+  }
+}
+@media (max-width: 800px) {
+  .visit-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+  .map-placeholder,
+  .map-frame {
+    min-height: 360px;
+  }
+}
+@media (max-width: 560px) {
+  .visit-contacts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .hours tbody th {
+    white-space: normal;
+    padding-right: 14px;
+  }
+  .visit-contact a {
+    font-size: 20px;
+  }
+  .map-placeholder,
+  .map-frame {
+    min-height: 320px;
+  }
+  .map-placeholder {
+    padding: 20px;
+  }
+}
