@@ -191,36 +191,36 @@ body:not(.detail-page) .tenant-hero h1 {
 .services-page .catalog-art {
   background: #f3f6f1;
   border: 1px solid var(--line);
-  min-height: 190px;
+  min-height: 270px;
   padding: 12px;
   overflow: hidden;
 }
 
 .services-page .catalog-art svg {
   width: 100%;
-  max-width: 380px;
-  height: 200px;
+  max-width: 520px;
+  height: 260px;
   color: var(--green);
 }
 
 .services-page .catalog-primary .catalog-art svg {
-  height: 220px;
+  height: 280px;
 }
 
 .services-page .catalog-special .catalog-art {
-  min-height: 190px;
+  min-height: 230px;
 }
 
 .services-page .catalog-special .catalog-art svg {
-  height: 180px;
+  height: 230px;
 }
 
 .services-page .catalog-development .catalog-art {
-  min-height: 240px;
+  min-height: 290px;
 }
 
 .services-page .catalog-development .catalog-art svg {
-  height: 240px;
+  height: 290px;
 }
 
 .services-page .catalog-special-section {
@@ -374,14 +374,14 @@ body:not(.detail-page) .tenant-hero h1 {
   .services-page .catalog-primary .catalog-art,
   .services-page .catalog-special .catalog-art,
   .services-page .catalog-development .catalog-art {
-    min-height: 170px;
+    min-height: 250px;
   }
 
   .services-page .catalog-art svg,
   .services-page .catalog-primary .catalog-art svg,
   .services-page .catalog-special .catalog-art svg,
   .services-page .catalog-development .catalog-art svg {
-    height: 175px;
+    height: 250px;
   }
 
   .tenant-main {
