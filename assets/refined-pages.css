@@ -181,8 +181,46 @@ body:not(.detail-page) .tenant-hero h1 {
 }
 
 .services-page .catalog-primary .catalog-art {
-  background: #f7f8f5;
+  background: #f3f6f1;
   border: 1px solid var(--line);
+  min-height: 220px;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.services-page .catalog-art {
+  background: #f3f6f1;
+  border: 1px solid var(--line);
+  min-height: 190px;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.services-page .catalog-art svg {
+  width: 100%;
+  max-width: 380px;
+  height: 200px;
+  color: var(--green);
+}
+
+.services-page .catalog-primary .catalog-art svg {
+  height: 220px;
+}
+
+.services-page .catalog-special .catalog-art {
+  min-height: 190px;
+}
+
+.services-page .catalog-special .catalog-art svg {
+  height: 180px;
+}
+
+.services-page .catalog-development .catalog-art {
+  min-height: 240px;
+}
+
+.services-page .catalog-development .catalog-art svg {
+  height: 240px;
 }
 
 .services-page .catalog-special-section {
@@ -192,6 +230,27 @@ body:not(.detail-page) .tenant-hero h1 {
 .services-page .detail-cta,
 .services-page + .detail-cta {
   background: #eef3ed;
+  color: var(--ink);
+  border-block: 1px solid var(--line);
+}
+
+.services-page .detail-cta h2,
+.services-page .detail-cta p {
+  color: var(--ink);
+}
+
+.services-page .detail-cta p {
+  color: var(--muted);
+}
+
+.services-page .detail-cta .button-light {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.services-page .detail-cta .button-light:hover {
+  background: var(--green-dark);
 }
 
 .about-page .detail-section,
@@ -309,6 +368,20 @@ body:not(.detail-page) .tenant-hero h1 {
 
   .services-page .catalog-section {
     padding-block: 36px 44px;
+  }
+
+  .services-page .catalog-art,
+  .services-page .catalog-primary .catalog-art,
+  .services-page .catalog-special .catalog-art,
+  .services-page .catalog-development .catalog-art {
+    min-height: 170px;
+  }
+
+  .services-page .catalog-art svg,
+  .services-page .catalog-primary .catalog-art svg,
+  .services-page .catalog-special .catalog-art svg,
+  .services-page .catalog-development .catalog-art svg {
+    height: 175px;
   }
 
   .tenant-main {
