@@ -1,103 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <g id="window" fill="#fff" stroke="#718879" stroke-width="1.4">
-      <rect width="22" height="34" rx="1" />
-      <path d="M11 1v32M1 14h20" fill="none" />
+    <pattern id="roof-seams" width="26" height="22" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)">
+      <path d="M0 0V22M0 21H26" fill="none" stroke="#7d8d85" stroke-width=".8" opacity=".35" />
+    </pattern>
+    <g id="house-window">
+      <path d="M-5-6H45V0H-5Z" fill="#e0e6e1" />
+      <rect width="40" height="62" rx="1" fill="#fff" stroke="#86968b" stroke-width="1.3" />
+      <path d="M4 4H36V58H4Z" fill="#e1e9e5" />
+      <path d="M20 4V58M4 24H36" fill="none" stroke="#718879" stroke-width="1.5" />
+      <path d="M7 7V20M7 28V53" stroke="#fff" stroke-width="2" opacity=".7" />
+      <path d="M-5 63H45V68H-5Z" fill="#edf0eb" stroke="#a3afa5" stroke-width="1" />
     </g>
-    <g id="building" stroke-linejoin="round">
-      <path d="M26 204h268l-34-15H58Z" fill="#dce4db" />
-      <path d="M45 62h210v140H45Z" fill="#eef2ec" stroke="#718879" stroke-width="2" />
-      <path d="m37 62 35-36h150l40 36Z" fill="#a7bba1" stroke="#607b68" stroke-width="2" />
-      <path d="m72 26 20-16h130l20 16Z" fill="#c3d0c3" stroke="#718879" stroke-width="2" />
-      <path d="M45 108h210M45 155h210M45 202h210" fill="none" stroke="#9caf9d" stroke-width="2" />
-      <g>
-        <use href="#window" x="69" y="73" />
-        <use href="#window" x="112" y="73" />
-        <use href="#window" x="187" y="73" />
-        <use href="#window" x="230" y="73" />
-        <use href="#window" x="69" y="120" />
-        <use href="#window" x="112" y="120" />
-        <use href="#window" x="187" y="120" />
-        <use href="#window" x="230" y="120" />
-        <use href="#window" x="69" y="167" />
-        <use href="#window" x="112" y="167" />
-        <use href="#window" x="187" y="167" />
-        <use href="#window" x="230" y="167" />
-      </g>
-      <path d="M148 202v-28a12 12 0 0 1 24 0v28Z" fill="#d3dfd0" stroke="#607b68" stroke-width="2" />
-      <path d="M160 174v28M151 185h18" fill="none" stroke="#718879" stroke-width="1.3" />
+    <g id="attic-window">
+      <path d="M-5 2L20-18 45 2V50H-5Z" fill="#f4f5f0" stroke="#7e9385" stroke-width="1.5" />
+      <path d="M-9 3L20-22 49 3" fill="none" stroke="#506d5d" stroke-width="3" />
+      <path d="M5 6H35V43H5Z" fill="#e1e9e5" stroke="#718879" stroke-width="1.2" />
+      <path d="M20 6V43M5 20H35" fill="none" stroke="#718879" stroke-width="1.2" />
+    </g>
+    <g id="base-house" stroke-linejoin="round">
+      <path d="M56 539L538 565 722 489 252 474Z" fill="#f0f3ee" />
+      <path d="M52 541H534L716 466" fill="none" stroke="#c3cdc4" stroke-width="1.3" />
+      <path d="M134 528L497 544 637 483 273 478Z" fill="#dce4db" />
+      <path d="M504 204L620 154V460L504 512Z" fill="#e0e7dd" stroke="#93a496" stroke-width="1.5" />
+      <path d="M522 209L602 175V431L522 467Z" fill="none" stroke="#a9b7aa" stroke-width="1" />
+      <path d="M150 204H504V512H150Z" fill="#eef1eb" stroke="#93a496" stroke-width="1.5" />
+      <path d="M166 218H302V307H166ZM356 218H489V307H356ZM166 318H302V409H166ZM356 318H489V409H356ZM166 420H302V506H166ZM356 420H489V506H356Z" fill="#f4f6f1" />
+      <path d="M310 209H348V508H310Z" fill="#d4dfd0" stroke="#93a496" stroke-width="1" />
+      <path d="M318 258H340V273H318ZM318 356H340V371H318ZM318 280H340M318 285H340M318 290H340M318 295H340M318 378H340M318 383H340M318 388H340M318 393H340" fill="none" stroke="#91a494" stroke-width="1.2" />
+      <path d="M133 204L180 115H456L520 204Z" fill="#c3d0c3" stroke="#93a496" stroke-width="1.8" />
+      <path d="M180 115L290 67H573L636 154 520 204 456 115Z" fill="#afbfad" stroke="#93a496" stroke-width="1.5" />
+      <path d="M133 204L180 115H456L520 204Z" fill="url(#roof-seams)" />
+      <path d="M182 114L292 66H576" fill="none" stroke="#546f5e" stroke-width="3" />
+      <path d="M536 111V64L560 54 582 64V112L560 123Z" fill="#d1dbce" stroke="#7b9080" stroke-width="1.4" />
+      <path d="M536 64L559 75 582 64M559 75V123" fill="none" stroke="#87998b" stroke-width="1.2" />
+      <path d="M531 61L558 50 587 61 560 73Z" fill="#eef1eb" stroke="#7b9080" stroke-width="1.4" />
+      <use href="#attic-window" x="206" y="143" /><use href="#attic-window" x="307" y="143" /><use href="#attic-window" x="408" y="143" />
+      <use href="#house-window" x="179" y="231" /><use href="#house-window" x="247" y="231" /><use href="#house-window" x="370" y="231" /><use href="#house-window" x="437" y="231" />
+      <use href="#house-window" x="179" y="332" /><use href="#house-window" x="247" y="332" /><use href="#house-window" x="370" y="332" /><use href="#house-window" x="437" y="332" />
+      <use href="#house-window" x="179" y="433" /><use href="#house-window" x="247" y="433" /><use href="#house-window" x="370" y="433" /><use href="#house-window" x="437" y="433" />
+      <g fill="#e9ede5" stroke="#8a9f8b" stroke-width="1.2"><path d="M142 204H511V215H142ZM143 307H511V317H143ZM143 409H511V419H143Z" /><path d="M511 204L628 154V165L511 215ZM511 307L627 257V267L511 317ZM511 409L627 359V369L511 419Z" /><path d="M143 508H511V521H143ZM511 508L627 458V471L511 521Z" /></g>
+      <g fill="none" stroke="#79907e" stroke-width="1.3"><path d="M540 225L563 215V273L540 284ZM582 207L604 197V255L582 265ZM540 326L563 316V374L540 385ZM582 308L604 298V356L582 366ZM540 427L563 417V470L540 480ZM582 409L604 399V453L582 463Z" /><path d="M551 220V279M540 247L563 237M593 202V260M582 229L604 219M551 321V380M540 348L563 338M593 303V361M582 330L604 320M551 422V475M540 449L563 439M593 404V458M582 431L604 421" /></g>
+      <path d="M306 508V446A23 23 0 0 1 352 446V508Z" fill="#fff" stroke="#6b846e" stroke-width="2" /><path d="M312 508V447A17 17 0 0 1 346 447V508Z" fill="#d4dfd0" stroke="#6b846e" stroke-width="1.4" /><path d="M329 433V508M313 454H345M317 461H323V491H317ZM335 461H341V491H335Z" fill="none" stroke="#5f7e65" stroke-width="1.2" /><path d="M299 521H359V526H299ZM293 526H365V531H293Z" fill="#e9ede5" stroke="#8a9f8b" stroke-width="1.2" />
+      <g fill="#d6dfcd" stroke="#9bad95" stroke-width="1.1"><path d="M82 513C65 502 79 480 85 477C69 462 86 443 102 446C110 428 135 439 132 459C148 460 150 481 135 488C142 505 119 520 111 511Z" /><path d="M670 464C654 452 657 435 668 430C652 414 667 397 680 401C688 385 708 395 705 413C722 420 716 440 705 444C711 458 694 470 687 465Z" /></g>
+      <g fill="none" stroke="#83967e" stroke-width="2"><path d="M106 478V537M106 504L94 491M106 494L120 478M686 435V490M686 454L675 444M686 442L697 428" /></g><path d="M71 538H123M665 490H705" fill="none" stroke="#a5b69d" stroke-width="1.3" />
     </g>
   </defs>
 
-  <symbol id="weg" viewBox="0 0 320 220">
-    <use href="#building" />
-    <g fill="#b8d3bc" stroke="#4e7159" stroke-width="1.5">
-      <rect x="69" y="73" width="22" height="34" />
-      <rect x="112" y="120" width="22" height="34" />
-      <rect x="187" y="73" width="22" height="34" />
-      <rect x="230" y="120" width="22" height="34" />
-    </g>
-    <path d="M56 48h208" stroke="#4e7159" stroke-width="2" stroke-dasharray="5 5" opacity=".8" />
-  </symbol>
-
-  <symbol id="miethaus" viewBox="0 0 320 220">
-    <use href="#building" />
-    <g fill="#f2d58b" stroke="#98743a" stroke-width="1.2">
-      <rect x="69" y="73" width="22" height="34" />
-      <rect x="112" y="73" width="22" height="34" />
-      <rect x="187" y="73" width="22" height="34" />
-      <rect x="230" y="73" width="22" height="34" />
-      <rect x="69" y="120" width="22" height="34" />
-      <rect x="112" y="120" width="22" height="34" />
-      <rect x="187" y="120" width="22" height="34" />
-      <rect x="230" y="120" width="22" height="34" />
-    </g>
-    <path d="M278 188v-34m0 10c-10 0-15-7-15-13 9 0 15 5 15 13m0-4c10 0 15-7 15-13-9 0-15 5-15 13" fill="#c8dacc" stroke="#607b68" stroke-width="1.5" />
-  </symbol>
-
-  <symbol id="wohnung" viewBox="0 0 320 220">
-    <use href="#building" opacity=".68" />
-    <rect x="183" y="117" width="58" height="42" rx="2" fill="#f2e0b3" stroke="#a47732" stroke-width="2" />
-    <path d="M212 118v40M184 138h56" stroke="#a47732" stroke-width="1.4" />
-    <path d="m164 105 18-18h73" fill="none" stroke="#a47732" stroke-width="2" stroke-dasharray="5 4" />
-    <circle cx="256" cy="87" r="4" fill="#a47732" />
-  </symbol>
-
-  <symbol id="investoren" viewBox="0 0 320 220">
-    <use href="#building" transform="translate(-18 12) scale(.78)" opacity=".72" />
-    <path d="M174 190v-48h24v48m12 0v-70h24v70m12 0v-94h24v94" fill="#c6ddc9" stroke="#4e7159" stroke-width="2" />
-    <path d="m169 117 28-23 25 7 27-22 24 2" fill="none" stroke="#9a5d47" stroke-width="2.5" />
-    <path d="M270 79h8v8" fill="none" stroke="#9a5d47" stroke-width="2.5" />
-    <path d="M26 204h268" stroke="#718879" stroke-width="2" />
-  </symbol>
-
-  <symbol id="portfolio" viewBox="0 0 320 220">
-    <use href="#building" transform="translate(-33 58) scale(.48)" opacity=".52" />
-    <use href="#building" transform="translate(161 58) scale(.48)" opacity=".52" />
-    <use href="#building" transform="translate(30 18) scale(.82)" />
-    <path d="M24 204h272" stroke="#718879" stroke-width="2" />
-  </symbol>
-
-  <symbol id="zinshaus" viewBox="0 0 320 220">
-    <use href="#building" />
-    <path d="M45 62h210v140H45Z" fill="#eee0d9" opacity=".7" />
-    <use href="#building" />
-    <path d="M58 68h184M58 151h184" fill="none" stroke="#9a5d47" stroke-width="1.4" opacity=".7" />
-    <path d="M278 198v-38m0 18c-11 0-16-8-16-15 10 0 16 6 16 15m0-5c11 0 16-8 16-15-10 0-16 6-16 15" fill="#c8dacc" stroke="#607b68" stroke-width="1.6" />
-  </symbol>
-
-  <symbol id="nachfolge" viewBox="0 0 320 220">
-    <use href="#building" transform="translate(-28 18) scale(.72)" opacity=".62" />
-    <path d="M169 45h80l25 25v106H169Z" fill="#fff" stroke="#607b68" stroke-width="2" />
-    <path d="M249 45v27h25M186 88h70m-70 19h56m-56 19h42" fill="none" stroke="#718879" stroke-width="2" />
-    <path d="M124 178h92m-12-12 12 12-12 12" fill="none" stroke="#9a5d47" stroke-width="2.5" />
-  </symbol>
-
-  <symbol id="sanierung" viewBox="0 0 320 220">
-    <use href="#building" />
-    <path d="M45 62h210v140H45Z" fill="none" stroke="#97bd9a" stroke-width="7" opacity=".85" />
-    <path d="M72 26h175l10 14H62Z" fill="#d4e2e8" stroke="#607b68" stroke-width="1.5" />
-    <path d="M89 26v14m28-14v14m28-14v14m28-14v14m28-14v14" stroke="#607b68" stroke-width="1.2" />
-    <path d="M272 146c-11-21 6-42 32-47 4 27-5 48-32 47Zm-7 29 27-52" fill="#c8dacc" stroke="#4e7159" stroke-width="2" stroke-linecap="round" />
-  </symbol>
+  <symbol id="weg" viewBox="0 0 760 590"><use href="#base-house" /><path d="M150 204H504V512H150Z" fill="#cfddc6" opacity=".34" /><path d="M133 204L180 115H456L520 204Z" fill="#9fb695" opacity=".42" /><path d="M310 209H348V508H310Z" fill="#a9c09b" opacity=".7" /><path d="M134 531H506" stroke="#56745c" stroke-width="3" stroke-dasharray="8 7" opacity=".8" /></symbol>
+  <symbol id="miethaus" viewBox="0 0 760 590"><use href="#base-house" /><g fill="#f3d68e" opacity=".92"><path d="M183 235H215V285H183ZM251 235H283V285H251ZM374 235H406V285H374ZM441 235H473V285H441Z" /><path d="M183 336H215V386H183ZM251 336H283V386H251ZM374 336H406V386H374ZM441 336H473V386H441Z" /><path d="M183 437H215V487H183ZM251 437H283V487H251ZM374 437H406V487H374ZM441 437H473V487H441Z" /></g><path d="M539 180c24-21 49-25 73-18M600 155v29m0-18-10-9m10 9 11-13" fill="none" stroke="#a47732" stroke-width="3" stroke-linecap="round" /></symbol>
+  <symbol id="wohnung" viewBox="0 0 760 590"><use href="#base-house" /><path d="M356 318H489V409H356Z" fill="#f5e7c8" opacity=".95" /><path d="M359 321H486V406H359Z" fill="none" stroke="#ac7428" stroke-width="4" stroke-dasharray="8 6" /><path d="M496 365h54" stroke="#ac7428" stroke-width="3" /><circle cx="555" cy="365" r="6" fill="#ac7428" /></symbol>
+  <symbol id="investoren" viewBox="0 0 760 590"><use href="#base-house" /><g fill="#c6ddc9" stroke="#4e7159" stroke-width="3"><path d="M186 163h25v41h-25ZM222 143h25v61h-25ZM258 119h25v85h-25Z" /></g><path d="M178 155 211 128l27 10 31-32 26 3M293 106h12v12" fill="none" stroke="#9a5d47" stroke-width="4" /></symbol>
+  <symbol id="portfolio" viewBox="0 0 760 590"><use href="#base-house" /><g opacity=".72" transform="translate(18 72) scale(.42)"><use href="#base-house" /></g><g opacity=".72" transform="translate(448 76) scale(.38)"><use href="#base-house" /></g><path d="M72 552H692" stroke="#56745c" stroke-width="3" /></symbol>
+  <symbol id="zinshaus" viewBox="0 0 760 590"><use href="#base-house" /><path d="M150 204H504V512H150Z" fill="#e6d2c9" opacity=".38" /><path d="M164 307H492M164 409H492" stroke="#9a5d47" stroke-width="2" opacity=".75" /><path d="M648 473c-26-38-9-68 28-83 7 45-8 77-28 83Zm-12 41 42-80" fill="#c8dacc" stroke="#4e7159" stroke-width="3" stroke-linecap="round" /></symbol>
+  <symbol id="nachfolge" viewBox="0 0 760 590"><use href="#base-house" /><path d="M468 160h112l35 35v128H468Z" fill="#fff" stroke="#607b68" stroke-width="3" /><path d="M580 160v38h35M490 222h96m-96 27h77m-77 27h58" fill="none" stroke="#718879" stroke-width="3" /><path d="M424 377h127m-17-17 17 17-17 17" fill="none" stroke="#9a5d47" stroke-width="4" /></symbol>
+  <symbol id="sanierung" viewBox="0 0 760 590"><use href="#base-house" /><path d="M150 204H504V512H150Z" fill="none" stroke="#8fbb96" stroke-width="12" opacity=".9" /><path d="M180 115H456l12 20H168Z" fill="#d4e2e8" stroke="#607b68" stroke-width="2" /><path d="M205 115v20m42-20v20m42-20v20m42-20v20m42-20v20" stroke="#607b68" stroke-width="2" /><path d="M632 382c-25-44 9-83 61-94 8 54-11 96-61 94Zm-14 58 53-103" fill="#c8dacc" stroke="#4e7159" stroke-width="4" stroke-linecap="round" /></symbol>
 </svg>
