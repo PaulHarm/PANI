@@ -14,7 +14,7 @@
     <link rel="alternate" hreflang="x-default" href="https://www.pani-hv.de/" />
 
     <meta name="theme-color" content="#19382d" />
-    <link rel="icon" href="favicon.svg?v=20260915a" type="image/svg+xml" />
+    <link rel="icon" href="favicon.svg?v=cbf0e3295c41" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260915a" />
     <link rel="manifest" href="site.webmanifest?v=20260915a" />
     <link
@@ -70,15 +70,19 @@
       property="og:image:alt"
     />
     <meta content="summary_large_image" name="twitter:card" />
+    <link href="assets/home.css?v=b8356234c4cb" rel="stylesheet" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="#top" aria-label="PANI home"
           ><svg class="brand-mark" aria-hidden="true">
             <use href="assets/icons.svg?v=20260915a#pani" /></svg
-          ><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a
+          ><span class="brand-text"
+            ><span class="brand-name">PANI</span
+            ><span class="brand-sub">Hausverwaltung</span></span
+          ></a
         >
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="en-services.html">Services</a
@@ -94,7 +98,9 @@
             >DE</a
           ><a class="button contact-button" href="#kontakt"
             >Contact<svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg></a
+              <use
+                href="assets/icons.svg?v=20260915a#arrow-up-right"
+              /></svg></a
           ><button
             class="menu-toggle"
             type="button"
@@ -125,278 +131,515 @@
       </nav>
     </header>
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <picture
-          ><source
-            sizes="(max-width: 800px) max(100vw, 1416px), 100vw"
-            srcset="
-              assets/bestandshalter-strassenzug-oderberger-480.webp   480w,
-              assets/bestandshalter-strassenzug-oderberger-800.webp   800w,
-              assets/bestandshalter-strassenzug-oderberger-1280.webp 1280w
-            "
-            type="image/webp" />
-          <img
-            decoding="async"
-            class="hero-photo"
-            src="assets/bestandshalter-strassenzug-oderberger.jpg"
-            width="1280"
-            height="678"
-            fetchpriority="high"
-            alt="Residential buildings on Oderberger Straße in Berlin-Prenzlauer Berg"
-        /></picture>
-        <div class="wrap hero-content">
-          <span class="eyebrow">Personally led. Clearly informed.</span>
-          <h1 id="hero-title">PANI Property Management<br />Berlin.</h1>
-          <p>
-            We manage owners’ associations, rental buildings and individual
-            apartments. With dedicated contacts, clear accounts and proactive
-            maintenance.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-light" href="#kontakt"
-              >Arrange a first conversation
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg></a
-            ><a class="text-link" href="#leistungen"
-              >Explore our services
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915a#arrow-down" /></svg
-            ></a>
-          </div>
-        </div>
-      </section>
-      <section class="section" id="leistungen" aria-labelledby="services-title">
-        <span class="anchor-alias" id="zielgruppen"></span>
-        <span class="anchor-alias" id="sanierung"></span>
-        <div class="wrap">
-          <div class="section-heading">
-            <div>
-              <span class="eyebrow">Our services</span>
-              <h2 id="services-title">
-                The right management<br />
-                for your property.
-              </h2>
-            </div>
-            <p>
-              From a single apartment to a whole building. We take care of the
-              day-to-day and keep the bigger picture in focus.
-            </p>
-          </div>
-          <div class="service-grid">
-            <article class="service">
-              <div class="service-topline">01 / Communities</div>
-
-              <h3>Owners’ associations</h3>
-              <div class="service-visual">
-                <svg aria-hidden="true" viewBox="0 0 220 130">
-                  <use href="assets/architecture.svg#weg" />
-                </svg>
-              </div>
-              <p>
-                Clear resolutions, reliable accounts and a management team that
-                follows through.
-              </p>
-              <a class="text-link" href="en-weg.html"
-                >For your association
-                <svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
-              ></a>
-            </article>
-            <article class="service">
-              <div class="service-topline">02 / Rental buildings</div>
-
-              <h3>Rental buildings</h3>
-              <div class="service-visual">
-                <svg aria-hidden="true" viewBox="0 0 220 130">
-                  <use href="assets/architecture.svg#miethaus" />
-                </svg>
-              </div>
-              <p>
-                Lettings, finances and maintenance under one roof. Keeping your
-                building well cared for and economically sound.
-              </p>
-              <a class="text-link" href="en-miethaus.html"
-                >For your rental building
-                <svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
-              ></a>
-            </article>
-            <article class="service">
-              <div class="service-topline">03 / Individual apartments</div>
-
-              <h3>Individual apartments</h3>
-              <div class="service-visual">
-                <svg aria-hidden="true" viewBox="0 0 220 130">
-                  <use href="assets/architecture.svg#wohnung" />
-                </svg>
-              </div>
-              <p>
-                We look after your rental apartment, with a dedicated point of
-                contact for you and your tenants.
-              </p>
-              <a class="text-link" href="en-sondereigentum.html"
-                >For your apartment
-                <svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
-              ></a>
-            </article>
-          </div>
-          <div class="services-summary">
-            <a href="en-services.html" class="text-link"
-              >View all services<svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
-            ></a>
-          </div>
-        </div>
+      <section class="home-intro wrap" id="top" aria-labelledby="hero-title">
+        <h1 id="hero-title">PANI Property Management Berlin.</h1>
+        <p>Let’s talk about your property and the right management for you.</p>
       </section>
       <section
-        class="steps-section"
-        id="wechsel"
-        aria-labelledby="switch-title"
+        class="home-properties"
+        id="leistungen"
+        aria-labelledby="services-title"
       >
-        <span class="anchor-alias" id="gruender"></span>
-        <span class="anchor-alias" id="prinzipien"></span>
-        <span class="anchor-alias" id="reporting"></span>
-        <div class="wrap steps-grid">
-          <div class="steps-intro">
-            <div>
-              <span class="eyebrow">Moving to PANI</span>
-              <h2 id="switch-title">
-                A smooth transition<br />
-                starts with clarity.
-              </h2>
+        <span class="anchor-alias" id="zielgruppen"></span
+        ><span class="anchor-alias" id="sanierung"></span>
+        <div class="wrap property-explorer">
+          <figure class="property-figure">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 760 590"
+              class="property-house"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <pattern
+                  id="roof-seams"
+                  width="26"
+                  height="22"
+                  patternUnits="userSpaceOnUse"
+                  patternTransform="skewX(-18)"
+                >
+                  <path
+                    d="M0 0V22M0 21H26"
+                    fill="none"
+                    stroke="#7d8d85"
+                    stroke-width=".8"
+                    opacity=".35"
+                  />
+                </pattern>
+                <g id="house-window">
+                  <path d="M-5-6H45V0H-5Z" fill="#e0e6e1" />
+                  <rect
+                    width="40"
+                    height="62"
+                    rx="1"
+                    fill="#fff"
+                    stroke="#86968b"
+                    stroke-width="1.3"
+                  />
+                  <path class="window-glass" d="M4 4H36V58H4Z" />
+                  <path
+                    d="M20 4V58M4 24H36"
+                    fill="none"
+                    stroke="#718879"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M7 7V20M7 28V53"
+                    stroke="#fff"
+                    stroke-width="2"
+                    opacity=".7"
+                  />
+                  <path
+                    d="M-5 63H45V68H-5Z"
+                    fill="#edf0eb"
+                    stroke="#a3afa5"
+                    stroke-width="1"
+                  />
+                </g>
+                <g id="attic-window">
+                  <path
+                    d="M-5 2L20-18 45 2V50H-5Z"
+                    fill="#f4f5f0"
+                    stroke="#7e9385"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M-9 3L20-22 49 3"
+                    fill="none"
+                    stroke="#506d5d"
+                    stroke-width="3"
+                  />
+                  <path
+                    class="window-glass"
+                    d="M5 6H35V43H5Z"
+                    stroke="#718879"
+                    stroke-width="1.2"
+                  />
+                  <path
+                    d="M20 6V43M5 20H35"
+                    fill="none"
+                    stroke="#718879"
+                    stroke-width="1.2"
+                  />
+                </g>
+              </defs>
+              <path d="M56 539L538 565 722 489 252 474Z" fill="#f0f3ee" />
+              <path
+                d="M52 541H534L716 466"
+                fill="none"
+                stroke="#c3cdc4"
+                stroke-width="1.3"
+              />
+              <path d="M134 528L497 544 637 483 273 478Z" fill="#dce4db" />
+              <g stroke-linejoin="round">
+                <path
+                  class="house-side house-common"
+                  d="M504 204L620 154V460L504 512Z"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M522 209L602 175V431L522 467Z"
+                  fill="none"
+                  stroke="#a9b7aa"
+                  stroke-width="1"
+                />
+                <path
+                  class="house-front house-common"
+                  d="M150 204H504V512H150Z"
+                  stroke-width="1.5"
+                />
+                <g class="house-apartment" stroke="none">
+                  <path d="M166 218H302V307H166Z" />
+                  <path d="M356 218H489V307H356Z" />
+                  <path d="M166 318H302V409H166Z" />
+                  <path class="single-apartment" d="M356 318H489V409H356Z" />
+                  <path d="M166 420H302V506H166Z" />
+                  <path d="M356 420H489V506H356Z" />
+                </g>
+                <path
+                  class="house-stair house-common"
+                  d="M310 209H348V508H310Z"
+                  stroke-width="1"
+                />
+                <g fill="none" stroke="#91a494" stroke-width="1.2">
+                  <path d="M318 258H340V273H318ZM318 356H340V371H318Z" />
+                  <path
+                    d="M318 280H340M318 285H340M318 290H340M318 295H340M318 378H340M318 383H340M318 388H340M318 393H340"
+                  />
+                </g>
+                <path
+                  class="house-roof house-common"
+                  d="M133 204L180 115H456L520 204Z"
+                  stroke-width="1.8"
+                />
+                <path
+                  class="house-roof-side house-common"
+                  d="M180 115L290 67H573L636 154 520 204 456 115Z"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M133 204L180 115H456L520 204Z"
+                  fill="url(#roof-seams)"
+                />
+                <path
+                  d="M182 114L292 66H576"
+                  fill="none"
+                  stroke="#546f5e"
+                  stroke-width="3"
+                />
+                <path
+                  d="M536 111V64L560 54 582 64V112L560 123Z"
+                  fill="#d1dbce"
+                  stroke="#7b9080"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M536 64L559 75 582 64M559 75V123"
+                  fill="none"
+                  stroke="#87998b"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M531 61L558 50 587 61 560 73Z"
+                  fill="#eef1eb"
+                  stroke="#7b9080"
+                  stroke-width="1.4"
+                />
+                <g class="house-windows">
+                  <use href="#attic-window" x="206" y="143" />
+                  <use href="#attic-window" x="307" y="143" />
+                  <use href="#attic-window" x="408" y="143" />
+                  <use href="#house-window" x="179" y="231" />
+                  <use href="#house-window" x="247" y="231" />
+                  <use href="#house-window" x="370" y="231" />
+                  <use href="#house-window" x="437" y="231" />
+                  <use href="#house-window" x="179" y="332" />
+                  <use href="#house-window" x="247" y="332" />
+                  <g class="single-windows">
+                    <use href="#house-window" x="370" y="332" />
+                    <use href="#house-window" x="437" y="332" />
+                  </g>
+                  <use href="#house-window" x="179" y="433" />
+                  <use href="#house-window" x="247" y="433" />
+                  <use href="#house-window" x="370" y="433" />
+                  <use href="#house-window" x="437" y="433" />
+                </g>
+                <g fill="#e9ede5" stroke="#8a9f8b" stroke-width="1.2">
+                  <path
+                    d="M142 204H511V215H142ZM143 307H511V317H143ZM143 409H511V419H143Z"
+                  />
+                  <path
+                    d="M511 204L628 154V165L511 215ZM511 307L627 257V267L511 317ZM511 409L627 359V369L511 419Z"
+                  />
+                  <path
+                    d="M143 508H511V521H143ZM511 508L627 458V471L511 521Z"
+                  />
+                </g>
+                <g
+                  class="house-side-windows"
+                  fill="none"
+                  stroke="#79907e"
+                  stroke-width="1.3"
+                >
+                  <path
+                    class="side-glass"
+                    d="M540 225L563 215V273L540 284ZM582 207L604 197V255L582 265ZM540 326L563 316V374L540 385ZM582 308L604 298V356L582 366ZM540 427L563 417V470L540 480ZM582 409L604 399V453L582 463Z"
+                  />
+                  <path
+                    d="M551 220V279M540 247L563 237M593 202V260M582 229L604 219M551 321V380M540 348L563 338M593 303V361M582 330L604 320M551 422V475M540 449L563 439M593 404V458M582 431L604 421"
+                  />
+                </g>
+                <path
+                  d="M306 508V446A23 23 0 0 1 352 446V508Z"
+                  fill="#fff"
+                  stroke="#6b846e"
+                  stroke-width="2"
+                />
+                <path
+                  class="house-door house-common"
+                  d="M312 508V447A17 17 0 0 1 346 447V508Z"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M329 433V508M313 454H345M317 461H323V491H317ZM335 461H341V491H335Z"
+                  fill="none"
+                  stroke="#5f7e65"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M299 521H359V526H299ZM293 526H365V531H293Z"
+                  fill="#e9ede5"
+                  stroke="#8a9f8b"
+                  stroke-width="1.2"
+                />
+                <path
+                  class="single-outline"
+                  d="M359 321H486V406H359Z"
+                  fill="none"
+                  stroke="#ac7428"
+                  stroke-width="2"
+                  stroke-dasharray="5 4"
+                />
+                <g fill="#d6dfcd" stroke="#9bad95" stroke-width="1.1">
+                  <path
+                    d="M82 513C65 502 79 480 85 477C69 462 86 443 102 446C110 428 135 439 132 459C148 460 150 481 135 488C142 505 119 520 111 511Z"
+                  />
+                  <path
+                    d="M670 464C654 452 657 435 668 430C652 414 667 397 680 401C688 385 708 395 705 413C722 420 716 440 705 444C711 458 694 470 687 465Z"
+                  />
+                </g>
+                <g fill="none" stroke="#83967e" stroke-width="2">
+                  <path
+                    d="M106 478V537M106 504L94 491M106 494L120 478M686 435V490M686 454L675 444M686 442L697 428"
+                  />
+                </g>
+                <path
+                  d="M71 538H123M665 490H705"
+                  fill="none"
+                  stroke="#a5b69d"
+                  stroke-width="1.3"
+                />
+              </g>
+            </svg>
+
+            <figcaption
+              class="property-caption"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <span data-scope="weg">Roof, facade and shared stairwell</span
+              ><span data-scope="miethaus">The entire rental building</span
+              ><span data-scope="wohnung">Your apartment in the building</span>
+            </figcaption>
+          </figure>
+          <div class="property-controls">
+            <h2 id="services-title">What can we look after?</h2>
+            <fieldset class="property-options">
+              <legend>
+                Which type of property would you like us to manage?
+              </legend>
+              <label class="property-choice"
+                ><input
+                  aria-label="WEG management, For your owners’ association"
+                  type="radio"
+                  name="property"
+                  value="weg"
+                  checked
+                  aria-controls="info-weg"
+                /><span
+                  ><strong
+                    ><span class="property-full-name">WEG management</span
+                    ><span class="property-short-name" aria-hidden="true"
+                      >WEG</span
+                    ></strong
+                  ><small>For your owners’ association</small></span
+                ></label
+              ><label class="property-choice"
+                ><input
+                  aria-label="Rental buildings, For your entire building"
+                  type="radio"
+                  name="property"
+                  value="miethaus"
+                  aria-controls="info-miethaus"
+                /><span
+                  ><strong
+                    ><span class="property-full-name">Rental buildings</span
+                    ><span class="property-short-name" aria-hidden="true"
+                      >Building</span
+                    ></strong
+                  ><small>For your entire building</small></span
+                ></label
+              ><label class="property-choice"
+                ><input
+                  aria-label="Individual apartments, For your own apartment"
+                  type="radio"
+                  name="property"
+                  value="wohnung"
+                  aria-controls="info-wohnung"
+                /><span
+                  ><strong
+                    ><span class="property-full-name"
+                      >Individual apartments</span
+                    ><span class="property-short-name" aria-hidden="true"
+                      >Apartment</span
+                    ></strong
+                  ><small>For your own apartment</small></span
+                ></label
+              >
+            </fieldset>
+            <div class="property-info" aria-live="polite" aria-atomic="true">
+              <div data-scope="weg" id="info-weg">
+                <p>
+                  We look after your communal property: from accounts and
+                  owners’ meetings to maintenance.
+                </p>
+                <a class="text-link" href="en-weg.html"
+                  >More about WEG management<svg
+                    class="icon"
+                    aria-hidden="true"
+                  >
+                    <use
+                      href="assets/icons.svg?v=20260915a#arrow-up-right"
+                    /></svg
+                ></a>
+              </div>
+              <div data-scope="miethaus" id="info-miethaus">
+                <p>
+                  We look after your building and its tenants: lettings, rent
+                  collection, operating costs and maintenance.
+                </p>
+                <a class="text-link" href="en-miethaus.html"
+                  >More about rental buildings<svg
+                    class="icon"
+                    aria-hidden="true"
+                  >
+                    <use
+                      href="assets/icons.svg?v=20260915a#arrow-up-right"
+                    /></svg
+                ></a>
+              </div>
+              <div data-scope="wohnung" id="info-wohnung">
+                <p>
+                  We manage your rented apartment: the tenancy, ongoing accounts
+                  and communication with your tenants.
+                </p>
+                <a class="text-link" href="en-sondereigentum.html"
+                  >More about apartment management<svg
+                    class="icon"
+                    aria-hidden="true"
+                  >
+                    <use
+                      href="assets/icons.svg?v=20260915a#arrow-up-right"
+                    /></svg
+                ></a>
+              </div>
             </div>
-            <div class="steps-aside">
-              <p>Clear figures. Informed decisions.</p>
-              <a class="text-link" href="en-reporting.html"
-                >Explore our reporting<svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
+            <div class="property-all">
+              <a class="text-link" href="en-services.html"
+                >Explore all services<svg class="icon" aria-hidden="true">
+                  <use
+                    href="assets/icons.svg?v=20260915a#arrow-up-right"
+                  /></svg
               ></a>
             </div>
           </div>
-          <div class="step">
-            <span class="step-number">01</span>
-            <h3>Getting acquainted</h3>
+        </div>
+      </section>
+      <section class="home-switch" id="wechsel" aria-labelledby="switch-title">
+        <div class="wrap">
+          <div>
+            <h2 id="switch-title">We help you make the move.</h2>
             <p>
-              We discuss your property, your situation and the scope of service
-              you need.
+              Documents, handover, open questions. We coordinate the transition
+              with you and your current manager.
             </p>
           </div>
-          <div class="step">
-            <span class="step-number">02</span>
-            <h3>Taking over</h3>
-            <p>
-              We coordinate dates, documents and outstanding matters with you
-              and your current manager.
-            </p>
-          </div>
-          <div class="step">
-            <span class="step-number">03</span>
-            <h3>Managing</h3>
-            <p>
-              Dedicated contacts, organised processes and a clear view of the
-              next priorities.
-            </p>
-          </div>
+          <a class="text-link" href="en-about.html#faq-title"
+            >Your move to PANI<svg class="icon" aria-hidden="true">
+              <use href="assets/icons.svg?v=20260915a#arrow-up-right" /></svg
+          ></a>
         </div>
       </section>
       <section
-        class="section contact-section"
+        class="home-contact"
         id="kontakt"
         aria-labelledby="contact-title"
       >
-        <div class="wrap contact-grid">
-          <div class="contact-copy">
-            <span class="eyebrow">Tell us about your property</span>
-            <h2 id="contact-title">
-              Let’s talk about<br />
-              your property.
-            </h2>
-            <p>
-              Looking for a property manager or considering a change? Tell us
-              what you need. The founders read your enquiry personally.
-            </p>
-            <div class="contact-details">
-              <a href="mailto:info@pani-hv.de"
-                ><svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915a#mail" /></svg
-                >info@pani-hv.de</a
-              >
-              <address>Westfälische Straße 62<br />10709 Berlin</address>
+        <div class="wrap">
+          <div class="home-contact-row">
+            <div>
+              <h2 id="contact-title">Let’s get to know each other.</h2>
+              <p>
+                A short conversation about your property and your priorities.
+              </p>
             </div>
-            <p class="contact-tenant" id="mieter">
-              Are you a tenant in a managed building?
-              <a href="en-tenants.html">Contact tenant services</a>
-            </p>
+            <a class="text-link" href="mailto:info@pani-hv.de"
+              ><svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg?v=20260915a#mail" /></svg
+              >info@pani-hv.de</a
+            >
           </div>
-          <form
-            class="contact-form"
-            data-email-form="owner"
-            aria-labelledby="contact-title"
-            hidden
-          >
-            <div class="form-grid">
-              <label class="field"
-                >Your name<input
-                  name="name"
-                  autocomplete="name"
-                  required
-                  maxlength="100"
-                  placeholder="First and last name" /></label
-              ><label class="field"
-                >Email<input
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                  maxlength="180"
-                  placeholder="name@example.com" /></label
-              ><label class="field"
-                >What can we manage for you?<select name="topic" required>
-                  <option value="">Please select</option>
-                  <option>Owners’ association (WEG)</option>
-                  <option>Rental building / portfolio</option>
-                  <option>Individual apartment</option>
-                  <option>Other / not yet sure</option>
-                </select></label
-              ><label class="field"
-                ><span>Phone <span class="optional">(optional)</span></span
-                ><input
-                  name="phone"
-                  type="tel"
-                  autocomplete="tel"
-                  maxlength="40"
-                  placeholder="For a callback" /></label
-              ><label class="field field-wide"
-                >Your message<textarea
-                  name="message"
-                  required
-                  maxlength="3000"
-                  placeholder="Where is your property? How many units? What matters most to you?"
-                ></textarea>
-              </label>
-            </div>
-            <div class="form-bottom">
-              <button class="button" type="submit">
-                Prepare email
-                <svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915a#arrow-up-right" />
-                </svg>
-              </button>
-            </div>
-            <p class="privacy-note">
-              Your details are only transmitted when you send the email from
-              your email app. Read more in our
-              <a href="en-privacy.html">privacy notice</a>.
-            </p>
-            <div class="form-status" role="status" aria-live="polite"></div>
-          </form>
-          <noscript
-            ><p>
-              Email us at <a href="mailto:info@pani-hv.de">info@pani-hv.de</a>.
-              Please include the property, number of units and your enquiry.
-            </p></noscript
-          >
+          <details class="home-enquiry">
+            <summary>
+              Prepare an enquiry<svg class="icon" aria-hidden="true">
+                <use href="assets/icons.svg?v=20260915a#arrow-down" />
+              </svg>
+            </summary>
+            <form
+              class="contact-form"
+              data-email-form="owner"
+              aria-labelledby="contact-title"
+              hidden
+            >
+              <p class="form-explanation">
+                Your enquiry opens as a draft in your email app. Nothing is sent
+                automatically.
+              </p>
+              <div class="form-grid">
+                <label class="field"
+                  >Your name<input
+                    name="name"
+                    autocomplete="name"
+                    required
+                    maxlength="100"
+                    placeholder="First and last name" /></label
+                ><label class="field"
+                  >Email<input
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    maxlength="180"
+                    placeholder="name@example.com" /></label
+                ><label class="field"
+                  >What can we manage for you?<select name="topic" required>
+                    <option value="">Please select</option>
+                    <option>Owners’ association (WEG)</option>
+                    <option>Rental building / portfolio</option>
+                    <option>Individual apartment</option>
+                    <option>Other / not yet sure</option>
+                  </select></label
+                ><label class="field"
+                  ><span>Phone <span class="optional">(optional)</span></span
+                  ><input
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    maxlength="40"
+                    placeholder="For a callback" /></label
+                ><label class="field field-wide"
+                  >Your message<textarea
+                    name="message"
+                    required
+                    maxlength="3000"
+                    placeholder="Where is your property? How many units? What matters most to you?"
+                  ></textarea>
+                </label>
+              </div>
+              <div class="form-bottom">
+                <button class="button" type="submit">
+                  Prepare email
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/icons.svg?v=20260915a#arrow-up-right" />
+                  </svg>
+                </button>
+              </div>
+              <p class="privacy-note">
+                Your details are only transmitted when you send the email from
+                your email app. Read more in our
+                <a href="en-privacy.html">privacy notice</a>.
+              </p>
+              <div class="form-status" role="status" aria-live="polite"></div>
+            </form>
+            <noscript
+              ><p>
+                Email us at
+                <a href="mailto:info@pani-hv.de">info@pani-hv.de</a>. Please
+                include the property, number of units and your enquiry.
+              </p></noscript
+            >
+          </details>
         </div>
       </section>
     </main>
@@ -406,10 +649,13 @@
           <div>
             <a class="brand" href="#top"
               ><svg class="brand-mark" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915a#pani-tile" /></svg
-              ><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a
+                <use href="assets/icons.svg?v=20260915a#pani" /></svg
+              ><span class="brand-text"
+                ><span class="brand-name">PANI</span
+                ><span class="brand-sub">Hausverwaltung</span></span
+              ></a
             >
-            <p>Personally led. At home in Berlin.</p>
+            <p id="prinzipien">Personally led. At home in Berlin.</p>
             <figure class="certification-note">
               <img
                 src="assets/ihk-26a-weg-siegel.png"
@@ -426,34 +672,16 @@
             </figure>
           </div>
           <nav class="footer-links" aria-label="Further information">
-            <a href="en-services.html">All services</a>
-            <a href="en-weg.html">WEG</a
-            ><a href="en-miethaus.html">Rental buildings</a
-            ><a href="en-sondereigentum.html">Individual apartments</a
-            ><a href="en-reporting.html">Reporting</a
-            ><a href="en-about.html">About us</a
-            ><a href="en-tenants.html">Tenant services</a
+            <a href="en-services.html">All services</a
+            ><a href="en-about.html" id="gruender">About us</a
+            ><a href="en-reporting.html" id="reporting">Reporting</a
+            ><a href="en-tenants.html" id="mieter">Tenant services</a
             ><a href="en-imprint.html">Legal notice</a
             ><a href="en-privacy.html">Privacy</a>
           </nav>
         </div>
         <div class="footer-bottom">
           <span>© PANI Hausverwaltung · Berlin</span>
-          <span class="footer-credit"
-            >City view:
-            <a
-              href="https://commons.wikimedia.org/wiki/File:Oderberger_Stra%C3%9Fe_1941.jpg"
-              target="_blank"
-              rel="noopener"
-              >Franz Richter</a
-            >,
-            <a
-              href="https://creativecommons.org/licenses/by-sa/3.0/"
-              target="_blank"
-              rel="noopener"
-              >CC BY-SA 3.0</a
-            >, edited</span
-          >
         </div>
       </div>
     </footer>
