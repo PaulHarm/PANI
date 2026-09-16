@@ -387,10 +387,24 @@ body:not(.detail-page) .tenant-hero h1 {
   background: #f7f8f5;
 }
 
+.process-journey {
+  position: relative;
+  padding-top: 10px;
+}
+
+.process-journey-line {
+  position: absolute;
+  top: 34px;
+  right: 8%;
+  left: 8%;
+  height: 1px;
+  background: #cbd8ce;
+}
+
 .service-process {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
+  gap: 0;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -398,17 +412,65 @@ body:not(.detail-page) .tenant-hero h1 {
 
 .service-process-step {
   min-width: 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
+  position: relative;
+  padding: 0 18px;
+  animation: journey-in 0.52s ease both;
+}
+
+.service-process-step:nth-child(2) {
+  animation-delay: 0.07s;
+}
+
+.service-process-step:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+.service-process-step:nth-child(4) {
+  animation-delay: 0.21s;
+}
+
+.service-process-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 22px;
+  border: 1px solid #b7cbbb;
+  border-radius: 50%;
+  background: #f7f8f5;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .service-process-step .no {
   color: var(--green);
   font-size: 13px;
+  transition: color 0.25s ease;
+}
+
+.service-process-step:hover .service-process-marker,
+.service-process-step:focus-within .service-process-marker {
+  border-color: var(--green);
+  background: var(--green);
+  transform: translateY(-3px);
+}
+
+.service-process-step:hover .no,
+.service-process-step:focus-within .no {
+  color: #fff;
+}
+
+.service-process-copy {
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
 }
 
 .service-process-step h3 {
-  margin-block: 18px 10px;
+  margin-bottom: 10px;
   color: var(--green-dark);
   font: 24px/1.2 var(--serif);
 }
@@ -416,6 +478,197 @@ body:not(.detail-page) .tenant-hero h1 {
 .service-process-step p {
   color: var(--muted);
   font-size: 14px;
+}
+
+.special-heading {
+  align-items: end;
+}
+
+.special-carousel {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.special-carousel:focus-visible {
+  outline: 3px solid #a97730;
+  outline-offset: 6px;
+}
+
+.special-carousel-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 44px;
+}
+
+.special-carousel-position {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.special-carousel-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--green);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-button:hover {
+  background: var(--green);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.carousel-button-prev .icon {
+  transform: rotate(180deg);
+}
+
+.special-carousel-track {
+  display: grid;
+  gap: 36px;
+}
+
+.special-slide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+  align-items: center;
+  gap: 48px;
+  min-width: 0;
+  padding: 22px 0 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.special-slide .catalog-art {
+  display: grid;
+  place-items: center;
+  min-height: 340px;
+  height: 340px;
+  padding: 12px;
+  background: #f7f8f5;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.special-slide .catalog-art svg {
+  display: block;
+  width: 100%;
+  max-width: 610px;
+  height: 315px;
+}
+
+.special-slide .catalog-item-copy {
+  max-width: 530px;
+}
+
+.special-slide h3 {
+  margin-bottom: 14px;
+  color: var(--green-dark);
+  font: 34px/1.14 var(--serif);
+}
+
+.special-slide p {
+  max-width: 500px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.special-slide .text-link {
+  margin-top: 24px;
+}
+
+.special-carousel.is-ready .special-carousel-track {
+  position: relative;
+  display: grid;
+  min-height: 400px;
+  gap: 0;
+}
+
+.special-carousel.is-ready .special-slide {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.special-carousel.is-ready .special-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  animation: carousel-enter 0.42s ease both;
+}
+
+.special-carousel:not(.is-ready) .special-carousel-toolbar,
+.special-carousel:not(.is-ready) .special-carousel-dots {
+  display: none;
+}
+
+.special-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 18px;
+}
+
+.carousel-dot {
+  width: 24px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  background: #bdc9bf;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.carousel-dot:hover,
+.carousel-dot.is-active {
+  width: 42px;
+  background: var(--green);
+}
+
+@keyframes journey-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes carousel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .development-heading {
@@ -595,30 +848,13 @@ body:not(.detail-page) .tenant-hero h1 {
   background: #f1f4ee;
 }
 
-.services-page .detail-cta,
-.services-page + .detail-cta {
-  background: #eef3ed;
-  color: var(--ink);
-  border-block: 1px solid var(--line);
-}
-
-.services-page .detail-cta h2,
-.services-page .detail-cta p {
-  color: var(--ink);
-}
-
-.services-page .detail-cta p {
-  color: var(--muted);
-}
-
-.services-page .detail-cta .button-light {
-  background: var(--green);
-  border-color: var(--green);
-  color: #fff;
-}
-
-.services-page .detail-cta .button-light:hover {
-  background: var(--green-dark);
+.services-page h1,
+.services-page h2,
+.services-page h3,
+.services-page p,
+.services-page li,
+.services-page a {
+  overflow-wrap: break-word;
 }
 
 .about-page .detail-section,
@@ -703,8 +939,51 @@ body:not(.detail-page) .tenant-hero h1 {
   }
 
   .service-process {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 34px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .process-journey {
+    padding-top: 4px;
+  }
+
+  .process-journey-line {
+    top: 24px;
+    right: auto;
+    bottom: 24px;
+    left: 24px;
+    width: 1px;
+    height: auto;
+  }
+
+  .service-process-step {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 18px;
+    padding: 0;
+  }
+
+  .service-process-marker {
+    margin-bottom: 0;
+  }
+
+  .service-process-copy {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .special-slide {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .special-slide .catalog-art {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .special-slide .catalog-art svg {
+    height: 275px;
   }
 
   .development-grid {
@@ -804,6 +1083,50 @@ body:not(.detail-page) .tenant-hero h1 {
 
   .service-process {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .process-journey {
+    padding-top: 4px;
+  }
+
+  .process-journey-line {
+    top: 24px;
+    right: auto;
+    bottom: 24px;
+    left: 24px;
+    width: 1px;
+    height: auto;
+  }
+
+  .service-process-step {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 18px;
+    padding: 0;
+  }
+
+  .service-process-marker {
+    margin-bottom: 0;
+  }
+
+  .service-process-copy {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .special-slide {
+    gap: 20px;
+    padding-top: 16px;
+  }
+
+  .special-slide .catalog-art {
+    min-height: 250px;
+    height: 250px;
+  }
+
+  .special-slide .catalog-art svg {
+    height: 225px;
   }
 
   .development-card .catalog-art,
@@ -835,6 +1158,7 @@ body:not(.detail-page) .tenant-hero h1 {
   body:not(.home-page) *,
   body:not(.home-page) *::before,
   body:not(.home-page) *::after {
+    animation: none !important;
     transition: none !important;
   }
 }
