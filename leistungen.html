@@ -17,7 +17,7 @@
     <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="assets/site.css?v=712f77548445">
     <link rel="stylesheet" href="assets/pages.css?v=02b37ad7708d">
-    <link href="assets/refined-pages.css?v=4c3c43122467" rel="stylesheet">
+    <link href="assets/refined-pages.css?v=28c93f683d66" rel="stylesheet">
     <script src="assets/site.js" defer></script>
 
     <meta content="Unsere Leistungen | PANI Hausverwaltung Berlin" property="og:title">
@@ -66,8 +66,6 @@
             Eigentum. Mit der passenden Verwaltung und festen Ansprechpartnern.
           </p>
           <nav class="catalog-jump" aria-label="Leistungsbereiche">
-            <a href="#verwaltung">Verwaltung<svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915f#arrow-down" /></svg></a>
             <a href="#zusammenarbeit">Zusammenarbeit<svg class="icon" aria-hidden="true">
                 <use href="assets/icons.svg?v=20260915f#arrow-down" /></svg></a>
             <a href="#besondere-anforderungen">Besondere Anforderungen<svg class="icon" aria-hidden="true">
@@ -77,77 +75,6 @@
           </nav>
         </div>
       </header>
-      <section class="services-explorer" id="verwaltung" aria-labelledby="management-title">
-        <div class="wrap">
-          <div class="services-section-lead">
-            <div>
-              <span class="eyebrow">Die passende Verwaltung</span>
-              <h2 id="management-title">Was dürfen wir betreuen?</h2>
-            </div>
-            <p>
-              Wählen Sie die Immobilie, um die passende Betreuung und den
-              nächsten Schritt zu sehen.
-            </p>
-          </div>
-          <div class="service-explorer-grid">
-            <figure class="service-house-figure">
-              <div class="service-house-stage">
-                <svg data-scope="weg" aria-hidden="true" viewBox="0 0 760 590">
-                  <use href="assets/service-illustrations.svg?v=20260916c#weg" />
-                </svg>
-                <svg data-scope="miethaus" aria-hidden="true" viewBox="0 0 760 590">
-                  <use href="assets/service-illustrations.svg?v=20260916c#miethaus" />
-                </svg>
-                <svg data-scope="wohnung" aria-hidden="true" viewBox="0 0 760 590">
-                  <use href="assets/service-illustrations.svg?v=20260916c#wohnung" />
-                </svg>
-              </div>
-              <figcaption class="service-house-caption">
-                <span data-scope="weg">Gemeinschaft, Fassade und gemeinsames Eigentum</span>
-                <span data-scope="miethaus">Das gesamte Mietshaus im Blick</span>
-                <span data-scope="wohnung">Ihre einzelne Wohnung im Haus</span>
-              </figcaption>
-            </figure>
-            <div class="service-property-controls">
-              <fieldset class="service-property-options">
-                <legend>Welche Immobilie möchten Sie verwalten lassen?</legend>
-                <label class="service-property-choice"><input type="radio" name="service-property" value="weg" checked><span><strong>WEG-Verwaltung</strong><small>Für Ihre Gemeinschaft</small></span></label>
-                <label class="service-property-choice"><input type="radio" name="service-property" value="miethaus"><span><strong>Miethausverwaltung</strong><small>Für Ihr ganzes Haus</small></span></label>
-                <label class="service-property-choice"><input type="radio" name="service-property" value="wohnung"><span><strong>Sondereigentum</strong><small>Für Ihre einzelne Wohnung</small></span></label>
-              </fieldset>
-              <div class="service-property-info" aria-live="polite">
-                <div data-scope="weg">
-                  <h3>WEG-Verwaltung</h3>
-                  <p>
-                    Wir organisieren Eigentümerversammlungen, Abrechnung,
-                    Rücklagen und die Umsetzung gemeinsamer Beschlüsse.
-                  </p>
-                  <a class="text-link" href="weg.html">WEG-Verwaltung ansehen<svg class="icon" aria-hidden="true">
-                      <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
-                </div>
-                <div data-scope="miethaus">
-                  <h3>Miethausverwaltung</h3>
-                  <p>
-                    Wir halten Vermietung, Mieterbetreuung, laufende Kosten und
-                    den Zustand Ihres Hauses zusammen.
-                  </p>
-                  <a class="text-link" href="miethaus.html">Miethausverwaltung ansehen<svg class="icon" aria-hidden="true">
-                      <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
-                </div>
-                <div data-scope="wohnung">
-                  <h3>Sondereigentum</h3>
-                  <p>
-                    Wir betreuen Ihre vermietete Wohnung und koordinieren
-                    Mieter, Reparaturen und die Abstimmung mit der WEG.
-                  </p>
-                  <a class="text-link" href="sondereigentum.html">Sondereigentum ansehen<svg class="icon" aria-hidden="true">
-                      <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="catalog-section service-process-section" id="zusammenarbeit" aria-labelledby="process-title">
         <div class="wrap">
           <div class="services-section-lead">
@@ -335,11 +262,9 @@
           </div>
           <div class="development-grid">
             <article class="development-card">
-              <div class="catalog-art">
-                <svg aria-hidden="true" viewBox="0 0 760 590">
-                  <use href="assets/service-illustrations.svg?v=20260916c#sanierung" />
-                </svg>
-              </div>
+              <figure class="development-photo">
+                <img src="assets/sanierung-baustelle.jpg" alt="Wohngebäude in der Bauphase mit sichtbarer Wärmedämmung, Gerüst und Baustellenfahrzeug" width="1066" height="768" loading="lazy" decoding="async">
+              </figure>
               <span class="catalog-kicker">08 / Energetische Sanierung</span>
               <h3>Vom Kostentreiber zum Zukunftsobjekt.</h3>
               <p>
@@ -351,11 +276,9 @@
                   <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
             </article>
             <article class="development-card">
-              <div class="catalog-art">
-                <svg aria-hidden="true" viewBox="0 0 760 590">
-                  <use href="assets/service-illustrations.svg?v=20260916c#baubetreuung" />
-                </svg>
-              </div>
+              <figure class="development-photo development-photo-construction">
+                <img src="assets/baubetreuung-baustelle.jpg" alt="Handwerker auf einem Gerüst bei der Reparatur eines älteren Backsteingebäudes" width="2165" height="3208" loading="lazy" decoding="async">
+              </figure>
               <span class="catalog-kicker">09 / Projektbegleitung</span>
               <h3>Baubetreuung mit Überblick.</h3>
               <p>
