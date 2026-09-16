@@ -21,6 +21,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `assets/map.js`: Zwei-Klick-Karte im Abschnitt „Vor Ort“ der Über-uns-Seiten. Google Maps wird erst nach Klick auf „Karte laden“ angefragt und lässt sich wieder ausblenden; ohne JavaScript bleiben Adresse und die Links zu Google Maps.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
 - `assets/site.css` und `assets/site.js`: gemeinsame Gestaltung und Interaktionen der neuen Seiten.
+- `assets/services.js`: Slideshow der beiden Leistungsseiten mit Richtung beim Folienwechsel, Pfeiltasten, Touch-Gesten und inaktiven Folien außerhalb der Tab-Reihenfolge. Einmalige Animationen starten beim Eintritt in den sichtbaren Bereich; reduzierte Bewegung wird berücksichtigt. Kein automatisches Weiterblättern.
 - `assets/refined-pages.css`: gemeinsame visuelle Verfeinerung der Unterseiten. Helle Split-Heroes, kompaktere Inhaltsrhythmen, einheitlicher Footer und responsive Detailseiten führen die Leistungs-, Zielgruppen-, Service- und Rechtsseiten näher an die reduzierte Startseite heran.
 - Stylesheet-Links tragen eine Inhaltsversion (`?v=…`), damit Browser nach einer Veröffentlichung keine ältere Gestaltung weiterverwenden. Bei CSS-Änderungen diese Version in allen HTML-Seiten aktualisieren.
 - `assets/pages.css`: gemeinsames Layout der Unterseiten, Sanierungsbeispiel und dauerhafter Mieterservice-Zugang (mobil als Leiste am unteren Rand, ab 801 px als schwebende Pille rechts unten).
@@ -30,7 +31,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `sanierung.html` und `en-renovation.html`: energetische Sanierung mit dem interaktiven Rechenbeispiel. Erreichbar über die Leistungsübersicht; der alte Startseiten-Anker `#sanierung` führt nur noch zur Leistungssektion.
 - `assets/energy-model.js` und `assets/experience.js`: transparentes Sanierungs-Rechenbeispiel und Animationen mit Unterstützung für reduzierte Bewegung.
 - `assets/architecture.svg`: vereinfachte Architekturillustrationen aus dem bestehenden Motivsystem.
-- `assets/service-illustrations.svg`: gemeinsame, homepage-nahe Hausillustrationen für die interaktive Leistungsübersicht und die beiden Weiterentwicklungsangebote.
+- `assets/service-illustrations.svg`: gemeinsame Architekturbausteine. Die Leistungsseiten kombinieren das Haus mit getrennt animierbaren Kennzahlen, einem Objektnetz, beleuchteten Fenstern und einer Unterlagenmappe. Sanierung und Baubetreuung verwenden die vorhandenen Fotos.
 - `assets/icons.svg`: ausgewählte Lucide-Icons und die bestehende PANI-Bildmarke; Lizenz in `assets/Lucide-LICENSE.txt`.
 - `assets/fonts/`: lokal bereitgestellte Fraunces- und IBM-Plex-Schriften mit Lizenzdateien.
 
@@ -54,7 +55,7 @@ Zusätzlich vor Veröffentlichung: Seiten auf Desktop und Mobil prüfen, Sprachw
 
 Startseite: alle drei Verwaltungsformen per Klick und Pfeiltasten prüfen. WEG hebt Gemeinschaftseigentum hervor, Miethaus beleuchtet alle Fenster, Sondereigentum markiert eine Wohnung. Bildunterschrift, Leistungstext und Detail-Link müssen zur Auswahl passen. Bei 320, 390, 768, 1280 und 1600 Pixeln auf Überläufe, vollständige Hausdarstellung und unveränderte Höhe beim Wechsel achten. Kontaktbereich über die Kopfzeile erreichen, Anfrage aufklappen und Mieterservice auch nach dem Scrollen prüfen. Die Illustration respektiert die Systemeinstellung für reduzierte Bewegung.
 
-Für die Leistungsübersicht außerdem alle acht Detailziele je Sprache und den Rückweg über die Brotkrumennavigation prüfen. Die Übersicht und ihre Links funktionieren ohne JavaScript; nur das mobile Klappmenü wird durch `assets/site.js` erweitert.
+Für die Leistungsübersicht außerdem alle Detailziele je Sprache und den Rückweg über die Brotkrumennavigation prüfen. Die Slideshow per Pfeilen, Punkten, Tastatur und Wischgeste bedienen; auch schnelle Wechsel sowie reduzierte Bewegung prüfen. Ohne JavaScript stehen alle vier Anforderungen untereinander mit erreichbaren Links.
 
 Für die Über-uns-Seiten zusätzlich Hauptnavigation, Sprachwechsel und Footer prüfen, für die Wechselseiten (wechsel.html, en-switch.html) die FAQ per Maus und Tastatur. Der Weg zum geplanten Portal führt vom festen Mieterservice-Link über „Was geplant ist“ zum gekennzeichneten Ausblick und von dort zurück zum Mieterservice.
 

@@ -387,18 +387,35 @@ body:not(.detail-page) .tenant-hero h1 {
   background: #f7f8f5;
 }
 
+.services-page {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .process-journey {
   position: relative;
   padding-top: 10px;
+  --journey-start: scaleX(0);
 }
 
 .process-journey-line {
   position: absolute;
   top: 34px;
-  right: 8%;
-  left: 8%;
+  right: calc(25% - 42px);
+  left: 42px;
   height: 1px;
   background: #cbd8ce;
+}
+
+.process-journey-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #839b85;
+  transform-origin: top left;
+}
+
+.process-journey.is-revealed .process-journey-line::after {
+  animation: journey-trace 1.4s var(--motion-ease) both;
 }
 
 .service-process {
@@ -414,19 +431,33 @@ body:not(.detail-page) .tenant-hero h1 {
   min-width: 0;
   position: relative;
   padding: 0 18px;
-  animation: journey-in 0.52s ease both;
+  --step-delay: 0ms;
 }
 
 .service-process-step:nth-child(2) {
-  animation-delay: 0.07s;
+  --step-delay: 110ms;
 }
 
 .service-process-step:nth-child(3) {
-  animation-delay: 0.14s;
+  --step-delay: 220ms;
 }
 
 .service-process-step:nth-child(4) {
-  animation-delay: 0.21s;
+  --step-delay: 330ms;
+}
+
+.service-process-step.is-revealed .service-process-copy {
+  animation: service-rise 700ms var(--motion-ease) var(--step-delay) both;
+}
+
+.service-process-step.is-revealed .service-process-marker::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px solid #809a83;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: marker-arrive 950ms var(--motion-ease) var(--step-delay) both;
 }
 
 .service-process-marker {
@@ -442,8 +473,7 @@ body:not(.detail-page) .tenant-hero h1 {
   background: #f7f8f5;
   transition:
     background 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+    border-color 0.25s ease;
 }
 
 .service-process-step .no {
@@ -456,7 +486,6 @@ body:not(.detail-page) .tenant-hero h1 {
 .service-process-step:focus-within .service-process-marker {
   border-color: var(--green);
   background: var(--green);
-  transform: translateY(-3px);
 }
 
 .service-process-step:hover .no,
@@ -487,6 +516,11 @@ body:not(.detail-page) .tenant-hero h1 {
 .special-carousel {
   border-top: 1px solid var(--line);
   padding-top: 14px;
+  --slide-offset: 24px;
+}
+
+.special-carousel[data-direction="previous"] {
+  --slide-offset: -24px;
 }
 
 .special-carousel:focus-visible {
@@ -506,7 +540,9 @@ body:not(.detail-page) .tenant-hero h1 {
   color: var(--green);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+  min-width: 62px;
 }
 
 .special-carousel-controls {
@@ -517,8 +553,8 @@ body:not(.detail-page) .tenant-hero h1 {
 .carousel-button {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 1px solid var(--green);
   border-radius: 50%;
@@ -526,14 +562,24 @@ body:not(.detail-page) .tenant-hero h1 {
   color: var(--green);
   transition:
     background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+    color 0.2s ease;
 }
 
 .carousel-button:hover {
   background: var(--green);
   color: #fff;
-  transform: translateY(-2px);
+}
+
+.carousel-button .icon {
+  transition: translate 300ms var(--motion-ease);
+}
+
+.carousel-button:hover .icon {
+  translate: 2px 0;
+}
+
+.carousel-button-prev:hover .icon {
+  translate: -2px 0;
 }
 
 .carousel-button-prev .icon {
@@ -543,6 +589,8 @@ body:not(.detail-page) .tenant-hero h1 {
 .special-carousel-track {
   display: grid;
   gap: 36px;
+  overflow: clip;
+  touch-action: pan-y pinch-zoom;
 }
 
 .special-slide {
@@ -555,26 +603,29 @@ body:not(.detail-page) .tenant-hero h1 {
   border-bottom: 1px solid var(--line);
 }
 
-.special-slide .catalog-art {
+.services-page .special-slide .catalog-art {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
-  min-height: 340px;
-  height: 340px;
-  padding: 12px;
-  background: #f7f8f5;
-  border: 1px solid var(--line);
+  width: 100%;
+  min-height: 380px;
+  height: 380px;
+  padding: 0;
+  background: transparent;
+  border: 0;
   overflow: hidden;
 }
 
-.special-slide .catalog-art svg {
+.services-page .special-slide .catalog-art svg {
   display: block;
   width: 100%;
-  max-width: 610px;
-  height: 315px;
+  max-width: 650px;
+  height: 100%;
 }
 
 .special-slide .catalog-item-copy {
   max-width: 530px;
+  height: auto;
 }
 
 .special-slide h3 {
@@ -596,28 +647,43 @@ body:not(.detail-page) .tenant-hero h1 {
 .special-carousel.is-ready .special-carousel-track {
   position: relative;
   display: grid;
-  min-height: 400px;
+  min-height: 416px;
   gap: 0;
 }
 
 .special-carousel.is-ready .special-slide {
   grid-area: 1 / 1;
   visibility: hidden;
-  opacity: 0;
-  transform: translateY(10px);
   pointer-events: none;
+  transition: visibility 0s 140ms;
+}
+
+.special-carousel.is-ready .special-slide > * {
+  opacity: 0;
+  transform: translateX(calc(var(--slide-offset) * -1));
   transition:
-    opacity 0.35s ease,
-    transform 0.35s ease,
-    visibility 0.35s ease;
+    opacity 140ms ease,
+    transform 140ms ease;
 }
 
 .special-carousel.is-ready .special-slide.is-active {
   visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.special-carousel.is-ready .special-slide.is-active > * {
   opacity: 1;
   transform: none;
-  pointer-events: auto;
-  animation: carousel-enter 0.42s ease both;
+  transition: none;
+}
+
+.special-carousel.is-ready .special-slide.is-active .catalog-item-copy {
+  animation: slide-copy-in 650ms var(--motion-ease) 120ms both;
+}
+
+.special-carousel.is-ready .special-slide.is-active .catalog-art {
+  animation: slide-art-in 700ms var(--motion-ease) 80ms both;
 }
 
 .special-carousel:not(.is-ready) .special-carousel-toolbar,
@@ -628,31 +694,106 @@ body:not(.detail-page) .tenant-hero h1 {
 .special-carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  padding-top: 18px;
+  gap: 4px;
+  padding-top: 8px;
 }
 
 .carousel-dot {
-  width: 24px;
-  height: 4px;
+  position: relative;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 0;
-  background: #bdc9bf;
-  transition:
-    width 0.25s ease,
-    background 0.25s ease;
+  background: transparent;
 }
 
-.carousel-dot:hover,
-.carousel-dot.is-active {
-  width: 42px;
+.carousel-dot::before {
+  content: "";
+  position: absolute;
+  inset: 20px 2px;
+  background: #bdc9bf;
+  transform: scaleX(0.55);
+  transition:
+    transform 400ms var(--motion-ease),
+    background 250ms ease;
+}
+
+.carousel-dot:hover::before,
+.carousel-dot.is-active::before {
+  transform: scaleX(1);
   background: var(--green);
 }
 
-@keyframes journey-in {
+.special-carousel.is-revealed .is-active .scene-detail,
+.special-carousel.is-revealed .is-active .scene-property {
+  animation: service-rise 900ms var(--motion-ease) 160ms both;
+}
+
+.special-carousel.is-revealed .is-active .scene-property-2 {
+  animation-delay: 240ms;
+}
+
+.special-carousel.is-revealed .is-active .scene-property-3 {
+  animation-delay: 340ms;
+}
+
+.special-carousel.is-revealed .is-active .scene-stroke {
+  stroke-dasharray: 1;
+  animation: scene-draw 1200ms var(--motion-ease) 260ms both;
+}
+
+.scene-bar {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.special-carousel.is-revealed .is-active .scene-bar {
+  animation: scene-bar-rise 850ms var(--motion-ease) 240ms both;
+}
+
+.special-carousel.is-revealed .is-active .scene-bar-2 {
+  animation-delay: 320ms;
+}
+
+.special-carousel.is-revealed .is-active .scene-bar-3 {
+  animation-delay: 400ms;
+}
+
+.special-carousel.is-revealed .is-active .scene-windows {
+  animation: scene-lights 1300ms ease 200ms both;
+}
+
+.special-carousel.is-revealed .is-active .scene-paper {
+  animation: paper-arrive 1000ms var(--motion-ease) 220ms both;
+}
+
+@keyframes journey-trace {
+  from {
+    transform: var(--journey-start);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes marker-arrive {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: scale(0.82);
+  }
+  35% {
+    opacity: 0.65;
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes service-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -660,10 +801,59 @@ body:not(.detail-page) .tenant-hero h1 {
   }
 }
 
-@keyframes carousel-enter {
+@keyframes slide-copy-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateX(var(--slide-offset));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-art-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--slide-offset)) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes scene-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scene-bar-rise {
+  from {
+    transform: scaleY(0.05);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scene-lights {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+@keyframes paper-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
   }
   to {
     opacity: 1;
@@ -693,8 +883,9 @@ body:not(.detail-page) .tenant-hero h1 {
 }
 
 .development-photo {
+  width: 100%;
   aspect-ratio: 4 / 3;
-  min-height: 270px;
+  min-height: 0;
   margin: 0 0 22px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -708,6 +899,21 @@ body:not(.detail-page) .tenant-hero h1 {
   object-fit: cover;
   object-position: center;
   transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.development-photo.is-revealed {
+  animation: photo-uncover 900ms var(--motion-ease) both;
+}
+
+@keyframes photo-uncover {
+  from {
+    opacity: 0.5;
+    clip-path: inset(0 0 8% 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+  }
 }
 
 .development-photo-construction img {
@@ -972,6 +1178,7 @@ body:not(.detail-page) .tenant-hero h1 {
 
   .process-journey {
     padding-top: 4px;
+    --journey-start: scaleY(0);
   }
 
   .process-journey-line {
@@ -999,18 +1206,30 @@ body:not(.detail-page) .tenant-hero h1 {
     border-left: 0;
   }
 
+  .special-heading {
+    align-items: flex-start;
+  }
+
   .special-slide {
     grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    align-items: start;
     gap: 26px;
   }
 
-  .special-slide .catalog-art {
-    min-height: 300px;
-    height: 300px;
+  .service-process-step:nth-child(n) {
+    --step-delay: 0ms;
   }
 
-  .special-slide .catalog-art svg {
-    height: 275px;
+  .services-page .special-slide .catalog-art {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 760 / 500;
+    max-height: 380px;
+  }
+
+  .services-page .special-slide .catalog-art svg {
+    height: 100%;
   }
 
   .development-grid {
@@ -1147,19 +1366,6 @@ body:not(.detail-page) .tenant-hero h1 {
     padding-top: 16px;
   }
 
-  .special-slide .catalog-art {
-    min-height: 250px;
-    height: 250px;
-  }
-
-  .special-slide .catalog-art svg {
-    height: 225px;
-  }
-
-  .development-photo {
-    min-height: 250px;
-  }
-
   .services-page .catalog-art,
   .services-page .catalog-primary .catalog-art,
   .services-page .catalog-special .catalog-art,
@@ -1185,5 +1391,14 @@ body:not(.detail-page) .tenant-hero h1 {
   body:not(.home-page) *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  .development-card:hover .development-photo img,
+  .development-card:focus-within .development-photo img {
+    transform: none;
+  }
+
+  .carousel-button:hover .icon {
+    translate: none;
   }
 }

@@ -46,6 +46,10 @@
     </g>
   </defs>
 
+  <symbol id="house" viewBox="0 0 760 590">
+    <use href="#base-house" />
+  </symbol>
+
   <symbol id="weg" viewBox="0 0 760 590"><use href="#base-house" /><path d="M150 204H504V512H150Z" fill="#bdd4b6" opacity=".44" /><path d="M504 204L620 154V460L504 512Z" fill="#bdd4b6" opacity=".34" /><path d="M133 204L180 115H456L520 204Z" fill="#9fb695" opacity=".5" /><path d="M150 204H504V512H150ZM504 204L620 154V460L504 512Z" fill="none" stroke="#678767" stroke-width="4" opacity=".85" /><path d="M310 209H348V508H310Z" fill="#9fbe98" opacity=".78" /><path d="M134 531H506" stroke="#56745c" stroke-width="3" stroke-dasharray="8 7" opacity=".8" /></symbol>
   <symbol id="miethaus" viewBox="0 0 760 590"><use href="#base-house" /><g fill="#f3d68e" opacity=".92"><path d="M183 235H215V285H183ZM251 235H283V285H251ZM374 235H406V285H374ZM441 235H473V285H441Z" /><path d="M183 336H215V386H183ZM251 336H283V386H251ZM374 336H406V386H374ZM441 336H473V386H441Z" /><path d="M183 437H215V487H183ZM251 437H283V487H251ZM374 437H406V487H374ZM441 437H473V487H441Z" /></g><circle cx="628" cy="214" r="19" fill="#f7e8cb" stroke="#a47732" stroke-width="3.2" /><circle cx="628" cy="214" r="7" fill="none" stroke="#a47732" stroke-width="3.2" /><path d="M647 204h67v20h-14v12h-14v-12h-16v9h-13v-17h-10Z" fill="#f7e8cb" stroke="#a47732" stroke-width="3.2" stroke-linejoin="round" /></symbol>
   <symbol id="wohnung" viewBox="0 0 760 590"><use href="#base-house" /><path d="M356 318H489V409H356Z" fill="#f3dfb7" opacity=".98" /><path d="M359 321H486V406H359Z" fill="none" stroke="#ac7428" stroke-width="5" stroke-dasharray="9 6" /><path d="M496 365h55" stroke="#ac7428" stroke-width="3" stroke-linecap="round" /><circle cx="559" cy="365" r="8" fill="#f3dfb7" stroke="#ac7428" stroke-width="3" /><circle cx="559" cy="365" r="2.5" fill="#ac7428" /></symbol>
