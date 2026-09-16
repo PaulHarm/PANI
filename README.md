@@ -16,7 +16,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 
 - `index.html` und `en.html`: reduzierte Startseiten mit interaktivem Haus, drei Verwaltungsformen, kurzem Wechselhinweis und aufklappbarer Kontaktanfrage. Bestehende Abschnittsanker bleiben erreichbar.
 - `assets/home.css`: ausschließlich für die beiden Startseiten. Native Radiofelder steuern über CSS `:has()` die Gebäudehervorhebung und den zugehörigen Kurztext auch ohne JavaScript. Mobil steht die Auswahl oberhalb des Hauses. Ohne `:has()` bleiben alle Leistungstexte und Links sichtbar.
-- `leistungen.html` und `en-services.html`: Leistungsübersicht mit acht Angeboten, Architekturillustrationen und Links zu den Detailseiten. Hauptnavigation, mobiles Menü, Footer und Brotkrumennavigation führen zur Übersicht.
+- `leistungen.html` und `en-services.html`: Leistungsübersicht mit interaktivem Haus-Explorer für WEG, Miethaus und Sondereigentum, einem vierstufigen Ablauf, besonderen Anforderungen sowie den Weiterentwicklungsangeboten energetische Sanierung und Baubetreuung. Architekturillustrationen und Links führen zu den Detailseiten. Hauptnavigation, mobiles Menü, Footer und Brotkrumennavigation führen zur Übersicht.
 - `ueber-uns.html` und `en-about.html`: Einleitung, Gründerblock mit großen Porträts und neutralem IHK-Hinweis, fünf aufklappbare Fragen zum Verwaltungswechsel und Kontaktabschluss. Die Startseite verlinkt hierhin, statt diese Inhalte zu wiederholen.
 - `assets/map.js`: Zwei-Klick-Karte im Abschnitt „Vor Ort“ der Über-uns-Seiten. Google Maps wird erst nach Klick auf „Karte laden“ angefragt und lässt sich wieder ausblenden; ohne JavaScript bleiben Adresse und die Links zu Google Maps.
 - `mieter.html` und `en-tenants.html`: Mieterservice mit eigenem Anliegen und Objektadresse.
@@ -30,6 +30,7 @@ Vorschau: http://127.0.0.1:8765. HTTP verwenden, damit externe SVG-Symbole zuver
 - `sanierung.html` und `en-renovation.html`: energetische Sanierung mit dem interaktiven Rechenbeispiel. Erreichbar über die Leistungsübersicht; der alte Startseiten-Anker `#sanierung` führt nur noch zur Leistungssektion.
 - `assets/energy-model.js` und `assets/experience.js`: transparentes Sanierungs-Rechenbeispiel und Animationen mit Unterstützung für reduzierte Bewegung.
 - `assets/architecture.svg`: vereinfachte Architekturillustrationen aus dem bestehenden Motivsystem.
+- `assets/service-illustrations.svg`: gemeinsame, homepage-nahe Hausillustrationen für die interaktive Leistungsübersicht und die beiden Weiterentwicklungsangebote.
 - `assets/icons.svg`: ausgewählte Lucide-Icons und die bestehende PANI-Bildmarke; Lizenz in `assets/Lucide-LICENSE.txt`.
 - `assets/fonts/`: lokal bereitgestellte Fraunces- und IBM-Plex-Schriften mit Lizenzdateien.
 
