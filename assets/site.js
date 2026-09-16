@@ -75,7 +75,13 @@
       const query = (window.location && window.location.search) || "";
       const match = /(?:\?|&)type=([^&#]*)/.exec(query);
       const context = match ? decodeURIComponent(match[1]) : "";
-      const optionIndex = { weg: 1, miethaus: 2, wohnung: 3 }[context];
+      const optionIndex = {
+        weg: 1,
+        miethaus: 2,
+        wohnung: 3,
+        sanierung: 4,
+        baubetreuung: 4,
+      }[context];
       const topic = form.querySelector('[name="topic"]');
       if (topic && optionIndex && topic.options[optionIndex]) {
         topic.selectedIndex = optionIndex;
