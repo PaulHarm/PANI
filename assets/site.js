@@ -43,68 +43,6 @@
       if (event.matches) setMenu(false);
     });
 
-  for (const carousel of document.querySelectorAll("[data-carousel]")) {
-    if (typeof carousel.querySelectorAll !== "function") continue;
-    const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
-    const previous = carousel.querySelector("[data-carousel-prev]");
-    const next = carousel.querySelector("[data-carousel-next]");
-    const position = carousel.querySelector("[data-carousel-position]");
-    const dots = carousel.querySelector("[data-carousel-dots]");
-    if (slides.length < 2 || !previous || !next || !position || !dots) {
-      continue;
-    }
-
-    carousel.classList.add("is-ready");
-    let active = Math.max(
-      0,
-      slides.findIndex((slide) => slide.classList.contains("is-active")),
-    );
-
-    const setSlide = (index) => {
-      active = (index + slides.length) % slides.length;
-      slides.forEach((slide, slideIndex) => {
-        const selected = slideIndex === active;
-        slide.classList.toggle("is-active", selected);
-        slide.setAttribute("aria-hidden", String(!selected));
-      });
-      position.textContent = `${String(active + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
-      [...dots.children].forEach((dot, dotIndex) => {
-        const selected = dotIndex === active;
-        dot.classList.toggle("is-active", selected);
-        dot.setAttribute("aria-current", selected ? "true" : "false");
-      });
-    };
-
-    slides.forEach((slide, slideIndex) => {
-      const title = slide.querySelector("h3")?.textContent.trim() || "";
-      const dot = document.createElement("button");
-      dot.className = "carousel-dot";
-      dot.type = "button";
-      dot.setAttribute(
-        "aria-label",
-        english
-          ? `Show ${title || `area ${slideIndex + 1}`}`
-          : `${title || `Bereich ${slideIndex + 1}`} anzeigen`,
-      );
-      dot.addEventListener("click", () => setSlide(slideIndex));
-      dots.append(dot);
-    });
-
-    previous.addEventListener("click", () => setSlide(active - 1));
-    next.addEventListener("click", () => setSlide(active + 1));
-    carousel.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        setSlide(active - 1);
-      }
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        setSlide(active + 1);
-      }
-    });
-    setSlide(active);
-  }
-
   // Desktop: the floating tenant pill steps back while the contact form is
   // in view, so it never sits on top of input fields.
   const dock = document.querySelector(".tenant-dock");

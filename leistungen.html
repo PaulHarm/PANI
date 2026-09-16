@@ -17,8 +17,9 @@
     <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="stylesheet" href="assets/site.css?v=712f77548445">
     <link rel="stylesheet" href="assets/pages.css?v=02b37ad7708d">
-    <link href="assets/refined-pages.css?v=28c93f683d66" rel="stylesheet">
-    <script src="assets/site.js" defer></script>
+    <link href="assets/refined-pages.css?v=c16393d6ab66" rel="stylesheet">
+    <script src="assets/site.js?v=20260916d" defer></script>
+    <script src="assets/services.js?v=20260916a" defer></script>
 
     <meta content="Unsere Leistungen | PANI Hausverwaltung Berlin" property="og:title">
     <meta content="Alle Leistungen von PANI im Überblick: WEG, Miethaus und Sondereigentum, Betreuung für Investoren und Bestandshalter, Nachfolge und energetische Sanierung in Berlin." property="og:description">
@@ -173,12 +174,27 @@
             <div class="special-carousel-track">
               <article class="special-slide is-active" data-carousel-slide="" aria-roledescription="Folie">
                 <div class="catalog-art">
-                  <svg aria-hidden="true" viewBox="0 0 760 590">
-                    <use href="assets/service-illustrations.svg?v=20260916c#investoren" />
+                  <svg class="service-scene scene-investors" aria-hidden="true" viewBox="0 0 760 590">
+                    <g transform="translate(-24 52) scale(.84)">
+                      <use href="assets/service-illustrations.svg?v=20260916d#house" width="760" height="590" />
+                    </g>
+                    <g class="scene-detail">
+                      <path d="M474 188H702V496H474Z" fill="#dce4db" />
+                      <path d="M462 176H690V484H462Z" fill="#fff" stroke="#718879" stroke-width="2" />
+                      <path d="M486 206H565M486 221H535" fill="none" stroke="#718879" stroke-width="3" stroke-linecap="round" />
+                      <path d="M486 268H666M486 306H666M486 344H666" fill="none" stroke="#e1e7df" stroke-width="1.5" />
+                      <g fill="#b9ccb8">
+                        <path class="scene-bar scene-bar-1" d="M496 310H526V382H496Z" />
+                        <path class="scene-bar scene-bar-2" d="M548 279H578V382H548Z" />
+                        <path class="scene-bar scene-bar-3" d="M600 292H630V382H600Z" />
+                      </g>
+                      <path class="scene-stroke" pathLength="1" d="M492 304L537 275L583 287L644 253" fill="none" stroke="#a66d50" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M486 382H666M486 413H666M486 437H555M590 437H651" fill="none" stroke="#94a697" stroke-width="2" />
+                    </g>
                   </svg>
                 </div>
                 <div class="catalog-item-copy">
-                  <span class="catalog-kicker">04 / Kapitalanlage</span>
+                  <span class="catalog-kicker">Kapitalanlage</span>
                   <h3>Investoren</h3>
                   <p>
                     Nachvollziehbare Kennzahlen, strukturierte Berichte und
@@ -191,12 +207,33 @@
               </article>
               <article class="special-slide" data-carousel-slide="" aria-roledescription="Folie">
                 <div class="catalog-art">
-                  <svg aria-hidden="true" viewBox="0 0 760 590">
-                    <use href="assets/service-illustrations.svg?v=20260916c#portfolio" />
+                  <svg class="service-scene scene-portfolio" aria-hidden="true" viewBox="0 0 760 590">
+                    <path d="M144 408V458Q144 478 164 478H594Q614 478 614 458V408M382 349V524" fill="none" stroke="#c3cfc3" stroke-width="2" />
+                    <path class="scene-stroke" pathLength="1" d="M144 408V458Q144 478 164 478H594Q614 478 614 458V408M382 349V524" fill="none" stroke="#6d8c71" stroke-width="2.5" />
+                    <g class="scene-property scene-property-1">
+                      <g transform="translate(4 208) scale(.39)">
+                        <use href="assets/service-illustrations.svg?v=20260916d#house" width="760" height="590" />
+                      </g>
+                    </g>
+                    <g class="scene-property scene-property-2">
+                      <g transform="translate(208 70) scale(.51)">
+                        <use href="assets/service-illustrations.svg?v=20260916d#house" width="760" height="590" />
+                      </g>
+                    </g>
+                    <g class="scene-property scene-property-3">
+                      <g transform="translate(464 208) scale(.39)">
+                        <use href="assets/service-illustrations.svg?v=20260916d#house" width="760" height="590" />
+                      </g>
+                    </g>
+                    <g class="scene-detail">
+                      <circle cx="382" cy="478" r="9" fill="#f1f4ee" stroke="#6d8c71" stroke-width="2.5" />
+                      <path d="M348 524H416V558H348Z" fill="#fff" stroke="#6d8c71" stroke-width="2" />
+                      <path d="M361 541H403M382 533V549" stroke="#a66d50" stroke-width="2" />
+                    </g>
                   </svg>
                 </div>
                 <div class="catalog-item-copy">
-                  <span class="catalog-kicker">05 / Portfolios</span>
+                  <span class="catalog-kicker">Portfolios</span>
                   <h3>Bestandshalter</h3>
                   <p>
                     Mehrere Objekte, ein verlässlicher Überblick. Wir bündeln
@@ -209,12 +246,25 @@
               </article>
               <article class="special-slide" data-carousel-slide="" aria-roledescription="Folie">
                 <div class="catalog-art">
-                  <svg aria-hidden="true" viewBox="0 0 760 590">
-                    <use href="assets/service-illustrations.svg?v=20260916c#zinshaus" />
+                  <svg class="service-scene scene-rental" aria-hidden="true" viewBox="0 0 760 590">
+                    <g transform="translate(-8 8) scale(.98)">
+                      <use href="assets/service-illustrations.svg?v=20260916d#house" width="760" height="590" />
+                      <g class="scene-windows" fill="#d8b66e">
+                        <path d="M183 235H197V253H183ZM201 235H215V253H201ZM183 257H197V289H183ZM201 257H215V289H201Z" />
+                        <path d="M374 336H388V354H374ZM392 336H406V354H392ZM374 358H388V390H374ZM392 358H406V390H392Z" />
+                        <path d="M251 437H265V455H251ZM269 437H283V455H269ZM251 459H265V491H251ZM269 459H283V491H269Z" />
+                      </g>
+                      <path class="scene-stroke" pathLength="1" d="M133 204L180 115L290 67H573L636 154M150 217V508H504L620 460V168" fill="none" stroke="#a66d50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <g class="scene-detail">
+                      <path d="M586 116H695M641 61V171" fill="none" stroke="#b7c5b6" stroke-width="1.5" />
+                      <circle cx="641" cy="116" r="31" fill="#f1f4ee" stroke="#6d8c71" stroke-width="2" />
+                      <path class="scene-stroke" pathLength="1" d="M627 116L637 126L655 105" fill="none" stroke="#6d8c71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
                   </svg>
                 </div>
                 <div class="catalog-item-copy">
-                  <span class="catalog-kicker">06 / Ertrag &amp; Substanz</span>
+                  <span class="catalog-kicker">Ertrag &amp; Substanz</span>
                   <h3>Zinshäuser</h3>
                   <p>
                     Laufende Bewirtschaftung und langfristiger Werterhalt
@@ -227,12 +277,26 @@
               </article>
               <article class="special-slide" data-carousel-slide="" aria-roledescription="Folie">
                 <div class="catalog-art">
-                  <svg aria-hidden="true" viewBox="0 0 760 590">
-                    <use href="assets/service-illustrations.svg?v=20260916c#nachfolge" />
+                  <svg class="service-scene scene-handover" aria-hidden="true" viewBox="0 0 760 590">
+                    <g transform="translate(-26 42) scale(.82)">
+                      <use href="assets/service-illustrations.svg?v=20260916d#house" width="760" height="590" />
+                    </g>
+                    <path class="scene-stroke" pathLength="1" d="M247 481V518H571V485" fill="none" stroke="#a66d50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <g class="scene-detail">
+                      <path d="M468 291H536L551 310H696V470H468Z" fill="#becfbc" stroke="#6d8771" stroke-width="2" stroke-linejoin="round" />
+                      <g class="scene-paper">
+                        <path d="M492 251H641L672 282V424H492Z" fill="#fff" stroke="#6d8771" stroke-width="2" stroke-linejoin="round" />
+                        <path d="M641 251V282H672M516 286H578M516 314H647M516 337H617" fill="none" stroke="#94a697" stroke-width="2.5" stroke-linecap="round" />
+                        <path class="scene-stroke" pathLength="1" d="M517 366L527 376L545 357" fill="none" stroke="#a66d50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                      </g>
+                      <path d="M450 386H550L566 367H711L696 470H468Z" fill="#e1e8db" stroke="#6d8771" stroke-width="2" stroke-linejoin="round" />
+                      <path d="M555 415H616M555 431H594" stroke="#819980" stroke-width="2.5" stroke-linecap="round" />
+                    </g>
+                    <path d="M561 496L571 484L581 496" fill="none" stroke="#a66d50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                 </div>
                 <div class="catalog-item-copy">
-                  <span class="catalog-kicker">07 / Neue Verantwortung</span>
+                  <span class="catalog-kicker">Neue Verantwortung</span>
                   <h3>Nachfolge &amp; Übergänge</h3>
                   <p>
                     Wir ordnen Unterlagen, klären offene Vorgänge und begleiten
@@ -265,7 +329,7 @@
               <figure class="development-photo">
                 <img src="assets/sanierung-baustelle.jpg" alt="Wohngebäude in der Bauphase mit sichtbarer Wärmedämmung, Gerüst und Baustellenfahrzeug" width="1066" height="768" loading="lazy" decoding="async">
               </figure>
-              <span class="catalog-kicker">08 / Energetische Sanierung</span>
+              <span class="catalog-kicker">Energetische Sanierung</span>
               <h3>Vom Kostentreiber zum Zukunftsobjekt.</h3>
               <p>
                 Wenn eine energetische Sanierung sinnvoll ist, koordinieren wir
@@ -279,7 +343,7 @@
               <figure class="development-photo development-photo-construction">
                 <img src="assets/baubetreuung-baustelle.jpg" alt="Handwerker auf einem Gerüst bei der Reparatur eines älteren Backsteingebäudes" width="2165" height="3208" loading="lazy" decoding="async">
               </figure>
-              <span class="catalog-kicker">09 / Projektbegleitung</span>
+              <span class="catalog-kicker">Projektbegleitung</span>
               <h3>Baubetreuung mit Überblick.</h3>
               <p>
                 Wir halten bauliche Maßnahmen zusammen: von der Bestandsaufnahme
