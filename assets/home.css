@@ -53,13 +53,14 @@
   max-height: 420px;
   overflow: visible;
   --glass: #e1e9e5;
+  --light-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .house-common {
   fill: #eef1eb;
   stroke: #93a496;
   transition:
-    fill 0.45s ease,
-    stroke 0.45s ease;
+    fill 0.8s ease,
+    stroke 0.8s ease;
 }
 .house-roof {
   fill: #c3d0c3;
@@ -79,12 +80,42 @@
   transition: fill 0.45s ease;
 }
 .window-glass {
+  /* Animate each real <use> element; its panes inherit the interpolated fill. */
+  fill: inherit;
+}
+.house-windows use {
   fill: var(--glass);
-  transition: fill 0.45s ease;
 }
 .side-glass {
   fill: var(--side-glass, #dae4db);
-  transition: fill 0.45s ease;
+}
+.stair-glass,
+.entry-glass {
+  fill: var(--shared-glass, #d4dfd0);
+}
+.house-windows use,
+.side-glass,
+.stair-glass,
+.entry-glass {
+  transition: fill 420ms ease;
+}
+.property-house [data-light-step="1"] {
+  --light-delay: 80ms;
+}
+.property-house [data-light-step="2"] {
+  --light-delay: 160ms;
+}
+.property-house [data-light-step="3"] {
+  --light-delay: 240ms;
+}
+.property-house [data-light-step="4"] {
+  --light-delay: 320ms;
+}
+.property-house [data-light-step="5"] {
+  --light-delay: 400ms;
+}
+.property-house [data-light-step="6"] {
+  --light-delay: 480ms;
 }
 .single-outline {
   opacity: 0;
@@ -241,6 +272,25 @@
   .property-explorer:has([value="miethaus"]:checked) .property-house {
     --glass: #f3d68e;
     --side-glass: #e7ca84;
+  }
+  .property-explorer:has([value="weg"]:checked) .property-house,
+  .property-explorer:has([value="miethaus"]:checked) .property-house {
+    --shared-glass: #f1d696;
+  }
+  .property-explorer:has([value="miethaus"]:checked) .house-windows use,
+  .property-explorer:has([value="miethaus"]:checked) .side-glass,
+  .property-explorer:has([value="miethaus"]:checked) .stair-glass,
+  .property-explorer:has([value="miethaus"]:checked) .entry-glass,
+  .property-explorer:has([value="weg"]:checked) .stair-glass,
+  .property-explorer:has([value="weg"]:checked) .entry-glass,
+  .property-explorer:has([value="wohnung"]:checked) .single-windows use {
+    transition: fill 1300ms var(--light-ease) var(--light-delay, 0ms);
+  }
+  .property-explorer:has([value="wohnung"]:checked) .single-windows use:first-child {
+    --light-delay: 0ms;
+  }
+  .property-explorer:has([value="wohnung"]:checked) .single-windows use:last-child {
+    --light-delay: 120ms;
   }
   .property-explorer:has([value="miethaus"]:checked) .house-common {
     fill: #d0dfc9;
