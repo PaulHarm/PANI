@@ -7,6 +7,17 @@ body:not(.home-page) .site-header {
   background: #fff;
 }
 
+body:not(.home-page) .breadcrumbs a,
+body:not(.home-page) .footer-links a {
+  min-height: 44px;
+}
+
+body:not(.home-page) .energy-assumptions summary {
+  min-height: 44px;
+  font-size: 14px;
+  padding-block: 12px;
+}
+
 body:not(.home-page) .brand-name,
 body:not(.home-page) .brand-sub {
   letter-spacing: 0;

@@ -856,10 +856,10 @@ body {
 }
 @keyframes energy-enter {
   from {
-    transform: scaleY(0.1);
+    translate: 0 6px;
   }
   to {
-    transform: scaleY(1);
+    translate: 0 0;
   }
 }
 @keyframes report-draw {
