@@ -49,7 +49,7 @@
     <meta content="630" property="og:image:height">
     <meta content="Residential buildings on Oderberger Straße in Berlin-Prenzlauer Berg" property="og:image:alt">
     <meta content="summary_large_image" name="twitter:card">
-    <link href="assets/home.css?v=160ea520799d" rel="stylesheet">
+    <link href="assets/home.css?v=800ce72092e6" rel="stylesheet">
   </head>
   <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -119,7 +119,8 @@
                 </g>
                 <path class="house-stair house-common" d="M310 209H348V508H310Z" stroke-width="1" />
                 <g fill="none" stroke="#91a494" stroke-width="1.2">
-                  <path d="M318 258H340V273H318ZM318 356H340V371H318Z" />
+                  <path class="stair-glass" data-light-step="2" d="M318 258H340V273H318Z" />
+                  <path class="stair-glass" data-light-step="1" d="M318 356H340V371H318Z" />
                   <path d="M318 280H340M318 285H340M318 290H340M318 295H340M318 378H340M318 383H340M318 388H340M318 393H340" />
                 </g>
                 <path class="house-roof house-common" d="M133 204L180 115H456L520 204Z" stroke-width="1.8" />
@@ -130,23 +131,23 @@
                 <path d="M536 64L559 75 582 64M559 75V123" fill="none" stroke="#87998b" stroke-width="1.2" />
                 <path d="M531 61L558 50 587 61 560 73Z" fill="#eef1eb" stroke="#7b9080" stroke-width="1.4" />
                 <g class="house-windows">
-                  <use href="#attic-window" x="206" y="143" />
-                  <use href="#attic-window" x="307" y="143" />
-                  <use href="#attic-window" x="408" y="143" />
-                  <use href="#house-window" x="179" y="231" />
-                  <use href="#house-window" x="247" y="231" />
-                  <use href="#house-window" x="370" y="231" />
-                  <use href="#house-window" x="437" y="231" />
-                  <use href="#house-window" x="179" y="332" />
-                  <use href="#house-window" x="247" y="332" />
+                  <use href="#attic-window" data-light-step="5" x="206" y="143" />
+                  <use href="#attic-window" data-light-step="6" x="307" y="143" />
+                  <use href="#attic-window" data-light-step="6" x="408" y="143" />
+                  <use href="#house-window" data-light-step="3" x="179" y="231" />
+                  <use href="#house-window" data-light-step="4" x="247" y="231" />
+                  <use href="#house-window" data-light-step="4" x="370" y="231" />
+                  <use href="#house-window" data-light-step="5" x="437" y="231" />
+                  <use href="#house-window" data-light-step="2" x="179" y="332" />
+                  <use href="#house-window" data-light-step="3" x="247" y="332" />
                   <g class="single-windows">
-                    <use href="#house-window" x="370" y="332" />
-                    <use href="#house-window" x="437" y="332" />
+                    <use href="#house-window" data-light-step="2" x="370" y="332" />
+                    <use href="#house-window" data-light-step="3" x="437" y="332" />
                   </g>
-                  <use href="#house-window" x="179" y="433" />
-                  <use href="#house-window" x="247" y="433" />
-                  <use href="#house-window" x="370" y="433" />
-                  <use href="#house-window" x="437" y="433" />
+                  <use href="#house-window" data-light-step="0" x="179" y="433" />
+                  <use href="#house-window" data-light-step="1" x="247" y="433" />
+                  <use href="#house-window" data-light-step="1" x="370" y="433" />
+                  <use href="#house-window" data-light-step="2" x="437" y="433" />
                 </g>
                 <g fill="#e9ede5" stroke="#8a9f8b" stroke-width="1.2">
                   <path d="M142 204H511V215H142ZM143 307H511V317H143ZM143 409H511V419H143Z" />
@@ -154,11 +155,17 @@
                   <path d="M143 508H511V521H143ZM511 508L627 458V471L511 521Z" />
                 </g>
                 <g class="house-side-windows" fill="none" stroke="#79907e" stroke-width="1.3">
-                  <path class="side-glass" d="M540 225L563 215V273L540 284ZM582 207L604 197V255L582 265ZM540 326L563 316V374L540 385ZM582 308L604 298V356L582 366ZM540 427L563 417V470L540 480ZM582 409L604 399V453L582 463Z" />
+                  <path class="side-glass" data-light-step="3" d="M540 225L563 215V273L540 284Z" />
+                  <path class="side-glass" data-light-step="4" d="M582 207L604 197V255L582 265Z" />
+                  <path class="side-glass" data-light-step="2" d="M540 326L563 316V374L540 385Z" />
+                  <path class="side-glass" data-light-step="3" d="M582 308L604 298V356L582 366Z" />
+                  <path class="side-glass" data-light-step="0" d="M540 427L563 417V470L540 480Z" />
+                  <path class="side-glass" data-light-step="1" d="M582 409L604 399V453L582 463Z" />
                   <path d="M551 220V279M540 247L563 237M593 202V260M582 229L604 219M551 321V380M540 348L563 338M593 303V361M582 330L604 320M551 422V475M540 449L563 439M593 404V458M582 431L604 421" />
                 </g>
                 <path d="M306 508V446A23 23 0 0 1 352 446V508Z" fill="#fff" stroke="#6b846e" stroke-width="2" />
                 <path class="house-door house-common" d="M312 508V447A17 17 0 0 1 346 447V508Z" stroke-width="1.4" />
+                <path class="entry-glass" d="M315 451V447A14 14 0 0 1 343 447V451Z" />
                 <path d="M329 433V508M313 454H345M317 461H323V491H317ZM335 461H341V491H335Z" fill="none" stroke="#5f7e65" stroke-width="1.2" />
                 <path d="M299 521H359V526H299ZM293 526H365V531H293Z" fill="#e9ede5" stroke="#8a9f8b" stroke-width="1.2" />
                 <path class="single-outline" d="M359 321H486V406H359Z" fill="none" stroke="#ac7428" stroke-width="2" stroke-dasharray="5 4" />
