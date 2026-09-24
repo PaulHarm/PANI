@@ -397,6 +397,9 @@
 .detail-section .steps:has(.step:nth-child(4)) {
   grid-template-columns: repeat(4, 1fr);
 }
+.detail-section .steps:has(.step:nth-child(5)) {
+  grid-template-columns: repeat(5, 1fr);
+}
 .detail-section .step {
   padding: 0;
   border: 0;
@@ -894,6 +897,9 @@ body {
   animation: phone-notice 1.5s ease 2;
 }
 @media (max-width: 1050px) {
+  .detail-section .steps:has(.step:nth-child(5)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .renovation-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -932,7 +938,8 @@ body {
   .detail-section .steps {
     gap: 32px;
   }
-  .detail-section .steps:has(.step:nth-child(4)) {
+  .detail-section .steps:has(.step:nth-child(4)),
+  .detail-section .steps:has(.step:nth-child(5)) {
     grid-template-columns: 1fr;
   }
   .detail-cta .wrap {
