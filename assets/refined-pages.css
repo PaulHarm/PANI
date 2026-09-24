@@ -411,7 +411,7 @@ body:not(.detail-page) .tenant-hero h1 {
 .process-journey-line {
   position: absolute;
   top: 34px;
-  right: calc(25% - 42px);
+  right: calc(20% - 42px);
   left: 42px;
   height: 1px;
   background: #cbd8ce;
@@ -431,7 +431,7 @@ body:not(.detail-page) .tenant-hero h1 {
 
 .service-process {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0;
   padding: 0;
   margin: 0;
@@ -455,6 +455,10 @@ body:not(.detail-page) .tenant-hero h1 {
 
 .service-process-step:nth-child(4) {
   --step-delay: 330ms;
+}
+
+.service-process-step:nth-child(5) {
+  --step-delay: 440ms;
 }
 
 .service-process-step.is-revealed .service-process-copy {
@@ -1158,6 +1162,43 @@ body:not(.detail-page) .tenant-hero h1 {
 
 .legal-copy .legal-warning {
   max-width: 800px;
+}
+
+@media (max-width: 1000px) {
+  .service-process {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .process-journey {
+    padding-top: 4px;
+    --journey-start: scaleY(0);
+  }
+
+  .process-journey-line {
+    top: 24px;
+    right: auto;
+    bottom: 24px;
+    left: 24px;
+    width: 1px;
+    height: auto;
+  }
+
+  .service-process-step {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 18px;
+    padding: 0;
+  }
+
+  .service-process-marker {
+    margin-bottom: 0;
+  }
+
+  .service-process-copy {
+    padding-left: 0;
+    border-left: 0;
+  }
 }
 
 @media (max-width: 800px) {
