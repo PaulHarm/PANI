@@ -607,3 +607,29 @@
     transition: none !important;
   }
 }
+
+/* Einstieg in den Anfrage-Fragebogen */
+.property-info .property-cta {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 14px;
+  min-height: 44px;
+  padding: 10px 18px;
+  gap: 12px;
+}
+.property-info .property-cta .icon {
+  width: 16px;
+  height: 16px;
+}
+.home-enquiry-alt {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--muted);
+}
+.home-enquiry-alt .text-link {
+  margin-left: 6px;
+  color: var(--green);
+}
