@@ -260,8 +260,8 @@ summary:focus-visible {
   position: absolute;
   top: 100%;
   right: calc((100% - min(var(--width), 100% - var(--gutter) * 2)) / 2);
-  width: 620px;
-  padding: 26px 28px 0;
+  width: 460px;
+  padding: 24px 28px 0;
   background: #fff;
   border: 1px solid var(--line);
   border-top: 0;
@@ -298,7 +298,7 @@ summary:focus-visible {
 }
 .nav-menu-grid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: 1fr 1fr;
   gap: 28px;
 }
 .nav-menu-label {
@@ -312,8 +312,9 @@ summary:focus-visible {
 }
 .desktop-nav .nav-menu a {
   display: block;
-  padding-block: 7px;
+  padding-block: 8px;
   color: var(--ink);
+  font-size: 15px;
 }
 .desktop-nav .nav-menu a:hover {
   color: var(--accent);
@@ -322,24 +323,6 @@ summary:focus-visible {
   padding-left: 28px;
   border-left: 1px solid var(--line);
 }
-.desktop-nav .nav-menu-more a {
-  padding-block: 9px;
-}
-.nav-menu-more strong {
-  display: block;
-  color: var(--green-dark);
-  font: 500 19px/1.25 var(--serif);
-}
-.nav-menu-more span {
-  display: block;
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.4;
-}
-.nav-menu-more a:hover strong {
-  color: var(--accent);
-}
 .desktop-nav .nav-menu a[aria-current="page"] {
   color: var(--green);
 }
@@ -347,8 +330,8 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 22px -28px 0;
-  padding: 15px 28px;
+  margin: 20px -28px 0;
+  padding: 14px 28px;
   border-top: 1px solid var(--line);
   background: var(--wash);
   color: var(--green);
