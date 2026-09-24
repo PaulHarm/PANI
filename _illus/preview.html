@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Illustrationen Vorschau</title>
+    <link rel="stylesheet" href="../assets/site.css">
+    <link rel="stylesheet" href="../assets/pages.css">
+    <link rel="stylesheet" href="../assets/enquiry.css">
+    <style>
+      body { padding: 20px; }
+      .preview-title { font: 500 14px/1.3 var(--sans); color: var(--muted); margin: 26px 0 10px; letter-spacing: .04em; text-transform: uppercase; }
+      .enquiry-step { display: block; border: 0; padding: 0; margin: 0; }
+    </style>
+  </head>
+  <body class="enquiry-page">
+    <main class="enquiry-page" id="main">
+      <div class="wrap">
+        <form class="enquiry" data-enquiry onsubmit="return false">
+          <div id="kit"></div>
+          <div id="steps"></div>
+        </form>
+      </div>
+    </main>
+    <script>
+      (async () => {
+        const params = new URLSearchParams(location.search);
+        const only = params.get("step");
+        const checked = params.get("checked");
+        const steps = ["objekt", "groesse", "rolle", "situation", "themen", "lage"];
+        document.getElementById("kit").innerHTML = await (await fetch("kit.html")).text();
+        const out = document.getElementById("steps");
+        for (const step of steps) {
+          if (only && step !== only) continue;
+          let data;
+          try { data = await (await fetch(step + ".json")).json(); } catch { continue; }
+          const h = document.createElement("h2");
+          h.className = "preview-title";
+          h.textContent = step;
+          out.append(h);
+          const fs = document.createElement("fieldset");
+          fs.className = "enquiry-step is-active";
+          const grid = document.createElement("div");
+          grid.className = "enquiry-options";
+          for (const [value, inner] of Object.entries(data)) {
+            const label = document.createElement("label");
+            label.className = "choice";
+            label.innerHTML = `<input type="radio" name="${step}" value="${value}"${checked === value ? " checked" : ""}><svg class="choice-art" viewBox="0 0 120 80" aria-hidden="true" focusable="false">${inner}</svg><span class="choice-text"><strong>${value}</strong><small>Vorschau</small></span>`;
+            grid.append(label);
+          }
+          fs.append(grid);
+          out.append(fs);
+        }
+      })();
+    </script>
+  </body>
+</html>
