@@ -24,6 +24,7 @@
           address: "Property address / district",
           objekt: "Property",
           groesse: "Units",
+          rolle: "Your role",
           situation: "Management today",
           themen: "Topics",
           lage: "Location",
@@ -51,6 +52,7 @@
           address: "Objektadresse / Bezirk",
           objekt: "Objekt",
           groesse: "Einheiten",
+          rolle: "Ihre Rolle",
           situation: "Verwaltung heute",
           themen: "Themen",
           lage: "Lage",
@@ -88,9 +90,11 @@
       labelFor,
     );
 
-  // Die Einheitenfrage entfaellt bei einer einzelnen Wohnung.
+  // Die Einheitenfrage entfaellt bei einer einzelnen Wohnung, die Rollenfrage
+  // gibt es nur bei einer Eigentuemergemeinschaft.
   const isSkipped = (step) =>
-    step.dataset.step === "groesse" && value("objekt") === "wohnung";
+    (step.dataset.step === "groesse" && value("objekt") === "wohnung") ||
+    (step.dataset.step === "rolle" && value("objekt") !== "weg");
   const activeSteps = () => steps.filter((step) => !isSkipped(step));
   const isAnswered = (step) =>
     step.dataset.type !== "single" || Boolean(value(step.dataset.step));
@@ -215,6 +219,10 @@
       // Uebersprungene Schritte zaehlen weder fuer die Pruefung noch fuer den Entwurf.
       step.disabled = isSkipped(step);
       if (!on) showError(step, "");
+      const number = step.querySelector(".enquiry-step-number");
+      const position = list.indexOf(step);
+      if (number && position >= 0)
+        number.textContent = String(position + 1).padStart(2, "0");
     }
     const type = active.dataset.type;
     if (type === "contact") returnToSummary = false;
