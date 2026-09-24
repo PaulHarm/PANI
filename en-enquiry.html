@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Make an enquiry | PANI Property Management Berlin</title>
-    <meta name="description" content="Five short questions about your property, then your contact details. At the end, an email draft to PANI opens for you to check and send yourself.">
+    <meta name="description" content="A few short questions about your property, then your contact details. At the end, an email draft to PANI opens for you to check and send yourself.">
     <link rel="canonical" href="https://www.pani-hv.de/en-enquiry.html">
     <link rel="alternate" hreflang="de" href="https://www.pani-hv.de/anfrage.html">
     <link rel="alternate" hreflang="en" href="https://www.pani-hv.de/en-enquiry.html">
@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="assets/pages.css?v=20260924b">
     <link href="assets/refined-pages.css?v=20260924b" rel="stylesheet">
     <script src="assets/site.js?v=20260924a" defer></script>
-    <link rel="stylesheet" href="assets/enquiry.css?v=20260924b">
-    <script src="assets/enquiry.js?v=20260924b" defer></script>
+    <link rel="stylesheet" href="assets/enquiry.css?v=20260924c">
+    <script src="assets/enquiry.js?v=20260924c" defer></script>
 
     <meta content="Make an enquiry | PANI Property Management Berlin" property="og:title">
-    <meta content="Five short questions about your property, then your contact details. At the end, an email draft to PANI opens for you to check and send yourself." property="og:description">
+    <meta content="A few short questions about your property, then your contact details. At the end, an email draft to PANI opens for you to check and send yourself." property="og:description">
     <meta content="https://www.pani-hv.de/en-enquiry.html" property="og:url">
     <meta content="website" property="og:type">
     <meta content="PANI Hausverwaltung" property="og:site_name">
@@ -76,7 +76,7 @@
             <a href="en.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Enquiry</span>
           </nav>
           <h1>Make an enquiry.</h1>
-          <p>Five short questions about your property, then your contact details. At the end, an email draft opens with your answers for you to check and send yourself. Nothing is sent automatically.</p>
+          <p>A few short questions about your property, then your contact details. At the end, an email draft opens with your answers for you to check and send yourself. Nothing is sent automatically.</p>
         </div>
       </header>
       <section class="enquiry-section" aria-label="Make an enquiry">
@@ -160,10 +160,41 @@
             </label>
           </div>
         </fieldset>
+        <fieldset class="enquiry-step" data-step="rolle" data-type="single" aria-labelledby="step-rolle-title">
+          <legend class="enquiry-legend">What is your role in the association?</legend>
+          <div class="enquiry-step-head">
+            <span class="enquiry-step-number" aria-hidden="true">03</span>
+            <h2 class="enquiry-question" id="step-rolle-title" tabindex="-1">What is your role in the association?</h2>
+            <p class="enquiry-help">We only ask this for an owners’ association. It tells us who we are speaking to and who takes the decision.</p>
+            <p class="enquiry-error" data-error role="alert" hidden></p>
+          </div>
+          <div class="enquiry-options">
+            <label class="choice">
+              <input type="radio" name="rolle" value="eigentuemer">
+              <svg class="choice-art" viewBox="0 0 120 80" aria-hidden="true" focusable="false"><path d="M14 72H106" stroke="#a5b69d"/><path d="M60 34H92V72H60Z" fill="none"/><path d="M56 34L76 22L96 34Z" fill="#c3d0c3"/><rect x="66" y="40" width="6" height="7" rx=".6" fill="none"/><rect x="80" y="40" width="6" height="7" rx=".6" fill="none"/><rect x="66" y="52" width="6" height="7" rx=".6" fill="none"/><rect x="80" y="52" width="6" height="7" rx=".6" fill="none"/><circle cx="34" cy="40" r="6" fill="#eef1eb"/><path d="M22 72V60A12 12 0 0 1 46 60V72" fill="#d4dfd0"/><path d="M40 47L50 40" stroke-width="1"/><path d="M50 40H56" stroke-width="1"/></svg>
+              <span class="choice-text"><strong>Owner</strong><small>You own one or more apartments in the building.</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="rolle" value="beirat">
+              <svg class="choice-art" viewBox="0 0 120 80" aria-hidden="true" focusable="false"><path d="M10 72H110" stroke="#a5b69d"/><circle cx="36" cy="36" r="6" fill="#eef1eb"/><path d="M24 66V56A12 12 0 0 1 48 56V66" fill="#d4dfd0"/><circle cx="60" cy="32" r="6" fill="#eef1eb"/><path d="M48 64V52A12 12 0 0 1 72 52V64" fill="#eef1eb"/><circle cx="84" cy="36" r="6" fill="#eef1eb"/><path d="M72 66V56A12 12 0 0 1 96 56V66" fill="#d4dfd0"/><path d="M20 72H100" stroke-width="1.6"/></svg>
+              <span class="choice-text"><strong>Advisory board</strong><small>You speak for the board or the association.</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="rolle" value="vertreter">
+              <svg class="choice-art" viewBox="0 0 120 80" aria-hidden="true" focusable="false"><path d="M14 72H106" stroke="#a5b69d"/><circle cx="38" cy="38" r="6" fill="#eef1eb"/><path d="M26 72V58A12 12 0 0 1 50 58V72" fill="#d4dfd0"/><path d="M62 40H94V70H62Z" fill="#fff"/><path d="M68 48H88M68 55H88M68 62H80" stroke-width="1"/><path d="M84 66L87 69L92 63" stroke="#254b3e" stroke-width="1.4" fill="none"/></svg>
+              <span class="choice-text"><strong>Owners’ representative</strong><small>Authorised agent, estate agent, notary or lawyer.</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="rolle" value="andere">
+              <svg class="choice-art" viewBox="0 0 120 80" aria-hidden="true" focusable="false"><path d="M14 72H106" stroke="#a5b69d"/><circle cx="46" cy="40" r="6" fill="#eef1eb"/><path d="M34 72V60A12 12 0 0 1 58 60V72" fill="#eef1eb"/><path d="M62 28H96V50H76L68 57V50H62Z" fill="#fff"/><circle cx="72" cy="39" r="1.4" fill="currentColor" stroke="none"/><circle cx="79" cy="39" r="1.4" fill="currentColor" stroke="none"/><circle cx="86" cy="39" r="1.4" fill="currentColor" stroke="none"/></svg>
+              <span class="choice-text"><strong>Other role</strong><small>For example a tenant or prospective buyer. We will sort it out in conversation.</small></span>
+            </label>
+          </div>
+        </fieldset>
         <fieldset class="enquiry-step" data-step="situation" data-type="single" aria-labelledby="step-situation-title">
           <legend class="enquiry-legend">How is the property managed today?</legend>
           <div class="enquiry-step-head">
-            <span class="enquiry-step-number" aria-hidden="true">03</span>
+            <span class="enquiry-step-number" aria-hidden="true">04</span>
             <h2 class="enquiry-question" id="step-situation-title" tabindex="-1">How is the property managed today?</h2>
             <p class="enquiry-help">This tells us whether a handover is due and how urgent it is. This enquiry goes to us only.</p>
             <p class="enquiry-error" data-error role="alert" hidden></p>
@@ -199,7 +230,7 @@
         <fieldset class="enquiry-step" data-step="themen" data-type="multi" aria-labelledby="step-themen-title">
           <legend class="enquiry-legend">Which topics are coming up?</legend>
           <div class="enquiry-step-head">
-            <span class="enquiry-step-number" aria-hidden="true">04</span>
+            <span class="enquiry-step-number" aria-hidden="true">05</span>
             <h2 class="enquiry-question" id="step-themen-title" tabindex="-1">Which topics are coming up?</h2>
             <p class="enquiry-help">You can select several. You can also skip this step.</p>
             <p class="enquiry-error" data-error role="alert" hidden></p>
@@ -235,7 +266,7 @@
         <fieldset class="enquiry-step" data-step="lage" data-type="single" aria-labelledby="step-lage-title">
           <legend class="enquiry-legend">Where is the property?</legend>
           <div class="enquiry-step-head">
-            <span class="enquiry-step-number" aria-hidden="true">05</span>
+            <span class="enquiry-step-number" aria-hidden="true">06</span>
             <h2 class="enquiry-question" id="step-lage-title" tabindex="-1">Where is the property?</h2>
             <p class="enquiry-help">PANI looks after buildings across Berlin. The location helps us plan visits on site. You can give the address in the next step, but you do not have to.</p>
             <p class="enquiry-error" data-error role="alert" hidden></p>
@@ -266,7 +297,7 @@
         <fieldset class="enquiry-step enquiry-contact" data-step="kontakt" data-type="contact" aria-labelledby="step-kontakt-title">
           <legend class="enquiry-legend">How can we reach you?</legend>
           <div class="enquiry-step-head">
-            <span class="enquiry-step-number" aria-hidden="true">06</span>
+            <span class="enquiry-step-number" aria-hidden="true">07</span>
             <h2 class="enquiry-question" id="step-kontakt-title" tabindex="-1">How can we reach you?</h2>
             <p class="enquiry-help"><span hidden data-js-only>Above the form you will see your answers as a summary. You can adjust any of them there using "Change". </span>After clicking "Prepare email", a draft opens in your email app with all your details.</p>
           </div>
