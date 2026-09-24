@@ -34,4 +34,8 @@
   <url><loc>https://www.pani-hv.de/en-about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.pani-hv.de/wechsel.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.pani-hv.de/en-switch.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.pani-hv.de/baubetreuung.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.pani-hv.de/en-construction-support.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.pani-hv.de/hausverwaltung-verkaufen.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.pani-hv.de/en-sell-your-company.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

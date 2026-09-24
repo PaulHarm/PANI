@@ -221,6 +221,184 @@ summary:focus-visible {
   align-items: center;
   gap: 20px;
 }
+/* Leistungen-Menü: öffnet bei Maus-Hover oder per Pfeil-Button (Tastatur,
+   Touch). Das Panel richtet sich am Header aus, nicht am Menüpunkt, damit es
+   nie rechts aus dem Bild ragt. */
+.desktop-nav {
+  align-self: stretch;
+}
+.nav-item {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav-menu-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 3px;
+  color: inherit;
+  cursor: pointer;
+}
+.nav-menu-toggle:hover {
+  color: var(--accent);
+}
+.nav-menu-toggle .icon {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.2s ease;
+}
+.nav-item.is-open .nav-menu-toggle .icon {
+  transform: rotate(180deg);
+}
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  right: calc((100% - min(var(--width), 100% - var(--gutter) * 2)) / 2);
+  width: 620px;
+  padding: 26px 28px 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 22px 40px #19382d17;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0s linear 0.18s;
+}
+.nav-item.is-open .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+@media (hover: hover) {
+  .nav-item:hover .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease;
+  }
+  .nav-item:hover .nav-menu-toggle .icon {
+    transform: rotate(180deg);
+  }
+}
+.nav-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 28px;
+}
+.nav-menu-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.desktop-nav .nav-menu a {
+  display: block;
+  padding-block: 7px;
+  color: var(--ink);
+}
+.desktop-nav .nav-menu a:hover {
+  color: var(--accent);
+}
+.nav-menu-more {
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+.desktop-nav .nav-menu-more a {
+  padding-block: 9px;
+}
+.nav-menu-more strong {
+  display: block;
+  color: var(--green-dark);
+  font: 500 19px/1.25 var(--serif);
+}
+.nav-menu-more span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.nav-menu-more a:hover strong {
+  color: var(--accent);
+}
+.desktop-nav .nav-menu a[aria-current="page"] {
+  color: var(--green);
+}
+.desktop-nav .nav-menu .nav-menu-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 22px -28px 0;
+  padding: 15px 28px;
+  border-top: 1px solid var(--line);
+  background: var(--wash);
+  color: var(--green);
+  font-weight: 500;
+}
+.nav-menu-all .icon {
+  width: 17px;
+  height: 17px;
+}
+.mobile-sub summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  list-style: none;
+}
+.mobile-sub summary::-webkit-details-marker {
+  display: none;
+}
+.mobile-sub summary .icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+.mobile-sub[open] summary .icon {
+  transform: rotate(180deg);
+}
+.mobile-sub-links {
+  padding: 4px 0 10px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-nav .mobile-sub-links a {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 6px 0;
+  border-bottom: 0;
+  font-size: 15px;
+}
+.mobile-sub-label {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 .language {
   font-size: 13px;
   padding: 10px 8px;

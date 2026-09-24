@@ -43,6 +43,32 @@
       if (event.matches) setMenu(false);
     });
 
+  // Desktop: services dropdown. Mouse users open it on hover (CSS); the
+  // chevron button toggles it for keyboard and touch.
+  for (const item of document.querySelectorAll("[data-nav-menu]")) {
+    const button = item.querySelector(".nav-menu-toggle");
+    if (!button) continue;
+    const setOpen = (open) => {
+      item.classList.toggle("is-open", open);
+      button.setAttribute("aria-expanded", String(open));
+    };
+    button.addEventListener("click", () =>
+      setOpen(!item.classList.contains("is-open")),
+    );
+    item.addEventListener("focusout", (event) => {
+      if (!item.contains(event.relatedTarget)) setOpen(false);
+    });
+    item.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && item.classList.contains("is-open")) {
+        setOpen(false);
+        button.focus();
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (!item.contains(event.target)) setOpen(false);
+    });
+  }
+
   // Desktop: the floating tenant pill steps back while the contact form is
   // in view, so it never sits on top of input fields.
   const dock = document.querySelector(".tenant-dock");
