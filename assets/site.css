@@ -260,13 +260,13 @@ summary:focus-visible {
   position: absolute;
   top: 100%;
   right: calc((100% - min(var(--width), 100% - var(--gutter) * 2)) / 2);
-  width: 460px;
-  padding: 24px 28px 0;
+  width: 760px;
   background: #fff;
   border: 1px solid var(--line);
   border-top: 0;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 6px 6px;
   box-shadow: 0 22px 40px #19382d17;
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
@@ -298,43 +298,96 @@ summary:focus-visible {
 }
 .nav-menu-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr) 224px;
+}
+.nav-menu-group {
+  padding: 24px 22px 18px 28px;
+}
+.nav-menu-group + .nav-menu-group {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
 }
 .nav-menu-label {
   display: block;
   margin-bottom: 8px;
-  color: var(--muted);
+  color: var(--green);
   font-size: var(--text-label);
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 .desktop-nav .nav-menu a {
-  display: block;
-  padding-block: 8px;
-  color: var(--ink);
-  font-size: 15px;
-}
-.desktop-nav .nav-menu a:hover {
-  color: var(--accent);
-}
-.nav-menu-more {
-  padding-left: 28px;
-  border-left: 1px solid var(--line);
-}
-.desktop-nav .nav-menu a[aria-current="page"] {
-  color: var(--green);
-}
-.desktop-nav .nav-menu .nav-menu-all {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px -28px 0;
-  padding: 14px 28px;
-  border-top: 1px solid var(--line);
-  background: var(--wash);
+  gap: 10px;
+  padding: 9px 0;
+  color: var(--ink);
+  font-size: 15px;
+}
+.desktop-nav .nav-menu-group a .icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+.desktop-nav .nav-menu-group a:hover,
+.desktop-nav .nav-menu-group a:focus-visible {
+  color: var(--accent);
+}
+.desktop-nav .nav-menu-group a:hover .icon,
+.desktop-nav .nav-menu-group a:focus-visible .icon {
+  opacity: 1;
+  transform: none;
+}
+.desktop-nav .nav-menu a[aria-current="page"] {
   color: var(--green);
+  font-weight: 500;
+}
+.nav-menu-cta {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 22px 22px;
+  background: var(--wash);
+  border-left: 1px solid var(--line);
+}
+.nav-menu-house {
+  width: 136px;
+  height: auto;
+  margin: 0 auto 10px;
+}
+.nav-menu-cta strong {
+  display: block;
+  color: var(--green-dark);
+  font: 500 19px/1.25 var(--serif);
+}
+.nav-menu-cta p {
+  margin: 6px 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.desktop-nav .nav-menu .nav-menu-cta .button {
+  margin-top: auto;
+  min-height: 42px;
+  padding: 9px 14px 9px 16px;
+  color: #fff;
+  font-size: 13px;
+}
+.desktop-nav .nav-menu .nav-menu-cta .button .icon {
+  width: 16px;
+  height: 16px;
+}
+.desktop-nav .nav-menu .nav-menu-all {
+  padding: 13px 28px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-size: 14px;
   font-weight: 500;
 }
 .nav-menu-all .icon {
@@ -372,6 +425,16 @@ summary:focus-visible {
   padding: 6px 0;
   border-bottom: 0;
   font-size: 15px;
+}
+.mobile-nav .mobile-sub-links .mobile-sub-cta {
+  gap: 8px;
+  margin-top: 6px;
+  color: var(--green);
+  font-weight: 500;
+}
+.mobile-sub-cta .icon {
+  width: 16px;
+  height: 16px;
 }
 .mobile-sub-label {
   display: block;
