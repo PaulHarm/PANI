@@ -1822,3 +1822,22 @@ body {
     font-size: 34px;
   }
 }
+
+/* Hausverwaltung verkaufen */
+.succession-page .succession-options {
+  margin-top: 40px;
+}
+.succession-page .page-intro .hero-actions {
+  margin-top: 28px;
+}
+.succession-page .about-switch-copy p + p {
+  margin-top: 18px;
+}
+.succession-page .about-switch-copy .text-link {
+  margin-top: 14px;
+}
+@media (max-width: 560px) {
+  .succession-page .succession-options {
+    margin-top: 32px;
+  }
+}

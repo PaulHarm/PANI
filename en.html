@@ -34,9 +34,9 @@
         "knowsLanguage": ["de", "en"]
       }
     </script>
-    <link rel="stylesheet" href="assets/site.css?v=712f77548445">
-    <link rel="stylesheet" href="assets/pages.css?v=20260924a">
-    <script src="assets/site.js" defer></script>
+    <link rel="stylesheet" href="assets/site.css?v=20260924a">
+    <link rel="stylesheet" href="assets/pages.css?v=20260924b">
+    <script src="assets/site.js?v=20260924a" defer></script>
 
     <meta content="PANI Property Management Berlin | Personally led" property="og:title">
     <meta content="Personally led property management in Berlin for owners’ associations, rental buildings and individual apartments. Clear accounts, dedicated contacts and proactive maintenance." property="og:description">
@@ -56,21 +56,34 @@
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="#top" aria-label="PANI home"><svg class="brand-mark" aria-hidden="true">
-            <use href="assets/icons.svg?v=20260915f#pani" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
+            <use href="assets/icons.svg?v=20260924a#pani" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
         <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="en-services.html">Services</a><a href="en-about.html">About us</a><a href="en-reporting.html">Reporting</a>
+          <div class="nav-item" data-nav-menu="">
+            <a href="en-services.html">Services</a><button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-services" aria-label="Show services"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg?v=20260924a#chevron-down" /></svg></button>
+            <div class="nav-menu" id="nav-services">
+              <div class="nav-menu-grid">
+                <div class="nav-menu-group"><span class="nav-menu-label">Management</span><a href="en-weg.html">WEG management</a><a href="en-miethaus.html">Rental buildings</a><a href="en-sondereigentum.html">Individual units (SEV)</a><a href="en-zinshaus.html">Zinshaus buildings</a><a href="en-investors.html">Investors</a><a href="en-portfolio-holders.html">Long-term holders</a><a href="en-succession.html">Inheritance &amp; handover</a></div>
+                <div class="nav-menu-group nav-menu-more"><span class="nav-menu-label">More services</span><a href="en-renovation.html"><strong>Renovation support</strong><span>Energy renovation from analysis to acceptance</span></a><a href="en-construction-support.html"><strong>Construction support</strong><span>Building works planned and coordinated</span></a><a href="en-sell-your-company.html"><strong>Business succession</strong><span>We take over your management company</span></a></div>
+              </div>
+              <a class="nav-menu-all" href="en-services.html">All services at a glance<svg class="icon" aria-hidden="true"><use href="assets/icons.svg?v=20260924a#arrow-right" /></svg></a>
+            </div>
+          </div><a href="en-about.html">About us</a><a href="en-reporting.html">Reporting</a>
         </nav>
         <div class="header-actions">
           <a class="language" href="index.html" lang="de" aria-label="Deutsche Version">DE</a><a class="button contact-button" href="#kontakt">Contact<svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a><button class="menu-toggle" type="button" data-menu-toggle="" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" title="Open menu">
+              <use href="assets/icons.svg?v=20260924a#arrow-up-right" /></svg></a><button class="menu-toggle" type="button" data-menu-toggle="" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" title="Open menu">
             <svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg?v=20260915f#menu" />
+              <use href="assets/icons.svg?v=20260924a#menu" />
             </svg>
           </button>
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-nav" data-mobile-menu="" aria-label="Mobile navigation" hidden>
-        <a href="en-services.html">Services</a><a href="en-about.html">About us</a><a href="en-reporting.html">Reporting</a><a href="en-tenants.html">Tenant services</a><a href="#kontakt">Contact</a>
+        <details class="mobile-sub">
+          <summary>Services<svg class="icon" aria-hidden="true"><use href="assets/icons.svg?v=20260924a#chevron-down" /></svg></summary>
+          <div class="mobile-sub-links"><a href="en-services.html">All services</a><span class="mobile-sub-label">Management</span><a href="en-weg.html">WEG management</a><a href="en-miethaus.html">Rental buildings</a><a href="en-sondereigentum.html">Individual units (SEV)</a><a href="en-zinshaus.html">Zinshaus buildings</a><a href="en-investors.html">Investors</a><a href="en-portfolio-holders.html">Long-term holders</a><a href="en-succession.html">Inheritance &amp; handover</a><span class="mobile-sub-label">More services</span><a href="en-renovation.html">Renovation support</a><a href="en-construction-support.html">Construction support</a><a href="en-sell-your-company.html">Business succession</a></div>
+        </details>
+        <a href="en-about.html">About us</a><a href="en-reporting.html">Reporting</a><a href="en-tenants.html">Tenant services</a><a href="#kontakt">Contact</a>
       </nav>
     </header>
     <main id="main">
@@ -199,7 +212,7 @@
                   owners’ meetings to maintenance.
                 </p>
                 <a class="text-link" href="en-weg.html">More about WEG management<svg class="icon" aria-hidden="true">
-                    <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
+                    <use href="assets/icons.svg?v=20260924a#arrow-up-right" /></svg></a>
               </div>
               <div data-scope="miethaus" id="info-miethaus">
                 <p>
@@ -207,7 +220,7 @@
                   collection, operating costs and maintenance.
                 </p>
                 <a class="text-link" href="en-miethaus.html">More about rental buildings<svg class="icon" aria-hidden="true">
-                    <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
+                    <use href="assets/icons.svg?v=20260924a#arrow-up-right" /></svg></a>
               </div>
               <div data-scope="wohnung" id="info-wohnung">
                 <p>
@@ -215,12 +228,12 @@
                   and communication with your tenants.
                 </p>
                 <a class="text-link" href="en-sondereigentum.html">More about apartment management<svg class="icon" aria-hidden="true">
-                    <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
+                    <use href="assets/icons.svg?v=20260924a#arrow-up-right" /></svg></a>
               </div>
             </div>
             <div class="property-all">
               <a class="text-link" href="en-services.html">Explore all services<svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
+                  <use href="assets/icons.svg?v=20260924a#arrow-up-right" /></svg></a>
             </div>
           </div>
         </div>
@@ -235,7 +248,7 @@
             </p>
           </div>
           <a class="text-link" href="en-switch.html">Switching to PANI<svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a>
+              <use href="assets/icons.svg?v=20260924a#arrow-up-right" /></svg></a>
         </div>
       </section>
       <section class="home-contact" id="kontakt" aria-labelledby="contact-title">
@@ -249,18 +262,18 @@
             </div>
             <div class="home-contact-links">
               <a class="text-link" href="mailto:info@pani-hv.de"><svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915f#mail" /></svg>info@pani-hv.de</a>
+                  <use href="assets/icons.svg?v=20260924a#mail" /></svg>info@pani-hv.de</a>
               <a class="text-link home-contact-detail" href="en-about.html#vor-ort"><svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915f#map-pin" /></svg><span><span class="home-contact-label">Directions and map</span>Westfälische Straße 62, 10709 Berlin</span></a>
+                  <use href="assets/icons.svg?v=20260924a#map-pin" /></svg><span><span class="home-contact-label">Directions and map</span>Westfälische Straße 62, 10709 Berlin</span></a>
               <a class="text-link home-contact-detail" href="tel:+493023125150"><svg class="icon" aria-hidden="true">
-                  <use href="assets/icons.svg?v=20260915f#phone" /></svg><span><span class="home-contact-label">Talk by phone</span>030
+                  <use href="assets/icons.svg?v=20260924a#phone" /></svg><span><span class="home-contact-label">Talk by phone</span>030
                   23125 150</span></a>
             </div>
           </div>
           <details class="home-enquiry">
             <summary>
               Prepare an enquiry<svg class="icon" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915f#arrow-down" />
+                <use href="assets/icons.svg?v=20260924a#arrow-down" />
               </svg>
             </summary>
             <form class="contact-form" data-email-form="owner" aria-labelledby="contact-title" hidden>
@@ -283,7 +296,7 @@
                 <button class="button" type="submit">
                   Prepare email
                   <svg class="icon" aria-hidden="true">
-                    <use href="assets/icons.svg?v=20260915f#arrow-up-right" />
+                    <use href="assets/icons.svg?v=20260924a#arrow-up-right" />
                   </svg>
                 </button>
               </div>
@@ -308,7 +321,7 @@
         <div class="footer-top">
           <div>
             <a class="brand" href="#top"><svg class="brand-mark" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915f#pani" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
+                <use href="assets/icons.svg?v=20260924a#pani" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
             <p id="prinzipien">Personally led. At home in Berlin.</p>
             <figure class="certification-note">
               <img src="assets/ihk-26a-weg-siegel.png" width="1940" height="955" loading="lazy" decoding="async" alt="IHK: certified under section 26a WEG">
@@ -329,7 +342,7 @@
     <nav aria-label="Tenant access" class="tenant-dock">
       <div class="wrap tenant-dock-inner">
         <span class="tenant-dock-label">Already a tenant?</span><a class="button tenant-button" href="en-tenants.html"><svg class="icon" aria-hidden="true">
-            <use href="assets/icons.svg?v=20260915f#users" /></svg><span>Tenant services</span></a>
+            <use href="assets/icons.svg?v=20260924a#users" /></svg><span>Tenant services</span></a>
       </div>
     </nav>
   </body>

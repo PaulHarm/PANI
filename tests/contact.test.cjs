@@ -43,7 +43,8 @@ function setup({
   const document = {
     documentElement: { lang: language },
     querySelector: () => null,
-    querySelectorAll: () => [form],
+    querySelectorAll: (selector) =>
+      selector === "[data-email-form]" ? [form] : [],
     addEventListener: () => {},
     createTextNode: (text) => ({ textContent: text }),
     createElement: () => ({}),

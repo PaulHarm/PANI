@@ -15,10 +15,10 @@
     <link rel="manifest" href="site.webmanifest?v=20260915a">
     <meta name="theme-color" content="#19382d">
 
-    <link rel="stylesheet" href="assets/site.css?v=712f77548445">
-    <link rel="stylesheet" href="assets/pages.css?v=20260924a">
-    <link href="assets/refined-pages.css?v=20260924a" rel="stylesheet">
-    <script src="assets/site.js" defer></script>
+    <link rel="stylesheet" href="assets/site.css?v=20260924a">
+    <link rel="stylesheet" href="assets/pages.css?v=20260924b">
+    <link href="assets/refined-pages.css?v=20260924b" rel="stylesheet">
+    <script src="assets/site.js?v=20260924a" defer></script>
     <script src="assets/experience.js" defer></script>
     <meta content="Datenschutz · PANI Hausverwaltung Berlin" property="og:title">
     <meta content="Datenschutz der PANI Hausverwaltung, Berlin." property="og:description">
@@ -37,21 +37,34 @@
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="index.html#top" aria-label="PANI Startseite"><svg class="brand-mark" aria-hidden="true">
-            <use href="assets/icons.svg?v=20260915f#pani" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
+            <use href="assets/icons.svg?v=20260924a#pani" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
         <nav class="desktop-nav" aria-label="Hauptnavigation">
-          <a href="leistungen.html">Leistungen</a><a href="ueber-uns.html">Über uns</a><a href="reporting.html">Reporting</a>
+          <div class="nav-item" data-nav-menu="">
+            <a href="leistungen.html">Leistungen</a><button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-services" aria-label="Leistungen aufklappen"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg?v=20260924a#chevron-down" /></svg></button>
+            <div class="nav-menu" id="nav-services">
+              <div class="nav-menu-grid">
+                <div class="nav-menu-group"><span class="nav-menu-label">Verwaltung</span><a href="weg.html">WEG-Verwaltung</a><a href="miethaus.html">Miethausverwaltung</a><a href="sondereigentum.html">Sondereigentum (SEV)</a><a href="zinshaus.html">Zinshäuser</a><a href="investoren.html">Investoren</a><a href="bestandshalter.html">Bestandshalter</a><a href="nachfolge.html">Erbschaft &amp; Übergabe</a></div>
+                <div class="nav-menu-group nav-menu-more"><span class="nav-menu-label">Weitere Leistungen</span><a href="sanierung.html"><strong>Sanierungsbegleitung</strong><span>Energetische Sanierung von der Analyse bis zur Abnahme</span></a><a href="baubetreuung.html"><strong>Baubetreuung</strong><span>Bauliche Maßnahmen geplant und koordiniert</span></a><a href="hausverwaltung-verkaufen.html"><strong>Unternehmensnachfolge</strong><span>Wir übernehmen Ihre Hausverwaltung</span></a></div>
+              </div>
+              <a class="nav-menu-all" href="leistungen.html">Alle Leistungen im Überblick<svg class="icon" aria-hidden="true"><use href="assets/icons.svg?v=20260924a#arrow-right" /></svg></a>
+            </div>
+          </div><a href="ueber-uns.html">Über uns</a><a href="reporting.html">Reporting</a>
         </nav>
         <div class="header-actions">
           <a class="language" href="en-privacy.html" lang="en" aria-label="English version">EN</a><a class="button contact-button" href="index.html#kontakt">Kontakt<svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg?v=20260915f#arrow-up-right" /></svg></a><button class="menu-toggle" type="button" data-menu-toggle="" aria-controls="mobile-nav" aria-expanded="false" aria-label="Menü öffnen" title="Menü öffnen">
+              <use href="assets/icons.svg?v=20260924a#arrow-up-right" /></svg></a><button class="menu-toggle" type="button" data-menu-toggle="" aria-controls="mobile-nav" aria-expanded="false" aria-label="Menü öffnen" title="Menü öffnen">
             <svg class="icon" aria-hidden="true">
-              <use href="assets/icons.svg?v=20260915f#menu" />
+              <use href="assets/icons.svg?v=20260924a#menu" />
             </svg>
           </button>
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-nav" data-mobile-menu="" aria-label="Mobile Navigation" hidden>
-        <a href="leistungen.html">Leistungen</a><a href="ueber-uns.html">Über uns</a><a href="reporting.html">Reporting</a><a href="mieter.html">Mieterservice</a><a href="index.html#kontakt">Kontakt</a>
+        <details class="mobile-sub">
+          <summary>Leistungen<svg class="icon" aria-hidden="true"><use href="assets/icons.svg?v=20260924a#chevron-down" /></svg></summary>
+          <div class="mobile-sub-links"><a href="leistungen.html">Alle Leistungen</a><span class="mobile-sub-label">Verwaltung</span><a href="weg.html">WEG-Verwaltung</a><a href="miethaus.html">Miethausverwaltung</a><a href="sondereigentum.html">Sondereigentum (SEV)</a><a href="zinshaus.html">Zinshäuser</a><a href="investoren.html">Investoren</a><a href="bestandshalter.html">Bestandshalter</a><a href="nachfolge.html">Erbschaft &amp; Übergabe</a><span class="mobile-sub-label">Weitere Leistungen</span><a href="sanierung.html">Sanierungsbegleitung</a><a href="baubetreuung.html">Baubetreuung</a><a href="hausverwaltung-verkaufen.html">Unternehmensnachfolge</a></div>
+        </details>
+        <a href="ueber-uns.html">Über uns</a><a href="reporting.html">Reporting</a><a href="mieter.html">Mieterservice</a><a href="index.html#kontakt">Kontakt</a>
       </nav>
     </header>
     <main id="main">
@@ -132,7 +145,7 @@
         <div class="footer-top">
           <div>
             <a class="brand" href="index.html#top"><svg class="brand-mark" aria-hidden="true">
-                <use href="assets/icons.svg?v=20260915f#pani-tile" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
+                <use href="assets/icons.svg?v=20260924a#pani-tile" /></svg><span class="brand-text"><span class="brand-name">PANI</span><span class="brand-sub">Hausverwaltung</span></span></a>
             <p>Persönlich geführt. In Berlin zu Hause.</p>
           </div>
           <nav class="footer-links" aria-label="Weitere Informationen">
@@ -147,7 +160,7 @@
     <nav aria-label="Mieterzugang" class="tenant-dock">
       <div class="wrap tenant-dock-inner">
         <span class="tenant-dock-label">Sie sind Mieter?</span><a class="button tenant-button" href="mieter.html"><svg class="icon" aria-hidden="true">
-            <use href="assets/icons.svg?v=20260915f#users" /></svg><span>Mieterservice</span></a>
+            <use href="assets/icons.svg?v=20260924a#users" /></svg><span>Mieterservice</span></a>
       </div>
     </nav>
   </body>
