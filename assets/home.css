@@ -395,6 +395,13 @@
 .home-enquiry[open] summary .icon {
   transform: rotate(180deg);
 }
+.home-enquiry-title {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 0 0;
+  color: var(--green);
+  font: 500 14px/1.4 var(--sans);
+}
 .home-enquiry .contact-form {
   max-width: 760px;
   margin: 18px auto 0;
@@ -439,6 +446,9 @@
   }
   .home-enquiry .contact-form {
     padding-bottom: 76px;
+    margin-right: 284px;
+  }
+  .home-enquiry-title {
     margin-right: 284px;
   }
 }
@@ -608,19 +618,21 @@
   }
 }
 
-/* Einstieg in den Anfrage-Fragebogen */
+/* Einstieg in den Anfrage-Fragebogen: eine volle Zeile wie die Auswahl darüber */
 .property-info .property-cta {
   display: flex;
-  width: max-content;
-  max-width: 100%;
+  justify-content: space-between;
+  width: 100%;
   margin-top: 18px;
-  min-height: 44px;
-  padding: 10px 18px;
-  gap: 12px;
+  min-height: 56px;
+  padding: 14px 17px;
+  gap: 16px;
+  text-align: left;
 }
 .property-info .property-cta .icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 .home-enquiry-alt {
   margin-top: 26px;
