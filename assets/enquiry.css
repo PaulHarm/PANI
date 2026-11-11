@@ -1,7 +1,9 @@
 /* Klick-Fragebogen "Betreuung anfragen" (anfrage.html, en-enquiry.html).
-   Nutzt die Variablen aus site.css. Ohne JavaScript stehen alle Schritte
-   untereinander; mit JavaScript (Klasse is-enhanced) ist nur ein Schritt
-   sichtbar. */
+   Nutzt die Variablen aus site.css. Das Formular ist im HTML verborgen
+   (hidden) und wird erst von enquiry.js eingeblendet; mit der Klasse
+   is-enhanced ist dann nur ein Schritt sichtbar. Ohne JavaScript bleiben der
+   Hinweis ueber dem Formular und der direkte Weg darunter. Das Entwurfsfeld
+   nach dem Absenden (.draft-panel) steht in pages.css. */
 .enquiry-page .page-intro p {
   max-width: 640px;
 }

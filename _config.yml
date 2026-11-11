@@ -1,0 +1,6 @@
+# Die Website nutzt keine Jekyll-Funktionen. Diese Datei haelt nur interne Dateien von der Veroeffentlichung fern.
+exclude:
+  - README.md
+  - PLATZHALTER.md
+  - RECHTSSICHERHEIT.md
+  - tests

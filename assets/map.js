@@ -16,7 +16,7 @@
       frame.className = "map-frame";
       frame.src = wrap.dataset.mapSrc;
       frame.title = wrap.dataset.mapTitle;
-      frame.referrerPolicy = "no-referrer-when-downgrade";
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
       frame.allowFullscreen = true;
       placeholder.hidden = true;
       wrap.insertBefore(frame, hide);

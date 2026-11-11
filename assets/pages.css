@@ -61,8 +61,7 @@
   align-items: baseline;
   margin-bottom: 26px;
 }
-.catalog-heading h2,
-.catalog-development h2 {
+.catalog-heading h2 {
   font-size: 34px;
 }
 .catalog-heading p {
@@ -132,38 +131,12 @@
   font-size: 15px;
   line-height: 1.75;
 }
-.catalog-points {
-  padding: 0;
-  margin: 18px 0 24px;
-  list-style: none;
-  width: 100%;
-  font-size: 13px;
-  color: var(--muted);
-}
-.catalog-points li {
-  padding-block: 4px;
-}
 .catalog-item .text-link {
   margin-top: auto;
   font-size: 14px;
 }
 .catalog-special-section {
   background: var(--wash);
-}
-.catalog-special {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 36px 56px;
-}
-.catalog-special .catalog-item {
-  display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
-  gap: 24px;
-  padding-top: 28px;
-  align-items: start;
-}
-.catalog-special .catalog-art svg {
-  height: 110px;
 }
 .catalog-item-copy {
   display: flex;
@@ -174,23 +147,6 @@
 .catalog-item-copy p {
   margin-bottom: 22px;
 }
-.catalog-development {
-  display: grid;
-  grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
-  align-items: center;
-  gap: 60px;
-}
-.catalog-development .catalog-art {
-  justify-content: center;
-}
-.catalog-development .catalog-art svg {
-  width: 330px;
-  height: 210px;
-}
-.catalog-development p {
-  margin-block: 22px;
-  max-width: 630px;
-}
 .services-page h1,
 .services-page h2,
 .services-page h3,
@@ -199,31 +155,12 @@
 .services-page a {
   overflow-wrap: anywhere;
 }
-.services-summary {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 40px;
-}
-.services-summary > .text-link {
-  flex-shrink: 0;
-}
 @media (max-width: 1050px) {
   .catalog-primary {
     column-gap: 24px;
   }
   .catalog-primary h3 {
     font-size: 24px;
-  }
-  .catalog-special {
-    gap: 36px;
-  }
-  .catalog-special .catalog-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .catalog-special .catalog-art svg {
-    width: 150px;
-    height: 90px;
   }
 }
 @media (max-width: 800px) {
@@ -244,17 +181,6 @@
   .catalog-primary .catalog-art {
     height: 122px;
   }
-  .catalog-development {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-  .catalog-development .catalog-art {
-    justify-content: flex-start;
-  }
-  .catalog-development .catalog-art svg {
-    width: 240px;
-    height: 150px;
-  }
 }
 @media (max-width: 560px) {
   .catalog-intro.page-intro {
@@ -274,15 +200,116 @@
     margin-bottom: 26px;
     gap: 14px;
   }
-  .catalog-heading h2,
-  .catalog-development h2 {
+  .catalog-heading h2 {
     font-size: 30px;
   }
-  .catalog-special {
-    grid-template-columns: 1fr;
+}
+
+/* ==========================================================
+   Bereich: leistungen (leistungen.html, en-services.html)
+   Abschnitt "Verwaltung" mit den drei Verwaltungsarten. Eigene
+   Klasse .type-art, damit die alten Größen von .catalog-art in
+   .catalog-primary hier nicht greifen. Die ganze Karte ist über
+   den Link am Kartenende klickbar.
+   ========================================================== */
+.catalog-types .catalog-item {
+  position: relative;
+}
+.catalog-types .type-art {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
+  padding: 10px 18px 0;
+  background: #f3f6f1;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.catalog-types .type-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.catalog-types .catalog-kicker {
+  margin-bottom: 10px;
+}
+.catalog-types .catalog-item h3 {
+  color: var(--green-dark);
+}
+.catalog-types .catalog-item h3:lang(de) {
+  hyphens: auto;
+}
+.catalog-types .catalog-item p {
+  margin-bottom: 14px;
+}
+.catalog-types .text-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+@media (min-width: 801px) {
+  @supports (grid-template-rows: subgrid) {
+    .catalog-types .catalog-item {
+      grid-row: span 5;
+    }
   }
-  .catalog-special .catalog-item {
-    padding-top: 22px;
+}
+/* Korrektur: "Miethausverwaltung" bleibt im schmalen Dreispalter einzeilig */
+@media (min-width: 801px) and (max-width: 860px) {
+  .catalog-types .catalog-item h3 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 800px) {
+  .catalog-types {
+    gap: 0;
+  }
+  .catalog-types .catalog-item {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    column-gap: 16px;
+    padding-block: 18px 8px;
+  }
+  .catalog-types .type-art {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 80px;
+    margin: 0;
+    padding: 6px 8px 0;
+  }
+  .catalog-types .catalog-kicker {
+    grid-column: 2;
+    align-self: end;
+    margin-bottom: 6px;
+  }
+  .catalog-types .catalog-item h3 {
+    grid-column: 2;
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+  .catalog-types .catalog-item p,
+  .catalog-types .text-link {
+    grid-column: 1 / -1;
+  }
+  .catalog-types .catalog-item p {
+    margin-block: 14px 4px;
+  }
+  .catalog-types .text-link {
+    justify-self: start;
+  }
+}
+@media (max-width: 400px) {
+  .catalog-types .catalog-item h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 374px) {
+  .catalog-types .catalog-item {
+    grid-template-columns: 88px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+  .catalog-types .type-art {
+    height: 68px;
+    padding: 5px 6px 0;
   }
 }
 .contact-button {
@@ -432,6 +459,14 @@
 }
 .founders-note {
   max-width: 790px;
+}
+.team-link {
+  margin-top: 10px;
+  color: var(--green);
+}
+.team-link .icon {
+  width: 16px;
+  height: 16px;
 }
 .detail-cta {
   background: var(--green);
@@ -1064,14 +1099,10 @@ body {
   }
 }
 
-.service-topline,
 .catalog-kicker {
   font-size: var(--text-label);
   font-weight: 600;
   letter-spacing: 0;
-}
-.service-visual svg {
-  color: var(--green);
 }
 .scope-intro {
   max-width: 760px;
@@ -1115,8 +1146,8 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
   grid-template-areas:
-    "head founders"
-    "copy founders";
+    "head people"
+    "copy people";
   grid-template-rows: auto 1fr;
   align-items: start;
   column-gap: 56px;
@@ -1136,70 +1167,49 @@ body {
   line-height: 1.7;
   max-width: 46ch;
 }
-.about-founders {
-  grid-area: founders;
+.team-groups {
+  grid-area: people;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 44px;
+  min-width: 0;
+}
+.team-group-label {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.team-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 40px;
+  gap: 0 40px;
 }
-.about-founders .founder,
-.about-founders .founder + .founder {
-  display: block;
-  border: 0;
-  padding: 0;
+.team-member {
+  min-width: 0;
+  padding-top: 22px;
 }
-.about-founders .founder-photo {
-  display: block;
-  width: min(100%, max(200px, 45vh * 0.75));
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: 50% 50%;
-  border-radius: 3px;
-  background: var(--wash);
-}
-.about-founders .founder-photo-np {
-  object-position: 25% 50%;
-}
-.about-founders .founder-body {
-  margin-top: 18px;
-}
-.about-founders .founder h3 {
+.team-member h3 {
   font-size: 26px;
   margin-bottom: 4px;
 }
-.about-founders .founder-role {
+.team-member-role {
   font-size: 13px;
+  font-weight: 500;
+  color: var(--green);
   margin-bottom: 10px;
 }
-.about-founders .founder p:not(.founder-role) {
+.team-member p:not(.team-member-role) {
   font-size: var(--text-secondary);
   line-height: 1.6;
-}
-.about-certificate {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-.about-certificate img {
-  width: 88px;
-  height: auto;
-}
-.about-certificate strong,
-.about-certificate span {
-  display: block;
-}
-.about-certificate strong {
-  font-size: var(--text-small);
-  font-weight: 500;
-  color: var(--ink);
-}
-.about-certificate span {
-  font-size: 13px;
-  color: var(--muted);
+  max-width: 38ch;
 }
 .about-faq {
   display: grid;
@@ -1251,16 +1261,14 @@ body {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "head"
-      "founders"
-      "copy";
+      "copy"
+      "people";
     grid-template-rows: none;
-    row-gap: 32px;
+    row-gap: 24px;
   }
-  .about-founders {
-    gap: 28px;
-  }
-  .about-founders .founder {
-    max-width: 390px;
+  .team-groups {
+    margin-top: 12px;
+    gap: 36px;
   }
 }
 @media (max-width: 800px) {
@@ -1271,7 +1279,7 @@ body {
   .about-faq h2 {
     margin-bottom: 0;
   }
-  .about-founders .founder h3 {
+  .team-member h3 {
     font-size: 24px;
   }
   .portal-preview-note .wrap {
@@ -1283,12 +1291,17 @@ body {
   }
 }
 @media (max-width: 560px) {
-  .about-founders {
+  .team-list {
     grid-template-columns: minmax(0, 1fr);
-    gap: 36px;
   }
-  .about-founders .founder {
-    max-width: none;
+  .team-member {
+    padding-block: 20px;
+  }
+  .team-member + .team-member {
+    border-top: 1px solid var(--line);
+  }
+  .team-member:last-child {
+    padding-bottom: 0;
   }
 }
 .visit-section {
@@ -1839,5 +1852,63 @@ body {
 @media (max-width: 560px) {
   .succession-page .succession-options {
     margin-top: 32px;
+  }
+}
+
+/* ==========================================================
+   Bereich: entwurfsfeld (assets/draft.js)
+   Erscheint nach "E-Mail vorbereiten" direkt unter der Statuszeile:
+   im Kurzformular der Startseiten, im Mieterformular und im
+   Fragebogen. Knöpfe, Betreffzeile und nur lesbarer Text im Stil
+   der Formularfelder.
+   ========================================================== */
+.form-status p {
+  color: inherit;
+}
+.form-status p + p {
+  margin-top: 8px;
+}
+.draft-panel {
+  max-width: 640px;
+  margin-top: 12px;
+}
+.contact-form .draft-panel {
+  max-width: none;
+}
+.draft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.draft-actions .button-light {
+  border-color: var(--green);
+}
+.draft-subject {
+  margin-top: 16px;
+  font-size: var(--text-small);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.draft-text {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 180px;
+  margin-top: 8px;
+  padding: 11px 12px;
+  border: 1px solid #bfc9bf;
+  border-radius: 3px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  resize: vertical;
+}
+@media (max-width: 560px) {
+  .draft-actions .button {
+    flex: 1 1 100%;
+  }
+  .draft-text {
+    font-size: 16px;
   }
 }

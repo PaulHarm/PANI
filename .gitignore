@@ -1,0 +1,17 @@
+# Arbeitsreste der Werkzeuge in _tools/ und des Rechners. Nichts davon gehoert
+# ins Repo. Aufnahmen und Pruefberichte am besten ausserhalb des Website-Ordners
+# ablegen; wer sie doch hier braucht, nimmt _shots/ (der Unterstrich haelt den
+# Ordner auch von der Veroeffentlichung fern).
+__pycache__/
+*.pyc
+node_modules/
+/_shots/
+mobile-audit.json
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+Thumbs.db
+desktop.ini
+.DS_Store

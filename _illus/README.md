@@ -15,5 +15,5 @@ veröffentlicht; er dient nur als Werkstatt.
 - `assemble.py`: setzt Baukasten und Motive in beide HTML-Dateien ein
   (`python _illus/assemble.py` im Website-Ordner, idempotent).
 
-Nach Änderungen: `assemble.py` laufen lassen, `?v=` von `assets/enquiry.css`
-nur anheben, wenn auch das CSS geändert wurde.
+Nach Änderungen: `assemble.py` laufen lassen, danach `python _tools/build.py`.
+Die `?v=`-Versionen setzt das Skript selbst aus dem Dateiinhalt.

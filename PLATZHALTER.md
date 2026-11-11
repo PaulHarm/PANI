@@ -1,56 +1,56 @@
 # Offene Angaben und Veröffentlichungsstand
 
-Stand: Website-Überarbeitung vom 14. September 2026, ergänzt am 15. September 2026.
+Stand: Verbesserungsrunde vom 11. November 2026 (Team, Anfragewege, Technik). Davor: Website-Überarbeitung vom 14. und 15. September 2026.
 
-## Erledigt
+## Noch vom Inhaber zu ergänzen
+
+- **Musternummern.** Alle Telefonnummern auf der Website sind Platzhalter und vor einer echten Bewerbung durch die richtigen Nummern zu ersetzen:
+  - `030 23125 100` (Telefon, Abschnitt „Vor Ort"): `ueber-uns.html`, `en-about.html`.
+  - `030 23125 199` (Notfallnummer): `ueber-uns.html`, `en-about.html`, `mieter.html`, `en-tenants.html`.
+  - `030 23125 150` (Anfragen): `index.html`, `en.html`, `wechsel.html`, `en-switch.html`, `anfrage.html`, `en-enquiry.html`, `hausverwaltung-verkaufen.html`, `en-sell-your-company.html`.
+- **Öffnungszeiten** im Abschnitt „Vor Ort" (Mo bis Fr 09:00 bis 18:00 Uhr, Sa 10:00 bis 14:00 Uhr nach Absprache, So geschlossen) sind Musterzeiten und zu bestätigen.
+- **Notfallhinweis für Mieter** (`mieter.html`, `en-tenants.html`): Die Reihenfolge „zuerst die Notfallkontakte des Hauses, außerhalb der Öffnungszeiten zusätzlich die Notfallnummer" ist eine Annahme und zu bestätigen.
+- **Team:** Die Angaben zu Stefan Kruger (Immobilienökonom, Baubetreuung und energetische Sanierung) und Beate Frisow (Betreuung der Hausverwaltung) sind bewusst knapp gehalten. Schreibweise der Namen und Aufgaben bestätigen; weitere Angaben nur auf ausdrücklichen Wunsch ergänzen.
+- Rechtsform und tatsächliche Vertretungsangaben.
+- Zutreffende Register-, Steuer-, Erlaubnis- und Versicherungsangaben für Impressum und englische Fassung.
+- Endgültige Prüfung und Vervollständigung der Rechtstexte. Die verbleibenden Platzhalter sind ausdrücklich sichtbar.
+- **Datenschutzerklärung:** Sie nennt bisher nur die Formulare auf der Startseite und im Mieterservice, nicht den Fragebogen und nicht den Kopier-Weg für den E-Mail-Entwurf. Beim nächsten Durchgang der Rechtstexte ergänzen.
+- **Bildnachweis Oderberger Straße** (Vorschaubild für geteilte Links): steht sichtbar nur im Footer der Zinshaus-Seiten. Der dauerhafte Ort wäre das Impressum.
+- Gründungsjahr, sofern es auf der Über-uns-Seite erscheinen soll. Weitere, unbestätigte Zahlen und Versicherungsangaben bleiben bewusst weg.
+
+## Optionale nächste Schritte
+
+- Paket „Vertrauen und Belege": „über 500 Einheiten" und das IHK-Siegel auf den Leistungsseiten, Kontaktdaten im Footer, Fragen und Antworten auf WEG, Miethaus und Sondereigentum. Im November 2026 bewusst zurückgestellt.
+- Empfangsdienst für einen Versand direkt von der Website einrichten, falls der E-Mail-Entwurf ersetzt werden soll.
+- Tatsächliche Portal-, Archiv- und Serviceangebote auf allen Detailseiten mit dem Betriebsmodell abgleichen.
+- Stadtansichten durch eigene, für diese Nutzung freigegebene Wohnimmobilienfotos ersetzen.
+- `refined-pages.css` und `pages.css` zusammenführen; automatische Tests bei jedem Push.
+- Die entfernten Gründerfotos stehen weiterhin in der Git-Historie des öffentlichen Repositorys. Vollständiges Entfernen bräuchte ein Umschreiben der Historie.
+
+## Erledigt im November 2026
+
+- Gründerfotos von der Über-uns-Seite entfernt, Bilddateien gelöscht. Der Block zeigt jetzt vier Personen ohne Bild: zwei Gründer, zwei Teammitglieder. Ein Test verhindert, dass die Fotos zurückkommen.
+- Stefan Kruger steht auf Baubetreuung und Energetischer Sanierung als Verantwortlicher, mit Verweis auf das Team.
+- Zinshaus, Investoren und Bestandshalter zu einer Seite gebündelt. Die vier alten Adressen leiten auf den passenden Abschnitt weiter und stehen nicht mehr in der Sitemap.
+- Menü: „Hausverwaltung verkaufen" statt „Unternehmensnachfolge", „Energetische Sanierung" statt „Sanierungsbegleitung". Die Eigentümerseite heißt weiter „Nachfolge".
+- Ein Anfrageweg: Alle Knöpfe im Inhalt heißen „Betreuung anfragen" und führen zum Fragebogen, wo sinnvoll mit Vorauswahl. Das Kurzformular der Startseite bleibt.
+- E-Mail-Entwurf ehrlich beschrieben, mit angezeigtem Text und „Text kopieren". Zwei Fehler bei kaputten Adressparametern behoben.
+- Leistungsübersicht zeigt wieder die drei Verwaltungsarten und endet mit einem Anfrage-Knopf.
+- Texte: der achtfach gleiche Gründer-Absatz und der siebenfach gleiche Schlussabsatz sind seitenbezogen ersetzt; einheitliche Begriffe (siehe README, Abschnitt „Begriffe"); ein Störungshinweis statt zwei widersprüchlicher im Mieterservice; Musterreport mit „Mieteinnahmen p. a." statt „Portfolio Rendite"; Wechsel-Fragen wiederholen die Schritte nicht mehr.
+- Technik: Menü, Kopfzeilen und Versionen werden erzeugt (`python _tools/build.py`); die Helfer liegen in `_tools/`. Ungenutzte Bilder und rund 12 KB toter CSS-Code entfernt, Fotos der Leistungsübersicht als WebP, kleines IHK-Siegel. `_config.yml` hält interne Dateien von der Website fern. Brotkrumen-Daten und `lastmod` für Suchmaschinen. Titel und Descriptions in sinnvoller Länge.
+- Neue Tests für Entwurf, Fragebogen und den gesamten Seitenbestand (`tests/site.test.cjs`).
+
+## Erledigt im September 2026
 
 - Kontaktadresse vom Inhaber bestätigt: `info@pani-hv.de`, in allen HTML-Seiten aktualisiert.
 - Vorhandene Anschrift übernommen: Westfälische Straße 62, 10709 Berlin.
-- Frühere Platzhalter-Telefonnummern entfernt; die derzeit sichtbaren Musternummern stehen unter „Noch vom Inhaber zu ergänzen“.
 - Formspree-Platzhalter entfernt. Kontakt und Mieterservice bereiten transparent einen E-Mail-Entwurf vor; kein automatischer Versand.
 - Deutsche und englische Startseite gestrafft; drei Verwaltungsarten als Haupteinstieg.
 - Eigentümerbericht deutlich als Muster gekennzeichnet. Sanierungsrechner, wechselnde Kennzahlen und App-Mockup von den Startseiten entfernt.
 - Bilder, Icons und Schriftdateien werden lokal ausgeliefert. Quellen und Lizenzen bleiben dokumentiert.
-- Porträts von Niclas Paprocki und Paul Harm eingebunden: kompakt auf der Startseite, groß im Hochformat auf der Über-uns-Seite. Kein Monogramm mehr.
-- Vorhandenes IHK-Siegel dezent in der linken Footer-Spalte der deutschen und englischen Startseite sowie im Gründerblock der Über-uns-Seite eingebunden, auf Wunsch ohne Personenname. Neutraler Hinweis „IHK-Zertifizierung nach § 26a WEG“; die bestätigte Zertifizierung lautet auf Niclas, nicht auf beide Gründer.
-- Energetische Sanierung auf eigene deutsche und englische Seiten verlagert. Der animierte Rechner samt Annahmen und Grenzen bleibt erhalten. Erreichbar über die Leistungsübersicht und die Leistungsseiten; die Startseiten verlinken die Sanierung nicht mehr direkt.
-- Reporting und die bisherige Handy-Illustration auf eigene Seiten verlagert. Mieterportal ausdrücklich als noch nicht verfügbar gekennzeichnet und als Ausblick vom Mieterservice verlinkt.
-- Alle Leistungsseiten und die Navigation im neuen Design vereinheitlicht.
-- Grüner Kontakt-Button in der Kopfzeile auf allen Seiten. Der Mieterservice-Zugang führt zum tatsächlichen Kontaktangebot: mobil als feste Leiste, ab 801 px als schwebende Pille rechts unten. Auf den vier Service- und Portal-Seiten entfällt er.
-- Mobiles Menü auch im Querformat vollständig erreichbar: eigene Scrollfläche oberhalb der festen Mieterleiste.
-- Lesbarkeit der Titelbilder auf mobilen Geräten verbessert, unnötige Worttrennungen auf Leistungsseiten entfernt und lange Überschriften der Rechtstexte abgesichert.
-- Footer der 404-Seite schließt auch bei wenig Inhalt sauber am unteren Bildschirmrand ab.
-- Eigene deutsche und englische Leistungsübersicht mit acht Angeboten: drei Verwaltungsarten, vier besondere Anforderungen und Sanierungsbegleitung. Acht Illustrationen aus dem bestehenden Architektur-Motivsystem, kompakte Leistungslisten und direkte Detailseiten-Links.
-- „Leistungen“ führt auf allen 35 Seiten zur Übersicht, einschließlich mobilem Menü, Footer und Brotkrumennavigation. Startseiten bleiben kompakt und ergänzen „Alle Leistungen ansehen“.
-- Eigene Über-uns-Seite in beiden Sprachen, verlinkt aus Hauptnavigation, Gründerbereich und Footer. Bestehende Gründerangaben, Pauls Foto und neutraler IHK-Hinweis bleiben erhalten. Die fünf Fragen zu Einstieg und Übernahme (ohne feste Preis- oder Zeitversprechen) stehen seit dem 15. September 2026 auf der Wechselseite, siehe unten.
-- Vier Spezialangebote in beiden Sprachen klarer unterschieden; Grundleistungen sind mit der Miethausverwaltung verknüpft. Keine neuen Zehnjahresplan-, Kennzahlen-, Versicherungs- oder Portalverfügbarkeitsversprechen ergänzt.
-- Sanierung, Reporting und Portal-Ausblick erhalten passende Kontaktabschlüsse. Die vier Sanierungsschritte bleiben erhalten; Schritttitel auf Detailseiten sind echte Zwischenüberschriften.
-- Sieben Titelbilder mit 21 WebP-Varianten; sieben Vorschaubilder für geteilte Links. Schriftrollen und Illustrationsgewichtung gezielt angeglichen, mobile Größen weiterhin differenziert.
-- Neue Wechselseite in beiden Sprachen (wechsel.html, en-switch.html). Die Fragen zu Einstieg und Übernahme (FAQ) sind von der Über-uns-Seite dorthin verschoben. Verlinkt aus dem Wechsel-Abschnitt der Startseiten und im Footer aller Seiten („Ihr Wechsel“, „Switching to PANI“); in der Sitemap ergänzt.
-- Bestandsangaben „Häuser in ganz Berlin“ und „über 500 Einheiten“ vom Inhaber am 15.09.2026 bestätigt und auf der Über-uns-Seite eingebaut.
-
-## Noch vom Inhaber zu ergänzen
-
-- **Musternummern:** Telefon `030 23125 100` und Notfallnummer `030 23125 199` im Abschnitt „Vor Ort“ der Über-uns-Seite (ueber-uns.html, en-about.html) sind Platzhalter und vor Veröffentlichung durch die echten Nummern zu ersetzen.
-- **Musternummer Wechsel:** Telefon `030 23125 150` unter „Ihr Wechsel zu PANI“ bzw. „Switching to PANI“ im Kontaktbereich der Startseiten (index.html, en.html) und auf der Wechselseite (wechsel.html, en-switch.html) ist ein Platzhalter und vor Veröffentlichung durch die echte Nummer zu ersetzen.
-- **Öffnungszeiten** im Abschnitt „Vor Ort“ (Mo bis Fr 09:00 bis 18:00 Uhr, Sa 10:00 bis 14:00 Uhr nach Absprache, So geschlossen) sind Musterzeiten und zu bestätigen.
-- Rechtsform und tatsächliche Vertretungsangaben.
-- Zutreffende Register-, Steuer-, Erlaubnis- und Versicherungsangaben für Impressum und englische Fassung.
-- Endgültige Prüfung und Vervollständigung der Rechtstexte. Die verbleibenden Platzhalter sind ausdrücklich sichtbar.
-- Gründungsjahr, sofern es auf der Über-uns-Seite erscheinen soll. Die Bestandsangaben sind inzwischen bestätigt (siehe oben); weitere, unbestätigte Zahlen und Versicherungsangaben bleiben bewusst weg.
-- Echte Telefonnummer und ggf. objektbezogene Notfallkontakte, sofern sie öffentlich angeboten werden sollen.
-
-## Optionale nächste Schritte
-
-- Empfangsdienst für einen Versand direkt von der Website einrichten, falls die E-Mail-Entwurfsfunktion ersetzt werden soll.
-- Tatsächliche Portal-, Archiv- und Serviceangebote auf allen Detailseiten mit dem Betriebsmodell abgleichen.
-- Stadtansicht durch ein eigenes, für diese Nutzung freigegebenes Wohnimmobilienfoto ersetzen.
-
-## Prüfung am 14. September (Feinschliff)
-
-- Kontaktlogik und Sanierungsbeispiel: 14 automatisierte Tests bestanden, einschließlich schneller Zielwechsel, ungültiger Werte und reduzierter Bewegung.
-- Interne Dateien, Abschnittsanker und Gedankenstriche auf sämtlichen 33 HTML-Seiten geprüft, ohne Befund.
-- Screenshot-Prüfung der Startseiten, Über-uns-Seiten, Leistungsübersicht, WEG-Seite, Mieterservice und Impressum bei 1440, 768, 390 und 360 Pixeln, jeweils in voller Seitenhöhe: keine horizontalen Seitenüberläufe, Gründerfotos und Logo-Lockup auf allen Breiten korrekt.
-- Schwebende Mieter-Pille ab 801 px: Footer erhält unten Platz, damit der Bildnachweis nicht verdeckt wird; die Pille tritt zurück, solange das Kontaktformular im Bild ist.
-- Strukturprüfung von Navigation, Sitemap, Sprachzielen (inklusive x-default auf allen 16 Seitenpaaren), Vorschaubildern und Stylesheet-Versionen. Formulare, Rechner-Markup und die Inhalte aller vier Rechtstextseiten stimmen unverändert mit dem vorherigen Stand überein.
-- Sanierungsrechner einschließlich Zielwechsel weiterhin funktionsfähig. Kein echter E-Mail-Versand ausgelöst.
+- IHK-Siegel dezent im Footer der Startseiten und der Über-uns-Seiten, auf Wunsch ohne Personenname. Neutraler Hinweis „IHK-Zertifizierung nach § 26a WEG"; die bestätigte Zertifizierung lautet auf Niclas Paprocki, nicht auf beide Gründer.
+- Energetische Sanierung, Reporting und der Portal-Ausblick auf eigene Seiten verlagert. Das Mieterportal ist ausdrücklich als noch nicht verfügbar gekennzeichnet.
+- Grüner Kontakt-Button in der Kopfzeile auf allen Seiten. Mieterservice-Zugang mobil als feste Leiste, ab 801 px als schwebende Pille rechts unten.
+- Eigene Über-uns-Seite und eigene Wechselseite in beiden Sprachen. Die Fragen zu Einstieg und Übernahme stehen auf der Wechselseite, ohne feste Preis- oder Zeitversprechen.
+- Bestandsangaben „Häuser in ganz Berlin" und „über 500 Einheiten" vom Inhaber am 15.09.2026 bestätigt.
+- Fragebogen mit Illustrationen, Seite Baubetreuung, Seite zum Verkauf einer Hausverwaltung, Leistungen-Menü (24.09.2026).

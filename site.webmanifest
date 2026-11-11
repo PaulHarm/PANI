@@ -2,8 +2,10 @@
   "name": "PANI Hausverwaltung",
   "short_name": "PANI",
   "icons": [
-    { "src": "icon-192.png?v=20260915a", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "icon-512.png?v=20260915a", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "icon-192.png?v=1faa3b0d9f", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png?v=1faa3b0d9f", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-512.png?v=8f81733dff", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png?v=8f81733dff", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
   "theme_color": "#19382d",
   "background_color": "#ffffff",

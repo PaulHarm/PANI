@@ -1,12 +1,18 @@
 // Klick-Fragebogen "Betreuung anfragen": ein Schritt nach dem anderen,
-// Fortschritt, Zurueck, Zusammenfassung und am Ende ein E-Mail-Entwurf per
-// mailto. Es wird nichts automatisch versendet. Ohne JavaScript bleibt das
-// Formular eine lange Seite, die per mailto-Action abgeschickt wird.
+// Fortschritt, Zurueck, Zusammenfassung und am Ende ein E-Mail-Entwurf. Den
+// Entwurf (mailto-Uebergabe, "Text kopieren", Statustexte) und die Vorauswahl
+// aus ?type= liefert das gemeinsame Modul assets/draft.js, das vor dieser
+// Datei geladen wird. Es wird nichts automatisch versendet. Das Formular ist
+// im HTML verborgen und wird erst sichtbar, wenn dieses Skript vollstaendig
+// gestartet ist. Ohne JavaScript oder ohne draft.js bleibt der direkte Weg
+// unter dem Formular.
 (() => {
   "use strict";
   const form = document.querySelector("[data-enquiry]");
-  if (!form) return;
+  const draft = window.PaniDraft;
+  if (!form || !draft) return;
   const english = document.documentElement.lang === "en";
+  const lang = english ? "en" : "de";
   const text = english
     ? {
         progress: (n, total) => `Step ${n} of ${total}`,
@@ -15,6 +21,7 @@
         toSummary: "Back to summary",
         chooseOne: "Please choose one of the cards to continue.",
         change: "Change",
+        noted: "Noted",
         none: "Not specified",
         subject: "Property management enquiry",
         labels: {
@@ -30,11 +37,6 @@
           lage: "Location",
           message: "Message",
         },
-        status: {
-          ready: "Your draft is ready to open in your email app. Nothing has been sent yet. ",
-          retry: "Open draft again",
-          alt: ". Alternatively, email info@pani-hv.de directly.",
-        },
       }
     : {
         progress: (n, total) => `Schritt ${n} von ${total}`,
@@ -43,6 +45,7 @@
         toSummary: "Zur Zusammenfassung",
         chooseOne: "Bitte wählen Sie eine der Karten, um fortzufahren.",
         change: "Ändern",
+        noted: "Vorgemerkt",
         none: "Keine Angabe",
         subject: "Anfrage zur Hausverwaltung",
         labels: {
@@ -57,11 +60,6 @@
           themen: "Themen",
           lage: "Lage",
           message: "Nachricht",
-        },
-        status: {
-          ready: "Ihr Entwurf wird im E-Mail-Programm geöffnet. Es wurde noch nichts versendet. ",
-          retry: "Entwurf erneut öffnen",
-          alt: ". Alternativ schreiben Sie direkt an info@pani-hv.de.",
         },
       };
 
@@ -106,7 +104,10 @@
   // Nach "Aendern" in der Zusammenfassung geht es nach der Antwort direkt
   // zurueck zum Kontaktschritt, sofern kein offener Pflichtschritt dazwischen liegt.
   let returnToSummary = false;
+  // Objektart aus ?type= gesetzt und Schritt 1 deshalb uebersprungen.
   let presetUsed = false;
+  // Aus ?type= vorbelegte Antworten spaeterer Schritte: { step, input }.
+  const noted = [];
 
   const showError = (step, message) => {
     const error = step.querySelector("[data-error]");
@@ -166,27 +167,45 @@
     summary.hidden = false;
   };
 
+  // Zeile unter dem Fortschritt: die uebersprungene Objektart mit "Aendern"
+  // und, als "Vorgemerkt", vorbelegte Antworten, deren Schritt noch vor dem
+  // Besucher liegt und die noch gesetzt sind.
   const renderPreset = () => {
     if (!presetLine) return;
-    const active = activeSteps()[current];
-    const show =
-      presetUsed && current > 0 && active.dataset.type !== "contact";
-    presetLine.hidden = !show;
-    if (!show) return;
-    presetLine.replaceChildren(
-      document.createTextNode(
-        `${text.labels.objekt}: ${answers("objekt")[0] || text.none} `,
-      ),
-    );
-    const change = document.createElement("button");
-    change.type = "button";
-    change.textContent = text.change;
-    change.setAttribute(
-      "aria-label",
-      `${text.change}: ${stepById("objekt").querySelector(".enquiry-question").textContent}`,
-    );
-    change.addEventListener("click", () => goTo(0));
-    presetLine.append(change);
+    const list = activeSteps();
+    const active = list[current];
+    const parts = [];
+    if (presetUsed && current > 0 && active.dataset.type !== "contact") {
+      const change = document.createElement("button");
+      change.type = "button";
+      change.textContent = text.change;
+      change.setAttribute(
+        "aria-label",
+        `${text.change}: ${stepById("objekt").querySelector(".enquiry-question").textContent}`,
+      );
+      change.addEventListener("click", () => goTo(0));
+      parts.push(
+        document.createTextNode(
+          `${text.labels.objekt}: ${answers("objekt")[0] || text.none} `,
+        ),
+        change,
+      );
+    }
+    const ahead = noted
+      .filter(
+        ({ step, input }) =>
+          input.checked && list.indexOf(stepById(step)) > current,
+      )
+      .map(({ input }) => labelFor(input));
+    if (ahead.length) {
+      parts.push(
+        document.createTextNode(
+          `${parts.length ? " " : ""}${text.noted}: ${ahead.join(", ")}`,
+        ),
+      );
+    }
+    presetLine.hidden = !parts.length;
+    presetLine.replaceChildren(...parts);
   };
 
   const renderDetailHint = () => {
@@ -364,13 +383,13 @@
     }
     const message = get("message");
     if (message) lines.push("", `${text.labels.message}:`, message);
-    const href = `mailto:info@pani-hv.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
-    status.replaceChildren(document.createTextNode(text.status.ready));
-    const retry = document.createElement("a");
-    retry.href = href;
-    retry.textContent = text.status.retry;
-    status.append(retry, document.createTextNode(text.status.alt));
-    window.location.href = href;
+    draft.show({
+      doc: document,
+      win: window,
+      status,
+      draft: draft.compose({ subject, body: lines.join("\n"), lang }),
+      lang,
+    });
   });
 
   // Desktop: die schwebende Mieter-Pille tritt zurueck, solange der Fragebogen
@@ -392,20 +411,48 @@
     pillMode.addEventListener("change", applyDock);
   }
 
-  // Start: Formular umschalten, Vorbelegung ueber ?type= beruecksichtigen.
-  form.classList.add("is-enhanced");
-  progress.hidden = false;
-  for (const node of form.querySelectorAll("[data-js-only]")) node.hidden = false;
-  const match = /(?:\?|&)type=([^&#]*)/.exec(window.location.search || "");
-  const preset = match ? decodeURIComponent(match[1]) : "";
-  const presetInput = ["weg", "miethaus", "wohnung"].includes(preset)
-    ? form.querySelector(`input[name="objekt"][value="${preset}"]`)
-    : null;
-  if (presetInput) {
-    presetInput.checked = true;
-    presetUsed = true;
-    goTo(1, { focus: false });
-  } else {
-    goTo(0, { focus: false });
+  // Start: Vorauswahl ueber ?type= nach der Tabelle in draft.js. Selektoren
+  // entstehen nur aus Tabellenwerten, nie aus der Adresse; unbekannte oder
+  // kaputte Werte ergeben keine Vorauswahl.
+  const byKey = (name, key) =>
+    form.querySelector(`input[name="${name}"][value="${key}"]`);
+  const preset = draft.presetFor(window.location.search);
+  let start = 0;
+  if (preset) {
+    const objekt = preset.objekt && byKey("objekt", preset.objekt);
+    if (objekt) {
+      objekt.checked = true;
+      // Mit confirm (Zinshaus) bleibt Schritt 1 sichtbar: Die Karte ist
+      // markiert, der Besucher bestaetigt mit "Weiter".
+      if (!preset.confirm) {
+        presetUsed = true;
+        start = 1;
+      }
+    }
+    const situation = preset.situation && byKey("situation", preset.situation);
+    if (situation) {
+      situation.checked = true;
+      noted.push({ step: "situation", input: situation });
+    }
+    for (const key of preset.themen || []) {
+      const box = byKey("themen", key);
+      if (box) {
+        box.checked = true;
+        noted.push({ step: "themen", input: box });
+      }
+    }
+  }
+  // Erst wenn der erste Schritt steht, wird umgeschaltet und das im HTML
+  // verborgene Formular sichtbar. Scheitert der Start, bleibt es verborgen
+  // und der direkte Weg unter dem Formular gilt.
+  try {
+    goTo(start, { focus: false });
+    form.classList.add("is-enhanced");
+    progress.hidden = false;
+    for (const node of form.querySelectorAll("[data-js-only]"))
+      node.hidden = false;
+    form.hidden = false;
+  } catch (error) {
+    form.hidden = true;
   }
 })();

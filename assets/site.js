@@ -95,30 +95,29 @@
   }
 
   // Prepare a draft locally. No form data is sent to an unconfigured service.
-  for (const form of document.querySelectorAll("[data-email-form]")) {
-    form.hidden = false;
-    if (form.dataset.emailForm === "owner") {
-      const query = (window.location && window.location.search) || "";
-      const match = /(?:\?|&)type=([^&#]*)/.exec(query);
-      const context = match ? decodeURIComponent(match[1]) : "";
-      const optionIndex = {
-        weg: 1,
-        miethaus: 2,
-        wohnung: 3,
-        sanierung: 4,
-        baubetreuung: 4,
-      }[context];
-      const topic = form.querySelector('[name="topic"]');
-      if (topic && optionIndex && topic.options[optionIndex]) {
-        topic.selectedIndex = optionIndex;
-        form.closest("details")?.setAttribute("open", "");
-      }
-    }
+  // Status texts, the copy panel and the mailto address come from the shared
+  // draft module (assets/draft.js, loaded before this file). Without it the
+  // forms stay hidden and the contact details on the page remain the way in.
+  const draft = window.PaniDraft;
+  const lang = english ? "en" : "de";
+  // Start page: ?type= preselects the matching entry of the topic list (by
+  // position, so the option texts can change without touching this table).
+  const ownerTopics = new Map([
+    ["weg", 1],
+    ["miethaus", 2],
+    ["wohnung", 3],
+    ["sanierung", 4],
+    ["baubetreuung", 4],
+  ]);
+  const emailForms = draft
+    ? document.querySelectorAll("[data-email-form]")
+    : [];
+  for (const form of emailForms) {
+    const tenant = form.dataset.emailForm === "tenant";
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
       const fields = new FormData(form);
-      const tenant = form.dataset.emailForm === "tenant";
       const subject = `${tenant ? (english ? "Tenant enquiry" : "Mieteranliegen") : english ? "Property management enquiry" : "Anfrage zur Hausverwaltung"} - ${fields.get("topic")}`;
       const lines = english
         ? [
@@ -137,29 +136,28 @@
         lines.push(
           `${english ? "Property / apartment" : "Objekt / Wohnung"}: ${fields.get("address")}`,
         );
-      const href = `mailto:info@pani-hv.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`${lines.join("\n")}\n\n${fields.get("message")}`)}`;
-      const status = form.querySelector('[role="status"]');
-      status.replaceChildren(
-        document.createTextNode(
-          english
-            ? "Your draft is ready to open in your email app. Nothing has been sent yet. "
-            : "Ihr Entwurf wird im E-Mail-Programm geöffnet. Es wurde noch nichts versendet. ",
-        ),
-      );
-      const retry = document.createElement("a");
-      retry.href = href;
-      retry.textContent = english
-        ? "Open draft again"
-        : "Entwurf erneut öffnen";
-      status.append(
-        retry,
-        document.createTextNode(
-          english
-            ? ". Alternatively, email info@pani-hv.de directly."
-            : ". Alternativ schreiben Sie direkt an info@pani-hv.de.",
-        ),
-      );
-      window.location.href = href;
+      draft.show({
+        doc: document,
+        win: window,
+        status: form.querySelector('[role="status"]'),
+        draft: draft.compose({
+          subject,
+          body: `${lines.join("\n")}\n\n${fields.get("message")}`,
+          lang,
+        }),
+        lang,
+      });
     });
+    if (form.dataset.emailForm === "owner") {
+      // presetFor never throws: a broken or unknown ?type= simply selects
+      // nothing.
+      const preset = draft.presetFor(window.location && window.location.search);
+      const optionIndex = preset ? ownerTopics.get(preset.key) : 0;
+      const topic = form.querySelector('[name="topic"]');
+      if (topic && optionIndex && topic.options[optionIndex])
+        topic.selectedIndex = optionIndex;
+    }
+    // Last step: the form only appears once its submit handler is in place.
+    form.hidden = false;
   }
 })();
