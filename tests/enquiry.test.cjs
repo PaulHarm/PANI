@@ -369,12 +369,20 @@ function open(lang, options = {}) {
         .querySelectorAll(`input[name="${name}"]:checked`)
         .map((node) => node.value),
     // Mausklick oder Tipp auf eine Karte; bei Einfachauswahl geht es danach
-    // von selbst weiter.
+    // von selbst weiter. Wie im Browser: click kommt immer, change nur, wenn
+    // sich der Zustand aendert (eine schon markierte Karte loest keins aus).
     pick(name, value) {
       const target = input(name, value);
       target.dispatchEvent(new Event("pointerdown"));
+      const before = target.checked;
       target.checked = target.type === "radio" ? true : !target.checked;
-      target.dispatchEvent(new Event("change"));
+      target.dispatchEvent(new Event("click"));
+      if (target.checked !== before) target.dispatchEvent(new Event("change"));
+      runTimers();
+    },
+    // Leertaste auf einer Karte: click ohne Zeigerereignis.
+    space(name, value) {
+      input(name, value).dispatchEvent(new Event("click"));
       runTimers();
     },
     // Auswahl per Tastatur: kein Zeigerereignis, also kein Weiterspringen.
@@ -1079,4 +1087,77 @@ test("the English questionnaire uses English labels throughout", () => {
   assert.equal(app.panel().open.textContent, "Open email app");
   assert.equal(app.panel().copy.textContent, "Copy text");
   assert.match(app.panel().subject.textContent, /^Subject: /);
+});
+
+test("a change after the draft withdraws the status and the draft panel", () => {
+  const app = open("de", { search: "?type=wohnung" });
+  walk(app, [
+    ["situation", "neu"],
+    ["themen", []],
+    ["lage", "mehrere"],
+  ]);
+  app.fill({ name: "Erika Beispiel", email: "erika@example.com" });
+  app.submit();
+  assert.equal(app.panel().panel.hidden, false);
+  assert.match(app.panel().area.value, /\nLage: Mehrere Standorte$/);
+  // "Aendern" in der Zusammenfassung nimmt Meldung und Entwurfsfeld zurueck.
+  app.click(app.summary()[3].change);
+  assert.equal(app.step(), "lage");
+  assert.deepEqual(app.status(), []);
+  assert.equal(app.panel().panel.hidden, true);
+  app.pick("lage", "ausserhalb");
+  assert.equal(app.step(), "kontakt");
+  assert.equal(app.panel().panel.hidden, true);
+  app.submit();
+  assert.equal(app.panel().panel.hidden, false);
+  assert.match(app.panel().area.value, /\nLage: Außerhalb Berlins$/);
+  assert.equal(app.status().length, 3);
+  // Tippen im Kontaktschritt nimmt den Entwurf ebenfalls zurueck.
+  app.form
+    .querySelector('[name="name"]')
+    .dispatchEvent(new app.window.Event("input"));
+  assert.deepEqual(app.status(), []);
+  assert.equal(app.panel().panel.hidden, true);
+  // "Zurueck" ebenso.
+  app.submit();
+  assert.equal(app.panel().panel.hidden, false);
+  app.back();
+  assert.deepEqual(app.status(), []);
+  assert.equal(app.panel().panel.hidden, true);
+});
+
+test("a click on a card that is already marked leads on as well", () => {
+  const zinshaus = open("de", { search: "?type=zinshaus" });
+  zinshaus.pick("objekt", "zinshaus");
+  assert.deepEqual(zinshaus.checked("objekt"), ["zinshaus"]);
+  assert.equal(zinshaus.step(), "groesse");
+
+  const wechsel = open("en", { search: "?type=wechsel" });
+  wechsel.pick("objekt", "wohnung");
+  assert.equal(wechsel.step(), "situation");
+  wechsel.pick("situation", "wechsel");
+  assert.equal(wechsel.step(), "themen");
+
+  // Nach "Zurueck" fuehrt die frueher gewaehlte Karte ebenfalls weiter.
+  const back = open("de");
+  back.pick("objekt", "miethaus");
+  assert.equal(back.step(), "groesse");
+  back.back();
+  assert.equal(back.step(), "objekt");
+  back.pick("objekt", "miethaus");
+  assert.equal(back.step(), "groesse");
+
+  // Tastatur (kein Zeigerereignis): Die markierte Karte springt nicht.
+  const keyboard = open("de", { search: "?type=zinshaus" });
+  keyboard.space("objekt", "zinshaus");
+  assert.equal(keyboard.step(), "objekt");
+  // Ein Thema (Mehrfachauswahl) springt nie von selbst weiter.
+  const topics = open("de", { search: "?type=sanierung" });
+  walk(topics, [
+    ["objekt", "wohnung"],
+    ["situation", "neu"],
+  ]);
+  assert.equal(topics.step(), "themen");
+  topics.pick("themen", "sanierung");
+  assert.equal(topics.step(), "themen");
 });

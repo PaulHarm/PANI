@@ -65,6 +65,7 @@ body:not(.home-page) .site-footer .footer-bottom a:hover {
 .detail-page .detail-hero {
   min-height: 0;
   height: auto;
+  max-height: none;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   align-items: stretch;

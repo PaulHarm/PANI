@@ -148,6 +148,12 @@
         lang,
       });
     });
+    // Changing a field after a draft was prepared withdraws the status and
+    // the draft panel, so the page never shows a draft that no longer
+    // matches the fields.
+    const statusNode = form.querySelector('[role="status"]');
+    for (const type of ["input", "change"])
+      form.addEventListener(type, () => draft.reset(statusNode));
     if (form.dataset.emailForm === "owner") {
       // presetFor never throws: a broken or unknown ?type= simply selects
       // nothing.

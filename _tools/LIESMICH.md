@@ -38,7 +38,7 @@ Der Kopf-Block lädt CSS immer in dieser Reihenfolge: `site.css`, `pages.css`, d
 | `data-enquiry` | `enquiry.css`, `enquiry.js` |
 | `class="home-page"` am `body` | `home.css` statt `refined-pages.css` |
 
-Ein neues Skript oder Stylesheet wird in `kopf.py` in der Funktion `dateien()` eingetragen, nicht in den Seiten.
+Ein neues Skript oder Stylesheet wird nicht in den Seiten eingetragen, sondern an zwei Stellen, die zusammen geändert werden: in `kopf.py` in der Funktion `dateien()` und in `tests/site.test.cjs` (ein Skript in der Tabelle `SCRIPTS`, ein Stylesheet in der Prüfung `Kopf-Block: CSS in bindender Reihenfolge`). Der Test führt die Tabelle mit Absicht ein zweites Mal. Fehlt der Eintrag dort, meldet er nach `build.py` auf jeder betroffenen Seite `wird geladen, aber kein Ausloeser auf der Seite verlangt es`.
 
 ## Regeln, die die Skripte einhalten
 

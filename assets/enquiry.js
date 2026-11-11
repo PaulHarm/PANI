@@ -244,6 +244,9 @@
         number.textContent = String(position + 1).padStart(2, "0");
     }
     const type = active.dataset.type;
+    // Ein fertiger Entwurf gilt nur fuer den Kontaktschritt: Wer zurueckgeht
+    // oder eine Antwort aendert, bereitet ihn neu vor.
+    if (type !== "contact") draft.reset(status);
     if (type === "contact") returnToSummary = false;
     progressText.textContent = text.progress(current + 1, list.length);
     progressBar.style.width = `${Math.round(((current + 1) / list.length) * 100)}%`;
@@ -291,8 +294,23 @@
   // Tastaturbedienung (Pfeiltasten) bleibt der Schritt offen, Enter oder
   // "Weiter" fuehrt weiter.
   let pointerAt = 0;
+  // Eine Karte, die beim Druecken schon markiert war (Vorauswahl aus ?type=
+  // oder eine fruehere Antwort), loest kein change aus. Ihr Klick fuehrt
+  // deshalb ueber das click-Ereignis weiter.
+  let markedAtPointer = null;
   form.addEventListener("pointerdown", (event) => {
-    if (event.target.closest(".choice")) pointerAt = Date.now();
+    const choice = event.target.closest(".choice");
+    if (!choice) return;
+    pointerAt = Date.now();
+    const radio = choice.querySelector('input[type="radio"]');
+    markedAtPointer = radio && radio.checked ? radio : null;
+  });
+  form.addEventListener("click", (event) => {
+    if (!markedAtPointer || event.target !== markedAtPointer) return;
+    markedAtPointer = null;
+    if (Date.now() - pointerAt >= 600) return;
+    window.clearTimeout(advanceTimer);
+    advanceTimer = window.setTimeout(forward, reducedMotion.matches ? 0 : 250);
   });
   form.addEventListener("change", (event) => {
     const input = event.target;
@@ -340,6 +358,9 @@
     if (input.type === "radio") input.checked = true;
     forward();
   });
+  // Tippen in den Kontaktfeldern nach dem Vorbereiten: Der gezeigte Entwurf
+  // stimmt nicht mehr und wird zurueckgenommen.
+  form.addEventListener("input", () => draft.reset(status));
   back.addEventListener("click", () => {
     returnToSummary = false;
     goTo(current - 1);

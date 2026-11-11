@@ -230,6 +230,7 @@
     view.open.href = draft.href;
     view.subject.textContent = `${text.subjectLabel}: ${draft.subject}`;
     view.area.value = draft.body;
+    view.panel.hidden = false;
     say(text.ready, draft.complete ? text.tried : text.tooLong, text.alt);
     try {
       const reduced = win.matchMedia(
@@ -250,6 +251,16 @@
     return view.panel;
   }
 
+  // Nimmt Meldung und Entwurfsfeld zurueck, sobald sich Angaben nach dem
+  // Vorbereiten aendern. Der gezeigte Entwurf wuerde sonst nicht mehr zu
+  // den Angaben passen. Das naechste show() blendet das Feld wieder ein.
+  function reset(status) {
+    const view = panels.get(status);
+    if (!view || view.panel.hidden) return;
+    view.panel.hidden = true;
+    status.replaceChildren();
+  }
+
   const api = Object.freeze({
     PRESETS,
     TEXT,
@@ -259,6 +270,7 @@
     compose,
     copyText,
     show,
+    reset,
   });
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.PaniDraft = api;

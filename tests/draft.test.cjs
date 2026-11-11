@@ -634,3 +634,31 @@ test("Copy text always copies the latest draft", async () => {
   await tick();
   assert.deepEqual(written, ["Neuer Text"]);
 });
+
+test("reset withdraws status and panel, and the next draft shows them again", () => {
+  const untouched = fakeDom();
+  assert.doesNotThrow(() => draft.reset(untouched.status));
+  assert.equal(untouched.status.next, undefined);
+
+  const app = shown();
+  const { panel } = app.parts();
+  assert.equal(panel.hidden, false);
+  draft.reset(app.status);
+  assert.deepEqual(app.lines(), []);
+  assert.equal(panel.hidden, true);
+  // Ein zweiter Aufruf aendert nichts mehr.
+  draft.reset(app.status);
+  assert.equal(panel.hidden, true);
+  const next = draft.compose({ subject: "Neu", body: "Neuer Text", lang: "de" });
+  draft.show({
+    doc: app.doc,
+    win: app.win,
+    status: app.status,
+    draft: next,
+    lang: "de",
+  });
+  assert.equal(app.parts().panel, panel);
+  assert.equal(panel.hidden, false);
+  assert.equal(app.parts().area.value, "Neuer Text");
+  assert.equal(app.lines().length, 3);
+});

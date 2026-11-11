@@ -117,6 +117,7 @@ function setup({
       const [open, copy] = actions.children;
       return { subject, area, open, copy };
     },
+    fire: (name) => events[name]({}),
     submit() {
       let prevented = false;
       events.submit({
@@ -132,7 +133,12 @@ function setup({
 test("the form only becomes visible after its submit handler is installed", () => {
   for (const tenant of [false, true]) {
     const app = setup({ tenant });
-    assert.deepEqual(app.log, ["listener:submit", "hidden:false"]);
+    assert.deepEqual(app.log, [
+      "listener:submit",
+      "listener:input",
+      "listener:change",
+      "hidden:false",
+    ]);
     assert.equal(app.form.hidden, false);
   }
 });
@@ -324,4 +330,22 @@ test("site.js reads the address only through the draft module", () => {
   assert.doesNotMatch(source, /mailto:/);
   assert.match(source, /PaniDraft/);
   assert.doesNotMatch(source, /[\u2013\u2014]/);
+});
+
+test("changing a field after the draft withdraws the status and the draft panel", () => {
+  for (const type of ["input", "change"]) {
+    const app = setup();
+    // Vor dem ersten Entwurf gibt es nichts zurueckzunehmen.
+    assert.doesNotThrow(() => app.fire(type));
+    assert.equal(app.status.next, undefined);
+    app.submit();
+    assert.equal(app.lines().length, 3);
+    assert.equal(app.status.next.hidden, false);
+    app.fire(type);
+    assert.deepEqual(app.lines(), []);
+    assert.equal(app.status.next.hidden, true);
+    app.submit();
+    assert.equal(app.lines().length, 3);
+    assert.equal(app.status.next.hidden, false);
+  }
 });

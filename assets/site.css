@@ -841,7 +841,10 @@ summary:focus-visible {
   border-left: 3px solid var(--green);
 }
 .form-status:empty {
-  display: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
 }
 .form-status a {
   text-decoration: underline;

@@ -3,8 +3,9 @@
 Baut Desktop- und Mobil-Navigation (mit Leistungen-Dropdown) in alle Seiten ein
 und schreibt die Hausgrafik des Menüs als eigene Datei assets/nav-house.svg.
 Idempotent: ersetzt jeweils den kompletten <nav class="desktop-nav">- und
-<nav class="mobile-nav">-Block. Seiten ohne desktop-nav (Weiterleitungsseiten)
-werden übersprungen.
+<nav class="mobile-nav">-Block. Weiterleitungsseiten (meta refresh) werden
+übersprungen. Fehlt auf einer anderen Seite eines der beiden Menüs, bricht der
+Lauf mit einer Meldung ab.
 
 Aufruf:     python _tools/nav.py [--root ORDNER] [--check] [--diff] [seiten ...]
 Normalfall: python _tools/build.py (Menü, Kopf-Block, SEO-Daten in einem Lauf)
@@ -385,7 +386,7 @@ def anwenden(stand, seiten=None):
     stand.setze(HAUS, house_svg(stand))
     for fn in seiten or stand.seiten():
         s = stand.text(fn)
-        if '<nav class="desktop-nav"' not in s:
+        if ist_weiterleitung(s):
             continue
         stand.setze(fn, build(fn, s, stand))
 

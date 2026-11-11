@@ -71,6 +71,9 @@ const VERSION_REQUIRED = new Set([
 const FONT_PRELOAD = "assets/fonts/fraunces-latin.woff2";
 
 // Skripte nach Ausloeser im <body>. Mehr als diese Tabelle laedt keine Seite.
+// Die Tabelle spiegelt dateien() in _tools/kopf.py. Kommt bewusst ein Skript
+// oder ein Ausloeser hinzu, werden beide Stellen zusammen geaendert (bei einem
+// Stylesheet die Liste in der Pruefung der CSS-Reihenfolge weiter unten).
 const attribute = (name) => (page) =>
   bodyTokens(page).some((token) => token.attrs.has(name));
 const className = (name) => (page) =>
@@ -1538,6 +1541,8 @@ check(
           report(
             `${page.file}: Titel trennt mit Mittelpunkt (U+00B7): "${title}"`,
           );
+        else if (!title.includes(" | "))
+          report(`${page.file}: Titel ohne Trenner " | ": "${title}"`);
   },
 );
 
