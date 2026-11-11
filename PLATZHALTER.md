@@ -9,8 +9,7 @@ Stand: Verbesserungsrunde vom 11. November 2026 (Team, Anfragewege, Technik). Da
   - `030 23125 199` (Notfallnummer): `ueber-uns.html`, `en-about.html`, `mieter.html`, `en-tenants.html`.
   - `030 23125 150` (Anfragen): `index.html`, `en.html`, `wechsel.html`, `en-switch.html`, `anfrage.html`, `en-enquiry.html`, `hausverwaltung-verkaufen.html`, `en-sell-your-company.html`.
 - **Öffnungszeiten** im Abschnitt „Vor Ort" (Mo bis Fr 09:00 bis 18:00 Uhr, Sa 10:00 bis 14:00 Uhr nach Absprache, So geschlossen) sind Musterzeiten und zu bestätigen.
-- **Notfallhinweis für Mieter** (`mieter.html`, `en-tenants.html`): Die Reihenfolge „zuerst die Notfallkontakte des Hauses, außerhalb der Öffnungszeiten zusätzlich die Notfallnummer" ist eine Annahme und zu bestätigen.
-- **Team:** Die Angaben zu Stefan Kruger (Immobilienökonom, Baubetreuung und energetische Sanierung) und Beate Frisow (Betreuung der Hausverwaltung) sind bewusst knapp gehalten. Schreibweise der Namen und Aufgaben bestätigen; weitere Angaben nur auf ausdrücklichen Wunsch ergänzen.
+- **Team:** Die Angaben zu Stefan Krüger (Immobilienökonom, Baubetreuung und energetische Sanierung) und Beate Frisow (Betreuung der Hausverwaltung) sind bewusst knapp gehalten. Weitere Angaben nur auf ausdrücklichen Wunsch ergänzen.
 - Rechtsform und tatsächliche Vertretungsangaben.
 - Zutreffende Register-, Steuer-, Erlaubnis- und Versicherungsangaben für Impressum und englische Fassung.
 - Endgültige Prüfung und Vervollständigung der Rechtstexte. Die verbleibenden Platzhalter sind ausdrücklich sichtbar.
@@ -30,7 +29,9 @@ Stand: Verbesserungsrunde vom 11. November 2026 (Team, Anfragewege, Technik). Da
 ## Erledigt im November 2026
 
 - Gründerfotos von der Über-uns-Seite entfernt, Bilddateien gelöscht. Der Block zeigt jetzt vier Personen ohne Bild: zwei Gründer, zwei Teammitglieder. Ein Test verhindert, dass die Fotos zurückkommen.
-- Stefan Kruger steht auf Baubetreuung und Energetischer Sanierung als Verantwortlicher, mit Verweis auf das Team.
+- Stefan Krüger steht auf Baubetreuung und Energetischer Sanierung als Verantwortlicher, mit Verweis auf das Team.
+- Vom Inhaber am 11.11.2026 bestätigt: die Schreibweise „Stefan Krüger" und die Reihenfolge im Notfallhinweis für Mieter (zuerst die Notfallkontakte des Hauses, außerhalb der Öffnungszeiten zusätzlich die Notfallnummer).
+- HTTPS wird seit dem 11.11.2026 erzwungen (GitHub Pages, „Enforce HTTPS").
 - Zinshaus, Investoren und Bestandshalter zu einer Seite gebündelt. Die vier alten Adressen leiten auf den passenden Abschnitt weiter und stehen nicht mehr in der Sitemap.
 - Menü: „Hausverwaltung verkaufen" statt „Unternehmensnachfolge", „Energetische Sanierung" statt „Sanierungsbegleitung". Die Eigentümerseite heißt weiter „Nachfolge".
 - Ein Anfrageweg: Alle Knöpfe im Inhalt heißen „Betreuung anfragen" und führen zum Fragebogen, wo sinnvoll mit Vorauswahl. Das Kurzformular der Startseite bleibt.

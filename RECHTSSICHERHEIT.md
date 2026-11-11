@@ -34,7 +34,7 @@ Aktuell **Platzhalter** in `datenschutz.html`:
 ## 3. Technischer Datenschutz (DSGVO) - 🟡
 - [x] **Schriften lokal eingebunden** (`assets/fonts/`, Fraunces und IBM Plex mit OFL-Lizenzdateien). Erledigt September 2026.
 - [x] **Bilder lokal eingebunden** (`assets/`, Quellen und Lizenzen auf den Unterseiten dokumentiert). Erledigt September 2026.
-- [ ] 🟡 **HTTPS erzwingen**: In GitHub → Settings → Pages → „Enforce HTTPS" aktivieren. Stand 14.09.2026 noch nicht aktiv, http:// liefert die Seite unverschlüsselt aus.
+- [x] **HTTPS erzwingen**: In den GitHub-Pages-Einstellungen aktiviert am 11.11.2026 („Enforce HTTPS"). Aufrufe über http:// werden auf https:// umgeleitet.
 - [ ] 🟡 **Hosting GitHub Pages (USA)**: IP-Logging + US-Datentransfer. Kein klassischer AV-Vertrag verfügbar.
       Erwägen: **EU-Hosting** für maximale Rechtssicherheit, mind. in Datenschutzerklärung transparent machen.
 
@@ -55,6 +55,6 @@ Aktuell **Platzhalter** in `datenschutz.html`:
 
 ## Reihenfolge-Empfehlung (Stand 14.09.2026, Seite ist bereits live)
 1. 🔴 Impressum + Datenschutz mit **echten Daten** füllen (braucht Firmenangaben; idealerweise anwaltlich/DSB geprüft). Die Platzhalter sind aktuell öffentlich sichtbar.
-2. 🟡 „Enforce HTTPS" in den GitHub-Pages-Einstellungen aktivieren.
+2. Erledigt am 11.11.2026: „Enforce HTTPS" ist in den GitHub-Pages-Einstellungen aktiv.
 3. 🟡 Wikimedia-Bilder (CC BY-SA) mittelfristig durch eigene, freigegebene Fotos ersetzen.
 4. 🟢 BFSG-Relevanz prüfen, sobald ein Mieterportal mit Login kommt.
